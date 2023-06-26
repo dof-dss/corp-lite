@@ -16,8 +16,6 @@
     ],
     "require": {
         "composer/installers": "^2.0",
-        "dof-dss/maestro-hosting": "^1.0",
-        "dof-dss/maestro-shell": "dev-drupal10_changes",
         "drupal/core-composer-scaffold": "^10.1",
         "drupal/core-project-message": "^10.1",
         "drupal/core-recommended": "^10.1"
@@ -93,5 +91,9 @@
                 "      composer remove drupal/core-project-message"
             ]
         }
+    },
+    "require-dev": {
+        "dof-dss/maestro-hosting": "^1.0",
+        "dof-dss/maestro-shell": "dev-drupal10_changes"
     }
 }
