@@ -1,0 +1,23 @@
+#############################################################################
+###                           --== IMPORTANT ==--                         ###
+#############################################################################
+# If you require changes to this file you must edit the file within the     #
+# original repository.Any changes here will be overwritten when the project #
+# is built.                                                                 #
+#############################################################################
+'https://www.nisra.gov.uk/':
+    type: upstream
+    upstream: 'corp_lite_3:http'
+    cache:
+        enabled: 'false'
+'https://nisra.gov.uk/':
+    type: redirect
+    to: 'https://www.nisra.gov.uk/'
+'https://www.{all}/':
+    type: upstream
+    upstream: 'corp_lite_3:http'
+    cache:
+        enabled: 'false'
+'https://{all}/':
+    type: redirect
+    to: 'https://www.{all}/'

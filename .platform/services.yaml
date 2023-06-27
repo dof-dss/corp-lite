@@ -1,0 +1,30 @@
+#############################################################################
+###                           --== IMPORTANT ==--                         ###
+#############################################################################
+# If you require changes to this file you must edit the file within the     #
+# original repository.Any changes here will be overwritten when the project #
+# is built.                                                                 #
+#############################################################################
+db:
+    type: 'mariadb:10.4'
+    disk: 1000
+    configuration:
+        schemas:
+            - nisradb
+        endpoints:
+            nisra:
+                default_schema: nisradb
+                privileges:
+                    nisradb: admin
+solr:
+    type: 'solr:7.7'
+    disk: 1024
+    configuration:
+        cores:
+            nisra_index:
+                conf_dir: !archive solr_config/
+        endpoints:
+            nisra:
+                core: nisra_index
+redis:
+    type: 'redis:6.0'
