@@ -1,0 +1,15 @@
+project_type: corp-lite
+project_name: 'Corp Lite 3'
+project_id: 5wphupyrfaitk
+project_disk_size: 3000
+db_disk_size: 1000
+sites:
+    nisra:
+        name: nisra
+        url: nisra.gov.uk
+        solr: nisra
+        cron_spec: '10 * * * *'
+        cron_cmd: 'cd web/sites/nisra ; drush core-cron'
+        database: nisra
+        status: development
+        default: false
