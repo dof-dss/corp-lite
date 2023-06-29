@@ -1,10 +1,10 @@
-name: corp_lite
-recipe: drupal10
+name: corp_lite_base
+recipe: drupal9
 config:
   webroot: web
   database: mariadb
   php: '8.1'
-  composer_version: '2.2.18'
+  composer_version: '2.0.7'
   config:
     php: .lando/config/php.ini
     database: .lando/config/my.cnf
@@ -68,18 +68,18 @@ tooling:
           - s
         interactive:
           type: input
-          message: Which Unity site (e.g. uregni) ?
+          message: Which Corp Lite site (e.g. nisra) ?
           weight: 1
       test:
         passthrough: true
   phpunit:
-    description: "Run PHPUnit tests. You can pass options, e.g. --group=unity, as you require"
+    description: "Run PHPUnit tests. You can pass options, e.g. --group=corp-lite, as you require"
     service: appserver
     cmd: cd /app/web/core && /app/vendor/bin/phpunit -c /app/web/core/phpunit.xml
   phpcs:
     description: Run PHPCS checks against all custom Drupal 8 code
     service: appserver
-    cmd: /app/phpcs.sh "/app" "/app/web/sites /app/web/modules/origins /app/web/modules/custom /app/web/themes/custom /app/web/profiles/unity"
+    cmd: /app/phpcs.sh "/app" "/app/web/sites /app/web/modules/origins /app/web/modules/custom /app/web/themes/custom /app/web/profiles/corp-lite"
   drck:
     description: Run drupal-check for Drupal 9 compatibility e.g. 'lando drck ./'
     service: appserver
