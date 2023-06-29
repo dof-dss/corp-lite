@@ -7,7 +7,7 @@
 #############################################################################
 'https://www.nisra.gov.uk/':
     type: upstream
-    upstream: 'corp_lite_3:http'
+    upstream: 'corp_lite:http'
     cache:
         enabled: 'false'
 'https://nisra.gov.uk/':
@@ -15,7 +15,7 @@
     to: 'https://www.nisra.gov.uk/'
 'https://www.{all}/':
     type: upstream
-    upstream: 'corp_lite_3:http'
+    upstream: 'corp_lite:http'
     cache:
         enabled: 'false'
 'https://{all}/':

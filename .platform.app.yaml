@@ -5,7 +5,7 @@
 # original repository.Any changes here will be overwritten when the project #
 # is built.                                                                 #
 #############################################################################
-name: corp_lite_3
+name: corp_lite
 type: 'php:8.1'
 dependencies:
     php:
