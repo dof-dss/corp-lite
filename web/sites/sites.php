@@ -86,7 +86,7 @@ if (!empty(getenv('PLATFORM_BRANCH'))) {
       //  - www.fiscalcommissionni.org
       //  - hatecrimereviewni.org.uk.master-7rqtwti-6tlkpwbr6tndk.uk-1.platformsh.site
       $newhost = str_replace('www.', '', $host);
-      if (str_contains($newhost, 'nisra.nics.gov.uk')) {
+      if (str_contains($newhost, 'nisra.gov.uk')) {
         $sites[$host] = 'nisra';
       }
       else {
