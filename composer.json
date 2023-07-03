@@ -65,6 +65,9 @@
             "web/profiles/contrib/{$name}": [
                 "type:drupal-profile"
             ],
+            "web/profiles/corplite/nicsdru_corplite_profile": [
+                "dof-dss/nicsdru_corplite_profile"
+            ],
             "web/themes/contrib/{$name}": [
                 "type:drupal-theme"
             ],
