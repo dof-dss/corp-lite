@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4c2d0b12113d8271d39b20300d727a55",
+    "content-hash": "a8248235e76530b15d42782d0556a4df",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1140,6 +1140,35 @@
                 }
             ],
             "time": "2022-12-14T08:49:07+00:00"
+        },
+        {
+            "name": "dof-dss/nicsdru_origins_modules",
+            "version": "dev-d10_upgrade",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dof-dss/nicsdru_origins_modules.git",
+                "reference": "928cd921bab71a2d1d1fcbb6e89c0adfab9d8c5c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dof-dss/nicsdru_origins_modules/zipball/928cd921bab71a2d1d1fcbb6e89c0adfab9d8c5c",
+                "reference": "928cd921bab71a2d1d1fcbb6e89c0adfab9d8c5c",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "^2.0"
+            },
+            "type": "drupal-module",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Generic modules for DOF-DSS Drupal sites",
+            "support": {
+                "issues": "https://github.com/dof-dss/nicsdru_origins_modules/issues",
+                "source": "https://github.com/dof-dss/nicsdru_origins_modules/tree/d10_upgrade"
+            },
+            "time": "2023-07-03T13:02:14+00:00"
         },
         {
             "name": "drupal/core",
@@ -6980,6 +7009,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "dof-dss/nicsdru_origins_modules": 20,
         "dof-dss/maestro-shell": 20
     },
     "prefer-stable": true,
