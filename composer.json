@@ -20,6 +20,7 @@
         "drupal/core-composer-scaffold": "^10.1",
         "drupal/core-project-message": "^10.1",
         "drupal/core-recommended": "^10.1",
+        "drupal/facets": "^2.0",
         "drupal/flag": "^4.0@beta",
         "drupal/readonlymode": "^1.2",
         "drupal/redis": "^1.7",
