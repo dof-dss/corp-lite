@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e2fe4cffe60b628822cff751d943fcab",
+    "content-hash": "c31c73ec572349d7ea6fb98075b5393f",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1140,6 +1140,36 @@
                 }
             ],
             "time": "2022-12-14T08:49:07+00:00"
+        },
+        {
+            "name": "dof-dss/nicsdru_corplite_modules",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dof-dss/nicsdru_corplite_modules.git",
+                "reference": "2c4f9c82b687bc92c0f0106ec401cec4ed63cb66"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dof-dss/nicsdru_corplite_modules/zipball/2c4f9c82b687bc92c0f0106ec401cec4ed63cb66",
+                "reference": "2c4f9c82b687bc92c0f0106ec401cec4ed63cb66",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "^2.0"
+            },
+            "default-branch": true,
+            "type": "drupal-module",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Custom modules available to all corporate-lite sites",
+            "support": {
+                "issues": "https://github.com/dof-dss/nicsdru_corplite_modules/issues",
+                "source": "https://github.com/dof-dss/nicsdru_corplite_modules/tree/main"
+            },
+            "time": "2023-07-04T09:39:31+00:00"
         },
         {
             "name": "dof-dss/nicsdru_corplite_profile",
@@ -7692,6 +7722,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "dof-dss/nicsdru_corplite_profile": 20,
         "dof-dss/nicsdru_origins_modules": 20,
         "drupal/flag": 10,
         "dof-dss/maestro-shell": 20

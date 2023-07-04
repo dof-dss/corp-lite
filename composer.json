@@ -17,6 +17,7 @@
     "require": {
         "composer-runtime-api": "*",
         "composer/installers": "^2.0",
+        "dof-dss/nicsdru_corplite_modules": "dev-main",
         "dof-dss/nicsdru_corplite_profile": "dev-main",
         "dof-dss/nicsdru_origins_modules": "dev-d10_upgrade",
         "drupal/config_split": "^1.9",
