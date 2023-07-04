@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c31c73ec572349d7ea6fb98075b5393f",
+    "content-hash": "4e259fa9d27e05cc1344c02e5b755888",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -7722,7 +7722,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "dof-dss/nicsdru_corplite_profile": 20,
+        "dof-dss/nicsdru_corplite_modules": 20,
         "dof-dss/nicsdru_origins_modules": 20,
         "drupal/flag": 10,
         "dof-dss/maestro-shell": 20

@@ -1,0 +1,55 @@
+name: NICS Corplite
+type: profile
+description: To provide common functionality for various NICS Corp Lite websites
+core_version_requirement: ^8.8 || ^9 || ^10
+distribution:
+  name: corplite
+install:
+  - block
+  - block_content
+  - breakpoint
+  - ckeditor5
+  - comment
+  - config
+  - contact
+  - contextual
+  - datetime
+  - dblog
+  - dynamic_page_cache
+  - editor
+  - field
+  - field_ui
+  - file
+  - filter
+  - help
+  - history
+  - image
+  - language
+  - link
+  - locale
+  - menu_link_content
+  - menu_ui
+  - metatag
+  - mysql
+  - node
+  - options
+  - page_cache
+  - path
+  - path_alias
+  - redirect
+  - search
+  - shortcut
+  - system
+  - taxonomy
+  - text
+  - token
+  - toolbar
+  - tour
+  - update
+  - user
+  - views_ui
+  - pathauto
+  - views
+themes:
+  - olivero
+  - claro

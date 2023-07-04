@@ -1,0 +1,3 @@
+langcode: en-gb
+interface:
+  default: php_mail
