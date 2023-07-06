@@ -51,6 +51,7 @@
         "drupal/readonlymode": "^1.2",
         "drupal/redirect": "^1.8",
         "drupal/redis": "^1.7",
+        "drupal/scheduled_transitions": "^2.3",
         "drush/drush": "^11",
         "platformsh/config-reader": "^2.4"
     },
