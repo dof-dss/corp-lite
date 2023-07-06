@@ -88,6 +88,8 @@ if (!empty(getenv('PLATFORM_BRANCH'))) {
       $newhost = str_replace('www.', '', $host);
       if (str_contains($newhost, 'nisra.gov.uk')) {
         $sites[$host] = 'nisra';
+      } elseif (str_contains($newhost, 'afbini.gov.uk')) {
+        $sites[$host] = 'afbini';
       }
       else {
         $subdomain = substr($newhost, 0, strpos($newhost, '.'));
@@ -109,6 +111,8 @@ if (getenv('LANDO')) {
   foreach ($project['sites'] as $site_id => $site) {
     if ($site_id == 'nisra') {
       $sites['nisra.gov.uk.lndo.site'] = $site_id;
+    } elseif ($site_id == 'afbini') {
+      $sites['afbini.gov.uk.lndo.site'] = $site_id;
     }
     else {
       $sites[$site['url'] . '.lndo.site'] = $site_id;
