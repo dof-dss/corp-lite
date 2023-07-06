@@ -159,6 +159,11 @@
     },
     "require-dev": {
         "dof-dss/maestro-hosting": "^1.0",
-        "dof-dss/maestro-shell": "dev-drupal10_changes"
+        "dof-dss/maestro-shell": "dev-drupal10_changes",
+        "drupal/coder": "^8.3",
+        "drupal/devel": "^5.1",
+        "drupal/stage_file_proxy": "^2.0",
+        "drupal/upgrade_status": "^4.0",
+        "mglaman/drupal-check": "^1.4"
     }
 }
