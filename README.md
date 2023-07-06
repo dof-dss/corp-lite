@@ -17,6 +17,8 @@ https://northsouthministerialcouncil.org/
 At the command line, clone this repo, cd into it and then run the following:
 
 lando start
+
 lando composer install
+
 lando restart
 
