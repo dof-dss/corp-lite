@@ -57,6 +57,7 @@
         "drupal/http_cache_control": "^2.1",
         "drupal/menu_breadcrumb": "^2.0@alpha",
         "drupal/metatag": "^2.0",
+        "drupal/migrate_upgrade": "^4.0",
         "drupal/moderation_sidebar": "^1.7",
         "drupal/node_edit_protection": "^1.1",
         "drupal/noreferrer": "^1.16",
