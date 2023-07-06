@@ -13,3 +13,12 @@ sites:
         database: nisra
         status: development
         default: false
+    afbini:
+        name: afbini
+        url: afbini.gov.uk
+        solr: afbini
+        cron_spec: '10 * * * *'
+        cron_cmd: 'cd web/sites/afbini ; drush core-cron'
+        database: afbini
+        status: development
+        default: false

@@ -13,6 +13,14 @@
 'https://nisra.gov.uk/':
     type: redirect
     to: 'https://www.nisra.gov.uk/'
+'https://www.afbini.gov.uk/':
+    type: upstream
+    upstream: 'corp_lite:http'
+    cache:
+        enabled: 'false'
+'https://afbini.gov.uk/':
+    type: redirect
+    to: 'https://www.afbini.gov.uk/'
 'https://www.{all}/':
     type: upstream
     upstream: 'corp_lite:http'

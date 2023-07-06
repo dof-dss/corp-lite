@@ -11,11 +11,16 @@ db:
     configuration:
         schemas:
             - nisradb
+            - afbinidb
         endpoints:
             nisra:
                 default_schema: nisradb
                 privileges:
                     nisradb: admin
+            afbini:
+                default_schema: afbinidb
+                privileges:
+                    afbinidb: admin
 solr:
     type: 'solr:7.7'
     disk: 1024
@@ -23,8 +28,12 @@ solr:
         cores:
             nisra_index:
                 conf_dir: !archive solr_config/
+            afbini_index:
+                conf_dir: !archive solr_config/
         endpoints:
             nisra:
                 core: nisra_index
+            afbini:
+                core: afbini_index
 redis:
     type: 'redis:6.0'
