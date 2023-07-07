@@ -102,6 +102,11 @@
         "sort-packages": true
     },
     "extra": {
+        "patches": {
+            "drupal/facets": {
+                "Pass facet object onto child items": "https://www.drupal.org/files/issues/2019-11-13/child_item-3094143-2.patch"
+            }
+        },
         "drupal-scaffold": {
             "locations": {
                 "web-root": "web/"
