@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "341c8bdbe2df69ef47c639afb9327193",
+    "content-hash": "00fcc6b2265bc4a713055378b9cf8135",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2883,6 +2883,46 @@
                 "source": "http://cgit.drupalcode.org/dynamic_entity_reference",
                 "issues": "http://drupal.org/project/dynamic_entity_reference",
                 "irc": "irc://irc.freenode.org/drupal-contribute"
+            }
+        },
+        {
+            "name": "drupal/easy_install_d10",
+            "version": "dev-10.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/easy_install_d10.git",
+                "reference": "164ded5c28913b709086dbb1c20927e5e2112690"
+            },
+            "require": {
+                "drupal/core": "^9.3 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-10.x": "10.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-10.x-dev",
+                    "datestamp": "1688720249",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "DuttonMa",
+                    "homepage": "https://www.drupal.org/user/2250396"
+                }
+            ],
+            "homepage": "https://www.drupal.org/project/easy_install_d10",
+            "support": {
+                "source": "https://git.drupalcode.org/project/easy_install_d10"
             }
         },
         {
@@ -13365,6 +13405,7 @@
         "drupal/config_update": 15,
         "drupal/file_delete_ui": 10,
         "drupal/flag": 10,
+        "drupal/inline_entity_form": 5,
         "drupal/menu_breadcrumb": 15,
         "drupal/search_api_location": 15,
         "drupal/ultimate_cron": 15,
