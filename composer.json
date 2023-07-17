@@ -19,7 +19,7 @@
         "composer/installers": "^2.0",
         "cweagans/composer-patches": "^1.7",
         "dof-dss/nicsdru_corplite_modules": "dev-main",
-        "dof-dss/nicsdru_corplite_profile": "dev-main",
+        "dof-dss/nicsdru_corplite_profile": "^1.0",
         "dof-dss/nicsdru_origins_modules": "dev-d10_upgrade",
         "drupal/admin_toolbar": "^3.4",
         "drupal/allowed_formats": "^2.0",

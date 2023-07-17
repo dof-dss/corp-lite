@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "82aed13d4bfd3ad9bb46d974aea8754d",
+    "content-hash": "3a1a060ac58f694e6ae0215b9bcf43e5",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1282,22 +1282,21 @@
         },
         {
             "name": "dof-dss/nicsdru_corplite_profile",
-            "version": "dev-main",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dof-dss/nicsdru_corplite_profile.git",
-                "reference": "933d1abb6f88c66d0872d4e10b39b6d9f05a7661"
+                "reference": "637042eae74d8ce4c12762983869ad21db835d77"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dof-dss/nicsdru_corplite_profile/zipball/933d1abb6f88c66d0872d4e10b39b6d9f05a7661",
-                "reference": "933d1abb6f88c66d0872d4e10b39b6d9f05a7661",
+                "url": "https://api.github.com/repos/dof-dss/nicsdru_corplite_profile/zipball/637042eae74d8ce4c12762983869ad21db835d77",
+                "reference": "637042eae74d8ce4c12762983869ad21db835d77",
                 "shasum": ""
             },
             "require": {
                 "composer/installers": "^2.0"
             },
-            "default-branch": true,
             "type": "drupal-profile",
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -1306,9 +1305,9 @@
             "description": "Custom install profile used by all corporate-lite sites",
             "support": {
                 "issues": "https://github.com/dof-dss/nicsdru_corplite_profile/issues",
-                "source": "https://github.com/dof-dss/nicsdru_corplite_profile/tree/main"
+                "source": "https://github.com/dof-dss/nicsdru_corplite_profile/tree/1.0.2"
             },
-            "time": "2023-07-04T13:50:27+00:00"
+            "time": "2023-07-17T14:08:49+00:00"
         },
         {
             "name": "dof-dss/nicsdru_origins_modules",
@@ -14073,7 +14072,6 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "dof-dss/nicsdru_corplite_modules": 20,
-        "dof-dss/nicsdru_corplite_profile": 20,
         "dof-dss/nicsdru_origins_modules": 20,
         "drupal/block_field": 5,
         "drupal/clone_nodes": 20,
