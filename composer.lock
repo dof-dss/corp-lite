@@ -1315,12 +1315,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dof-dss/nicsdru_origins_modules.git",
-                "reference": "b6596c5672920c259eb4a18bdf03c370c3255b43"
+                "reference": "86f2aed0c16898af3dd2c1449fe9a5df20d0486f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dof-dss/nicsdru_origins_modules/zipball/b6596c5672920c259eb4a18bdf03c370c3255b43",
-                "reference": "b6596c5672920c259eb4a18bdf03c370c3255b43",
+                "url": "https://api.github.com/repos/dof-dss/nicsdru_origins_modules/zipball/86f2aed0c16898af3dd2c1449fe9a5df20d0486f",
+                "reference": "86f2aed0c16898af3dd2c1449fe9a5df20d0486f",
                 "shasum": ""
             },
             "require": {
@@ -1336,7 +1336,7 @@
                 "issues": "https://github.com/dof-dss/nicsdru_origins_modules/issues",
                 "source": "https://github.com/dof-dss/nicsdru_origins_modules/tree/d10_upgrade"
             },
-            "time": "2023-07-03T13:32:03+00:00"
+            "time": "2023-07-14T15:11:27+00:00"
         },
         {
             "name": "drupal/admin_toolbar",
@@ -14072,7 +14072,6 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "dof-dss/nicsdru_corplite_modules": 20,
-        "dof-dss/nicsdru_origins_modules": 20,
         "drupal/block_field": 5,
         "drupal/clone_nodes": 20,
         "drupal/config_readonly": 10,
