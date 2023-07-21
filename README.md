@@ -20,9 +20,7 @@ lando start
 
 lando composer install
 
-lando restart
+maestro project:build
 
-Create a .env file in the root directory by copying .env.sample.
+lando rebuild
 
-Install Drupal using the database credentials from 'lando info' (as well as setting the database name, username and password,
-remember to change the database host to 'database' under 'Advanced options')
