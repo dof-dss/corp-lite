@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3a1a060ac58f694e6ae0215b9bcf43e5",
+    "content-hash": "9c346becda023cb33208710728f7a186",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2230,6 +2230,71 @@
             "homepage": "https://www.drupal.org/project/content_lock",
             "support": {
                 "source": "https://git.drupalcode.org/project/content_lock"
+            }
+        },
+        {
+            "name": "drupal/cookie_content_blocker_d10",
+            "version": "dev-1.0.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/cookie_content_blocker_d10.git",
+                "reference": "8acd4194bbc1a3d163488c18d1717da530651fdb"
+            },
+            "require": {
+                "drupal/core": "^8.8 || ^9 || ^10",
+                "ext-json": "*",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "drupal/cookie_content_blocker": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.0.x": "1.0.x-dev"
+                },
+                "drupal": {
+                    "version": "1.0.x-dev",
+                    "datestamp": "1690471370",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Steven Buteneers",
+                    "homepage": "https://www.drupal.org/u/steven-buteneers",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Daniël Smidt",
+                    "homepage": "https://www.drupal.org/u/dmsmidt",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Marc Janson",
+                    "homepage": "https://www.drupal.org/u/scorpid",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Prevent loading of content with a privacy impact until consent is given. This module needs a separate cookie consent manager.",
+            "homepage": "https://www.drupal.org/project/cookie_content_blocker",
+            "keywords": [
+                "Content",
+                "Content Access Control",
+                "Content Display",
+                "Drupal",
+                "Spam Prevention"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/cookie_content_blocker",
+                "issues": "https://www.drupal.org/project/issues/cookie_content_blocker?version=8.x"
             }
         },
         {
@@ -14072,10 +14137,12 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "dof-dss/nicsdru_corplite_modules": 20,
+        "dof-dss/nicsdru_origins_modules": 20,
         "drupal/block_field": 5,
         "drupal/clone_nodes": 20,
         "drupal/config_readonly": 10,
         "drupal/config_update": 15,
+        "drupal/cookie_content_blocker_d10": 20,
         "drupal/date_facet_drilldown": 20,
         "drupal/easy_install_d10": 20,
         "drupal/file_delete_ui": 10,
