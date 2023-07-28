@@ -1282,16 +1282,16 @@
         },
         {
             "name": "dof-dss/nicsdru_corplite_profile",
-            "version": "1.0.4",
+            "version": "1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dof-dss/nicsdru_corplite_profile.git",
-                "reference": "886f5a4d4b9f5bb220323456496436e4c0107535"
+                "reference": "3d12da4a248b4657830f73626b4083a59a144ce5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dof-dss/nicsdru_corplite_profile/zipball/886f5a4d4b9f5bb220323456496436e4c0107535",
-                "reference": "886f5a4d4b9f5bb220323456496436e4c0107535",
+                "url": "https://api.github.com/repos/dof-dss/nicsdru_corplite_profile/zipball/3d12da4a248b4657830f73626b4083a59a144ce5",
+                "reference": "3d12da4a248b4657830f73626b4083a59a144ce5",
                 "shasum": ""
             },
             "require": {
@@ -1305,9 +1305,9 @@
             "description": "Custom install profile used by all corporate-lite sites",
             "support": {
                 "issues": "https://github.com/dof-dss/nicsdru_corplite_profile/issues",
-                "source": "https://github.com/dof-dss/nicsdru_corplite_profile/tree/1.0.4"
+                "source": "https://github.com/dof-dss/nicsdru_corplite_profile/tree/1.0.5"
             },
-            "time": "2023-07-28T09:55:29+00:00"
+            "time": "2023-07-28T13:58:08+00:00"
         },
         {
             "name": "dof-dss/nicsdru_origins_modules",
