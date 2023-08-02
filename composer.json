@@ -21,6 +21,7 @@
         "dof-dss/nicsdru_corplite_modules": "dev-main",
         "dof-dss/nicsdru_corplite_profile": "^1.0",
         "dof-dss/nicsdru_origins_modules": "dev-d10_upgrade",
+        "drupal/address": "^1.12",
         "drupal/admin_toolbar": "^3.4",
         "drupal/allowed_formats": "^2.0",
         "drupal/block_field": "^1.0@RC",
