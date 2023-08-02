@@ -24,3 +24,6 @@ maestro project:build
 
 lando rebuild
 
+NOTE Do not run 'maestro pub' in the corp lite project as it serves no purpose, there is no 'parent' repo
+and any composer changes should be made in this repo.
+
