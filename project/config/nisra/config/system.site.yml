@@ -1,8 +1,9 @@
 _core:
   default_config_hash: xNHQR5bN1V96bZQJu9E92f3VdiEMB8CHNkBOVTIlJmI
 langcode: en
-name: nisra
-mail: a@a.com
+uuid: eab957f5-7ca4-4c91-b4cd-8768aad7f474
+name: 'Northern Ireland Statistics and Research Agency'
+mail: eddwebdev@finance-ni.gov.uk
 slogan: ''
 page:
   403: ''
@@ -11,4 +12,3 @@ page:
 admin_compact_mode: false
 weight_select_max: 100
 default_langcode: en
-uuid: eab957f5-7ca4-4c91-b4cd-8768aad7f474
