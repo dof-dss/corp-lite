@@ -1,0 +1,23 @@
+uuid: fd4ff8a8-22be-4ed4-a827-c356085fc9d1
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_published_date
+    - node.type.consultation
+  module:
+    - datetime
+_core:
+  default_config_hash: y0jFoNe1osL-eNAaWXUKJc5yhEcwExFHkjI_XnyXdtI
+id: node.consultation.field_published_date
+field_name: field_published_date
+entity_type: node
+bundle: consultation
+label: 'Published date'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

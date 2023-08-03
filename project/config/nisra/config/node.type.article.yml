@@ -1,0 +1,20 @@
+uuid: 003c5edd-9fd3-46f7-8345-9eacda8179a9
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+_core:
+  default_config_hash: P6glccZ1UKyUJjU1bEJP5Ee3pJZbfpoKirug23ab2Qk
+name: Article
+type: article
+description: 'Use this content type for generic pages of content.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

@@ -1,0 +1,12 @@
+uuid: e15d37ae-39e7-486e-bdc8-d4cd4b915f01
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - comment
+_core:
+  default_config_hash: DhDP63kcAAuRfEa3QJWErtPj0kHwhrhV_jZA3Cj8nKw
+id: comment.token
+label: Token
+targetEntityType: comment
+cache: true

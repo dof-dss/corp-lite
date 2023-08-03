@@ -1,0 +1,56 @@
+uuid: c0693ee0-7d1b-487a-8fdc-c4bbc5d7dbcc
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+  module:
+    - ckeditor5
+_core:
+  default_config_hash: lxfxPX1HIkVjmvgNcqWfKd_jPrCJ3z4KTMFBHnyf4S0
+format: basic_html
+editor: ckeditor5
+settings:
+  toolbar:
+    items:
+      - bold
+      - italic
+      - blockQuote
+      - superscript
+      - removeFormat
+      - '|'
+      - heading
+      - insertTable
+      - '|'
+      - link
+      - '|'
+      - bulletedList
+      - numberedList
+      - '|'
+      - drupalMedia
+      - '|'
+      - undo
+      - redo
+      - '|'
+      - specialCharacters
+  plugins:
+    ckeditor5_heading:
+      enabled_headings:
+        - heading2
+        - heading3
+        - heading4
+        - heading5
+        - heading6
+    ckeditor5_list:
+      reversed: false
+      startIndex: true
+    media_media:
+      allow_view_mode_override: false
+image_upload:
+  status: true
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: 0
+    height: 0

@@ -1,0 +1,13 @@
+uuid: 45d3a385-55ac-4691-9023-2513a928e072
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - node.type.application
+_core:
+  default_config_hash: WEx87MpMHOXmM9uqRmB4JLx5bf2OSvHy43UtQifLjmw
+id: node.application
+target_entity_type_id: node
+target_bundle: application
+default_langcode: site_default
+language_alterable: false
