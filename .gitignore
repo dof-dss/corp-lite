@@ -19,8 +19,9 @@ node_modules/
 # now live inside custom modules e.g. web/sites/uregni/modules/custom_migrations
 /project/config/**/migrate_plus.*
 
-# Ignore sensitive information
+# Ignore sensitive information or local config.
 /project/sites/*/settings.local.php
+/web/sites/*/services.local.php
 
 # Ignore Drupal's file directory
 /project/sites/*/files/
@@ -48,7 +49,8 @@ node_modules/
 .swp
 .vscode
 .DS_Store
-.talismanrc
+imports
+.htpasswd
 
 # Any local tooling/Lando things we want to ignore.
 web/sites/default/redis.services.yml
