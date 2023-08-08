@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9c8c3dcbe25f1cd9bb41821b74b41f66",
+    "content-hash": "b71835b361c3cb09b339a2537e63ccaa",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1970,6 +1970,47 @@
             "homepage": "https://www.drupal.org/project/chosen",
             "support": {
                 "source": "https://git.drupalcode.org/project/chosen"
+            }
+        },
+        {
+            "name": "drupal/ckeditor5_allowed_html",
+            "version": "dev-1.0.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/ckeditor5_allowed_html.git",
+                "reference": "79aa55696df2cd48d60d2ac4074061a561525b6e"
+            },
+            "require": {
+                "drupal/core": "^8.8 || ^9 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.0.x": "1.0.x-dev"
+                },
+                "drupal": {
+                    "version": "1.0.x-dev",
+                    "datestamp": "1691506962",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "DuttonMa",
+                    "homepage": "https://www.drupal.org/user/2250396"
+                }
+            ],
+            "description": "Contains a filter that provides a user editable list of allowed HTML tags ",
+            "homepage": "https://www.drupal.org/project/ckeditor5_allowed_html",
+            "support": {
+                "source": "https://git.drupalcode.org/project/ckeditor5_allowed_html"
             }
         },
         {
