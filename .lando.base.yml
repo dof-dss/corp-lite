@@ -14,9 +14,18 @@ env_file:
   - .env
 services:
   appserver:
+    scanner: false
     xdebug: debug
     build_as_root:
       - /app/.lando/scripts/appserver_build.sh
+    overrides:
+      environment:
+        # Support debugging CLI with XDEBUG.
+        # Ensure PHPStorm->Preferences->PHP->Servers->Name is set to appserver.
+        PHP_IDE_CONFIG: "serverName=appserver"
+        XDEBUG_SESSION_START: lando
+        SIMPLETEST_BASE_URL: "http://corplite.lndo.site"
+        SIMPLETEST_DB: "sqlite://localhost//dev/shm/test.sqlite"
   database:
     build_as_root:
       - "sh /app/.lando/scripts/create_databases.sh"
@@ -31,8 +40,6 @@ services:
     hogfrom:
       - appserver
 tooling:
-  drupal:
-    cmd: "/app/vendor/bin/drupal --root=/app/web"
   xdebug-on:
     service: appserver
     description: Enable xdebug
@@ -46,38 +53,12 @@ tooling:
   npm:
     service: appserver
     cmd: /usr/bin/npm
-  yarn:
-    service: appserver
-    cmd: yarn
-  'nightwatch [site] [test]':
-    service: appserver
-    description: "Run Nightwatch.js functional tests.\n\n
-                      Usage:\n
-                      > Run a specific test with tag\n
-                      lando nightwatch <site> --tag your-tag\n
-                      > Run a single test suite file, relative to Drupal core location\n
-                      lando nightwatch <site> ../modules/custom/modulename/tests/src/Nightwatch/Tests/yourTestSuite.js\n
-                      > Run all tests except Core\n
-                      lando nightwatch <site> --skiptags core\n"
-    cmd: "sh /app/.lando/scripts/run_nightwatch.sh"
-    options:
-      site:
-        passthrough: true
-        description: Multisite to run tests on
-        alias:
-          - s
-        interactive:
-          type: input
-          message: Which Corp Lite site (e.g. nisra) ?
-          weight: 1
-      test:
-        passthrough: true
   phpunit:
     description: "Run PHPUnit tests. You can pass options, e.g. --group=corp-lite, as you require"
     service: appserver
-    cmd: cd /app/web/core && /app/vendor/bin/phpunit -c /app/web/core/phpunit.xml
+    cmd: "php /app/vendor/bin/phpunit -c /app/web/core/phpunit.xml"
   phpcs:
-    description: Run PHPCS checks against all custom Drupal 8 code
+    description: Run PHPCS checks against all custom Drupal code
     service: appserver
     cmd: /app/phpcs.sh "/app" "/app/web/sites /app/web/modules/origins /app/web/modules/custom /app/web/themes/custom /app/web/profiles/corp-lite"
   drck:
@@ -87,8 +68,6 @@ tooling:
   drush:
     server: appserver
     cmd: drush -r /app/web
-  'db-export [file]': disabled
-  'db-import <file>': disabled
   'db-export [name]':
     service: database
     description: Exports database to a file. To export all databases, don't provide the name'
