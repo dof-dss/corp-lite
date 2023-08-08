@@ -66,6 +66,7 @@
         "drupal/media_library_edit": "^3.0",
         "drupal/menu_breadcrumb": "^2.0@alpha",
         "drupal/metatag": "^2.0",
+        "drupal/migrate_plus": "^6.0",
         "drupal/migrate_tools": "^6.0",
         "drupal/migrate_upgrade": "^4.0",
         "drupal/moderation_sidebar": "^1.7",
@@ -99,10 +100,14 @@
         "dof-dss/maestro-shell": "dev-drupal10_changes",
         "drupal/coder": "^8.3",
         "drupal/config_override_warn": "^1.4",
+        "drupal/core-dev": "^10.1",
         "drupal/devel": "^5.1",
-        "drupal/stage_file_proxy": "^2.0",
+        "drupal/stage_file_proxy": "^2.1",
         "drupal/upgrade_status": "^4.0",
-        "mglaman/drupal-check": "^1.4"
+        "kint-php/kint": "^5.0",
+        "mglaman/drupal-check": "^1.4",
+        "phpspec/prophecy-phpunit": "^2.0",
+        "previousnext/phpunit-finder": "^2.0"
     },
     "conflict": {
         "drupal/drupal": "*"
