@@ -21,7 +21,7 @@ node_modules/
 
 # Ignore sensitive information or local config.
 /project/sites/*/settings.local.php
-/web/sites/services.local.php
+/web/sites/services.local.yml
 
 # Ignore Drupal's file directory
 /project/sites/*/files/
