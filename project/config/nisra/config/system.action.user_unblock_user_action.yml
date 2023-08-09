@@ -1,0 +1,13 @@
+uuid: e0f93f34-86c4-46f3-96f2-51c2ff1cab12
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - user
+_core:
+  default_config_hash: 50KRz61Yx_nRsnIHfXSGpu4qq646-EIxwYo9MhP2DZk
+id: user_unblock_user_action
+label: 'Unblock the selected user(s)'
+type: user
+plugin: user_unblock_user_action
+configuration: {  }

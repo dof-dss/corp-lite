@@ -1,0 +1,21 @@
+uuid: 95c5361e-64b8-4c11-9afe-fc8acc5a9ed4
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: 2F4gm5hexB456TUHCfDM_85T6S-5c37nz8rEYBD9N4E
+id: node.field_notes_to_editors
+field_name: field_notes_to_editors
+entity_type: node
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

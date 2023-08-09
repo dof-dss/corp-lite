@@ -1,0 +1,20 @@
+uuid: aa6d4a09-39a8-490a-88de-225ada81ce99
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - node.type.application
+_core:
+  default_config_hash: 0unkF42F8pWnboOZrOPZsgQRVgsqaepd1RR0m9lFC8A
+id: node.application.title
+field_name: title
+entity_type: node
+bundle: application
+label: 'Title (Main heading)'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
