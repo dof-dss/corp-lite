@@ -1,0 +1,20 @@
+uuid: 0fea064b-3a42-4fba-8d9a-02f0e201c32a
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+_core:
+  default_config_hash: 76BxZgG_v9dFv85WmuZxxX7_6ZTha0fQLjmuIaFMas4
+name: News
+type: news
+description: 'Use this content type for news items, press releases and announcements.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

@@ -1,0 +1,13 @@
+uuid: 893f288a-4601-4e65-977c-48051b4dd7ef
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - node.type.publication
+_core:
+  default_config_hash: RdN00j2Uai6flPzk3RMZIdi-O-vhav-2KWBHqzvr8GE
+id: node.publication
+target_entity_type_id: node
+target_bundle: publication
+default_langcode: site_default
+language_alterable: false

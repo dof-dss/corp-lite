@@ -1,0 +1,16 @@
+uuid: d1d3c678-aa79-4a4c-86c4-98b16b57f9c0
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+    - toolbar
+_core:
+  default_config_hash: GSKFpUySicd58w9jyeILZLfIMj4c0kbTRwyj2uXgpqU
+id: supervisor_user
+label: 'supervisor user'
+weight: 5
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access toolbar'
