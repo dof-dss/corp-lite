@@ -1,0 +1,14 @@
+uuid: 51c2af3f-c85f-428b-a84e-2462175b3c3c
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.secure_statistics_supervisor_user
+  module:
+    - user
+id: user_add_role_action.secure_statistics_supervisor_user
+label: 'Add the secure statistics supervisor user role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: secure_statistics_supervisor_user

@@ -1,0 +1,14 @@
+uuid: b5d30790-c9f2-47b4-a6d0-efd1a4ad08af
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.secure_market_sensitive_author_user
+  module:
+    - user
+id: user_remove_role_action.secure_market_sensitive_author_user
+label: 'Remove the secure market sensitive author user role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: secure_market_sensitive_author_user

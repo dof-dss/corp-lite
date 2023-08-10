@@ -1,0 +1,14 @@
+uuid: 6eca9a09-84a4-4ea1-a990-ad3679e0eea6
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.secure_statistics_author_user
+  module:
+    - user
+id: user_remove_role_action.secure_statistics_author_user
+label: 'Remove the secure statistics author user role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: secure_statistics_author_user

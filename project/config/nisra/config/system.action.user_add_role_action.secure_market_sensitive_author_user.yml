@@ -1,0 +1,14 @@
+uuid: 39fd0d21-5514-4c0f-a2d9-52536eca0cff
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.secure_market_sensitive_author_user
+  module:
+    - user
+id: user_add_role_action.secure_market_sensitive_author_user
+label: 'Add the secure market sensitive author user role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: secure_market_sensitive_author_user
