@@ -1,0 +1,14 @@
+uuid: 15272b94-b42c-454f-8256-5f01c3f6ccbc
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.secure_market_sensitive_supervisor_user
+  module:
+    - user
+id: user_remove_role_action.secure_market_sensitive_supervisor_user
+label: 'Remove the secure market sensitive supervisor user role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: secure_market_sensitive_supervisor_user

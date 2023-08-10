@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.contact.body
     - field.field.node.contact.field_meta_tags
+    - field.field.node.contact.field_research_support
     - field.field.node.contact.field_site_topics
     - node.type.contact
   module:
@@ -24,6 +25,11 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 101
+    region: content
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
     region: content
   field_meta_tags:
     type: metatag_empty_formatter
@@ -46,5 +52,6 @@ content:
     weight: 100
     region: content
 hidden:
+  field_research_support: true
   langcode: true
   search_api_excerpt: true

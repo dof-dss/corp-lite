@@ -4,16 +4,18 @@ status: true
 dependencies:
   config:
     - field.field.node.publication.body
+    - field.field.node.publication.field_attachment
+    - field.field.node.publication.field_external_publication
     - field.field.node.publication.field_meta_tags
     - field.field.node.publication.field_publication_type
     - field.field.node.publication.field_published_date
+    - field.field.node.publication.field_research_support
     - field.field.node.publication.field_site_topics
-    - field.field.node.publication.field_summary
+    - field.field.node.publication.field_summary_long
     - node.type.publication
   module:
     - datetime
     - metatag
-    - options
     - text
     - user
 _core:
@@ -30,6 +32,20 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
+  field_attachment:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 106
+    region: content
   field_meta_tags:
     type: metatag_empty_formatter
     label: above
@@ -38,11 +54,12 @@ content:
     weight: 105
     region: content
   field_publication_type:
-    type: list_default
+    type: entity_reference_label
     label: above
-    settings: {  }
+    settings:
+      link: true
     third_party_settings: {  }
-    weight: 104
+    weight: 108
     region: content
   field_published_date:
     type: datetime_default
@@ -61,12 +78,12 @@ content:
     third_party_settings: {  }
     weight: 103
     region: content
-  field_summary:
-    type: basic_string
+  field_summary_long:
+    type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 101
+    weight: 107
     region: content
   links:
     settings: {  }
@@ -74,5 +91,7 @@ content:
     weight: 100
     region: content
 hidden:
+  field_external_publication: true
+  field_research_support: true
   langcode: true
   search_api_excerpt: true

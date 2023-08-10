@@ -1,0 +1,23 @@
+uuid: 7ce073b3-72a6-4f16-a33e-2126c6d881d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_research_support
+    - node.type.contact
+id: node.contact.field_research_support
+field_name: field_research_support
+entity_type: node
+bundle: contact
+label: 'Research and support'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    sort:
+      field: _none
+field_type: entity_reference

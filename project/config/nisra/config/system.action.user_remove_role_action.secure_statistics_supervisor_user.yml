@@ -1,0 +1,14 @@
+uuid: 7aaab5b3-a216-4209-9697-cd3aac595bc1
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.secure_statistics_supervisor_user
+  module:
+    - user
+id: user_remove_role_action.secure_statistics_supervisor_user
+label: 'Remove the secure statistics supervisor user role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: secure_statistics_supervisor_user

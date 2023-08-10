@@ -1,0 +1,18 @@
+uuid: 10386473-d47d-4cb7-9d6e-fd205571e843
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.secure_market_statistics
+id: node.secure_market_statistics.title
+field_name: title
+entity_type: node
+bundle: secure_market_statistics
+label: 'Title (Main heading)'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

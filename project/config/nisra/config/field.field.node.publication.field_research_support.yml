@@ -1,0 +1,23 @@
+uuid: 9f000350-bd6c-4bf4-8dfd-c21ca6ce560d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_research_support
+    - node.type.publication
+id: node.publication.field_research_support
+field_name: field_research_support
+entity_type: node
+bundle: publication
+label: 'Research and support'
+description: 'Choose relevant term(s) from the list of research and support topics for this publication. Hold down Ctrl to choose multiple research and support topics'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    sort:
+      field: _none
+field_type: entity_reference

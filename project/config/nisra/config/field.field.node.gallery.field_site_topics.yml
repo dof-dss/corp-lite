@@ -1,0 +1,23 @@
+uuid: 3cea5d5a-8091-4de8-bffb-76fc27eded03
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_site_topics
+    - node.type.gallery
+id: node.gallery.field_site_topics
+field_name: field_site_topics
+entity_type: node
+bundle: gallery
+label: 'Site topics'
+description: 'Choose relevant site topic(s) for this gallery. Hold down Ctrl to choose multiple site topics.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    sort:
+      field: _none
+field_type: entity_reference

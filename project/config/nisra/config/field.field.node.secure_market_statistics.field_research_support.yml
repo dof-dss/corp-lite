@@ -1,0 +1,23 @@
+uuid: a7359d56-75c8-493e-b55f-9bf4d4087666
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_research_support
+    - node.type.secure_market_statistics
+id: node.secure_market_statistics.field_research_support
+field_name: field_research_support
+entity_type: node
+bundle: secure_market_statistics
+label: 'Research and support'
+description: 'Choose relevant term(s) from the list of research and support topics for this publication. Hold down Ctrl to choose multiple research and support topics'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    sort:
+      field: _none
+field_type: entity_reference

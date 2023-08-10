@@ -1,0 +1,111 @@
+uuid: fcb1016a-d684-4295-b3d2-00a6a48116ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.secure_statistics.body
+    - field.field.node.secure_statistics.field_external_publication
+    - field.field.node.secure_statistics.field_published_date
+    - field.field.node.secure_statistics.field_research_support
+    - field.field.node.secure_statistics.field_secure_attachment
+    - field.field.node.secure_statistics.field_site_topics
+    - node.type.secure_statistics
+  module:
+    - content_moderation
+    - path
+    - text
+id: node.secure_statistics.default
+targetEntityType: node
+bundle: secure_statistics
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 121
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  flag:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 15
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 120
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 16
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  url_redirects:
+    weight: 50
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_external_publication: true
+  field_published_date: true
+  field_research_support: true
+  field_secure_attachment: true
+  field_site_topics: true

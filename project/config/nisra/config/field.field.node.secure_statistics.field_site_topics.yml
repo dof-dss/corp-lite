@@ -1,0 +1,23 @@
+uuid: af7fdd3c-268d-4aeb-a0f8-b977f4f3642b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_site_topics
+    - node.type.secure_statistics
+id: node.secure_statistics.field_site_topics
+field_name: field_site_topics
+entity_type: node
+bundle: secure_statistics
+label: Statistics
+description: 'Choose relevant site topic(s) for this publication. Hold down Ctrl to choose multiple site topic'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    sort:
+      field: _none
+field_type: entity_reference

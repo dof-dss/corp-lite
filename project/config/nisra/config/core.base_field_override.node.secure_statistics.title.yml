@@ -1,0 +1,18 @@
+uuid: 9464aa6f-d7b4-4038-8494-1246560777bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.secure_statistics
+id: node.secure_statistics.title
+field_name: title
+entity_type: node
+bundle: secure_statistics
+label: 'Title (Main heading)'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,9 @@
+uuid: 57f66c94-bea9-4969-8cff-4d8201ab20a1
+langcode: en
+status: true
+dependencies: {  }
+id: secure_statistics_supervisor_user
+label: 'secure statistics supervisor user'
+weight: 6
+is_admin: null
+permissions: {  }
