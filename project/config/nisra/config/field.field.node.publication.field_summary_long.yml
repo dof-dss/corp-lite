@@ -1,0 +1,29 @@
+uuid: ed3767f3-6a4e-4dfb-924d-979a2e261275
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_summary_long
+    - filter.format.basic_html
+    - node.type.publication
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - basic_html
+id: node.publication.field_summary_long
+field_name: field_summary_long
+entity_type: node
+bundle: publication
+label: Summary
+description: 'Enter an optional summary for this publication to be displayed on all pages.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+field_type: text_long

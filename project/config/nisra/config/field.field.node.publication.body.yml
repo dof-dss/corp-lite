@@ -4,9 +4,15 @@ status: true
 dependencies:
   config:
     - field.storage.node.body
+    - filter.format.basic_html
     - node.type.publication
   module:
+    - allowed_formats
     - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - basic_html
 _core:
   default_config_hash: Ewj-XjMZlKzpEthT5yHlVq49nUh0pp5dG_q736zu678
 id: node.publication.body
@@ -14,13 +20,14 @@ field_name: body
 entity_type: node
 bundle: publication
 label: Body
-description: ''
+description: 'Use this field for optional additional information. Use ‘Normal’ format, no headings required.'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  display_summary: true
+  display_summary: false
   required_summary: false
-  allowed_formats: {  }
+  allowed_formats:
+    - basic_html
 field_type: text_with_summary

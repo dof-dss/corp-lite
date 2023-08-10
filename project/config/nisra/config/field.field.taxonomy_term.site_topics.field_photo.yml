@@ -1,0 +1,33 @@
+uuid: 93677e12-5ca6-414a-84b6-bee46ee82fa4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_photo
+    - taxonomy.vocabulary.site_topics
+  module:
+    - image
+id: taxonomy_term.site_topics.field_photo
+field_name: field_photo
+entity_type: taxonomy_term
+bundle: site_topics
+label: Icon
+description: 'Upload an icon image to be displayed with this topic.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: ''
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: false
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image: 0
+field_type: image

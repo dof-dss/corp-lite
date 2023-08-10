@@ -1,0 +1,16 @@
+uuid: a9be4759-74aa-4553-97d3-255a28c417f8
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    parent: 'main-menu:0:'
+name: Chart
+type: easychart
+description: "Create a chart using the world's best web charting tool: Highcharts"
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

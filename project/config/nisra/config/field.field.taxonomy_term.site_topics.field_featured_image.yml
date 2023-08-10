@@ -1,0 +1,33 @@
+uuid: cd8f6319-2184-42ee-8358-9f7a79b9aa11
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_featured_image
+    - taxonomy.vocabulary.site_topics
+  module:
+    - image
+id: taxonomy_term.site_topics.field_featured_image
+field_name: field_featured_image
+entity_type: taxonomy_term
+bundle: site_topics
+label: 'Featured image'
+description: "Upload an image to be featured on the topic page. Images should be a minimum of 320px wide.\r\nNB this image is not used in any topic listings, just on the topic page."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: statistics-images
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: 320x320
+  alt_field: false
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image: 0
+field_type: image

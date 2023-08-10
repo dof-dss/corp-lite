@@ -1,0 +1,23 @@
+uuid: 907ca03f-be47-4015-86d3-25ea58fca1a5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_research_support
+    - node.type.secure_statistics
+id: node.secure_statistics.field_research_support
+field_name: field_research_support
+entity_type: node
+bundle: secure_statistics
+label: 'Research and support'
+description: 'Choose relevant term(s) from the list of research and support topics for this publication. Hold down Ctrl to choose multiple research and support topics'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    sort:
+      field: _none
+field_type: entity_reference
