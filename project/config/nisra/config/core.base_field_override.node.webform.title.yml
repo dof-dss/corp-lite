@@ -1,0 +1,18 @@
+uuid: 7113e29a-207d-4097-80eb-08bf697d0c3d
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.webform
+id: node.webform.title
+field_name: title
+entity_type: node
+bundle: webform
+label: 'Title (Main heading)'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

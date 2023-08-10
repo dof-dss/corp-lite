@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.profile.body
     - field.field.node.profile.field_department
     - field.field.node.profile.field_meta_tags
+    - field.field.node.profile.field_photo
     - field.field.node.profile.field_summary
     - node.type.profile
   module:
@@ -25,6 +26,11 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 101
+    region: content
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
     region: content
   field_department:
     type: string
@@ -54,5 +60,6 @@ content:
     weight: 100
     region: content
 hidden:
+  field_photo: true
   langcode: true
   search_api_excerpt: true

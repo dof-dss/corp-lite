@@ -1,0 +1,9 @@
+uuid: 45ac57f9-7e60-4549-8989-162fc2e3f732
+langcode: en
+status: true
+dependencies: {  }
+id: secure_statistics_author_user
+label: 'secure statistics author user'
+weight: 3
+is_admin: null
+permissions: {  }

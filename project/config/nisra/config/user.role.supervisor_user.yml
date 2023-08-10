@@ -2,9 +2,18 @@ uuid: d1d3c678-aa79-4a4c-86c4-98b16b57f9c0
 langcode: en
 status: true
 dependencies:
+  config:
+    - node.type.application
+    - node.type.article
+    - node.type.consultation
+    - node.type.contact
+    - node.type.news
+    - node.type.profile
+    - node.type.publication
   module:
+    - node
+    - redirect
     - system
-    - toolbar
 _core:
   default_config_hash: GSKFpUySicd58w9jyeILZLfIMj4c0kbTRwyj2uXgpqU
 id: supervisor_user
@@ -13,4 +22,39 @@ weight: 5
 is_admin: null
 permissions:
   - 'access administration pages'
-  - 'access toolbar'
+  - 'administer redirects'
+  - 'create application content'
+  - 'create consultation content'
+  - 'create contact content'
+  - 'create news content'
+  - 'create profile content'
+  - 'create publication content'
+  - 'delete any application content'
+  - 'delete any article content'
+  - 'delete any consultation content'
+  - 'delete any contact content'
+  - 'delete any news content'
+  - 'delete any profile content'
+  - 'delete any publication content'
+  - 'delete own application content'
+  - 'delete own article content'
+  - 'delete own consultation content'
+  - 'delete own contact content'
+  - 'delete own news content'
+  - 'delete own profile content'
+  - 'delete own publication content'
+  - 'edit any application content'
+  - 'edit any article content'
+  - 'edit any consultation content'
+  - 'edit any contact content'
+  - 'edit any news content'
+  - 'edit any profile content'
+  - 'edit any publication content'
+  - 'edit own application content'
+  - 'edit own article content'
+  - 'edit own consultation content'
+  - 'edit own contact content'
+  - 'edit own news content'
+  - 'edit own profile content'
+  - 'edit own publication content'
+  - 'view the administration theme'

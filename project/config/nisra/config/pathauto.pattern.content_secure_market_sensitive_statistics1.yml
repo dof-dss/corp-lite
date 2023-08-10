@@ -1,0 +1,22 @@
+uuid: 9bc1fab5-2f22-4227-a90e-a8bd99f8e217
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: content_secure_market_sensitive_statistics1
+label: 'Content - Secure - market sensitive statistics'
+type: 'canonical_entities:node'
+pattern: 'publications/[node:title]'
+selection_criteria:
+  8f69c9f5-6842-47cc-8733-28fe1287fbba:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 8f69c9f5-6842-47cc-8733-28fe1287fbba
+    context_mapping:
+      node: node
+    bundles:
+      secure_market_statistics: secure_market_statistics
+selection_logic: and
+weight: -5
+relationships: {  }

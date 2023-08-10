@@ -1,0 +1,23 @@
+uuid: bd1c8d6c-fdfe-484d-b3bc-06c4cd1ca2cf
+langcode: und
+status: true
+dependencies:
+  module:
+    - file
+    - node
+id: node.field_secure_attachment
+field_name: field_secure_attachment
+entity_type: node
+type: file
+settings:
+  target_type: file
+  display_field: false
+  display_default: false
+  uri_scheme: private
+module: file
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

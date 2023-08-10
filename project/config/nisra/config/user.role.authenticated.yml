@@ -2,29 +2,21 @@ uuid: 58033478-223b-47a4-8146-585fcf31c134
 langcode: en-gb
 status: true
 dependencies:
-  config:
-    - filter.format.basic_html
   module:
-    - comment
-    - contact
-    - file
-    - filter
-    - search
-    - shortcut
+    - node
+    - path
+    - pathauto
     - system
 _core:
   default_config_hash: oQGHpkWd8dTCqtXiwPreaC_YPiLxTx-4nRh3tB5Y3Ss
 id: authenticated
-label: 'Authenticated user'
+label: 'authenticated user'
 weight: 1
 is_admin: false
 permissions:
-  - 'access comments'
+  - 'access administration pages'
   - 'access content'
-  - 'access shortcuts'
-  - 'access site-wide contact form'
-  - 'delete own files'
-  - 'post comments'
-  - 'search content'
-  - 'skip comment approval'
-  - 'use text format basic_html'
+  - 'create url aliases'
+  - 'notify of path changes'
+  - 'view own unpublished content'
+  - 'view the administration theme'

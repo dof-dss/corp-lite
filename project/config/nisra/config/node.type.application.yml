@@ -8,13 +8,13 @@ third_party_settings:
   menu_ui:
     available_menus:
       - main
-    parent: 'main:'
+    parent: 'main-menu:0:'
 _core:
   default_config_hash: VhpSPh5e7cSjFVhVXt4Eo-BfVowbOzIhjCl5XYkP66E
 name: Application
 type: application
 description: 'Use this content type as a gateway page to launch an external application.'
-help: ''
+help: 'Use this content type as a launch page to link to an external application.'
 new_revision: true
 preview_mode: 1
 display_submitted: false

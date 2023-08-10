@@ -1,0 +1,23 @@
+uuid: 39518b2c-8f96-409f-a067-9a9c23140872
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_youtube_url
+    - node.type.department_management
+  module:
+    - link
+id: node.department_management.field_youtube_url
+field_name: field_youtube_url
+entity_type: node
+bundle: department_management
+label: 'youtube URL'
+description: 'Paste in the youtube URL for the department - remember to insert the link in full, i.e. https://youtube.com/...'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 17
+field_type: link

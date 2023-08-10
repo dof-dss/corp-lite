@@ -1,0 +1,22 @@
+uuid: 715c78bd-1b25-410d-a8cf-d374f49e261e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_additional_info
+    - node.type.application
+  module:
+    - text
+id: node.application.field_additional_info
+field_name: field_additional_info
+entity_type: node
+bundle: application
+label: 'Additional information'
+description: 'Enter some optional additional information about this application.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

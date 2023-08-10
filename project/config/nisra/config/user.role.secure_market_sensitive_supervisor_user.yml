@@ -1,0 +1,9 @@
+uuid: 9675e130-0694-4cd6-82c7-4accb51144f2
+langcode: en
+status: true
+dependencies: {  }
+id: secure_market_sensitive_supervisor_user
+label: 'secure market sensitive supervisor user'
+weight: 7
+is_admin: null
+permissions: {  }

@@ -1,0 +1,14 @@
+uuid: ff732471-d1ad-4f3f-87a0-f056d865afb6
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.secure_statistics_author_user
+  module:
+    - user
+id: user_add_role_action.secure_statistics_author_user
+label: 'Add the secure statistics author user role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: secure_statistics_author_user
