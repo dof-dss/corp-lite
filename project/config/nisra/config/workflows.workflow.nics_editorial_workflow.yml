@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - node.type.application
-    - node.type.consultation
     - node.type.contact
     - node.type.news
     - node.type.profile
@@ -102,7 +101,6 @@ type_settings:
   entity_types:
     node:
       - application
-      - consultation
       - contact
       - news
       - profile
