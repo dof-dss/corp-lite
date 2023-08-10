@@ -1,4 +1,4 @@
-uuid: d1d3c678-aa79-4a4c-86c4-98b16b57f9c0
+uuid: b0b3a753-3c3b-4c3e-8d29-ebc175dab774
 langcode: en
 status: true
 dependencies:
@@ -14,11 +14,9 @@ dependencies:
     - node
     - redirect
     - system
-_core:
-  default_config_hash: GSKFpUySicd58w9jyeILZLfIMj4c0kbTRwyj2uXgpqU
-id: supervisor_user
-label: 'supervisor user'
-weight: 5
+id: editor_user
+label: 'editor user'
+weight: 8
 is_admin: null
 permissions:
   - 'access administration pages'

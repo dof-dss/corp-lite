@@ -1,0 +1,9 @@
+uuid: 83c0049a-c1ed-4a67-b0db-993c78c91c9a
+langcode: en
+status: true
+dependencies: {  }
+id: secure_market_sensitive_author_user
+label: 'secure market sensitive author user'
+weight: 4
+is_admin: null
+permissions: {  }

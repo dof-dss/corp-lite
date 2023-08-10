@@ -1,4 +1,4 @@
-uuid: d1d3c678-aa79-4a4c-86c4-98b16b57f9c0
+uuid: 4c7f7633-343e-4a1a-8a74-c081c4af80f3
 langcode: en
 status: true
 dependencies:
@@ -10,25 +10,49 @@ dependencies:
     - node.type.news
     - node.type.profile
     - node.type.publication
+    - node.type.webform
   module:
+    - block
+    - image
     - node
+    - path
+    - pathauto
     - redirect
     - system
-_core:
-  default_config_hash: GSKFpUySicd58w9jyeILZLfIMj4c0kbTRwyj2uXgpqU
-id: supervisor_user
-label: 'supervisor user'
-weight: 5
+    - taxonomy
+id: admin_user
+label: 'admin user'
+weight: 10
 is_admin: null
 permissions:
   - 'access administration pages'
+  - 'access content overview'
+  - 'access site in maintenance mode'
+  - 'access site reports'
+  - 'access user profiles'
+  - 'administer blocks'
+  - 'administer content types'
+  - 'administer image styles'
+  - 'administer modules'
+  - 'administer nodes'
+  - 'administer pathauto'
+  - 'administer permissions'
   - 'administer redirects'
+  - 'administer site configuration'
+  - 'administer software updates'
+  - 'administer taxonomy'
+  - 'administer themes'
+  - 'administer url aliases'
+  - 'administer users'
+  - 'bypass node access'
   - 'create application content'
+  - 'create article content'
   - 'create consultation content'
   - 'create contact content'
   - 'create news content'
   - 'create profile content'
   - 'create publication content'
+  - 'create webform content'
   - 'delete any application content'
   - 'delete any article content'
   - 'delete any consultation content'
@@ -36,6 +60,7 @@ permissions:
   - 'delete any news content'
   - 'delete any profile content'
   - 'delete any publication content'
+  - 'delete any webform content'
   - 'delete own application content'
   - 'delete own article content'
   - 'delete own consultation content'
@@ -43,6 +68,7 @@ permissions:
   - 'delete own news content'
   - 'delete own profile content'
   - 'delete own publication content'
+  - 'delete own webform content'
   - 'edit any application content'
   - 'edit any article content'
   - 'edit any consultation content'
@@ -50,6 +76,7 @@ permissions:
   - 'edit any news content'
   - 'edit any profile content'
   - 'edit any publication content'
+  - 'edit any webform content'
   - 'edit own application content'
   - 'edit own article content'
   - 'edit own consultation content'
@@ -57,4 +84,5 @@ permissions:
   - 'edit own news content'
   - 'edit own profile content'
   - 'edit own publication content'
+  - 'edit own webform content'
   - 'view the administration theme'
