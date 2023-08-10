@@ -2,8 +2,6 @@ uuid: 3f16129e-97dd-4af8-b28d-c3730636a740
 langcode: en-gb
 status: true
 dependencies:
-  config:
-    - node.type.article
   module:
     - comment
     - contextual
@@ -27,12 +25,8 @@ permissions:
   - 'access toolbar'
   - 'access tour'
   - 'administer url aliases'
-  - 'create article content'
   - 'create url aliases'
-  - 'delete article revisions'
-  - 'delete own article content'
   - 'delete own files'
-  - 'edit own article content'
   - 'edit own comments'
   - 'revert all revisions'
   - 'view all revisions'
