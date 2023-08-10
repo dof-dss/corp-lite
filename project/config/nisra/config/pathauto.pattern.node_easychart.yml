@@ -1,0 +1,21 @@
+uuid: 3712a7fe-b86c-4e2d-8e13-cb5be6d20c6f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node_easychart
+label: 'Content - Chart'
+type: 'canonical_entities:node'
+pattern: 'charts/[node:title]'
+selection_criteria:
+  -
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: node
+    bundles:
+      easychart: easychart
+selection_logic: and
+weight: 0
+relationships: {  }

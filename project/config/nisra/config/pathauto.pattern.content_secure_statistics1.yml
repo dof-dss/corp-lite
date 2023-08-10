@@ -1,0 +1,22 @@
+uuid: 8b15e36f-2c8b-44ae-9b94-f70737048e6a
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: content_secure_statistics1
+label: 'Content - Secure statistics'
+type: 'canonical_entities:node'
+pattern: 'publications/[node:title]'
+selection_criteria:
+  10d2a68c-83ea-484f-9dca-f26ad1026be9:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 10d2a68c-83ea-484f-9dca-f26ad1026be9
+    context_mapping:
+      node: node
+    bundles:
+      secure_statistics: secure_statistics
+selection_logic: and
+weight: -5
+relationships: {  }

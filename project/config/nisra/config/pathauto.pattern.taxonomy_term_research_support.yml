@@ -1,0 +1,21 @@
+uuid: 3a89a98d-3ff2-441a-8706-0fc844e3ff48
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term_research_support
+label: 'Taxonomy term - Research support'
+type: 'canonical_entities:taxonomy_term'
+pattern: 'support/[term:parent:name]/[term:name]'
+selection_criteria:
+  -
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      research_support: research_support
+selection_logic: and
+weight: 0
+relationships: {  }

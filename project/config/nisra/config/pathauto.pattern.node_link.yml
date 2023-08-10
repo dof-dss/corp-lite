@@ -1,0 +1,21 @@
+uuid: e99f4b04-eb25-4e6e-90b9-8e38eeb97e4b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node_link
+label: 'Content - Link'
+type: 'canonical_entities:node'
+pattern: 'link/[node:title]'
+selection_criteria:
+  -
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: node
+    bundles:
+      link: link
+selection_logic: and
+weight: 0
+relationships: {  }

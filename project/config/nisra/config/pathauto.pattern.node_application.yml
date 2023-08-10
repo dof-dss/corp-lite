@@ -1,0 +1,21 @@
+uuid: 6bb5d1a7-2e71-47bd-8036-1c9898b62291
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node_application
+label: 'Content - Application'
+type: 'canonical_entities:node'
+pattern: 'services/[node:title]'
+selection_criteria:
+  -
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: node
+    bundles:
+      application: application
+selection_logic: and
+weight: 0
+relationships: {  }
