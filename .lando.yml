@@ -76,7 +76,7 @@ tooling:
   phpcs:
     description: Run PHPCS checks against all custom Drupal code
     service: appserver
-    cmd: /app/phpcs.sh "/app" "/app/web/sites /app/web/modules/origins /app/web/modules/custom /app/web/themes/custom /app/web/profiles/corp-lite"
+    cmd: /app/phpcs.sh "/app" "/app/web/sites /app/web/modules/origins /app/web/modules/custom /app/web/themes/custom /app/web/profiles/custom"
   drck:
     description: Run drupal-check for Drupal 9 compatibility e.g. 'lando drck ./'
     service: appserver

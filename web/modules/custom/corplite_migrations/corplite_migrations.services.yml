@@ -1,0 +1,5 @@
+services:
+  corplite_migrations.migrationprocessors:
+    class: 'Drupal\corplite_migrations\MigrationProcessors'
+    arguments: ['@module_handler', '@entity_type.manager']
+

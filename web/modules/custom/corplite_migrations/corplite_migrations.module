@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains corplite_migrations.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function corplite_migrations_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the corplite_migrations module.
+    case 'help.page.corplite_migrations':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Unity File migrations') . '</p>';
+      return $output;
+
+    default:
+  }
+}
