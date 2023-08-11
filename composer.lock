@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "104ac09a0295f0fa3a5bfeea9bb7547e",
+    "content-hash": "a0230d5ff0c6611d92783d3ed5b417f0",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1399,65 +1399,6 @@
                 }
             ],
             "time": "2022-12-14T08:49:07+00:00"
-        },
-        {
-            "name": "dof-dss/nicsdru_corplite_modules",
-            "version": "dev-main",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/dof-dss/nicsdru_corplite_modules.git",
-                "reference": "2c4f9c82b687bc92c0f0106ec401cec4ed63cb66"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/dof-dss/nicsdru_corplite_modules/zipball/2c4f9c82b687bc92c0f0106ec401cec4ed63cb66",
-                "reference": "2c4f9c82b687bc92c0f0106ec401cec4ed63cb66",
-                "shasum": ""
-            },
-            "require": {
-                "composer/installers": "^2.0"
-            },
-            "default-branch": true,
-            "type": "drupal-module",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Custom modules available to all corporate-lite sites",
-            "support": {
-                "issues": "https://github.com/dof-dss/nicsdru_corplite_modules/issues",
-                "source": "https://github.com/dof-dss/nicsdru_corplite_modules/tree/main"
-            },
-            "time": "2023-07-04T09:39:31+00:00"
-        },
-        {
-            "name": "dof-dss/nicsdru_corplite_profile",
-            "version": "1.0.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/dof-dss/nicsdru_corplite_profile.git",
-                "reference": "3d12da4a248b4657830f73626b4083a59a144ce5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/dof-dss/nicsdru_corplite_profile/zipball/3d12da4a248b4657830f73626b4083a59a144ce5",
-                "reference": "3d12da4a248b4657830f73626b4083a59a144ce5",
-                "shasum": ""
-            },
-            "require": {
-                "composer/installers": "^2.0"
-            },
-            "type": "drupal-profile",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Custom install profile used by all corporate-lite sites",
-            "support": {
-                "issues": "https://github.com/dof-dss/nicsdru_corplite_profile/issues",
-                "source": "https://github.com/dof-dss/nicsdru_corplite_profile/tree/1.0.5"
-            },
-            "time": "2023-07-28T13:58:08+00:00"
         },
         {
             "name": "dof-dss/nicsdru_origins_modules",
@@ -18063,7 +18004,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "dof-dss/nicsdru_corplite_modules": 20,
         "dof-dss/nicsdru_origins_modules": 20,
         "drupal/block_field": 5,
         "drupal/clone_nodes": 20,
