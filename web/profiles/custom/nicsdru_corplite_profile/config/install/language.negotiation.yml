@@ -1,0 +1,10 @@
+langcode: en-gb
+session:
+  parameter: language
+url:
+  source: path_prefix
+  prefixes:
+    en-gb: ''
+  domains:
+    en-gb: ''
+selected_langcode: site_default
