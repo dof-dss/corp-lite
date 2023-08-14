@@ -51,7 +51,8 @@ class DocumentEmbed extends ProcessPluginBase {
 
         $query = \Drupal::entityQuery('node')
           ->condition('type', 'publication_page')
-          ->condition('body', basename($match[1], "."), 'CONTAINS');
+          ->condition('body', basename($match[1], "."), 'CONTAINS')
+          ->accessCheck(FALSE);
 
         $nids = $query->execute();
 
