@@ -1406,12 +1406,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dof-dss/nicsdru_origins_modules.git",
-                "reference": "86f2aed0c16898af3dd2c1449fe9a5df20d0486f"
+                "reference": "cb6ef95260861321e0dae24300b87eaa21f9b726"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dof-dss/nicsdru_origins_modules/zipball/86f2aed0c16898af3dd2c1449fe9a5df20d0486f",
-                "reference": "86f2aed0c16898af3dd2c1449fe9a5df20d0486f",
+                "url": "https://api.github.com/repos/dof-dss/nicsdru_origins_modules/zipball/cb6ef95260861321e0dae24300b87eaa21f9b726",
+                "reference": "cb6ef95260861321e0dae24300b87eaa21f9b726",
                 "shasum": ""
             },
             "require": {
@@ -1427,7 +1427,7 @@
                 "issues": "https://github.com/dof-dss/nicsdru_origins_modules/issues",
                 "source": "https://github.com/dof-dss/nicsdru_origins_modules/tree/d10_upgrade"
             },
-            "time": "2023-07-14T15:11:27+00:00"
+            "time": "2023-08-14T12:35:36+00:00"
         },
         {
             "name": "drupal/address",
