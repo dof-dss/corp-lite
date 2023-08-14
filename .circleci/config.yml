@@ -181,7 +181,7 @@ commands:
       - run:
           name: Switch dof-dss packages to HEAD on development branch
           command: |
-            composer require dof-dss/nicsdru_origins_modules:dev-development
+            composer require dof-dss/nicsdru_origins_modules:dev-d10_upgrade --with-all-dependencies
   hosts_keyscan:
     description: "Keyscan for hosts that require SSH access"
     steps:
