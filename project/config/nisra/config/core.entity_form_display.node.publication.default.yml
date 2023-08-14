@@ -164,3 +164,4 @@ content:
 hidden:
   field_external_publication: true
   field_research_support: true
+  field_summary: true

@@ -1,9 +1,9 @@
-uuid: 3cf91a43-4407-4065-af2d-7504d61bba84
+uuid: 6de5f695-e54b-4470-8334-2008aaec861b
 langcode: en
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: F_CbvhXxhM5f_yw68hsRDX9ItpKw_4b-wtP8Vkk_gqc
+  default_config_hash: dpN5nQ9TYAnj96GAoBDjFmac2S7IovDn_VG-py4iflk
 id: text_und_6_0_0
 label: 'Language Undefined Text Field'
 minimum_solr_version: 6.0.0
@@ -57,9 +57,9 @@ field_type:
       filters:
         -
           class: solr.SynonymFilterFactory
+          ignoreCase: true
           synonyms: synonyms_und.txt
           expand: true
-          ignoreCase: true
         -
           class: solr.StopFilterFactory
           ignoreCase: true
@@ -106,7 +106,7 @@ spellcheck_field_type:
 collated_field_type:
   name: collated_und
   class: solr.ICUCollationField
-  locale: null
+  locale: en
   strength: primary
   caseLevel: false
 solr_configs:
@@ -188,8 +188,6 @@ solr_configs:
 text_files:
   stopwords: |
 
-  synonyms: |
-    drupal, durpal
   protwords: |
 
   accents: |
@@ -341,3 +339,5 @@ text_files:
     "\uFB05" => "st"
     # ﬆ => st
     "\uFB06" => "st"
+  synonyms: |
+    drupal, durpal

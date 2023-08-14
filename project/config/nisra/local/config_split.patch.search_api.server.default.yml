@@ -1,0 +1,1 @@
+adding:&#10  backend_config:&#10    connector_config:&#10      host: solr&#10      port: 8983&#10removing:&#10  backend_config:&#10    connector_config:&#10      host: solr.internal&#10      port: 8080&#10

@@ -62,7 +62,11 @@ module:
   metatag_twitter_cards: 0
   metatag_verification: 0
   metatag_views: 0
+  migrate: 0
   migrate_absolute_links: 0
+  migrate_drupal: 0
+  migrate_plus: 0
+  migrate_tools: 0
   moderation_sidebar: 0
   mysql: 0
   nisra_migrations: 0
@@ -93,10 +97,8 @@ module:
   token: 0
   token_filter: 0
   toolbar: 0
-  tour: 0
   twig_tweak: 0
   ultimate_cron: 0
-  update: 0
   user: 0
   views_custom_cache_tag: 0
   webform: 0
@@ -110,8 +112,8 @@ module:
   views: 10
   paragraphs: 11
   nicsdru_corplite_profile: 1000
+  eu_cookie_compliance: 1001
   readonlymode: 9999
-  eu_cookie_compliance: 10000
 theme:
   olivero: 0
   claro: 0
