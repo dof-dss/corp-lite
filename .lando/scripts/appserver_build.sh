@@ -11,6 +11,11 @@ if [ ! -d "/app/web/core" ]; then
   composer install
 fi
 
+if [ ! -d "/app/private" ]; then
+  echo "Creating private files folder"
+  mkdir -p /app/private
+fi
+
 if [ ! -d $DRUPAL_ROOT/sites/default/settings.local.php ]; then
   echo "Creating local Drupal settings and developent services files"
   cp -v /app/.lando/config/settings.local.php $DRUPAL_ROOT/sites/default/
