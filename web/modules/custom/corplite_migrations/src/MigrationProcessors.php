@@ -15,9 +15,9 @@ use Drush\Commands\DrushCommands;
 class MigrationProcessors extends DrushCommands {
 
   /**
-   * Node Storage definition.
+   * Node Storage service object.
    *
-   * @var \Drupal\Core\Entity\EntityStorageInterface
+   * @var \Drupal\node\NodeStorageInterface|\Drupal\Core\Entity\RevisionableStorageInterface
    */
   protected $nodeStorage;
 
