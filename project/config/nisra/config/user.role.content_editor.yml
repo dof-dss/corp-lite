@@ -12,7 +12,6 @@ dependencies:
     - path
     - system
     - toolbar
-    - tour
 _core:
   default_config_hash: IdUKbAfVziXR7es4UJqN66h_TF_fVokIlOsPgIF2pCY
 id: content_editor
@@ -25,7 +24,6 @@ permissions:
   - 'access contextual links'
   - 'access files overview'
   - 'access toolbar'
-  - 'access tour'
   - 'administer url aliases'
   - 'create article content'
   - 'create url aliases'
