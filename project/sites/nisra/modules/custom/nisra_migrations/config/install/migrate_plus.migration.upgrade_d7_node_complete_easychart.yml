@@ -105,7 +105,7 @@ process:
         filtered_html_with_tokens: basic_html
         restricted_html: basic_html
         plain_text: plain_text
-  easychart:
+  field_chart:
     -
       plugin: get
       source: easychart
