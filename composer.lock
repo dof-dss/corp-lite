@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e9aaa0a6dc8b6dfe55085f1182699679",
+    "content-hash": "eb917ab50d3980c76e272c7930afafc2",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1399,6 +1399,35 @@
                 }
             ],
             "time": "2022-12-14T08:49:07+00:00"
+        },
+        {
+            "name": "dof-dss/nicsdru_corplite_profile",
+            "version": "1.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dof-dss/nicsdru_corplite_profile.git",
+                "reference": "c8a7fea028d76fd07da0c43ad2d969603c82d056"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dof-dss/nicsdru_corplite_profile/zipball/c8a7fea028d76fd07da0c43ad2d969603c82d056",
+                "reference": "c8a7fea028d76fd07da0c43ad2d969603c82d056",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "^2.0"
+            },
+            "type": "drupal-profile",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Custom install profile used by all corporate-lite sites",
+            "support": {
+                "issues": "https://github.com/dof-dss/nicsdru_corplite_profile/issues",
+                "source": "https://github.com/dof-dss/nicsdru_corplite_profile/tree/1.0.6"
+            },
+            "time": "2023-08-08T15:35:46+00:00"
         },
         {
             "name": "dof-dss/nicsdru_origins_modules",
@@ -18274,6 +18303,7 @@
         "drupal/ultimate_cron": 15,
         "drupal/webform": 10,
         "dof-dss/maestro-shell": 20,
+        "drupal/easy_install_d10": 20,
         "drupal/masquerade": 5
     },
     "prefer-stable": true,
