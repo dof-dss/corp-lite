@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4971c728c80432c64a2e17c266ee0d9e",
+    "content-hash": "e9aaa0a6dc8b6dfe55085f1182699679",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3296,46 +3296,6 @@
             }
         },
         {
-            "name": "drupal/easy_install_d10",
-            "version": "dev-10.x",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/easy_install_d10.git",
-                "reference": "164ded5c28913b709086dbb1c20927e5e2112690"
-            },
-            "require": {
-                "drupal/core": "^9.3 || ^10"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "branch-alias": {
-                    "dev-10.x": "10.x-dev"
-                },
-                "drupal": {
-                    "version": "8.x-10.x-dev",
-                    "datestamp": "1688720249",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Project has not opted into security advisory coverage!"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "DuttonMa",
-                    "homepage": "https://www.drupal.org/user/2250396"
-                }
-            ],
-            "homepage": "https://www.drupal.org/project/easy_install_d10",
-            "support": {
-                "source": "https://git.drupalcode.org/project/easy_install_d10"
-            }
-        },
-        {
             "name": "drupal/embed",
             "version": "1.6.0",
             "source": {
@@ -5345,77 +5305,6 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/migrate_plus",
                 "issues": "https://www.drupal.org/project/issues/migrate_plus",
-                "slack": "#migrate"
-            }
-        },
-        {
-            "name": "drupal/migrate_tools",
-            "version": "6.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/migrate_tools.git",
-                "reference": "6.0.2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/migrate_tools-6.0.2.zip",
-                "reference": "6.0.2",
-                "shasum": "9d6346306e52a6741f3eb52e32caaa95a2752ad0"
-            },
-            "require": {
-                "drupal/core": ">=9.1",
-                "php": ">=7.4"
-            },
-            "require-dev": {
-                "drupal/migrate_plus": ">=5",
-                "drupal/migrate_source_csv": ">=3",
-                "drush/drush": ">=11"
-            },
-            "suggest": {
-                "drupal/migrate_plus": ">=5",
-                "drush/drush": ">=11"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "6.0.2",
-                    "datestamp": "1688670937",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                },
-                "drush": {
-                    "services": {
-                        "drush.services.yml": ">=9"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Mike Ryan",
-                    "homepage": "https://www.drupal.org/u/mikeryan",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "Lucas Hedding",
-                    "homepage": "https://www.drupal.org/u/heddn",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "mikeryan",
-                    "homepage": "https://www.drupal.org/user/4420"
-                }
-            ],
-            "description": "Tools to assist in developing and running migrations.",
-            "homepage": "http://drupal.org/project/migrate_tools",
-            "support": {
-                "source": "https://git.drupalcode.org/project/migrate_tools",
-                "issues": "https://www.drupal.org/project/issues/migrate_tools",
                 "slack": "#migrate"
             }
         },
@@ -13688,6 +13577,46 @@
             }
         },
         {
+            "name": "drupal/easy_install_d10",
+            "version": "dev-10.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/easy_install_d10.git",
+                "reference": "164ded5c28913b709086dbb1c20927e5e2112690"
+            },
+            "require": {
+                "drupal/core": "^9.3 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-10.x": "10.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-10.x-dev",
+                    "datestamp": "1688720249",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "DuttonMa",
+                    "homepage": "https://www.drupal.org/user/2250396"
+                }
+            ],
+            "homepage": "https://www.drupal.org/project/easy_install_d10",
+            "support": {
+                "source": "https://git.drupalcode.org/project/easy_install_d10"
+            }
+        },
+        {
             "name": "drupal/masquerade",
             "version": "2.0.0-rc4",
             "source": {
@@ -13756,6 +13685,77 @@
                 "source": "https://git.drupal.org/project/masquerade.git",
                 "issues": "https://www.drupal.org/project/issues/masquerade",
                 "irc": "irc://irc.freenode.org/drupal-contribute"
+            }
+        },
+        {
+            "name": "drupal/migrate_tools",
+            "version": "6.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/migrate_tools.git",
+                "reference": "6.0.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/migrate_tools-6.0.2.zip",
+                "reference": "6.0.2",
+                "shasum": "9d6346306e52a6741f3eb52e32caaa95a2752ad0"
+            },
+            "require": {
+                "drupal/core": ">=9.1",
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "drupal/migrate_plus": ">=5",
+                "drupal/migrate_source_csv": ">=3",
+                "drush/drush": ">=11"
+            },
+            "suggest": {
+                "drupal/migrate_plus": ">=5",
+                "drush/drush": ">=11"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "6.0.2",
+                    "datestamp": "1688670937",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "drush": {
+                    "services": {
+                        "drush.services.yml": ">=9"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Mike Ryan",
+                    "homepage": "https://www.drupal.org/u/mikeryan",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Lucas Hedding",
+                    "homepage": "https://www.drupal.org/u/heddn",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "mikeryan",
+                    "homepage": "https://www.drupal.org/user/4420"
+                }
+            ],
+            "description": "Tools to assist in developing and running migrations.",
+            "homepage": "http://drupal.org/project/migrate_tools",
+            "support": {
+                "source": "https://git.drupalcode.org/project/migrate_tools",
+                "issues": "https://www.drupal.org/project/issues/migrate_tools",
+                "slack": "#migrate"
             }
         },
         {
@@ -18264,7 +18264,6 @@
         "drupal/config_readonly": 10,
         "drupal/config_update": 15,
         "drupal/date_facet_drilldown": 20,
-        "drupal/easy_install_d10": 20,
         "drupal/file_delete_ui": 10,
         "drupal/flag": 10,
         "drupal/inline_entity_form": 5,
