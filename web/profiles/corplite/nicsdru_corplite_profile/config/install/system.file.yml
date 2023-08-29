@@ -1,4 +1,0 @@
-langcode: en-gb
-allow_insecure_uploads: false
-default_scheme: public
-temporary_maximum_age: 21600
