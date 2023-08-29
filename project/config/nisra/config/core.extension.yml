@@ -23,6 +23,7 @@ module:
   diff: 0
   dynamic_entity_reference: 0
   dynamic_page_cache: 0
+  easychart: 0
   editor: 0
   embed: 0
   entity_browser: 0
@@ -50,6 +51,7 @@ module:
   jquery_ui_autocomplete: 0
   jquery_ui_menu: 0
   language: 0
+  libraries: 0
   link: 0
   locale: 0
   media: 0
