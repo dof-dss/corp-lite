@@ -1,24 +1,33 @@
-uuid: b168a92a-39c0-4020-b02d-e73ca81368e5
+uuid: 127fe626-0a79-45e9-82c4-8d7a76be7259
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.body
+    - filter.format.basic_html
     - node.type.easychart
   module:
+    - allowed_formats
     - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - basic_html
+_core:
+  default_config_hash: zzhepAm1tkSXk8_Cm0UoW06DZofXrubNTOxF_hw9Bk4
 id: node.easychart.body
 field_name: body
 entity_type: node
 bundle: easychart
-label: 'Chart description'
+label: Body
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
-  display_summary: true
+  display_summary: false
   required_summary: false
-  allowed_formats: {  }
+  allowed_formats:
+    - basic_html
 field_type: text_with_summary
