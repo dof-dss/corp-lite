@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "78d37d125a72a2c6d9b1260deee3bd1c",
+    "content-hash": "5c332a9e7a1181e95ae7416f5d02e8b6",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1037,6 +1037,15 @@
                 "source": "https://github.com/cweagans/composer-patches/tree/1.7.3"
             },
             "time": "2022-12-20T22:53:13+00:00"
+        },
+        {
+            "name": "deaemth/easychart",
+            "version": "3.1.3",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/daemth/easychart/archive/master.zip"
+            },
+            "type": "drupal-library"
         },
         {
             "name": "dflydev/dot-access-data",
@@ -7878,6 +7887,15 @@
                 }
             ],
             "time": "2022-10-12T11:40:33+00:00"
+        },
+        {
+            "name": "highcharts/highcharts",
+            "version": "4.2.7",
+            "dist": {
+                "type": "zip",
+                "url": "https://code.highcharts.com/zips/Highcharts-4.2.7.zip"
+            },
+            "type": "drupal-library"
         },
         {
             "name": "itamair/geophp",
