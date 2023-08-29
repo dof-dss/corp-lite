@@ -8,6 +8,7 @@ dependencies:
     - node.type.easychart
   module:
     - easychart
+    - text
     - user
 _core:
   default_config_hash: fxc9VzsJHVXJGsT-X1GYXMAGlmlaRbRJkIwIa4udAvU
@@ -16,15 +17,21 @@ targetEntityType: node
 bundle: easychart
 mode: default
 content:
-  easychart:
-    weight: 1
+  body:
+    type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 0
+    region: content
+  easychart:
     type: easychart_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
     region: content
 hidden:
-  body: true
   langcode: true
   links: true
   search_api_excerpt: true
