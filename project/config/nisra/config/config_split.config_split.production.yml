@@ -6,6 +6,7 @@ id: production
 label: production
 description: 'Used for the production site only.'
 weight: 0
+stackable: false
 storage: folder
 folder: ../project/config/nisra/production
 module: {  }
