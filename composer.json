@@ -17,10 +17,10 @@
             "type": "package",
             "package": {
                 "name": "highcharts/highcharts",
-                "version": "4.2.7",
+                "version": "10.0.0",
                 "type": "drupal-library",
                 "dist": {
-                    "url": "https://code.highcharts.com/zips/Highcharts-4.2.7.zip",
+                    "url": "https://code.highcharts.com/zips/Highcharts-10.0.0.zip",
                     "type": "zip"
                 }
             }
@@ -118,7 +118,7 @@
         "drupal/webform": "^6.2@beta",
         "drupal/whatlinkshere": "^2.1",
         "drush/drush": "^11",
-        "highcharts/highcharts": "^4.2",
+        "highcharts/highcharts": "^10",
         "platformsh/config-reader": "^2.4"
     },
     "require-dev": {
