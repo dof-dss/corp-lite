@@ -1,0 +1,13 @@
+uuid: 516d847a-4ce8-408f-a868-c2e21a5a7cb7
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: LMSufbFWhDFh2qxdN7c27xQ_np6KoeEal5VxhL1is48
+name: Chart
+type: easychart
+description: "Create a chart using the world's best web charting tool: Highcharts"
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: true
