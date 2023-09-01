@@ -4,12 +4,14 @@ status: true
 dependencies:
   config:
     - field.field.node.contact.body
+    - field.field.node.contact.field_map
     - field.field.node.contact.field_meta_tags
     - field.field.node.contact.field_research_support
     - field.field.node.contact.field_site_topics
     - node.type.contact
   module:
     - metatag
+    - origins_common
     - text
     - user
 _core:
@@ -24,19 +26,27 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 101
+    weight: 0
     region: content
-  content_moderation_control:
-    settings: {  }
+  field_map:
+    type: gmaps_lazy_load_formatter
+    label: above
+    settings:
+      zoom: '10'
+      map_type: roadmap
+      placeholder: empty
+      link_text: ''
+      map_width: '300'
+      map_height: '300'
     third_party_settings: {  }
-    weight: -20
+    weight: 3
     region: content
   field_meta_tags:
     type: metatag_empty_formatter
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 105
+    weight: 2
     region: content
   field_site_topics:
     type: entity_reference_label
@@ -44,14 +54,11 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 103
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 100
+    weight: 1
     region: content
 hidden:
+  content_moderation_control: true
   field_research_support: true
   langcode: true
+  links: true
   search_api_excerpt: true

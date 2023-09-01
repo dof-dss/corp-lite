@@ -105,10 +105,8 @@ process:
         filtered_html_with_tokens: basic_html
         restricted_html: basic_html
         plain_text: plain_text
-  field_map:
-    -
-      plugin: get
-      source: field_map
+  field_map/lng: field_map/0/lon
+  field_map/lat: field_map/0/lat
   field_site_topics:
     -
       plugin: sub_process

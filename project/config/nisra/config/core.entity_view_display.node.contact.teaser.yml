@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.contact.body
+    - field.field.node.contact.field_map
     - field.field.node.contact.field_meta_tags
     - field.field.node.contact.field_research_support
     - field.field.node.contact.field_site_topics
@@ -38,6 +39,7 @@ content:
     weight: 100
     region: content
 hidden:
+  field_map: true
   field_meta_tags: true
   field_research_support: true
   field_site_topics: true
