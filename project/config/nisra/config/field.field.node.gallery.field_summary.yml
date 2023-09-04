@@ -1,0 +1,19 @@
+uuid: 216a8ab4-8e3e-4afa-ad23-8b1f8ec5a2de
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_summary
+    - node.type.gallery
+id: node.gallery.field_summary
+field_name: field_summary
+entity_type: node
+bundle: gallery
+label: Summary
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

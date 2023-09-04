@@ -47,6 +47,15 @@ content:
     third_party_settings: {  }
     weight: 105
     region: content
+  field_photo:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 108
+    region: content
   field_summary:
     type: basic_string
     label: above
@@ -60,6 +69,5 @@ content:
     weight: 100
     region: content
 hidden:
-  field_photo: true
   langcode: true
   search_api_excerpt: true

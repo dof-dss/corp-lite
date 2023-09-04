@@ -1,21 +1,29 @@
-uuid: fa707964-8d01-41ab-b903-478847e1ec1e
+uuid: a49b845a-b652-4d3e-aa11-3ba868dd1b3b
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_link_type
     - node.type.link
-  module:
-    - options
+    - taxonomy.vocabulary.link
 id: node.link.field_link_type
 field_name: field_link_type
 entity_type: node
 bundle: link
 label: 'Link type'
-description: 'Choose a type for this link. The type defines where the link appears on the site home page.'
-required: true
+description: 'Choose a type for this link. The type defines where the link appears on the site homepage.'
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
-field_type: list_string
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      link: link
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

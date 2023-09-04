@@ -125,10 +125,8 @@ process:
     -
       plugin: field_link
       source: field_linkedin_url
-  field_map:
-    -
-      plugin: get
-      source: field_map
+  field_map/lng: field_map/0/lon
+  field_map/lat: field_map/0/lat
   field_twitter_url:
     -
       plugin: field_link
