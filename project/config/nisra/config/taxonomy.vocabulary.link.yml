@@ -1,0 +1,8 @@
+uuid: cdb07c07-318e-4812-b366-4bfe2f9940c7
+langcode: en
+status: true
+dependencies: {  }
+name: 'Link types'
+vid: link
+description: ''
+weight: 0

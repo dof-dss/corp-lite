@@ -1,30 +1,17 @@
-uuid: 406aee9e-6a6d-41c1-a485-eb3247e1ab25
-langcode: und
+uuid: a81dbff2-6ea6-49fa-9a0e-12c8e79ce704
+langcode: en
 status: true
 dependencies:
   module:
     - node
-    - options
+    - taxonomy
 id: node.field_link_type
 field_name: field_link_type
 entity_type: node
-type: list_string
+type: entity_reference
 settings:
-  allowed_values:
-    -
-      value: quicklink
-      label: 'Quick link'
-    -
-      value: corporatelink
-      label: 'Corporate link'
-    -
-      value: interactive
-      label: 'Neighbourhood Statistics'
-    -
-      value: useful
-      label: 'Useful link'
-  allowed_values_function: ''
-module: options
+  target_type: taxonomy_term
+module: core
 locked: false
 cardinality: 1
 translatable: true
