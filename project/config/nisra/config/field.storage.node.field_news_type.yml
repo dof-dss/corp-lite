@@ -1,26 +1,17 @@
-uuid: 55f3f45e-ca99-4d94-a02c-37694702f355
-langcode: und
+uuid: 62f1fff8-f270-449b-8a49-b041f9e95728
+langcode: en
 status: true
 dependencies:
   module:
     - node
-    - options
-_core:
-  default_config_hash: prar3-cElZrVdLoyFyy9Yb8v3Ox4YxATJi3LeuMkG6s
+    - taxonomy
 id: node.field_news_type
 field_name: field_news_type
 entity_type: node
-type: list_string
+type: entity_reference
 settings:
-  allowed_values:
-    -
-      value: news
-      label: 'News story'
-    -
-      value: pressrelease
-      label: 'Press release'
-  allowed_values_function: ''
-module: options
+  target_type: taxonomy_term
+module: core
 locked: false
 cardinality: 1
 translatable: true

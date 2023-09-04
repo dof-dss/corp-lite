@@ -12,6 +12,7 @@ dependencies:
     - workflows.workflow.nics_editorial_workflow
   module:
     - content_moderation
+    - media_library
     - metatag
     - path
     - text
@@ -53,6 +54,13 @@ content:
     settings:
       sidebar: true
       use_details: true
+    third_party_settings: {  }
+  field_photo:
+    type: media_library_widget
+    weight: 128
+    region: content
+    settings:
+      media_types: {  }
     third_party_settings: {  }
   field_summary:
     type: string_textarea
@@ -130,5 +138,4 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden:
-  field_photo: true
+hidden: {  }
