@@ -12,7 +12,7 @@ dependencies:
     - field.field.node.publication.field_published_date
     - field.field.node.publication.field_research_support
     - field.field.node.publication.field_site_topics
-    - field.field.node.publication.field_summary_long
+    - field.field.node.publication.field_summary
     - node.type.publication
   module:
     - text
@@ -51,6 +51,5 @@ hidden:
   field_research_support: true
   field_site_topics: true
   field_summary: true
-  field_summary_long: true
   langcode: true
   search_api_excerpt: true
