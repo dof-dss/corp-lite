@@ -9,10 +9,12 @@ dependencies:
     - field.field.node.department_management.field_facebook_url
     - field.field.node.department_management.field_flickr_url
     - field.field.node.department_management.field_linkedin_url
+    - field.field.node.department_management.field_map
     - field.field.node.department_management.field_twitter_url
     - field.field.node.department_management.field_youtube_url
     - node.type.department_management
   module:
+    - origins_common
     - text
     - user
 id: node.department_management.default
@@ -26,6 +28,19 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 101
+    region: content
+  field_map:
+    type: gmaps_lazy_load_formatter
+    label: above
+    settings:
+      zoom: '10'
+      map_type: roadmap
+      placeholder: empty
+      link_text: ''
+      map_width: '300'
+      map_height: '300'
+    third_party_settings: {  }
+    weight: 3
     region: content
   links:
     settings: {  }
