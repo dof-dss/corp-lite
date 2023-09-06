@@ -1,0 +1,8 @@
+uuid: 88400c50-cae8-40db-bb80-6c1202ca53f1
+langcode: en
+status: true
+dependencies: {  }
+id: menu-links
+label: Links
+description: 'Links displayed in footer region.'
+locked: false

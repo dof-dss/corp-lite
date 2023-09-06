@@ -1,4 +1,4 @@
-uuid: ac9f60d7-55b5-4591-9fe6-60a79d4947c1
+uuid: da512062-2239-403f-bfd1-ca9c8f7373dc
 langcode: en
 status: true
 dependencies:
@@ -21,7 +21,7 @@ settings:
   handler: 'default:file'
   handler_settings: {  }
   file_directory: statistics
-  file_extensions: 'pdf doc docx xls xlsx xlsm ppt pptx odt ods odp dot csv zip'
-  max_filesize: '30 MB'
+  file_extensions: 'pdf doc docx xls xlsx xlsm ppt pptx odt ods odp dot zip'
+  max_filesize: 30MB
   description_field: false
 field_type: file
