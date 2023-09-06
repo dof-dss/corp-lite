@@ -12,6 +12,7 @@ dependencies:
     - node.type.secure_statistics
   module:
     - content_moderation
+    - file
     - path
     - text
 id: node.secure_statistics.default
@@ -34,6 +35,13 @@ content:
     weight: 10
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_secure_attachment:
+    type: file_generic
+    weight: 122
+    region: content
+    settings:
+      progress_indicator: throbber
     third_party_settings: {  }
   flag:
     weight: 10
@@ -107,5 +115,4 @@ hidden:
   field_external_publication: true
   field_published_date: true
   field_research_support: true
-  field_secure_attachment: true
   field_site_topics: true

@@ -1,0 +1,8 @@
+uuid: f1427efa-20f8-4641-b0a8-20ce992e8348
+langcode: en
+status: true
+dependencies: {  }
+id: menu-footer
+label: Footer
+description: 'Menu displayed at bottom of footer.'
+locked: false

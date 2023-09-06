@@ -158,10 +158,12 @@ process:
           from_format: 'Y-m-d H:i:s'
           to_format: Y-m-d
           source: value
-  field_summary_long:
+  field_summary:
     -
       plugin: get
       source: field_summary
+    -
+      plugin: strip_html_filter
   field_site_topics:
     -
       plugin: sub_process
