@@ -4,8 +4,6 @@ status: true
 dependencies:
   config:
     - node.type.application
-    - node.type.article
-    - node.type.consultation
     - node.type.contact
     - node.type.news
     - node.type.profile
@@ -22,21 +20,16 @@ is_admin: null
 permissions:
   - 'access administration pages'
   - 'create application content'
-  - 'create consultation content'
   - 'create contact content'
   - 'create news content'
   - 'create profile content'
   - 'create publication content'
   - 'edit any application content'
-  - 'edit any article content'
-  - 'edit any consultation content'
   - 'edit any contact content'
   - 'edit any news content'
   - 'edit any profile content'
   - 'edit any publication content'
   - 'edit own application content'
-  - 'edit own article content'
-  - 'edit own consultation content'
   - 'edit own contact content'
   - 'edit own news content'
   - 'edit own profile content'

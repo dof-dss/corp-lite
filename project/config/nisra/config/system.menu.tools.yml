@@ -1,10 +1,10 @@
 uuid: 68013b25-c0e9-4775-958d-0fd97020428d
-langcode: en-gb
+langcode: en
 status: true
 dependencies: {  }
 _core:
   default_config_hash: DoHVVQxkLxqE-pgs0SF6MhMbH9F4niw_giJ40pBsTHA
 id: tools
-label: Tools
-description: 'User tool links, often added by modules'
+label: Navigation
+description: 'The <em>Navigation</em> menu contains links intended for site visitors. Links are added to the <em>Navigation</em> menu automatically by some modules.'
 locked: true

@@ -7,9 +7,21 @@ label: hosted
 description: "Use for any that are 'hosted' and not running locally, apart from production (which has its own split)."
 weight: 0
 stackable: false
-storage: null
+storage: folder
 folder: ../project/config/nisra/hosted
 module:
+  corplite_migrations: 0
+  devel: 0
+  easy_install: 0
+  migrate: 0
+  migrate_absolute_links: 0
+  migrate_drupal: 0
+  migrate_plus: 0
+  migrate_tools: 0
+  nisra_migrations: 0
+  stage_file_proxy: 0
+  update: 0
+  views_ui: 0
   permissions_filter: 0
 theme: {  }
 complete_list: {  }

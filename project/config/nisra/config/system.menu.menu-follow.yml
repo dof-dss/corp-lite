@@ -1,0 +1,8 @@
+uuid: f566082b-2407-4933-875a-fb483440d82f
+langcode: en
+status: true
+dependencies: {  }
+id: menu-follow
+label: Follow
+description: 'Follow NISRA links in footer.'
+locked: false

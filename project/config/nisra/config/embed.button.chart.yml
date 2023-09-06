@@ -1,0 +1,25 @@
+uuid: a9ab3876-cd61-49bd-abb6-d70520a88de4
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.easychart
+  module:
+    - easychart
+    - entity_embed
+    - node
+_core:
+  default_config_hash: 2okplW-aWgAXa88UZQ3PLqLUoidQ6-_IqY9xqjqwHL0
+label: Chart
+id: chart
+type_id: entity
+type_settings:
+  entity_type: node
+  bundles:
+    - easychart
+  display_plugins:
+    - easychart
+  entity_browser: ''
+  entity_browser_settings: null
+icon: {  }
+icon_uuid: 23480b51-67fe-4036-81bd-9cd3206eaff1

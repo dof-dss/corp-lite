@@ -1,6 +1,7 @@
 _core:
   default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc
 module:
+  address: 0
   admin_toolbar: 0
   allowed_formats: 0
   automated_cron: 0
@@ -23,6 +24,7 @@ module:
   diff: 0
   dynamic_entity_reference: 0
   dynamic_page_cache: 0
+  easychart: 0
   editor: 0
   embed: 0
   entity_browser: 0
@@ -38,7 +40,14 @@ module:
   file_delete_ui: 0
   filter: 0
   flag: 0
+  geocoder: 0
+  geocoder_address: 0
+  geocoder_field: 0
   geolocation: 0
+  geolocation_address: 0
+  geolocation_google_maps: 0
+  geolocation_google_static_maps: 0
+  geolocation_search_api: 0
   google_tag: 0
   handy_cache_tags: 0
   help: 0
@@ -50,6 +59,7 @@ module:
   jquery_ui_autocomplete: 0
   jquery_ui_menu: 0
   language: 0
+  libraries: 0
   link: 0
   locale: 0
   media: 0
@@ -88,6 +98,8 @@ module:
   search: 0
   search_api: 0
   search_api_autocomplete: 0
+  search_api_location: 0
+  search_api_location_views: 0
   search_api_solr: 0
   shortcut: 0
   structure_sync: 0

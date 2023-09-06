@@ -25,19 +25,12 @@ process:
     -
       plugin: get
       source: filename
-  ammended_filepath:
-    -
-      plugin: str_replace
-      source: filepath
-      search: sites/../private/nisra
-      replace: sites/private/nisra
   source_full_path:
     -
       plugin: concat
       delimiter: /
       source:
         - constants/source_base_path
-        - ammended_filepath
   uri:
     -
       plugin: file_copy
