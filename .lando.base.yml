@@ -1,5 +1,5 @@
 name: corp_lite_base
-recipe: drupal9
+recipe: drupal10
 config:
   webroot: web
   database: mariadb
