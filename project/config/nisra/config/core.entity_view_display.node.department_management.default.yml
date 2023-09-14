@@ -14,7 +14,6 @@ dependencies:
     - field.field.node.department_management.field_youtube_url
     - node.type.department_management
   module:
-    - origins_common
     - text
     - user
 id: node.department_management.default
@@ -27,33 +26,18 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 101
-    region: content
-  field_map:
-    type: gmaps_lazy_load_formatter
-    label: above
-    settings:
-      zoom: '10'
-      map_type: roadmap
-      placeholder: empty
-      link_text: ''
-      map_width: '300'
-      map_height: '300'
-    third_party_settings: {  }
-    weight: 3
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
 hidden:
+  content_moderation_control: true
   field_access_to_information: true
   field_contact_information: true
   field_facebook_url: true
   field_flickr_url: true
   field_linkedin_url: true
+  field_map: true
   field_twitter_url: true
   field_youtube_url: true
   langcode: true
+  links: true
   search_api_excerpt: true
