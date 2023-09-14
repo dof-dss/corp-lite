@@ -1,0 +1,11 @@
+uuid: 30c48c02-e066-473f-8f01-80be51675f5d
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.easychart
+id: node.easychart
+target_entity_type_id: node
+target_bundle: easychart
+default_langcode: site_default
+language_alterable: false

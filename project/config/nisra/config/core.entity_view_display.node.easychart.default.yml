@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.easychart.body
     - field.field.node.easychart.easychart
+    - field.field.node.easychart.field_meta_tags
     - node.type.easychart
   module:
     - easychart
@@ -22,16 +23,17 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
   easychart:
     type: easychart_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
 hidden:
+  field_meta_tags: true
   langcode: true
   links: true
   search_api_excerpt: true

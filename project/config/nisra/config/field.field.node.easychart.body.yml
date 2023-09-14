@@ -19,7 +19,7 @@ id: node.easychart.body
 field_name: body
 entity_type: node
 bundle: easychart
-label: Body
+label: 'Chart description'
 description: ''
 required: false
 translatable: true
