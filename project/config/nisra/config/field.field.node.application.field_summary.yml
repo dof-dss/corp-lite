@@ -12,7 +12,7 @@ field_name: field_summary
 entity_type: node
 bundle: application
 label: Summary
-description: ''
+description: 'Enter a summary about this application page.'
 required: true
 translatable: false
 default_value: {  }

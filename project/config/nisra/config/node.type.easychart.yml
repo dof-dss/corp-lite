@@ -1,13 +1,30 @@
 uuid: 516d847a-4ce8-408f-a868-c2e21a5a7cb7
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - menu_ui
+    - origins_toc
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  origins_toc:
+    toc_enable: 0
+    toc_title: 'Table of contents'
+    toc_location: ''
+    toc_insert: after
+    toc_source_container: ''
+    toc_element: h2
+    toc_exclusions: ''
+    toc_screen_depth: '1'
+    toc_debug: 0
 _core:
   default_config_hash: LMSufbFWhDFh2qxdN7c27xQ_np6KoeEal5VxhL1is48
 name: Chart
 type: easychart
 description: "Create a chart using the world's best web charting tool: Highcharts"
 help: ''
-new_revision: false
+new_revision: true
 preview_mode: 0
-display_submitted: true
+display_submitted: false
