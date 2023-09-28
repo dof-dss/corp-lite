@@ -12,7 +12,7 @@ entity_type: node
 bundle: profile
 label: Photo
 description: 'Please choose an image to be displayed with this profile item.'
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''

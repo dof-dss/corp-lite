@@ -1,0 +1,22 @@
+uuid: fae6033c-5c30-4ac4-a932-05f71cb55f36
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.profile
+id: node.profile.status
+field_name: status
+entity_type: node
+bundle: profile
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

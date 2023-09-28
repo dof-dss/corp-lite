@@ -12,7 +12,7 @@ entity_type: node
 bundle: link
 label: 'Link type'
 description: 'Choose a type for this link. The type defines where the link appears on the site homepage.'
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''

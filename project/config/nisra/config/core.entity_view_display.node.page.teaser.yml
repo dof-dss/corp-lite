@@ -5,7 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.page.body
-    - field.field.node.page.field_enable_toc
+    - field.field.node.page.field_meta_tags
     - node.type.page
   module:
     - text
@@ -19,16 +19,13 @@ content:
     type: text_summary_or_trimmed
     label: hidden
     settings:
-      trim_length: 600
+      trim_length: 150
     third_party_settings: {  }
-    weight: 101
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
 hidden:
-  field_enable_toc: true
+  content_moderation_control: true
+  field_meta_tags: true
   langcode: true
+  links: true
   search_api_excerpt: true

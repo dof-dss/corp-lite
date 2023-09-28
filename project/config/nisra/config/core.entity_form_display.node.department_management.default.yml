@@ -10,14 +10,17 @@ dependencies:
     - field.field.node.department_management.field_flickr_url
     - field.field.node.department_management.field_linkedin_url
     - field.field.node.department_management.field_map
+    - field.field.node.department_management.field_meta_tags
     - field.field.node.department_management.field_twitter_url
     - field.field.node.department_management.field_youtube_url
     - node.type.department_management
+    - workflows.workflow.nics_editorial_workflow
   module:
     - content_moderation
     - field_group
     - geolocation_google_maps
     - link
+    - metatag
     - path
     - text
 third_party_settings:
@@ -420,6 +423,14 @@ content:
         height: 400px
         width: 100%
         gestureHandling: auto
+    third_party_settings: {  }
+  field_meta_tags:
+    type: metatag_firehose
+    weight: 17
+    region: content
+    settings:
+      sidebar: true
+      use_details: true
     third_party_settings: {  }
   field_twitter_url:
     type: link_default
