@@ -1,8 +1,9 @@
-uuid: eb344170-81a0-45cc-9a25-bfa5b7c9d0ab
+uuid: 713d979b-f30b-4f8f-abc2-9702f617a118
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.diff
     - field.field.node.gallery.body
     - field.field.node.gallery.field_gallery_images
     - field.field.node.gallery.field_meta_tags
@@ -10,12 +11,34 @@ dependencies:
     - field.field.node.gallery.field_summary
     - node.type.gallery
   module:
+    - field_group
     - text
     - user
-id: node.gallery.default
+third_party_settings:
+  field_group:
+    group_a:
+      children:
+        - field_site_topics
+      label: 'Additional content details'
+      parent_name: ''
+      region: content
+      weight: 3
+      format_type: html_element
+      format_settings:
+        classes: field-collection
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+id: node.gallery.diff
 targetEntityType: node
 bundle: gallery
-mode: default
+mode: diff
 content:
   body:
     type: text_default
@@ -25,13 +48,20 @@ content:
     weight: 1
     region: content
   field_gallery_images:
-    type: entity_reference_entity_view
+    type: entity_reference_label
     label: hidden
     settings:
-      view_mode: default
-      link: false
+      link: true
     third_party_settings: {  }
     weight: 2
+    region: content
+  field_site_topics:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 4
     region: content
   field_summary:
     type: basic_string
@@ -43,7 +73,6 @@ content:
 hidden:
   content_moderation_control: true
   field_meta_tags: true
-  field_site_topics: true
   langcode: true
   links: true
   search_api_excerpt: true

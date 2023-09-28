@@ -5,13 +5,16 @@ dependencies:
   config:
     - field.field.node.gallery.body
     - field.field.node.gallery.field_gallery_images
+    - field.field.node.gallery.field_meta_tags
     - field.field.node.gallery.field_site_topics
     - field.field.node.gallery.field_summary
     - node.type.gallery
+    - workflows.workflow.nics_editorial_workflow
   module:
     - content_moderation
     - media_library
     - media_library_edit
+    - metatag
     - path
     - text
 id: node.gallery.default
@@ -37,13 +40,21 @@ content:
     third_party_settings: {  }
   field_gallery_images:
     type: media_library_widget
-    weight: 26
+    weight: 14
     region: content
     settings:
       media_types: {  }
     third_party_settings:
       media_library_edit:
         show_edit: '1'
+  field_meta_tags:
+    type: metatag_firehose
+    weight: 15
+    region: content
+    settings:
+      sidebar: true
+      use_details: true
+    third_party_settings: {  }
   field_site_topics:
     type: entity_reference_autocomplete
     weight: 11
