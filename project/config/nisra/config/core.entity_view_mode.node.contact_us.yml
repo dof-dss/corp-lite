@@ -1,0 +1,10 @@
+uuid: 74560ba1-73ab-448a-becd-f2eb2aabb83a
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.contact_us
+label: 'Contact us'
+targetEntityType: node
+cache: true

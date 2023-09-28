@@ -1,9 +1,9 @@
-uuid: 0e925994-5db3-4d63-a888-a9e5db02a28e
+uuid: b864d42b-6e54-49c6-bce2-bb0a722c4338
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.contact_us
     - field.field.node.department_management.body
     - field.field.node.department_management.field_access_to_information
     - field.field.node.department_management.field_contact_information
@@ -18,14 +18,14 @@ dependencies:
   module:
     - text
     - user
-id: node.department_management.teaser
+id: node.department_management.contact_us
 targetEntityType: node
 bundle: department_management
-mode: teaser
+mode: contact_us
 content:
-  field_access_to_information:
+  field_contact_information:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 0
@@ -33,7 +33,7 @@ content:
 hidden:
   body: true
   content_moderation_control: true
-  field_contact_information: true
+  field_access_to_information: true
   field_facebook_url: true
   field_flickr_url: true
   field_linkedin_url: true
