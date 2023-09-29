@@ -1,7 +1,7 @@
 uuid: 60bd19a3-c4ce-426e-b83d-f08386d98145
 langcode: en
 status: true
-dependencies: {  }
+dependencies: { }
 id: upgrade_d7_node_complete_link
 class: Drupal\node\Plugin\migrate\D7NodeTranslation
 field_plugin_method: null
@@ -16,69 +16,53 @@ source:
   node_type: link
 process:
   nid:
-    -
-      plugin: get
+    - plugin: get
       source: tnid
   vid:
-    -
-      plugin: get
+    - plugin: get
       source: vid
   langcode:
-    -
-      plugin: default_value
+    - plugin: default_value
       source: language
       default_value: und
   title:
-    -
-      plugin: get
+    - plugin: get
       source: title
   uid:
-    -
-      plugin: get
+    - plugin: get
       source: node_uid
   status:
-    -
-      plugin: get
+    - plugin: get
       source: status
   created:
-    -
-      plugin: get
+    - plugin: get
       source: created
   changed:
-    -
-      plugin: get
+    - plugin: get
       source: timestamp
   promote:
-    -
-      plugin: get
+    - plugin: get
       source: promote
   sticky:
-    -
-      plugin: get
+    - plugin: get
       source: sticky
   revision_uid:
-    -
-      plugin: get
+    - plugin: get
       source: revision_uid
   revision_log:
-    -
-      plugin: get
+    - plugin: get
       source: log
   revision_timestamp:
-    -
-      plugin: get
+    - plugin: get
       source: timestamp
   content_translation_source:
-    -
-      plugin: get
+    - plugin: get
       source: source_langcode
   comment_node_link/0/status:
-    -
-      plugin: get
+    - plugin: get
       source: comment
   field_link_type:
-    -
-      plugin: static_map
+    - plugin: static_map
       source: field_link_type
       default_value: null
       map:
@@ -87,18 +71,15 @@ process:
         interactive: 511
         useful: 512
   field_link_url:
-    -
-      plugin: field_link
+    - plugin: field_link
       source: field_link_url
   field_site_topics:
-    -
-      plugin: sub_process
+    - plugin: sub_process
       source: field_site_topics
       process:
         target_id: tid
   field_metatag:
-    -
-      plugin: d7_metatag_entities
+    - plugin: d7_metatag_entities
       source: pseudo_metatag_entities
 destination:
   plugin: 'entity_complete:node'

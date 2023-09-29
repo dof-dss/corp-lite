@@ -1,7 +1,7 @@
 uuid: 2e01b0bf-22dd-423b-92b5-58fd2e235df1
 langcode: en
 status: true
-dependencies: {  }
+dependencies: { }
 id: upgrade_d7_search_settings
 class: Drupal\migrate\Plugin\Migration
 field_plugin_method: null
@@ -25,32 +25,25 @@ source:
   source_module: search
 process:
   index/minimum_word_size:
-    -
-      plugin: get
+    - plugin: get
       source: minimum_word_size
   index/overlap_cjk:
-    -
-      plugin: get
+    - plugin: get
       source: overlap_cjk
   index/cron_limit:
-    -
-      plugin: get
+    - plugin: get
       source: search_cron_limit
   index/tag_weights:
-    -
-      plugin: get
+    - plugin: get
       source: search_tag_weights
   and_or_limit:
-    -
-      plugin: get
+    - plugin: get
       source: search_and_or_limit
   logging:
-    -
-      plugin: get
+    - plugin: get
       source: constants/status
   default_page:
-    -
-      plugin: static_map
+    - plugin: static_map
       source:
         - search_default_module
       map:
@@ -60,5 +53,5 @@ destination:
   plugin: config
   config_name: search.settings
 migration_dependencies:
-  required: {  }
-  optional: {  }
+  required: { }
+  optional: { }

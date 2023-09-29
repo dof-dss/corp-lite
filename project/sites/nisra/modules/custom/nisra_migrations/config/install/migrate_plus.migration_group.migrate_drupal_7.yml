@@ -1,7 +1,7 @@
 uuid: f6229825-7372-4484-9f58-789e526a29e3
 langcode: en
 status: true
-dependencies: {  }
+dependencies: { }
 id: migrate_drupal_7
 label: 'Import from Drupal 7'
 description: 'Migrations originally generated from drush migrate-upgrade --configure-only'
