@@ -1,8 +1,9 @@
-uuid: 12a33f30-0536-4a54-8f0d-8ec4ea8e68f3
+uuid: 5810fd81-6f67-4c5c-8cdf-e24821863040
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.search_index
     - field.field.node.secure_market_statistics.body
     - field.field.node.secure_market_statistics.field_external_publication
     - field.field.node.secure_market_statistics.field_meta_tags
@@ -14,56 +15,39 @@ dependencies:
     - field.field.node.secure_market_statistics.field_summary
     - node.type.secure_market_statistics
   module:
-    - file
-    - link
-    - text
+    - datetime
     - user
-id: node.secure_market_statistics.default
+id: node.secure_market_statistics.search_index
 targetEntityType: node
 bundle: secure_market_statistics
-mode: default
+mode: search_index
 content:
-  body:
-    type: text_default
+  field_publication_type:
+    type: entity_reference_label
     label: hidden
-    settings: {  }
+    settings:
+      link: false
     third_party_settings: {  }
     weight: 1
     region: content
-  field_external_publication:
-    type: link
-    label: hidden
+  field_published_date:
+    type: datetime_default
+    label: inline
     settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    weight: 3
-    region: content
-  field_secure_attachment:
-    type: file_default
-    label: hidden
-    settings:
-      use_description_as_link_text: true
-    third_party_settings: {  }
-    weight: 2
-    region: content
-  field_summary:
-    type: basic_string
-    label: hidden
-    settings: {  }
+      timezone_override: ''
+      format_type: medium
     third_party_settings: {  }
     weight: 0
     region: content
 hidden:
+  body: true
   content_moderation_control: true
+  field_external_publication: true
   field_meta_tags: true
-  field_publication_type: true
-  field_published_date: true
   field_research_support: true
+  field_secure_attachment: true
   field_site_topics: true
+  field_summary: true
   langcode: true
   links: true
   search_api_excerpt: true

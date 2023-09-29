@@ -1,0 +1,11 @@
+uuid: 3e96a380-a960-4f41-b2c2-40b11147ca21
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.secure_market_statistics
+id: node.secure_market_statistics
+target_entity_type_id: node
+target_bundle: secure_market_statistics
+default_langcode: site_default
+language_alterable: false
