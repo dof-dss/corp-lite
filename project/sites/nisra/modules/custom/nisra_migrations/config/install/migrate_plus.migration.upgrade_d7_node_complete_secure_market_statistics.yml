@@ -135,6 +135,8 @@ process:
     -
       plugin: get
       source: field_summary
+    -
+      plugin: strip_html_filter
   field_secure_attachment:
     -
       plugin: sub_process
