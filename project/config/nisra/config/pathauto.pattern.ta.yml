@@ -1,10 +1,10 @@
-uuid: 081a39d6-62bd-4fff-a7df-13b22b7a9a7f
+uuid: d3b42278-73f7-4be6-ae4d-d0d4117c3e75
 langcode: en
 status: true
 dependencies:
   module:
     - taxonomy
-id: taxonomy_term_default
+id: ta
 label: 'Taxonomy term - default'
 type: 'canonical_entities:taxonomy_term'
 pattern: '[term:vocabulary]/[term:name]'

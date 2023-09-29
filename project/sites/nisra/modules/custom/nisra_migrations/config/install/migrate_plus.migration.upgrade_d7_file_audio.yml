@@ -1,7 +1,7 @@
 uuid: a38a90e1-fe53-4196-938e-54dc863bb262
 langcode: en
 status: true
-dependencies: {  }
+dependencies: { }
 id: upgrade_d7_file_audio
 class: Drupal\migrate\Plugin\Migration
 field_plugin_method: alterFieldInstanceMigration
@@ -24,12 +24,10 @@ process:
     default_value: "und"
   name: filename
   uid:
-    -
-      plugin: skip_on_empty
+    - plugin: skip_on_empty
       method: process
       source: uid
-    -
-      plugin: migration_lookup
+    - plugin: migration_lookup
       migration: my_users
   status: status
   created: timestamp
@@ -43,5 +41,5 @@ process:
 destination:
   plugin: entity:media
 migration_dependencies:
-  required: {  }
-  optional: {  }
+  required: { }
+  optional: { }

@@ -1,18 +1,18 @@
-uuid: 3e3ee372-8857-46b2-b9be-e35a2f9da345
+uuid: c463176a-038e-4342-ac0b-18cf38f9cc19
 langcode: en
 status: true
 dependencies:
   module:
     - taxonomy
-id: taxonomy_term_site_topics1
+id: taxonomy_term_site_topics
 label: 'Taxonomy term - Site topics'
 type: 'canonical_entities:taxonomy_term'
 pattern: 'statistics/[term:parent:name]/[term:name]'
 selection_criteria:
-  895a7786-0abc-4a75-b4a9-aa1b60a501ad:
+  5bfbb427-f68f-44a4-8aee-ea62e2982c85:
     id: 'entity_bundle:taxonomy_term'
     negate: false
-    uuid: 895a7786-0abc-4a75-b4a9-aa1b60a501ad
+    uuid: 5bfbb427-f68f-44a4-8aee-ea62e2982c85
     context_mapping:
       taxonomy_term: taxonomy_term
     bundles:

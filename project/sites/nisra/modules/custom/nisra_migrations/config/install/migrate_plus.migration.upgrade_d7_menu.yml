@@ -1,7 +1,7 @@
 uuid: 018d4f2f-35fa-4451-8240-f87d22afcc20
 langcode: en
 status: true
-dependencies: {  }
+dependencies: { }
 id: upgrade_d7_menu
 class: Drupal\migrate\Plugin\Migration
 field_plugin_method: null
@@ -15,8 +15,7 @@ source:
   plugin: menu
 process:
   id:
-    -
-      plugin: static_map
+    - plugin: static_map
       bypass: true
       source: menu_name
       map:
@@ -25,20 +24,17 @@ process:
         navigation: tools
         user-menu: account
   label:
-    -
-      plugin: get
+    - plugin: get
       source: title
   description:
-    -
-      plugin: get
+    - plugin: get
       source: description
   langcode:
-    -
-      plugin: default_value
+    - plugin: default_value
       source: language
       default_value: en
 destination:
   plugin: 'entity:menu'
 migration_dependencies:
-  required: {  }
-  optional: {  }
+  required: { }
+  optional: { }

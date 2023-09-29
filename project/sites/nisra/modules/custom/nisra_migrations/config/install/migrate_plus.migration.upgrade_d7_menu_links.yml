@@ -1,7 +1,7 @@
 uuid: 2b60201e-0037-45c8-98d3-296db88dc0af
 langcode: en
 status: true
-dependencies: {  }
+dependencies: { }
 id: upgrade_d7_menu_links
 class: Drupal\migrate\Plugin\Migration
 field_plugin_method: null
@@ -17,95 +17,74 @@ source:
     bundle: menu_link_content
 process:
   skip_translation:
-    -
-      plugin: skip_on_empty
+    - plugin: skip_on_empty
       method: row
       source: skip_translation
   id:
-    -
-      plugin: get
+    - plugin: get
       source: mlid
   langcode:
-    -
-      plugin: default_value
+    - plugin: default_value
       source: language
       default_value: und
   bundle:
-    -
-      plugin: get
+    - plugin: get
       source: constants/bundle
   title:
-    -
-      plugin: get
+    - plugin: get
       source: link_title
   description:
-    -
-      plugin: get
+    - plugin: get
       source: description
   menu_name:
-    -
-      plugin: migration_lookup
+    - plugin: migration_lookup
       migration: upgrade_d7_menu
       source: menu_name
-    -
-      plugin: skip_on_empty
+    - plugin: skip_on_empty
       method: row
   link/uri:
-    -
-      plugin: link_uri
+    - plugin: link_uri
       source: link_path
   link/options:
-    -
-      plugin: get
+    - plugin: get
       source: options
   route:
-    -
-      plugin: route
+    - plugin: route
       source:
         - link_path
         - options
   route_name:
-    -
-      plugin: get
+    - plugin: get
       source: '@route/route_name'
   route_parameters:
-    -
-      plugin: get
+    - plugin: get
       source: '@route/route_parameters'
   url:
-    -
-      plugin: get
+    - plugin: get
       source: '@route/url'
   options:
-    -
-      plugin: get
+    - plugin: get
       source: '@route/options'
   external:
-    -
-      plugin: get
+    - plugin: get
       source: external
   weight:
-    -
-      plugin: get
+    - plugin: get
       source: weight
   expanded:
-    -
-      plugin: get
+    - plugin: get
       source: expanded
   enabled:
-    -
-      plugin: get
+    - plugin: get
       source: enabled
   parent:
-    -
-      plugin: menu_link_parent
+    - plugin: menu_link_parent
       source:
         - plid
         - '@menu_name'
         - parent_link_path
   changed:
-    -
-      plugin: get
+    - plugin: get
       source: updated
 destination:
   plugin: 'entity:menu_link_content'

@@ -1,7 +1,7 @@
 uuid: 79891ea2-a7ae-4649-91a0-5e5492a098e6
 langcode: en
 status: true
-dependencies: {  }
+dependencies: { }
 id: upgrade_d7_file
 class: Drupal\migrate\Plugin\Migration
 field_plugin_method: null
@@ -18,54 +18,43 @@ source:
     source_base_path: 'https://www.nisra.gov.uk/'
 process:
   fid:
-    -
-      plugin: get
+    - plugin: get
       source: fid
   filename:
-    -
-      plugin: get
+    - plugin: get
       source: filename
   source_full_path:
-    -
-      plugin: concat
+    - plugin: concat
       delimiter: /
       source:
         - constants/source_base_path
         - filepath
-    -
-      plugin: urlencode
+    - plugin: urlencode
   uri:
-    -
-      plugin: file_copy
+    - plugin: file_copy
       source:
         - '@source_full_path'
         - uri
   filemime:
-    -
-      plugin: get
+    - plugin: get
       source: filemime
   status:
-    -
-      plugin: get
+    - plugin: get
       source: status
   created:
-    -
-      plugin: get
+    - plugin: get
       source: timestamp
   changed:
-    -
-      plugin: get
+    - plugin: get
       source: timestamp
   uid:
-    -
-      plugin: get
+    - plugin: get
       source: uid
   field_metatag:
-    -
-      plugin: d7_metatag_entities
+    - plugin: d7_metatag_entities
       source: pseudo_metatag_entities
 destination:
   plugin: 'entity:file'
 migration_dependencies:
-  required: {  }
-  optional: {  }
+  required: { }
+  optional: { }
