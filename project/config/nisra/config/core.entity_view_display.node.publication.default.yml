@@ -14,6 +14,7 @@ dependencies:
     - field.field.node.publication.field_summary
     - node.type.publication
   module:
+    - datetime
     - link
     - text
     - user
@@ -29,7 +30,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   field_attachment:
     type: entity_reference_entity_view
@@ -38,7 +39,7 @@ content:
       view_mode: default
       link: false
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   field_external_publication:
     type: link
@@ -50,20 +51,28 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 3
+    weight: 4
+    region: content
+  field_published_date:
+    type: datetime_default
+    label: inline
+    settings:
+      timezone_override: ''
+      format_type: corplite_format
+    third_party_settings: {  }
+    weight: 0
     region: content
   field_summary:
     type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
 hidden:
   content_moderation_control: true
   field_meta_tags: true
   field_publication_type: true
-  field_published_date: true
   field_research_support: true
   field_site_topics: true
   langcode: true
