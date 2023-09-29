@@ -6,10 +6,13 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.secure_statistics.body
     - field.field.node.secure_statistics.field_external_publication
+    - field.field.node.secure_statistics.field_meta_tags
+    - field.field.node.secure_statistics.field_publication_type
     - field.field.node.secure_statistics.field_published_date
     - field.field.node.secure_statistics.field_research_support
     - field.field.node.secure_statistics.field_secure_attachment
     - field.field.node.secure_statistics.field_site_topics
+    - field.field.node.secure_statistics.field_summary
     - node.type.secure_statistics
   module:
     - text
@@ -25,18 +28,18 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
-    weight: 101
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
 hidden:
+  content_moderation_control: true
   field_external_publication: true
+  field_meta_tags: true
+  field_publication_type: true
   field_published_date: true
   field_research_support: true
   field_secure_attachment: true
   field_site_topics: true
+  field_summary: true
   langcode: true
+  links: true
   search_api_excerpt: true
