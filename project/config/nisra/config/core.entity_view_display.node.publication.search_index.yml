@@ -1,8 +1,9 @@
-uuid: edad53a8-1ac9-4cfa-8c4b-614a824a7d00
+uuid: b847e728-b8fc-4ffe-b66f-3ee6a60a37a2
 langcode: en-gb
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.search_index
     - field.field.node.publication.body
     - field.field.node.publication.field_attachment
     - field.field.node.publication.field_external_publication
@@ -14,58 +15,41 @@ dependencies:
     - field.field.node.publication.field_summary
     - node.type.publication
   module:
-    - link
-    - text
+    - datetime
     - user
 _core:
   default_config_hash: j-p1CVIkzRUzAAMoDfDmv0J15405HfHitxCZ_MfSxEo
-id: node.publication.default
+id: node.publication.search_index
 targetEntityType: node
 bundle: publication
-mode: default
+mode: search_index
 content:
-  body:
-    type: text_default
-    label: hidden
-    settings: {  }
+  field_publication_type:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: false
     third_party_settings: {  }
     weight: 1
     region: content
-  field_attachment:
-    type: entity_reference_entity_view
-    label: above
+  field_published_date:
+    type: datetime_default
+    label: inline
     settings:
-      view_mode: default
-      link: false
-    third_party_settings: {  }
-    weight: 2
-    region: content
-  field_external_publication:
-    type: link
-    label: hidden
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    weight: 3
-    region: content
-  field_summary:
-    type: basic_string
-    label: hidden
-    settings: {  }
+      timezone_override: ''
+      format_type: medium
     third_party_settings: {  }
     weight: 0
     region: content
 hidden:
+  body: true
   content_moderation_control: true
+  field_attachment: true
+  field_external_publication: true
   field_meta_tags: true
-  field_publication_type: true
-  field_published_date: true
   field_research_support: true
   field_site_topics: true
+  field_summary: true
   langcode: true
   links: true
   search_api_excerpt: true
