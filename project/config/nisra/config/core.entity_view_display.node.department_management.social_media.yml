@@ -1,0 +1,95 @@
+uuid: 28c9a10a-a1b9-4b94-bdd3-0a4682eba4db
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.social_media
+    - field.field.node.department_management.body
+    - field.field.node.department_management.field_access_to_information
+    - field.field.node.department_management.field_contact_information
+    - field.field.node.department_management.field_facebook_url
+    - field.field.node.department_management.field_flickr_url
+    - field.field.node.department_management.field_linkedin_url
+    - field.field.node.department_management.field_map
+    - field.field.node.department_management.field_meta_tags
+    - field.field.node.department_management.field_twitter_url
+    - field.field.node.department_management.field_youtube_url
+    - node.type.department_management
+  module:
+    - link
+    - user
+id: node.department_management.social_media
+targetEntityType: node
+bundle: department_management
+mode: social_media
+content:
+  field_facebook_url:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_flickr_url:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_linkedin_url:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_twitter_url:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_youtube_url:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  body: true
+  content_moderation_control: true
+  field_access_to_information: true
+  field_contact_information: true
+  field_map: true
+  field_meta_tags: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

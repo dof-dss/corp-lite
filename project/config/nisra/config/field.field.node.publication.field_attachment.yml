@@ -12,7 +12,7 @@ entity_type: node
 bundle: publication
 label: Attachment
 description: 'Choose at least between one and five individual files to attach to this publication.'
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''

@@ -5,7 +5,6 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.application.body
-    - field.field.node.application.field_additional_info
     - field.field.node.application.field_additional_information
     - field.field.node.application.field_link
     - field.field.node.application.field_meta_tags
@@ -28,24 +27,15 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
-    weight: 101
-    region: content
-  content_moderation_control:
-    settings: {  }
-    third_party_settings: {  }
-    weight: -20
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
 hidden:
-  field_additional_info: true
+  content_moderation_control: true
   field_additional_information: true
   field_link: true
   field_meta_tags: true
   field_site_topics: true
   field_summary: true
   langcode: true
+  links: true
   search_api_excerpt: true

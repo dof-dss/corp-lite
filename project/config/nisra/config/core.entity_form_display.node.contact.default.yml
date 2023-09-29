@@ -41,7 +41,7 @@ content:
     third_party_settings: {  }
   field_map:
     type: geolocation_googlegeocoder
-    weight: 26
+    weight: 14
     region: content
     settings:
       auto_client_location: ''
@@ -345,7 +345,7 @@ content:
     third_party_settings: {  }
   field_meta_tags:
     type: metatag_firehose
-    weight: 14
+    weight: 15
     region: content
     settings:
       sidebar: true
@@ -353,23 +353,23 @@ content:
     third_party_settings: {  }
   field_research_support:
     type: entity_reference_autocomplete
-    weight: 11
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_site_topics:
-    type: entity_reference_autocomplete
     weight: 12
     region: content
     settings:
       match_operator: CONTAINS
       match_limit: 10
       size: 60
-      placeholder: ''
+      placeholder: 'Choose some options'
+    third_party_settings: {  }
+  field_site_topics:
+    type: entity_reference_autocomplete
+    weight: 11
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: 'Choose some options'
     third_party_settings: {  }
   flag:
     weight: 4

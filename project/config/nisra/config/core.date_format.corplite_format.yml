@@ -1,0 +1,8 @@
+uuid: ae72be26-55e2-499e-a2d7-7959b1f7ae0b
+langcode: en
+status: true
+dependencies: {  }
+id: corplite_format
+label: 'Corplite format'
+locked: false
+pattern: 'd F Y'

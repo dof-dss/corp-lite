@@ -5,9 +5,17 @@ dependencies:
   config:
     - node.type.application
     - node.type.contact
+    - node.type.department_management
+    - node.type.easychart
+    - node.type.gallery
+    - node.type.link
     - node.type.news
+    - node.type.page
     - node.type.profile
     - node.type.publication
+    - node.type.secure_market_statistics
+    - node.type.secure_statistics
+    - node.type.webform
   module:
     - content_moderation
 _core:
@@ -102,7 +110,15 @@ type_settings:
     node:
       - application
       - contact
+      - department_management
+      - easychart
+      - gallery
+      - link
       - news
+      - page
       - profile
       - publication
+      - secure_market_statistics
+      - secure_statistics
+      - webform
   default_moderation_state: draft

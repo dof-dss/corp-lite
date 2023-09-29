@@ -1,0 +1,22 @@
+uuid: 4564e0a1-4d88-4e15-88b0-c0315e22330a
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.application
+id: node.application.status
+field_name: status
+entity_type: node
+bundle: application
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

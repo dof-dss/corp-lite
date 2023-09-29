@@ -1,0 +1,27 @@
+uuid: ffd1119b-a70a-4f05-a685-2c27b89d9358
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.link.field_link_type
+    - field.field.node.link.field_link_url
+    - field.field.node.link.field_meta_tags
+    - field.field.node.link.field_site_topics
+    - node.type.link
+  module:
+    - user
+id: node.link.teaser
+targetEntityType: node
+bundle: link
+mode: teaser
+content: {  }
+hidden:
+  content_moderation_control: true
+  field_link_type: true
+  field_link_url: true
+  field_meta_tags: true
+  field_site_topics: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

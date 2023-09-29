@@ -15,7 +15,7 @@ dependencies:
     - node.type.publication
   module:
     - datetime
-    - metatag
+    - link
     - text
     - user
 _core:
@@ -30,12 +30,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 101
-    region: content
-  content_moderation_control:
-    settings: {  }
-    third_party_settings: {  }
-    weight: -20
+    weight: 2
     region: content
   field_attachment:
     type: entity_reference_entity_view
@@ -44,54 +39,42 @@ content:
       view_mode: default
       link: false
     third_party_settings: {  }
-    weight: 106
+    weight: 3
     region: content
-  field_meta_tags:
-    type: metatag_empty_formatter
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 105
-    region: content
-  field_publication_type:
-    type: entity_reference_label
-    label: above
+  field_external_publication:
+    type: link
+    label: hidden
     settings:
-      link: true
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
     third_party_settings: {  }
-    weight: 108
+    weight: 4
     region: content
   field_published_date:
     type: datetime_default
-    label: above
+    label: inline
     settings:
       timezone_override: ''
-      format_type: medium
+      format_type: corplite_format
     third_party_settings: {  }
-    weight: 104
-    region: content
-  field_site_topics:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 103
+    weight: 0
     region: content
   field_summary:
     type: basic_string
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 101
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 100
+    weight: 1
     region: content
 hidden:
-  field_external_publication: true
+  content_moderation_control: true
+  field_meta_tags: true
+  field_publication_type: true
   field_research_support: true
+  field_site_topics: true
   langcode: true
+  links: true
   search_api_excerpt: true

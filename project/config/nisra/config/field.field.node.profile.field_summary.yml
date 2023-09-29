@@ -13,7 +13,7 @@ entity_type: node
 bundle: profile
 label: Summary
 description: 'Enter an optional summary for this profile to be displayed on listing pages.'
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''

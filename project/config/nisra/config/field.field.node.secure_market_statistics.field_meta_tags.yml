@@ -1,0 +1,21 @@
+uuid: 896f1662-7770-4cc0-88f7-4ff4419229ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_meta_tags
+    - node.type.secure_market_statistics
+  module:
+    - metatag
+id: node.secure_market_statistics.field_meta_tags
+field_name: field_meta_tags
+entity_type: node
+bundle: secure_market_statistics
+label: 'Meta tags'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag
