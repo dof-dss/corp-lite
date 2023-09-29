@@ -1,7 +1,7 @@
 uuid: d8540a5c-2cb2-48e2-8fc2-261bcf8699f5
 langcode: en
 status: true
-dependencies: {  }
+dependencies: { }
 id: upgrade_d7_url_alias
 class: Drupal\migrate\Plugin\Migration
 field_plugin_method: null
@@ -17,33 +17,27 @@ source:
     slash: /
 process:
   id:
-    -
-      plugin: get
+    - plugin: get
       source: pid
   _path:
-    -
-      plugin: concat
+    - plugin: concat
       source:
         - constants/slash
         - source
   alias:
-    -
-      plugin: concat
+    - plugin: concat
       source:
         - constants/slash
         - alias
   node_translation:
-    -
-      plugin: explode
+    - plugin: explode
       source: source
       delimiter: /
-    -
-      plugin: extract
+    - plugin: extract
       default: INVALID_NID
       index:
         - 1
-    -
-      plugin: migration_lookup
+    - plugin: migration_lookup
       migration:
         - upgrade_d7_node_complete_application
         - upgrade_d7_node_complete_contact
@@ -58,28 +52,24 @@ process:
         - upgrade_d7_node_complete_secure_market_statistics
         - upgrade_d7_node_complete_secure_statistics
         - upgrade_d7_node_complete_webform
-    -
-      plugin: node_complete_node_translation_lookup
+    - plugin: node_complete_node_translation_lookup
   langcode:
-    -
-      plugin: null_coalesce
+    - plugin: null_coalesce
       source:
         - '@node_translation/1'
         - language
   path:
-    -
-      plugin: path_set_translated
+    - plugin: path_set_translated
       source:
         - '@_path'
         - '@node_translation'
   field_metatag:
-    -
-      plugin: d7_metatag_entities
+    - plugin: d7_metatag_entities
       source: pseudo_metatag_entities
 destination:
   plugin: 'entity:path_alias'
 migration_dependencies:
-  required: {  }
+  required: { }
   optional:
     - upgrade_d7_node_complete_application
     - upgrade_d7_node_complete_contact

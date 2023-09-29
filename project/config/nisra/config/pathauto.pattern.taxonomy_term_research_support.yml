@@ -1,22 +1,22 @@
-uuid: 4aebf436-37d1-4c5b-9f93-b78077e11448
+uuid: 79705992-0cd5-4551-8877-3e3a7615b984
 langcode: en
 status: true
 dependencies:
   module:
     - taxonomy
-id: taxonomy_term_research_support1
+id: taxonomy_term_research_support
 label: 'Taxonomy term - Research support'
 type: 'canonical_entities:taxonomy_term'
 pattern: 'support/[term:parent:name]/[term:name]'
 selection_criteria:
-  e9423bc0-aced-4af7-8255-184784ed13f9:
+  64bcbeef-4335-44bb-92b9-67a9d0f9fbaf:
     id: 'entity_bundle:taxonomy_term'
     negate: false
-    uuid: e9423bc0-aced-4af7-8255-184784ed13f9
+    uuid: 64bcbeef-4335-44bb-92b9-67a9d0f9fbaf
     context_mapping:
       taxonomy_term: taxonomy_term
     bundles:
       research_support: research_support
 selection_logic: and
-weight: -5
+weight: 0
 relationships: {  }

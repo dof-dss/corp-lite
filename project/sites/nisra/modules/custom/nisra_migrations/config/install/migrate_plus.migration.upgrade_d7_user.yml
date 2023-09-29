@@ -1,7 +1,7 @@
 uuid: 286fd596-fa52-4bf4-b8f6-656b80092972
 langcode: en
 status: true
-dependencies: {  }
+dependencies: { }
 id: upgrade_d7_user
 class: Drupal\user\Plugin\migrate\User
 field_plugin_method: null
@@ -15,76 +15,59 @@ source:
   plugin: d7_user
 process:
   uid:
-    -
-      plugin: get
+    - plugin: get
       source: uid
   name:
-    -
-      plugin: get
+    - plugin: get
       source: name
   pass:
-    -
-      plugin: get
+    - plugin: get
       source: pass
   mail:
-    -
-      plugin: get
+    - plugin: get
       source: mail
   created:
-    -
-      plugin: get
+    - plugin: get
       source: created
   access:
-    -
-      plugin: get
+    - plugin: get
       source: access
   login:
-    -
-      plugin: get
+    - plugin: get
       source: login
   status:
-    -
-      plugin: get
+    - plugin: get
       source: status
   timezone:
-    -
-      plugin: get
+    - plugin: get
       source: timezone
   langcode:
-    -
-      plugin: user_langcode
+    - plugin: user_langcode
       source: entity_language
       fallback_to_site_default: false
   preferred_langcode:
-    -
-      plugin: user_langcode
+    - plugin: user_langcode
       source: language
       fallback_to_site_default: true
   preferred_admin_langcode:
-    -
-      plugin: user_langcode
+    - plugin: user_langcode
       source: language
       fallback_to_site_default: true
   init:
-    -
-      plugin: get
+    - plugin: get
       source: init
   roles:
-    -
-      plugin: migration_lookup
+    - plugin: migration_lookup
       migration: upgrade_d7_user_role
       source: roles
   user_picture:
-    -
-      plugin: default_value
+    - plugin: default_value
       source: picture
       default_value: null
-    -
-      plugin: migration_lookup
+    - plugin: migration_lookup
       migration: upgrade_d7_file
   field_metatag:
-    -
-      plugin: d7_metatag_entities
+    - plugin: d7_metatag_entities
       source: pseudo_metatag_entities
 destination:
   plugin: 'entity:user'

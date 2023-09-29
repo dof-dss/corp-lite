@@ -1,0 +1,79 @@
+uuid: 47dab643-798e-476b-adbb-294247ab82af
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.site_topics.field_enable_toc
+    - field.field.taxonomy_term.site_topics.field_summary
+    - field.field.taxonomy_term.site_topics.field_term_image
+    - field.field.taxonomy_term.site_topics.field_term_photo
+    - taxonomy.vocabulary.site_topics
+  module:
+    - media_library
+    - path
+    - text
+id: taxonomy_term.site_topics.default
+targetEntityType: taxonomy_term
+bundle: site_topics
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 5
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_summary:
+    type: text_textarea
+    weight: 4
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_term_image:
+    type: media_library_widget
+    weight: 6
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_term_photo:
+    type: media_library_widget
+    weight: 7
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 1
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 3
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden:
+  field_enable_toc: true
