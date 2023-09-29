@@ -1,0 +1,21 @@
+uuid: 13c97720-4f53-41cc-8283-489b20afa3ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_meta_tags
+    - node.type.secure_statistics
+  module:
+    - metatag
+id: node.secure_statistics.field_meta_tags
+field_name: field_meta_tags
+entity_type: node
+bundle: secure_statistics
+label: 'Meta tags'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

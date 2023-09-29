@@ -1,0 +1,19 @@
+uuid: 4fcb6709-49de-4527-9b60-b9b7b686ad4c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_summary
+    - node.type.secure_market_statistics
+id: node.secure_market_statistics.field_summary
+field_name: field_summary
+entity_type: node
+bundle: secure_market_statistics
+label: Summary
+description: 'Enter a summary about this application page.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

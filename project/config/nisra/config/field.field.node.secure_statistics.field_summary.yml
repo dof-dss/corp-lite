@@ -1,0 +1,19 @@
+uuid: b2194355-bd50-4b08-bf81-4d8bd1f08182
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_summary
+    - node.type.secure_statistics
+id: node.secure_statistics.field_summary
+field_name: field_summary
+entity_type: node
+bundle: secure_statistics
+label: Summary
+description: 'Enter a summary about this application page.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

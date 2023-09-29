@@ -1,15 +1,15 @@
-uuid: 4156932d-2c55-4fd2-8dec-ae1e6152babc
+uuid: b9dc0dca-9f49-4dc3-a37a-8cfcd8f8c420
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_publication_type
-    - node.type.publication
+    - node.type.secure_statistics
     - taxonomy.vocabulary.publication_types
-id: node.publication.field_publication_type
+id: node.secure_statistics.field_publication_type
 field_name: field_publication_type
 entity_type: node
-bundle: publication
+bundle: secure_statistics
 label: Type
 description: 'Please choose a type for this publication.'
 required: true

@@ -1,9 +1,9 @@
-uuid: 6a1d3578-f2ae-4ca9-b2a4-9fb420792c09
+uuid: 5594ba2c-f641-4eee-970e-2c64f59fddaf
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.search_index
     - field.field.node.secure_statistics.body
     - field.field.node.secure_statistics.field_external_publication
     - field.field.node.secure_statistics.field_meta_tags
@@ -15,27 +15,35 @@ dependencies:
     - field.field.node.secure_statistics.field_summary
     - node.type.secure_statistics
   module:
-    - text
+    - datetime
     - user
-id: node.secure_statistics.teaser
+id: node.secure_statistics.search_index
 targetEntityType: node
 bundle: secure_statistics
-mode: teaser
+mode: search_index
 content:
-  body:
-    type: text_summary_or_trimmed
-    label: hidden
+  field_publication_type:
+    type: entity_reference_label
+    label: above
     settings:
-      trim_length: 600
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_published_date:
+    type: datetime_default
+    label: inline
+    settings:
+      timezone_override: ''
+      format_type: corplite_format
     third_party_settings: {  }
     weight: 0
     region: content
 hidden:
+  body: true
   content_moderation_control: true
   field_external_publication: true
   field_meta_tags: true
-  field_publication_type: true
-  field_published_date: true
   field_research_support: true
   field_secure_attachment: true
   field_site_topics: true
