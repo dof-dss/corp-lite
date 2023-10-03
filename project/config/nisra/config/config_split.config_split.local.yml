@@ -10,17 +10,18 @@ stackable: false
 storage: folder
 folder: ../project/config/nisra/local
 module:
+  clone_nodes: 0
   corplite_migrations: 0
+  devel: 0
+  easy_install: 0
+  masquerade: 0
   migrate: 0
   migrate_absolute_links: 0
   migrate_drupal: 0
   migrate_plus: 0
   migrate_tools: 0
+  migrate_upgrade: 0
   nisra_migrations: 0
-  clone_nodes: 0
-  devel: 0
-  easy_install: 0
-  masquerade: 0
   stage_file_proxy: 0
   syslog: 0
   update: 0
