@@ -9,7 +9,6 @@ module:
   block_content: 0
   breakpoint: 0
   ckeditor5: 0
-  clone_nodes: 0
   comment: 0
   config: 0
   config_filter: 0
@@ -19,14 +18,11 @@ module:
   content_moderation: 0
   contextual: 0
   cookie_content_blocker: 0
-  corplite_migrations: 0
   date_facet_drilldown: 0
   datetime: 0
-  devel: 0
   diff: 0
   dynamic_entity_reference: 0
   dynamic_page_cache: 0
-  easy_install: 0
   easychart: 0
   editor: 0
   embed: 0
@@ -65,7 +61,6 @@ module:
   libraries: 0
   link: 0
   locale: 0
-  masquerade: 0
   media: 0
   media_library: 0
   media_library_edit: 0
@@ -76,15 +71,8 @@ module:
   metatag_twitter_cards: 0
   metatag_verification: 0
   metatag_views: 0
-  migrate: 0
-  migrate_absolute_links: 0
-  migrate_drupal: 0
-  migrate_plus: 0
-  migrate_tools: 0
-  migrate_upgrade: 0
   moderation_sidebar: 0
   mysql: 0
-  nisra_migrations: 0
   node: 0
   options: 0
   origins_common: 0
@@ -107,9 +95,7 @@ module:
   search_api_location_views: 0
   search_api_solr: 0
   shortcut: 0
-  stage_file_proxy: 0
   structure_sync: 0
-  syslog: 0
   system: 0
   taxonomy: 0
   text: 0
@@ -121,7 +107,6 @@ module:
   update: 0
   user: 0
   views_custom_cache_tag: 0
-  views_ui: 0
   webform: 0
   webform_access: 0
   webform_node: 0
