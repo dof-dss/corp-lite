@@ -18,7 +18,6 @@ module:
   content_moderation: 0
   contextual: 0
   cookie_content_blocker: 0
-  corplite_migrations: 0
   date_facet_drilldown: 0
   datetime: 0
   diff: 0
@@ -72,15 +71,8 @@ module:
   metatag_twitter_cards: 0
   metatag_verification: 0
   metatag_views: 0
-  migrate: 0
-  migrate_absolute_links: 0
-  migrate_drupal: 0
-  migrate_plus: 0
-  migrate_tools: 0
-  migrate_upgrade: 0
   moderation_sidebar: 0
   mysql: 0
-  nisra_migrations: 0
   node: 0
   options: 0
   origins_common: 0
