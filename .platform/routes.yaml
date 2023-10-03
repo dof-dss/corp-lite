@@ -5,14 +5,14 @@
 # original repository.Any changes here will be overwritten when the project #
 # is built.                                                                 #
 #############################################################################
-'https://www.nisra.gov.uk/':
+'https://www.nisra.gov.uk.{default}/':
     type: upstream
     upstream: 'corp_lite:http'
     cache:
         enabled: 'false'
-'https://nisra.gov.uk/':
+'https://nisra.gov.uk.{default}/':
     type: redirect
-    to: 'https://www.nisra.gov.uk/'
+    to: 'https://www.nisra.gov.uk.{default}/'
 'https://www.afbini.gov.uk/':
     type: upstream
     upstream: 'corp_lite:http'
