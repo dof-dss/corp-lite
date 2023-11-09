@@ -43,7 +43,7 @@
         "composer/installers": "^2.0",
         "cweagans/composer-patches": "^1.7",
         "deaemth/easychart": "^3.1",
-        "dof-dss/nicsdru_origins_modules": "dev-d10_upgrade",
+        "dof-dss/nicsdru_origins_modules": "dev-10.x-dev",
         "drupal/address": "^1.12",
         "drupal/admin_toolbar": "^3.4",
         "drupal/allowed_formats": "^2.0",
@@ -160,10 +160,10 @@
             "Maestro\\Shell\\Events\\ComposerEventListener::postPackageUpdate"
         ],
         "post-install-cmd": [
-            "php -r \"copy('robots_custom.txt', 'web/robots.txt');\""
+            "php -r \"copy('web/robots_custom.txt', 'web/robots.txt');\""
         ],
         "post-update-cmd": [
-            "php -r \"copy('robots_custom.txt', 'web/robots.txt');\""
+            "php -r \"copy('web/robots_custom.txt', 'web/robots.txt');\""
         ]
     },
     "extra": {
