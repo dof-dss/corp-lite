@@ -9,6 +9,10 @@ module:
   block_content: 0
   breakpoint: 0
   ckeditor5: 0
+  ckeditor5_allowed_html: 0
+  ckeditor5_premium_features: 0
+  ckeditor5_premium_features_fullscreen: 0
+  ckeditor5_premium_features_import_word: 0
   comment: 0
   config: 0
   config_filter: 0
