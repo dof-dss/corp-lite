@@ -160,10 +160,10 @@
             "Maestro\\Shell\\Events\\ComposerEventListener::postPackageUpdate"
         ],
         "post-install-cmd": [
-            "php -r \"copy('robots_custom.txt', 'web/robots.txt');\""
+            "php -r \"copy('web/robots_custom.txt', 'web/robots.txt');\""
         ],
         "post-update-cmd": [
-            "php -r \"copy('robots_custom.txt', 'web/robots.txt');\""
+            "php -r \"copy('web/robots_custom.txt', 'web/robots.txt');\""
         ]
     },
     "extra": {
