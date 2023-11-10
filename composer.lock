@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e34f06f68476737a8da55e81c841c97b",
+    "content-hash": "626c05f5b0687780608296c8a65c8a6c",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1536,23 +1536,22 @@
         },
         {
             "name": "dof-dss/nicsdru_origins_modules",
-            "version": "dev-10.x-dev",
+            "version": "10.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dof-dss/nicsdru_origins_modules.git",
-                "reference": "2c5163397b832aa8eea28500e136a82098c0eaff"
+                "reference": "229e993a95bda956a5e3fbbb112128659fb8834b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dof-dss/nicsdru_origins_modules/zipball/2c5163397b832aa8eea28500e136a82098c0eaff",
-                "reference": "2c5163397b832aa8eea28500e136a82098c0eaff",
+                "url": "https://api.github.com/repos/dof-dss/nicsdru_origins_modules/zipball/229e993a95bda956a5e3fbbb112128659fb8834b",
+                "reference": "229e993a95bda956a5e3fbbb112128659fb8834b",
                 "shasum": ""
             },
             "require": {
                 "composer/installers": "^2.0",
                 "drupal/core": "^10"
             },
-            "default-branch": true,
             "type": "drupal-module",
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -1561,9 +1560,9 @@
             "description": "Generic modules for DOF-DSS Drupal sites",
             "support": {
                 "issues": "https://github.com/dof-dss/nicsdru_origins_modules/issues",
-                "source": "https://github.com/dof-dss/nicsdru_origins_modules/tree/10.x-dev"
+                "source": "https://github.com/dof-dss/nicsdru_origins_modules/tree/10.1.4"
             },
-            "time": "2023-11-09T14:28:45+00:00"
+            "time": "2023-11-09T14:45:29+00:00"
         },
         {
             "name": "drupal/address",
@@ -18943,7 +18942,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "dof-dss/nicsdru_origins_modules": 20,
         "drupal/block_field": 5,
         "drupal/ckeditor5_allowed_html": 20,
         "drupal/clone_nodes": 20,
