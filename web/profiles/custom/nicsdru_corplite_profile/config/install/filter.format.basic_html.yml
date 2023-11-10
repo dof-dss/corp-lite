@@ -4,14 +4,13 @@ status: true
 dependencies:
   module:
     - ckeditor5_allowed_html
-    - cookie_content_blocker
     - editor
     - entity_embed
     - media
     - origins_common
     - token_filter
 _core:
-  default_config_hash: 6tD6B9PKLTm97UlesnmfIJlr7laTZ6gDPKxBEEngOfo
+  default_config_hash: 3cwb_4MzvunF14nBPfPLRh4rlBcSdV1w7Ld_H7fAGe4
 name: 'Basic HTML'
 format: basic_html
 weight: 0
@@ -58,7 +57,7 @@ filters:
   origins_media_cookie_content_blocker_embed_filter:
     id: origins_media_cookie_content_blocker_embed_filter
     provider: origins_common
-    status: true
+    status: false
     weight: 0
     settings:
       replacement_text: 'Click here to view the video content'
@@ -74,12 +73,6 @@ filters:
     provider: entity_embed
     status: true
     weight: 100
-    settings: {  }
-  cookie_content_blocker_filter:
-    id: cookie_content_blocker_filter
-    provider: cookie_content_blocker
-    status: true
-    weight: 0
     settings: {  }
   filter_allowed:
     id: filter_allowed
