@@ -32,7 +32,9 @@ settings:
       - undo
       - redo
       - '|'
+      - importWord
       - specialCharacters
+      - fullScreen
   plugins:
     ckeditor5_heading:
       enabled_headings:
