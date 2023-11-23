@@ -75,9 +75,9 @@ web:
 relationships:
     redis: 'redis:redis'
     nisra: 'db:nisra'
-    nisra_solr: 'solr:nisra'
+    nisra_solr: 'solr_8_11:nisra'
     afbini: 'db:afbini'
-    afbini_solr: 'solr:afbini'
+    afbini_solr: 'solr_8_11:afbini'
 crons:
     nisra:
         spec: '10 * * * *'
