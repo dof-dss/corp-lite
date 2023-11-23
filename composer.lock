@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9cb28e540c703eafff38e05fe7fbcca0",
+    "content-hash": "a18615ef03aa73d19e7314426d13289d",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -13989,16 +13989,16 @@
         },
         {
             "name": "dof-dss/maestro-shell",
-            "version": "dev-drupal10_changes",
+            "version": "1.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dof-dss/maestro-shell.git",
-                "reference": "db2510da16aee189ed3abe9e58d3741c25e95ac1"
+                "reference": "0cdfea7fe1f334159f8230b2c141f5930c8f804c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dof-dss/maestro-shell/zipball/db2510da16aee189ed3abe9e58d3741c25e95ac1",
-                "reference": "db2510da16aee189ed3abe9e58d3741c25e95ac1",
+                "url": "https://api.github.com/repos/dof-dss/maestro-shell/zipball/0cdfea7fe1f334159f8230b2c141f5930c8f804c",
+                "reference": "0cdfea7fe1f334159f8230b2c141f5930c8f804c",
                 "shasum": ""
             },
             "require": {
@@ -14008,15 +14008,15 @@
                 "romaricdrigon/metayaml": "dev-master",
                 "stecman/symfony-console-completion": "^0.12",
                 "symfony/cache": "^6.3",
-                "symfony/config": "^6.0",
-                "symfony/console": "^6.0",
-                "symfony/dependency-injection": "^6.0",
-                "symfony/event-dispatcher": "^6.0",
-                "symfony/filesystem": "^6.0",
-                "symfony/finder": "^6.0",
+                "symfony/config": "^6.3",
+                "symfony/console": "^6.3",
+                "symfony/dependency-injection": "^6.3",
+                "symfony/event-dispatcher": "^6.3",
+                "symfony/filesystem": "^6.3",
+                "symfony/finder": "^6.3",
                 "symfony/http-client": "^5.4",
-                "symfony/process": "^6.0",
-                "symfony/yaml": "^6.0",
+                "symfony/process": "^6.3",
+                "symfony/yaml": "^6.3",
                 "webflo/drupal-finder": "^1.2"
             },
             "suggest": {
@@ -14041,9 +14041,9 @@
             "description": "Shell for working with Maestro projects.",
             "support": {
                 "issues": "https://github.com/dof-dss/maestro-shell/issues",
-                "source": "https://github.com/dof-dss/maestro-shell/tree/drupal10_changes"
+                "source": "https://github.com/dof-dss/maestro-shell/tree/1.0.8"
             },
-            "time": "2023-06-26T10:17:14+00:00"
+            "time": "2023-11-15T17:25:18+00:00"
         },
         {
             "name": "drupal/coder",
@@ -18958,7 +18958,6 @@
         "drupal/search_api_location": 15,
         "drupal/ultimate_cron": 15,
         "drupal/webform": 10,
-        "dof-dss/maestro-shell": 20,
         "drupal/easy_install_d10": 20,
         "drupal/masquerade": 5
     },
