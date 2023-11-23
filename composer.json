@@ -123,7 +123,7 @@
         "platformsh/config-reader": "^2.4"
     },
     "require-dev": {
-        "dof-dss/maestro-hosting": "^1.0",
+        "dof-dss/maestro-hosting": "dev-corp_lite_solr_upgrade",
         "dof-dss/maestro-shell": "^1.0",
         "drupal/coder": "^8.3",
         "drupal/config_override_warn": "^1.4",

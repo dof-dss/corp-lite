@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a18615ef03aa73d19e7314426d13289d",
+    "content-hash": "7996efe4c876964a999353b6310be71d",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -13949,16 +13949,16 @@
         },
         {
             "name": "dof-dss/maestro-hosting",
-            "version": "1.0.11",
+            "version": "dev-corp_lite_solr_upgrade",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dof-dss/maestro-hosting.git",
-                "reference": "5d5a8ea052885a4a7e46222421b7a7ecf2383fb8"
+                "reference": "25f30bb5e25825ddf110509b0dc0eb19597e0b6d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dof-dss/maestro-hosting/zipball/5d5a8ea052885a4a7e46222421b7a7ecf2383fb8",
-                "reference": "5d5a8ea052885a4a7e46222421b7a7ecf2383fb8",
+                "url": "https://api.github.com/repos/dof-dss/maestro-hosting/zipball/25f30bb5e25825ddf110509b0dc0eb19597e0b6d",
+                "reference": "25f30bb5e25825ddf110509b0dc0eb19597e0b6d",
                 "shasum": ""
             },
             "require": {
@@ -13983,9 +13983,9 @@
             "description": "Maestro hosting resources",
             "support": {
                 "issues": "https://github.com/dof-dss/maestro-hosting/issues",
-                "source": "https://github.com/dof-dss/maestro-hosting/tree/1.0.11"
+                "source": "https://github.com/dof-dss/maestro-hosting/tree/corp_lite_solr_upgrade"
             },
-            "time": "2023-11-22T13:55:07+00:00"
+            "time": "2023-11-23T16:26:01+00:00"
         },
         {
             "name": "dof-dss/maestro-shell",
@@ -18958,6 +18958,7 @@
         "drupal/search_api_location": 15,
         "drupal/ultimate_cron": 15,
         "drupal/webform": 10,
+        "dof-dss/maestro-hosting": 20,
         "drupal/easy_install_d10": 20,
         "drupal/masquerade": 5
     },
