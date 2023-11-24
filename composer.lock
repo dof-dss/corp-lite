@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a641937ff2ef46004e866ed0283f4cec",
+    "content-hash": "7996efe4c876964a999353b6310be71d",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -6326,17 +6326,17 @@
         },
         {
             "name": "drupal/search_api",
-            "version": "1.29.0",
+            "version": "1.30.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/search_api.git",
-                "reference": "8.x-1.29"
+                "reference": "8.x-1.30"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/search_api-8.x-1.29.zip",
-                "reference": "8.x-1.29",
-                "shasum": "4663abbcfe5dfc159ee0886fc6c437e998fc0653"
+                "url": "https://ftp.drupal.org/files/projects/search_api-8.x-1.30.zip",
+                "reference": "8.x-1.30",
+                "shasum": "25bd2cfab6a6332c595fbc8be1c4cfff33a85ce8"
             },
             "require": {
                 "drupal/core": "^9.3 || ^10.0"
@@ -6357,8 +6357,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.29",
-                    "datestamp": "1679910252",
+                    "version": "8.x-1.30",
+                    "datestamp": "1697366291",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -6366,7 +6366,7 @@
                 },
                 "drush": {
                     "services": {
-                        "drush.services.yml": "^9 || ^10"
+                        "drush.services.yml": "^9 || ^10 || ^11"
                     }
                 }
             },
@@ -6398,17 +6398,17 @@
         },
         {
             "name": "drupal/search_api_autocomplete",
-            "version": "1.7.0",
+            "version": "1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/search_api_autocomplete.git",
-                "reference": "8.x-1.7"
+                "reference": "8.x-1.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/search_api_autocomplete-8.x-1.7.zip",
-                "reference": "8.x-1.7",
-                "shasum": "9be80f9187252adbb265402276e9bdce6a5698cd"
+                "url": "https://ftp.drupal.org/files/projects/search_api_autocomplete-8.x-1.8.zip",
+                "reference": "8.x-1.8",
+                "shasum": "80f75774776cee193624fe5731906e35bff160f6"
             },
             "require": {
                 "drupal/core": "^9.2 || ^10",
@@ -6420,8 +6420,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.7",
-                    "datestamp": "1664975494",
+                    "version": "8.x-1.8",
+                    "datestamp": "1697366383",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -6525,19 +6525,20 @@
         },
         {
             "name": "drupal/search_api_solr",
-            "version": "4.2.12",
+            "version": "4.3.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/search_api_solr.git",
-                "reference": "4.2.12"
+                "reference": "4.3.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/search_api_solr-4.2.12.zip",
-                "reference": "4.2.12",
-                "shasum": "3e6c7b22cdd1339e8373f700fdfdec332ea24e02"
+                "url": "https://ftp.drupal.org/files/projects/search_api_solr-4.3.0.zip",
+                "reference": "4.3.0",
+                "shasum": "222e14f9ab49efb519e3a78674606880a2b07416"
             },
             "require": {
+                "composer-runtime-api": ">=2.0",
                 "composer/semver": "^1.0|^3.0",
                 "consolidation/annotated-command": "^2.12|^4.1",
                 "drupal/core": "^9.3 || ^10.0",
@@ -6573,8 +6574,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "4.2.12",
-                    "datestamp": "1687445036",
+                    "version": "4.3.0",
+                    "datestamp": "1696589367",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -13948,16 +13949,16 @@
         },
         {
             "name": "dof-dss/maestro-hosting",
-            "version": "1.0.8",
+            "version": "dev-corp_lite_solr_upgrade",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dof-dss/maestro-hosting.git",
-                "reference": "4466e00b0a2ee39af3457d13b221d273bafff418"
+                "reference": "25f30bb5e25825ddf110509b0dc0eb19597e0b6d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dof-dss/maestro-hosting/zipball/4466e00b0a2ee39af3457d13b221d273bafff418",
-                "reference": "4466e00b0a2ee39af3457d13b221d273bafff418",
+                "url": "https://api.github.com/repos/dof-dss/maestro-hosting/zipball/25f30bb5e25825ddf110509b0dc0eb19597e0b6d",
+                "reference": "25f30bb5e25825ddf110509b0dc0eb19597e0b6d",
                 "shasum": ""
             },
             "require": {
@@ -13982,22 +13983,22 @@
             "description": "Maestro hosting resources",
             "support": {
                 "issues": "https://github.com/dof-dss/maestro-hosting/issues",
-                "source": "https://github.com/dof-dss/maestro-hosting/tree/1.0.8"
+                "source": "https://github.com/dof-dss/maestro-hosting/tree/corp_lite_solr_upgrade"
             },
-            "time": "2023-06-29T13:53:16+00:00"
+            "time": "2023-11-23T16:26:01+00:00"
         },
         {
             "name": "dof-dss/maestro-shell",
-            "version": "dev-drupal10_changes",
+            "version": "1.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dof-dss/maestro-shell.git",
-                "reference": "db2510da16aee189ed3abe9e58d3741c25e95ac1"
+                "reference": "0cdfea7fe1f334159f8230b2c141f5930c8f804c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dof-dss/maestro-shell/zipball/db2510da16aee189ed3abe9e58d3741c25e95ac1",
-                "reference": "db2510da16aee189ed3abe9e58d3741c25e95ac1",
+                "url": "https://api.github.com/repos/dof-dss/maestro-shell/zipball/0cdfea7fe1f334159f8230b2c141f5930c8f804c",
+                "reference": "0cdfea7fe1f334159f8230b2c141f5930c8f804c",
                 "shasum": ""
             },
             "require": {
@@ -14007,15 +14008,15 @@
                 "romaricdrigon/metayaml": "dev-master",
                 "stecman/symfony-console-completion": "^0.12",
                 "symfony/cache": "^6.3",
-                "symfony/config": "^6.0",
-                "symfony/console": "^6.0",
-                "symfony/dependency-injection": "^6.0",
-                "symfony/event-dispatcher": "^6.0",
-                "symfony/filesystem": "^6.0",
-                "symfony/finder": "^6.0",
+                "symfony/config": "^6.3",
+                "symfony/console": "^6.3",
+                "symfony/dependency-injection": "^6.3",
+                "symfony/event-dispatcher": "^6.3",
+                "symfony/filesystem": "^6.3",
+                "symfony/finder": "^6.3",
                 "symfony/http-client": "^5.4",
-                "symfony/process": "^6.0",
-                "symfony/yaml": "^6.0",
+                "symfony/process": "^6.3",
+                "symfony/yaml": "^6.3",
                 "webflo/drupal-finder": "^1.2"
             },
             "suggest": {
@@ -14040,9 +14041,9 @@
             "description": "Shell for working with Maestro projects.",
             "support": {
                 "issues": "https://github.com/dof-dss/maestro-shell/issues",
-                "source": "https://github.com/dof-dss/maestro-shell/tree/drupal10_changes"
+                "source": "https://github.com/dof-dss/maestro-shell/tree/1.0.8"
             },
-            "time": "2023-06-26T10:17:14+00:00"
+            "time": "2023-11-15T17:25:18+00:00"
         },
         {
             "name": "drupal/coder",
@@ -18957,7 +18958,7 @@
         "drupal/search_api_location": 15,
         "drupal/ultimate_cron": 15,
         "drupal/webform": 10,
-        "dof-dss/maestro-shell": 20,
+        "dof-dss/maestro-hosting": 20,
         "drupal/easy_install_d10": 20,
         "drupal/masquerade": 5
     },
