@@ -12,6 +12,8 @@ dependencies:
   module:
     - text
     - user
+_core:
+  default_config_hash: aXykgRx2ye1T9TLwRd0E5zJoTy-mhu2JBrFcwQSSNVU
 id: node.consultation.teaser
 targetEntityType: node
 bundle: consultation
@@ -23,16 +25,14 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
-    weight: 101
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
 hidden:
+  content_moderation_control: true
   field_consultation_dates: true
   field_meta_tags: true
   field_published_date: true
   field_site_topics: true
   langcode: true
+  links: true
+  search_api_excerpt: true
