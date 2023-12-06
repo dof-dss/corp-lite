@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7996efe4c876964a999353b6310be71d",
+    "content-hash": "a18615ef03aa73d19e7314426d13289d",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1536,16 +1536,16 @@
         },
         {
             "name": "dof-dss/nicsdru_origins_modules",
-            "version": "10.1.4",
+            "version": "10.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dof-dss/nicsdru_origins_modules.git",
-                "reference": "229e993a95bda956a5e3fbbb112128659fb8834b"
+                "reference": "bd0002b06849c7daccfeda7be6642e4c2423f83f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dof-dss/nicsdru_origins_modules/zipball/229e993a95bda956a5e3fbbb112128659fb8834b",
-                "reference": "229e993a95bda956a5e3fbbb112128659fb8834b",
+                "url": "https://api.github.com/repos/dof-dss/nicsdru_origins_modules/zipball/bd0002b06849c7daccfeda7be6642e4c2423f83f",
+                "reference": "bd0002b06849c7daccfeda7be6642e4c2423f83f",
                 "shasum": ""
             },
             "require": {
@@ -1560,9 +1560,9 @@
             "description": "Generic modules for DOF-DSS Drupal sites",
             "support": {
                 "issues": "https://github.com/dof-dss/nicsdru_origins_modules/issues",
-                "source": "https://github.com/dof-dss/nicsdru_origins_modules/tree/10.1.4"
+                "source": "https://github.com/dof-dss/nicsdru_origins_modules/tree/10.1.6"
             },
-            "time": "2023-11-09T14:45:29+00:00"
+            "time": "2023-12-04T16:59:19+00:00"
         },
         {
             "name": "drupal/address",
@@ -13949,16 +13949,16 @@
         },
         {
             "name": "dof-dss/maestro-hosting",
-            "version": "dev-corp_lite_solr_upgrade",
+            "version": "1.0.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dof-dss/maestro-hosting.git",
-                "reference": "25f30bb5e25825ddf110509b0dc0eb19597e0b6d"
+                "reference": "f93c2eb12cd5bf56d96cb3b0c9e990b11a11d09f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dof-dss/maestro-hosting/zipball/25f30bb5e25825ddf110509b0dc0eb19597e0b6d",
-                "reference": "25f30bb5e25825ddf110509b0dc0eb19597e0b6d",
+                "url": "https://api.github.com/repos/dof-dss/maestro-hosting/zipball/f93c2eb12cd5bf56d96cb3b0c9e990b11a11d09f",
+                "reference": "f93c2eb12cd5bf56d96cb3b0c9e990b11a11d09f",
                 "shasum": ""
             },
             "require": {
@@ -13983,9 +13983,9 @@
             "description": "Maestro hosting resources",
             "support": {
                 "issues": "https://github.com/dof-dss/maestro-hosting/issues",
-                "source": "https://github.com/dof-dss/maestro-hosting/tree/corp_lite_solr_upgrade"
+                "source": "https://github.com/dof-dss/maestro-hosting/tree/1.0.12"
             },
-            "time": "2023-11-23T16:26:01+00:00"
+            "time": "2023-12-06T11:41:56+00:00"
         },
         {
             "name": "dof-dss/maestro-shell",
@@ -18958,7 +18958,6 @@
         "drupal/search_api_location": 15,
         "drupal/ultimate_cron": 15,
         "drupal/webform": 10,
-        "dof-dss/maestro-hosting": 20,
         "drupal/easy_install_d10": 20,
         "drupal/masquerade": 5
     },
