@@ -1,15 +1,13 @@
-langcode: en-gb
+langcode: en
 status: true
 dependencies:
   config:
-    - node.type.application
-_core:
-  default_config_hash: q5lZPZIAsYVHhdCJ9Td41keFXD-VAi3c5x6vq8ivi1M
-id: node.application.promote
-field_name: promote
+    - node.type.article
+id: node.article.status
+field_name: status
 entity_type: node
-bundle: application
-label: 'Promoted to front page'
+bundle: article
+label: Published
 description: ''
 required: false
 translatable: true

@@ -3,6 +3,8 @@ status: true
 dependencies:
   config:
     - node.type.application
+_core:
+  default_config_hash: 0unkF42F8pWnboOZrOPZsgQRVgsqaepd1RR0m9lFC8A
 id: node.application.title
 field_name: title
 entity_type: node
