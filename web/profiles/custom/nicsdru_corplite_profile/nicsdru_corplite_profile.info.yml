@@ -25,6 +25,8 @@ install:
   - content_moderation
   - contextual
   - cookie_content_blocker
+  - corplite_image_styles
+  - corplite_migrations
   - date_facet_drilldown
   - datetime
   - dblog
