@@ -1,6 +1,6 @@
-name: 'Unity image styles'
+name: 'Corplite image styles'
 type: module
-description: 'Configures generic image styles in unity sites'
+description: 'Configures generic image styles in corplite sites'
 core_version_requirement: ^8.8 || ^9 || ^10
 package: 'Unity'
 dependencies:
