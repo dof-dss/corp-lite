@@ -19,8 +19,8 @@ function corplite_eu_cookie_compliance_install()
   $config_path = NULL;
   if (\Drupal::request()->server->get('SCRIPT_NAME') == '/core/install.php') {
     // We are running inside the install profile,
-    // retrieve module path for the Unity install profile.
-    $config_path = $module_handler->getModule('nicsdru_unity_profile')->getPath();
+    // retrieve module path for the Corplite install profile.
+    $config_path = $module_handler->getModule('corplite_unity_profile')->getPath();
     $config_path .= '/config/install';
   } else {
     // We are running as a stand alone module, use the config sync directory.
