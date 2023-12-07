@@ -4,11 +4,13 @@ dependencies:
   config:
     - field.storage.media.field_media_image
     - media.type.image
+  module:
+    - image
   enforced:
     module:
       - media
-  module:
-    - image
+_core:
+  default_config_hash: uQR3FMX0yPgdY9F5Oy9FOUnZ2Rybe15d3W7R0C8DxjA
 id: media.image.field_media_image
 field_name: field_media_image
 entity_type: media

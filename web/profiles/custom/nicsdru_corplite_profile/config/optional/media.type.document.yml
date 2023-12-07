@@ -1,6 +1,8 @@
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: 2uzYug35JPT1a7GM9zl5nnhpqjWJODEtQMbnNn7PZ2E
 id: document
 label: Document
 description: 'A Document file is written information.'

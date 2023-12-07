@@ -6,6 +6,8 @@ dependencies:
     - media.type.audio
   module:
     - file
+_core:
+  default_config_hash: j12MO6nAssXjXcuDRCgKr8P4vrB8ZsI1OenzdadL3Bs
 id: media.audio.field_media_audio_file
 field_name: field_media_audio_file
 entity_type: media

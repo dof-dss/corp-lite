@@ -68,6 +68,7 @@ install:
   - inline_entity_form
   - inline_form_errors
   - language
+  - layout_builder
   - link
   - locale
   - media

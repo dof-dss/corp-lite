@@ -1,6 +1,8 @@
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: LsqMeW7kiFsiIKZm8DEG0zvMLaBUQFCnh1vAjibtndc
 id: file
 label: File
 description: 'Use local files for reusable media.'
