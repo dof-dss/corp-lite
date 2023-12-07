@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: corplite_medium
+label: 'Corplite medium'
+locked: false
+pattern: 'd F Y'
