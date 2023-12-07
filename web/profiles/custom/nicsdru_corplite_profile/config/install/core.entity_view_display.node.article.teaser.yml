@@ -7,10 +7,13 @@ dependencies:
     - field.field.node.article.field_meta_tags
     - field.field.node.article.field_site_topics
     - field.field.node.article.field_summary
+    - field.field.node.article.field_tags
     - node.type.article
   module:
     - text
     - user
+_core:
+  default_config_hash: d_RkQSpAMGsoDH7N9wgMGPfe2_mlSs0tYBRzp4Qc-3E
 id: node.article.teaser
 targetEntityType: node
 bundle: article
@@ -24,11 +27,12 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  links:
-    weight: 100
-    region: content
 hidden:
+  content_moderation_control: true
   field_meta_tags: true
   field_site_topics: true
   field_summary: true
+  field_tags: true
   langcode: true
+  links: true
+  search_api_excerpt: true

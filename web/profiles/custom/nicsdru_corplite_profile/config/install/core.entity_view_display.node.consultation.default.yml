@@ -10,9 +10,10 @@ dependencies:
     - node.type.consultation
   module:
     - datetime
-    - metatag
     - text
     - user
+_core:
+  default_config_hash: pMK-PLsK-Hza9O-4cGUSC4MAxrK8Tele1g8Dq60Zm6Y
 id: node.consultation.default
 targetEntityType: node
 bundle: consultation
@@ -23,7 +24,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 101
+    weight: 0
     region: content
   field_consultation_dates:
     type: datetime_default
@@ -32,14 +33,7 @@ content:
       timezone_override: ''
       format_type: medium
     third_party_settings: {  }
-    weight: 105
-    region: content
-  field_meta_tags:
-    type: metatag_empty_formatter
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 105
+    weight: 3
     region: content
   field_published_date:
     type: datetime_default
@@ -48,7 +42,7 @@ content:
       timezone_override: ''
       format_type: medium
     third_party_settings: {  }
-    weight: 104
+    weight: 2
     region: content
   field_site_topics:
     type: entity_reference_label
@@ -56,12 +50,11 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 103
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 100
+    weight: 1
     region: content
 hidden:
+  content_moderation_control: true
+  field_meta_tags: true
   langcode: true
+  links: true
+  search_api_excerpt: true

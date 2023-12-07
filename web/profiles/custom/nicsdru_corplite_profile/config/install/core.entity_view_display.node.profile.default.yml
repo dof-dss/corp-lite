@@ -8,9 +8,10 @@ dependencies:
     - field.field.node.profile.field_summary
     - node.type.profile
   module:
-    - metatag
     - text
     - user
+_core:
+  default_config_hash: FT95BIPvLS3oygZ21Q3_H4R6ox6WaQGagH-3LK1v6zY
 id: node.profile.default
 targetEntityType: node
 bundle: profile
@@ -21,7 +22,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 101
+    weight: 0
     region: content
   field_department:
     type: string
@@ -29,26 +30,18 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 102
-    region: content
-  field_meta_tags:
-    type: metatag_empty_formatter
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 105
+    weight: 2
     region: content
   field_summary:
     type: basic_string
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 101
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 100
+    weight: 1
     region: content
 hidden:
+  content_moderation_control: true
+  field_meta_tags: true
   langcode: true
+  links: true
+  search_api_excerpt: true

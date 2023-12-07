@@ -9,9 +9,10 @@ dependencies:
     - field.field.node.application.field_summary
     - node.type.application
   module:
-    - metatag
     - text
     - user
+_core:
+  default_config_hash: N66JU53gKO4eB6kjuA2L9QwhRJf3eVlY7RMADsfSi5w
 id: node.application.default
 targetEntityType: node
 bundle: application
@@ -22,21 +23,14 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 101
+    weight: 0
     region: content
   field_additional_information:
     type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 102
-    region: content
-  field_meta_tags:
-    type: metatag_empty_formatter
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 105
+    weight: 2
     region: content
   field_site_topics:
     type: entity_reference_label
@@ -44,19 +38,18 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 103
+    weight: 3
     region: content
   field_summary:
     type: basic_string
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 101
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 100
+    weight: 1
     region: content
 hidden:
+  content_moderation_control: true
+  field_meta_tags: true
   langcode: true
+  links: true
+  search_api_excerpt: true

@@ -25,9 +25,13 @@ install:
   - content_moderation
   - contextual
   - cookie_content_blocker
+  - unity_eu_cookie_compliance
+  - corplite_image_styles
+  - corplite_migrations
   - date_facet_drilldown
   - datetime
   - dblog
+  - devel
   - diff
   - dynamic_page_cache
   - easy_install
@@ -38,14 +42,25 @@ install:
   - entity_embed
   - entity_reference_revisions
   - eu_cookie_compliance
+  - facets
+  - facets_pretty_paths
+  - facets_summary
   - field
   - field_group
   - field_ui
   - file
   - file_delete_ui
+  - filelog
   - filter
   - flag
+  - geocoder
+  - geocoder_address
+  - geocoder_field
   - geolocation
+  - geolocation_address
+  - geolocation_google_maps
+  - geolocation_google_static_maps
+  - geolocation_search_api
   - google_tag
   - handy_cache_tags
   - help
@@ -54,6 +69,7 @@ install:
   - inline_entity_form
   - inline_form_errors
   - language
+  - layout_builder
   - link
   - locale
   - media
@@ -93,8 +109,11 @@ install:
   - search
   - search_api
   - search_api_autocomplete
+  - search_api_location
+  - search_api_location_views
   - search_api_solr
   - shortcut
+  - stage_file_proxy
   - structure_sync
   - system
   - taxonomy

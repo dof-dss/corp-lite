@@ -13,10 +13,11 @@ dependencies:
     - node.type.news
   module:
     - datetime
-    - metatag
     - options
     - text
     - user
+_core:
+  default_config_hash: mdcFru1RGNlUlNAWoZATR_Jf7mEeKa2cuD_rkWbnzgw
 id: node.news.default
 targetEntityType: node
 bundle: news
@@ -27,28 +28,21 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 101
-    region: content
-  field_meta_tags:
-    type: metatag_empty_formatter
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 105
+    weight: 0
     region: content
   field_news_type:
     type: list_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 105
+    weight: 4
     region: content
   field_notes_to_editors:
     type: basic_string
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 107
+    weight: 6
     region: content
   field_published_date:
     type: datetime_default
@@ -57,7 +51,7 @@ content:
       timezone_override: ''
       format_type: medium
     third_party_settings: {  }
-    weight: 104
+    weight: 3
     region: content
   field_site_topics:
     type: entity_reference_label
@@ -65,14 +59,14 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 103
+    weight: 2
     region: content
   field_summary:
     type: basic_string
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 101
+    weight: 1
     region: content
   field_teaser:
     type: string
@@ -80,12 +74,11 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 106
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 100
+    weight: 5
     region: content
 hidden:
+  content_moderation_control: true
+  field_meta_tags: true
   langcode: true
+  links: true
+  search_api_excerpt: true

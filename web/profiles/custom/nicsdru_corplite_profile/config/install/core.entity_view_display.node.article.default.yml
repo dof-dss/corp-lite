@@ -6,11 +6,13 @@ dependencies:
     - field.field.node.article.field_meta_tags
     - field.field.node.article.field_site_topics
     - field.field.node.article.field_summary
+    - field.field.node.article.field_tags
     - node.type.article
   module:
-    - metatag
     - text
     - user
+_core:
+  default_config_hash: zsOaYMm8AJYQBRiIP04BkyzpTIcGkwlLAtBXOtkljNc
 id: node.article.default
 targetEntityType: node
 bundle: article
@@ -23,32 +25,25 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  field_meta_tags:
-    type: metatag_empty_formatter
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 105
-    region: content
   field_site_topics:
     type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    weight: 103
+    weight: 2
     region: content
   field_summary:
     type: basic_string
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 101
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 100
+    weight: 1
     region: content
 hidden:
+  content_moderation_control: true
+  field_meta_tags: true
+  field_tags: true
   langcode: true
+  links: true
+  search_api_excerpt: true
