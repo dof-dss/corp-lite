@@ -8,6 +8,8 @@ dependencies:
     - image.style.nigov_full_450_x1
     - image.style.nigov_full_620_x1
     - image.style.nigov_full_900_x2
+_core:
+  default_config_hash: 9NFNAG1Bi1l7jJwuY3no8DmE7h6fMdkWqfVbDkODxRg
 id: inline
 label: 'Inline float'
 image_style_mappings:

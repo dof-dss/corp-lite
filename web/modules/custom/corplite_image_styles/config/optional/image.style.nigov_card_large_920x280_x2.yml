@@ -1,6 +1,8 @@
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: FNB05w8CtUfNP4a-fEnJyi-9hAfU7dmW4vOxlee2e9I
 name: nigov_card_large_920x280_x2
 label: 'nigov card large 920x280 (x2)'
 effects:

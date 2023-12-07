@@ -1,6 +1,8 @@
-langcode: en
+ulangcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: RMZznDHP44nv5ETxUiM66qPvXRG_XaoasyU-tmnuM5Q
 name: nigov_landscape_med_900x600_x2
 label: 'nigov landscape med 900x600 (x2)'
 effects:

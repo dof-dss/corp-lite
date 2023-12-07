@@ -1,6 +1,8 @@
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: UV_nMXkH7sjoK3KZP7Zc5IVZ_Xj3dZRiN-tbpVKFgqM
 name: nigov_banner_1880x600_x2
 label: 'nigov banner 1880x600 (x2)'
 effects:

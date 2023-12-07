@@ -1,6 +1,8 @@
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: kF-wUErR2md_ZFi5PyquWkaf9O656brKLgq3G-R3frA
 name: nigov_landscape_thumbnail_150x100_x1
 label: 'nigov landscape thumbnail 150x100 (x1)'
 effects:

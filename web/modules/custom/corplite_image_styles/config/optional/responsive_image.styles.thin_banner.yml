@@ -1,9 +1,11 @@
-langcode: en
+ulangcode: en
 status: true
 dependencies:
   config:
     - image.style.nigov_banner_1880x200_x2
     - image.style.nigov_banner_940x100_x1
+_core:
+  default_config_hash: IFwEyGnK_5gm86R2EHt-s3im2dfWdL5458pysLjMZuE
 id: thin_banner
 label: 'Banner thin'
 image_style_mappings:

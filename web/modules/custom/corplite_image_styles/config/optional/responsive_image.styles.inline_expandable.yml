@@ -7,7 +7,7 @@ dependencies:
     - image.style.nigov_full_620_x1
     - image.style.nigov_full_900_x2
 _core:
-  default_config_hash: agI4gG7p6HrQOJL3yIX15WTi90gdy8Y4vRNOyQzo2mo
+  default_config_hash: jQPw36uOXmVvp1S2lpyAYdeyRDiEnRu0F4PqdoykuLY
 id: inline_expandable
 label: 'Inline float expandable'
 image_style_mappings:

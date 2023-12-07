@@ -1,6 +1,8 @@
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: aCq3eZhu0T0vgSX4_QZuXM8QpMH6IaVJqOR8pNxpMNM
 name: nigov_landscape_xl_1240x826_x2
 label: 'nigov landscape xl 1240x826 (x2)'
 effects:

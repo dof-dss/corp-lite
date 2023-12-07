@@ -4,6 +4,8 @@ dependencies:
   config:
     - image.style.nigov_card_large_460x140_x1
     - image.style.nigov_card_large_920x280_x2
+_core:
+  default_config_hash: cOETHD5DD-awnNCytgo2Oy-oZOI2UZRBjM7w-Vg1Li4
 id: card_large
 label: 'Card large'
 image_style_mappings:

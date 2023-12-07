@@ -1,6 +1,8 @@
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: vjiruZR835QUF1dn5ym399zb7rDu_XDjohEfM7n4eVA
 name: member_small_image_x1
 label: 'Member small image (100 x 133)'
 effects:

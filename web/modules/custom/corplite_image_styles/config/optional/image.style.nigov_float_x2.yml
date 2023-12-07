@@ -1,6 +1,8 @@
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: FvTDbH_weo2UN2N0ujqiufWfiqjblAVqT0xzzhgyLBE
 name: nigov_float_x2
 label: 'nigov float (x2)'
 effects:

@@ -1,6 +1,8 @@
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: pNG8Dhqo2JTcXCeRYnpzc1-q4f9H8_iymxpiq-PI7aE
 name: nigov_card_small_600x300_x2
 label: 'nigov card small 600x300 (x2)'
 effects:

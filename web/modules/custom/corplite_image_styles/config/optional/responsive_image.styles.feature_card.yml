@@ -4,6 +4,8 @@ dependencies:
   config:
     - image.style.nigov_card_small_300x150_x1
     - image.style.nigov_card_small_600x300_x2
+_core:
+  default_config_hash: KxJMfRelcECd6vW7rN-vXpT-peD3CYszbqIhbaaTONY
 id: feature_card
 label: 'Feature card'
 image_style_mappings:

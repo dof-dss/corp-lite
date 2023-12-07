@@ -8,6 +8,8 @@ dependencies:
     - image.style.nigov_full_620_x1
     - image.style.nigov_full_900_x2
     - image.style.nigov_full_940_x1
+_core:
+  default_config_hash: 3eC3FhacrRGUOtD44FnWR59KfaDoPFcWLcuTbQZec4c
 id: landing_full
 label: 'Landing full'
 image_style_mappings:

@@ -1,6 +1,8 @@
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: '-h5yLhimDfTOHWDwtFYkC1Nc5i7fcyrokZiwoK8sNsk'
 name: nigov_full_1240_x2
 label: 'nigov full 1240 (x2)'
 effects:

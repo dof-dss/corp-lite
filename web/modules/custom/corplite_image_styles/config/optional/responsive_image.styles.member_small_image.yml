@@ -4,6 +4,8 @@ dependencies:
   config:
     - image.style.member_small_image_x1
     - image.style.member_small_image_x2
+_core:
+  default_config_hash: jXGQCIafUgY_KdUQLeDjyClCPPHkgEN-tGjcftUXFZY
 id: member_small_image
 label: 'Member small image'
 image_style_mappings:

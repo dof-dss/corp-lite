@@ -1,6 +1,8 @@
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: znASEDqVJa5nUfA6aBN7mzjiDonSOdd_EHwQUp1S1SE
 name: nigov_portrait_xl_1240_x2
 label: 'nigov portrait xl 1240 (x2)'
 effects:

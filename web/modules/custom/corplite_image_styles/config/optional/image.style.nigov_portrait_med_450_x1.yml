@@ -1,6 +1,8 @@
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: UozzAub3pJiXoUNeaJU14uPELY-DyeGKWo4iMBPWyjY
 name: nigov_portrait_med_450_x1
 label: 'nigov portrait med 450 (x1)'
 effects:

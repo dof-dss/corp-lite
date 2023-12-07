@@ -9,7 +9,7 @@ dependencies:
     - image.style.nigov_full_900_x2
     - image.style.nigov_full_940_x1
 _core:
-  default_config_hash: D46spGvqdIQl09ftiVu3fA6Vaaas4uM03PYwGCZeLII
+  default_config_hash: 1ect2-zv0sQj6bnfHbTIAlounTDDbifE6n7DZjaBgw8
 id: inline_xl_expandable
 label: 'Inline full width expandable'
 image_style_mappings:

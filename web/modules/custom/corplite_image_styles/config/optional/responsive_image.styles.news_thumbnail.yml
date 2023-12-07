@@ -4,6 +4,8 @@ dependencies:
   config:
     - image.style.nigov_landscape_thumbnail_150x100_x1
     - image.style.nigov_landscape_thumbnail_300x200_x2
+_core:
+  default_config_hash: 5JtM0S8_PcmlVGaLhouZgPyQxOoPYrFMSzLIHV2P1ms
 id: news_thumbnail
 label: 'News thumbnail'
 image_style_mappings:

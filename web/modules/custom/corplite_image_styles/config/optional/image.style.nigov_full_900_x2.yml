@@ -1,6 +1,8 @@
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: f7045BZRl1D5lk93sZBLGlHBSC2bjmb08-RSj07LHss
 name: nigov_full_900_x2
 label: 'nigov full 900 (x2)'
 effects:

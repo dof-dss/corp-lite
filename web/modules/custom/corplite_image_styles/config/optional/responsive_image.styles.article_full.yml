@@ -8,6 +8,8 @@ dependencies:
     - image.style.nigov_full_620_x1
     - image.style.nigov_full_900_x2
     - image.style.nigov_full_940_x1
+_core:
+  default_config_hash: atgjsY0PkFaZJnlZnntrskGgb99FqD9JZ3fV8HhbQ9A
 id: article_full
 label: 'Article full'
 image_style_mappings:
