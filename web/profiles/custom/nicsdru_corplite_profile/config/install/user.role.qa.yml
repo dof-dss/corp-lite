@@ -1,8 +1,8 @@
 langcode: en-gb
 status: true
 dependencies: {  }
-id: administrator
-label: Administrator
-weight: 2
-is_admin: true
+id: qa
+label: 'Quality Assurance'
+weight: 5
+is_admin: false
 permissions: {  }
