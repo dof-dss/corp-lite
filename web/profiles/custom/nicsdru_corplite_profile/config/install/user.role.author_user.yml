@@ -4,7 +4,6 @@ dependencies:
   config:
     - node.type.article
   module:
-    - comment
     - contextual
     - file
     - node
@@ -12,26 +11,21 @@ dependencies:
     - system
     - toolbar
     - tour
-id: content_editor
-label: 'Content editor'
+id: author_user
+label: 'Author user'
 weight: 2
 is_admin: false
 permissions:
   - 'access administration pages'
   - 'access content overview'
-  - 'access contextual links'
   - 'access files overview'
   - 'access toolbar'
   - 'access tour'
   - 'administer url aliases'
   - 'create article content'
   - 'create url aliases'
-  - 'delete article revisions'
-  - 'delete own article content'
   - 'delete own files'
   - 'edit own article content'
-  - 'edit own comments'
-  - 'revert all revisions'
   - 'view all revisions'
   - 'view own unpublished content'
   - 'view the administration theme'
