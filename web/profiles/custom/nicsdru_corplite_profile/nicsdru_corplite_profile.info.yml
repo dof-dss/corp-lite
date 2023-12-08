@@ -25,7 +25,7 @@ install:
   - content_moderation
   - contextual
   - cookie_content_blocker
-  - unity_eu_cookie_compliance
+  - corplite_eu_cookie_compliance
   - corplite_image_styles
   - corplite_migrations
   - date_facet_drilldown
