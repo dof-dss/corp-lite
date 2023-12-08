@@ -13,11 +13,9 @@ module:
   ckeditor5_premium_features: 0
   ckeditor5_premium_features_fullscreen: 0
   ckeditor5_premium_features_import_word: 0
-  comment: 0
   config: 0
   config_filter: 0
   config_split: 0
-  contact: 0
   content_lock: 0
   content_moderation: 0
   contextual: 0
