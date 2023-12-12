@@ -61,6 +61,7 @@ install:
   - filelog
   - filter
   - flag
+  - flood_control
   - geocoder
   - geocoder_address
   - geocoder_field
@@ -133,12 +134,14 @@ install:
   - structure_sync
   - system
   - taxonomy
+  - telephone_plus
   - text
   - token
   - token_filter
   - toolbar
   - tour
   - twig_tweak
+  - twig_tweak_value
   - ultimate_cron
   - update
   - user
