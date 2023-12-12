@@ -1,0 +1,23 @@
+uuid: 0c756281-4ccb-41d2-8362-9589e6de0e81
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.nigov_card_small_305x150_x1
+    - image.style.nigov_card_small_610x300_x2
+_core:
+  default_config_hash: 3oolZ5q3c1bQfrVQ1uwRG0ViCrZOo-sJHpzvBRYhYJE
+id: card_small
+label: 'Card small'
+image_style_mappings:
+  -
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: 100vw
+      sizes_image_styles:
+        - nigov_card_small_305x150_x1
+        - nigov_card_small_610x300_x2
+breakpoint_group: responsive_image
+fallback_image_style: nigov_card_small_305x150_x1
