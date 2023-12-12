@@ -141,7 +141,7 @@ install:
   - toolbar
   - tour
   - twig_tweak
-  - twig_tweak_value
+  - twig_field_value
   - ultimate_cron
   - update
   - user
