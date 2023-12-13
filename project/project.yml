@@ -22,3 +22,13 @@ sites:
         database: afbini
         status: development
         default: false
+    hse:
+        name: 'Health and Safety Executive'
+        url: hse.gov.uk
+        solr: hse
+        www: true
+        cron_spec: '10 * * * *'
+        cron_cmd: 'cd web/sites/hse ; drush core-cron'
+        database: hse
+        status: development
+        default: false

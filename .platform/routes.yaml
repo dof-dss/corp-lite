@@ -21,6 +21,14 @@
 'https://afbini.gov.uk/':
     type: redirect
     to: 'https://www.afbini.gov.uk/'
+'https://www.hse.gov.uk/':
+    type: upstream
+    upstream: 'corp_lite:http'
+    cache:
+        enabled: 'false'
+'https://hse.gov.uk/':
+    type: redirect
+    to: 'https://www.hse.gov.uk/'
 'https://www.{all}/':
     type: upstream
     upstream: 'corp_lite:http'
