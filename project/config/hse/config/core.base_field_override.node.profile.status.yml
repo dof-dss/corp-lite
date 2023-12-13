@@ -1,0 +1,24 @@
+uuid: b7ad5c56-3049-4c63-84e6-4fc377c3956d
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - node.type.profile
+_core:
+  default_config_hash: BEw7xS9SRab0BaVAdc-aT_kW2joXjxNyOFsrt59qisc
+id: node.profile.status
+field_name: status
+entity_type: node
+bundle: profile
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,12 @@
+uuid: faa38bb2-5eea-4ece-a05e-bb9c6fca07c2
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: nwb6qoa9rMoANBoafYCXfWcndEy4kBZ8sFdDyrblJSs
+id: node.token
+label: Token
+targetEntityType: node
+cache: true

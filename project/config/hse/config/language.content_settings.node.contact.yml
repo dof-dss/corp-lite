@@ -1,0 +1,13 @@
+uuid: 5daef459-20b8-4c9e-bebc-465d0b7679dc
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - node.type.contact
+_core:
+  default_config_hash: 0SWXc7H23C2vsqFuKN0zJddrFdkjlRGm4cvsElEVqgI
+id: node.contact
+target_entity_type_id: node
+target_bundle: contact
+default_langcode: site_default
+language_alterable: false

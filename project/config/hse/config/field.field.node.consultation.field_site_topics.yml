@@ -1,0 +1,31 @@
+uuid: b277dad2-171b-46d5-8316-285aa491b785
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_site_topics
+    - node.type.consultation
+    - taxonomy.vocabulary.site_topics
+_core:
+  default_config_hash: T6lu0LPRi-fpaQzD9SEWLAmaY15xpZo9So7gi6Ud83A
+id: node.consultation.field_site_topics
+field_name: field_site_topics
+entity_type: node
+bundle: consultation
+label: 'Site topics'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      site_topics: site_topics
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

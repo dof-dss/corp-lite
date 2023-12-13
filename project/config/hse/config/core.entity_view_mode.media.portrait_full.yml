@@ -1,0 +1,12 @@
+uuid: 194a7e47-247e-4ce1-9713-aaf9e4f35bdb
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: ZNJZ4B4C0os-lQ4mBwTQp5n8m52qJ3vMqds81Qmr2mk
+id: media.portrait_full
+label: 'Portrait full'
+targetEntityType: media
+cache: true

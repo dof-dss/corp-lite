@@ -1,0 +1,20 @@
+uuid: b0ed68fd-1d00-4d28-96b0-61a067e8e467
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - node.type.contact
+_core:
+  default_config_hash: wrvP5M2nhEbPx8WZ-xpDoEMLu862OCvBUDk1XEb093A
+id: node.contact.title
+field_name: title
+entity_type: node
+bundle: contact
+label: 'Point of contact (Main heading)'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

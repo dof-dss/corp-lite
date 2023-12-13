@@ -1,0 +1,14 @@
+_core:
+  default_config_hash: xNHQR5bN1V96bZQJu9E92f3VdiEMB8CHNkBOVTIlJmI
+langcode: en-gb
+uuid: d3cae488-793f-4ec4-98c4-622354ce11b3
+name: 'Health and Safety Executive'
+mail: test@test.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+default_langcode: en-gb

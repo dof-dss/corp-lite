@@ -1,0 +1,12 @@
+uuid: 2ed29cc4-b037-4193-b19c-d28e58648592
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: L78JFlaeIL6wXr_bJqzXKAecNLZOLxocRkt83cKVlB4
+id: media.landscape_float_xp
+label: 'Landscape float XP'
+targetEntityType: media
+cache: true

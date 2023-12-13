@@ -1,0 +1,13 @@
+uuid: 8d5cee4d-3cc1-4c0a-abc2-93bade26cd01
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - media.type.document
+_core:
+  default_config_hash: pVHPfb349FFiFVraAO7rq1m53XmqnjrkW5VBrP2gnKo
+id: media.document
+target_entity_type_id: media
+target_bundle: document
+default_langcode: site_default
+language_alterable: false

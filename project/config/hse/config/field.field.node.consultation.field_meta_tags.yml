@@ -1,0 +1,23 @@
+uuid: 75fba60f-1890-49d4-b0c1-7fd871a5d0d8
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_meta_tags
+    - node.type.consultation
+  module:
+    - metatag
+_core:
+  default_config_hash: _NOHkrlBVctsLDBM87JHeyFpczLhE_dMZCXd9HNEv58
+id: node.consultation.field_meta_tags
+field_name: field_meta_tags
+entity_type: node
+bundle: consultation
+label: 'Meta tags'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

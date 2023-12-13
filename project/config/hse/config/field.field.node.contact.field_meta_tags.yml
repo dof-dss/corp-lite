@@ -1,0 +1,23 @@
+uuid: 12d20f50-b1b1-4f5b-b599-a30e42375231
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_meta_tags
+    - node.type.contact
+  module:
+    - metatag
+_core:
+  default_config_hash: ugCydjx5cTwieItenyzYC_Ffq4ZHKxCOB5t2qu68lUk
+id: node.contact.field_meta_tags
+field_name: field_meta_tags
+entity_type: node
+bundle: contact
+label: 'Meta tags'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

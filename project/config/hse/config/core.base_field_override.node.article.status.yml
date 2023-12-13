@@ -1,0 +1,24 @@
+uuid: 6d0a2519-ed3b-4133-afe5-e135311742c6
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - node.type.article
+_core:
+  default_config_hash: 7QvOaymutmf8EuMBeu8htao-5zenYIiQzlbhDJIpPsU
+id: node.article.status
+field_name: status
+entity_type: node
+bundle: article
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,26 @@
+uuid: 018c77dd-4dc0-4b5f-b0ef-642e6e7ca45b
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.consultation
+  module:
+    - text
+_core:
+  default_config_hash: 5IRUvaJRDBwTkCUSOj5zLlH4ciLEnYFyGcUiZOC0wZU
+id: node.consultation.body
+field_name: body
+entity_type: node
+bundle: consultation
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

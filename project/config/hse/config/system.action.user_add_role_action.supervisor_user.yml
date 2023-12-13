@@ -1,0 +1,16 @@
+uuid: 3f9d1ca9-6ec4-45d0-90c8-e89eb8b7c050
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - user.role.supervisor_user
+  module:
+    - user
+_core:
+  default_config_hash: vICuMFBJuioJc00RX83tHGNFmUZzaC_QaCaXDzLSSrs
+id: user_add_role_action.supervisor_user
+label: 'Add the Supervisor user role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: supervisor_user

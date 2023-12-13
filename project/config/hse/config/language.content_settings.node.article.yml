@@ -1,0 +1,13 @@
+uuid: 74b2c8c4-a26e-404d-8a30-7e1b0d60af63
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - node.type.article
+_core:
+  default_config_hash: Jif3WxGiwaFDzhsOXaSnMGS6EuiIKmQbmeEXSX18E48
+id: node.article
+target_entity_type_id: node
+target_bundle: article
+default_langcode: site_default
+language_alterable: false

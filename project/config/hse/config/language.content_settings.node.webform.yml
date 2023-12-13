@@ -1,0 +1,13 @@
+uuid: 04419b83-a45b-49bd-91b9-ec94afb84c8a
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - node.type.webform
+_core:
+  default_config_hash: p_ZknNV9qhKt6A9eCDvbdRfTj4HtMSXBqCJJ1imYoTI
+id: node.webform
+target_entity_type_id: node
+target_bundle: webform
+default_langcode: site_default
+language_alterable: false

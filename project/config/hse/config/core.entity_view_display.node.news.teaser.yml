@@ -1,0 +1,45 @@
+uuid: c6e3efb7-86f6-4940-837a-191389738889
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.news.body
+    - field.field.node.news.field_meta_tags
+    - field.field.node.news.field_news_type
+    - field.field.node.news.field_notes_to_editors
+    - field.field.node.news.field_published_date
+    - field.field.node.news.field_site_topics
+    - field.field.node.news.field_summary
+    - field.field.node.news.field_teaser
+    - node.type.news
+  module:
+    - text
+    - user
+_core:
+  default_config_hash: GDx_47IhRPvjr2TZYejSxBgmEMnjn8Dl5QDa1oaTDGE
+id: node.news.teaser
+targetEntityType: node
+bundle: news
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  content_moderation_control: true
+  field_meta_tags: true
+  field_news_type: true
+  field_notes_to_editors: true
+  field_published_date: true
+  field_site_topics: true
+  field_summary: true
+  field_teaser: true
+  langcode: true
+  links: true
+  search_api_excerpt: true
