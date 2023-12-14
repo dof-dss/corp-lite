@@ -1,0 +1,13 @@
+uuid: b4e0d79e-5c18-4ae2-967b-63c5eb01bd24
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - node.type.news
+_core:
+  default_config_hash: olNtPwL5Ia1vDZ3agb1WrqLqu-OeJn6TH2XXwjBuzpg
+id: node.news
+target_entity_type_id: node
+target_bundle: news
+default_langcode: site_default
+language_alterable: false

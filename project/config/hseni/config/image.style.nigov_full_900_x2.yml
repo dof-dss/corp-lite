@@ -1,0 +1,17 @@
+uuid: 3dd96337-5869-44f2-a0bc-5f651a415f99
+langcode: en-gb
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 7lJGqJBY0v46azQ5NeJKZEwQI47oySyV2D1-ftumj2E
+name: nigov_full_900_x2
+label: 'nigov full 900 (x2)'
+effects:
+  42b4350f-48c7-41c1-abc6-9a5dfe3f526d:
+    uuid: 42b4350f-48c7-41c1-abc6-9a5dfe3f526d
+    id: image_scale
+    weight: 1
+    data:
+      width: 900
+      height: null
+      upscale: false

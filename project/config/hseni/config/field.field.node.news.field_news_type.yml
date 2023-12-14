@@ -1,0 +1,23 @@
+uuid: 9a8e2ede-e322-4413-a3af-d0e364a65b5e
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_news_type
+    - node.type.news
+  module:
+    - options
+_core:
+  default_config_hash: Lp-CANniUEv3LcslVkHgxsbWPyTYyaoXT0wG2eojGIQ
+id: node.news.field_news_type
+field_name: field_news_type
+entity_type: node
+bundle: news
+label: 'News type'
+description: "Choose the type for this news item.<br />\r\nNote that Press Releases will automatically be published on the NI Executive website in addition to this website."
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

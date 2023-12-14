@@ -1,0 +1,10 @@
+uuid: d2518a1b-b55e-486b-8ff1-1e7ec8aaaaff
+langcode: en-gb
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: ERAmDhUaSDFnJIHdYNoPoBAfL8WLq24uKpKqbAu-4RM
+id: corplite_medium
+label: 'Corplite medium'
+locked: false
+pattern: 'd F Y'
