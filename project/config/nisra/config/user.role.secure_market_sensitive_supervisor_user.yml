@@ -1,9 +1,88 @@
 uuid: 9675e130-0694-4cd6-82c7-4accb51144f2
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - media.type.audio
+    - media.type.document
+    - media.type.file
+    - media.type.image
+    - media.type.remote_video
+    - node.type.secure_market_statistics
+    - node.type.secure_statistics
+    - workflows.workflow.nics_editorial_workflow
+  module:
+    - content_moderation
+    - contextual
+    - file
+    - media
+    - menu_admin_per_menu
+    - moderation_sidebar
+    - node
+    - scheduled_transitions
+    - system
+    - toolbar
 id: secure_market_sensitive_supervisor_user
 label: 'secure market sensitive supervisor user'
-weight: 7
+weight: -2
 is_admin: null
-permissions: {  }
+permissions:
+  - 'access administration pages'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access files overview'
+  - 'access toolbar'
+  - 'add scheduled transitions node secure_market_statistics'
+  - 'administer main menu items'
+  - 'create audio media'
+  - 'create document media'
+  - 'create file media'
+  - 'create image media'
+  - 'create remote_video media'
+  - 'create secure_market_statistics content'
+  - 'delete any audio media'
+  - 'delete any document media'
+  - 'delete any file media'
+  - 'delete any image media'
+  - 'delete any remote_video media'
+  - 'delete any secure_market_statistics content'
+  - 'delete any secure_statistics content'
+  - 'delete own audio media'
+  - 'delete own document media'
+  - 'delete own file media'
+  - 'delete own files'
+  - 'delete own image media'
+  - 'delete own remote_video media'
+  - 'delete own secure_market_statistics content'
+  - 'delete secure_market_statistics revisions'
+  - 'edit any audio media'
+  - 'edit any document media'
+  - 'edit any file media'
+  - 'edit any image media'
+  - 'edit any remote_video media'
+  - 'edit any secure_market_statistics content'
+  - 'edit own audio media'
+  - 'edit own document media'
+  - 'edit own file media'
+  - 'edit own image media'
+  - 'edit own remote_video media'
+  - 'edit own secure_market_statistics content'
+  - 'reschedule scheduled transitions node secure_market_statistics'
+  - 'revert secure_market_statistics revisions'
+  - 'use moderation sidebar'
+  - 'use nics_editorial_workflow transition archive'
+  - 'use nics_editorial_workflow transition create_new_draft'
+  - 'use nics_editorial_workflow transition draft_of_published'
+  - 'use nics_editorial_workflow transition publish'
+  - 'use nics_editorial_workflow transition reject'
+  - 'use nics_editorial_workflow transition restore'
+  - 'use nics_editorial_workflow transition restore_to_draft'
+  - 'use nics_editorial_workflow transition submit_for_review'
+  - 'use nics_editorial_workflow transition unpublish'
+  - 'view all revisions'
+  - 'view any unpublished content'
+  - 'view latest version'
+  - 'view own unpublished media'
+  - 'view scheduled transitions node secure_market_statistics'
+  - 'view secure_market_statistics revisions'
+  - 'view the administration theme'
