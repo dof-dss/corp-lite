@@ -2,21 +2,25 @@ uuid: 58033478-223b-47a4-8146-585fcf31c134
 langcode: en-gb
 status: true
 dependencies:
+  config:
+    - filter.format.basic_html
   module:
+    - filter
+    - media
     - node
     - path
-    - pathauto
+    - search_api_autocomplete
     - system
 _core:
   default_config_hash: oQGHpkWd8dTCqtXiwPreaC_YPiLxTx-4nRh3tB5Y3Ss
 id: authenticated
 label: 'authenticated user'
-weight: 1
+weight: -9
 is_admin: false
 permissions:
-  - 'access administration pages'
   - 'access content'
+  - 'administer search_api_autocomplete'
   - 'create url aliases'
-  - 'notify of path changes'
+  - 'use text format basic_html'
+  - 'view media'
   - 'view own unpublished content'
-  - 'view the administration theme'
