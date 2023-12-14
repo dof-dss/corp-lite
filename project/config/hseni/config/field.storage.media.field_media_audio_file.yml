@@ -1,0 +1,25 @@
+uuid: fb2d4207-1716-4013-a051-a7d83e9c5061
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - file
+    - media
+_core:
+  default_config_hash: zV0zpA0Y3DJMenV882OMBLTIsNDes2kf4h0_I1v6ySM
+id: media.field_media_audio_file
+field_name: field_media_audio_file
+entity_type: media
+type: file
+settings:
+  target_type: file
+  display_field: false
+  display_default: false
+  uri_scheme: public
+module: file
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

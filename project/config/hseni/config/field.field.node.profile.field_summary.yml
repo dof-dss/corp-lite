@@ -1,0 +1,21 @@
+uuid: fe1acaf7-b956-4b0d-8a8d-884050d3d7e6
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_summary
+    - node.type.profile
+_core:
+  default_config_hash: 6rcm4WETno1JoDL5AYwTk72f3OxrjHiSfC21j8Ql-XI
+id: node.profile.field_summary
+field_name: field_summary
+entity_type: node
+bundle: profile
+label: Summary
+description: 'Enter an optional summary for this profile to be displayed on listing pages.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long
