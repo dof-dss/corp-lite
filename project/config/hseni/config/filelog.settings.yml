@@ -1,0 +1,14 @@
+_core:
+  default_config_hash: 3cKTrUUF7V69Wa8cBh3qbScW_I15rH3dW4-AEVtM9EQ
+langcode: en-gb
+enabled: true
+location: /app/log/default
+rotation:
+  schedule: daily
+  delete: true
+  destination: 'archive/[date:custom:Y/m/d].log'
+  gzip: true
+format: "[[log:created:custom:'D, d/m/Y - H:i:s.000']] [[log:level]] [[log:channel]] [client: [log:ip], [log:user]] [log:message]"
+level: 7
+channels_type: exclude
+channels: {  }

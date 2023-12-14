@@ -1,0 +1,12 @@
+uuid: 7b2f65ae-98a7-4b67-8c0a-74004c2dcefb
+langcode: en-gb
+status: false
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: KeRT7Ild8CixAvY1_IRjZa8x_d1kpxJWk8IA_ZwgT5U
+id: node.full
+label: 'Full content'
+targetEntityType: node
+cache: true

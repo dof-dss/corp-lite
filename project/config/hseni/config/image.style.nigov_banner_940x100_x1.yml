@@ -1,0 +1,17 @@
+uuid: 1a7f7eb7-57e1-4091-ac5c-cc938fcde43f
+langcode: en-gb
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 8g6pLDXE9vsRQdPLy9AKYUwYpVSsLF-iQ54JlCr1j8Y
+name: nigov_banner_940x100_x1
+label: 'nigov banner 940x100 (x1)'
+effects:
+  7c774428-b716-4dae-aca4-93be2dbf2513:
+    uuid: 7c774428-b716-4dae-aca4-93be2dbf2513
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 940
+      height: 100
+      anchor: center-center
