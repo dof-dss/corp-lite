@@ -1,0 +1,16 @@
+uuid: 099ca0d3-d63b-4550-a52b-2365fa98aa4b
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - user.role.author_user
+  module:
+    - user
+_core:
+  default_config_hash: AfuISm6rXCuX359Lr8Y9gm678RzzUZSZvhw7fp0mYAw
+id: user_remove_role_action.author_user
+label: 'Remove the Author user role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: author_user

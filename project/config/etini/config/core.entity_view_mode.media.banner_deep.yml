@@ -1,0 +1,12 @@
+uuid: ad866b67-115d-4035-afdf-7f99ba2ccf04
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: HxEZzxJ98jioFx-5loNpNx7AqKYyuvrkJZrvDFWE0PA
+id: media.banner_deep
+label: 'Banner deep'
+targetEntityType: media
+cache: true

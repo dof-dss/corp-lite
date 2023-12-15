@@ -1,0 +1,22 @@
+uuid: 996b18b5-4317-47bd-93a0-7a6fc40002e6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.file.field_file_image_caption_text
+  module:
+    - file
+_core:
+  default_config_hash: 7-Ve2X9PppsRirh1tDi-kFRh2roLpApvcBLLSgK9FFo
+id: file.image.field_file_image_caption_text
+field_name: field_file_image_caption_text
+entity_type: file
+bundle: image
+label: 'Caption text'
+description: 'Enter some optional caption text for this image.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

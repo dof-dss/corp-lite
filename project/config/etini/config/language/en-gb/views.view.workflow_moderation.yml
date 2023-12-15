@@ -1,0 +1,75 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          reset_button_label: Reset
+      fields:
+        title:
+          label: Title
+        type:
+          label: Type
+      filters:
+        title:
+          expose:
+            label: Title
+        type:
+          expose:
+            label: Type
+  all_drafts:
+    display_options:
+      filters:
+        title:
+          expose:
+            label: Title
+        body_value:
+          expose:
+            label: Body
+        type:
+          expose:
+            label: Type
+      fields:
+        title:
+          label: Title
+        type:
+          label: Type
+  my_drafts:
+    display_options:
+      filters:
+        title:
+          expose:
+            label: Title
+        body_value:
+          expose:
+            label: Body
+        type:
+          expose:
+            label: Type
+      fields:
+        title:
+          label: Title
+        type:
+          label: Type
+  needs_audit:
+    display_options:
+      filters:
+        title:
+          expose:
+            label: Title
+        type:
+          expose:
+            label: Type
+      fields:
+        title:
+          label: Title
+        type:
+          label: Type
+  needs_review:
+    display_options:
+      filters:
+        title:
+          expose:
+            label: Title
+        type:
+          expose:
+            label: Type

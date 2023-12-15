@@ -1,0 +1,21 @@
+uuid: b3ec723e-7a56-4535-900a-814a1123c189
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_summary
+    - node.type.application
+_core:
+  default_config_hash: F4qGweBu7H_R8_1U225te40FXXXSXKqT4APodMfI_f8
+id: node.application.field_summary
+field_name: field_summary
+entity_type: node
+bundle: application
+label: Summary
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long
