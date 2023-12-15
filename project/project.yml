@@ -23,12 +23,22 @@ sites:
         status: development
         default: false
     hseni:
-        name: 'hseni'
+        name: hseni
         url: hseni.gov.uk
         solr: hseni
         www: true
         cron_spec: '10 * * * *'
         cron_cmd: 'cd web/sites/hseni ; drush core-cron'
         database: hseni
+        status: development
+        default: false
+    etini:
+        name: 'Education Training Inspectorate NI'
+        url: etini.gov.uk
+        solr: etini
+        www: true
+        cron_spec: '10 * * * *'
+        cron_cmd: 'cd web/sites/etini ; drush core-cron'
+        database: etini
         status: development
         default: false
