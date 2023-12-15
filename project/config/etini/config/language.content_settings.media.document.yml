@@ -1,0 +1,13 @@
+uuid: 3610a8e5-a7b3-4c13-a935-3ed14b8993c7
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.document
+_core:
+  default_config_hash: pVHPfb349FFiFVraAO7rq1m53XmqnjrkW5VBrP2gnKo
+id: media.document
+target_entity_type_id: media
+target_bundle: document
+default_langcode: site_default
+language_alterable: false

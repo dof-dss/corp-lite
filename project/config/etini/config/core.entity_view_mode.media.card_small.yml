@@ -1,0 +1,12 @@
+uuid: f2f5900f-fb04-4e75-b220-9c0eb9eac7f7
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: eunT-uXYaG8nkrkq7sEdPTIK4Ca5UTFXjnmnhNyeQ-M
+id: media.card_small
+label: 'Card small'
+targetEntityType: media
+cache: true

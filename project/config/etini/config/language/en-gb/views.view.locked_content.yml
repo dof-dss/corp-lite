@@ -1,0 +1,24 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          reset_button_label: Reset
+      fields:
+        node_bulk_form:
+          action_title: Action
+        title:
+          label: Title
+        operations:
+          label: Operations
+      filters:
+        status:
+          group_info:
+            group_items:
+              1:
+                title: Published
+        title:
+          expose:
+            label: Title
+  page_1:
+    display_title: Page
