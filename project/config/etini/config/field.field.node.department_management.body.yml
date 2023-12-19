@@ -1,0 +1,24 @@
+uuid: 5594e015-76e2-4143-95a9-7e5ab29bf14d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.department_management
+  module:
+    - text
+id: node.department_management.body
+field_name: body
+entity_type: node
+bundle: department_management
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

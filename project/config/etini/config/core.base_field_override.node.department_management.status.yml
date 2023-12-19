@@ -1,0 +1,22 @@
+uuid: f154c948-751e-45bf-83fc-4a698aeb4bdd
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.department_management
+id: node.department_management.status
+field_name: status
+entity_type: node
+bundle: department_management
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
