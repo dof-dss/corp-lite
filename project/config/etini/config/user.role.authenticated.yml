@@ -2,23 +2,21 @@ uuid: 9bddc288-a9cb-4400-acee-e0d2cfa0e375
 langcode: en-gb
 status: true
 dependencies:
-  config:
-    - filter.format.basic_html
   module:
-    - file
-    - filter
-    - search
-    - shortcut
+    - node
+    - path
+    - pathauto
     - system
 _core:
   default_config_hash: 5VGJw7pgPFTBuJrCG9pBukHNqdclr8NPzvsAwTZXVwY
 id: authenticated
-label: 'Authenticated user'
+label: 'authenticated user'
 weight: 1
 is_admin: false
 permissions:
+  - 'access administration pages'
   - 'access content'
-  - 'access shortcuts'
-  - 'delete own files'
-  - 'search content'
-  - 'use text format basic_html'
+  - 'create url aliases'
+  - 'notify of path changes'
+  - 'view own unpublished content'
+  - 'view the administration theme'

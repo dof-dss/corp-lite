@@ -1,0 +1,14 @@
+uuid: d4bd721a-2b80-4a87-bd52-b49503aa725f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - redirect
+id: site_admin_user
+label: 'site admin user'
+weight: 5
+is_admin: null
+permissions:
+  - 'administer nodes'
+  - 'administer redirects'

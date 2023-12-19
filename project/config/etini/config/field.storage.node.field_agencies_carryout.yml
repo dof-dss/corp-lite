@@ -1,0 +1,19 @@
+uuid: 8c69b93c-c266-4fde-aab1-0173579c0d27
+langcode: und
+status: true
+dependencies:
+  module:
+    - link
+    - node
+id: node.field_agencies_carryout
+field_name: field_agencies_carryout
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 3
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

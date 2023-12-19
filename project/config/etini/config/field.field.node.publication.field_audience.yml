@@ -1,0 +1,21 @@
+uuid: 00116b84-bf35-4f9a-8d1e-b51ecdbbb901
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_audience
+    - node.type.publication
+  module:
+    - options
+id: node.publication.field_audience
+field_name: field_audience
+entity_type: node
+bundle: publication
+label: Audience
+description: 'Select and appropriate audience type for this publication. Hold down Ctrl to choose multiple options.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

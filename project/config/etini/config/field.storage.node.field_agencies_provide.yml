@@ -1,0 +1,19 @@
+uuid: 4c6b7552-45ae-4f04-9b48-c776257dba96
+langcode: und
+status: true
+dependencies:
+  module:
+    - link
+    - node
+id: node.field_agencies_provide
+field_name: field_agencies_provide
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 3
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

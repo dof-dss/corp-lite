@@ -1,0 +1,8 @@
+uuid: e33e9ed4-9d75-49d1-852c-8803dae7a7b6
+langcode: en
+status: true
+dependencies: {  }
+name: 'Site topics'
+vid: site_global_topics
+description: 'Site topics'
+weight: 0
