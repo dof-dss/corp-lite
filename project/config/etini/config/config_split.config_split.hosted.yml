@@ -1,0 +1,15 @@
+uuid: 9111a48b-5da9-4020-8893-6ffbee4ba143
+langcode: en
+status: true
+dependencies: {  }
+id: hosted
+label: hosted
+description: "Use for any that are 'hosted' and not running locally, apart from production (which has its own split)."
+weight: 0
+stackable: false
+storage: folder
+folder: ../project/config/etini/hosted
+module: {  }
+theme: {  }
+complete_list: {  }
+partial_list: {  }

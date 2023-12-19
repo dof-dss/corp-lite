@@ -1,0 +1,15 @@
+uuid: 47f385fb-befc-4ffe-b899-bb2e3a59ca99
+langcode: en
+status: true
+dependencies: {  }
+id: production
+label: production
+description: 'Used for the production site only.'
+weight: 0
+stackable: false
+storage: folder
+folder: ../project/config/etini/production
+module: {  }
+theme: {  }
+complete_list: {  }
+partial_list: {  }
