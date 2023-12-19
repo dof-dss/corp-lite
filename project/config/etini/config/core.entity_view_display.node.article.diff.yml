@@ -5,12 +5,10 @@ dependencies:
   config:
     - core.entity_view_mode.node.diff
     - field.field.node.article.body
-    - field.field.node.article.field_enable_toc
     - field.field.node.article.field_meta_tags
     - field.field.node.article.field_site_global_topics
     - field.field.node.article.field_site_topics
     - field.field.node.article.field_summary
-    - field.field.node.article.field_tags
     - node.type.article
   module:
     - field_group
@@ -21,6 +19,8 @@ third_party_settings:
   field_group:
     group_additional_content_details:
       children:
+        - field_site_topics
+        - field_site_global_topics
         - field_meta_tags
       label: 'Additional content details'
       parent_name: ''
@@ -57,13 +57,21 @@ content:
     label: inline
     settings: {  }
     third_party_settings: {  }
-    weight: 5
+    weight: 4
+    region: content
+  field_site_global_topics:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 3
     region: content
   field_site_topics:
     type: entity_reference_label
-    label: above
+    label: inline
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
     weight: 2
     region: content
@@ -76,9 +84,6 @@ content:
     region: content
 hidden:
   content_moderation_control: true
-  field_enable_toc: true
-  field_site_global_topics: true
-  field_tags: true
   langcode: true
   links: true
   search_api_excerpt: true

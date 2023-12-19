@@ -7,18 +7,17 @@ dependencies:
     - origins_toc
 third_party_settings:
   menu_ui:
-    available_menus:
-      - main
-    parent: 'main-menu:0:'
+    available_menus: {  }
+    parent: ''
   origins_toc:
-    toc_enable: 0
-    toc_title: 'Table of contents'
-    toc_location: ''
+    toc_enable: 1
+    toc_title: Contents
+    toc_location: .page-title
     toc_insert: after
-    toc_source_container: ''
+    toc_source_container: '#block-mainpagecontent .content'
     toc_element: h2
     toc_exclusions: ''
-    toc_screen_depth: '1'
+    toc_screen_depth: '2'
     toc_debug: 0
 _core:
   default_config_hash: zjUd9tktgPNJDB2-dGlZ7LeFeB_tfC8tHRJJT10t8LU
