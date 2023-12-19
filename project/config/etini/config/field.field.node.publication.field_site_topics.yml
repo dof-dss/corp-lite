@@ -5,15 +5,14 @@ dependencies:
   config:
     - field.storage.node.field_site_topics
     - node.type.publication
-    - taxonomy.vocabulary.site_topics
 _core:
   default_config_hash: YoiRiUHjRRjX-FIPMeknFk34I_bo0BscNF7bqBMmoq4
 id: node.publication.field_site_topics
 field_name: field_site_topics
 entity_type: node
 bundle: publication
-label: 'Site topics'
-description: ''
+label: 'Organisational phase'
+description: 'Choose relevant organisational phase(s) for this publication. Hold down Ctrl to choose multiple options.'
 required: false
 translatable: false
 default_value: {  }
@@ -21,11 +20,6 @@ default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'
   handler_settings:
-    target_bundles:
-      site_topics: site_topics
     sort:
-      field: name
-      direction: asc
-    auto_create: false
-    auto_create_bundle: ''
+      field: _none
 field_type: entity_reference

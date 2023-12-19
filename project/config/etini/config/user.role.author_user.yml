@@ -3,31 +3,42 @@ langcode: en-gb
 status: true
 dependencies:
   config:
+    - node.type.application
     - node.type.article
+    - node.type.contact
+    - node.type.department_management
+    - node.type.news
+    - node.type.profile
+    - node.type.publication
   module:
-    - file
     - node
-    - path
     - system
-    - toolbar
-    - tour
 _core:
   default_config_hash: vNEkQI-Oi5HpFydAyizLa6qCCV8SkpSWLiyMrYoGO94
 id: author_user
-label: 'Author user'
+label: 'author user'
 weight: 2
 is_admin: false
 permissions:
   - 'access administration pages'
-  - 'access content overview'
-  - 'access files overview'
-  - 'access toolbar'
-  - 'access tour'
-  - 'administer url aliases'
+  - 'create application content'
   - 'create article content'
-  - 'create url aliases'
-  - 'delete own files'
+  - 'create contact content'
+  - 'create news content'
+  - 'create profile content'
+  - 'create publication content'
+  - 'edit any application content'
+  - 'edit any article content'
+  - 'edit any contact content'
+  - 'edit any department_management content'
+  - 'edit any news content'
+  - 'edit any profile content'
+  - 'edit any publication content'
+  - 'edit own application content'
   - 'edit own article content'
-  - 'view all revisions'
-  - 'view own unpublished content'
+  - 'edit own contact content'
+  - 'edit own department_management content'
+  - 'edit own news content'
+  - 'edit own profile content'
+  - 'edit own publication content'
   - 'view the administration theme'

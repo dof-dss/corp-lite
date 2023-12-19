@@ -4,6 +4,15 @@ status: true
 dependencies:
   config:
     - field.field.node.department_management.body
+    - field.field.node.department_management.field_access_to_information
+    - field.field.node.department_management.field_agencies_carryout
+    - field.field.node.department_management.field_agencies_provide
+    - field.field.node.department_management.field_contact_information
+    - field.field.node.department_management.field_facebook_url
+    - field.field.node.department_management.field_flickr_url
+    - field.field.node.department_management.field_linkedin_url
+    - field.field.node.department_management.field_twitter_url
+    - field.field.node.department_management.field_youtube_url
     - node.type.department_management
   module:
     - text
@@ -26,5 +35,14 @@ content:
     weight: 100
     region: content
 hidden:
+  field_access_to_information: true
+  field_agencies_carryout: true
+  field_agencies_provide: true
+  field_contact_information: true
+  field_facebook_url: true
+  field_flickr_url: true
+  field_linkedin_url: true
+  field_twitter_url: true
+  field_youtube_url: true
   langcode: true
   search_api_excerpt: true

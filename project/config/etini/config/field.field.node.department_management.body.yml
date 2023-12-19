@@ -11,10 +11,10 @@ id: node.department_management.body
 field_name: body
 entity_type: node
 bundle: department_management
-label: Body
-description: ''
-required: false
-translatable: true
+label: 'Management and structure'
+description: 'This field renders the departmental management information, it also provides the main content when the page is selected'
+required: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

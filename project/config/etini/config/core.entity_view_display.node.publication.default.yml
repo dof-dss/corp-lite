@@ -4,9 +4,12 @@ status: true
 dependencies:
   config:
     - field.field.node.publication.body
+    - field.field.node.publication.field_attachment
+    - field.field.node.publication.field_audience
     - field.field.node.publication.field_meta_tags
     - field.field.node.publication.field_publication_type
     - field.field.node.publication.field_published_date
+    - field.field.node.publication.field_reference
     - field.field.node.publication.field_site_topics
     - field.field.node.publication.field_summary
     - node.type.publication
@@ -62,7 +65,10 @@ content:
     region: content
 hidden:
   content_moderation_control: true
+  field_attachment: true
+  field_audience: true
   field_meta_tags: true
+  field_reference: true
   langcode: true
   links: true
   search_api_excerpt: true

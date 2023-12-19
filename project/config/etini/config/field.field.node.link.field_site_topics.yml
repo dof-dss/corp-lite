@@ -1,0 +1,23 @@
+uuid: 87bd21d2-32fb-403d-9415-71e121c4ae96
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_site_topics
+    - node.type.link
+id: node.link.field_site_topics
+field_name: field_site_topics
+entity_type: node
+bundle: link
+label: 'Site topics'
+description: 'Choose optional site topics for this link.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    sort:
+      field: _none
+field_type: entity_reference

@@ -7,8 +7,8 @@ dependencies:
 third_party_settings:
   menu_ui:
     available_menus:
-      - main
-    parent: 'main:'
+      - main-menu
+    parent: 'main-menu:0:'
 name: 'Departmental information'
 type: department_management
 description: 'This content type is used to group departmental information used on the homepage for contact details, links for social media & info on departmental management.'
