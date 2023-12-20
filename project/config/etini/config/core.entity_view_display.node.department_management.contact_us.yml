@@ -1,8 +1,9 @@
-uuid: d12c9751-0a56-40ab-ace1-cdff11c233aa
+uuid: 8584b5bd-0f63-4a59-bc06-5f607900ccb0
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.contact_us
     - field.field.node.department_management.body
     - field.field.node.department_management.field_access_to_information
     - field.field.node.department_management.field_agencies_carryout
@@ -17,14 +18,19 @@ dependencies:
     - field.field.node.department_management.field_youtube_url
     - node.type.department_management
   module:
+    - layout_builder
     - text
     - user
-id: node.department_management.default
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.department_management.contact_us
 targetEntityType: node
 bundle: department_management
-mode: default
+mode: contact_us
 content:
-  body:
+  field_contact_information:
     type: text_default
     label: hidden
     settings: {  }
@@ -32,11 +38,11 @@ content:
     weight: 0
     region: content
 hidden:
+  body: true
   content_moderation_control: true
   field_access_to_information: true
   field_agencies_carryout: true
   field_agencies_provide: true
-  field_contact_information: true
   field_facebook_url: true
   field_flickr_url: true
   field_linkedin_url: true

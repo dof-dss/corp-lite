@@ -1,0 +1,10 @@
+uuid: 91eb2fdd-133c-4a7a-bf4a-8f2efcd3e124
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.social_m
+label: 'Social media'
+targetEntityType: node
+cache: true

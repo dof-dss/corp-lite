@@ -6,7 +6,11 @@ dependencies:
     - node.type.application
     - node.type.article
     - node.type.contact
+    - node.type.department_management
+    - node.type.gallery
+    - node.type.link
     - node.type.news
+    - node.type.page
     - node.type.profile
     - node.type.publication
   module:
@@ -104,7 +108,11 @@ type_settings:
       - application
       - article
       - contact
+      - department_management
+      - gallery
+      - link
       - news
+      - page
       - profile
       - publication
   default_moderation_state: draft
