@@ -4,10 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.node.contact.body
+    - field.field.node.contact.field_map
     - field.field.node.contact.field_meta_tags
-    - field.field.node.contact.field_site_topics
     - node.type.contact
   module:
+    - origins_common
     - text
     - user
 _core:
@@ -24,11 +25,16 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  field_site_topics:
-    type: entity_reference_label
+  field_map:
+    type: gmaps_lazy_load_formatter
     label: above
     settings:
-      link: true
+      map_type: roadmap
+      zoom: '10'
+      placeholder: empty
+      link_text: ''
+      map_width: '300'
+      map_height: '300'
     third_party_settings: {  }
     weight: 1
     region: content
