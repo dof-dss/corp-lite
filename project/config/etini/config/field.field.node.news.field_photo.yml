@@ -1,12 +1,11 @@
-uuid: 04ba3d80-2988-403e-8e4b-b20e59f4b65a
+uuid: 9e05f226-eaa0-45e8-a99c-54848f11fc44
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_photo
+    - media.type.image
     - node.type.news
-  module:
-    - image
 id: node.news.field_photo
 field_name: field_photo
 entity_type: node
@@ -18,16 +17,13 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:file'
-  handler_settings: {  }
-  file_directory: 'images/[current-domain:machine-name]/news'
-  file_extensions: 'png jpg jpeg gif'
-  max_filesize: '5 MB'
-  max_resolution: ''
-  min_resolution: 600x400
-  alt_field: false
-  alt_field_required: true
-  title_field: false
-  title_field_required: false
-  default_image: 0
-field_type: image
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

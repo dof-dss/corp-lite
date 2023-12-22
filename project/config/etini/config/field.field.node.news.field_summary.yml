@@ -12,8 +12,8 @@ field_name: field_summary
 entity_type: node
 bundle: news
 label: 'Introductory paragraph'
-description: ''
-required: false
+description: 'Enter the first paragraph of this news item.'
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
