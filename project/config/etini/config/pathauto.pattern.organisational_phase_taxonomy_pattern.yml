@@ -1,0 +1,22 @@
+uuid: 889bdf56-76b0-42a0-85bc-c4edbe21a0d3
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: organisational_phase_taxonomy_pattern
+label: 'Organisational phase taxonomy pattern'
+type: 'canonical_entities:taxonomy_term'
+pattern: 'phase/[term:parent:name]/[term:name]'
+selection_criteria:
+  eb09da97-96c1-4008-81d7-9ddf512aacea:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: eb09da97-96c1-4008-81d7-9ddf512aacea
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      site_topics: site_topics
+selection_logic: and
+weight: -5
+relationships: {  }
