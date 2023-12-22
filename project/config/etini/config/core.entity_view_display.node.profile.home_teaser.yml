@@ -1,9 +1,9 @@
-uuid: b92b2f05-b049-41a5-aa7d-7d9029ea56e2
+uuid: cdca635e-1075-4556-b343-60fc407a1b38
 langcode: en-gb
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.home_teaser
     - field.field.node.profile.body
     - field.field.node.profile.field_department
     - field.field.node.profile.field_meta_tags
@@ -11,22 +11,19 @@ dependencies:
     - field.field.node.profile.field_summary
     - node.type.profile
   module:
+    - layout_builder
     - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
 _core:
-  default_config_hash: dEVmIQQVePrSePlMykd5uMRL0RRIPM8mucf5vBg34ts
-id: node.profile.teaser
+  default_config_hash: G8ZljESQT1OjdUiqOiAB3JnsqFyMNkT2UDkM9hb2uPk
+id: node.profile.home_teaser
 targetEntityType: node
 bundle: profile
-mode: teaser
+mode: home_teaser
 content:
-  field_department:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 0
-    region: content
   field_photo:
     type: entity_reference_entity_view
     label: hidden
@@ -34,11 +31,12 @@ content:
       view_mode: default
       link: true
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
 hidden:
   body: true
   content_moderation_control: true
+  field_department: true
   field_meta_tags: true
   field_summary: true
   langcode: true
