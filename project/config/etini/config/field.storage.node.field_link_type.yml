@@ -1,30 +1,17 @@
-uuid: 032a658e-8792-4e94-b393-885803b6cded
-langcode: und
+uuid: 98e6f1c2-1bd7-44ae-ba41-586b49be520c
+langcode: en
 status: true
 dependencies:
   module:
     - node
-    - options
+    - taxonomy
 id: node.field_link_type
 field_name: field_link_type
 entity_type: node
-type: list_string
+type: entity_reference
 settings:
-  allowed_values:
-    -
-      value: quicklink
-      label: 'Quick link'
-    -
-      value: agencylink
-      label: 'Agency link'
-    -
-      value: corporatelink
-      label: 'Corporate link'
-    -
-      value: informationlink
-      label: 'About us link'
-  allowed_values_function: ''
-module: options
+  target_type: taxonomy_term
+module: core
 locked: false
 cardinality: 1
 translatable: true
