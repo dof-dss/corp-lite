@@ -26,6 +26,7 @@ dependencies:
     - contextual
     - file
     - media
+    - media_file_delete
     - menu_admin_per_menu
     - moderation_sidebar
     - node
@@ -66,6 +67,7 @@ permissions:
   - 'administer blocks'
   - 'administer content types'
   - 'administer main menu items'
+  - 'administer media file delete'
   - 'administer modules'
   - 'administer nodes'
   - 'administer pathauto'

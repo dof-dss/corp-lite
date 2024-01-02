@@ -14,6 +14,7 @@ dependencies:
     - contextual
     - file
     - media
+    - media_file_delete
     - menu_admin_per_menu
     - moderation_sidebar
     - node
@@ -31,6 +32,7 @@ permissions:
   - 'access files overview'
   - 'access toolbar'
   - 'administer main menu items'
+  - 'administer media file delete'
   - 'administer nodes'
   - 'administer redirects'
   - 'create audio media'
