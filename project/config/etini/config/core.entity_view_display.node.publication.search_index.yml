@@ -1,8 +1,9 @@
-uuid: 2751309c-bfcc-4636-af8b-6cd9ee34d4c2
+uuid: e58ac9ee-84dd-4968-ab62-9a21a72c440b
 langcode: en-gb
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.search_index
     - field.field.node.publication.body
     - field.field.node.publication.field_attachment
     - field.field.node.publication.field_audience
@@ -15,34 +16,22 @@ dependencies:
     - node.type.publication
   module:
     - datetime
-    - text
+    - layout_builder
     - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
 _core:
   default_config_hash: QfGYPWOh9KP3TIFrvpeCzgESHvyquGW0HFe-b8Sg7X0
-id: node.publication.default
+id: node.publication.search_index
 targetEntityType: node
 bundle: publication
-mode: default
+mode: search_index
 content:
-  body:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 5
-    region: content
-  field_attachment:
-    type: entity_reference_entity_view
-    label: hidden
-    settings:
-      view_mode: default
-      link: false
-    third_party_settings: {  }
-    weight: 6
-    region: content
   field_publication_type:
     type: entity_reference_label
-    label: inline
+    label: hidden
     settings:
       link: false
     third_party_settings: {  }
@@ -57,33 +46,15 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  field_reference:
-    type: string
-    label: inline
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 3
-    region: content
-  field_site_topics:
-    type: entity_reference_label
-    label: inline
-    settings:
-      link: false
-    third_party_settings: {  }
-    weight: 2
-    region: content
-  field_summary:
-    type: basic_string
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 4
-    region: content
 hidden:
+  body: true
   content_moderation_control: true
+  field_attachment: true
   field_audience: true
   field_meta_tags: true
+  field_reference: true
+  field_site_topics: true
+  field_summary: true
   langcode: true
   links: true
   search_api_excerpt: true

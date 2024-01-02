@@ -1,54 +1,17 @@
-uuid: aa9ce07c-029b-447a-a3ed-0df0c853049d
-langcode: und
+uuid: f88c971e-07a7-4629-a7ce-00bf93bfb7e3
+langcode: en
 status: true
 dependencies:
   module:
     - node
-    - options
+    - taxonomy
 id: node.field_audience
 field_name: field_audience
 entity_type: node
-type: list_string
+type: entity_reference
 settings:
-  allowed_values:
-    -
-      value: parents
-      label: 'Parents, Carers and Guardians'
-    -
-      value: learners
-      label: Learners
-    -
-      value: trainees
-      label: Trainees
-    -
-      value: youngpeople
-      label: 'Young People'
-    -
-      value: manager
-      label: 'Manager / Person in charge'
-    -
-      value: principal
-      label: Principal
-    -
-      value: teacher
-      label: 'Teacher / Co-ordinator / Staff'
-    -
-      value: support
-      label: 'Support staff'
-    -
-      value: lecturer
-      label: 'Lecturer / Tutor / Trainer'
-    -
-      value: employer
-      label: Employer
-    -
-      value: governor
-      label: 'Member of the Board of Governors  /Governing Body'
-    -
-      value: managementcommittee
-      label: 'Management Committee / Group'
-  allowed_values_function: ''
-module: options
+  target_type: taxonomy_term
+module: core
 locked: false
 cardinality: -1
 translatable: true
