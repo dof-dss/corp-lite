@@ -1,12 +1,11 @@
-uuid: 00116b84-bf35-4f9a-8d1e-b51ecdbbb901
+uuid: 397e35c0-c86e-4a5b-9e1e-3310600b8e3d
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_audience
     - node.type.publication
-  module:
-    - options
+    - taxonomy.vocabulary.audience
 id: node.publication.field_audience
 field_name: field_audience
 entity_type: node
@@ -17,5 +16,14 @@ required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
-field_type: list_string
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      audience: audience
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

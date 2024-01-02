@@ -1,59 +1,17 @@
-uuid: a629843e-1ea3-46fa-91ce-5fa0fb2b07b3
-langcode: und
+uuid: 3e8f52cd-813b-4d05-8392-1229ac97456d
+langcode: en
 status: true
 dependencies:
   module:
     - node
-    - options
-_core:
-  default_config_hash: kRdu5qVgBPeAkcdeF4EvlRid44T-bSi44nfN3dNStXo
+    - taxonomy
 id: node.field_publication_type
 field_name: field_publication_type
 entity_type: node
-type: list_string
+type: entity_reference
 settings:
-  allowed_values:
-    -
-      value: businessplans
-      label: 'Business plans'
-    -
-      value: circulars
-      label: Circulars
-    -
-      value: consultationreports
-      label: 'Consultation reports'
-    -
-      value: corporatereports
-      label: 'Corporate reports'
-    -
-      value: developmentplanframework
-      label: 'Development plan/framework'
-    -
-      value: foiresponses
-      label: 'FOI/EIR responses'
-    -
-      value: forms
-      label: Forms
-    -
-      value: guidance
-      label: 'Guidance literature'
-    -
-      value: independentreports
-      label: 'Independent reports'
-    -
-      value: inspectionreports
-      label: 'Inspection reports'
-    -
-      value: memoranda
-      label: Memoranda
-    -
-      value: surveys
-      label: 'Surveys / Evaluations'
-    -
-      value: supportmaterial
-      label: 'Support Material'
-  allowed_values_function: ''
-module: options
+  target_type: taxonomy_term
+module: core
 locked: false
 cardinality: 3
 translatable: true
