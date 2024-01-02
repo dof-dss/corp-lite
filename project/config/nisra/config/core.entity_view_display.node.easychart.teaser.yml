@@ -26,6 +26,7 @@ content:
     weight: 0
     region: content
 hidden:
+  content_moderation_control: true
   easychart: true
   field_meta_tags: true
   langcode: true
