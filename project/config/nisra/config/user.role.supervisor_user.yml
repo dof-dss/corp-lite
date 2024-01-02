@@ -23,6 +23,7 @@ dependencies:
     - contextual
     - file
     - media
+    - media_file_delete
     - menu_admin_per_menu
     - moderation_sidebar
     - node
@@ -52,9 +53,11 @@ permissions:
   - 'add scheduled transitions node gallery'
   - 'add scheduled transitions node link'
   - 'add scheduled transitions node news'
+  - 'add scheduled transitions node page'
   - 'add scheduled transitions node profile'
   - 'add scheduled transitions node publication'
   - 'administer main menu items'
+  - 'administer media file delete'
   - 'administer redirects'
   - 'audit content'
   - 'create application content'

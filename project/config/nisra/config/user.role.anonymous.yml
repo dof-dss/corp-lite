@@ -5,7 +5,7 @@ dependencies:
   module:
     - eu_cookie_compliance
     - media
-    - search_api_autocomplete
+    - search
     - system
 _core:
   default_config_hash: WlskRIzE4AeUyU2xO1bEADkMH3cGwif6iKe8z_KuQlE
@@ -15,6 +15,6 @@ weight: -10
 is_admin: false
 permissions:
   - 'access content'
-  - 'administer search_api_autocomplete'
   - 'display eu cookie compliance popup'
+  - 'search content'
   - 'view media'

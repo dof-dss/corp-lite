@@ -9,7 +9,7 @@ dependencies:
     - media
     - node
     - path
-    - search_api_autocomplete
+    - search
     - system
 _core:
   default_config_hash: oQGHpkWd8dTCqtXiwPreaC_YPiLxTx-4nRh3tB5Y3Ss
@@ -19,8 +19,8 @@ weight: -9
 is_admin: false
 permissions:
   - 'access content'
-  - 'administer search_api_autocomplete'
   - 'create url aliases'
+  - 'search content'
   - 'use text format basic_html'
   - 'view media'
   - 'view own unpublished content'
