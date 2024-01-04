@@ -1,0 +1,54 @@
+uuid: 51689b5a-b060-4a9e-b90a-12fe663e1b1b
+langcode: en-gb
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: nSq6aB2I4xZJINSLZKqtmpkFxmUEcLPm0lK8jHRan8U
+id: upgrade_d7_metatag_field_instance_taxonomy_term_site_topics
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Configuration
+migration_group: migrate_drupal_7
+label: 'Metatag field instance of Site topics taxonomy terms'
+source:
+  plugin: d7_metatag_field_instance
+  source_module: metatag
+  ignore_map: true
+  constants:
+    field_name: field_metatag
+    label: 'Meta tags'
+  entity_type_id: taxonomy_term
+  entity_type: taxonomy_term
+  bundle: site_topics
+process:
+  bundle:
+    -
+      plugin: get
+      source: bundle
+  entity_type:
+    -
+      plugin: get
+      source: entity_type
+    -
+      plugin: static_map
+      map:
+        field_collection_item: paragraph
+        paragraphs_item: paragraph
+      bypass: true
+  field_name:
+    -
+      plugin: get
+      source: constants/field_name
+  label:
+    -
+      plugin: get
+      source: constants/label
+destination:
+  plugin: 'entity:field_config'
+migration_dependencies:
+  required:
+    - upgrade_d7_metatag_field_taxonomy_term
+  optional: {  }
