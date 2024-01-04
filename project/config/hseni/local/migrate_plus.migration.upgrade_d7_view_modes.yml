@@ -2,6 +2,8 @@ uuid: 05e5e528-07f3-4871-b4d7-37ca247fafe4
 langcode: en-gb
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: QNA27BNUK942ehKSXvcOJ_6lyG8M5Rr0qpUA_aY61Hw
 id: upgrade_d7_view_modes
 class: Drupal\migrate\Plugin\Migration
 field_plugin_method: null

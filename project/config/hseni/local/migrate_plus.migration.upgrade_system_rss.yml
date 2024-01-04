@@ -2,6 +2,8 @@ uuid: 183a6994-654b-4a63-9ab1-81510e1d61a5
 langcode: en-gb
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: du_rUjHpuEz3OWyCJa45swXLtfiTg0VU4d7zf9tLd0E
 id: upgrade_system_rss
 class: Drupal\migrate\Plugin\Migration
 field_plugin_method: null
