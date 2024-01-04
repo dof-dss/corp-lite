@@ -77,9 +77,29 @@ process:
       plugin: get
       source: comment
   body:
-    -
-      plugin: get
+    - plugin: get
       source: body
+    - plugin: media_wysiwyg_filter
+    - plugin: filter_absolute_links
+
+      replace_urls:
+        http://www.hseni.gov.uk
+        http://hseni.gov.uk
+        https://www.hseni.gov.uk
+        https://hseni.gov.uk
+    - plugin: site_files_filter
+      from_ref: sites/hseni.gov.uk/files
+      to_ref: files/hseni
+  body/0/format:
+    - plugin: static_map
+      bypass: true
+      source: body/0/format
+      map:
+        filtered_html: basic_html
+        filtered_html_with_no_images: basic_html
+        filtered_html_with_tokens: basic_html
+        restricted_html: basic_html
+        plain_text: plain_text
   field_notes_to_editors:
     -
       plugin: get
@@ -119,9 +139,12 @@ process:
       plugin: get
       source: field_teaser
   field_news_type:
-    -
-      plugin: get
+    - plugin: static_map
       source: field_news_type
+      default_value: null
+      map:
+        news: 4
+        pressrelease: 5
   field_metatag:
     -
       plugin: d7_metatag_entities
