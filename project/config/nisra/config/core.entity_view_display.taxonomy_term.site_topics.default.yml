@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.taxonomy_term.site_topics.field_enable_toc
+    - field.field.taxonomy_term.site_topics.field_hide_topic
     - field.field.taxonomy_term.site_topics.field_summary
     - field.field.taxonomy_term.site_topics.field_term_image
     - field.field.taxonomy_term.site_topics.field_term_photo
@@ -49,5 +50,6 @@ content:
     region: content
 hidden:
   field_enable_toc: true
+  field_hide_topic: true
   langcode: true
   search_api_excerpt: true

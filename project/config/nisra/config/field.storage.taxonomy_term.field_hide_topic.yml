@@ -1,0 +1,18 @@
+uuid: ae1395ba-618c-47ed-bcc2-ca128ef038ce
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.field_hide_topic
+field_name: field_hide_topic
+entity_type: taxonomy_term
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
