@@ -1,0 +1,15 @@
+uuid: 02438774-6080-4f04-9ccb-3641c0fb1199
+langcode: en
+status: true
+dependencies:
+  config:
+    - flag.flag.home_page_display
+  module:
+    - flag
+id: flag_action.home_page_display_unflag
+label: 'Remove this content from the home page.'
+type: node
+plugin: 'flag_action:home_page_display_unflag'
+configuration:
+  flag_id: home_page_display
+  flag_action: unflag

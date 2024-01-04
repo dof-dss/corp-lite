@@ -1,0 +1,15 @@
+uuid: 4d765038-44d4-4697-9f15-4919199d2382
+langcode: en
+status: true
+dependencies:
+  config:
+    - flag.flag.home_page_display
+  module:
+    - flag
+id: flag_action.home_page_display_flag
+label: 'Feature on home page'
+type: node
+plugin: 'flag_action:home_page_display_flag'
+configuration:
+  flag_id: home_page_display
+  flag_action: flag

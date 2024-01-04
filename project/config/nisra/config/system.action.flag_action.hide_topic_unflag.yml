@@ -1,0 +1,15 @@
+uuid: d4424c7f-1d52-480b-846d-0bb12366f933
+langcode: en
+status: true
+dependencies:
+  config:
+    - flag.flag.hide_topic
+  module:
+    - flag
+id: flag_action.hide_topic_unflag
+label: 'Display this topic.'
+type: taxonomy_term
+plugin: 'flag_action:hide_topic_unflag'
+configuration:
+  flag_id: hide_topic
+  flag_action: unflag

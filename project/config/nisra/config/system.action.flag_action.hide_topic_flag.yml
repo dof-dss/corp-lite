@@ -1,0 +1,15 @@
+uuid: 01912722-5f0c-4016-b1b3-d2ede95c504d
+langcode: en
+status: true
+dependencies:
+  config:
+    - flag.flag.hide_topic
+  module:
+    - flag
+id: flag_action.hide_topic_flag
+label: 'Hide this topic.'
+type: taxonomy_term
+plugin: 'flag_action:hide_topic_flag'
+configuration:
+  flag_id: hide_topic
+  flag_action: flag
