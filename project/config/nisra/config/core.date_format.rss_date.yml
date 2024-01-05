@@ -1,0 +1,8 @@
+uuid: 718046e7-b899-4b4a-b479-38d81b8f2480
+langcode: en
+status: true
+dependencies: {  }
+id: rss_date
+label: 'RSS date'
+locked: false
+pattern: r
