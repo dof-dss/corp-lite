@@ -69,7 +69,7 @@ content:
         show_edit: '1'
   field_term_photo:
     type: media_library_widget
-    weight: 5
+    weight: 7
     region: content
     settings:
       media_types: {  }
