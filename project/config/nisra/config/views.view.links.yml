@@ -1854,7 +1854,22 @@ display:
         sorts: false
         filters: false
         filter_groups: false
+        header: false
       display_description: ''
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: false
+          content:
+            value: "<p>\r\nEdit corporate links shown on the home page.  Drag and drop to change the display order. <strong>Only the first 12 items are displayed.</strong>\r\n</p>"
+            format: basic_html
+          tokenize: false
       display_extenders:
         metatag_display_extender:
           metatags: {  }
@@ -2221,7 +2236,22 @@ display:
         sorts: false
         filters: false
         filter_groups: false
+        header: false
       display_description: ''
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: false
+          content:
+            value: "<p>\r\nEdit quick links shown on the home page.  Drag and drop to change the display order. <strong>Only the first 8 items are displayed.</strong>\r\n</p>"
+            format: basic_html
+          tokenize: false
       display_extenders:
         metatag_display_extender:
           metatags: {  }
@@ -2588,7 +2618,22 @@ display:
         sorts: false
         filters: false
         filter_groups: false
+        header: false
       display_description: ''
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: false
+          content:
+            value: "<p>\r\nEdit useful links shown on the home page.  Drag and drop to change the display order. <strong>Only the first 5 items are displayed.</strong>\r\n</p>"
+            format: basic_html
+          tokenize: false
       display_extenders:
         metatag_display_extender:
           metatags: {  }
