@@ -1,0 +1,54 @@
+uuid: eccbff56-42b6-41a9-8b0c-17121752b358
+langcode: en-gb
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: mHAlMglsF46CmeFHlYgGm-4ezGKDlSSkqe7Y-o__T9c
+id: upgrade_d7_metatag_field_instance_node_alert
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Configuration
+migration_group: migrate_drupal_7
+label: 'Metatag field instance of Alert content items'
+source:
+  plugin: d7_metatag_field_instance
+  source_module: metatag
+  ignore_map: true
+  constants:
+    field_name: field_metatag
+    label: 'Meta tags'
+  entity_type_id: node
+  entity_type: node
+  bundle: alert
+process:
+  bundle:
+    -
+      plugin: get
+      source: bundle
+  entity_type:
+    -
+      plugin: get
+      source: entity_type
+    -
+      plugin: static_map
+      map:
+        field_collection_item: paragraph
+        paragraphs_item: paragraph
+      bypass: true
+  field_name:
+    -
+      plugin: get
+      source: constants/field_name
+  label:
+    -
+      plugin: get
+      source: constants/label
+destination:
+  plugin: 'entity:field_config'
+migration_dependencies:
+  required:
+    - upgrade_d7_metatag_field_node
+  optional: {  }
