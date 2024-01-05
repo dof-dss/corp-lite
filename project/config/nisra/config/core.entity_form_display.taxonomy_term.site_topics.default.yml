@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.site_topics.field_enable_toc
     - field.field.taxonomy_term.site_topics.field_hide_topic
     - field.field.taxonomy_term.site_topics.field_summary
     - field.field.taxonomy_term.site_topics.field_term_image
@@ -100,5 +99,4 @@ content:
     settings:
       display_label: true
     third_party_settings: {  }
-hidden:
-  field_enable_toc: true
+hidden: {  }
