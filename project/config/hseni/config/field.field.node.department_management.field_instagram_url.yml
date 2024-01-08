@@ -1,0 +1,23 @@
+uuid: d1f03ad2-89c7-49a3-ab2b-10eb7cf939f9
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_instagram_url
+    - node.type.department_management
+  module:
+    - link
+id: node.department_management.field_instagram_url
+field_name: field_instagram_url
+entity_type: node
+bundle: department_management
+label: 'Instagram URL'
+description: 'Paste in the Instagram URL for the department - remember to insert the link in full, i.e. https://instagram.com/...'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 17
+field_type: link

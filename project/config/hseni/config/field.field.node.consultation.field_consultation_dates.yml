@@ -1,4 +1,4 @@
-uuid: 36bbe4c5-e5fe-48d3-9806-2417d5b50944
+uuid: 97aa579a-1964-4031-8dbb-d4db6e7c5d1f
 langcode: en-gb
 status: true
 dependencies:
@@ -6,18 +6,16 @@ dependencies:
     - field.storage.node.field_consultation_dates
     - node.type.consultation
   module:
-    - datetime
-_core:
-  default_config_hash: MFhbf3FBeYX7_n98WUMCDRjdLamgBpiVYyEPAdA1ORo
+    - datetime_range
 id: node.consultation.field_consultation_dates
 field_name: field_consultation_dates
 entity_type: node
 bundle: consultation
-label: 'Consultation dates'
+label: 'Consultation Dates'
 description: ''
 required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: datetime
+field_type: daterange

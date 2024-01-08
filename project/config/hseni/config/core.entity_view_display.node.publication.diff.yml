@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.diff
     - field.field.node.publication.body
+    - field.field.node.publication.field_attachment
     - field.field.node.publication.field_meta_tags
     - field.field.node.publication.field_publication_type
     - field.field.node.publication.field_published_date
@@ -15,13 +16,15 @@ dependencies:
     - datetime
     - field_group
     - metatag
-    - options
     - text
     - user
 third_party_settings:
   field_group:
     group_additional_content_details:
       children:
+        - field_published_date
+        - field_site_topics
+        - field_publication_type
         - field_meta_tags
       label: 'Additional content details'
       parent_name: ''
@@ -51,7 +54,16 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 1
+    region: content
+  field_attachment:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 2
     region: content
   field_meta_tags:
     type: metatag_empty_formatter
@@ -61,35 +73,36 @@ content:
     weight: 7
     region: content
   field_publication_type:
-    type: list_default
-    label: above
-    settings: {  }
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
     third_party_settings: {  }
-    weight: 3
+    weight: 6
     region: content
   field_published_date:
     type: datetime_default
-    label: above
+    label: inline
     settings:
       timezone_override: ''
-      format_type: medium
+      format_type: corplite_medium
     third_party_settings: {  }
     weight: 4
     region: content
   field_site_topics:
     type: entity_reference_label
-    label: above
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
-    weight: 2
+    weight: 5
     region: content
   field_summary:
     type: basic_string
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
 hidden:
   content_moderation_control: true

@@ -1,19 +1,17 @@
-uuid: 57a3780e-8774-4115-b542-39209e3fdd11
+uuid: 2bd5e164-786f-4382-ac42-12674f904e70
 langcode: en-gb
 status: true
 dependencies:
   module:
-    - datetime
+    - datetime_range
     - node
-_core:
-  default_config_hash: qwOMzGv0fdoTVW4UOISzL56_KzwFbessiNLEwTLfPjA
 id: node.field_consultation_dates
 field_name: field_consultation_dates
 entity_type: node
-type: datetime
+type: daterange
 settings:
-  datetime_type: date
-module: datetime
+  datetime_type: datetime
+module: datetime_range
 locked: false
 cardinality: 1
 translatable: true

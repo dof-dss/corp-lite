@@ -1,0 +1,23 @@
+uuid: bf29e94e-2cb9-40e0-ac37-8233a9043db4
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_facebook_url
+    - node.type.department_management
+  module:
+    - link
+id: node.department_management.field_facebook_url
+field_name: field_facebook_url
+entity_type: node
+bundle: department_management
+label: 'facebook URL'
+description: 'Paste in the Facebook URL for the department - remember to insert the link in full, i.e. https://facebook.com/...'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 17
+field_type: link

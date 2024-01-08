@@ -2,8 +2,6 @@ uuid: 56e379a9-2b65-4417-bbd9-b779b43d8c3c
 langcode: en-gb
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: E8jpRNRCRdWFsR22F43bU0KVbXpaB2jOvAzLwr55JUs
 id: upgrade_d7_node_complete_department_management
 class: Drupal\node\Plugin\migrate\D7NodeTranslation
 field_plugin_method: null
@@ -82,14 +80,74 @@ process:
     -
       plugin: get
       source: body
+    -
+      plugin: media_wysiwyg_filter
+    -
+      plugin: filter_absolute_links
+      replace_urls: 'http://www.hseni.gov.uk http://hseni.gov.uk https://www.hseni.gov.uk https://hseni.gov.uk'
+    -
+      plugin: site_files_filter
+      from_ref: sites/hseni.gov.uk/files
+      to_ref: files/hseni
+  body/0/format:
+    -
+      plugin: static_map
+      bypass: true
+      source: body/0/format
+      map:
+        filtered_html: basic_html
+        filtered_html_with_no_images: basic_html
+        filtered_html_with_tokens: basic_html
+        restricted_html: basic_html
+        plain_text: plain_text
   field_access_to_information:
     -
       plugin: get
       source: field_access_to_information
+    -
+      plugin: media_wysiwyg_filter
+    -
+      plugin: filter_absolute_links
+      replace_urls: 'http://www.hseni.gov.uk http://hseni.gov.uk https://www.hseni.gov.uk https://hseni.gov.uk'
+    -
+      plugin: site_files_filter
+      from_ref: sites/hseni.gov.uk/files
+      to_ref: files/hseni
+  field_access_to_information/0/format:
+    -
+      plugin: static_map
+      bypass: true
+      source: body/0/format
+      map:
+        filtered_html: basic_html
+        filtered_html_with_no_images: basic_html
+        filtered_html_with_tokens: basic_html
+        restricted_html: basic_html
+        plain_text: plain_text
   field_contact_information:
     -
       plugin: get
       source: field_contact_information
+    -
+      plugin: media_wysiwyg_filter
+    -
+      plugin: filter_absolute_links
+      replace_urls: 'http://www.hseni.gov.uk http://hseni.gov.uk https://www.hseni.gov.uk https://hseni.gov.uk'
+    -
+      plugin: site_files_filter
+      from_ref: sites/hseni.gov.uk/files
+      to_ref: files/hseni
+  field_contact_information/0/format:
+    -
+      plugin: static_map
+      bypass: true
+      source: body/0/format
+      map:
+        filtered_html: basic_html
+        filtered_html_with_no_images: basic_html
+        filtered_html_with_tokens: basic_html
+        restricted_html: basic_html
+        plain_text: plain_text
   field_facebook_url:
     -
       plugin: field_link
@@ -102,10 +160,8 @@ process:
     -
       plugin: field_link
       source: field_linkedin_url
-  field_map:
-    -
-      plugin: get
-      source: field_map
+  field_map/lng: field_map/0/lon
+  field_map/lat: field_map/0/lat
   field_twitter_url:
     -
       plugin: field_link
@@ -114,10 +170,14 @@ process:
     -
       plugin: field_link
       source: field_youtube_url
-  field_instagram_url:
+  field_agencies_carryout:
     -
       plugin: field_link
-      source: field_instagram_url
+      source: field_agencies_carryout
+  field_agencies_provide:
+    -
+      plugin: field_link
+      source: field_agencies_provide
   field_metatag:
     -
       plugin: d7_metatag_entities

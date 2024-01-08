@@ -1,107 +1,17 @@
-uuid: 490b729f-5127-4072-ba51-4697b144994e
+uuid: 9e38f339-ac15-4686-ae6e-745bc0d6ddf8
 langcode: en-gb
 status: true
 dependencies:
   module:
     - node
-    - options
-_core:
-  default_config_hash: kRdu5qVgBPeAkcdeF4EvlRid44T-bSi44nfN3dNStXo
+    - taxonomy
 id: node.field_publication_type
 field_name: field_publication_type
 entity_type: node
-type: list_string
+type: entity_reference
 settings:
-  allowed_values:
-    -
-      value: agendas
-      label: 'Agendas and minutes'
-    -
-      value: businessplans
-      label: 'Business plans'
-    -
-      value: circulars
-      label: Circulars
-    -
-      value: consultationreports
-      label: 'Consultation reports'
-    -
-      value: contractmanagement
-      label: 'Contract management'
-    -
-      value: corporatereports
-      label: 'Corporate reports'
-    -
-      value: correspondence
-      label: Correspondence
-    -
-      value: decisions
-      label: Decisions
-    -
-      value: developmentplanframework
-      label: 'Development plan/framework'
-    -
-      value: financial
-      label: 'Financial plans and reports'
-    -
-      value: foiresponses
-      label: 'FOI/EIR responses'
-    -
-      value: forms
-      label: Forms
-    -
-      value: guidance
-      label: 'Guidance literature'
-    -
-      value: impactassessments
-      label: 'Impact assessments'
-    -
-      value: independentreports
-      label: 'Independent reports'
-    -
-      value: inspectionreports
-      label: 'Inspection reports'
-    -
-      value: jointcommuniques
-      label: 'Joint Communiqués'
-    -
-      value: legislation
-      label: 'Legislation and regulations'
-    -
-      value: listsregisters
-      label: 'Lists and registers'
-    -
-      value: maps
-      label: Maps
-    -
-      value: memoranda
-      label: Memoranda
-    -
-      value: notices
-      label: Notices
-    -
-      value: policypapers
-      label: 'Policy papers'
-    -
-      value: promotional
-      label: 'Promotional material'
-    -
-      value: researchanalysis
-      label: 'Research and analysis'
-    -
-      value: speeches
-      label: 'Speeches and statements'
-    -
-      value: surveys
-      label: 'Surveys / Evaluations'
-    -
-      value: supportmaterial
-      label: 'Support Material'
-    -
-      value: statisticalreports
-      label: 'Statistical reports'
-  allowed_values_function: ''
-module: options
+  target_type: taxonomy_term
+module: core
 locked: false
 cardinality: 3
 translatable: true

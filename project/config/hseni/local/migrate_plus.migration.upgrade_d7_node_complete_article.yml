@@ -2,8 +2,6 @@ uuid: 2ef8724d-a9a4-4be5-9049-aa2c00a3b484
 langcode: en-gb
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: ojt9SMgk-3N8BZAEleB8iS2CeDlVP3sHeIhNtde0GGs
 id: upgrade_d7_node_complete_article
 class: Drupal\node\Plugin\migrate\D7NodeTranslation
 field_plugin_method: null
@@ -82,6 +80,26 @@ process:
     -
       plugin: get
       source: body
+    -
+      plugin: media_wysiwyg_filter
+    -
+      plugin: filter_absolute_links
+      replace_urls: 'http://www.hseni.gov.uk http://hseni.gov.uk https://www.hseni.gov.uk https://hseni.gov.uk'
+    -
+      plugin: site_files_filter
+      from_ref: sites/hseni.gov.uk/files
+      to_ref: files/hseni
+  body/0/format:
+    -
+      plugin: static_map
+      bypass: true
+      source: body/0/format
+      map:
+        filtered_html: basic_html
+        filtered_html_with_no_images: basic_html
+        filtered_html_with_tokens: basic_html
+        restricted_html: basic_html
+        plain_text: plain_text
   field_enable_toc:
     -
       plugin: get

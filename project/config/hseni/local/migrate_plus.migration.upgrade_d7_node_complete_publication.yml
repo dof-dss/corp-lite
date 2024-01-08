@@ -2,8 +2,6 @@ uuid: 1e39414c-60c9-43dd-8fe8-a1079e2e8edb
 langcode: en-gb
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: 2gnF8O7hCinaOtl6Jjb_f5Uzazsn9Oimk8xquiUAkCc
 id: upgrade_d7_node_complete_publication
 class: Drupal\node\Plugin\migrate\D7NodeTranslation
 field_plugin_method: null
@@ -82,6 +80,26 @@ process:
     -
       plugin: get
       source: body
+    -
+      plugin: media_wysiwyg_filter
+    -
+      plugin: filter_absolute_links
+      replace_urls: 'http://www.hseni.gov.uk http://hseni.gov.uk https://www.hseni.gov.uk https://hseni.gov.uk'
+    -
+      plugin: site_files_filter
+      from_ref: sites/hseni.gov.uk/files
+      to_ref: files/hseni
+  body/0/format:
+    -
+      plugin: static_map
+      bypass: true
+      source: body/0/format
+      map:
+        filtered_html: basic_html
+        filtered_html_with_no_images: basic_html
+        filtered_html_with_tokens: basic_html
+        restricted_html: basic_html
+        plain_text: plain_text
   field_attachment:
     -
       plugin: sub_process
@@ -92,8 +110,29 @@ process:
         description: description
   field_publication_type:
     -
-      plugin: get
+      plugin: static_map
       source: field_publication_type
+      default_value: null
+      map:
+        forms: 6
+        notices: 7
+        promotional: 8
+        advice_and_guidance: 9
+        annual_report_and_accounts: 10
+        authorisations_and_exemptions: 11
+        board_meeting_minutes: 12
+        consultations: 13
+        corporate_plans: 14
+        foi_eir_responses: 15
+        impact_assessments: 16
+        legislation_and_regulations: 17
+        lists_and_registers: 18
+        managementminutes: 19
+        memorandums_of_understanding: 20
+        operating_plans: 21
+        policies: 22
+        prosecutions: 23
+        speeches_and_statements: 24
   field_published_date:
     -
       plugin: sub_process
