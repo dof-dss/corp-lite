@@ -1,4 +1,4 @@
-uuid: 518b64b5-96e9-4438-ae74-29b12eaa2ffc
+uuid: cafe90c8-8bbc-4718-a56f-48ef790d23fe
 langcode: en
 status: true
 dependencies:
@@ -11,7 +11,7 @@ field_name: field_term_photo
 entity_type: taxonomy_term
 bundle: research_support
 label: Icon
-description: ''
+description: 'Upload an icon image to be displayed with this topic.'
 required: false
 translatable: false
 default_value: {  }

@@ -1,9 +1,9 @@
-uuid: 7358e986-0efa-457b-add1-f24e335045a3
+uuid: 8a25a7ab-fb68-4d3e-a89d-2d0f3310ccc9
 langcode: en-gb
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.most_recent
     - field.field.node.news.body
     - field.field.node.news.field_feature_home_page
     - field.field.node.news.field_main_feature
@@ -20,21 +20,12 @@ dependencies:
     - datetime
     - user
 _core:
-  default_config_hash: Jgbgpb484KGn7XwD7hlnpbLFiS9iNAMxfg1Wn4sdAUo
-id: node.news.teaser
+  default_config_hash: mdcFru1RGNlUlNAWoZATR_Jf7mEeKa2cuD_rkWbnzgw
+id: node.news.most_recent
 targetEntityType: node
 bundle: news
-mode: teaser
+mode: most_recent
 content:
-  field_photo:
-    type: entity_reference_entity_view
-    label: hidden
-    settings:
-      view_mode: default
-      link: true
-    third_party_settings: {  }
-    weight: 1
-    region: content
   field_published_date:
     type: datetime_default
     label: hidden
@@ -52,6 +43,7 @@ hidden:
   field_meta_tags: true
   field_news_type: true
   field_notes_to_editors: true
+  field_photo: true
   field_site_topics: true
   field_summary: true
   field_teaser: true

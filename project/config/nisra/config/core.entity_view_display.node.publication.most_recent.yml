@@ -1,9 +1,9 @@
-uuid: b847e728-b8fc-4ffe-b66f-3ee6a60a37a2
+uuid: 180c1025-2f2b-4651-b604-3c940806f6d5
 langcode: en-gb
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.search_index
+    - core.entity_view_mode.node.most_recent
     - field.field.node.publication.body
     - field.field.node.publication.field_attachment
     - field.field.node.publication.field_external_publication
@@ -20,22 +20,14 @@ dependencies:
     - user
 _core:
   default_config_hash: j-p1CVIkzRUzAAMoDfDmv0J15405HfHitxCZ_MfSxEo
-id: node.publication.search_index
+id: node.publication.most_recent
 targetEntityType: node
 bundle: publication
-mode: search_index
+mode: most_recent
 content:
-  field_publication_type:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: false
-    third_party_settings: {  }
-    weight: 1
-    region: content
   field_published_date:
     type: datetime_default
-    label: inline
+    label: hidden
     settings:
       timezone_override: ''
       format_type: corplite_format
@@ -49,6 +41,7 @@ hidden:
   field_external_publication: true
   field_feature_home_page: true
   field_meta_tags: true
+  field_publication_type: true
   field_research_support: true
   field_site_topics: true
   field_summary: true

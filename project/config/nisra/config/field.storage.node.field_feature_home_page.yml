@@ -1,12 +1,12 @@
-uuid: 104ec006-ba30-4c63-a5b3-8954ab0a69db
-langcode: und
+uuid: 36a7e3b8-b9f5-4526-a799-49dc2f0ce6a5
+langcode: en
 status: true
 dependencies:
   module:
-    - taxonomy
-id: taxonomy_term.field_enable_toc
-field_name: field_enable_toc
-entity_type: taxonomy_term
+    - node
+id: node.field_feature_home_page
+field_name: field_feature_home_page
+entity_type: node
 type: boolean
 settings: {  }
 module: core

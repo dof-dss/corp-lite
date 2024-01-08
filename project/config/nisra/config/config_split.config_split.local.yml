@@ -12,6 +12,7 @@ folder: ../project/config/nisra/local
 module:
   clone_nodes: 0
   corplite_migrations: 0
+  dblog: 0
   devel: 0
   easy_install: 0
   masquerade: 0

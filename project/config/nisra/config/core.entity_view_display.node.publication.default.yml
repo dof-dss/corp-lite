@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.publication.body
     - field.field.node.publication.field_attachment
     - field.field.node.publication.field_external_publication
+    - field.field.node.publication.field_feature_home_page
     - field.field.node.publication.field_meta_tags
     - field.field.node.publication.field_publication_type
     - field.field.node.publication.field_published_date
@@ -87,6 +88,7 @@ content:
     region: content
 hidden:
   content_moderation_control: true
+  field_feature_home_page: true
   field_meta_tags: true
   field_publication_type: true
   langcode: true

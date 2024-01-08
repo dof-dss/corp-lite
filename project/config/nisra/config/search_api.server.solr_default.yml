@@ -1,4 +1,4 @@
-uuid: 27e87b5f-21ef-4314-91be-624b071dee14
+uuid: ce052109-4db5-4249-aa8a-9a8a0ae2ac26
 langcode: en
 status: true
 dependencies:
@@ -27,8 +27,8 @@ dependencies:
     - search_api_solr.solr_request_handler.request_handler_tvrh_default_7_0_0
   module:
     - search_api_solr
-id: default
-name: 'NISRA search'
+id: solr_default
+name: 'Solr default'
 description: ''
 backend: search_api_solr
 backend_config:

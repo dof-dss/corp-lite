@@ -38,6 +38,7 @@ module:
   datetime: 0
   datetime_range: 0
   diff: 0
+  draggableviews: 0
   dynamic_entity_reference: 0
   dynamic_page_cache: 0
   easychart: 0
@@ -138,6 +139,7 @@ module:
   ultimate_cron: 0
   user: 0
   views_custom_cache_tag: 0
+  views_tree: 0
   webform: 0
   webform_access: 0
   webform_node: 0

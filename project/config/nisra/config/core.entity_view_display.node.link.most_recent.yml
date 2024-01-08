@@ -1,0 +1,39 @@
+uuid: 235cfadf-f3f9-458e-805c-a639585d6db3
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.most_recent
+    - field.field.node.link.field_link_type
+    - field.field.node.link.field_link_url
+    - field.field.node.link.field_meta_tags
+    - field.field.node.link.field_site_topics
+    - node.type.link
+  module:
+    - link
+    - user
+id: node.link.most_recent
+targetEntityType: node
+bundle: link
+mode: most_recent
+content:
+  field_link_url:
+    type: link
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: true
+      url_plain: true
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  content_moderation_control: true
+  field_link_type: true
+  field_meta_tags: true
+  field_site_topics: true
+  langcode: true
+  links: true
+  search_api_excerpt: true
