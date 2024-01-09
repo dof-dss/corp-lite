@@ -332,11 +332,11 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Apply
+          submit_button: Search
           reset_button: false
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
-          expose_sort_order: true
+          expose_sort_order: false
           sort_asc_label: Asc
           sort_desc_label: Desc
       access:
@@ -435,7 +435,7 @@ display:
         type: default
         options:
           grouping: {  }
-          row_class: ''
+          row_class: card
           default_row_class: false
       row:
         type: fields
@@ -502,5 +502,187 @@ display:
         - 'config:field.storage.node.field_published_date'
         - 'config:field.storage.node.field_summary'
         - 'config:field.storage.node.field_teaser'
+        - 'config:search_api.index.default_content'
+        - 'search_api_list:default_content'
+  site_search_embed:
+    id: site_search_embed
+    display_title: Embed
+    display_plugin: embed
+    position: 2
+    display_options:
+      fields:
+        title:
+          id: title
+          table: search_api_datasource_default_content_entity_node
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          plugin_id: search_api_field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          field_rendering: true
+          fallback_handler: search_api
+          fallback_options:
+            link_to_item: false
+            use_highlighting: false
+            multi_type: separator
+            multi_separator: ', '
+      pager:
+        type: some
+        options:
+          offset: 0
+          items_per_page: 5
+      empty: {  }
+      filters:
+        title_fulltext:
+          id: title_fulltext
+          table: search_api_index_default_content
+          field: title_fulltext
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_text
+          operator: '='
+          value:
+            min: ''
+            max: ''
+            value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: title_fulltext_op
+            label: Search
+            description: ''
+            use_operator: false
+            operator: title_fulltext_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: query
+            required: true
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              author_user: '0'
+              supervisor_user: '0'
+              secure_statistics_author_user: '0'
+              secure_market_sensitive_author_user: '0'
+              secure_statistics_supervisor_user: '0'
+              secure_market_sensitive_supervisor_user: '0'
+              editor_user: '0'
+              site_admin_user: '0'
+              admin_user: '0'
+              qa: '0'
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: 'Search this site...'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: card
+          default_row_class: false
+      row:
+        type: fields
+        options:
+          default_field_elements: true
+          inline: {  }
+          separator: ''
+          hide_empty: false
+      defaults:
+        empty: false
+        pager: false
+        style: false
+        row: false
+        fields: false
+        filters: false
+        filter_groups: false
+        header: false
+      header: {  }
+      display_extenders:
+        metatag_display_extender:
+          metatags: {  }
+          tokenize: false
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - 'user.node_grants:view'
+      tags:
         - 'config:search_api.index.default_content'
         - 'search_api_list:default_content'
