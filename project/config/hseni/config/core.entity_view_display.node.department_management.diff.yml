@@ -1,0 +1,177 @@
+uuid: 520eb81e-a597-4c1b-803b-c1d0a3393af2
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.diff
+    - field.field.node.department_management.body
+    - field.field.node.department_management.field_access_to_information
+    - field.field.node.department_management.field_contact_information
+    - field.field.node.department_management.field_facebook_url
+    - field.field.node.department_management.field_flickr_url
+    - field.field.node.department_management.field_instagram_url
+    - field.field.node.department_management.field_linkedin_url
+    - field.field.node.department_management.field_map
+    - field.field.node.department_management.field_meta_tags
+    - field.field.node.department_management.field_twitter_url
+    - field.field.node.department_management.field_youtube_url
+    - node.type.department_management
+  module:
+    - field_group
+    - link
+    - metatag
+    - origins_common
+    - text
+    - user
+third_party_settings:
+  field_group:
+    group_additional_content_details:
+      children:
+        - field_access_to_information
+        - field_contact_information
+        - field_facebook_url
+        - field_flickr_url
+        - field_instagram_url
+        - field_linkedin_url
+        - field_twitter_url
+        - field_youtube_url
+        - field_map
+        - field_meta_tags
+      label: 'Additional content details'
+      parent_name: ''
+      region: content
+      weight: 1
+      format_type: html_element
+      format_settings:
+        classes: field-collection
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+id: node.department_management.diff
+targetEntityType: node
+bundle: department_management
+mode: diff
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_access_to_information:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_contact_information:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_facebook_url:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_flickr_url:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_instagram_url:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_linkedin_url:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_map:
+    type: gmaps_lazy_load_formatter
+    label: above
+    settings:
+      zoom: '10'
+      map_type: roadmap
+      placeholder: empty
+      link_text: ''
+      map_width: '300'
+      map_height: '300'
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_meta_tags:
+    type: metatag_empty_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_twitter_url:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_youtube_url:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 7
+    region: content
+hidden:
+  langcode: true
+  links: true
+  search_api_excerpt: true
