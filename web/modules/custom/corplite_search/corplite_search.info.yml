@@ -1,0 +1,5 @@
+name: 'Corplite sites: search'
+type: module
+description: 'Search customisations for Corplite sites'
+package: 'Custom'
+core_version_requirement: ^8 || ^9 || ^10
