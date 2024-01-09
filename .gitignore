@@ -37,7 +37,6 @@ node_modules/
 # Ignore local Lando files
 .lando.local.yml
 .lando/config/
-.lando.yml
 
 # Misc tooling files to ingore.
 .swp
