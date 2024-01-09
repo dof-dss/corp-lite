@@ -23,7 +23,6 @@ At the command line, clone this repo, cd into it and then run the following:
 
 ```
 lando start
-lando composer install
 maestro project:build
 lando rebuild
 ```
@@ -31,10 +30,9 @@ lando rebuild
 > NOTE Do not run 'maestro pub' in the corp lite project as it serves no purpose, there is no 'parent' repo
 and any composer changes should be made in this repo.
 
-- Fetch/copy env var values into your .env file: `platform ssh -e main 'env | sort'`
-- Rebuild the project for the new values to take effect: `lando rebuild -y`
-- Import the db: `lando db-import <filename>.sql.gz`
-- Rebuild the app container and import local config split settings: `lando drush cr && lando cim -y`
+For each site (e.g. nisra)
+- Import the db: `lando db-import nisra <filename>.sql.gz`
+- Rebuild the app container and import local config split settings: `lando drush cr -l nisra && lando cim -y -l nisra`
 
 # Code workflow
 
