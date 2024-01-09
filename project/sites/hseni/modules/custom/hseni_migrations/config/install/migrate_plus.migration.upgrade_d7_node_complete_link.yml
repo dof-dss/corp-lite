@@ -81,9 +81,9 @@ process:
       source: field_link_type
       default_value: null
       map:
-        quicklink: 1
-        corporatelink: 2
-        aboutuslink: 3
+        quicklink: 120
+        corporatelink: 121
+        aboutuslink: 122
   field_link_url:
     -
       plugin: field_link

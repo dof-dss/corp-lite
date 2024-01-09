@@ -104,6 +104,7 @@ process:
     -
       plugin: get
       source: field_notes_to_editors
+    - plugin: strip_html_filter
   field_photo:
     -
       plugin: sub_process
@@ -143,8 +144,8 @@ process:
       source: field_news_type
       default_value: null
       map:
-        news: 4
-        pressrelease: 5
+        news: 118
+        pressrelease: 119
   field_metatag:
     -
       plugin: d7_metatag_entities

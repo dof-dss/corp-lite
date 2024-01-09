@@ -104,7 +104,6 @@ process:
     - plugin: get
       source: field_additional_info
     - plugin: media_wysiwyg_filter
-
     - plugin: filter_absolute_links
 
       replace_urls:
