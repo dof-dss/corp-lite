@@ -9,7 +9,6 @@ dependencies:
     - field.field.node.article.field_meta_tags
     - field.field.node.article.field_site_topics
     - field.field.node.article.field_summary
-    - field.field.node.article.field_tags
     - node.type.article
   module:
     - user
@@ -27,7 +26,6 @@ hidden:
   field_meta_tags: true
   field_site_topics: true
   field_summary: true
-  field_tags: true
   langcode: true
   links: true
   search_api_excerpt: true

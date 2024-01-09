@@ -9,7 +9,6 @@ dependencies:
     - field.field.node.article.field_meta_tags
     - field.field.node.article.field_site_topics
     - field.field.node.article.field_summary
-    - field.field.node.article.field_tags
     - node.type.article
   module:
     - field_group
@@ -77,7 +76,6 @@ content:
 hidden:
   content_moderation_control: true
   field_enable_toc: true
-  field_tags: true
   langcode: true
   links: true
   search_api_excerpt: true
