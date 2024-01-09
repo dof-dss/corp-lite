@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.profile.body
     - field.field.node.profile.field_department
     - field.field.node.profile.field_meta_tags
+    - field.field.node.profile.field_photo
     - field.field.node.profile.field_summary
     - node.type.profile
   module:
@@ -18,6 +19,8 @@ third_party_settings:
   field_group:
     group_additional_content_details:
       children:
+        - field_department
+        - field_photo
         - field_meta_tags
       label: 'Additional content details'
       parent_name: ''
@@ -47,11 +50,11 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
   field_department:
     type: string
-    label: above
+    label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -62,14 +65,23 @@ content:
     label: inline
     settings: {  }
     third_party_settings: {  }
-    weight: 5
+    weight: 4
+    region: content
+  field_photo:
+    type: entity_reference_entity_view
+    label: inline
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 3
     region: content
   field_summary:
     type: basic_string
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
 hidden:
   content_moderation_control: true

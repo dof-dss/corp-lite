@@ -2,8 +2,6 @@ uuid: dc585751-c866-4ca5-90aa-9f593cc2453e
 langcode: en-gb
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: MLAVXbNFFj0KTrVZQfkXjsxUuu0WUSMUk6hw-Ck5qW4
 id: upgrade_d7_file
 class: Drupal\migrate\Plugin\Migration
 field_plugin_method: null
@@ -27,13 +25,19 @@ process:
     -
       plugin: get
       source: filename
+  ammended_filepath:
+    -
+      plugin: str_replace
+      source: filepath
+      search: sites/default/files
+      replace: sites/hseni/files
   source_full_path:
     -
       plugin: concat
       delimiter: /
       source:
         - constants/source_base_path
-        - filepath
+        - ammended_filepath
     -
       plugin: urlencode
   uri:

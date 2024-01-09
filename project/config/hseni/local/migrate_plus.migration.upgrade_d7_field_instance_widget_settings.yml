@@ -2,8 +2,6 @@ uuid: f9b0e72f-2de8-4739-957f-f8bc4c45bd5a
 langcode: en-gb
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: ihdK-J_miab5MmYs3InQFG2ij30_VAGatYfDBrUkD2k
 id: upgrade_d7_field_instance_widget_settings
 class: Drupal\migrate_drupal\Plugin\migrate\FieldMigration
 field_plugin_method: alterFieldWidgetMigration

@@ -1,0 +1,21 @@
+uuid: 4a7880a7-5598-43fb-a8f6-140ac9999021
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.file.field_file_language
+  module:
+    - file
+    - options
+id: file.audio.field_file_language
+field_name: field_file_language
+entity_type: file
+bundle: audio
+label: 'File language'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.storage.node.field_site_topics
     - node.type.article
-    - taxonomy.vocabulary.site_topics
 _core:
   default_config_hash: 6bn5Re3liaNvmVn5IvDV1zVFPT85C5d89JB_8O8mov8
 id: node.article.field_site_topics
@@ -13,19 +12,14 @@ field_name: field_site_topics
 entity_type: node
 bundle: article
 label: 'Site topics'
-description: ''
-required: false
+description: 'Choose relevant site topic(s) for this article. Hold down Ctrl to choose multiple site topics.'
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'
   handler_settings:
-    target_bundles:
-      site_topics: site_topics
     sort:
-      field: name
-      direction: asc
-    auto_create: false
-    auto_create_bundle: ''
+      field: _none
 field_type: entity_reference

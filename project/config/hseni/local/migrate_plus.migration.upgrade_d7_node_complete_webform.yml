@@ -2,8 +2,6 @@ uuid: 1ccb5619-01a8-4a5d-9d73-320b9056999f
 langcode: en-gb
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: luUuYaWIbvRlbrWdXlOxzTCHmbLJ4ffNEgG7BM7NLss
 id: upgrade_d7_node_complete_webform
 class: Drupal\node\Plugin\migrate\D7NodeTranslation
 field_plugin_method: null

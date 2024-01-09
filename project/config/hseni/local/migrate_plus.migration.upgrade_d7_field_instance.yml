@@ -2,8 +2,6 @@ uuid: c218fa21-e3de-4c70-bbd9-ccbd675603b6
 langcode: en-gb
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: 1dcmbqN5g6cd8R3SYBnEb78NxjWV6uWvb0aXg6_7Ixg
 id: upgrade_d7_field_instance
 class: Drupal\migrate_drupal\Plugin\migrate\FieldMigration
 field_plugin_method: alterFieldInstanceMigration
@@ -83,12 +81,11 @@ process:
           migration: upgrade_d7_taxonomy_vocabulary
           source: vid
   settings:
-    0:
-      plugin: d7_field_instance_settings
-      source:
-        - settings
-        - widget
-        - field_definition
+    plugin: d7_field_instance_settings
+    source:
+      - settings
+      - widget
+      - field_definition
     inline_entity_form:
       plugin: inline_entity_form_field_instance_settings
   default_value_function:
