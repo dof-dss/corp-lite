@@ -375,27 +375,24 @@ display:
           exposed: false
       arguments: {  }
       filters:
-        title_fulltext:
-          id: title_fulltext
+        search_api_fulltext:
+          id: search_api_fulltext
           table: search_api_index_default_content
-          field: title_fulltext
+          field: search_api_fulltext
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: search_api_text
-          operator: '='
-          value:
-            min: ''
-            max: ''
-            value: ''
+          plugin_id: search_api_fulltext
+          operator: or
+          value: ''
           group: 1
           exposed: true
           expose:
-            operator_id: title_fulltext_op
+            operator_id: search_api_fulltext_op
             label: ''
             description: ''
             use_operator: false
-            operator: title_fulltext_op
+            operator: search_api_fulltext_op
             operator_limit_selection: false
             operator_list: {  }
             identifier: query
@@ -416,9 +413,9 @@ display:
               site_admin_user: '0'
               admin_user: '0'
               qa: '0'
-            min_placeholder: ''
-            max_placeholder: ''
+            expose_fields: false
             placeholder: 'Search this site...'
+            searched_fields_id: search_api_fulltext_searched_fields
           is_grouped: false
           group_info:
             label: ''
@@ -431,6 +428,15 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
+          parse_mode: sloppy_terms
+          min_length: 2
+          fields:
+            - body
+            - field_summary
+            - field_summary_1
+            - field_teaser
+            - name
+            - title_fulltext
       style:
         type: default
         options:
@@ -589,27 +595,24 @@ display:
           items_per_page: 5
       empty: {  }
       filters:
-        title_fulltext:
-          id: title_fulltext
+        search_api_fulltext:
+          id: search_api_fulltext
           table: search_api_index_default_content
-          field: title_fulltext
+          field: search_api_fulltext
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: search_api_text
-          operator: '='
-          value:
-            min: ''
-            max: ''
-            value: ''
+          plugin_id: search_api_fulltext
+          operator: or
+          value: ''
           group: 1
           exposed: true
           expose:
-            operator_id: title_fulltext_op
+            operator_id: search_api_fulltext_op
             label: Search
             description: ''
             use_operator: false
-            operator: title_fulltext_op
+            operator: search_api_fulltext_op
             operator_limit_selection: false
             operator_list: {  }
             identifier: query
@@ -630,9 +633,9 @@ display:
               site_admin_user: '0'
               admin_user: '0'
               qa: '0'
-            min_placeholder: ''
-            max_placeholder: ''
+            expose_fields: false
             placeholder: 'Search this site...'
+            searched_fields_id: search_api_fulltext_searched_fields
           is_grouped: false
           group_info:
             label: ''
@@ -645,6 +648,15 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
+          parse_mode: sloppy_phrase
+          min_length: 3
+          fields:
+            - body
+            - field_summary
+            - field_summary_1
+            - field_teaser
+            - name
+            - title_fulltext
       filter_groups:
         operator: AND
         groups:
