@@ -1,17 +1,19 @@
-uuid: b3980a6e-3b63-447d-b53f-fac8f1ec3be3
+uuid: 0ab97a9c-0689-4fcc-98e0-15794c109f20
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.body
+    - field.storage.node.field_publication_type
+    - field.storage.node.field_published_date
+    - field.storage.node.field_research_support
+    - field.storage.node.field_site_topics
     - field.storage.node.field_summary
-    - field.storage.taxonomy_term.field_summary
-    - field.storage.node.field_teaser
     - search_api.server.solr_default
   module:
     - search_api_solr
-    - node
     - taxonomy
+    - node
     - search_api
 third_party_settings:
   search_api_solr:
@@ -60,143 +62,107 @@ third_party_settings:
         en: '0'
         en-gb: '0'
       use_universal_collation: false
-id: default_content
-name: 'Default content'
+id: publications_index
+name: 'Publications index'
 description: ''
 read_only: false
 field_settings:
   body:
-    label: 'Before you start'
+    label: Body
     datasource_id: 'entity:node'
     property_path: body
     type: text
     dependencies:
       config:
         - field.storage.node.body
-  changed:
-    label: Changed
+  field_publication_type:
+    label: Type
     datasource_id: 'entity:node'
-    property_path: changed
+    property_path: field_publication_type
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_publication_type
+  field_published_date:
+    label: 'Published date'
+    datasource_id: 'entity:node'
+    property_path: field_published_date
     type: date
     dependencies:
-      module:
-        - node
-  created:
-    label: 'Authored on'
+      config:
+        - field.storage.node.field_published_date
+  field_research_support:
+    label: 'Research and support'
     datasource_id: 'entity:node'
-    property_path: created
-    type: date
+    property_path: field_research_support
+    type: integer
     dependencies:
-      module:
-        - node
+      config:
+        - field.storage.node.field_research_support
+  field_site_topics:
+    label: Statistics
+    datasource_id: 'entity:node'
+    property_path: field_site_topics
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_site_topics
   field_summary:
     label: Summary
     datasource_id: 'entity:node'
     property_path: field_summary
     type: text
+    boost: 3.0
     dependencies:
       config:
         - field.storage.node.field_summary
-  field_summary_1:
-    label: Summary
-    datasource_id: 'entity:taxonomy_term'
-    property_path: field_summary
-    type: text
-    dependencies:
-      config:
-        - field.storage.taxonomy_term.field_summary
-  field_teaser:
-    label: Teaser
-    datasource_id: 'entity:node'
-    property_path: field_teaser
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.field_teaser
   name:
-    label: Name
-    datasource_id: 'entity:taxonomy_term'
-    property_path: name
+    label: 'Research and support » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_research_support:entity:name'
     type: text
-    boost: 3.0
     dependencies:
+      config:
+        - field.storage.node.field_research_support
       module:
         - taxonomy
-  nid:
-    label: ID
+  name_1:
+    label: 'Statistics » Taxonomy term » Name'
     datasource_id: 'entity:node'
-    property_path: nid
-    type: integer
-    dependencies:
-      module:
-        - node
-  node_grants:
-    label: 'Node access information'
-    property_path: search_api_node_grants
-    type: string
-    indexed_locked: true
-    type_locked: true
-    hidden: true
-  revision_log:
-    label: 'Revision log message'
-    datasource_id: 'entity:node'
-    property_path: revision_log
+    property_path: 'field_site_topics:entity:name'
     type: text
     dependencies:
+      config:
+        - field.storage.node.field_site_topics
       module:
-        - node
-  revision_uid:
-    label: 'Revision user'
+        - taxonomy
+  name_2:
+    label: 'Type » Taxonomy term » Name'
     datasource_id: 'entity:node'
-    property_path: revision_uid
-    type: integer
+    property_path: 'field_publication_type:entity:name'
+    type: text
     dependencies:
+      config:
+        - field.storage.node.field_publication_type
       module:
-        - node
-  spelling:
-    label: Spelling
-    property_path: aggregated_field
-    type: solr_text_spellcheck
-    configuration:
-      type: union
-      separator: |+
-
-
-
-
-
-
-
-      fields:
-        - 'entity:node/title'
+        - taxonomy
   status:
-    label: null
+    label: Published
     datasource_id: 'entity:node'
     property_path: status
     type: boolean
-    indexed_locked: true
-    type_locked: true
     dependencies:
       module:
         - node
-  title_fulltext:
-    label: 'Title fulltext'
-    property_path: aggregated_field
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
     type: text
     boost: 21.0
-    configuration:
-      type: union
-      separator: |+
-
-
-
-
-
-
-
-      fields:
-        - 'entity:node/title'
-        - 'entity:taxonomy_term/name'
+    dependencies:
+      module:
+        - node
   type:
     label: 'Content type'
     datasource_id: 'entity:node'
@@ -206,19 +172,9 @@ field_settings:
       module:
         - node
   uid:
-    label: null
+    label: 'Authored by'
     datasource_id: 'entity:node'
     property_path: uid
-    type: integer
-    indexed_locked: true
-    type_locked: true
-    dependencies:
-      module:
-        - node
-  vid:
-    label: 'Revision ID'
-    datasource_id: 'entity:node'
-    property_path: vid
     type: integer
     dependencies:
       module:
@@ -226,18 +182,11 @@ field_settings:
 datasource_settings:
   'entity:node':
     bundles:
-      default: true
-      selected:
-        - webform
-    languages:
-      default: true
-      selected: {  }
-  'entity:taxonomy_term':
-    bundles:
       default: false
       selected:
-        - research_support
-        - site_topics
+        - publication
+        - secure_market_statistics
+        - secure_statistics
     languages:
       default: true
       selected: {  }
@@ -245,40 +194,23 @@ processor_settings:
   add_url: {  }
   aggregated_field: {  }
   auto_aggregated_fulltext_field: {  }
-  content_access:
-    weights:
-      preprocess_query: -30
   custom_value: {  }
   entity_status: {  }
   entity_type: {  }
-  highlight:
-    weights:
-      postprocess_query: 0
-    prefix: '<strong>'
-    suffix: '</strong>'
-    excerpt: true
-    excerpt_always: false
-    excerpt_length: 256
-    exclude_fields:
-      - revision_log
-    highlight: always
-    highlight_partial: false
   html_filter:
     weights:
       preprocess_index: -15
       preprocess_query: -15
-    all_fields: false
+    all_fields: true
     fields:
       - body
       - field_summary
-      - field_summary_1
-      - field_teaser
       - name
-      - revision_log
-      - spelling
-      - title_fulltext
+      - name_1
+      - name_2
+      - title
       - type
-    title: true
+    title: false
     alt: true
     tags:
       b: 2
