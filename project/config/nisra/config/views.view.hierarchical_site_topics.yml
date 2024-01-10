@@ -328,7 +328,7 @@ display:
   public_sitemap:
     id: public_sitemap
     display_title: 'Public sitemap'
-    display_plugin: page
+    display_plugin: block
     position: 1
     display_options:
       title: 'Public sitemap'
@@ -521,7 +521,6 @@ display:
         metatag_display_extender:
           metatags: {  }
           tokenize: false
-      path: admin/alltopics
     cache_metadata:
       max-age: -1
       contexts:
