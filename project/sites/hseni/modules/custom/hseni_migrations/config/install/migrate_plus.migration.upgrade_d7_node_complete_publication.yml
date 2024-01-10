@@ -113,25 +113,25 @@ process:
       source: field_publication_type
       default_value: null
       map:
-        forms: 6
-        notices: 7
-        promotional: 8
-        advice_and_guidance: 9
-        annual_report_and_accounts: 10
-        authorisations_and_exemptions: 11
-        board_meeting_minutes: 12
-        consultations: 13
-        corporate_plans: 14
-        foi_eir_responses: 15
-        impact_assessments: 16
-        legislation_and_regulations: 17
-        lists_and_registers: 18
-        managementminutes: 19
-        memorandums_of_understanding: 20
-        operating_plans: 21
-        policies: 22
-        prosecutions: 23
-        speeches_and_statements: 24
+        forms: 99
+        notices: 100
+        promotional: 101
+        advice_and_guidance: 102
+        annual_report_and_accounts: 103
+        authorisations_and_exemptions: 104
+        board_meeting_minutes: 105
+        consultations: 106
+        corporate_plans: 107
+        foi_eir_responses: 108
+        impact_assessments: 109
+        legislation_and_regulations: 110
+        lists_and_registers: 111
+        managementminutes: 112
+        memorandums_of_understanding: 113
+        operating_plans: 114
+        policies: 115
+        prosecutions: 116
+        speeches_and_statements: 117
   field_published_date:
     -
       plugin: sub_process
@@ -152,6 +152,7 @@ process:
     -
       plugin: get
       source: field_summary
+    - plugin: strip_html_filter
   field_metatag:
     -
       plugin: d7_metatag_entities

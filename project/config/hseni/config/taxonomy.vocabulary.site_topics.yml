@@ -1,10 +1,8 @@
-uuid: 1adca9a1-c91e-4ce7-934f-bbb7da3b9555
+uuid: 75f841ae-a891-4142-922c-ce2402eba51c
 langcode: en-gb
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: hG-tjPaSYURfrMPerFi4XPP2P1SFIV1kWckqZn7STfs
-name: 'Site Topics'
+name: 'Site topics'
 vid: site_topics
-description: ''
+description: 'Site topics and subtopics.'
 weight: 0
