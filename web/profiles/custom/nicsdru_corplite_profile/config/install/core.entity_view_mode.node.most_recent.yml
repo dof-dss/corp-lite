@@ -1,0 +1,10 @@
+uuid: 284de160-95b5-4c48-94a3-11a206c8ebe9
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.most_recent
+label: 'Most recent'
+targetEntityType: node
+cache: true
