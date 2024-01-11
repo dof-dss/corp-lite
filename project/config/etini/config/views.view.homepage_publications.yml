@@ -248,7 +248,7 @@ display:
       tags: {  }
   publications_inspection:
     id: publications_inspection
-    display_title: 'Home publications inspection reports'
+    display_title: 'Inspection reports'
     display_plugin: block
     position: 1
     display_options:
@@ -271,7 +271,7 @@ display:
       tags: {  }
   publications_surveys:
     id: publications_surveys
-    display_title: 'Home publications surveys and reports'
+    display_title: 'Surveys / Evaluations'
     display_plugin: block
     position: 1
     display_options:
