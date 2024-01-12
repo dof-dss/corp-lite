@@ -3,7 +3,7 @@ status: true
 dependencies:
   module:
     - node
-id: node.social_media
-label: 'Social media'
+id: node.teaser_large
+label: 'Teaser large'
 targetEntityType: node
 cache: true
