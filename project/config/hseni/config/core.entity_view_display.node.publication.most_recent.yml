@@ -1,9 +1,9 @@
-uuid: 11e912bb-7f0c-4d91-9430-74e1b2b668a6
+uuid: c057fd01-a072-438c-97a3-fd51e5e8506a
 langcode: en-gb
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.diff
+    - core.entity_view_mode.node.most_recent
     - field.field.node.publication.body
     - field.field.node.publication.field_attachment
     - field.field.node.publication.field_feature_home_page
@@ -15,71 +15,45 @@ dependencies:
     - node.type.publication
   module:
     - datetime
-    - field_group
-    - metatag
+    - layout_builder
     - text
     - user
 third_party_settings:
-  field_group:
-    group_additional_content_details:
-      children:
-        - field_published_date
-        - field_site_topics
-        - field_publication_type
-        - field_meta_tags
-      label: 'Additional content details'
-      parent_name: ''
-      region: content
-      weight: 5
-      format_type: html_element
-      format_settings:
-        classes: field-collection
-        show_empty_fields: false
-        id: ''
-        element: div
-        show_label: false
-        label_element: h3
-        label_element_classes: ''
-        attributes: ''
-        effect: none
-        speed: fast
+  layout_builder:
+    enabled: false
+    allow_custom: false
 _core:
-  default_config_hash: gb7jm2rjdZwiyFD4IJDpCO8_9-aVNyusYdkwcaeWABQ
-id: node.publication.diff
+  default_config_hash: QfGYPWOh9KP3TIFrvpeCzgESHvyquGW0HFe-b8Sg7X0
+id: node.publication.most_recent
 targetEntityType: node
 bundle: publication
-mode: diff
+mode: most_recent
 content:
   body:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   field_attachment:
     type: entity_reference_entity_view
     label: above
     settings:
       view_mode: default
-      link: true
+      link: false
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
-  field_meta_tags:
-    type: metatag_empty_formatter
-    label: inline
-    settings: {  }
-    third_party_settings: {  }
-    weight: 7
-    region: content
-  field_publication_type:
-    type: entity_reference_label
-    label: inline
+  field_feature_home_page:
+    type: boolean
+    label: above
     settings:
-      link: true
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
     third_party_settings: {  }
-    weight: 6
+    weight: 5
     region: content
   field_published_date:
     type: datetime_default
@@ -88,26 +62,20 @@ content:
       timezone_override: ''
       format_type: corplite_medium
     third_party_settings: {  }
-    weight: 4
-    region: content
-  field_site_topics:
-    type: entity_reference_label
-    label: inline
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 5
+    weight: 0
     region: content
   field_summary:
     type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
 hidden:
   content_moderation_control: true
-  field_feature_home_page: true
+  field_meta_tags: true
+  field_publication_type: true
+  field_site_topics: true
   langcode: true
   links: true
   search_api_excerpt: true

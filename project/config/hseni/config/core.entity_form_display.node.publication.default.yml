@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.publication.body
     - field.field.node.publication.field_attachment
+    - field.field.node.publication.field_feature_home_page
     - field.field.node.publication.field_meta_tags
     - field.field.node.publication.field_publication_type
     - field.field.node.publication.field_published_date
@@ -15,10 +16,27 @@ dependencies:
   module:
     - content_moderation
     - datetime
+    - field_group
     - media_library
     - metatag
     - path
     - text
+third_party_settings:
+  field_group:
+    group_featured:
+      children:
+        - field_feature_home_page
+      label: Featured
+      region: content
+      parent_name: ''
+      weight: 11
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: ''
+        required_fields: false
 _core:
   default_config_hash: ocDOtKu-FFvYTRQKCbgjXCZHYM6AqzhixwjVfYUoALI
 id: node.publication.default
@@ -28,7 +46,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 15
+    weight: 17
     region: content
     settings:
       rows: 9
@@ -44,14 +62,21 @@ content:
     third_party_settings: {  }
   field_attachment:
     type: media_library_widget
-    weight: 16
+    weight: 18
     region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
+  field_feature_home_page:
+    type: boolean_checkbox
+    weight: 15
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   field_meta_tags:
     type: metatag_firehose
-    weight: 17
+    weight: 19
     region: content
     settings:
       sidebar: true
@@ -59,25 +84,25 @@ content:
     third_party_settings: {  }
   field_publication_type:
     type: options_select
-    weight: 12
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
   field_published_date:
     type: datetime_default
-    weight: 13
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
   field_site_topics:
     type: options_select
-    weight: 11
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
   field_summary:
     type: string_textarea
-    weight: 14
+    weight: 16
     region: content
     settings:
       rows: 5
