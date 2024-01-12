@@ -14,6 +14,7 @@ db:
             - afbinidb
             - hsenidb
             - etinidb
+            - nsmcdb
         endpoints:
             nisra:
                 default_schema: nisradb
@@ -31,6 +32,10 @@ db:
                 default_schema: etinidb
                 privileges:
                     etinidb: admin
+            nsmc:
+                default_schema: nsmcdb
+                privileges:
+                    nsmcdb: admin
 solr_8_11:
     type: 'solr:8.11'
     disk: 1024
@@ -44,6 +49,8 @@ solr_8_11:
                 conf_dir: !archive solr_config/
             etini_index:
                 conf_dir: !archive solr_config/
+            nsmc_index:
+                conf_dir: !archive solr_config/
         endpoints:
             nisra:
                 core: nisra_index
@@ -53,5 +60,7 @@ solr_8_11:
                 core: hseni_index
             etini:
                 core: etini_index
+            nsmc:
+                core: nsmc_index
 redis:
     type: 'redis:6.0'

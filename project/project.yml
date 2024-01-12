@@ -42,3 +42,13 @@ sites:
         database: etini
         status: development
         default: false
+    nsmc:
+        name: 'North South Ministerial Council'
+        url: northsouthministerialcouncil.org
+        solr: nsmc
+        www: true
+        cron_spec: '10 * * * *'
+        cron_cmd: 'cd web/sites/nsmc ; drush core-cron'
+        database: nsmc
+        status: development
+        default: false
