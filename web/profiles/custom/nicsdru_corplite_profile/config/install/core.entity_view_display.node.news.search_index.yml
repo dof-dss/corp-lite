@@ -2,6 +2,7 @@ langcode: en-gb
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.search_index
     - field.field.node.news.body
     - field.field.node.news.field_feature_home_page
     - field.field.node.news.field_main_feature
@@ -15,60 +16,47 @@ dependencies:
     - field.field.node.news.field_teaser
     - node.type.news
   module:
-    - text
+    - datetime
+    - layout_builder
     - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
 _core:
   default_config_hash: q_pTca9ex-xfIJL6s6-7fLDMQcjgjtWLRQSmPYqSmR0
-id: node.news.default
+id: node.news.search_index
 targetEntityType: node
 bundle: news
-mode: default
+mode: search_index
 content:
-  body:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 2
-    region: content
-  field_notes_to_editors:
-    type: basic_string
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 3
-    region: content
-  field_photo:
-    type: entity_reference_entity_view
-    label: hidden
-    settings:
-      view_mode: default
-      link: false
-    third_party_settings: {  }
-    weight: 1
-    region: content
-  field_site_topics:
+  field_news_type:
     type: entity_reference_label
-    label: above
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
-    weight: 4
+    weight: 1
     region: content
-  field_summary:
-    type: basic_string
-    label: hidden
-    settings: {  }
+  field_published_date:
+    type: datetime_default
+    label: inline
+    settings:
+      timezone_override: ''
+      format_type: corplite_medium
     third_party_settings: {  }
     weight: 0
     region: content
 hidden:
+  body: true
   content_moderation_control: true
   field_feature_home_page: true
   field_main_feature: true
   field_meta_tags: true
-  field_news_type: true
-  field_published_date: true
+  field_notes_to_editors: true
+  field_photo: true
+  field_site_topics: true
+  field_summary: true
   field_teaser: true
   langcode: true
   links: true
