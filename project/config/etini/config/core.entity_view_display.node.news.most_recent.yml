@@ -1,0 +1,57 @@
+uuid: a60c9871-5461-4f3a-8a33-09c362bbc0c4
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.most_recent
+    - field.field.node.news.body
+    - field.field.node.news.field_feature_home_page
+    - field.field.node.news.field_main_feature
+    - field.field.node.news.field_meta_tags
+    - field.field.node.news.field_news_type
+    - field.field.node.news.field_notes_to_editors
+    - field.field.node.news.field_photo
+    - field.field.node.news.field_published_date
+    - field.field.node.news.field_site_topics
+    - field.field.node.news.field_summary
+    - field.field.node.news.field_teaser
+    - node.type.news
+  module:
+    - datetime
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+_core:
+  default_config_hash: q_pTca9ex-xfIJL6s6-7fLDMQcjgjtWLRQSmPYqSmR0
+id: node.news.most_recent
+targetEntityType: node
+bundle: news
+mode: most_recent
+content:
+  field_published_date:
+    type: datetime_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: corplite_medium
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true
+  content_moderation_control: true
+  field_feature_home_page: true
+  field_main_feature: true
+  field_meta_tags: true
+  field_news_type: true
+  field_notes_to_editors: true
+  field_photo: true
+  field_site_topics: true
+  field_summary: true
+  field_teaser: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

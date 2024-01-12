@@ -4,9 +4,12 @@ dependencies:
   config:
     - core.entity_view_mode.node.diff
     - field.field.node.news.body
+    - field.field.node.news.field_feature_home_page
+    - field.field.node.news.field_main_feature
     - field.field.node.news.field_meta_tags
     - field.field.node.news.field_news_type
     - field.field.node.news.field_notes_to_editors
+    - field.field.node.news.field_photo
     - field.field.node.news.field_published_date
     - field.field.node.news.field_site_topics
     - field.field.node.news.field_summary
@@ -16,18 +19,22 @@ dependencies:
     - datetime
     - field_group
     - metatag
-    - options
     - text
     - user
 third_party_settings:
   field_group:
     group_additional_content_details:
       children:
+        - field_published_date
+        - field_teaser
         - field_meta_tags
+        - field_news_type
+        - field_feature_home_page
+        - field_main_feature
       label: 'Additional content details'
       parent_name: ''
       region: content
-      weight: 7
+      weight: 5
       format_type: html_element
       format_settings:
         classes: field-collection
@@ -41,7 +48,7 @@ third_party_settings:
         effect: none
         speed: fast
 _core:
-  default_config_hash: mdcFru1RGNlUlNAWoZATR_Jf7mEeKa2cuD_rkWbnzgw
+  default_config_hash: 4G2z6AB09y3aQbILJE9W5Ao3fLKPNP-OqYTWU98d6g4
 id: node.news.diff
 targetEntityType: node
 bundle: news
@@ -52,32 +59,62 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 2
+    region: content
+  field_feature_home_page:
+    type: boolean
+    label: inline
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_main_feature:
+    type: boolean
+    label: inline
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 8
     region: content
   field_meta_tags:
     type: metatag_empty_formatter
     label: inline
     settings: {  }
     third_party_settings: {  }
-    weight: 9
+    weight: 5
     region: content
   field_news_type:
-    type: list_default
+    type: entity_reference_label
     label: above
-    settings: {  }
+    settings:
+      link: false
     third_party_settings: {  }
-    weight: 4
+    weight: 6
     region: content
   field_notes_to_editors:
     type: basic_string
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 6
+    weight: 3
+    region: content
+  field_photo:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 1
     region: content
   field_published_date:
     type: datetime_default
-    label: above
+    label: inline
     settings:
       timezone_override: ''
       format_type: medium
@@ -90,22 +127,22 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 2
+    weight: 4
     region: content
   field_summary:
     type: basic_string
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
   field_teaser:
     type: string
-    label: above
+    label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 5
+    weight: 4
     region: content
 hidden:
   content_moderation_control: true

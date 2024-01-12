@@ -4,8 +4,3 @@ display:
       exposed_form:
         options:
           reset_button_label: Reset
-      fields:
-        operations:
-          label: Operations
-  page_1:
-    display_title: Page

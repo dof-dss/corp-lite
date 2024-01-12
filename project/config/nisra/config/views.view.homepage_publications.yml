@@ -13,6 +13,7 @@ dependencies:
     - node
     - taxonomy
     - user
+    - views_custom_cache_tag
 id: homepage_publications
 label: 'Homepage publications'
 module: views
@@ -112,8 +113,9 @@ display:
         options:
           perm: 'access content'
       cache:
-        type: tag
-        options: {  }
+        type: custom_tag
+        options:
+          custom_tag: 'handy_cache_tags:node:publication'
       empty: {  }
       sorts:
         field_published_date_value:
@@ -243,12 +245,13 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
-  block_1:
-    id: block_1
-    display_title: Block
+  publications_home:
+    id: publications_home
+    display_title: 'Home publications'
     display_plugin: block
     position: 1
     display_options:
+      display_description: ''
       display_extenders:
         metatag_display_extender:
           metatags: {  }
