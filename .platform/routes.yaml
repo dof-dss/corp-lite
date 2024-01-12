@@ -37,6 +37,14 @@
 'https://etini.gov.uk/':
     type: redirect
     to: 'https://www.etini.gov.uk/'
+'https://www.northsouthministerialcouncil.org/':
+    type: upstream
+    upstream: 'corp_lite:http'
+    cache:
+        enabled: 'false'
+'https://northsouthministerialcouncil.org/':
+    type: redirect
+    to: 'https://www.northsouthministerialcouncil.org/'
 'https://www.{all}/':
     type: upstream
     upstream: 'corp_lite:http'

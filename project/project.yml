@@ -42,3 +42,13 @@ sites:
         database: etini
         status: development
         default: false
+    northsouthministerialcouncil:
+        name: 'North South Ministerial Council'
+        url: northsouthministerialcouncil.org
+        solr: northsouthministerialcouncil
+        www: true
+        cron_spec: '10 * * * *'
+        cron_cmd: 'cd web/sites/northsouthministerialcouncil ; drush core-cron'
+        database: northsouthministerialcouncil
+        status: development
+        default: false
