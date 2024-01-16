@@ -1,0 +1,31 @@
+uuid: 88e2945c-8217-4fa8-8536-871f77fbc2e4
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_site_topics
+    - node.type.contact
+    - taxonomy.vocabulary.site_topics
+_core:
+  default_config_hash: TNO3jTbjcjcujgdNOn-PlEaN1Kxrg7bjk_H_hdmpt_s
+id: node.contact.field_site_topics
+field_name: field_site_topics
+entity_type: node
+bundle: contact
+label: 'Site topics'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      site_topics: site_topics
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

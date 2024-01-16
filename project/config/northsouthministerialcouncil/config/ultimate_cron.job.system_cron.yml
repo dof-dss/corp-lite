@@ -1,0 +1,17 @@
+uuid: 3454ad3e-b507-443b-87c4-65302cbc3aff
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - system
+title: 'Cleanup (caches, batch, flood, temp-files, etc.)'
+id: system_cron
+weight: 0
+module: system
+callback: system_cron
+scheduler:
+  id: simple
+launcher:
+  id: serial
+logger:
+  id: database

@@ -1,0 +1,17 @@
+uuid: 3a366d9f-ffce-48d3-a663-108fec706419
+langcode: en-gb
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: M3GRB23AWnghl0VWBcoT1itwo1OAfLjKda3YJYIPTKw
+name: nigov_portrait_med_900_x2
+label: 'nigov portrait med 900 (x2)'
+effects:
+  424aae1d-6b39-4692-83ff-1ad3ad693313:
+    uuid: 424aae1d-6b39-4692-83ff-1ad3ad693313
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 900
+      height: 2700
+      anchor: center-center

@@ -1,0 +1,23 @@
+uuid: d68a4cc3-d767-4e40-8a45-1e597c75c456
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_feature_home_page
+    - node.type.publication
+_core:
+  default_config_hash: Yi3qzjk4B2-2D--L4vvwxClKtLWkjoLrL85ytv2PWOs
+id: node.publication.field_feature_home_page
+field_name: field_feature_home_page
+entity_type: node
+bundle: publication
+label: 'Feature on home page'
+description: 'Check this flag to indicate that this content should be listed on the home page.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,13 @@
+uuid: 476b9321-b2de-44b6-8b04-d795aee3f763
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.site_topics
+_core:
+  default_config_hash: AVX-4wtBrJBDnQVBU5O0_KpyqxMNq6xTrV2CGUN3uHE
+id: taxonomy_term.site_topics
+target_entity_type_id: taxonomy_term
+target_bundle: site_topics
+default_langcode: site_default
+language_alterable: false
