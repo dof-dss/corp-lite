@@ -1,0 +1,12 @@
+uuid: 186cc7dd-aa53-4fa5-aa3c-a3d10485858b
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: Slix2m7zIp_6G18J0xJStUKCGYIIXRpqHdDDHEPZ-dA
+id: node.teaser_large
+label: 'Teaser large'
+targetEntityType: node
+cache: true

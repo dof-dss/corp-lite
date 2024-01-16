@@ -1,0 +1,35 @@
+uuid: afc7c940-e950-4772-b9eb-e0e2402fdd78
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.contact.body
+    - field.field.node.contact.field_meta_tags
+    - field.field.node.contact.field_site_topics
+    - node.type.contact
+  module:
+    - text
+    - user
+_core:
+  default_config_hash: qFtrBB99hcXAY42w0S3tGE_fhOaAHKOdq381u8hM4P4
+id: node.contact.teaser
+targetEntityType: node
+bundle: contact
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  content_moderation_control: true
+  field_meta_tags: true
+  field_site_topics: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

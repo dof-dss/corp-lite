@@ -135,7 +135,8 @@
         "drupal/whatlinkshere": "^2.1",
         "drush/drush": "^11",
         "highcharts/highcharts": "^10",
-        "platformsh/config-reader": "^2.4"
+        "platformsh/config-reader": "^2.4",
+        "symfony/http-client": "^5.4"
     },
     "require-dev": {
         "dof-dss/maestro-hosting": "^1.0",
@@ -166,7 +167,8 @@
             "drupal/core-composer-scaffold": true,
             "phpstan/extension-installer": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
-            "cweagans/composer-patches": true
+            "cweagans/composer-patches": true,
+            "php-http/discovery": true
         },
         "sort-packages": true
     },

@@ -1,0 +1,15 @@
+uuid: 07d115cf-f916-439f-88ab-1ba5632ba80a
+langcode: en-gb
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: yLRv7Bg1DN7_uj7iymd6fGNY5BhE4ZfmbcHO6h0UXmw
+id: document
+label: Document
+description: 'A Document file is written information.'
+source: file
+queue_thumbnail_downloads: false
+new_revision: true
+source_configuration:
+  source_field: field_media_file
+field_map: {  }
