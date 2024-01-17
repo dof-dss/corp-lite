@@ -1,0 +1,6 @@
+_core:
+  default_config_hash: j8tDF5hiIAY29cecL-ETsEmcpyCAaUNmcHUXdLlAxE4
+langcode: en-gb
+maintain_index_table: true
+override_selector: false
+terms_per_page_admin: 100

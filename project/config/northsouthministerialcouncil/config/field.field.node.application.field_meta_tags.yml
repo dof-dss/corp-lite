@@ -1,0 +1,23 @@
+uuid: 10a4b78a-9e5a-4d46-a28d-f285bd8c062d
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_meta_tags
+    - node.type.application
+  module:
+    - metatag
+_core:
+  default_config_hash: kmuWnyCOG65a4ym9K_eglcxfusGmSXHCh_eum7fecmI
+id: node.application.field_meta_tags
+field_name: field_meta_tags
+entity_type: node
+bundle: application
+label: 'Meta tags'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag
