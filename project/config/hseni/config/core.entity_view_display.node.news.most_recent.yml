@@ -19,7 +19,6 @@ dependencies:
   module:
     - datetime
     - layout_builder
-    - text
     - user
 third_party_settings:
   layout_builder:
@@ -32,62 +31,26 @@ targetEntityType: node
 bundle: news
 mode: most_recent
 content:
-  body:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 2
-    region: content
-  field_feature_home_page:
-    type: boolean
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    weight: 5
-    region: content
-  field_main_feature:
-    type: boolean
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    weight: 4
-    region: content
-  field_notes_to_editors:
-    type: basic_string
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 3
-    region: content
   field_published_date:
     type: datetime_default
-    label: inline
+    label: hidden
     settings:
       timezone_override: ''
       format_type: corplite_medium
     third_party_settings: {  }
     weight: 0
     region: content
-  field_summary:
-    type: basic_string
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 1
-    region: content
 hidden:
+  body: true
   content_moderation_control: true
+  field_feature_home_page: true
+  field_main_feature: true
   field_meta_tags: true
   field_news_type: true
+  field_notes_to_editors: true
   field_photo: true
   field_site_topics: true
+  field_summary: true
   field_teaser: true
   langcode: true
   links: true
