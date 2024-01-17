@@ -16,7 +16,6 @@ dependencies:
   module:
     - datetime
     - layout_builder
-    - text
     - user
 third_party_settings:
   layout_builder:
@@ -29,53 +28,24 @@ targetEntityType: node
 bundle: publication
 mode: most_recent
 content:
-  body:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 2
-    region: content
-  field_attachment:
-    type: entity_reference_entity_view
-    label: above
-    settings:
-      view_mode: default
-      link: false
-    third_party_settings: {  }
-    weight: 3
-    region: content
-  field_feature_home_page:
-    type: boolean
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    weight: 5
-    region: content
   field_published_date:
     type: datetime_default
-    label: inline
+    label: hidden
     settings:
       timezone_override: ''
       format_type: corplite_medium
     third_party_settings: {  }
     weight: 0
     region: content
-  field_summary:
-    type: basic_string
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 1
-    region: content
 hidden:
+  body: true
   content_moderation_control: true
+  field_attachment: true
+  field_feature_home_page: true
   field_meta_tags: true
   field_publication_type: true
   field_site_topics: true
+  field_summary: true
   langcode: true
   links: true
   search_api_excerpt: true
