@@ -10,7 +10,7 @@ migration_tags:
   - 'Drupal 7'
   - Content
 migration_group: migrate_drupal_7
-label: 'Taxonomy terms (Organisational Phase)'
+label: 'Taxonomy terms (Site Topics)'
 source:
   plugin: d7_taxonomy_term
   bundle: site_topics
@@ -49,7 +49,6 @@ process:
       plugin: migration_lookup
       migration:
         - upgrade_d7_taxonomy_term_site_topics
-        - upgrade_d7_taxonomy_term_site_global_topics
   parent:
     -
       plugin: default_value
