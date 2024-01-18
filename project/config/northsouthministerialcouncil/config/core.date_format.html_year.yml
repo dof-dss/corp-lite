@@ -1,0 +1,10 @@
+uuid: 242f0353-74d9-40fb-8790-894cacfe88a9
+langcode: en-gb
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: qvF6NMy4sZq8nyN0gPPm7jfievcJxmlFmEBye1E26i0
+id: html_year
+label: 'HTML Year'
+locked: true
+pattern: 'Y'

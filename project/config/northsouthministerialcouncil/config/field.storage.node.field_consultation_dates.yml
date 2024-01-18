@@ -1,0 +1,22 @@
+uuid: 0f987a42-2a2e-4477-bb09-3f43ae2dacba
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - datetime
+    - node
+_core:
+  default_config_hash: qwOMzGv0fdoTVW4UOISzL56_KzwFbessiNLEwTLfPjA
+id: node.field_consultation_dates
+field_name: field_consultation_dates
+entity_type: node
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
