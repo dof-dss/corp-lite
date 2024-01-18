@@ -1,0 +1,21 @@
+uuid: b85f7d55-40d0-417e-bc23-59be021696d5
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_summary
+    - node.type.publication
+_core:
+  default_config_hash: O3kBftKU4n1lc3clJ_svVnic9iTWzP29-hhxuS4LJro
+id: node.publication.field_summary
+field_name: field_summary
+entity_type: node
+bundle: publication
+label: Summary
+description: 'Enter an optional summary for this publication to be displayed on listing pages.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

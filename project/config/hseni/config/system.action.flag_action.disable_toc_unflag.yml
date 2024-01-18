@@ -1,0 +1,15 @@
+uuid: 6af8b6bd-d8c6-4f41-a87d-d2542ff4ab4f
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - flag.flag.disable_toc
+  module:
+    - flag
+id: flag_action.disable_toc_unflag
+label: 'Enable ToC'
+type: node
+plugin: 'flag_action:disable_toc_unflag'
+configuration:
+  flag_id: disable_toc
+  flag_action: unflag

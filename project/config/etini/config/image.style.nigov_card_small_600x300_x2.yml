@@ -1,0 +1,17 @@
+uuid: 4c19525c-6c6d-48e2-87cb-5294248101f7
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 13Sk8txIEJ85JkmKPAoEg-BqaSSgRL-WEl9TqpUfovU
+name: nigov_card_small_600x300_x2
+label: 'nigov card small 600x300 (x2)'
+effects:
+  c44c6807-dda1-467c-b778-6bd4b9adac9a:
+    uuid: c44c6807-dda1-467c-b778-6bd4b9adac9a
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 600
+      height: 300
+      anchor: center-center

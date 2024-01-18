@@ -1,8 +1,8 @@
 project_type: corp-lite
 project_name: 'Corp Lite'
 project_id: 5wphupyrfaitk
-project_disk_size: 3000
-db_disk_size: 1000
+project_disk_size: 20000
+db_disk_size: 14000
 sites:
     nisra:
         name: nisra
@@ -20,5 +20,35 @@ sites:
         cron_spec: '10 * * * *'
         cron_cmd: 'cd web/sites/afbini ; drush core-cron'
         database: afbini
+        status: development
+        default: false
+    hseni:
+        name: hseni
+        url: hseni.gov.uk
+        solr: hseni
+        www: true
+        cron_spec: '10 * * * *'
+        cron_cmd: 'cd web/sites/hseni ; drush core-cron'
+        database: hseni
+        status: development
+        default: false
+    etini:
+        name: 'Education Training Inspectorate NI'
+        url: etini.gov.uk
+        solr: etini
+        www: true
+        cron_spec: '10 * * * *'
+        cron_cmd: 'cd web/sites/etini ; drush core-cron'
+        database: etini
+        status: development
+        default: false
+    northsouthministerialcouncil:
+        name: 'North South Ministerial Council'
+        url: northsouthministerialcouncil.org
+        solr: northsouthministerialcouncil
+        www: true
+        cron_spec: '10 * * * *'
+        cron_cmd: 'cd web/sites/northsouthministerialcouncil ; drush core-cron'
+        database: northsouthministerialcouncil
         status: development
         default: false

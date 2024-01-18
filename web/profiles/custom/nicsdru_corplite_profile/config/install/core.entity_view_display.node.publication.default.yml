@@ -3,6 +3,8 @@ status: true
 dependencies:
   config:
     - field.field.node.publication.body
+    - field.field.node.publication.field_attachment
+    - field.field.node.publication.field_feature_home_page
     - field.field.node.publication.field_meta_tags
     - field.field.node.publication.field_publication_type
     - field.field.node.publication.field_published_date
@@ -11,10 +13,10 @@ dependencies:
     - node.type.publication
   module:
     - datetime
-    - metatag
-    - options
     - text
     - user
+_core:
+  default_config_hash: QfGYPWOh9KP3TIFrvpeCzgESHvyquGW0HFe-b8Sg7X0
 id: node.publication.default
 targetEntityType: node
 bundle: publication
@@ -25,50 +27,53 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 101
+    weight: 5
     region: content
-  field_meta_tags:
-    type: metatag_empty_formatter
-    label: above
-    settings: {  }
+  field_attachment:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
     third_party_settings: {  }
-    weight: 105
+    weight: 6
     region: content
   field_publication_type:
-    type: list_default
-    label: above
-    settings: {  }
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: false
     third_party_settings: {  }
-    weight: 104
+    weight: 1
     region: content
   field_published_date:
     type: datetime_default
-    label: above
+    label: inline
     settings:
       timezone_override: ''
-      format_type: medium
+      format_type: corplite_medium
     third_party_settings: {  }
-    weight: 104
+    weight: 0
     region: content
   field_site_topics:
     type: entity_reference_label
-    label: above
+    label: inline
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
-    weight: 103
+    weight: 2
     region: content
   field_summary:
     type: basic_string
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 101
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 100
+    weight: 4
     region: content
 hidden:
+  content_moderation_control: true
+  field_feature_home_page: true
+  field_meta_tags: true
   langcode: true
+  links: true
+  search_api_excerpt: true

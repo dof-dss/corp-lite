@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.most_recent
+label: 'Most recent'
+targetEntityType: node
+cache: true

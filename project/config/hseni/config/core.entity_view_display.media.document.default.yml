@@ -1,0 +1,31 @@
+uuid: 315cd37e-7b78-4b58-b2e4-63a3341894ed
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.field.media.document.field_media_file
+    - media.type.document
+  module:
+    - file
+_core:
+  default_config_hash: kkNuBZybqVKmTEApD_uPfgCMHKu8RWDRtvDKewD-FUM
+id: media.document.default
+targetEntityType: media
+bundle: document
+mode: default
+content:
+  field_media_file:
+    type: file_default
+    label: visually_hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

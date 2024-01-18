@@ -1,0 +1,23 @@
+uuid: fefa3128-b4df-4f98-8db2-9e48bdc5196d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_linkedin_url
+    - node.type.department_management
+  module:
+    - link
+id: node.department_management.field_linkedin_url
+field_name: field_linkedin_url
+entity_type: node
+bundle: department_management
+label: 'linkedin URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 16
+field_type: link

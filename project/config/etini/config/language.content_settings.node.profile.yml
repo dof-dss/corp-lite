@@ -1,0 +1,13 @@
+uuid: 111b52ba-46d8-44ad-950d-4ab85716aea8
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - node.type.profile
+_core:
+  default_config_hash: BCNSSsN7qlWbuV839ULO5ayN6RT8JPxs6ODD9kQUvYE
+id: node.profile
+target_entity_type_id: node
+target_bundle: profile
+default_langcode: site_default
+language_alterable: false

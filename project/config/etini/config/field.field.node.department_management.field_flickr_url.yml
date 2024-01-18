@@ -1,0 +1,23 @@
+uuid: 3fe473d2-73e1-4386-9485-afef7347b3ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_flickr_url
+    - node.type.department_management
+  module:
+    - link
+id: node.department_management.field_flickr_url
+field_name: field_flickr_url
+entity_type: node
+bundle: department_management
+label: 'flickr URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 16
+field_type: link

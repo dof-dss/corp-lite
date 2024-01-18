@@ -26,7 +26,7 @@ third_party_settings:
       label: 'Additional content details'
       parent_name: ''
       region: content
-      weight: 4
+      weight: 5
       format_type: html_element
       format_settings:
         classes: field-collection
@@ -51,14 +51,14 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   field_additional_information:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
   field_link:
     type: link
@@ -70,7 +70,7 @@ content:
       rel: '0'
       target: '0'
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   field_meta_tags:
     type: metatag_empty_formatter
@@ -85,14 +85,14 @@ content:
     settings:
       link: false
     third_party_settings: {  }
-    weight: 7
+    weight: 0
     region: content
   field_summary:
     type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
 hidden:
   content_moderation_control: true

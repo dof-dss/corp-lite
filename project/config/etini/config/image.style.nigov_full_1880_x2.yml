@@ -1,0 +1,17 @@
+uuid: 383e00e7-2d6d-445d-b86f-3dbe334473c4
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: H7MrA426bpwDO3EpbpkgFB78aTJwtKZAGXVuUNyscA4
+name: nigov_full_1880_x2
+label: 'nigov full 1880 (x2)'
+effects:
+  f4de461d-b612-4328-9273-2b78f302d044:
+    uuid: f4de461d-b612-4328-9273-2b78f302d044
+    id: image_scale
+    weight: 1
+    data:
+      width: 1880
+      height: null
+      upscale: false

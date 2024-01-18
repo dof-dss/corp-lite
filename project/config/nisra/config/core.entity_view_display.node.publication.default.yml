@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.publication.body
     - field.field.node.publication.field_attachment
     - field.field.node.publication.field_external_publication
+    - field.field.node.publication.field_feature_home_page
     - field.field.node.publication.field_meta_tags
     - field.field.node.publication.field_publication_type
     - field.field.node.publication.field_published_date
@@ -30,7 +31,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 4
     region: content
   field_attachment:
     type: entity_reference_entity_view
@@ -39,7 +40,7 @@ content:
       view_mode: default
       link: false
     third_party_settings: {  }
-    weight: 3
+    weight: 5
     region: content
   field_external_publication:
     type: link
@@ -51,7 +52,7 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 4
+    weight: 6
     region: content
   field_published_date:
     type: datetime_default
@@ -62,19 +63,34 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_research_support:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_site_topics:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
   field_summary:
     type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 3
     region: content
 hidden:
   content_moderation_control: true
+  field_feature_home_page: true
   field_meta_tags: true
   field_publication_type: true
-  field_research_support: true
-  field_site_topics: true
   langcode: true
   links: true
   search_api_excerpt: true

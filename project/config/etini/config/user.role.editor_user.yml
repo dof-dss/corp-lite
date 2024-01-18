@@ -1,0 +1,209 @@
+uuid: 8aa68dc0-332f-4c4a-8f63-0f953e198fa0
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - media.type.audio
+    - media.type.document
+    - media.type.file
+    - media.type.image
+    - media.type.remote_video
+    - node.type.application
+    - node.type.article
+    - node.type.contact
+    - node.type.department_management
+    - node.type.gallery
+    - node.type.link
+    - node.type.news
+    - node.type.page
+    - node.type.profile
+    - node.type.publication
+    - workflows.workflow.nics_editorial_workflow
+  module:
+    - content_moderation
+    - contextual
+    - file
+    - media
+    - media_file_delete
+    - menu_admin_per_menu
+    - moderation_sidebar
+    - node
+    - origins_metatag
+    - origins_workflow
+    - redirect
+    - scheduled_transitions
+    - system
+    - toolbar
+    - whatlinkshere
+_core:
+  default_config_hash: sm9myrHyT75sIlDforph0s_evEe8km_JbT7K1UTnmBY
+id: editor_user
+label: 'editor user'
+weight: -5
+is_admin: false
+permissions:
+  - 'access administration pages'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access files overview'
+  - 'access toolbar'
+  - 'add scheduled transitions node application'
+  - 'add scheduled transitions node article'
+  - 'add scheduled transitions node contact'
+  - 'add scheduled transitions node department_management'
+  - 'add scheduled transitions node gallery'
+  - 'add scheduled transitions node link'
+  - 'add scheduled transitions node news'
+  - 'add scheduled transitions node page'
+  - 'add scheduled transitions node profile'
+  - 'add scheduled transitions node publication'
+  - 'administer main menu items'
+  - 'administer media file delete'
+  - 'administer redirects'
+  - 'audit content'
+  - 'create application content'
+  - 'create article content'
+  - 'create audio media'
+  - 'create contact content'
+  - 'create department_management content'
+  - 'create document media'
+  - 'create file media'
+  - 'create gallery content'
+  - 'create image media'
+  - 'create link content'
+  - 'create news content'
+  - 'create page content'
+  - 'create profile content'
+  - 'create publication content'
+  - 'create remote_video media'
+  - 'delete all revisions'
+  - 'delete any application content'
+  - 'delete any article content'
+  - 'delete any audio media'
+  - 'delete any contact content'
+  - 'delete any department_management content'
+  - 'delete any document media'
+  - 'delete any file media'
+  - 'delete any gallery content'
+  - 'delete any image media'
+  - 'delete any link content'
+  - 'delete any news content'
+  - 'delete any page content'
+  - 'delete any profile content'
+  - 'delete any publication content'
+  - 'delete any remote_video media'
+  - 'delete application revisions'
+  - 'delete article revisions'
+  - 'delete contact revisions'
+  - 'delete department_management revisions'
+  - 'delete gallery revisions'
+  - 'delete link revisions'
+  - 'delete news revisions'
+  - 'delete own application content'
+  - 'delete own article content'
+  - 'delete own audio media'
+  - 'delete own contact content'
+  - 'delete own department_management content'
+  - 'delete own document media'
+  - 'delete own file media'
+  - 'delete own files'
+  - 'delete own gallery content'
+  - 'delete own image media'
+  - 'delete own link content'
+  - 'delete own news content'
+  - 'delete own page content'
+  - 'delete own profile content'
+  - 'delete own publication content'
+  - 'delete own remote_video media'
+  - 'delete page revisions'
+  - 'delete profile revisions'
+  - 'delete publication revisions'
+  - 'edit any application content'
+  - 'edit any article content'
+  - 'edit any audio media'
+  - 'edit any contact content'
+  - 'edit any department_management content'
+  - 'edit any document media'
+  - 'edit any file media'
+  - 'edit any gallery content'
+  - 'edit any image media'
+  - 'edit any link content'
+  - 'edit any news content'
+  - 'edit any page content'
+  - 'edit any profile content'
+  - 'edit any publication content'
+  - 'edit any remote_video media'
+  - 'edit basic meta tags'
+  - 'edit own application content'
+  - 'edit own article content'
+  - 'edit own audio media'
+  - 'edit own contact content'
+  - 'edit own department_management content'
+  - 'edit own document media'
+  - 'edit own file media'
+  - 'edit own gallery content'
+  - 'edit own image media'
+  - 'edit own link content'
+  - 'edit own news content'
+  - 'edit own page content'
+  - 'edit own profile content'
+  - 'edit own publication content'
+  - 'edit own remote_video media'
+  - 'reschedule scheduled transitions node application'
+  - 'reschedule scheduled transitions node article'
+  - 'reschedule scheduled transitions node contact'
+  - 'reschedule scheduled transitions node department_management'
+  - 'reschedule scheduled transitions node gallery'
+  - 'reschedule scheduled transitions node link'
+  - 'reschedule scheduled transitions node news'
+  - 'reschedule scheduled transitions node page'
+  - 'reschedule scheduled transitions node profile'
+  - 'reschedule scheduled transitions node publication'
+  - 'revert all revisions'
+  - 'revert application revisions'
+  - 'revert article revisions'
+  - 'revert contact revisions'
+  - 'revert department_management revisions'
+  - 'revert gallery revisions'
+  - 'revert link revisions'
+  - 'revert news revisions'
+  - 'revert page revisions'
+  - 'revert profile revisions'
+  - 'revert publication revisions'
+  - 'use moderation sidebar'
+  - 'use nics_editorial_workflow transition archive'
+  - 'use nics_editorial_workflow transition create_new_draft'
+  - 'use nics_editorial_workflow transition draft_of_published'
+  - 'use nics_editorial_workflow transition publish'
+  - 'use nics_editorial_workflow transition reject'
+  - 'use nics_editorial_workflow transition restore'
+  - 'use nics_editorial_workflow transition restore_to_draft'
+  - 'use nics_editorial_workflow transition submit_for_review'
+  - 'use nics_editorial_workflow transition unpublish'
+  - 'view all revisions'
+  - 'view all scheduled transitions'
+  - 'view any unpublished content'
+  - 'view application revisions'
+  - 'view article revisions'
+  - 'view contact revisions'
+  - 'view content references'
+  - 'view department_management revisions'
+  - 'view gallery revisions'
+  - 'view latest version'
+  - 'view link revisions'
+  - 'view news revisions'
+  - 'view own unpublished media'
+  - 'view page revisions'
+  - 'view profile revisions'
+  - 'view publication revisions'
+  - 'view scheduled transitions node application'
+  - 'view scheduled transitions node article'
+  - 'view scheduled transitions node contact'
+  - 'view scheduled transitions node department_management'
+  - 'view scheduled transitions node gallery'
+  - 'view scheduled transitions node link'
+  - 'view scheduled transitions node news'
+  - 'view scheduled transitions node page'
+  - 'view scheduled transitions node profile'
+  - 'view scheduled transitions node publication'
+  - 'view the administration theme'

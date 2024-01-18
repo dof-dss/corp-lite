@@ -1,0 +1,13 @@
+uuid: 6fcbc70c-88dd-4b52-9982-25682a420fb7
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.image
+_core:
+  default_config_hash: FzQieZ4YJR3ILRpiYJ7iFhicIEhtpXiZ2tief_UDN4U
+id: media.image
+target_entity_type_id: media
+target_bundle: image
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,13 @@
+uuid: 11484f9d-743d-43b8-b783-2f3739fe520e
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - node.type.consultation
+_core:
+  default_config_hash: U-k-UP_lYRBybzzThzSrI9ydG2_8SaLqjsgDh4Rwdwg
+id: node.consultation
+target_entity_type_id: node
+target_bundle: consultation
+default_langcode: site_default
+language_alterable: false

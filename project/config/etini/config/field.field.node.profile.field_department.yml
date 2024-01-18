@@ -1,0 +1,21 @@
+uuid: a9e73030-faa1-4056-ad92-f83567a12ba0
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_department
+    - node.type.profile
+_core:
+  default_config_hash: dSKaU301txLynuW2aNkL8cZw4WNsKHVQ908SZxxDZi4
+id: node.profile.field_department
+field_name: field_department
+entity_type: node
+bundle: profile
+label: Department
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

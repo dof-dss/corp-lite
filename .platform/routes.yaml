@@ -21,6 +21,30 @@
 'https://afbini.gov.uk/':
     type: redirect
     to: 'https://www.afbini.gov.uk/'
+'https://www.hseni.gov.uk/':
+    type: upstream
+    upstream: 'corp_lite:http'
+    cache:
+        enabled: 'false'
+'https://hseni.gov.uk/':
+    type: redirect
+    to: 'https://www.hseni.gov.uk/'
+'https://www.etini.gov.uk/':
+    type: upstream
+    upstream: 'corp_lite:http'
+    cache:
+        enabled: 'false'
+'https://etini.gov.uk/':
+    type: redirect
+    to: 'https://www.etini.gov.uk/'
+'https://www.northsouthministerialcouncil.org/':
+    type: upstream
+    upstream: 'corp_lite:http'
+    cache:
+        enabled: 'false'
+'https://northsouthministerialcouncil.org/':
+    type: redirect
+    to: 'https://www.northsouthministerialcouncil.org/'
 'https://www.{all}/':
     type: upstream
     upstream: 'corp_lite:http'

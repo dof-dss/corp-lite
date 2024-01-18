@@ -1,0 +1,11 @@
+uuid: 0783bf20-0a90-4b6d-9471-4edcb8c009ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.department_management
+id: node.department_management
+target_entity_type_id: node
+target_bundle: department_management
+default_langcode: site_default
+language_alterable: false

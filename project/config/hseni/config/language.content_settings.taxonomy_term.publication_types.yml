@@ -1,0 +1,11 @@
+uuid: bc1b0e59-18e9-4b5b-a7a6-ed73b7807218
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.publication_types
+id: taxonomy_term.publication_types
+target_entity_type_id: taxonomy_term
+target_bundle: publication_types
+default_langcode: site_default
+language_alterable: false

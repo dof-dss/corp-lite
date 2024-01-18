@@ -12,6 +12,8 @@ dependencies:
   module:
     - text
     - user
+_core:
+  default_config_hash: KF1oTdqy-g1Pj8CvEtisbSd-Z7bnS0h_c77hCBV9lZA
 id: node.application.teaser
 targetEntityType: node
 bundle: application
@@ -23,16 +25,14 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
-    weight: 101
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
 hidden:
+  content_moderation_control: true
   field_additional_information: true
   field_meta_tags: true
   field_site_topics: true
   field_summary: true
   langcode: true
+  links: true
+  search_api_excerpt: true

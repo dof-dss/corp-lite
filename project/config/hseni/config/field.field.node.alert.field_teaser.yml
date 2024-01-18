@@ -1,0 +1,19 @@
+uuid: 72343a5e-6494-4381-bf25-5e90a69df942
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_teaser
+    - node.type.alert
+id: node.alert.field_teaser
+field_name: field_teaser
+entity_type: node
+bundle: alert
+label: Teaser
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

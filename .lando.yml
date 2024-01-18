@@ -10,16 +10,37 @@ proxy:
     appserver:
         - nisra.gov.uk.lndo.site
         - afbini.gov.uk.lndo.site
+        - hseni.gov.uk.lndo.site
+        - etini.gov.uk.lndo.site
+        - northsouthministerialcouncil.org.lndo.site
 services:
     nisra_solr:
-        type: 'solr:7'
+        type: 'solr:8.11'
         portforward: true
         core: default
         config:
-            dir: .lando/config/solr/7.x/default
+            dir: .lando/config/solr/
     afbini_solr:
-        type: 'solr:7'
+        type: 'solr:8.11'
         portforward: true
         core: default
         config:
-            dir: .lando/config/solr/7.x/default
+            dir: .lando/config/solr/
+    hseni_solr:
+        type: 'solr:8.11'
+        portforward: true
+        core: default
+        config:
+            dir: .lando/config/solr/
+    etini_solr:
+        type: 'solr:8.11'
+        portforward: true
+        core: default
+        config:
+            dir: .lando/config/solr/
+    northsouthministerialcouncil_solr:
+        type: 'solr:8.11'
+        portforward: true
+        core: default
+        config:
+            dir: .lando/config/solr/

@@ -1,0 +1,31 @@
+uuid: 8bc95c3c-b148-49ab-b542-fa4668f5201e
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_site_topics
+    - node.type.application
+    - taxonomy.vocabulary.site_topics
+_core:
+  default_config_hash: IblUwvoZ90S40V3bWtjLWz9epKwsnSj2Pl8Iytw7xEk
+id: node.application.field_site_topics
+field_name: field_site_topics
+entity_type: node
+bundle: application
+label: 'Site topics'
+description: 'Choose relevant site topic(s) for this application. Hold down Ctrl to choose multiple site topics.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      site_topics: site_topics
+    sort:
+      field: _none
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

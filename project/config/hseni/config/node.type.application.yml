@@ -1,0 +1,31 @@
+uuid: 970d84e2-6c25-4fa7-8c26-f931da1ae0da
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - origins_toc
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main-menu:0:'
+  origins_toc:
+    toc_enable: 0
+    toc_title: 'Table of contents'
+    toc_location: ''
+    toc_insert: after
+    toc_source_container: ''
+    toc_element: h2
+    toc_exclusions: ''
+    toc_screen_depth: '1'
+    toc_debug: 0
+_core:
+  default_config_hash: NohsRnnjn3oNnaC9RBYNzuFfbcX8boheTgXB1RPTAnY
+name: Application
+type: application
+description: 'Use this content type as a gateway page to launch an external application.'
+help: 'Use this content type as a launch page to link to an external application.'
+new_revision: true
+preview_mode: 1
+display_submitted: false

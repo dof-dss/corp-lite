@@ -1,6 +1,6 @@
-name: 'Migrate UNITY'
+name: 'Corplite migrations'
 type: module
-description: 'Unity Document, audio and image migrations and other tools'
+description: 'Corplite Document, audio and image migrations and other tools'
 core_version_requirement: ^8.8 || ^9 || ^10
 package: 'Custom'
 migration_dependencies:

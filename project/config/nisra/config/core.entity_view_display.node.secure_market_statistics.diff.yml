@@ -27,13 +27,11 @@ third_party_settings:
     group_additional_content_details:
       children:
         - field_publication_type
-        - field_research_support
-        - field_site_topics
         - field_meta_tags
       label: 'Additional content details'
       parent_name: ''
       region: content
-      weight: 5
+      weight: 7
       format_type: html_element
       format_settings:
         classes: field-collection
@@ -56,7 +54,7 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 4
     region: content
   field_external_publication:
     type: link
@@ -68,7 +66,7 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 3
+    weight: 5
     region: content
   field_meta_tags:
     type: metatag_empty_formatter
@@ -100,7 +98,7 @@ content:
     settings:
       link: false
     third_party_settings: {  }
-    weight: 11
+    weight: 2
     region: content
   field_secure_attachment:
     type: file_default
@@ -108,7 +106,7 @@ content:
     settings:
       use_description_as_link_text: true
     third_party_settings: {  }
-    weight: 4
+    weight: 6
     region: content
   field_site_topics:
     type: entity_reference_label
@@ -116,14 +114,14 @@ content:
     settings:
       link: false
     third_party_settings: {  }
-    weight: 12
+    weight: 1
     region: content
   field_summary:
     type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 3
     region: content
 hidden:
   content_moderation_control: true

@@ -137,7 +137,6 @@ class MediaWysiwygFilter extends ProcessPluginBase implements ContainerFactoryPl
           $oembed = $query->execute()->fetchAssoc();
 
           if (!empty($oembed['bundle']) && $oembed['bundle'] === 'remote_video') {
-            var_dump($oembed['bundle']);
             $replacement_template = <<<'TEMPLATE'
 <drupal-media
 data-align="center"

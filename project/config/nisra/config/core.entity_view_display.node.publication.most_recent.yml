@@ -1,0 +1,50 @@
+uuid: 180c1025-2f2b-4651-b604-3c940806f6d5
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.most_recent
+    - field.field.node.publication.body
+    - field.field.node.publication.field_attachment
+    - field.field.node.publication.field_external_publication
+    - field.field.node.publication.field_feature_home_page
+    - field.field.node.publication.field_meta_tags
+    - field.field.node.publication.field_publication_type
+    - field.field.node.publication.field_published_date
+    - field.field.node.publication.field_research_support
+    - field.field.node.publication.field_site_topics
+    - field.field.node.publication.field_summary
+    - node.type.publication
+  module:
+    - datetime
+    - user
+_core:
+  default_config_hash: j-p1CVIkzRUzAAMoDfDmv0J15405HfHitxCZ_MfSxEo
+id: node.publication.most_recent
+targetEntityType: node
+bundle: publication
+mode: most_recent
+content:
+  field_published_date:
+    type: datetime_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: corplite_format
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true
+  content_moderation_control: true
+  field_attachment: true
+  field_external_publication: true
+  field_feature_home_page: true
+  field_meta_tags: true
+  field_publication_type: true
+  field_research_support: true
+  field_site_topics: true
+  field_summary: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

@@ -5,9 +5,13 @@ core_version_requirement: ^8.8 || ^9 || ^10
 distribution:
   name: corplite
 install:
+  - address
   - admin_toolbar
+  - admin_toolbar_links_access_filter
+  - admin_toolbar_tools
   - allowed_formats
   - automated_cron
+  - blazy
   - block
   - block_content
   - breakpoint
@@ -16,18 +20,26 @@ install:
   - ckeditor5_premium_features
   - ckeditor5_premium_features_fullscreen
   - ckeditor5_premium_features_import_word
+  - clientside_validation
+  - clientside_validation_jquery
   - clone_nodes
-  - comment
   - config
   - config_filter
-  - contact
   - content_lock
+  - content_lock_timeout
   - content_moderation
   - contextual
   - cookie_content_blocker
+  - corplite_eu_cookie_compliance
+  - corplite_image_styles
+  - corplite_migrations
+  - csp
+  - ctools
   - date_facet_drilldown
   - datetime
+  - datetime_range
   - dblog
+  - devel
   - diff
   - dynamic_page_cache
   - easy_install
@@ -38,14 +50,25 @@ install:
   - entity_embed
   - entity_reference_revisions
   - eu_cookie_compliance
+  - facets
+  - facets_pretty_paths
+  - facets_summary
   - field
   - field_group
   - field_ui
   - file
   - file_delete_ui
+  - filelog
   - filter
-  - flag
+  - flood_control
+  - geocoder
+  - geocoder_address
+  - geocoder_field
   - geolocation
+  - geolocation_address
+  - geolocation_google_maps
+  - geolocation_google_static_maps
+  - geolocation_search_api
   - google_tag
   - handy_cache_tags
   - help
@@ -54,11 +77,16 @@ install:
   - inline_entity_form
   - inline_form_errors
   - language
+  - layout_builder
   - link
+  - link_fix_absolute_urls
+  - linkit
   - locale
   - media
+  - media_file_delete
   - media_library
   - media_library_edit
+  - menu_admin_per_menu
   - menu_link_content
   - menu_ui
   - metatag
@@ -73,6 +101,8 @@ install:
   - migrate_upgrade
   - moderation_sidebar
   - node
+  - node_edit_protection
+  - noreferrer
   - options
   - origins_common
   - origins_media
@@ -86,6 +116,7 @@ install:
   - path_alias
   - pathauto
   - readonlymode
+  - rdf
   - redirect
   - redis
   - responsive_image
@@ -93,17 +124,23 @@ install:
   - search
   - search_api
   - search_api_autocomplete
+  - search_api_location
+  - search_api_location_views
   - search_api_solr
   - shortcut
+  - simplei
+  - stage_file_proxy
   - structure_sync
   - system
   - taxonomy
+  - telephone_plus
   - text
   - token
   - token_filter
   - toolbar
   - tour
   - twig_tweak
+  - twig_field_value
   - ultimate_cron
   - update
   - user
@@ -114,6 +151,7 @@ install:
   - webform_access
   - webform_node
   - webform_ui
+  - whatlinkshere
   - workflows
 themes:
   - olivero

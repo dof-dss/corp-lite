@@ -1,0 +1,9 @@
+name: 'Corplite image styles'
+type: module
+description: 'Configures generic image styles in corplite sites'
+core_version_requirement: ^8.8 || ^9 || ^10
+package: 'Unity'
+dependencies:
+  - drupal:image
+  - drupal:responsive_image
+  - drupal:media

@@ -1,0 +1,20 @@
+uuid: 2b90cf99-f0b1-45bf-a9d0-8fe5ae9cea67
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - node.type.article
+_core:
+  default_config_hash: tq373_wdNUbS2YbjQyouT5h5nPz5lvQkmYVIldfB-lU
+id: node.article.title
+field_name: title
+entity_type: node
+bundle: article
+label: 'Title (Main heading)'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

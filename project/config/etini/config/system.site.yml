@@ -1,0 +1,14 @@
+_core:
+  default_config_hash: xNHQR5bN1V96bZQJu9E92f3VdiEMB8CHNkBOVTIlJmI
+langcode: en
+name: 'Education Training Inspectorate'
+mail: webdev@webdev-finance.gov.uk
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+default_langcode: en
+uuid: 76db8c87-84eb-490f-9732-b1f0cd92153f

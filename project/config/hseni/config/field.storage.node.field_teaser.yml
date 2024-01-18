@@ -1,0 +1,23 @@
+uuid: 006ea309-557c-4a6b-a212-adb310360641
+langcode: und
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: tcyxCNKGec9LXjNM6gTp_pmPmgym9hWoODw9-d8Z0fA
+id: node.field_teaser
+field_name: field_teaser
+entity_type: node
+type: string
+settings:
+  max_length: 120
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

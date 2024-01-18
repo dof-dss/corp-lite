@@ -1,0 +1,24 @@
+uuid: 3e4dc4c8-fbb3-4e70-8abd-79707a1fa4e4
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_additional_information
+    - node.type.application
+  module:
+    - text
+_core:
+  default_config_hash: V56UNs7ThAvrYqrdt_NjIDzF1U8iegyRMdvOIXZSQdI
+id: node.application.field_additional_information
+field_name: field_additional_information
+entity_type: node
+bundle: application
+label: 'Additional information'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

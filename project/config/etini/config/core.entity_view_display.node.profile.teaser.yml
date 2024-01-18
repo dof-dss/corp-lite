@@ -1,0 +1,46 @@
+uuid: b92b2f05-b049-41a5-aa7d-7d9029ea56e2
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.profile.body
+    - field.field.node.profile.field_department
+    - field.field.node.profile.field_meta_tags
+    - field.field.node.profile.field_photo
+    - field.field.node.profile.field_summary
+    - node.type.profile
+  module:
+    - user
+_core:
+  default_config_hash: dEVmIQQVePrSePlMykd5uMRL0RRIPM8mucf5vBg34ts
+id: node.profile.teaser
+targetEntityType: node
+bundle: profile
+mode: teaser
+content:
+  field_department:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_photo:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  body: true
+  content_moderation_control: true
+  field_meta_tags: true
+  field_summary: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

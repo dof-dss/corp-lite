@@ -1,0 +1,12 @@
+uuid: 4df06dcc-25c0-4dc6-801d-7d53b3e66ee4
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: VhUatexNpEAcoXo57IAWBeONfarhQvrJYsSGtECS6i4
+id: media.portrait_float_xp
+label: 'Portrait float XP'
+targetEntityType: media
+cache: true

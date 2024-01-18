@@ -1,0 +1,50 @@
+uuid: 156c892f-ae04-4253-a4fe-c9aa929bb7a8
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser_large
+    - field.field.node.profile.body
+    - field.field.node.profile.field_department
+    - field.field.node.profile.field_meta_tags
+    - field.field.node.profile.field_photo
+    - field.field.node.profile.field_summary
+    - node.type.profile
+  module:
+    - user
+id: node.profile.teaser_large
+targetEntityType: node
+bundle: profile
+mode: teaser_large
+content:
+  field_department:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_photo:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_summary:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  body: true
+  content_moderation_control: true
+  field_meta_tags: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

@@ -1,0 +1,45 @@
+uuid: 0bfbb3de-f4bd-4a64-a4bb-79c06a2cef9b
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - node.type.application
+    - node.type.article
+    - node.type.consultation
+    - node.type.contact
+    - node.type.news
+    - node.type.profile
+    - node.type.publication
+  module:
+    - node
+    - system
+_core:
+  default_config_hash: vNEkQI-Oi5HpFydAyizLa6qCCV8SkpSWLiyMrYoGO94
+id: author_user
+label: 'author user'
+weight: 2
+is_admin: false
+permissions:
+  - 'access administration pages'
+  - 'create application content'
+  - 'create article content'
+  - 'create consultation content'
+  - 'create contact content'
+  - 'create news content'
+  - 'create profile content'
+  - 'create publication content'
+  - 'edit any application content'
+  - 'edit any article content'
+  - 'edit any consultation content'
+  - 'edit any contact content'
+  - 'edit any news content'
+  - 'edit any profile content'
+  - 'edit any publication content'
+  - 'edit own application content'
+  - 'edit own article content'
+  - 'edit own consultation content'
+  - 'edit own contact content'
+  - 'edit own news content'
+  - 'edit own profile content'
+  - 'edit own publication content'
+  - 'view the administration theme'

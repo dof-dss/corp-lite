@@ -1,0 +1,17 @@
+uuid: 3552af64-2d81-426c-9fea-26c9a0521fa6
+langcode: en-gb
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: kL5ezR-iXHpqqVRYV8xhfMeLjIGlkVeQBB_n0qOJQe4
+name: nigov_full_450_x1
+label: 'nigov full 450 (x1)'
+effects:
+  5830ad45-2355-4ebe-82f3-f224a7da938f:
+    uuid: 5830ad45-2355-4ebe-82f3-f224a7da938f
+    id: image_scale
+    weight: 1
+    data:
+      width: 450
+      height: null
+      upscale: false

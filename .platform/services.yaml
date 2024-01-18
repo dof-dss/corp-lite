@@ -7,11 +7,14 @@
 #############################################################################
 db:
     type: 'mariadb:10.4'
-    disk: 1000
+    disk: 14000
     configuration:
         schemas:
             - nisradb
             - afbinidb
+            - hsenidb
+            - etinidb
+            - northsouthministerialcouncildb
         endpoints:
             nisra:
                 default_schema: nisradb
@@ -21,8 +24,20 @@ db:
                 default_schema: afbinidb
                 privileges:
                     afbinidb: admin
-solr:
-    type: 'solr:7.7'
+            hseni:
+                default_schema: hsenidb
+                privileges:
+                    hsenidb: admin
+            etini:
+                default_schema: etinidb
+                privileges:
+                    etinidb: admin
+            northsouthministerialcouncil:
+                default_schema: northsouthministerialcouncildb
+                privileges:
+                    northsouthministerialcouncildb: admin
+solr_8_11:
+    type: 'solr:8.11'
     disk: 1024
     configuration:
         cores:
@@ -30,10 +45,22 @@ solr:
                 conf_dir: !archive solr_config/
             afbini_index:
                 conf_dir: !archive solr_config/
+            hseni_index:
+                conf_dir: !archive solr_config/
+            etini_index:
+                conf_dir: !archive solr_config/
+            northsouthministerialcouncil_index:
+                conf_dir: !archive solr_config/
         endpoints:
             nisra:
                 core: nisra_index
             afbini:
                 core: afbini_index
+            hseni:
+                core: hseni_index
+            etini:
+                core: etini_index
+            northsouthministerialcouncil:
+                core: northsouthministerialcouncil_index
 redis:
     type: 'redis:6.0'

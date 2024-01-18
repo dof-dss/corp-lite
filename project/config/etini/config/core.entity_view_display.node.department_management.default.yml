@@ -1,0 +1,49 @@
+uuid: d12c9751-0a56-40ab-ace1-cdff11c233aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.department_management.body
+    - field.field.node.department_management.field_access_to_information
+    - field.field.node.department_management.field_agencies_carryout
+    - field.field.node.department_management.field_agencies_provide
+    - field.field.node.department_management.field_contact_information
+    - field.field.node.department_management.field_facebook_url
+    - field.field.node.department_management.field_flickr_url
+    - field.field.node.department_management.field_linkedin_url
+    - field.field.node.department_management.field_map
+    - field.field.node.department_management.field_meta_tags
+    - field.field.node.department_management.field_twitter_url
+    - field.field.node.department_management.field_youtube_url
+    - node.type.department_management
+  module:
+    - text
+    - user
+id: node.department_management.default
+targetEntityType: node
+bundle: department_management
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  content_moderation_control: true
+  field_access_to_information: true
+  field_agencies_carryout: true
+  field_agencies_provide: true
+  field_contact_information: true
+  field_facebook_url: true
+  field_flickr_url: true
+  field_linkedin_url: true
+  field_map: true
+  field_meta_tags: true
+  field_twitter_url: true
+  field_youtube_url: true
+  langcode: true
+  links: true
+  search_api_excerpt: true
