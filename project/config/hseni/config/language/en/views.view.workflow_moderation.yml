@@ -1,0 +1,214 @@
+label: 'Workflow: Moderation'
+description: "NIDirect custom views to appear under the custom 'My Dashboard' menu"
+display:
+  default:
+    display_title: Master
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Apply
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      pager:
+        options:
+          tags:
+            previous: ‹‹
+            next: ››
+            first: '« First'
+            last: 'Last »'
+          expose:
+            items_per_page_label: 'Items per page'
+            items_per_page_options_all_label: '- All -'
+            offset_label: Offset
+      fields:
+        nid:
+          separator: ', '
+        moderation_state:
+          label: 'Moderation State'
+          alter:
+            text: "<div>{{ moderation_state }}</div><div><a href='/node/{{ nid }}/revisions'>View moderation history</a></div>"
+          separator: ', '
+        nothing:
+          label: 'Set moderation state'
+          alter:
+            text: "<div><a href='/origins_workflow/change_state/{{ nid }}/draft?destination=/admin/content/needs-review'>Change to Draft</a></div>\r\n<div><a href='/origins_workflow/change_state/{{ nid }}/published?destination=/admin/content/needs-review'>Change to Published</a></div>"
+        nothing_3:
+          label: 'Set moderation state'
+          alter:
+            text: "<div><a href='/origins_workflow/change_state/{{ nid }}/draft?destination=/admin/content/needs-review'>Change to Draft</a></div>"
+        title:
+          label: Title
+          separator: ', '
+        type:
+          label: Type
+          separator: ', '
+        name:
+          label: 'Revised by'
+          separator: ', '
+        changed:
+          label: 'Last updated'
+          separator: ', '
+        nothing_1:
+          label: 'Custom text'
+        nothing_2:
+          label: 'Custom text'
+      filters:
+        title:
+          expose:
+            label: Title
+        type:
+          expose:
+            label: Type
+      title: 'Needs Review'
+  all_drafts:
+    display_title: 'All Drafts Page'
+    display_options:
+      title: 'All drafts'
+      filters:
+        title:
+          expose:
+            label: Title
+        body_summary:
+          expose:
+            label: Summary
+        body_value:
+          expose:
+            label: Body
+        type:
+          expose:
+            label: Type
+        moderation_state_1:
+          expose:
+            label: State
+        uid:
+          expose:
+            label: 'Revised by'
+      fields:
+        nid:
+          separator: ', '
+        moderation_state_1:
+          separator: ', '
+        moderation_state:
+          label: 'Moderation State'
+          alter:
+            text: "<div>{{ moderation_state }}</div><div><a href='/node/{{ nid }}/revisions'>View moderation history</a></div>"
+          separator: ', '
+        nothing:
+          label: 'Set moderation state'
+          alter:
+            text: "{% if moderation_state_1 == \"Needs Review\" %}\r\n  <div><a href='/origins_workflow/change_state/{{ nid }}/draft?destination=/admin/content/all-drafts'>Change to Draft</a></div>\r\n{% else %}\r\n  <div><a href='/origins_workflow/change_state/{{ nid }}/needs_review?destination=/admin/content/all-drafts'>Change to Needs Review</a></div>\r\n{% endif %}\r\n<div><a href='/origins_workflow/change_state/{{ nid }}/published?destination=/admin/content/all-drafts'>Change to Published</a></div>"
+        nothing_1:
+          label: 'Set moderation state'
+          alter:
+            text: "{% if moderation_state_1 == \"Needs Review\" %}\r\n  <div><a href='/origins_workflow/change_state/{{ nid }}/draft?destination=/admin/content/all-drafts'>Change to Draft</a></div>\r\n{% else %}\r\n  <div><a href='/origins_workflow/change_state/{{ nid }}/needs_review?destination=/admin/content/all-drafts'>Change to Needs Review</a></div>\r\n{% endif %}"
+        title:
+          label: Title
+          separator: ', '
+        type:
+          label: Type
+          separator: ', '
+        name:
+          label: 'Revised by'
+          separator: ', '
+        changed:
+          label: 'Last updated'
+          separator: ', '
+  my_drafts:
+    display_title: 'Drafts Page'
+    display_options:
+      title: 'My Drafts'
+      filters:
+        title:
+          expose:
+            label: Title
+        body_summary:
+          expose:
+            label: Summary
+        body_value:
+          expose:
+            label: Body
+        type:
+          expose:
+            label: Type
+        moderation_state_1:
+          expose:
+            label: 'Moderation state'
+      fields:
+        nid:
+          separator: ', '
+        moderation_state_1:
+          separator: ', '
+        moderation_state:
+          label: 'Moderation State'
+          alter:
+            text: "<div>{{ moderation_state }}</div><div><a href='/node/{{ nid }}/revisions'>View moderation history</a></div>"
+          separator: ', '
+        nothing:
+          label: 'Set moderation state'
+          alter:
+            text: "{% if moderation_state_1 == \"Needs Review\" %}\r\n  <div><a href='/origins_workflow/change_state/{{ nid }}/draft?destination=/admin/content/drafts'>Change to Draft</a></div>\r\n{% else %}\r\n  <div><a href='/origins_workflow/change_state/{{ nid }}/needs_review?destination=/admin/content/drafts'>Change to Needs Review</a></div>\r\n{% endif %}\r\n<div><a href='/origins_workflow/change_state/{{ nid }}/published?destination=/admin/content/drafts'>Change to Published</a></div>"
+        nothing_1:
+          label: 'Set moderation state'
+          alter:
+            text: "{% if moderation_state_1 == \"Needs Review\" %}\r\n  <div><a href='/origins_workflow/change_state/{{ nid }}/draft?destination=/admin/content/drafts'>Change to Draft</a></div>\r\n{% else %}\r\n  <div><a href='/origins_workflow/change_state/{{ nid }}/needs_review?destination=/admin/content/drafts'>Change to Needs Review</a></div>\r\n{% endif %}"
+        title:
+          label: Title
+          separator: ', '
+        type:
+          label: Type
+          separator: ', '
+        name:
+          label: 'Revised by'
+          separator: ', '
+        changed:
+          label: 'Last updated'
+          separator: ', '
+  needs_audit:
+    display_title: 'Needs Audit'
+    display_options:
+      filters:
+        title:
+          expose:
+            label: Title
+        type:
+          expose:
+            label: Type
+        uid:
+          expose:
+            label: 'Revised by'
+      fields:
+        nid:
+          separator: ', '
+        moderation_state:
+          label: 'Moderation State'
+          alter:
+            text: "<div>{{ moderation_state }}</div><div><a href='/node/{{ nid }}/revisions'>View moderation history</a></div>"
+          separator: ', '
+        title:
+          label: Title
+          separator: ', '
+        type:
+          label: Type
+          separator: ', '
+        name:
+          label: 'Revised by'
+          separator: ', '
+        changed:
+          label: 'Last updated'
+          separator: ', '
+      title: 'Needs Audit'
+  needs_review:
+    display_title: 'Needs Review'
+    display_options:
+      filters:
+        title:
+          expose:
+            label: Title
+        type:
+          expose:
+            label: Type
+        uid:
+          expose:
+            label: 'Revised by'
