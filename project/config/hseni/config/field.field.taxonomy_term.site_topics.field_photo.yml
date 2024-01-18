@@ -1,0 +1,29 @@
+uuid: 248dbde5-6885-4241-9ec3-08a11641f89d
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_photo
+    - media.type.image
+    - taxonomy.vocabulary.site_topics
+id: taxonomy_term.site_topics.field_photo
+field_name: field_photo
+entity_type: taxonomy_term
+bundle: site_topics
+label: photo
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

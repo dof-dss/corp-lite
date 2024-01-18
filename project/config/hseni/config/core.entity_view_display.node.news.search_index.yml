@@ -1,9 +1,9 @@
-uuid: 7f7dcff2-1ad8-4b0f-bce3-de28e82be625
+uuid: 944b3ba3-f292-4b28-ae4a-3fb28f6683b7
 langcode: en-gb
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.search_index
     - field.field.node.news.body
     - field.field.node.news.field_feature_home_page
     - field.field.node.news.field_main_feature
@@ -18,13 +18,18 @@ dependencies:
     - node.type.news
   module:
     - datetime
+    - layout_builder
     - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
 _core:
-  default_config_hash: GDx_47IhRPvjr2TZYejSxBgmEMnjn8Dl5QDa1oaTDGE
-id: node.news.teaser
+  default_config_hash: q_pTca9ex-xfIJL6s6-7fLDMQcjgjtWLRQSmPYqSmR0
+id: node.news.search_index
 targetEntityType: node
 bundle: news
-mode: teaser
+mode: search_index
 content:
   field_news_type:
     type: entity_reference_label
@@ -36,25 +41,12 @@ content:
     region: content
   field_published_date:
     type: datetime_default
-    label: hidden
+    label: inline
     settings:
       timezone_override: ''
       format_type: corplite_medium
     third_party_settings: {  }
     weight: 0
-    region: content
-  field_teaser:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 4
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 3
     region: content
 hidden:
   body: true
@@ -66,5 +58,7 @@ hidden:
   field_photo: true
   field_site_topics: true
   field_summary: true
+  field_teaser: true
   langcode: true
+  links: true
   search_api_excerpt: true

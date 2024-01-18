@@ -1,5 +1,5 @@
 uuid: d507651d-b413-4047-ad63-ca4c93f2585c
-langcode: en-gb
+langcode: en
 status: true
 dependencies: {  }
 id: upgrade_d7_taxonomy_term_site_topics
@@ -10,7 +10,7 @@ migration_tags:
   - 'Drupal 7'
   - Content
 migration_group: migrate_drupal_7
-label: 'Taxonomy terms (Site topics)'
+label: 'Taxonomy terms (Organisational Phase)'
 source:
   plugin: d7_taxonomy_term
   bundle: site_topics
@@ -47,7 +47,9 @@ process:
       source: parent
     -
       plugin: migration_lookup
-      migration: upgrade_d7_taxonomy_term_site_topics
+      migration:
+        - upgrade_d7_taxonomy_term_site_topics
+        - upgrade_d7_taxonomy_term_site_global_topics
   parent:
     -
       plugin: default_value
@@ -95,7 +97,4 @@ migration_dependencies:
     - upgrade_d7_taxonomy_vocabulary
   optional:
     - upgrade_d7_field_instance
-    - upgrade_d7_metatag_field_taxonomy_term
-    - upgrade_d7_metatag_field_instance_taxonomy_term_site_topics
-    - upgrade_d7_metatag_field_instance_widget_settings_taxonomy_term_site_topics
     - upgrade_d7_taxonomy_vocabulary
