@@ -95,11 +95,8 @@ class FlaggingSourcePlugin extends SqlBase {
       return FALSE;
     }
 
-//    // Replace the D7 entity ID with the D9 equivalent.
-//    $nids = $this->lookupManager->lookupBySourceNodeId([$row->getSourceProperty('entity_id')]);
-//    $row->setSourceProperty('entity_id', $nids[$row->getSourceProperty('entity_id')]['nid']);
-    $row->getSourceProperty('entity_id', $row->get('entity_id'));
-    var_dump($row);
+    // Get the D7 entity_id to use in migrate_plus.migration.flagging_hide_topic.yml.
+    $row->getSourceProperty('entity_id');
 
     return parent::prepareRow($row);
   }
