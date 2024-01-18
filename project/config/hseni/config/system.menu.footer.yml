@@ -6,5 +6,5 @@ _core:
   default_config_hash: kceGPXG7AWXp4mmfRFgoLy21mCFBqe_8pTqRtVFFb4I
 id: footer
 label: Footer
-description: 'Site information links'
+description: 'The <em>Footer</em> menu is displayed in the footer of the site'
 locked: true

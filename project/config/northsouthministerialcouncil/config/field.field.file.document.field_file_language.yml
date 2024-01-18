@@ -1,0 +1,25 @@
+uuid: 9a069f15-0039-421f-a6a9-a38b2df446ca
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.file.field_file_language
+  module:
+    - file
+    - options
+_core:
+  default_config_hash: Pa68FUpkVZtzEyNibTHdovyrIPCxf8QT5AyqhekLdxQ
+id: file.document.field_file_language
+field_name: field_file_language
+entity_type: file
+bundle: document
+label: 'File language'
+description: 'Please choose the language for this file.'
+required: true
+translatable: false
+default_value:
+  -
+    value: en
+default_value_callback: ''
+settings: {  }
+field_type: list_string
