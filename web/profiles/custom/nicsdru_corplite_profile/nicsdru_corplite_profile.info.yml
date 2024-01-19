@@ -60,6 +60,7 @@ install:
   - file_delete_ui
   - filelog
   - filter
+  - flag
   - flood_control
   - geocoder
   - geocoder_address
