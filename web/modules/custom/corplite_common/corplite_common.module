@@ -10,12 +10,12 @@ use Drupal\Core\Form\FormStateInterface;
 /**
  * Implements hook_form_BASE_FORM_ID_alter() for node_form.
  *
- * Completely hide the Meta vertical tab (field group) from people without permission.
+ * Completely hide the Feature on homepage, Main feature and hide topic fields
+ * from people without permission.
  *
  */
 function corplite_common_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  // If the current user has the permission, do not hide the Meta vertical tab.
-  $x = 1;
+  // If the current user has the permission, do not hide the listed fields.
   if (\Drupal::currentUser()->hasPermission('hide topic or feature on homepage')) {
     return;
   }

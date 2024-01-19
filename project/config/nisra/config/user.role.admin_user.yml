@@ -24,8 +24,8 @@ dependencies:
     - block
     - content_moderation
     - contextual
+    - corplite_common
     - file
-    - flag
     - media
     - media_file_delete
     - menu_admin_per_menu
@@ -173,13 +173,7 @@ permissions:
   - 'edit own publication content'
   - 'edit own remote_video media'
   - 'edit own webform content'
-  - 'flag featured_news'
-  - 'flag featured_news other items'
-  - 'flag featured_news own items'
-  - 'flag hide_topic'
-  - 'flag home_page_display'
-  - 'flag home_page_display other items'
-  - 'flag home_page_display own items'
+  - 'hide topic or feature on homepage'
   - 'reschedule scheduled transitions node application'
   - 'reschedule scheduled transitions node contact'
   - 'reschedule scheduled transitions node department_management'
@@ -202,13 +196,6 @@ permissions:
   - 'revert profile revisions'
   - 'revert publication revisions'
   - 'revert webform revisions'
-  - 'unflag featured_news'
-  - 'unflag featured_news other items'
-  - 'unflag featured_news own items'
-  - 'unflag hide_topic'
-  - 'unflag home_page_display'
-  - 'unflag home_page_display other items'
-  - 'unflag home_page_display own items'
   - 'use moderation sidebar'
   - 'use nics_editorial_workflow transition archive'
   - 'use nics_editorial_workflow transition create_new_draft'
