@@ -78,13 +78,18 @@ process:
       source: comment
   body:
     -
+      plugin: get
+      source: body
+    -
       plugin: media_wysiwyg_filter
     -
       plugin: filter_absolute_links
-
       replace_urls:
-        http://www.northsouthministerialcouncil.org
+        http://www.niauditoffice.gov.uk
         https://www.northsouthministerialcouncil.org
+        http://test-northsouthministerialcouncil.nigov.net
+        http://northsouthministerialcouncil-drupal.nigov.net
+        http://drupal-northsouthministerialcouncil.thestables.net
     -
       plugin: site_files_filter
       from_ref: sites/nsmc/files
@@ -93,6 +98,15 @@ process:
       plugin: site_files_filter
       from_ref: sites/northsouthministerialcouncil.org/files
       to_ref: files/northsouthministerialcouncil
+    -
+      plugin: site_files_filter
+      from_ref: sites/northsouthministerialcouncil-drupal.nigov.net/files
+      to_ref: files/northsouthministerialcouncil
+    -
+      plugin: str_replace
+      regex: true
+      search: /(<ul>)?(<li>)?(<div[^>]*>)?<a href="(\S+?files\/\S+)".*?>\s*[^<]*(\([^<]*\))?<\/a>(<\/div>)?(<\/li>)?(<\/ul>)?/
+      replace: ''
   body/0/format:
     -
       plugin: static_map
