@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.node.body
+    - field.storage.taxonomy_term.field_summary
     - search_api.server.default
   module:
     - search_api_solr
@@ -85,11 +86,28 @@ field_settings:
     dependencies:
       module:
         - node
+  description:
+    label: Description
+    datasource_id: 'entity:taxonomy_term'
+    property_path: description
+    type: text
+    dependencies:
+      module:
+        - taxonomy
+  field_summary:
+    label: Summary
+    datasource_id: 'entity:taxonomy_term'
+    property_path: field_summary
+    type: text
+    dependencies:
+      config:
+        - field.storage.taxonomy_term.field_summary
   name:
     label: Name
     datasource_id: 'entity:taxonomy_term'
     property_path: name
-    type: string
+    type: text
+    boost: 3.0
     dependencies:
       module:
         - taxonomy
@@ -133,6 +151,8 @@ field_settings:
       separator: |+
 
 
+
+
       fields: {  }
   status:
     label: Published
@@ -160,6 +180,8 @@ field_settings:
     configuration:
       type: concat
       separator: |+
+
+
 
 
       fields:
