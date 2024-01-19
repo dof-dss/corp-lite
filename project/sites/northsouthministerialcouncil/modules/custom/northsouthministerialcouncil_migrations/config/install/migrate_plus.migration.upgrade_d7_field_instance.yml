@@ -81,7 +81,6 @@ process:
           migration: upgrade_d7_taxonomy_vocabulary
           source: vid
   settings:
-    0:
       plugin: d7_field_instance_settings
       source:
         - settings
