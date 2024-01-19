@@ -63,6 +63,7 @@ permissions:
   - 'edit own image media'
   - 'edit own remote_video media'
   - 'hide topic or feature on homepage'
+  - 'reorder draggable views'
   - 'use moderation sidebar'
   - 'use nics_editorial_workflow transition archive'
   - 'use nics_editorial_workflow transition create_new_draft'

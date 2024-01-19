@@ -533,6 +533,12 @@ display:
     display_plugin: page
     position: 1
     display_options:
+      access:
+        type: perm
+        options:
+          perm: 'reorder draggable views'
+      defaults:
+        access: false
       display_description: ''
       display_extenders:
         metatag_display_extender:
@@ -1756,6 +1762,10 @@ display:
           empty_zero: false
           hide_alter_empty: true
           destination: false
+      access:
+        type: perm
+        options:
+          perm: 'reorder draggable views'
       sorts:
         weight:
           id: weight
@@ -1849,6 +1859,7 @@ display:
         groups:
           1: AND
       defaults:
+        access: false
         title: false
         fields: false
         sorts: false
@@ -2138,6 +2149,10 @@ display:
           empty_zero: false
           hide_alter_empty: true
           destination: false
+      access:
+        type: perm
+        options:
+          perm: 'reorder draggable views'
       sorts:
         weight:
           id: weight
@@ -2231,6 +2246,7 @@ display:
         groups:
           1: AND
       defaults:
+        access: false
         title: false
         fields: false
         sorts: false
@@ -2520,6 +2536,10 @@ display:
           empty_zero: false
           hide_alter_empty: true
           destination: false
+      access:
+        type: perm
+        options:
+          perm: 'reorder draggable views'
       sorts:
         weight:
           id: weight
@@ -2613,6 +2633,7 @@ display:
         groups:
           1: AND
       defaults:
+        access: false
         title: false
         fields: false
         sorts: false

@@ -174,6 +174,7 @@ permissions:
   - 'edit own remote_video media'
   - 'edit own webform content'
   - 'hide topic or feature on homepage'
+  - 'reorder draggable views'
   - 'reschedule scheduled transitions node application'
   - 'reschedule scheduled transitions node contact'
   - 'reschedule scheduled transitions node department_management'
