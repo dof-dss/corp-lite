@@ -1,0 +1,5 @@
+name: 'Corplite common code'
+type: module
+description: 'Common customisations for Corplite sites'
+package: 'Custom'
+core_version_requirement: ^8 || ^9 || ^10
