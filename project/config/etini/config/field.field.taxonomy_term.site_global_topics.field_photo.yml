@@ -1,15 +1,15 @@
-uuid: 1fd30d35-c013-4924-b09b-4747528c16f0
+uuid: 503c4fc7-804d-40e7-8334-25ef52a43f7f
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.taxonomy_term.field_photo
     - media.type.image
-    - taxonomy.vocabulary.site_topics
-id: taxonomy_term.site_topics.field_photo
+    - taxonomy.vocabulary.site_global_topics
+id: taxonomy_term.site_global_topics.field_photo
 field_name: field_photo
 entity_type: taxonomy_term
-bundle: site_topics
+bundle: site_global_topics
 label: Photo
 description: 'If appropriate, you can insert a photo or logo here to be associated to this topic.'
 required: false

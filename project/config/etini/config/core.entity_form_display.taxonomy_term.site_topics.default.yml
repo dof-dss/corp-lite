@@ -1,18 +1,18 @@
-uuid: 3a39b3e5-fae7-44d2-a172-d45052264f74
+uuid: 0aaad123-1483-4b10-a1be-c5c1cd2fd893
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.site_global_topics.field_photo
-    - field.field.taxonomy_term.site_global_topics.field_summary
-    - taxonomy.vocabulary.site_global_topics
+    - field.field.taxonomy_term.site_topics.field_photo
+    - field.field.taxonomy_term.site_topics.field_summary
+    - taxonomy.vocabulary.site_topics
   module:
     - media_library
     - path
     - text
-id: taxonomy_term.site_global_topics.default
+id: taxonomy_term.site_topics.default
 targetEntityType: taxonomy_term
-bundle: site_global_topics
+bundle: site_topics
 mode: default
 content:
   description:

@@ -1,0 +1,33 @@
+uuid: f48dc764-0c83-435b-9c8e-e89803f63559
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.site_topics.field_photo
+    - field.field.taxonomy_term.site_topics.field_summary
+    - taxonomy.vocabulary.site_topics
+  module:
+    - text
+id: taxonomy_term.site_topics.default
+targetEntityType: taxonomy_term
+bundle: site_topics
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_summary:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  field_photo: true
+  langcode: true
+  search_api_excerpt: true
