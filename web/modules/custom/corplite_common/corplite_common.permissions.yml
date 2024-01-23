@@ -1,3 +1,6 @@
 hide topic or feature on homepage:
   title: 'Feature on homepage or hide topic'
   description: 'Hide taxonomy topics or feature news/publication items on the homepage.'
+reorder draggable views:
+  title: 'Reorder draggable views'
+  description: 'Reorder links and taxonomy terms via menu links'
