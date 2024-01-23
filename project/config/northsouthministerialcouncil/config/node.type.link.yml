@@ -1,0 +1,16 @@
+uuid: 43745353-29df-4bf6-aa00-be0bc41da4eb
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    parent: 'main-menu:0:'
+name: Link
+type: link
+description: 'Use this content type to create links for Quick Links and Agency links.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.publication.field_meta_tags
     - field.field.node.publication.field_publication_type
     - field.field.node.publication.field_published_date
+    - field.field.node.publication.field_sectors
     - field.field.node.publication.field_site_topics
     - field.field.node.publication.field_summary
     - node.type.publication
@@ -51,6 +52,7 @@ hidden:
   field_attachment: true
   field_feature_home_page: true
   field_meta_tags: true
+  field_sectors: true
   field_site_topics: true
   field_summary: true
   langcode: true

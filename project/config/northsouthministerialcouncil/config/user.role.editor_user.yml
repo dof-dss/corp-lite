@@ -1,0 +1,35 @@
+uuid: c8287829-418d-4519-8307-9d7f41440dc9
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - node.type.contact
+    - node.type.news
+    - node.type.publication
+  module:
+    - node
+    - redirect
+    - system
+id: editor_user
+label: 'editor user'
+weight: 4
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'administer redirects'
+  - 'create contact content'
+  - 'create news content'
+  - 'create publication content'
+  - 'delete any contact content'
+  - 'delete any news content'
+  - 'delete any publication content'
+  - 'delete own contact content'
+  - 'delete own news content'
+  - 'delete own publication content'
+  - 'edit any contact content'
+  - 'edit any news content'
+  - 'edit any publication content'
+  - 'edit own contact content'
+  - 'edit own news content'
+  - 'edit own publication content'
+  - 'view the administration theme'
