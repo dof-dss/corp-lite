@@ -1,0 +1,8 @@
+uuid: 860790ac-acab-4835-b482-a1fa1620b807
+langcode: en-gb
+status: true
+dependencies: {  }
+name: Sectors
+vid: sectors
+description: 'NSMC sectors'
+weight: 0

@@ -1,5 +1,5 @@
 uuid: 10722b85-df2c-4fbe-82c5-a650cca4bc61
-langcode: en-gb
+langcode: und
 status: true
 dependencies:
   module:
@@ -14,92 +14,26 @@ type: list_string
 settings:
   allowed_values:
     -
-      value: agendas
-      label: 'Agendas and minutes'
-    -
-      value: businessplans
-      label: 'Business plans'
-    -
-      value: circulars
-      label: Circulars
-    -
-      value: consultationreports
-      label: 'Consultation reports'
-    -
-      value: contractmanagement
-      label: 'Contract management'
-    -
-      value: corporatereports
-      label: 'Corporate reports'
-    -
-      value: correspondence
-      label: Correspondence
-    -
-      value: decisions
-      label: Decisions
-    -
-      value: developmentplanframework
-      label: 'Development plan/framework'
-    -
-      value: financial
-      label: 'Financial plans and reports'
-    -
-      value: foiresponses
-      label: 'FOI/EIR responses'
-    -
-      value: forms
-      label: Forms
-    -
-      value: guidance
-      label: 'Guidance literature'
-    -
-      value: impactassessments
-      label: 'Impact assessments'
-    -
-      value: independentreports
-      label: 'Independent reports'
-    -
-      value: inspectionreports
-      label: 'Inspection reports'
-    -
       value: jointcommuniques
-      label: 'Joint Communiqués'
+      label: 'Plenary Joint Communiqués'
     -
-      value: legislation
-      label: 'Legislation and regulations'
+      value: annualreports
+      label: 'Annual Report'
     -
-      value: listsregisters
-      label: 'Lists and registers'
+      value: foi
+      label: 'Freedom of Information'
     -
-      value: maps
-      label: Maps
+      value: institutionaljointcommuniques
+      label: 'Institutional Joint Communiqués'
     -
-      value: memoranda
-      label: Memoranda
+      value: interimprocedures
+      label: 'Interim Procedures'
     -
-      value: notices
-      label: Notices
+      value: other
+      label: Other
     -
-      value: policypapers
-      label: 'Policy papers'
-    -
-      value: promotional
-      label: 'Promotional material'
-    -
-      value: researchanalysis
-      label: 'Research and analysis'
-    -
-      value: speeches
-      label: 'Speeches and statements'
-    -
-      value: surveys
-      label: 'Surveys / Evaluations'
-    -
-      value: supportmaterial
-      label: 'Support Material'
-    -
-      value: statisticalreports
-      label: 'Statistical reports'
+      value: sectoraljointcommuniques
+      label: 'Sectoral Joint Communiqués'
   allowed_values_function: ''
 module: options
 locked: false
