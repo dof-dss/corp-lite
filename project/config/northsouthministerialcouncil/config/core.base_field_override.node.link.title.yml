@@ -1,0 +1,18 @@
+uuid: abf21376-6214-44dc-a1ac-eb4243ee2bc2
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - node.type.link
+id: node.link.title
+field_name: title
+entity_type: node
+bundle: link
+label: 'Link text'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -84,10 +84,7 @@ process:
       plugin: media_wysiwyg_filter
     -
       plugin: filter_absolute_links
-
-      replace_urls:
-        http://www.northsouthministerialcouncil.org
-        https://www.northsouthministerialcouncil.org
+      replace_urls: 'http://www.northsouthministerialcouncil.org https://www.northsouthministerialcouncil.org'
     -
       plugin: site_files_filter
       from_ref: sites/nsmc/files

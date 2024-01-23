@@ -38,6 +38,9 @@ settings:
       value: bg
       label: Bulgarian
     -
+      value: hu
+      label: Hungarian
+    -
       value: lv
       label: Latvian
     -
@@ -64,6 +67,9 @@ settings:
     -
       value: tet
       label: Tetum
+    -
+      value: uk
+      label: Ukrainian
   allowed_values_function: ''
 module: options
 locked: false
