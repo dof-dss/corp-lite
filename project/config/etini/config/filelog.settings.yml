@@ -1,7 +1,7 @@
 _core:
   default_config_hash: 3cKTrUUF7V69Wa8cBh3qbScW_I15rH3dW4-AEVtM9EQ
 enabled: true
-location: /app/log/default
+location: /app/log/etini
 rotation:
   schedule: daily
   delete: true
