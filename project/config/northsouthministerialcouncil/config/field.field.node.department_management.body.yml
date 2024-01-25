@@ -1,0 +1,24 @@
+uuid: 3782bb3d-4237-4eb0-821c-80ed6f169c80
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.department_management
+  module:
+    - text
+id: node.department_management.body
+field_name: body
+entity_type: node
+bundle: department_management
+label: 'Management and structure'
+description: 'This field renders the departmental management information, it also provides the main content when the page is selected'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

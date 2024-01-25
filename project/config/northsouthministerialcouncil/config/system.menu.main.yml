@@ -1,10 +1,10 @@
 uuid: d6fe6327-f8c7-4d84-b758-c215cc6bea0e
-langcode: en-gb
+langcode: en
 status: true
 dependencies: {  }
 _core:
   default_config_hash: aL4sBfR369URIaVVF6hYfximDLSuxgrCMgaWJxedrwk
 id: main
-label: 'Main navigation'
-description: 'Site section links'
+label: 'Main menu'
+description: 'The <em>Main</em> menu is used on many sites to show the major sections of the site, often in a top navigation bar.'
 locked: true

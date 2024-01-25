@@ -1,0 +1,12 @@
+uuid: 69fedbb7-10dc-4ebe-a24d-4a3ba5ada2dc
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: EXqIXlLJkTgLRhPRgSJElcCu9cuiKwPiR3UzC4jVRHs
+id: node.most_recent
+label: 'Most recent'
+targetEntityType: node
+cache: true

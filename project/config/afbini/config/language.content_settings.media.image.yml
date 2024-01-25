@@ -1,0 +1,13 @@
+uuid: 520a32b9-a5f9-45a9-899b-3a97bf3a967f
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.image
+_core:
+  default_config_hash: FzQieZ4YJR3ILRpiYJ7iFhicIEhtpXiZ2tief_UDN4U
+id: media.image
+target_entity_type_id: media
+target_bundle: image
+default_langcode: site_default
+language_alterable: false

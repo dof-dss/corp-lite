@@ -1,0 +1,14 @@
+_core:
+  default_config_hash: xNHQR5bN1V96bZQJu9E92f3VdiEMB8CHNkBOVTIlJmI
+langcode: en
+uuid: f1b583ac-7651-4bb3-8912-016685715395
+name: 'Agri-Food and Biosciences Institute'
+mail: eddwebdev@finance-ni.gov.uk
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+default_langcode: en
