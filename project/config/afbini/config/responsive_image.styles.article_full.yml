@@ -1,0 +1,31 @@
+uuid: ab3d4440-7f0e-4efd-8bfa-f78b9b8f2fc2
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.nigov_full_1240_x2
+    - image.style.nigov_full_1880_x2
+    - image.style.nigov_full_450_x1
+    - image.style.nigov_full_620_x1
+    - image.style.nigov_full_900_x2
+    - image.style.nigov_full_940_x1
+_core:
+  default_config_hash: fU0g2D7t8uP-oMeVG5EuEvfFx1EVBBS4IegQSk4c6jE
+id: article_full
+label: 'Article full'
+image_style_mappings:
+  -
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: 100vw
+      sizes_image_styles:
+        - nigov_full_1240_x2
+        - nigov_full_1880_x2
+        - nigov_full_450_x1
+        - nigov_full_620_x1
+        - nigov_full_900_x2
+        - nigov_full_940_x1
+breakpoint_group: responsive_image
+fallback_image_style: nigov_full_620_x1

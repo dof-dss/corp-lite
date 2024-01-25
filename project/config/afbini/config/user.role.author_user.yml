@@ -1,0 +1,33 @@
+uuid: 1c55ac3b-0159-4bf1-990c-5b4186679b27
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - node.type.article
+  module:
+    - file
+    - node
+    - path
+    - system
+    - toolbar
+    - tour
+_core:
+  default_config_hash: vNEkQI-Oi5HpFydAyizLa6qCCV8SkpSWLiyMrYoGO94
+id: author_user
+label: 'Author user'
+weight: 2
+is_admin: false
+permissions:
+  - 'access administration pages'
+  - 'access content overview'
+  - 'access files overview'
+  - 'access toolbar'
+  - 'access tour'
+  - 'administer url aliases'
+  - 'create article content'
+  - 'create url aliases'
+  - 'delete own files'
+  - 'edit own article content'
+  - 'view all revisions'
+  - 'view own unpublished content'
+  - 'view the administration theme'

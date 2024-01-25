@@ -1,0 +1,23 @@
+uuid: 6952c17c-d4f4-478a-85c5-276ba1bd904b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_feature_home_page
+    - node.type.news
+_core:
+  default_config_hash: Z2JDRspQkEAodY1bBymxImbNHxkY5R86quAJIPnvKVU
+id: node.news.field_feature_home_page
+field_name: field_feature_home_page
+entity_type: node
+bundle: news
+label: 'Feature on home page'
+description: 'Check this flag to indicate that this content should be listed on the home page.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

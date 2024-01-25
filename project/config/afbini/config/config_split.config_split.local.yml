@@ -1,0 +1,27 @@
+uuid: 51eae4b9-b106-4634-870e-f986d3185e95
+langcode: en
+status: true
+dependencies: {  }
+id: local
+label: local
+description: 'Local development split. Enables debugging and development modules'
+weight: 0
+stackable: false
+storage: folder
+folder: ../project/config/afbini/local
+module:
+  clone_nodes: 0
+  dblog: 0
+  devel: 0
+  easy_install: 0
+  migrate: 0
+  migrate_drupal: 0
+  migrate_plus: 0
+  migrate_tools: 0
+  migrate_upgrade: 0
+  stage_file_proxy: 0
+  update: 0
+  views_ui: 0
+theme: {  }
+complete_list: {  }
+partial_list: {  }

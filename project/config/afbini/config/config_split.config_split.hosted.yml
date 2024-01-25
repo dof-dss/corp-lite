@@ -1,0 +1,15 @@
+uuid: 30771c29-dd00-4a4b-a21d-2b2d40c73a7a
+langcode: en
+status: true
+dependencies: {  }
+id: hosted
+label: hosted
+description: "Use for any that are 'hosted' and not running locally, apart from production (which has its own split)."
+weight: 0
+stackable: false
+storage: folder
+folder: ../project/config/afbini/hosted
+module: {  }
+theme: {  }
+complete_list: {  }
+partial_list: {  }
