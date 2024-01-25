@@ -1,0 +1,15 @@
+uuid: ca49b7cf-dad1-4968-a265-4e55727d1942
+langcode: en
+status: true
+dependencies: {  }
+id: production
+label: production
+description: 'Used for the production site only.'
+weight: 0
+stackable: false
+storage: folder
+folder: ../project/config/afbini/production
+module: {  }
+theme: {  }
+complete_list: {  }
+partial_list: {  }

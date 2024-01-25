@@ -1,0 +1,38 @@
+uuid: d67fe81b-38c6-4a0a-a496-b32c26423304
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - node.type.article
+  module:
+    - contextual
+    - file
+    - node
+    - path
+    - system
+    - toolbar
+    - tour
+_core:
+  default_config_hash: sm9myrHyT75sIlDforph0s_evEe8km_JbT7K1UTnmBY
+id: editor_user
+label: 'Editor user'
+weight: 4
+is_admin: false
+permissions:
+  - 'access administration pages'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access files overview'
+  - 'access toolbar'
+  - 'access tour'
+  - 'administer url aliases'
+  - 'create article content'
+  - 'create url aliases'
+  - 'delete article revisions'
+  - 'delete own article content'
+  - 'delete own files'
+  - 'edit own article content'
+  - 'revert all revisions'
+  - 'view all revisions'
+  - 'view own unpublished content'
+  - 'view the administration theme'

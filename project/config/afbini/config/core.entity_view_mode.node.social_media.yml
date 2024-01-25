@@ -1,0 +1,12 @@
+uuid: 9eae3e23-5677-4c7e-a601-072578c47709
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: OiQJlL0BqmwGeaTUXRcPzvD4jmwY7plJXmp6YP7bk_o
+id: node.social_media
+label: 'Social media'
+targetEntityType: node
+cache: true

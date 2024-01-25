@@ -1,0 +1,7 @@
+_core:
+  default_config_hash: P8kPQhBQyiubXvuB-uJIVm5b7sfv14POB62roG_keBs
+langcode: en-gb
+threshold:
+  requirements_warning: 172800
+  requirements_error: 1209600
+logging: 1
