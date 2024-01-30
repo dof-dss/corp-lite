@@ -149,6 +149,11 @@ commands:
   checkout_code:
     description: "Handle composer access tokens, SSH key fingerprints and code checkout"
     steps:
+      # Add SSH user key so we can access related repositories as part of our initial clone + composer install command.
+      # 65:4e >> GitHub user key fingerprint.
+      - add_ssh_keys:
+          fingerprints:
+            - "65:4e:c7:ca:9f:c0:40:f7:16:2c:da:33:63:1d:90:12"
       - checkout
   composer_tasks:
     description: "Validate and install dependencies using composer"
