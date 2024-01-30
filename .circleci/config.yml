@@ -153,7 +153,7 @@ commands:
       # 65:4e >> GitHub user key fingerprint.
       - add_ssh_keys:
           fingerprints:
-            - "65:4e:c7:ca:9f:c0:40:f7:16:2c:da:33:63:1d:90:12"
+            - "SHA256:PsyQStHiQTiTA8xugsxPxyjaAUtSnL1HOicgMGANQt4"
       - checkout
   composer_tasks:
     description: "Validate and install dependencies using composer"
