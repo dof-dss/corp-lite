@@ -58,7 +58,7 @@ content:
     region: content
   field_attachment:
     type: entity_reference_entity_view
-    label: hidden
+    label: above
     settings:
       view_mode: default
       link: true
@@ -81,14 +81,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 9
-    region: content
-  field_publication_type:
-    type: entity_reference_label
-    label: inline
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 1
     region: content
   field_published_date:
     type: datetime_default
@@ -116,6 +108,7 @@ content:
     region: content
 hidden:
   content_moderation_control: true
+  field_publication_type: true
   field_sectors: true
   langcode: true
   links: true
