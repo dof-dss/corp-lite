@@ -149,6 +149,11 @@ commands:
   checkout_code:
     description: "Handle composer access tokens, SSH key fingerprints and code checkout"
     steps:
+      # Add SSH user key so we can access related repositories as part of our initial clone + composer install command.
+      # 65:4e >> GitHub user key fingerprint.
+      - add_ssh_keys:
+          fingerprints:
+            - "SHA256:PsyQStHiQTiTA8xugsxPxyjaAUtSnL1HOicgMGANQt4"
       - checkout
   composer_tasks:
     description: "Validate and install dependencies using composer"
@@ -181,7 +186,7 @@ commands:
       - run:
           name: Switch dof-dss packages to HEAD on development branch
           command: |
-            composer require dof-dss/nicsdru_origins_modules:dev-d10_upgrade --with-all-dependencies
+            composer require dof-dss/nicsdru_origins_modules:dev-10.x-dev --with-all-dependencies
   hosts_keyscan:
     description: "Keyscan for hosts that require SSH access"
     steps:

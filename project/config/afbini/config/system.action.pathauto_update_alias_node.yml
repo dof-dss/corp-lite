@@ -1,0 +1,16 @@
+uuid: fca26a05-2045-4d5a-bead-170ec0213940
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - pathauto
+  enforced:
+    module:
+      - node
+_core:
+  default_config_hash: jzM1qeHogbgTswMJO49b9XJkWze-vFWXONA1CKg9_ng
+id: pathauto_update_alias_node
+label: 'Update URL alias'
+type: node
+plugin: pathauto_update_alias
+configuration: {  }

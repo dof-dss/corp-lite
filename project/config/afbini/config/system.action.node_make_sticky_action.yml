@@ -1,0 +1,13 @@
+uuid: fede1406-2fac-468f-8f6f-85eeacf3b8f5
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: sWuKjl76rVye96cO_v9wYcL2GMgdPLmULxUJTV7BtKM
+id: node_make_sticky_action
+label: 'Make content sticky'
+type: node
+plugin: node_make_sticky_action
+configuration: {  }
