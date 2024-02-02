@@ -22,15 +22,12 @@ third_party_settings:
     group_additional_content_details:
       children:
         - field_published_date
-        - field_teaser
+        - field_photo
         - field_meta_tags
-        - field_news_type
-        - field_feature_home_page
-        - field_main_feature
       label: 'Additional content details'
       parent_name: ''
       region: content
-      weight: 5
+      weight: 4
       format_type: html_element
       format_settings:
         classes: field-collection
@@ -55,7 +52,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
   field_meta_tags:
     type: metatag_empty_formatter
@@ -69,23 +66,22 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 2
     region: content
   field_photo:
-    type: entity_reference_entity_view
-    label: hidden
+    type: entity_reference_label
+    label: inline
     settings:
-      view_mode: default
-      link: true
+      link: false
     third_party_settings: {  }
-    weight: 1
+    weight: 4
     region: content
   field_published_date:
     type: datetime_default
     label: inline
     settings:
       timezone_override: ''
-      format_type: medium
+      format_type: corplite_medium
     third_party_settings: {  }
     weight: 3
     region: content

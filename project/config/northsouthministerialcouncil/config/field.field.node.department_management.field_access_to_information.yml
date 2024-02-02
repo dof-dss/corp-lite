@@ -4,9 +4,15 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_access_to_information
+    - filter.format.basic_html
     - node.type.department_management
   module:
+    - allowed_formats
     - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - basic_html
 id: node.department_management.field_access_to_information
 field_name: field_access_to_information
 entity_type: node
@@ -18,5 +24,6 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  allowed_formats: {  }
+  allowed_formats:
+    - basic_html
 field_type: text_long
