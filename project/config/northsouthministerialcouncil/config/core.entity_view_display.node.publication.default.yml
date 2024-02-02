@@ -33,7 +33,7 @@ content:
     region: content
   field_attachment:
     type: entity_reference_entity_view
-    label: hidden
+    label: above
     settings:
       view_mode: default
       link: false
@@ -42,11 +42,11 @@ content:
     region: content
   field_publication_type:
     type: entity_reference_label
-    label: inline
+    label: above
     settings:
-      link: false
+      link: true
     third_party_settings: {  }
-    weight: 1
+    weight: 7
     region: content
   field_published_date:
     type: datetime_default

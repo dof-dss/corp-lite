@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
-    - field.field.node.page.field_enable_toc
     - node.type.page
   module:
     - text
@@ -27,6 +26,5 @@ content:
     weight: 100
     region: content
 hidden:
-  field_enable_toc: true
   langcode: true
   search_api_excerpt: true

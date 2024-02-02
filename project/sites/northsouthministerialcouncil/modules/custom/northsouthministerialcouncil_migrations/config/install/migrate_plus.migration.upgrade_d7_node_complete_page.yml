@@ -77,22 +77,21 @@ process:
       plugin: get
       source: comment
   body:
-    -
-      plugin: media_wysiwyg_filter
-    -
-      plugin: filter_absolute_links
-      replace_urls: 'http://www.northsouthministerialcouncil.org https://www.northsouthministerialcouncil.org'
-    -
-      plugin: site_files_filter
-      from_ref: sites/nsmc/files
-      to_ref: files/northsouthministerialcouncil
-    -
-      plugin: site_files_filter
+    - plugin: get
+      source: body
+    - plugin: media_wysiwyg_filter
+    - plugin: filter_absolute_links
+
+      replace_urls:
+        http://www.northsouthministerialcouncil.org
+        http://northsouthministerialcouncil.org
+        https://www.northsouthministerialcouncil.org
+        https://northsouthministerialcouncil.org
+    - plugin: site_files_filter
       from_ref: sites/northsouthministerialcouncil.org/files
       to_ref: files/northsouthministerialcouncil
   body/0/format:
-    -
-      plugin: static_map
+    - plugin: static_map
       bypass: true
       source: body/0/format
       map:
@@ -112,7 +111,7 @@ process:
 destination:
   plugin: 'entity_complete:node'
   translations: true
-  default_bundle: basic_page
+  default_bundle: page
 migration_dependencies:
   required:
     - upgrade_d7_user
