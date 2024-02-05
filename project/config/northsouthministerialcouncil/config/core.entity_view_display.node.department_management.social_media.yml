@@ -1,0 +1,97 @@
+uuid: 273719b6-cca4-4ac3-9489-63f4ab93b776
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.social_media
+    - field.field.node.department_management.body
+    - field.field.node.department_management.field_access_to_information
+    - field.field.node.department_management.field_contact_information
+    - field.field.node.department_management.field_departmental_map
+    - field.field.node.department_management.field_facebook_url
+    - field.field.node.department_management.field_flickr_url
+    - field.field.node.department_management.field_linkedin_url
+    - field.field.node.department_management.field_twitter_url
+    - field.field.node.department_management.field_youtube_url
+    - node.type.department_management
+  module:
+    - layout_builder
+    - link
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.department_management.social_media
+targetEntityType: node
+bundle: department_management
+mode: social_media
+content:
+  field_facebook_url:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_flickr_url:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_linkedin_url:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_twitter_url:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_youtube_url:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  body: true
+  field_access_to_information: true
+  field_contact_information: true
+  field_departmental_map: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

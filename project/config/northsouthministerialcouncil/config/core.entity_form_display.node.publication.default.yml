@@ -64,7 +64,7 @@ content:
     third_party_settings: {  }
   field_attachment:
     type: media_library_widget
-    weight: 18
+    weight: 17
     region: content
     settings:
       media_types: {  }
@@ -73,14 +73,14 @@ content:
         show_edit: '1'
   field_feature_home_page:
     type: boolean_checkbox
-    weight: 20
+    weight: 7
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   field_meta_tags:
     type: metatag_firehose
-    weight: 19
+    weight: 18
     region: content
     settings:
       sidebar: true

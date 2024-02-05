@@ -14,27 +14,11 @@ dependencies:
   module:
     - content_moderation
     - datetime
-    - field_group
     - media_library
     - media_library_edit
     - metatag
     - path
     - text
-third_party_settings:
-  field_group:
-    group_featured:
-      children: {  }
-      label: Featured
-      region: content
-      parent_name: ''
-      weight: 10
-      format_type: fieldset
-      format_settings:
-        classes: ''
-        show_empty_fields: false
-        id: ''
-        description: ''
-        required_fields: false
 _core:
   default_config_hash: mTsGhSOXEcJoKhXwR7U0vMD3YCBmWh-hEIgvSlUi_8s
 id: node.news.default
