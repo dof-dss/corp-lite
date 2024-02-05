@@ -29,7 +29,7 @@ third_party_settings:
       label: 'Additional content details'
       parent_name: ''
       region: content
-      weight: 8
+      weight: 5
       format_type: html_element
       format_settings:
         classes: field-collection
@@ -54,7 +54,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 4
+    weight: 1
     region: content
   field_attachment:
     type: entity_reference_entity_view
@@ -63,7 +63,7 @@ content:
       view_mode: default
       link: true
     third_party_settings: {  }
-    weight: 6
+    weight: 2
     region: content
   field_feature_home_page:
     type: boolean
@@ -89,7 +89,7 @@ content:
       timezone_override: ''
       format_type: medium
     third_party_settings: {  }
-    weight: 0
+    weight: 3
     region: content
   field_site_topics:
     type: entity_reference_label
@@ -97,14 +97,14 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 2
+    weight: 4
     region: content
   field_summary:
     type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 5
+    weight: 0
     region: content
 hidden:
   content_moderation_control: true

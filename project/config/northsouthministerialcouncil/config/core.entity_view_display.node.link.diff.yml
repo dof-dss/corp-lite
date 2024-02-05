@@ -1,0 +1,33 @@
+uuid: 3fe8444c-05d2-4bb0-957e-8d6d47f56f4f
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.diff
+    - field.field.node.link.field_link_type
+    - field.field.node.link.field_link_url
+    - field.field.node.link.field_site_topics
+    - node.type.link
+  module:
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.link.diff
+targetEntityType: node
+bundle: link
+mode: diff
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_link_type: true
+  field_link_url: true
+  field_site_topics: true
+  langcode: true
+  search_api_excerpt: true
