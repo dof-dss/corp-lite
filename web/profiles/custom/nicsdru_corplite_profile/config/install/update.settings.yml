@@ -1,4 +1,4 @@
-langcode: en-gb
+langcode: en
 check:
   disabled_extensions: false
   interval_days: 1
