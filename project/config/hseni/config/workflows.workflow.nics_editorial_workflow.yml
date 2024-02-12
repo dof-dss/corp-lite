@@ -3,13 +3,18 @@ langcode: en-gb
 status: true
 dependencies:
   config:
+    - node.type.alert
     - node.type.application
     - node.type.article
     - node.type.consultation
     - node.type.contact
+    - node.type.department_management
+    - node.type.link
     - node.type.news
+    - node.type.page
     - node.type.profile
     - node.type.publication
+    - node.type.webform
   module:
     - content_moderation
 _core:
@@ -102,11 +107,16 @@ type_settings:
       weight: 2
   entity_types:
     node:
+      - alert
       - application
       - article
       - consultation
       - contact
+      - department_management
+      - link
       - news
+      - page
       - profile
       - publication
+      - webform
   default_moderation_state: draft
