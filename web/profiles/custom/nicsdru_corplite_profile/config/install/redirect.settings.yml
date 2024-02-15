@@ -1,4 +1,4 @@
-langcode: en-gb
+langcode: en
 auto_redirect: true
 default_status_code: 301
 passthrough_querystring: true
