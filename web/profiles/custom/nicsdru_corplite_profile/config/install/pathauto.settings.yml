@@ -1,4 +1,4 @@
-langcode: en-gb
+langcode: en
 enabled_entity_types:
   - user
 punctuation:

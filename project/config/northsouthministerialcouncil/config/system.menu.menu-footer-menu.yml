@@ -1,8 +1,8 @@
-uuid: 9c20b851-5610-4fb6-8d14-7b890ace005f
-langcode: en
+uuid: b873ddf0-7ab5-462e-bde5-ff94efef33fb
+langcode: en-gb
 status: true
 dependencies: {  }
 id: menu-footer-menu
-label: 'Footer menu'
+label: 'Footer links'
 description: 'Ancillary links displayed in the footer.'
 locked: false

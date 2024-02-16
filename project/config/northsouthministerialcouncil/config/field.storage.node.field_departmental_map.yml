@@ -1,17 +1,16 @@
-uuid: 2cfb7bb6-3721-41da-b769-af2628f41732
+uuid: 41f95d13-6a97-4c07-9cb5-c5860230d961
 langcode: en-gb
 status: true
 dependencies:
   module:
+    - geolocation
     - node
-_core:
-  default_config_hash: BIKIP2XZrAccmEveaMJW9QN-5H6YzARX4LJEeuXPFEA
-id: node.field_main_feature
-field_name: field_main_feature
+id: node.field_departmental_map
+field_name: field_departmental_map
 entity_type: node
-type: boolean
+type: geolocation
 settings: {  }
-module: core
+module: geolocation
 locked: false
 cardinality: 1
 translatable: true

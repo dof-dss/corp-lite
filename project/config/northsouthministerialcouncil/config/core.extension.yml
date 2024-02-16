@@ -29,7 +29,6 @@ module:
   cookie_content_blocker: 0
   corplite_eu_cookie_compliance: 0
   corplite_image_styles: 0
-  corplite_migrations: 0
   csp: 0
   ctools: 0
   date_facet_drilldown: 0

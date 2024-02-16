@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0ef6375c45c27750da7a788dc96e237d",
+    "content-hash": "df19785956398cb60cce441a78ef02df",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -7354,30 +7354,30 @@
         },
         {
             "name": "drupal/structure_sync",
-            "version": "2.0.5",
+            "version": "2.0.6",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/structure_sync.git",
-                "reference": "2.0.5"
+                "reference": "2.0.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/structure_sync-2.0.5.zip",
-                "reference": "2.0.5",
-                "shasum": "eb744625ba3a8caf731dc7406b29797c8416f744"
+                "url": "https://ftp.drupal.org/files/projects/structure_sync-2.0.6.zip",
+                "reference": "2.0.6",
+                "shasum": "4891c7fb8360c6becb0c693dabcbcd653921941c"
             },
             "require": {
                 "drupal/core": "^8 || ^9 || ^10",
                 "php": ">=7.1"
             },
             "require-dev": {
-                "drush/drush": "^9 || ^10 || ^11"
+                "drush/drush": "^9 || ^10 || ^11 || ^12"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.5",
-                    "datestamp": "1681378126",
+                    "version": "2.0.6",
+                    "datestamp": "1705960357",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -7385,7 +7385,7 @@
                 },
                 "drush": {
                     "services": {
-                        "drush.services.yml": "^9 || ^10 || ^11"
+                        "drush.services.yml": "^9 || ^10 || ^11 || ^12"
                     }
                 }
             },
@@ -14986,16 +14986,16 @@
         },
         {
             "name": "dof-dss/maestro-hosting",
-            "version": "1.0.12",
+            "version": "1.0.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dof-dss/maestro-hosting.git",
-                "reference": "f93c2eb12cd5bf56d96cb3b0c9e990b11a11d09f"
+                "reference": "f86748d84a182f5eda60151c2eaf9e8291372dfc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dof-dss/maestro-hosting/zipball/f93c2eb12cd5bf56d96cb3b0c9e990b11a11d09f",
-                "reference": "f93c2eb12cd5bf56d96cb3b0c9e990b11a11d09f",
+                "url": "https://api.github.com/repos/dof-dss/maestro-hosting/zipball/f86748d84a182f5eda60151c2eaf9e8291372dfc",
+                "reference": "f86748d84a182f5eda60151c2eaf9e8291372dfc",
                 "shasum": ""
             },
             "require": {
@@ -15020,22 +15020,22 @@
             "description": "Maestro hosting resources",
             "support": {
                 "issues": "https://github.com/dof-dss/maestro-hosting/issues",
-                "source": "https://github.com/dof-dss/maestro-hosting/tree/1.0.12"
+                "source": "https://github.com/dof-dss/maestro-hosting/tree/1.0.20"
             },
-            "time": "2023-12-06T11:41:56+00:00"
+            "time": "2024-02-16T15:49:41+00:00"
         },
         {
             "name": "dof-dss/maestro-shell",
-            "version": "1.0.8",
+            "version": "10.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dof-dss/maestro-shell.git",
-                "reference": "0cdfea7fe1f334159f8230b2c141f5930c8f804c"
+                "reference": "3e5aae4af31f3aaa72615a60bdf0f75e483e42ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dof-dss/maestro-shell/zipball/0cdfea7fe1f334159f8230b2c141f5930c8f804c",
-                "reference": "0cdfea7fe1f334159f8230b2c141f5930c8f804c",
+                "url": "https://api.github.com/repos/dof-dss/maestro-shell/zipball/3e5aae4af31f3aaa72615a60bdf0f75e483e42ba",
+                "reference": "3e5aae4af31f3aaa72615a60bdf0f75e483e42ba",
                 "shasum": ""
             },
             "require": {
@@ -15045,15 +15045,15 @@
                 "romaricdrigon/metayaml": "dev-master",
                 "stecman/symfony-console-completion": "^0.12",
                 "symfony/cache": "^6.3",
-                "symfony/config": "^6.3",
-                "symfony/console": "^6.3",
-                "symfony/dependency-injection": "^6.3",
-                "symfony/event-dispatcher": "^6.3",
-                "symfony/filesystem": "^6.3",
-                "symfony/finder": "^6.3",
+                "symfony/config": "^6.0",
+                "symfony/console": "^6.0",
+                "symfony/dependency-injection": "^6.0",
+                "symfony/event-dispatcher": "^6.0",
+                "symfony/filesystem": "^6.0",
+                "symfony/finder": "^6.0",
                 "symfony/http-client": "^5.4",
-                "symfony/process": "^6.3",
-                "symfony/yaml": "^6.3",
+                "symfony/process": "^6.0",
+                "symfony/yaml": "^6.0",
                 "webflo/drupal-finder": "^1.2"
             },
             "suggest": {
@@ -15078,9 +15078,9 @@
             "description": "Shell for working with Maestro projects.",
             "support": {
                 "issues": "https://github.com/dof-dss/maestro-shell/issues",
-                "source": "https://github.com/dof-dss/maestro-shell/tree/1.0.8"
+                "source": "https://github.com/dof-dss/maestro-shell/tree/10.1.1"
             },
-            "time": "2023-11-15T17:25:18+00:00"
+            "time": "2023-11-15T15:57:04+00:00"
         },
         {
             "name": "drupal/coder",

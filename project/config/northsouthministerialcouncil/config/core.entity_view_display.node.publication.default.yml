@@ -29,24 +29,16 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 5
+    weight: 3
     region: content
   field_attachment:
     type: entity_reference_entity_view
-    label: hidden
+    label: above
     settings:
       view_mode: default
       link: false
     third_party_settings: {  }
-    weight: 6
-    region: content
-  field_publication_type:
-    type: entity_reference_label
-    label: inline
-    settings:
-      link: false
-    third_party_settings: {  }
-    weight: 1
+    weight: 4
     region: content
   field_published_date:
     type: datetime_default
@@ -63,19 +55,20 @@ content:
     settings:
       link: false
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
   field_summary:
     type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 4
+    weight: 2
     region: content
 hidden:
   content_moderation_control: true
   field_feature_home_page: true
   field_meta_tags: true
+  field_publication_type: true
   field_sectors: true
   langcode: true
   links: true
