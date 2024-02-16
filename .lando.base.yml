@@ -14,7 +14,6 @@ env_file:
   - .env
 services:
   appserver:
-    scanner: false
     xdebug: debug
     build_as_root:
       - /app/.lando/scripts/appserver_build.sh
