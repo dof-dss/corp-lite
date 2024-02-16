@@ -2,7 +2,7 @@
 
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/dof-dss/corp-lite/tree/development.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/dof-dss/corp-lite/tree/development)
 
-Multi-site  Drupal project designed to run the following sites:
+Multi-site Drupal project designed to run the following sites:
 
 - https://www.nisra.gov.uk/
 - https://afbini.gov.uk/
