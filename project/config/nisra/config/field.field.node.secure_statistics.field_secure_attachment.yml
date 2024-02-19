@@ -13,7 +13,7 @@ entity_type: node
 bundle: secure_statistics
 label: 'Secure attachment'
 description: 'Choose one or more individual files to attach to this secure statistics publication. These files will only be accessible to the public once the secure statistics publication page is published.'
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
