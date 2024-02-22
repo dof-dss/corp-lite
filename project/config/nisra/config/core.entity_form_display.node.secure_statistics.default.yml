@@ -60,14 +60,10 @@ content:
       use_details: true
     third_party_settings: {  }
   field_publication_type:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 6
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_published_date:
     type: datetime_default
@@ -76,14 +72,10 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_research_support:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 5
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_secure_attachment:
     type: file_generic
@@ -93,14 +85,10 @@ content:
       progress_indicator: throbber
     third_party_settings: {  }
   field_site_topics:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 4
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_summary:
     type: string_textarea
