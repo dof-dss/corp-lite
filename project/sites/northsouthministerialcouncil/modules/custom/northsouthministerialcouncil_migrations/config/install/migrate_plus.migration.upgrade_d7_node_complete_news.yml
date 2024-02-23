@@ -114,6 +114,7 @@ process:
     -
       plugin: get
       source: field_summary
+    - plugin: strip_html_filter
   field_metatag:
     -
       plugin: d7_metatag_entities
