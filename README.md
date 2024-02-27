@@ -43,6 +43,33 @@ Like the popular git-flow workflow, but without the more complex elements:
 
 API keys, auth tokens or other sensitive values must be stored as environment variables and never stored in the codebase itself.
 
+# Importing config after site install.
+
+If you have reinstalled your site and then try to import config, you may encounter this error:
+
+  The import failed due to the following reasons:
+  Site UUID in source storage does not match the target storage.
+
+We will use the nisra site as an example.
+The way to resolve this is to look in the project/config/nisra/config/system.site.yml file and copy the uuid from
+it (for nisra, this is '36ead1de-6766-4ddc-99dd-05302f539588').
+
+You can then set the uuid in the database to match it like this:
+
+lando drush config-set system.site uuid 36ead1de-6766-4ddc-99dd-05302f539588 -l nisra
+
+This will solve the system uuid error, but when you run the config import again you may get this error:
+
+  Can not delete the default language
+
+Using nisra as the example again, in this case you should look in the project/config/nisra/config/language.entity.en.yml
+file and copy the uuid from it (for nisra, this is 'e806eadb-5d8c-4d2e-91f2-24413feda85f').
+
+You can then set the uuid in the database to match it like this:
+
+lando drush config-set language.entity.en uuid e806eadb-5d8c-4d2e-91f2-24413feda85f -l nisra
+
+
 ## Continuous integration
 
 Automated testing is configured to check:
