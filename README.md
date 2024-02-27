@@ -62,6 +62,8 @@ This will solve the system uuid error, but when you run the config import again 
 
   Can not delete the default language
 
+This is happeneing because the uuid for english language in the database does not match the uuid in config, so Drupal
+thinks that you are changing the language.
 Using nisra as the example again, in this case you should look in the project/config/nisra/config/language.entity.en.yml
 file and copy the uuid from it (for nisra, this is 'e806eadb-5d8c-4d2e-91f2-24413feda85f').
 
