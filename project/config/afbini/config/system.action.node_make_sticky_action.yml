@@ -1,5 +1,5 @@
 uuid: fede1406-2fac-468f-8f6f-85eeacf3b8f5
-langcode: en-gb
+langcode: en
 status: true
 dependencies:
   module:

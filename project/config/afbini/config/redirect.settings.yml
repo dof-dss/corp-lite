@@ -1,6 +1,6 @@
 _core:
   default_config_hash: 6NBdELSPwBAWME82kFfOLsdFZ8VY1ZTi2-26mkZjVYI
-langcode: en-gb
+langcode: en
 auto_redirect: true
 default_status_code: 301
 passthrough_querystring: true
