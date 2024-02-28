@@ -1,6 +1,6 @@
 _core:
   default_config_hash: EfxScNC3iAJBMpMVAA12a-vJywzgSysjGwk0fv3xYQI
-langcode: en-gb
+langcode: en
 cache_strings: true
 translate_english: false
 javascript:

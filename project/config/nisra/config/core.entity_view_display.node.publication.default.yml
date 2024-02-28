@@ -1,5 +1,5 @@
 uuid: edad53a8-1ac9-4cfa-8c4b-614a824a7d00
-langcode: en-gb
+langcode: en
 status: true
 dependencies:
   config:
