@@ -1,5 +1,5 @@
 uuid: a38a90e1-fe56-4196-938e-54dc863bb262
-langcode: en-gb
+langcode: en
 status: true
 dependencies: {  }
 id: upgrade_d7_file_video

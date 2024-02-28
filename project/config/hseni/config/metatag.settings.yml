@@ -1,6 +1,6 @@
 _core:
   default_config_hash: UIIeh0uKSbu9MWfpNnlumkfllCLf0ylZJUXh7GfXWuU
-langcode: en-gb
+langcode: en
 entity_type_groups: {  }
 separator: ''
 tag_trim_method: beforeValue

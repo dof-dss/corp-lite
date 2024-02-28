@@ -1,5 +1,5 @@
 uuid: 5fb7df98-29bf-474e-a2a8-cac9785cfe86
-langcode: en-gb
+langcode: en
 status: true
 dependencies: {  }
 id: upgrade_d7_path_redirect

@@ -1,5 +1,5 @@
 uuid: 9389ef0f-719d-4e1f-82f4-b4a8b273f5c9
-langcode: en-gb
+langcode: en
 status: true
 dependencies: {  }
 id: upgrade_system_site

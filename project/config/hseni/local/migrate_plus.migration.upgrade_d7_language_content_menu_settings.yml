@@ -1,5 +1,5 @@
 uuid: 570bb798-f2c3-4b32-b177-50a0e2f92cf2
-langcode: en-gb
+langcode: en
 status: true
 dependencies: {  }
 id: upgrade_d7_language_content_menu_settings

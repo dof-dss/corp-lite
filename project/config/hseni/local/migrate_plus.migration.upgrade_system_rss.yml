@@ -1,5 +1,5 @@
 uuid: 183a6994-654b-4a63-9ab1-81510e1d61a5
-langcode: en-gb
+langcode: en
 status: true
 dependencies: {  }
 id: upgrade_system_rss
