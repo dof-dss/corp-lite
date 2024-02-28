@@ -1,5 +1,5 @@
 uuid: dbcea188-fc07-4404-8460-61916fc369b4
-langcode: en-gb
+langcode: en
 status: true
 dependencies:
   config:

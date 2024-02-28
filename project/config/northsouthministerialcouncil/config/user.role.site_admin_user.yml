@@ -1,5 +1,5 @@
 uuid: 8efd71de-c1fe-46dd-b1cd-573855621cf2
-langcode: en-gb
+langcode: en
 status: true
 dependencies: {  }
 id: site_admin_user

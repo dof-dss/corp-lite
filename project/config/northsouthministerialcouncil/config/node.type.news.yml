@@ -1,5 +1,5 @@
 uuid: bacc4f6f-7394-467f-8561-1af1e5fa82d5
-langcode: en-gb
+langcode: en
 status: true
 dependencies:
   module:

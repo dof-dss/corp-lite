@@ -1,5 +1,5 @@
 uuid: 6324f000-1221-4ea5-94df-98ce75076b0a
-langcode: en-gb
+langcode: en
 status: true
 dependencies: {  }
 name: 'Publication type'
