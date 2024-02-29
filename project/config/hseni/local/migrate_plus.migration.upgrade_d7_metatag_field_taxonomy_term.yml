@@ -1,5 +1,5 @@
 uuid: 1f945092-4096-4b12-8638-a1ae4f66baee
-langcode: en-gb
+langcode: en
 status: true
 dependencies: {  }
 id: upgrade_d7_metatag_field_taxonomy_term

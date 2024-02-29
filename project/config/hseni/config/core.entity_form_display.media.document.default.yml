@@ -1,5 +1,5 @@
 uuid: fab7e7f9-b994-4902-ac68-4793ae1574ec
-langcode: en-gb
+langcode: en
 status: true
 dependencies:
   config:

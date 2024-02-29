@@ -1,5 +1,5 @@
 uuid: c218fa21-e3de-4c70-bbd9-ccbd675603b6
-langcode: en-gb
+langcode: en
 status: true
 dependencies: {  }
 id: upgrade_d7_field_instance

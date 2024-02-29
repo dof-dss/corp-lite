@@ -1,5 +1,5 @@
 uuid: a0dc2e99-fac6-4847-9fb2-46aa145e331b
-langcode: en-gb
+langcode: en
 status: true
 dependencies: {  }
 id: upgrade_d7_field_formatter_settings

@@ -1,5 +1,5 @@
 uuid: 2b732286-2396-466f-8597-4f934554a565
-langcode: en-gb
+langcode: en
 status: true
 dependencies: {  }
 id: upgrade_system_logging

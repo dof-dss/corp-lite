@@ -1,6 +1,6 @@
 _core:
   default_config_hash: yGr1pUqVvVkqqijwAzmQN4L50uCPA8skKXraA4HYwkc
-langcode: en-gb
+langcode: en
 display_extenders:
   - metatag_display_extender
 skip_cache: false

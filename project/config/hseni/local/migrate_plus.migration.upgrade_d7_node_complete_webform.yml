@@ -1,5 +1,5 @@
 uuid: 1ccb5619-01a8-4a5d-9d73-320b9056999f
-langcode: en-gb
+langcode: en
 status: true
 dependencies: {  }
 id: upgrade_d7_node_complete_webform

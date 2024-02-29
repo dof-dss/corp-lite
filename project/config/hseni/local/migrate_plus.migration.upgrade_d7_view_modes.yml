@@ -1,5 +1,5 @@
 uuid: 05e5e528-07f3-4871-b4d7-37ca247fafe4
-langcode: en-gb
+langcode: en
 status: true
 dependencies: {  }
 id: upgrade_d7_view_modes

@@ -1,5 +1,5 @@
 uuid: 57e6b797-018f-4254-8246-7b6ab3e13e18
-langcode: en-gb
+langcode: en
 status: true
 dependencies: {  }
 id: upgrade_d7_metatag_field_instance_node_news

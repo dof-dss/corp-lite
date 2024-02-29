@@ -1,5 +1,5 @@
 uuid: fdda316e-873b-4e50-8746-c2a8d3a3a040
-langcode: en-gb
+langcode: en
 status: true
 dependencies:
   theme:

@@ -1,5 +1,5 @@
 uuid: dbfd4b6a-79d7-483f-b307-9154fc6793c1
-langcode: en-gb
+langcode: en
 status: true
 dependencies: {  }
 id: upgrade_d7_search_page

@@ -1,5 +1,5 @@
 uuid: d507651d-b413-4047-ad63-ca4c93f2585c
-langcode: en-gb
+langcode: en
 status: true
 dependencies: {  }
 id: upgrade_d7_taxonomy_term_site_topics

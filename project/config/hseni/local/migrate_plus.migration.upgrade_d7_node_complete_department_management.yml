@@ -1,5 +1,5 @@
 uuid: 56e379a9-2b65-4417-bbd9-b779b43d8c3c
-langcode: en-gb
+langcode: en
 status: true
 dependencies: {  }
 id: upgrade_d7_node_complete_department_management

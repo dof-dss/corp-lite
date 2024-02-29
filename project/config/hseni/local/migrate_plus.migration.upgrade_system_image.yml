@@ -1,5 +1,5 @@
 uuid: 2a3b7e9b-9d37-49e3-abc9-ddab728694cd
-langcode: en-gb
+langcode: en
 status: true
 dependencies: {  }
 id: upgrade_system_image

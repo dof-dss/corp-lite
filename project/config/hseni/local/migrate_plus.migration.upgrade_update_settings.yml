@@ -1,5 +1,5 @@
 uuid: f0bbb50f-2d86-425a-9e5f-0c03330e903d
-langcode: en-gb
+langcode: en
 status: true
 dependencies: {  }
 id: upgrade_update_settings
