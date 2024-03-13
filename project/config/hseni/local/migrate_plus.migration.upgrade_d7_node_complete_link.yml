@@ -1,5 +1,5 @@
 uuid: ef9779c8-060d-4d0e-aa08-db441f57614a
-langcode: en
+langcode: en-gb
 status: true
 dependencies: {  }
 id: upgrade_d7_node_complete_link
@@ -82,9 +82,9 @@ process:
       source: field_link_type
       default_value: null
       map:
-        quicklink: 120
-        corporatelink: 121
-        aboutuslink: 122
+        quicklink: 109
+        corporatelink: 108
+        aboutuslink: 107
   field_link_url:
     -
       plugin: field_link

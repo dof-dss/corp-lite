@@ -1,5 +1,5 @@
 uuid: 9b1e7a4b-925d-4e82-a0bb-f6b66ec13c1a
-langcode: en
+langcode: en-gb
 status: true
 dependencies: {  }
 id: upgrade_d7_pathauto_patterns

@@ -1,5 +1,5 @@
 uuid: 1e39414c-60c9-43dd-8fe8-a1079e2e8edb
-langcode: en
+langcode: en-gb
 status: true
 dependencies: {  }
 id: upgrade_d7_node_complete_publication
@@ -114,25 +114,25 @@ process:
       source: field_publication_type
       default_value: null
       map:
-        forms: 99
-        notices: 100
+        forms: 93
+        notices: 98
         promotional: 101
-        advice_and_guidance: 102
-        annual_report_and_accounts: 103
-        authorisations_and_exemptions: 104
-        board_meeting_minutes: 105
-        consultations: 106
-        corporate_plans: 107
-        foi_eir_responses: 108
-        impact_assessments: 109
-        legislation_and_regulations: 110
-        lists_and_registers: 111
-        managementminutes: 112
-        memorandums_of_understanding: 113
-        operating_plans: 114
-        policies: 115
-        prosecutions: 116
-        speeches_and_statements: 117
+        advice_and_guidance: 86
+        annual_report_and_accounts: 87
+        authorisations_and_exemptions: 88
+        board_meeting_minutes: 89
+        consultations: 90
+        corporate_plans: 91
+        foi_eir_responses: 92
+        impact_assessments: 94
+        legislation_and_regulations: 95
+        lists_and_registers: 96
+        managementminutes: 103
+        memorandums_of_understanding: 97
+        operating_plans: 99
+        policies: 100
+        prosecutions: 102
+        speeches_and_statements: 104
   field_published_date:
     -
       plugin: sub_process
