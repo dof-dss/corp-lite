@@ -1,5 +1,5 @@
 uuid: a78cf2be-5beb-44ab-af46-99bb6d38df6c
-langcode: en
+langcode: en-gb
 status: true
 dependencies: {  }
 id: upgrade_d7_file_private

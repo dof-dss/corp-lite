@@ -1,5 +1,5 @@
 uuid: 9de4e6b3-ba4a-42dc-8688-f1b4727bf9f9
-langcode: en
+langcode: en-gb
 status: true
 dependencies: {  }
 id: upgrade_d7_node_title_label

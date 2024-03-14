@@ -1,5 +1,5 @@
 uuid: dfc2c2b4-f77b-4df6-8b52-989d91d3c9d3
-langcode: en
+langcode: en-gb
 status: true
 dependencies: {  }
 id: migrate_drupal_7
