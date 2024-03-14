@@ -1,11 +1,11 @@
-uuid: 0209f73c-bca0-4eb9-8b52-297a905b973a
+uuid: a478b3a6-c3d0-4e61-b861-9c6b5d12b9ef
 langcode: en
 status: true
 dependencies:
   module:
     - file
 _core:
-  default_config_hash: TGCHvi6h6XvSLfbSgxoeamhhWWNOYiB0B3C4RPZ4bjY
+  default_config_hash: T6IiNXJhdrBudWJ_guxnUz3p71T0lFcidLSTM9VlFl8
 id: file.token
 label: Token
 targetEntityType: file

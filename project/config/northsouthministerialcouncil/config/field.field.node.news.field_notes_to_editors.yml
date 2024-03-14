@@ -1,4 +1,4 @@
-uuid: ed05d0df-f46a-4c0b-97bc-e731809af7eb
+uuid: ee1c7864-1c2f-4bdf-a957-4bc32656bb1b
 langcode: en
 status: true
 dependencies:
@@ -6,7 +6,7 @@ dependencies:
     - field.storage.node.field_notes_to_editors
     - node.type.news
 _core:
-  default_config_hash: EPOxVmn5RJ7tQkv33210EmR6VWtezaRHKxNRmHiG0Dg
+  default_config_hash: mTEm_cfeaA0ykNbnM_uNDwJDcwBtjcQJnpbjMS4l4xI
 id: node.news.field_notes_to_editors
 field_name: field_notes_to_editors
 entity_type: node

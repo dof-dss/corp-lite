@@ -1,5 +1,5 @@
 _core:
-  default_config_hash: yGr1pUqVvVkqqijwAzmQN4L50uCPA8skKXraA4HYwkc
+  default_config_hash: t0fryganIcFRe373h0vifxMt8mnRJjDP04DCKwpbe5s
 langcode: en
 display_extenders:
   - metatag_display_extender

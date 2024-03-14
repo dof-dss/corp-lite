@@ -1,4 +1,4 @@
-uuid: 1a0a7ab6-6e43-4b26-8f7d-85b50b010b95
+uuid: cdb7e90d-6b92-455c-b9a1-51b9cfeb249b
 langcode: en
 status: false
 dependencies:
@@ -8,7 +8,7 @@ dependencies:
     - node
     - user
 _core:
-  default_config_hash: qlRVSx7-B69uCU-8wWczoGws4FvgZMcjP7DyeMaoWbA
+  default_config_hash: ko9GznzNBXHkuz09OCaBQ1YOSJYYjTY0TBpNV3WKnog
 id: archive
 label: Archive
 module: node

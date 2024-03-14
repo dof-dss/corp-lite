@@ -1,9 +1,9 @@
-uuid: ba515c46-9dba-4bbc-a2e0-f697df3cd80d
+uuid: d72a5bfc-60b0-457c-ae24-0fa92274df0c
 langcode: en
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: EGlfYD6xHk6snj3mEIHKDLBcVwzTNKPGVtu9nNaIYGU
+  default_config_hash: wKD4WsoV_wFgv2vgI4mcAAFSIzrye17ykzdwrnApkfY
 id: html_week
 label: 'HTML Week'
 locked: true

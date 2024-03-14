@@ -1,0 +1,20 @@
+uuid: 199e7fea-b209-42b5-b6d3-ec953c2a3b71
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.consultation
+_core:
+  default_config_hash: BcBC1VCAs8RQrATAKW-mtl0AyFuz7kM_8GxyZozcRKI
+id: node.consultation.title
+field_name: title
+entity_type: node
+bundle: consultation
+label: 'Title (Main heading)'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,4 +1,4 @@
-uuid: 4e6eace2-a02f-4e52-bff0-8e9f859d2089
+uuid: c6935b67-27dd-4fe3-afe4-dab84e965976
 langcode: en
 status: true
 dependencies: {  }
@@ -7,7 +7,6 @@ label: local
 description: "Local development split. \r\nEnables debugging and development modules"
 weight: 0
 stackable: false
-no_patching: false
 storage: folder
 folder: ../project/config/northsouthministerialcouncil/local
 module:

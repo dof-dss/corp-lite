@@ -1,11 +1,11 @@
-uuid: 470d49d0-6e64-49ed-8e00-f2e97cce7b40
+uuid: 45899b72-2970-41b6-9b70-23282cd06984
 langcode: en
 status: true
 dependencies:
   module:
     - block_content
 _core:
-  default_config_hash: 3a-BSH11nntH5QX82_kafILyTdcxfUkSwiFFAK2_7cY
+  default_config_hash: JqAPZHEa9m6Cqy0vdpV5Jjdk07YLKkE_EE9ivvB2xhQ
 id: block_content.token
 label: Token
 targetEntityType: block_content

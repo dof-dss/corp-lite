@@ -1,11 +1,11 @@
-uuid: d82b976a-6d8d-4e57-9050-9241a6e307f9
+uuid: 82f38ed8-d06d-45ce-8adf-ffc4c5d741c6
 langcode: en
 status: true
 dependencies:
   config:
     - node.type.news
 _core:
-  default_config_hash: 1uDXM58VXzVtPVhYFzAXcygdFexd28tvHOAF_PUlQZ0
+  default_config_hash: 3FGgwaH8-84Bc4WtwruS7gZy-glmq6JJmVnAV3grVm8
 id: node.news.title
 field_name: title
 entity_type: node

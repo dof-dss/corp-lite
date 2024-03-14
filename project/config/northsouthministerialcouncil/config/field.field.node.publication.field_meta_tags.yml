@@ -1,4 +1,4 @@
-uuid: ada62fa1-8770-4e79-86ba-64cf4f94cca2
+uuid: 4093d40c-18bd-4d41-be1e-917450b78936
 langcode: en
 status: true
 dependencies:
@@ -8,7 +8,7 @@ dependencies:
   module:
     - metatag
 _core:
-  default_config_hash: 6kFJ7jTpMnK_D8ujinh5VdZAZn6OANFc--wIPRCLLkI
+  default_config_hash: AQJLAPQcK2QBOhHpd-vviD9_Tt3_6TG77tPmEtmDURo
 id: node.publication.field_meta_tags
 field_name: field_meta_tags
 entity_type: node

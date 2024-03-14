@@ -1,5 +1,5 @@
 _core:
-  default_config_hash: 7nVWnAgadYr2PZkqZ59A82npGM2K8XLEsn3e64dhr7g
+  default_config_hash: roSXtKUc9dGq1SWH5jla1hNyFoChGsOGNIgk0fZ7_O8
 langcode: en
 session:
   parameter: language
@@ -7,6 +7,7 @@ url:
   source: path_prefix
   prefixes:
     en-gb: ''
+    en: ''
   domains:
     en-gb: ''
 selected_langcode: site_default

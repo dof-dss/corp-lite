@@ -1,4 +1,4 @@
-uuid: ae17780b-3dec-4925-974a-8874ae702f4c
+uuid: 1ca8b771-c104-4a05-a1ce-7f5f239189fb
 langcode: en
 status: true
 dependencies:
@@ -9,7 +9,7 @@ third_party_settings:
   menu_ui:
     available_menus:
       - main
-    parent: 'main-menu:0:'
+    parent: 'main:'
   origins_toc:
     toc_enable: 0
     toc_title: 'Table of contents'
@@ -21,7 +21,7 @@ third_party_settings:
     toc_screen_depth: '1'
     toc_debug: 0
 _core:
-  default_config_hash: 2l2a_F8MemIsduw1nWX_j5gzLiLO_FAuMim47_mEweE
+  default_config_hash: iE8JPrWnkmhKVoqbhhUwb9B-Fn9CKBgot652-QK_0N8
 name: Contact
 type: contact
 description: 'Use this content type for pages containing contact information.'

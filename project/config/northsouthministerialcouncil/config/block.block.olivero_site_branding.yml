@@ -1,4 +1,4 @@
-uuid: 3cd0ce32-aefc-44d6-9da5-737f8cd06cd5
+uuid: fc370056-efcf-40ab-8cd1-eee05947901c
 langcode: en
 status: true
 dependencies:
@@ -7,7 +7,7 @@ dependencies:
   theme:
     - olivero
 _core:
-  default_config_hash: uX9yAGSNB1h9bkLT5ckxEiX6kegngz2lHah7uA_t5HA
+  default_config_hash: n_nlgjggHVfQt2H__zvLOKB2YtjPDbQ5tHijF9LE1aM
 id: olivero_site_branding
 theme: olivero
 region: header

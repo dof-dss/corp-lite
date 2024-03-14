@@ -1,9 +1,0 @@
-uuid: 8efd71de-c1fe-46dd-b1cd-573855621cf2
-langcode: en
-status: true
-dependencies: {  }
-id: site_admin_user
-label: 'site admin user'
-weight: 5
-is_admin: null
-permissions: {  }

@@ -1,4 +1,4 @@
-uuid: e8025249-5151-438c-af20-bcd4c3c93cb9
+uuid: ec5fbcab-8a74-4f5d-a570-8d298751a914
 langcode: en
 status: true
 dependencies:
@@ -7,7 +7,7 @@ dependencies:
   module:
     - ckeditor5
 _core:
-  default_config_hash: 2zbRpnFAFXzx4sVDsE8RPkLzjuWACFRj52D-sFQxE98
+  default_config_hash: '-Qmh0YscjqFagHjkNcHkMc8ICbmsAz2lIkBM39fqAZc'
 format: basic_html
 editor: ckeditor5
 settings:
@@ -56,7 +56,7 @@ settings:
       linkit_enabled: true
       linkit_profile: default
     media_media:
-      allow_view_mode_override: false
+      allow_view_mode_override: true
 image_upload:
   status: true
   scheme: public

@@ -1,11 +1,11 @@
-uuid: f657dd16-316c-4a92-8ca6-62d842854589
+uuid: 5595e425-bc56-47ac-8f4e-9fcb229b8364
 langcode: en
 status: true
 dependencies:
   module:
     - language
 _core:
-  default_config_hash: teLslI_zxyz-ob4aogH7X6K865H6XKxveZOe2_SwxeU
+  default_config_hash: vcDd9H0uIlyOQGoVAJuD3ADMnQeRR_X3B-ojyb8Cbnc
 id: language-add
 label: 'Adding languages'
 module: language

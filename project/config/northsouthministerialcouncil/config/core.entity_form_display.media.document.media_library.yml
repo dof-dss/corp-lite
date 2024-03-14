@@ -1,4 +1,4 @@
-uuid: d2093cb6-ac02-46dd-8d92-101f87b0b35a
+uuid: 5882c571-da72-4cd9-86d1-99c9ca7fef07
 langcode: en
 status: true
 dependencies:
@@ -15,12 +15,12 @@ mode: media_library
 content:
   name:
     type: string_textfield
-    weight: 0
-    region: content
     settings:
       size: 60
       placeholder: ''
+    weight: 0
     third_party_settings: {  }
+    region: content
 hidden:
   created: true
   field_media_file: true

@@ -1,13 +1,12 @@
-uuid: a5dcb892-6cdc-4dfc-84d7-46476b83e71c
+uuid: d100798e-da9a-4310-8def-a8b3d2ccb643
 langcode: en
-status: false
+status: true
 dependencies: {  }
 id: hosted
 label: hosted
 description: "Use for any that are 'hosted' and not running locally, apart from production (which has its own split)."
 weight: 0
 stackable: false
-no_patching: false
 storage: folder
 folder: ../project/config/northsouthministerialcouncil/hosted
 module: {  }

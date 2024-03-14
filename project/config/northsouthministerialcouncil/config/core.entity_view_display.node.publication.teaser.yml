@@ -1,4 +1,4 @@
-uuid: 3f1e5e60-736c-4acb-89d6-915d14c3a689
+uuid: cff5efd8-a002-4e34-b72f-a9e8e76d5034
 langcode: en
 status: true
 dependencies:
@@ -10,7 +10,6 @@ dependencies:
     - field.field.node.publication.field_meta_tags
     - field.field.node.publication.field_publication_type
     - field.field.node.publication.field_published_date
-    - field.field.node.publication.field_sectors
     - field.field.node.publication.field_site_topics
     - field.field.node.publication.field_summary
     - node.type.publication
@@ -18,7 +17,7 @@ dependencies:
     - text
     - user
 _core:
-  default_config_hash: Qv8n6FyW9itYjY2Kn0D9hJuTqgv304IWCgu5vzkA-ek
+  default_config_hash: Vyp_MS3RuOLnXsc5queE1bgy8YuYA4sQm9XJ-ppxmAI
 id: node.publication.teaser
 targetEntityType: node
 bundle: publication
@@ -39,7 +38,6 @@ hidden:
   field_meta_tags: true
   field_publication_type: true
   field_published_date: true
-  field_sectors: true
   field_site_topics: true
   field_summary: true
   langcode: true

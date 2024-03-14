@@ -1,0 +1,29 @@
+uuid: 755482db-2a00-47f4-b9f0-d0625ac42660
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+_core:
+  default_config_hash: DQFLFKTIQoz1FJ-fAKxre_Q4krmJYtYJ5N3-I7pO-ss
+id: node.field_news_type
+field_name: field_news_type
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: news
+      label: 'News story'
+    -
+      value: pressrelease
+      label: 'Press release'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,4 +1,4 @@
-uuid: ae501641-31c6-42c4-91ce-f5d4eb72b433
+uuid: 0eff9ffe-9a6f-4952-b73e-9a4b5cda1646
 langcode: en
 status: true
 dependencies:
@@ -10,7 +10,7 @@ dependencies:
     - origins_common
     - token_filter
 _core:
-  default_config_hash: Lf-rnpcpkD_L92mHIwewlAo7LZ5WYMoyemrnwBPTghk
+  default_config_hash: qDh_JCHHamQAObsuHeK48Pq_U0KvUFqFQSXqwUv68-U
 name: 'Full HTML'
 format: full_html
 weight: 2

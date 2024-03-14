@@ -1,33 +1,26 @@
-uuid: e3938b6d-d9b5-4032-944f-5b7a53225309
+uuid: a4c4acb0-1973-4820-b42c-92ebb58c9407
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.body
-    - filter.format.basic_html
     - node.type.publication
   module:
-    - allowed_formats
     - text
-third_party_settings:
-  allowed_formats:
-    allowed_formats:
-      - basic_html
 _core:
-  default_config_hash: Ewj-XjMZlKzpEthT5yHlVq49nUh0pp5dG_q736zu678
+  default_config_hash: MRGhysBhF_g-l6aXxwlMdP6e_1YXXJ_dk2-iWvQhfjw
 id: node.publication.body
 field_name: body
 entity_type: node
 bundle: publication
 label: Body
-description: 'Use this field for optional additional information. Use ‘Normal’ format, no headings required.'
+description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
-  display_summary: false
+  display_summary: true
   required_summary: false
-  allowed_formats:
-    - basic_html
+  allowed_formats: {  }
 field_type: text_with_summary

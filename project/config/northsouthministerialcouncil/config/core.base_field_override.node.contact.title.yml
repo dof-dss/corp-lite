@@ -1,11 +1,11 @@
-uuid: f8bb9e9f-eb54-4ff0-9116-43d9dafbb4ca
+uuid: fa545143-2a21-4675-ba4c-e5d81399f985
 langcode: en
 status: true
 dependencies:
   config:
     - node.type.contact
 _core:
-  default_config_hash: wrvP5M2nhEbPx8WZ-xpDoEMLu862OCvBUDk1XEb093A
+  default_config_hash: mYSluO-hp01mrFWHE0PreJ663SZOGqRmy77JrIG5_Xw
 id: node.contact.title
 field_name: title
 entity_type: node

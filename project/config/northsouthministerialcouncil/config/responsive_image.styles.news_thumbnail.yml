@@ -1,4 +1,4 @@
-uuid: c52c8960-d7ac-4258-b57b-1c50f14f0a93
+uuid: 858df32a-0f2f-494e-a03b-0709f478dd51
 langcode: en
 status: true
 dependencies:
@@ -11,13 +11,13 @@ id: news_thumbnail
 label: 'News thumbnail'
 image_style_mappings:
   -
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
     image_mapping_type: sizes
     image_mapping:
       sizes: 100vw
       sizes_image_styles:
         - nigov_landscape_thumbnail_150x100_x1
         - nigov_landscape_thumbnail_300x200_x2
-    breakpoint_id: responsive_image.viewport_sizing
-    multiplier: 1x
 breakpoint_group: responsive_image
 fallback_image_style: nigov_landscape_thumbnail_150x100_x1

@@ -1,12 +1,12 @@
-uuid: 34bbcc03-37fb-4288-8328-aa0bfc8bf4e9
-langcode: und
+uuid: b0f9f5d6-3336-440a-92a1-d1eaa0af3985
+langcode: en
 status: true
 dependencies:
   module:
     - datetime
     - node
 _core:
-  default_config_hash: kAp2mNYvok7pqN7-F5TyT5YyLsqlDJ-f4j0eKL0BPEo
+  default_config_hash: 3tpwHAUvVnxhVywjAwQuZh2lWqxhX521AyKeA3eaR14
 id: node.field_published_date
 field_name: field_published_date
 entity_type: node

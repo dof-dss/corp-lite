@@ -1,4 +1,4 @@
-uuid: f640f50e-14a6-4ef3-bc6f-4ab9180ae090
+uuid: 45b22483-b789-4bbb-aee9-81ba3fc08bcc
 langcode: en
 status: true
 dependencies:
@@ -11,13 +11,13 @@ id: member_small_image
 label: 'Member small image'
 image_style_mappings:
   -
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
     image_mapping_type: sizes
     image_mapping:
       sizes: 100vw
       sizes_image_styles:
         - member_small_image_x1
         - member_small_image_x2
-    breakpoint_id: responsive_image.viewport_sizing
-    multiplier: 1x
 breakpoint_group: responsive_image
 fallback_image_style: member_small_image_x1

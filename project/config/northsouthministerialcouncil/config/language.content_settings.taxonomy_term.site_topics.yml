@@ -1,11 +1,11 @@
-uuid: 476b9321-b2de-44b6-8b04-d795aee3f763
+uuid: 782413c2-5de1-4c66-ab1c-99355498f945
 langcode: en
 status: true
 dependencies:
   config:
     - taxonomy.vocabulary.site_topics
 _core:
-  default_config_hash: AVX-4wtBrJBDnQVBU5O0_KpyqxMNq6xTrV2CGUN3uHE
+  default_config_hash: dgZWV3KUmxxt6wnDcjnqfGPYM-zQhqBhZtNXvlbexsQ
 id: taxonomy_term.site_topics
 target_entity_type_id: taxonomy_term
 target_bundle: site_topics

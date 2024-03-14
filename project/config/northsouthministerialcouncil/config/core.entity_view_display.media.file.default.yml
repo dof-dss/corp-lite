@@ -1,4 +1,4 @@
-uuid: b686da65-4359-4976-ae12-ecf9c72ce308
+uuid: 62c348a0-1818-4e6d-9ef6-9ae6f20bbcbd
 langcode: en
 status: true
 dependencies:
@@ -15,10 +15,10 @@ bundle: file
 mode: default
 content:
   field_media_file:
-    type: file_default
     label: visually_hidden
     settings: {  }
     third_party_settings: {  }
+    type: file_default
     weight: 1
     region: content
 hidden:

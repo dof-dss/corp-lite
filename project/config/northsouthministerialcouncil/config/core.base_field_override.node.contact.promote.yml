@@ -1,11 +1,11 @@
-uuid: c3d91a3b-5db9-4589-ae34-aabb319cf431
+uuid: 8431a311-d15e-40fb-88d8-91460f99990f
 langcode: en
 status: true
 dependencies:
   config:
     - node.type.contact
 _core:
-  default_config_hash: QiNh8lkWgR9OIKhYMY_l6znqvC2geljXg_9uilcm2JQ
+  default_config_hash: Qh5EGujawePQFIwBvFA0cgl6qEgbK7WNye0l9UGSDnA
 id: node.contact.promote
 field_name: promote
 entity_type: node

@@ -1,4 +1,4 @@
-uuid: cc1186cc-ece5-409c-a1fd-647bca9fbb9f
+uuid: 025b9be1-54f5-4e84-a7ca-dbf3a72b173d
 langcode: en
 status: true
 dependencies:
@@ -13,8 +13,8 @@ dependencies:
     - responsive_image
 third_party_settings:
   layout_builder:
-    enabled: false
     allow_custom: false
+    enabled: false
 _core:
   default_config_hash: 56yNOwprw1-n4F3wjVxa4LsPXIzcvkQkCk1CfEgTxgM
 id: media.image.landscape_full_xp
@@ -23,7 +23,6 @@ bundle: image
 mode: landscape_full_xp
 content:
   field_media_image:
-    type: responsive_image
     label: visually_hidden
     settings:
       responsive_image_style: inline_xl_expandable
@@ -31,6 +30,7 @@ content:
       image_loading:
         attribute: eager
     third_party_settings: {  }
+    type: responsive_image
     weight: 0
     region: content
 hidden:

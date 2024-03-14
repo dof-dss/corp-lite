@@ -1,0 +1,26 @@
+uuid: 13b3354f-56ce-4e25-a8d5-9f265720faab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.profile
+  module:
+    - text
+_core:
+  default_config_hash: zPF-L1xoRFhAF03BrNjs2bdTh65Bf7Ln0bdBtoptQ6g
+id: node.profile.body
+field_name: body
+entity_type: node
+bundle: profile
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

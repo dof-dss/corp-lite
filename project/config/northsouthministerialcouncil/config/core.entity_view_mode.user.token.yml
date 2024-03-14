@@ -1,11 +1,11 @@
-uuid: d6f9b14d-9dd1-4a98-a1b1-712bf0ab9c6e
+uuid: 30ad6538-9ab8-407b-a3d0-40868d91a968
 langcode: en
 status: true
 dependencies:
   module:
     - user
 _core:
-  default_config_hash: uiqrEdZD86B-0I2PrgCHcIVLlenn930DdP0jgn0_Dzk
+  default_config_hash: Ta5_n_jXyfP3WcRw_Rmp1QPg-aSHbXzg3_Qr5UE1ieY
 id: user.token
 label: Token
 targetEntityType: user

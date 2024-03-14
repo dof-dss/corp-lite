@@ -1,4 +1,4 @@
-uuid: d3bfce26-7243-4eca-b96e-cff10c331a6c
+uuid: e4d001c2-454e-410f-add4-92d6fa7d9be8
 langcode: en
 status: true
 dependencies:
@@ -6,8 +6,7 @@ dependencies:
     - node
 id: disable_toc
 label: 'Disable Table of Contents'
-bundles:
-  - page
+bundles: {  }
 entity_type: node
 global: true
 flag_short: 'Disable ToC'

@@ -1,4 +1,4 @@
-uuid: 5839c6cb-0526-4266-92d1-02e69ce1f0cf
+uuid: 752c91f4-525b-4f0f-abfc-1ab6c7a39c05
 langcode: en
 status: true
 dependencies:
@@ -20,7 +20,7 @@ third_party_settings:
     toc_screen_depth: '1'
     toc_debug: 0
 _core:
-  default_config_hash: bdTUi4abeAdzP1ZQVdKBheprmUtUuyCUIAZ6_hZouzg
+  default_config_hash: 9i5CfFwu7UcGnQCm9iiefr8LnS7fIngRf6XpOUNfJvQ
 name: Publication
 type: publication
 description: 'Use this content type for generic non-HTML content such as PDF documents.'

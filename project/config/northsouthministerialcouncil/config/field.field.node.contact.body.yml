@@ -1,20 +1,14 @@
-uuid: 370d3699-98cc-427f-a9ca-5b776c3c7496
+uuid: 7387b2a1-c1cf-41bf-ab01-3a5ca2f7f250
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.body
-    - filter.format.basic_html
     - node.type.contact
   module:
-    - allowed_formats
     - text
-third_party_settings:
-  allowed_formats:
-    allowed_formats:
-      - basic_html
 _core:
-  default_config_hash: MyddkePbuWfV_5Tcx-qGfdzdsGY52SyaZFd8G94z2qw
+  default_config_hash: uQq34ABDf6epupdwB3ujG7yWUyAzVMs3goh4olAt83c
 id: node.contact.body
 field_name: body
 entity_type: node
@@ -22,12 +16,11 @@ bundle: contact
 label: Body
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
-  display_summary: false
+  display_summary: true
   required_summary: false
-  allowed_formats:
-    - basic_html
+  allowed_formats: {  }
 field_type: text_with_summary

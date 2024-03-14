@@ -1,4 +1,4 @@
-uuid: a40d2e62-86a8-4a0a-a20c-7a0b9140564e
+uuid: f40ab35c-053c-4570-913b-98ca83abd382
 langcode: en
 status: true
 dependencies:
@@ -11,7 +11,7 @@ dependencies:
   module:
     - image
 _core:
-  default_config_hash: y72D559akK-5Ue8EX4X7KULn0IqQNaTaGf3TmY8dWqc
+  default_config_hash: mTQ4WUnR4YfwtsPZLyShVK6VG4a11F1GO-l1XD4O2ZY
 id: media.image.token
 targetEntityType: media
 bundle: image

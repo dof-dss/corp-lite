@@ -1,9 +1,9 @@
-uuid: f815207a-02f2-4baf-b9bb-79f505b7dd21
+uuid: 354ab267-c02d-4322-a755-0a9d7cbcebe2
 langcode: en
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: pbG12kkpAdiL5mDOJ1elNOHSYUczYnqEgEzNXo-gMZ8
+  default_config_hash: Z7KuCUwM_WdTNvLcoltuX3_8d-s-8FZkTN6KgNwF0eM
 id: html_month
 label: 'HTML Month'
 locked: true

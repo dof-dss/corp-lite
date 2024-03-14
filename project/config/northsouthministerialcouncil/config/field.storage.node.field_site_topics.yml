@@ -1,12 +1,12 @@
-uuid: df6b76f8-1048-488b-89bb-3fad8cf272ba
-langcode: und
+uuid: d7c00d8f-751b-4f80-a216-a193454ceeaa
+langcode: en
 status: true
 dependencies:
   module:
     - node
     - taxonomy
 _core:
-  default_config_hash: sVOH9JfDoc01vhdw6IkoACb1-__xLEGhuPO-ysSdPA0
+  default_config_hash: eBn5YjrZ7h5xzvOkXoDstKbclzH2MpVrg8idDck6mP0
 id: node.field_site_topics
 field_name: field_site_topics
 entity_type: node

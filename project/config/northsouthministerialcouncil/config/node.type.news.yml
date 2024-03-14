@@ -1,4 +1,4 @@
-uuid: bacc4f6f-7394-467f-8561-1af1e5fa82d5
+uuid: fc749581-d060-46ed-b399-8795dc7e67e7
 langcode: en
 status: true
 dependencies:
@@ -8,8 +8,8 @@ dependencies:
 third_party_settings:
   menu_ui:
     available_menus:
-      - main-menu
-    parent: 'main-menu:0:'
+      - main
+    parent: 'main:'
   origins_toc:
     toc_enable: 0
     toc_title: 'Table of contents'
@@ -21,7 +21,7 @@ third_party_settings:
     toc_screen_depth: '1'
     toc_debug: 0
 _core:
-  default_config_hash: s2neznGDnCakCeDxGqwIWX7GYPI6sekih982rjBzx5A
+  default_config_hash: 1KWBfNZFWsphuc1Cb_3YT5pTIh5K14M06KGXXrdT4aA
 name: News
 type: news
 description: 'Use this content type for news items, press releases and announcements.'

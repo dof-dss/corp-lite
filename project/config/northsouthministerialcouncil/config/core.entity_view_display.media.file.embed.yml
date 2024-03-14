@@ -1,4 +1,4 @@
-uuid: eb2b072a-07f6-4587-8b3c-bd0efc61486f
+uuid: b9f68da9-d519-4988-8ffd-23debb2b5352
 langcode: en
 status: true
 dependencies:
@@ -11,8 +11,8 @@ dependencies:
     - layout_builder
 third_party_settings:
   layout_builder:
-    enabled: false
     allow_custom: false
+    enabled: false
 _core:
   default_config_hash: ySr7omWdBBXM1GMf9kufe90WGahsy-96UeX1iZWARxI
 id: media.file.embed
@@ -21,10 +21,10 @@ bundle: file
 mode: embed
 content:
   field_media_file:
-    type: file_default
     label: visually_hidden
     settings: {  }
     third_party_settings: {  }
+    type: file_default
     weight: 1
     region: content
 hidden:

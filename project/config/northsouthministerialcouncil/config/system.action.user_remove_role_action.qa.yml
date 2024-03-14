@@ -1,4 +1,4 @@
-uuid: 1171c065-6737-47c0-80cd-8ff4a049efad
+uuid: 5dbd7540-90a5-4a15-9c85-3b51cdf95f85
 langcode: en
 status: true
 dependencies:
@@ -7,7 +7,7 @@ dependencies:
   module:
     - user
 _core:
-  default_config_hash: EPGsOuMPcCriqheBLR1MPzhk3XwRAnJ2VtkYGqC7Uxc
+  default_config_hash: aAptG_t1sq2xXrPo3W-_KoAZBy7CgdHVGU6NlPgH3Dk
 id: user_remove_role_action.qa
 label: 'Remove the Quality Assurance role from the selected user(s)'
 type: user

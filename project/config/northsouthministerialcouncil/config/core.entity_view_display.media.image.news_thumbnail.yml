@@ -1,4 +1,4 @@
-uuid: ac5be644-744c-414a-b727-61362209b0ae
+uuid: 43414c9e-feac-4267-b215-2622b93f64b5
 langcode: en
 status: true
 dependencies:
@@ -13,8 +13,8 @@ dependencies:
     - responsive_image
 third_party_settings:
   layout_builder:
-    enabled: false
     allow_custom: false
+    enabled: false
 _core:
   default_config_hash: z7buJ8mKMHAIWQSeDKsKZvmPt70RDpejk_4-GHLoJSY
 id: media.image.news_thumbnail
@@ -23,7 +23,6 @@ bundle: image
 mode: news_thumbnail
 content:
   field_media_image:
-    type: responsive_image
     label: visually_hidden
     settings:
       responsive_image_style: news_thumbnail
@@ -31,6 +30,7 @@ content:
       image_loading:
         attribute: eager
     third_party_settings: {  }
+    type: responsive_image
     weight: 1
     region: content
 hidden:

@@ -1,31 +1,35 @@
-uuid: dd345798-423e-4cb3-b2ea-f678163fa790
+uuid: 9818d680-f4cf-4032-880d-fde4279697b8
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.news.body
+    - field.field.node.news.field_feature_home_page
+    - field.field.node.news.field_main_feature
     - field.field.node.news.field_meta_tags
+    - field.field.node.news.field_news_type
     - field.field.node.news.field_notes_to_editors
     - field.field.node.news.field_photo
     - field.field.node.news.field_published_date
+    - field.field.node.news.field_site_topics
     - field.field.node.news.field_summary
+    - field.field.node.news.field_teaser
     - node.type.news
   module:
     - datetime
     - user
 _core:
-  default_config_hash: 3eHfxnoacYwWZZWm0WotOG_vQfa-jJ1xqvKnfJneodk
+  default_config_hash: O3QPPe2Sv4gio3ELj3lae98z3D-0AeBmP-gUrJPZGSo
 id: node.news.teaser
 targetEntityType: node
 bundle: news
 mode: teaser
 content:
   field_photo:
-    type: entity_reference_entity_view
+    type: entity_reference_label
     label: hidden
     settings:
-      view_mode: default
       link: true
     third_party_settings: {  }
     weight: 2
@@ -39,11 +43,23 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_teaser:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
 hidden:
   body: true
   content_moderation_control: true
+  field_feature_home_page: true
+  field_main_feature: true
   field_meta_tags: true
+  field_news_type: true
   field_notes_to_editors: true
+  field_site_topics: true
   field_summary: true
   langcode: true
   links: true

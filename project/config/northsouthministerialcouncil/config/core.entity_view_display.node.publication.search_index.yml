@@ -1,4 +1,4 @@
-uuid: 949e9094-07ad-4f4f-906b-df6e4ae3b0fb
+uuid: c63a1dc3-e4e6-4fee-b136-fe56b27f6223
 langcode: en
 status: true
 dependencies:
@@ -10,7 +10,6 @@ dependencies:
     - field.field.node.publication.field_meta_tags
     - field.field.node.publication.field_publication_type
     - field.field.node.publication.field_published_date
-    - field.field.node.publication.field_sectors
     - field.field.node.publication.field_site_topics
     - field.field.node.publication.field_summary
     - node.type.publication
@@ -23,7 +22,7 @@ third_party_settings:
     enabled: false
     allow_custom: false
 _core:
-  default_config_hash: vx_LdtHaSG8R5ucVZhveXPtvz0_B1fVBr-6t4U0a-5Q
+  default_config_hash: Pkszib3ubuM4NvcxFZNYQZTQKPK7SnhdSjV-FCAnR4M
 id: node.publication.search_index
 targetEntityType: node
 bundle: publication
@@ -31,7 +30,7 @@ mode: search_index
 content:
   field_publication_type:
     type: entity_reference_label
-    label: above
+    label: hidden
     settings:
       link: false
     third_party_settings: {  }
@@ -52,7 +51,6 @@ hidden:
   field_attachment: true
   field_feature_home_page: true
   field_meta_tags: true
-  field_sectors: true
   field_site_topics: true
   field_summary: true
   langcode: true

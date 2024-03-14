@@ -1,4 +1,4 @@
-uuid: 0228c732-7923-4f54-a4f9-9c6ae5e69658
+uuid: 7e35c726-466a-4501-a912-7cd55e17210d
 langcode: en
 status: true
 dependencies:
@@ -7,7 +7,7 @@ dependencies:
   module:
     - user
 _core:
-  default_config_hash: DjBjGlDmuKd8MqRfb_XBiwlpAgZ9O9U9HOlMp4GuSXQ
+  default_config_hash: AA0uwYOuvSpeujqzU36WAqBfb1OnzkkT32qiGVrwl3s
 id: user_remove_role_action.supervisor_user
 label: 'Remove the Supervisor user role from the selected user(s)'
 type: user

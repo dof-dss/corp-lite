@@ -1,11 +1,11 @@
-uuid: 5aabaf92-c7ec-42b9-b6b1-d8976022bed6
+uuid: 21ee1d4b-2bb5-47f7-ab13-31c1e1c072e2
 langcode: en
 status: true
 dependencies:
   config:
     - node.type.publication
 _core:
-  default_config_hash: GiyIkTnmh_GP_Wr6uHZJ1-XBV6T6rxccXp-6Lufi_Nw
+  default_config_hash: I8a4AqkMtpS5YOwtpUWxYHsR4V2fhBpbFrHqI6SzToE
 id: node.publication.title
 field_name: title
 entity_type: node

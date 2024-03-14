@@ -1,9 +1,9 @@
-uuid: 11ca810c-e31c-4088-860f-796046ac1bc9
+uuid: 2846fd03-1619-430f-aa9e-251c46440947
 langcode: en
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: lJT9KpkauU4KKgvJtTX2XfpDBxev8xO-bd4w6SKiP38
+  default_config_hash: zglzjmYxi0G0ag9MZ02y0LSJOdpWRwJxyP_OvFojFyo
 id: basic
 label: 'Basic block'
 revision: 0

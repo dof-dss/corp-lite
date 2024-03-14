@@ -1,4 +1,4 @@
-uuid: 941b293d-856e-49ae-a171-49523ec06f14
+uuid: 3b81655a-aa1c-4ab4-a0e4-452a3c846e27
 langcode: en
 status: true
 dependencies:
@@ -20,10 +20,10 @@ translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:file'
-  handler_settings: {  }
-  file_directory: '[date:custom:Y]-[date:custom:m]'
   file_extensions: 'mp3 wav aac'
+  file_directory: '[date:custom:Y]-[date:custom:m]'
   max_filesize: 30MB
   description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
 field_type: file

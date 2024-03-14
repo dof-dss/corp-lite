@@ -1,4 +1,4 @@
-uuid: e2358b63-db88-49f7-8be4-94168eca7c3a
+uuid: e27d4a1a-6786-4b76-b333-9512835fb5ca
 langcode: en
 status: true
 dependencies:
@@ -7,7 +7,7 @@ dependencies:
   module:
     - user
 _core:
-  default_config_hash: 927o4Hop0rH7R1f-6sBRxs4btdAO3CvagIBVIwFz1DI
+  default_config_hash: qH66nVWKoB4C-iCsI8lU13ZWrMy2JK2Ql2LclFEApj4
 id: user_add_role_action.qa
 label: 'Add the Quality Assurance role to the selected user(s)'
 type: user

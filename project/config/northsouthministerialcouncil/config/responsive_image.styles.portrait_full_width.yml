@@ -1,4 +1,4 @@
-uuid: 83d68e71-eaa9-47b8-b155-53a9768cefce
+uuid: 95d446c8-4f69-48bf-9e23-9b40eb7954d6
 langcode: en
 status: true
 dependencies:
@@ -13,6 +13,8 @@ id: portrait_full_width
 label: 'Portrait full width'
 image_style_mappings:
   -
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
     image_mapping_type: sizes
     image_mapping:
       sizes: 100vw
@@ -21,7 +23,5 @@ image_style_mappings:
         - nigov_portrait_med_900_x2
         - nigov_portrait_xl_1240_x2
         - nigov_portrait_xl_620_x1
-    breakpoint_id: responsive_image.viewport_sizing
-    multiplier: 1x
 breakpoint_group: responsive_image
 fallback_image_style: nigov_portrait_xl_620_x1

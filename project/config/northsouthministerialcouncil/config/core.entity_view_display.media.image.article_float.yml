@@ -1,4 +1,4 @@
-uuid: a8fbbe7e-1038-4480-bdb6-7bd78ecea407
+uuid: 330d881a-2001-489c-aec3-bfabe1d62c0f
 langcode: en
 status: true
 dependencies:
@@ -13,8 +13,8 @@ dependencies:
     - responsive_image
 third_party_settings:
   layout_builder:
-    enabled: false
     allow_custom: false
+    enabled: false
 _core:
   default_config_hash: aJl5vrfOadKVvdidTz6EllHdQtQkCO6gCpZnwVT9KaQ
 id: media.image.article_float
@@ -23,7 +23,6 @@ bundle: image
 mode: article_float
 content:
   field_media_image:
-    type: responsive_image
     label: visually_hidden
     settings:
       responsive_image_style: inline
@@ -31,6 +30,7 @@ content:
       image_loading:
         attribute: eager
     third_party_settings: {  }
+    type: responsive_image
     weight: 1
     region: content
 hidden:

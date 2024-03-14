@@ -1,4 +1,4 @@
-uuid: f21d036f-de12-428a-ab33-aff607b6cb8c
+uuid: 252beb06-5810-4140-873d-ef2356478eaf
 langcode: en
 status: true
 dependencies:
@@ -6,14 +6,14 @@ dependencies:
     - field.storage.node.field_summary
     - node.type.news
 _core:
-  default_config_hash: inJsn7h2A_WKafhP4ii1sHHy73FX772twlN1widLGGY
+  default_config_hash: bi5w5qgX2qVnvRPATml4BKIjvZDpYkh6OkZ0Oz4f648
 id: node.news.field_summary
 field_name: field_summary
 entity_type: node
 bundle: news
 label: 'Introductory paragraph'
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''

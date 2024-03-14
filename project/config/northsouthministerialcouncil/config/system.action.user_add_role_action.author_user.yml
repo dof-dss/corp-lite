@@ -1,4 +1,4 @@
-uuid: f12bc4cc-3732-4b94-bfb2-1af2c4d50bb3
+uuid: fb3afbb6-4633-432e-be6f-9160ef9e6195
 langcode: en
 status: true
 dependencies:
@@ -7,7 +7,7 @@ dependencies:
   module:
     - user
 _core:
-  default_config_hash: 6RwkslQzfCYIpDoiPOPpf2R9cCpFObyaik-NsDGVI5Y
+  default_config_hash: 7ZSrwVz9jn3ctzhOKnJNCwJJ6pcj_qGeqa_IdzGdN2Q
 id: user_add_role_action.author_user
 label: 'Add the Author user role to the selected user(s)'
 type: user

@@ -1,18 +1,19 @@
-uuid: 88e2945c-8217-4fa8-8536-871f77fbc2e4
+uuid: 8e63ba42-b7c7-4a5f-911b-7a16b641eeac
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_site_topics
     - node.type.contact
+    - taxonomy.vocabulary.site_topics
 _core:
-  default_config_hash: TNO3jTbjcjcujgdNOn-PlEaN1Kxrg7bjk_H_hdmpt_s
+  default_config_hash: nudq8UHgOIonWKwlSUvmBiWSHCgj0Rm2OOQufFDomPQ
 id: node.contact.field_site_topics
 field_name: field_site_topics
 entity_type: node
 bundle: contact
 label: 'Site topics'
-description: 'Choose relevant site topic(s) for this point of contact. Hold down Ctrl to choose multiple site topics.'
+description: ''
 required: false
 translatable: false
 default_value: {  }
@@ -20,6 +21,11 @@ default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'
   handler_settings:
+    target_bundles:
+      site_topics: site_topics
     sort:
-      field: _none
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
 field_type: entity_reference

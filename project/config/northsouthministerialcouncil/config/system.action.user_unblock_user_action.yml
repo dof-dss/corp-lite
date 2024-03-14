@@ -1,11 +1,11 @@
-uuid: 7080d5e0-cffd-45b2-b1d3-969d41d0d028
+uuid: c90caf43-0680-4170-8e75-faf96010f33b
 langcode: en
 status: true
 dependencies:
   module:
     - user
 _core:
-  default_config_hash: 50KRz61Yx_nRsnIHfXSGpu4qq646-EIxwYo9MhP2DZk
+  default_config_hash: SPsUXsR3Rc8d1y3gewzaAKWa1ncea_ywXX3f7LTn7k0
 id: user_unblock_user_action
 label: 'Unblock the selected user(s)'
 type: user

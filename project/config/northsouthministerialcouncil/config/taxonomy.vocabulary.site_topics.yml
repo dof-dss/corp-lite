@@ -1,10 +1,10 @@
-uuid: c8dffe1e-396e-4779-8d17-5bdd60b1388a
+uuid: 898796e3-18a2-4ed4-aad4-d73261ce0de1
 langcode: en
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: hG-tjPaSYURfrMPerFi4XPP2P1SFIV1kWckqZn7STfs
-name: 'Areas of Co-operation'
+  default_config_hash: eUnp4MhFaZBOf4ppUw4rbgKyJTzR4ue1x8xg2NyZuxg
+name: 'Site Topics'
 vid: site_topics
-description: 'Site topics and subtopics.'
+description: ''
 weight: 0

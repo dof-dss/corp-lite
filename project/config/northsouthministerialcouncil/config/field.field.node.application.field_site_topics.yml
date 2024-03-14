@@ -1,0 +1,31 @@
+uuid: e3ad32b5-a4ee-4225-a391-0b698a4d9881
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_site_topics
+    - node.type.application
+    - taxonomy.vocabulary.site_topics
+_core:
+  default_config_hash: P15Q1XE-4t5XK1Lfp8GRcHq1oUaHE5soRyXVlinnjh0
+id: node.application.field_site_topics
+field_name: field_site_topics
+entity_type: node
+bundle: application
+label: 'Site topics'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      site_topics: site_topics
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

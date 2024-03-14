@@ -1,19 +1,17 @@
-uuid: 1a9cef22-2e60-47fb-b1e8-b85676b104d9
+uuid: 6fe29fda-7d8f-42df-a810-3d5b0903d8b1
 langcode: en
 status: true
 dependencies:
   config:
     - field.field.node.contact.body
-    - field.field.node.contact.field_map
     - field.field.node.contact.field_meta_tags
     - field.field.node.contact.field_site_topics
     - node.type.contact
   module:
-    - origins_common
     - text
     - user
 _core:
-  default_config_hash: RRFam8seBJLp8e0DGvabzVPTmF6-kB4m9E1uHcpXHKo
+  default_config_hash: LhTewA7wka8SMthwDSiFoogJQdnUb55d6GOIaQcD6EM
 id: node.contact.default
 targetEntityType: node
 bundle: contact
@@ -25,19 +23,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 0
-    region: content
-  field_map:
-    type: gmaps_lazy_load_formatter
-    label: above
-    settings:
-      zoom: '10'
-      map_type: roadmap
-      placeholder: empty
-      link_text: ''
-      map_width: '300'
-      map_height: '300'
-    third_party_settings: {  }
-    weight: 2
     region: content
   field_site_topics:
     type: entity_reference_label

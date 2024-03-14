@@ -1,18 +1,16 @@
-uuid: 05857e83-05da-454e-8115-d8ea82694492
+uuid: a98f1628-6e31-444f-82f9-36aa46212b1e
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.diff
     - field.field.node.contact.body
-    - field.field.node.contact.field_map
     - field.field.node.contact.field_meta_tags
     - field.field.node.contact.field_site_topics
     - node.type.contact
   module:
     - field_group
     - metatag
-    - origins_common
     - text
     - user
 third_party_settings:
@@ -23,7 +21,7 @@ third_party_settings:
       label: 'Additional content details'
       parent_name: ''
       region: content
-      weight: 3
+      weight: 2
       format_type: html_element
       format_settings:
         classes: field-collection
@@ -37,7 +35,7 @@ third_party_settings:
         effect: none
         speed: fast
 _core:
-  default_config_hash: 3a4dpaAEeC1xgDIsg2HPnrmYAoKWF_Tn3Y4xcrmGT40
+  default_config_hash: kGJK_F86GdKjKB9MMjLGhnyVzTpC70IEP1aZEjUkGm0
 id: node.contact.diff
 targetEntityType: node
 bundle: contact
@@ -49,19 +47,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 0
-    region: content
-  field_map:
-    type: gmaps_lazy_load_formatter
-    label: above
-    settings:
-      zoom: '10'
-      map_type: roadmap
-      placeholder: empty
-      link_text: ''
-      map_width: '300'
-      map_height: '300'
-    third_party_settings: {  }
-    weight: 2
     region: content
   field_meta_tags:
     type: metatag_empty_formatter

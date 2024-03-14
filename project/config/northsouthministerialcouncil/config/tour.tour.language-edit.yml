@@ -1,11 +1,11 @@
-uuid: 9e072857-c974-40e1-a85d-b5d825c6d472
+uuid: abfe7855-a6df-4403-91cf-a299f33c0a32
 langcode: en
 status: true
 dependencies:
   module:
     - language
 _core:
-  default_config_hash: MOFUkKNTgrWp_gMUoSnOyMVoSRJhmbZnFkdzPwWjrw4
+  default_config_hash: gjYvYwMqulNsq7VmScWKOqEUxar9AX0TvG8vfCCguUQ
 id: language-edit
 label: 'Editing languages'
 module: language

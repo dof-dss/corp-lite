@@ -1,4 +1,4 @@
-uuid: e028bcbb-a9ed-4d38-a6ba-61fa71daf97c
+uuid: b8043a4c-ceab-43c4-a5fa-61623060a055
 langcode: en
 status: true
 dependencies:
@@ -13,8 +13,8 @@ dependencies:
     - responsive_image
 third_party_settings:
   layout_builder:
-    enabled: false
     allow_custom: false
+    enabled: false
 _core:
   default_config_hash: tE_S-qrpK5zOOkYs6IaIqAQyQQY9qIK4lnnnsRBIycg
 id: media.image.banner_thin
@@ -23,7 +23,6 @@ bundle: image
 mode: banner_thin
 content:
   field_media_image:
-    type: responsive_image
     label: visually_hidden
     settings:
       responsive_image_style: thin_banner
@@ -31,6 +30,7 @@ content:
       image_loading:
         attribute: eager
     third_party_settings: {  }
+    type: responsive_image
     weight: 1
     region: content
 hidden:

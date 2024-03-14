@@ -1,4 +1,4 @@
-uuid: 5a3e1d91-2eaa-45c6-8812-daeee1d7fac3
+uuid: d4a6e2da-10f0-4fae-bae5-365de235ad88
 langcode: en
 status: true
 dependencies:
@@ -6,7 +6,7 @@ dependencies:
     - field.storage.node.field_summary
     - node.type.publication
 _core:
-  default_config_hash: O3kBftKU4n1lc3clJ_svVnic9iTWzP29-hhxuS4LJro
+  default_config_hash: OMwD5Wa1AEaJw7Qtn4VOJbv9rw5cylqZ1rkbk1yTmq0
 id: node.publication.field_summary
 field_name: field_summary
 entity_type: node

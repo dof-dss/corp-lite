@@ -1,17 +1,23 @@
-uuid: a6994ebe-324e-45f3-843c-824ad3316f9a
+uuid: d948be98-0f0f-4e0b-a803-ea019ecdcd0c
 langcode: en
 status: true
 dependencies:
+  config:
+    - core.entity_view_mode.media.article_float
+    - core.entity_view_mode.media.article_float_expandable
+    - core.entity_view_mode.media.article_full
+    - core.entity_view_mode.media.article_full_expandable
   module:
     - blazy
     - ckeditor5_allowed_html
     - editor
     - entity_embed
     - media
+    - noreferrer
     - origins_common
     - token_filter
 _core:
-  default_config_hash: kuHSSL1ZhVz9zerG_2PWzdHWJisspWMRRY7hPQ0w_yI
+  default_config_hash: j7EF32DuAJdbLL5fyOZYyxItNt5BMxwb0GG7oWuuLcg
 name: 'Basic HTML'
 format: basic_html
 weight: 0
@@ -49,8 +55,12 @@ filters:
     status: true
     weight: 100
     settings:
-      default_view_mode: default
-      allowed_view_modes: {  }
+      default_view_mode: article_full
+      allowed_view_modes:
+        article_float: article_float
+        article_float_expandable: article_float_expandable
+        article_full: article_full
+        article_full_expandable: article_full_expandable
       allowed_media_types:
         audio: audio
         image: image
@@ -99,3 +109,9 @@ filters:
         img: img
         iframe: iframe
       use_data_uri: '0'
+  noreferrer:
+    id: noreferrer
+    provider: noreferrer
+    status: true
+    weight: 10
+    settings: {  }

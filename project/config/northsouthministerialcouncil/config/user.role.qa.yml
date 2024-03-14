@@ -1,9 +1,9 @@
-uuid: efa5f426-7dbe-46c1-bf1d-4b1f2d563455
+uuid: 1194c45b-b056-4817-bd9b-42c36fe7d859
 langcode: en
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: CGjRvT5VPNYJoJUKoH3ZsUCQVvlWzVaQ1BEZEytmq5c
+  default_config_hash: niLeuwcJD6HNd5ia0kLa37UIIAUWXBkRHXeyNQfoY9Y
 id: qa
 label: 'Quality Assurance'
 weight: 5

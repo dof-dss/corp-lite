@@ -1,0 +1,20 @@
+uuid: c4374bb6-b9e0-4ed1-b75a-dca38483ccc5
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.profile
+_core:
+  default_config_hash: 8enb6LGldr7C0S_u_sDpu8h81ueUcwTNgHCPB97IVqw
+id: node.profile.title
+field_name: title
+entity_type: node
+bundle: profile
+label: 'Title (Main heading)'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

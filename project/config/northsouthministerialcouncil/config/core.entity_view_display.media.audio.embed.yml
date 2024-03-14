@@ -1,4 +1,4 @@
-uuid: 5a76dab0-388e-46c6-a9fb-5ad8a8755b6a
+uuid: 6bdaf595-824e-4bf1-9b9e-3a96f95248e4
 langcode: en
 status: true
 dependencies:
@@ -11,8 +11,8 @@ dependencies:
     - layout_builder
 third_party_settings:
   layout_builder:
-    enabled: false
     allow_custom: false
+    enabled: false
 _core:
   default_config_hash: 4rzDdM_kpuF0Uy86K9_xiJ6jzyfXPOFh8IQqI12wys8
 id: media.audio.embed
@@ -22,6 +22,7 @@ mode: embed
 content:
   field_media_audio_file:
     type: file_audio
+    weight: 0
     label: visually_hidden
     settings:
       controls: true
@@ -29,7 +30,6 @@ content:
       loop: false
       multiple_file_display_type: tags
     third_party_settings: {  }
-    weight: 0
     region: content
 hidden:
   created: true

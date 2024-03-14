@@ -1,4 +1,4 @@
-uuid: 2c496eb4-b043-45fa-b7c9-ce3a602034fb
+uuid: 82e8476c-49f9-4aa6-b47a-30e7049893e3
 langcode: en
 status: true
 dependencies:
@@ -11,8 +11,8 @@ dependencies:
     - media
 third_party_settings:
   layout_builder:
-    enabled: false
     allow_custom: false
+    enabled: false
 _core:
   default_config_hash: _y9QyW4OwQnENIFssiQaFtT1nnN6AHfmK1GWyR-9BgM
 id: media.remote_video.embed
@@ -22,6 +22,7 @@ mode: embed
 content:
   field_media_oembed_video:
     type: oembed
+    weight: 0
     label: hidden
     settings:
       max_width: 0
@@ -29,7 +30,6 @@ content:
       loading:
         attribute: eager
     third_party_settings: {  }
-    weight: 0
     region: content
 hidden:
   created: true

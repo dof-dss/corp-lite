@@ -1,18 +1,19 @@
-uuid: bf4233ed-6e89-4be6-8cc1-05269b8b1516
+uuid: 3cd56db9-3ba9-4a52-8e48-3c605ab4f8bd
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_site_topics
     - node.type.publication
+    - taxonomy.vocabulary.site_topics
 _core:
-  default_config_hash: YoiRiUHjRRjX-FIPMeknFk34I_bo0BscNF7bqBMmoq4
+  default_config_hash: bYvExHsNKvmluRGQcYo41EDzmL7WU58Q_Jw1gkTFFdY
 id: node.publication.field_site_topics
 field_name: field_site_topics
 entity_type: node
 bundle: publication
-label: 'Area of co-operation'
-description: 'Choose relevant area of co-operation(s) for this publication. Hold down Ctrl to choose multiple site topic'
+label: 'Site topics'
+description: ''
 required: false
 translatable: false
 default_value: {  }
@@ -20,6 +21,11 @@ default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'
   handler_settings:
+    target_bundles:
+      site_topics: site_topics
     sort:
-      field: _none
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
 field_type: entity_reference

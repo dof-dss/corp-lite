@@ -1,4 +1,4 @@
-uuid: aeb2fd25-bb18-4640-94ad-41d4445aae35
+uuid: d6f4aeb9-b76c-4988-ba15-7f95f9d9fb50
 langcode: en
 status: true
 dependencies:
@@ -14,9 +14,9 @@ field_name: body
 entity_type: node
 bundle: webform
 label: Body
-description: 'Enter some preamble text for this webform.'
+description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

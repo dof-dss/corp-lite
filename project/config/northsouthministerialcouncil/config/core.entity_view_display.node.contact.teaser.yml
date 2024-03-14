@@ -1,11 +1,10 @@
-uuid: afc7c940-e950-4772-b9eb-e0e2402fdd78
+uuid: c6521c41-dfa4-4e68-8fe7-7794f8fee871
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.contact.body
-    - field.field.node.contact.field_map
     - field.field.node.contact.field_meta_tags
     - field.field.node.contact.field_site_topics
     - node.type.contact
@@ -13,7 +12,7 @@ dependencies:
     - text
     - user
 _core:
-  default_config_hash: qFtrBB99hcXAY42w0S3tGE_fhOaAHKOdq381u8hM4P4
+  default_config_hash: GyWwtW5YvlAhayjrN4sB0vJ6VBKM2Nor4squRIqY4vs
 id: node.contact.teaser
 targetEntityType: node
 bundle: contact
@@ -29,7 +28,6 @@ content:
     region: content
 hidden:
   content_moderation_control: true
-  field_map: true
   field_meta_tags: true
   field_site_topics: true
   langcode: true

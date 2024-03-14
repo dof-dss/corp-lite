@@ -1,4 +1,4 @@
-uuid: 02284c2b-eed7-46ef-94a9-733ad0699102
+uuid: c33ec3d1-0808-441b-810d-9c1b2a99caee
 langcode: en
 status: true
 dependencies:
@@ -8,7 +8,7 @@ dependencies:
   module:
     - metatag
 _core:
-  default_config_hash: ugCydjx5cTwieItenyzYC_Ffq4ZHKxCOB5t2qu68lUk
+  default_config_hash: AoRjlcxJ5EpllblCwuSbwUcIaWQH_c3TyBPblyBnkKc
 id: node.contact.field_meta_tags
 field_name: field_meta_tags
 entity_type: node

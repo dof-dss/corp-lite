@@ -1,20 +1,16 @@
-uuid: 5a26a49d-a4c5-43f2-9bd5-14030305115f
+uuid: b66cb621-9a20-453b-bd00-36efc2f6ad4c
 langcode: en
 status: true
 dependencies:
   module:
-    - eu_cookie_compliance
-    - media
     - search
     - system
 _core:
-  default_config_hash: P5H-ZbvA8txEPNYisWPYiorfSqVXrHsa9-CttKUf6GQ
+  default_config_hash: xk2q34wBiK5qL-P_4QoOFN7z0NRLVFzPTXXvDhvXVFk
 id: anonymous
-label: 'anonymous user'
+label: 'Anonymous user'
 weight: 0
 is_admin: false
 permissions:
   - 'access content'
-  - 'display eu cookie compliance popup'
   - 'search content'
-  - 'view media'

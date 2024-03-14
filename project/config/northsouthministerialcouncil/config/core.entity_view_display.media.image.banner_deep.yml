@@ -1,4 +1,4 @@
-uuid: c98d3446-e962-4d71-a145-295386bc125e
+uuid: 2520b483-43ba-473a-860a-b03ceea4ebb0
 langcode: en
 status: true
 dependencies:
@@ -13,8 +13,8 @@ dependencies:
     - responsive_image
 third_party_settings:
   layout_builder:
-    enabled: false
     allow_custom: false
+    enabled: false
 _core:
   default_config_hash: ofxMXvO7c1D8Q4DseL1xND5vnaTXzwTef1_kCd2iGig
 id: media.image.banner_deep
@@ -23,7 +23,6 @@ bundle: image
 mode: banner_deep
 content:
   field_media_image:
-    type: responsive_image
     label: visually_hidden
     settings:
       responsive_image_style: deep_banner
@@ -31,6 +30,7 @@ content:
       image_loading:
         attribute: eager
     third_party_settings: {  }
+    type: responsive_image
     weight: 1
     region: content
 hidden:
