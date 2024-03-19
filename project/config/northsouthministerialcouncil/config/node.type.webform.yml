@@ -12,7 +12,7 @@ third_party_settings:
   menu_ui:
     available_menus:
       - main
-    parent: 'main:'
+    parent: 'main-menu:0:'
   origins_toc:
     toc_enable: 0
     toc_title: 'Table of contents'
@@ -29,6 +29,6 @@ name: Webform
 type: webform
 description: 'Create a new form or questionnaire accessible to users. Submission results and statistics are recorded and accessible to privileged users.'
 help: ''
-new_revision: true
+new_revision: false
 preview_mode: 1
 display_submitted: false
