@@ -97,12 +97,12 @@ process:
       source: field_publication_type
       default_value: null
       map:
-        jointcommuniques: 22
-        annualreports: 23
-        foi: 24
-        institutionaljointcommuniques: 25
-        interimprocedures: 26
-        other: 27
+        annualreports: 22
+        foi: 23
+        institutionaljointcommuniques: 24
+        interimprocedures: 25
+        other: 26
+        jointcommuniques: 27
         sectoraljointcommuniques: 28
   field_published_date:
     - plugin: sub_process

@@ -3,6 +3,6 @@ langcode: en
 status: true
 dependencies: {  }
 id: menu-footer-menu
-label: 'Footer links'
+label: 'Footer menu'
 description: 'Ancillary links displayed in the footer.'
 locked: false
