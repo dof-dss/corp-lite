@@ -20,16 +20,12 @@ dependencies:
     - contextual
     - file
     - media
-    - media_file_delete
     - menu_admin_per_menu
     - moderation_sidebar
     - node
-    - origins_metatag
-    - origins_workflow
-    - redirect
+    - path
     - scheduled_transitions
     - system
-    - taxonomy
     - toolbar
     - whatlinkshere
 id: editor_user
@@ -43,10 +39,6 @@ permissions:
   - 'access files overview'
   - 'access toolbar'
   - 'administer main menu items'
-  - 'administer media file delete'
-  - 'administer redirects'
-  - 'administer taxonomy'
-  - 'audit content'
   - 'create audio media'
   - 'create contact content'
   - 'create department_management content'
@@ -58,6 +50,7 @@ permissions:
   - 'create page content'
   - 'create publication content'
   - 'create remote_video media'
+  - 'create url aliases'
   - 'delete all revisions'
   - 'delete any audio media'
   - 'delete any contact content'
@@ -99,7 +92,6 @@ permissions:
   - 'edit any page content'
   - 'edit any publication content'
   - 'edit any remote_video media'
-  - 'edit basic meta tags'
   - 'edit own audio media'
   - 'edit own contact content'
   - 'edit own department_management content'
