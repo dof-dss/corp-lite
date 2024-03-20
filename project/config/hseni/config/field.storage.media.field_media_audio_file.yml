@@ -1,5 +1,5 @@
 uuid: fb2d4207-1716-4013-a051-a7d83e9c5061
-langcode: en-gb
+langcode: en
 status: true
 dependencies:
   module:

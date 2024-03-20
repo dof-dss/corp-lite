@@ -80,6 +80,7 @@ process:
     -
       plugin: get
       source: body
+    - plugin: media_wysiwyg_filter
   body/0/format:
     -
       plugin: static_map
@@ -114,6 +115,7 @@ process:
     -
       plugin: get
       source: field_summary
+    - plugin: strip_html_filter
   field_metatag:
     -
       plugin: d7_metatag_entities

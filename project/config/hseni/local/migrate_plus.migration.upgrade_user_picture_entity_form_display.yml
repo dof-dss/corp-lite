@@ -1,5 +1,5 @@
 uuid: df627f35-8bba-41e1-95c1-622a61e92787
-langcode: en-gb
+langcode: en
 status: true
 dependencies: {  }
 id: upgrade_user_picture_entity_form_display

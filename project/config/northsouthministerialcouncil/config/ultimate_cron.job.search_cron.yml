@@ -1,5 +1,5 @@
 uuid: becad967-56a2-4a4e-8389-add0080458a2
-langcode: en-gb
+langcode: en
 status: true
 dependencies:
   module:

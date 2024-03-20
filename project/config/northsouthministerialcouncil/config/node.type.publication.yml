@@ -1,5 +1,5 @@
 uuid: 5839c6cb-0526-4266-92d1-02e69ce1f0cf
-langcode: en-gb
+langcode: en
 status: true
 dependencies:
   module:
@@ -8,7 +8,7 @@ dependencies:
 third_party_settings:
   menu_ui:
     available_menus: {  }
-    parent: ''
+    parent: 'main-menu:0:'
   origins_toc:
     toc_enable: 0
     toc_title: 'Table of contents'

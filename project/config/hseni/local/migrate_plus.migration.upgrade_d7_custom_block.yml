@@ -1,5 +1,5 @@
 uuid: 8624fedb-3032-4c28-a003-dda8372f0bfb
-langcode: en-gb
+langcode: en
 status: true
 dependencies: {  }
 id: upgrade_d7_custom_block

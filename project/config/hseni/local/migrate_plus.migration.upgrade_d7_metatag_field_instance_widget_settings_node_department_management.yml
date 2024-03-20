@@ -1,5 +1,5 @@
 uuid: 360883d9-8259-44ab-90e6-396186766775
-langcode: en-gb
+langcode: en
 status: true
 dependencies: {  }
 id: upgrade_d7_metatag_field_instance_widget_settings_node_department_management

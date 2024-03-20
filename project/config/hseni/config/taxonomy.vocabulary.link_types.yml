@@ -1,5 +1,5 @@
 uuid: 6992b58a-1644-43a9-a44b-acf2adee4f55
-langcode: en-gb
+langcode: en
 status: true
 dependencies: {  }
 name: 'Link Types'

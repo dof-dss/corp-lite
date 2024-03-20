@@ -1,5 +1,5 @@
 uuid: 6449f2fa-6e7a-4974-9eee-f5e2e606bf60
-langcode: en-gb
+langcode: en
 status: true
 dependencies:
   config:
@@ -154,6 +154,7 @@ field_settings:
 
 
 
+
       fields:
         - 'entity:node/title'
   status:
@@ -190,6 +191,7 @@ field_settings:
     configuration:
       type: union
       separator: |+
+
 
 
 

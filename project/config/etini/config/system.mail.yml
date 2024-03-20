@@ -1,6 +1,6 @@
 _core:
   default_config_hash: y4wFjTWAz4KXnMeBQ2HBdRkatE5ebnc8zqeY5-UONTU
-langcode: en-gb
+langcode: en
 interface:
   default: php_mail
   webform: webform_php_mail

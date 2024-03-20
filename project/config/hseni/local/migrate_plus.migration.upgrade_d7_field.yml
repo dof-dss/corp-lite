@@ -1,5 +1,5 @@
 uuid: 4d26009c-1884-4011-b63c-13ca4613c8e1
-langcode: en-gb
+langcode: en
 status: true
 dependencies: {  }
 id: upgrade_d7_field

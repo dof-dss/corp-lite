@@ -146,8 +146,8 @@ process:
       source: field_news_type
       default_value: null
       map:
-        news: 118
-        pressrelease: 119
+        news: 105
+        pressrelease: 106
   field_metatag:
     -
       plugin: d7_metatag_entities

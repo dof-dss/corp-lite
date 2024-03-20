@@ -1,6 +1,6 @@
 _core:
   default_config_hash: evTtv-kgq7FngYj6EJShrrnvfKzLr0QQRBc9LP6fUS4
-langcode: en-gb
+langcode: en
 map:
   'no': nb
   pt: pt-pt

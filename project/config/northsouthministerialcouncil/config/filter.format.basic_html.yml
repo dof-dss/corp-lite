@@ -1,19 +1,13 @@
 uuid: a6994ebe-324e-45f3-843c-824ad3316f9a
-langcode: en-gb
+langcode: en
 status: true
 dependencies:
-  config:
-    - core.entity_view_mode.media.article_float
-    - core.entity_view_mode.media.article_float_expandable
-    - core.entity_view_mode.media.article_full
-    - core.entity_view_mode.media.article_full_expandable
   module:
     - blazy
     - ckeditor5_allowed_html
     - editor
     - entity_embed
     - media
-    - noreferrer
     - origins_common
     - token_filter
 _core:
@@ -55,12 +49,8 @@ filters:
     status: true
     weight: 100
     settings:
-      default_view_mode: article_full
-      allowed_view_modes:
-        article_float: article_float
-        article_float_expandable: article_float_expandable
-        article_full: article_full
-        article_full_expandable: article_full_expandable
+      default_view_mode: default
+      allowed_view_modes: {  }
       allowed_media_types:
         audio: audio
         image: image
@@ -109,9 +99,3 @@ filters:
         img: img
         iframe: iframe
       use_data_uri: '0'
-  noreferrer:
-    id: noreferrer
-    provider: noreferrer
-    status: true
-    weight: 10
-    settings: {  }

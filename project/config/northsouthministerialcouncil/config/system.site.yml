@@ -1,6 +1,6 @@
 _core:
   default_config_hash: xNHQR5bN1V96bZQJu9E92f3VdiEMB8CHNkBOVTIlJmI
-langcode: en-gb
+langcode: en
 uuid: 1ed5f2a3-7440-4447-83a9-b799b406aa7e
 name: 'North South Ministerial Council'
 mail: admin@northsouthministerialcouncil.org
@@ -8,7 +8,7 @@ slogan: ''
 page:
   403: ''
   404: ''
-  front: /
+  front: /node
 admin_compact_mode: false
 weight_select_max: 100
-default_langcode: en-gb
+default_langcode: en

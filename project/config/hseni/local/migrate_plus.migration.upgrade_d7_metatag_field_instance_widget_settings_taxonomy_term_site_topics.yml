@@ -1,5 +1,5 @@
 uuid: 06b2ffe3-b8f7-450a-8b0c-d183cd9692bc
-langcode: en-gb
+langcode: en
 status: true
 dependencies: {  }
 id: upgrade_d7_metatag_field_instance_widget_settings_taxonomy_term_site_topics

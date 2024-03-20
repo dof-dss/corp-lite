@@ -1,5 +1,5 @@
 uuid: cabe7970-eb33-48c1-810d-305c9546261a
-langcode: en-gb
+langcode: en
 status: false
 dependencies:
   module:

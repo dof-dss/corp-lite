@@ -1,5 +1,5 @@
 uuid: d1d4dbac-2947-40a9-b925-1d62c72fcdc3
-langcode: en-gb
+langcode: en
 status: true
 dependencies: {  }
 id: upgrade_block_content_type

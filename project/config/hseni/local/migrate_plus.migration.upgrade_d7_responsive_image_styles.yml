@@ -1,5 +1,5 @@
 uuid: d57d3d67-640c-4087-b28d-eed53625460b
-langcode: en-gb
+langcode: en
 status: true
 dependencies: {  }
 id: upgrade_d7_responsive_image_styles
