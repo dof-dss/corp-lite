@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4ad81209d4a859b4844df82c4a327564",
+    "content-hash": "f0cb2ec962ab55677aea1496771af56c",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1536,16 +1536,16 @@
         },
         {
             "name": "dof-dss/nicsdru_origins_modules",
-            "version": "10.1.6",
+            "version": "10.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dof-dss/nicsdru_origins_modules.git",
-                "reference": "bd0002b06849c7daccfeda7be6642e4c2423f83f"
+                "reference": "264ff31617764a3af6e5cea27c86e18a8cb97e68"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dof-dss/nicsdru_origins_modules/zipball/bd0002b06849c7daccfeda7be6642e4c2423f83f",
-                "reference": "bd0002b06849c7daccfeda7be6642e4c2423f83f",
+                "url": "https://api.github.com/repos/dof-dss/nicsdru_origins_modules/zipball/264ff31617764a3af6e5cea27c86e18a8cb97e68",
+                "reference": "264ff31617764a3af6e5cea27c86e18a8cb97e68",
                 "shasum": ""
             },
             "require": {
@@ -1560,9 +1560,9 @@
             "description": "Generic modules for DOF-DSS Drupal sites",
             "support": {
                 "issues": "https://github.com/dof-dss/nicsdru_origins_modules/issues",
-                "source": "https://github.com/dof-dss/nicsdru_origins_modules/tree/10.1.6"
+                "source": "https://github.com/dof-dss/nicsdru_origins_modules/tree/10.3.4"
             },
-            "time": "2023-12-04T16:59:19+00:00"
+            "time": "2024-03-08T14:41:45+00:00"
         },
         {
             "name": "drupal/address",
@@ -20092,5 +20092,5 @@
         "composer-runtime-api": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }
