@@ -1682,6 +1682,47 @@ display:
       tags:
         - 'config:field.storage.taxonomy_term.field_summary'
         - 'config:field.storage.taxonomy_term.field_term_photo'
+  statistics_page:
+    id: statistics_page
+    display_title: 'Statistics Page'
+    display_plugin: page
+    position: 5
+    display_options:
+      title: Statistics
+      sorts:
+        weight:
+          id: weight
+          table: draggableviews_structure
+          field: weight
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: draggable_views_sort_default
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
+          draggable_views_reference: this
+          draggable_views_null_order: after
+          draggable_views_pass_arguments: false
+      defaults:
+        title: false
+        sorts: false
+      display_description: ''
+      display_extenders:
+        metatag_display_extender:
+          metatags: {  }
+          tokenize: false
+      path: statistics
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - user.permissions
+      tags:
+        - 'config:field.storage.taxonomy_term.field_term_photo'
   topics_home:
     id: topics_home
     display_title: 'Home page topics'
