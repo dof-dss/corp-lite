@@ -5,6 +5,6 @@ dependencies: {  }
 _core:
   default_config_hash: dw4QdsCvbLXXqUBP84Al5H_SD6VVUyrAEAByvahINeY
 id: admin
-label: Administration
-description: 'Administrative task links'
+label: Management
+description: 'The <em>Management</em> menu contains links for administrative tasks.'
 locked: true
