@@ -72,7 +72,7 @@ display:
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
-          element_wrapper_type: '0'
+          element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: false
           empty: ''
@@ -101,7 +101,7 @@ display:
           admin_label: ''
           entity_type: node
           plugin_id: geolocation_field
-          label: ''
+          label: 'Map location'
           exclude: false
           alter:
             alter_text: false
@@ -132,12 +132,12 @@ display:
             html: false
           element_type: ''
           element_class: ''
-          element_label_type: ''
+          element_label_type: h2
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -690,7 +690,22 @@ display:
         row: false
         fields: false
         sorts: false
+        header: false
       display_description: ''
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: false
+          content:
+            value: '<h2>More contacts</h2>'
+            format: basic_html
+          tokenize: false
       display_extenders:
         metatag_display_extender:
           metatags: {  }
