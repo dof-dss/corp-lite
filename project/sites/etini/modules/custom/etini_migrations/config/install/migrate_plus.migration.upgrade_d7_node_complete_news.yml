@@ -117,8 +117,8 @@ process:
       source: field_news_type
       default_value: null
       map:
-        news: 58
-        pressrelease: 59
+        news: 70
+        pressrelease: 71
   field_site_topics:
     - plugin: sub_process
       source: field_site_topics
