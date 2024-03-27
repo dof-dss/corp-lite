@@ -90,8 +90,8 @@ process:
       source: field_news_type
       default_value: null
       map:
-        news: 513
-        pressrelease: 514
+        news: 493
+        pressrelease: 494
   field_notes_to_editors:
     - plugin: get
       source: field_notes_to_editors
