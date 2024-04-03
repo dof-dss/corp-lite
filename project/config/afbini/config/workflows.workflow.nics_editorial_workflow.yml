@@ -6,7 +6,6 @@ dependencies:
     - node.type.article
     - node.type.contact
     - node.type.news
-    - node.type.profile
     - node.type.publication
   module:
     - content_moderation
@@ -103,6 +102,5 @@ type_settings:
       - article
       - contact
       - news
-      - profile
       - publication
   default_moderation_state: draft

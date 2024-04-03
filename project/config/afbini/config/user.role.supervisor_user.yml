@@ -4,35 +4,40 @@ status: true
 dependencies:
   config:
     - node.type.article
+    - node.type.contact
+    - node.type.news
+    - node.type.publication
   module:
-    - contextual
-    - file
     - node
-    - path
+    - redirect
     - system
-    - toolbar
-    - tour
 _core:
   default_config_hash: InLQf8PwOUHWyhgZ3L4N-2yxx2biUCe8504w3ZNo8Jc
 id: supervisor_user
-label: 'Supervisor user'
+label: 'supervisor user'
 weight: 3
 is_admin: false
 permissions:
   - 'access administration pages'
-  - 'access content overview'
-  - 'access contextual links'
-  - 'access files overview'
-  - 'access toolbar'
-  - 'access tour'
-  - 'administer url aliases'
+  - 'administer redirects'
   - 'create article content'
-  - 'create url aliases'
-  - 'delete article revisions'
+  - 'create contact content'
+  - 'create news content'
+  - 'create publication content'
+  - 'delete any article content'
+  - 'delete any contact content'
+  - 'delete any news content'
+  - 'delete any publication content'
   - 'delete own article content'
-  - 'delete own files'
+  - 'delete own contact content'
+  - 'delete own news content'
+  - 'delete own publication content'
+  - 'edit any article content'
+  - 'edit any contact content'
+  - 'edit any news content'
+  - 'edit any publication content'
   - 'edit own article content'
-  - 'revert all revisions'
-  - 'view all revisions'
-  - 'view own unpublished content'
+  - 'edit own contact content'
+  - 'edit own news content'
+  - 'edit own publication content'
   - 'view the administration theme'

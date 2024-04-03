@@ -2,19 +2,13 @@ uuid: f577b64a-87d1-4575-818e-25200ab75452
 langcode: en
 status: true
 dependencies:
-  config:
-    - filter.format.restricted_html
   module:
-    - filter
-    - search
     - system
 _core:
   default_config_hash: P5H-ZbvA8txEPNYisWPYiorfSqVXrHsa9-CttKUf6GQ
 id: anonymous
-label: 'Anonymous user'
+label: 'anonymous user'
 weight: 0
 is_admin: false
 permissions:
   - 'access content'
-  - 'search content'
-  - 'use text format restricted_html'

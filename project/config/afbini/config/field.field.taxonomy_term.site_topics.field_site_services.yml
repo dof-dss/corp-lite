@@ -1,0 +1,26 @@
+uuid: 3a1f73bc-8165-4f54-a5e0-0c1addb347c3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_site_services
+    - taxonomy.vocabulary.services
+    - taxonomy.vocabulary.site_topics
+id: taxonomy_term.site_topics.field_site_services
+field_name: field_site_services
+entity_type: taxonomy_term
+bundle: site_topics
+label: Service
+description: 'Choose relevant services for this article. Hold down Ctrl to choose multiple tags.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      services: services
+    sort:
+      field: _none
+field_type: entity_reference
