@@ -1,0 +1,18 @@
+uuid: d7d67ea7-82b8-43ee-a90a-ab20d9c64639
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.gallery
+id: node.gallery.title
+field_name: title
+entity_type: node
+bundle: gallery
+label: 'Title (Main heading)'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

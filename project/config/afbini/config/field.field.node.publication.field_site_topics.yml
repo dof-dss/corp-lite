@@ -12,8 +12,8 @@ id: node.publication.field_site_topics
 field_name: field_site_topics
 entity_type: node
 bundle: publication
-label: 'Site topics'
-description: ''
+label: 'Areas of Expertise'
+description: 'Choose relevant areas of expertise for this article. Hold down Ctrl to choose multiple site tags.'
 required: false
 translatable: false
 default_value: {  }
@@ -24,8 +24,5 @@ settings:
     target_bundles:
       site_topics: site_topics
     sort:
-      field: name
-      direction: asc
-    auto_create: false
-    auto_create_bundle: ''
+      field: _none
 field_type: entity_reference

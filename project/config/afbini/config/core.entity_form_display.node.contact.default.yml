@@ -4,10 +4,14 @@ status: true
 dependencies:
   config:
     - field.field.node.contact.body
+    - field.field.node.contact.field_map
     - field.field.node.contact.field_meta_tags
     - field.field.node.contact.field_site_topics
     - node.type.contact
+    - workflows.workflow.nics_editorial_workflow
   module:
+    - content_moderation
+    - geolocation_google_maps
     - metatag
     - path
     - text
@@ -20,7 +24,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 121
+    weight: 4
     region: content
     settings:
       rows: 9
@@ -34,6 +38,41 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_map:
+    type: geolocation_googlegeocoder
+    weight: 126
+    region: content
+    settings:
+      auto_client_location: ''
+      auto_client_location_marker: ''
+      allow_override_map_settings: 0
+      hide_textfield_form: false
+      centre:
+        fit_bounds:
+          enable: true
+      google_map_settings:
+        map_features:
+          marker_infowindow:
+            enabled: true
+          control_locate:
+            enabled: true
+          control_zoom:
+            enabled: true
+          control_maptype:
+            enabled: true
+          control_geocoder:
+            weight: -100
+            enabled: true
+          control_recenter:
+            enabled: true
+        type: ROADMAP
+        zoom: 10
+        minZoom: 0
+        maxZoom: 20
+        height: 400px
+        width: 100%
+        gestureHandling: auto
+    third_party_settings: {  }
   field_meta_tags:
     type: metatag_firehose
     weight: 125
@@ -43,14 +82,10 @@ content:
       use_details: true
     third_party_settings: {  }
   field_site_topics:
-    type: entity_reference_autocomplete
-    weight: 123
+    type: options_select
+    weight: 3
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   flag:
     weight: 10
