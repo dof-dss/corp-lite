@@ -128,8 +128,39 @@ process:
         description: description
   field_publication_type:
     -
-      plugin: get
+      plugin: static_map
       source: field_publication_type
+      default_value: null
+      map:
+        agendas: 13
+        businessplans: 14
+        circulars: 15
+        consultationreports: 16
+        contractmanagement: 17
+        corporatereports: 18
+        correspondence: 19
+        decisions: 20
+        developmentplanframework: 21
+        financial: 22
+        foiresponses: 23
+        forms: 24
+        guidance: 25
+        impactassessments: 26
+        independentreports: 27
+        inspectionreports: 28
+        jointcommuniques: 29
+        legislation: 30
+        listsregisters: 31
+        maps: 32
+        memoranda: 33
+        notices: 34
+        policypapers: 35
+        promotional: 36
+        researchanalysis: 37
+        speeches: 38
+        surveys: 39
+        supportmaterial: 40
+        statisticalreports: 41
   field_published_date:
     -
       plugin: sub_process

@@ -87,10 +87,14 @@ content:
       use_details: true
     third_party_settings: {  }
   field_publication_type:
-    type: options_select
-    weight: 6
+    type: entity_reference_autocomplete
+    weight: 26
     region: content
-    settings: {  }
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_published_date:
     type: datetime_default
