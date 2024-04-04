@@ -82,14 +82,6 @@ content:
     third_party_settings: {  }
     weight: 9
     region: content
-  field_publication_type:
-    type: entity_reference_label
-    label: inline
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 1
-    region: content
   field_published_date:
     type: datetime_default
     label: inline
@@ -117,6 +109,7 @@ content:
 hidden:
   content_moderation_control: true
   field_photo: true
+  field_publication_type: true
   langcode: true
   links: true
   search_api_excerpt: true
