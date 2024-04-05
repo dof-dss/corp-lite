@@ -2,7 +2,10 @@ uuid: abe1c274-1646-4dee-aeab-7924d2ff7b54
 langcode: en
 status: true
 dependencies:
+  config:
+    - filter.format.basic_html
   module:
+    - filter
     - node
     - path
     - pathauto
@@ -18,5 +21,6 @@ permissions:
   - 'access content'
   - 'create url aliases'
   - 'notify of path changes'
+  - 'use text format basic_html'
   - 'view own unpublished content'
   - 'view the administration theme'
