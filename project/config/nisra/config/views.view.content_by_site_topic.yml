@@ -140,14 +140,14 @@ display:
           exposed: false
           granularity: second
       arguments:
-        field_site_topics_target_id:
-          id: field_site_topics_target_id
-          table: node__field_site_topics
-          field: field_site_topics_target_id
+        tid:
+          id: tid
+          table: taxonomy_index
+          field: tid
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: numeric
+          plugin_id: taxonomy_index_tid
           default_action: default
           exception:
             value: all
@@ -178,7 +178,9 @@ display:
             fail: 'not found'
           validate_options: {  }
           break_phrase: false
-          not: false
+          add_table: false
+          require_value: false
+          reduce_duplicates: false
       filters:
         status:
           id: status
@@ -498,6 +500,7 @@ display:
         use_more_text: false
         link_display: false
         link_url: false
+        arguments: true
         filters: false
         filter_groups: false
         footer: false
