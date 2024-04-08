@@ -3,11 +3,13 @@ langcode: en
 status: true
 dependencies:
   config:
+    - filter.format.basic_html
     - node.type.article
     - node.type.contact
     - node.type.news
     - node.type.publication
   module:
+    - filter
     - node
     - redirect
     - system
@@ -40,4 +42,5 @@ permissions:
   - 'edit own contact content'
   - 'edit own news content'
   - 'edit own publication content'
+  - 'use text format basic_html'
   - 'view the administration theme'
