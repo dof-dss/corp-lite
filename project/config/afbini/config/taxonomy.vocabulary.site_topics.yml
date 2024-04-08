@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 _core:
   default_config_hash: hG-tjPaSYURfrMPerFi4XPP2P1SFIV1kWckqZn7STfs
-name: 'Site Topics'
+name: 'Areas of Expertise'
 vid: site_topics
-description: ''
+description: 'Areas of Expertise topics'
 weight: 0
