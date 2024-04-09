@@ -1,0 +1,30 @@
+uuid: 1488e87c-3d57-4a02-ba23-1f528179cd34
+langcode: und
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_link_type
+field_name: field_link_type
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: quicklink
+      label: 'Quick link'
+    -
+      value: corporatelink
+      label: 'Corporate link'
+    -
+      value: informationlink
+      label: 'Information link'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

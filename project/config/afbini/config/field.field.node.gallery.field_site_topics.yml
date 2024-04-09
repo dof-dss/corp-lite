@@ -1,0 +1,26 @@
+uuid: a13b6cbe-5690-41d1-9bf5-6e24dd891dda
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_site_topics
+    - node.type.gallery
+    - taxonomy.vocabulary.site_topics
+id: node.gallery.field_site_topics
+field_name: field_site_topics
+entity_type: node
+bundle: gallery
+label: 'Site topics'
+description: 'Choose relevant site topic(s) for this gallery. Hold down Ctrl to choose multiple site topics.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      site_topics: site_topics
+    sort:
+      field: _none
+field_type: entity_reference

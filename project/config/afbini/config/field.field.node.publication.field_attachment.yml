@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_attachment
-    - media.type.document
     - node.type.publication
 _core:
   default_config_hash: VXSG9SUvpR3obkpag_2t7hhTvuTMDEJCyRHRVHiYLYw
@@ -20,12 +19,5 @@ default_value: {  }
 default_value_callback: ''
 settings:
   handler: 'default:media'
-  handler_settings:
-    target_bundles:
-      document: document
-    sort:
-      field: _none
-      direction: ASC
-    auto_create: false
-    auto_create_bundle: ''
+  handler_settings: {  }
 field_type: entity_reference

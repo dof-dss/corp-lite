@@ -66,10 +66,10 @@ process:
       source: field_link_type
       default_value: null
       map:
-        quicklink: 509
-        corporatelink: 510
-        interactive: 511
-        useful: 512
+        quicklink: 491
+        corporatelink: 489
+        interactive: 490
+        useful: 492
   field_link_url:
     - plugin: field_link
       source: field_link_url
