@@ -13,8 +13,8 @@ dependencies:
     - node.type.secure_statistics
     - taxonomy.vocabulary.link
   content:
-    - 'taxonomy_term:publication_types:0017c78d-8fbb-408c-b4fc-eecd1f411758'
-    - 'taxonomy_term:publication_types:0c6a03f2-d15c-42d5-af87-53937bf29efc'
+    - 'taxonomy_term:link:2d3fd0eb-525e-41e8-9f4c-f7d01533d7c5'
+    - 'taxonomy_term:link:72f0b7d5-cc21-410e-8cc4-91d2f43ef4fe'
   module:
     - datetime
     - node
@@ -386,6 +386,7 @@ display:
         metatag_display_extender:
           metatags: {  }
           tokenize: false
+      block_hide_empty: true
     cache_metadata:
       max-age: -1
       contexts:
@@ -417,6 +418,7 @@ display:
         metatag_display_extender:
           metatags: {  }
           tokenize: false
+      block_hide_empty: true
     cache_metadata:
       max-age: -1
       contexts:
@@ -528,6 +530,7 @@ display:
         metatag_display_extender:
           metatags: {  }
           tokenize: false
+      block_hide_empty: true
     cache_metadata:
       max-age: -1
       contexts:
@@ -613,7 +616,7 @@ display:
           plugin_id: taxonomy_index_tid
           operator: or
           value:
-            - 509
+            - 491
           group: 1
           exposed: false
           expose:
@@ -667,6 +670,7 @@ display:
         metatag_display_extender:
           metatags: {  }
           tokenize: false
+      block_hide_empty: true
     cache_metadata:
       max-age: -1
       contexts:
@@ -753,7 +757,7 @@ display:
           plugin_id: taxonomy_index_tid
           operator: or
           value:
-            - 512
+            - 492
           group: 1
           exposed: false
           expose:
@@ -813,6 +817,7 @@ display:
         metatag_display_extender:
           metatags: {  }
           tokenize: false
+      block_hide_empty: true
     cache_metadata:
       max-age: -1
       contexts:
