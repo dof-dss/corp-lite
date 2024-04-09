@@ -256,7 +256,7 @@ display:
           query_tags: {  }
       relationships: {  }
       use_more: true
-      use_more_always: false
+      use_more_always: true
       use_more_text: 'See all our news items'
       link_display: custom_url
       link_url: /news
@@ -359,15 +359,19 @@ display:
         use_more: false
         use_more_always: false
         use_more_text: false
+        link_display: false
+        link_url: false
         style: false
         row: false
         filters: false
         filter_groups: false
         footer: false
       display_description: ''
-      use_more: false
-      use_more_always: false
-      use_more_text: 'See all our news items'
+      use_more: true
+      use_more_always: true
+      use_more_text: 'See all contacts'
+      link_display: custom_url
+      link_url: /contact
       footer:
         area:
           id: area
@@ -508,24 +512,11 @@ display:
         footer: false
       display_description: ''
       use_more: true
-      use_more_always: false
+      use_more_always: true
       use_more_text: 'See related publications'
       link_display: custom_url
       link_url: 'publications/topic/{{ raw_arguments.tid }}'
-      footer:
-        area:
-          id: area
-          table: views
-          field: area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: text
-          empty: false
-          content:
-            value: '<p><a href="/publications/topic/{{ raw_arguments.tid }}">See all related documents</a></p>'
-            format: basic_html
-          tokenize: true
+      footer: {  }
       display_extenders:
         metatag_display_extender:
           metatags: {  }
@@ -659,12 +650,18 @@ display:
       defaults:
         title: false
         pager: false
+        use_more: false
+        use_more_always: false
+        use_more_text: false
         link_display: false
         link_url: false
         filters: false
         filter_groups: false
       display_description: ''
-      link_display: custom_url
+      use_more: false
+      use_more_always: false
+      use_more_text: ''
+      link_display: '0'
       link_url: 'publications/topic/{{ raw_arguments.tid }}'
       display_extenders:
         metatag_display_extender:
@@ -808,11 +805,11 @@ display:
         filters: false
         filter_groups: false
       display_description: ''
-      use_more: true
+      use_more: false
       use_more_always: false
-      use_more_text: 'See related publications'
-      link_display: custom_url
-      link_url: 'publications/topic/{{ raw_arguments.tid }}'
+      use_more_text: ''
+      link_display: '0'
+      link_url: ''
       display_extenders:
         metatag_display_extender:
           metatags: {  }
