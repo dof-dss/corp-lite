@@ -67,10 +67,30 @@ process:
     -
       plugin: get
       source: language
-  field_summary:
-    -
-      plugin: get
+  field_service_summary:
+    - plugin: get
       source: field_summary
+    - plugin: media_wysiwyg_filter
+    - plugin: filter_absolute_links
+
+      replace_urls:
+        http://www.afbini.gov.uk
+        http://afbini.gov.uk
+        https://www.afbini.gov.uk
+        https://afbini.gov.uk
+    - plugin: site_files_filter
+      from_ref: sites/afbini.gov.uk/files
+      to_ref: files/afbini
+  field_service_summary/0/format:
+    - plugin: static_map
+      bypass: true
+      source: field_summary/0/format
+      map:
+        filtered_html: basic_html
+        filtered_html_with_no_images: basic_html
+        filtered_html_with_tokens: basic_html
+        restricted_html: basic_html
+        plain_text: plain_text
   field_photo:
     -
       plugin: sub_process
