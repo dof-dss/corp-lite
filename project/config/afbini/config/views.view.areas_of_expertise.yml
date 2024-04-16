@@ -1,9 +1,9 @@
 uuid: 93c55348-a3b6-4208-8242-b690be662fb0
 langcode: en
-status: true
+status: false
 dependencies:
   config:
-    - field.storage.taxonomy_term.field_topic_summary
+    - field.storage.taxonomy_term.field_summary
     - taxonomy.vocabulary.site_topics
   module:
     - taxonomy
@@ -72,10 +72,10 @@ display:
           separator: ', '
           field_api_classes: false
           convert_spaces: false
-        field_topic_summary:
-          id: field_topic_summary
-          table: taxonomy_term__field_topic_summary
-          field: field_topic_summary
+        field_summary:
+          id: field_summary
+          table: taxonomy_term__field_summary
+          field: field_summary
           relationship: none
           group_type: group
           admin_label: ''
@@ -116,7 +116,7 @@ display:
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: false
+          element_default_classes: true
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -288,7 +288,7 @@ display:
         - 'languages:language_interface'
         - user.permissions
       tags:
-        - 'config:field.storage.taxonomy_term.field_topic_summary'
+        - 'config:field.storage.taxonomy_term.field_summary'
   areas_of_expertise:
     id: areas_of_expertise
     display_title: Block
@@ -306,4 +306,4 @@ display:
         - 'languages:language_interface'
         - user.permissions
       tags:
-        - 'config:field.storage.taxonomy_term.field_topic_summary'
+        - 'config:field.storage.taxonomy_term.field_summary'

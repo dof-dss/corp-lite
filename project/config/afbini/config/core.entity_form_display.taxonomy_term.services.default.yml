@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.services.field_service_summary
+    - field.field.taxonomy_term.services.field_summary
     - taxonomy.vocabulary.services
   module:
     - path
@@ -21,9 +21,9 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-  field_service_summary:
+  field_summary:
     type: text_textarea
-    weight: 4
+    weight: 6
     region: content
     settings:
       rows: 5

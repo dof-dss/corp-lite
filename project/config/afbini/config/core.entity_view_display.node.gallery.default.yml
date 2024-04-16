@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.gallery.body
     - field.field.node.gallery.field_gallery_images
     - field.field.node.gallery.field_site_topics
+    - field.field.node.gallery.field_summary
     - node.type.gallery
   module:
     - image
@@ -33,6 +34,13 @@ content:
         attribute: lazy
     third_party_settings: {  }
     weight: 2
+    region: content
+  field_summary:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
     region: content
   links:
     settings: {  }
