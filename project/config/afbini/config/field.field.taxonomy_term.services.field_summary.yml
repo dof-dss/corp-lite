@@ -1,9 +1,9 @@
-uuid: 46c14e2c-3d1b-45c6-bed1-dc14460c7aea
+uuid: 24d1dee1-2d07-46f2-8202-5887ccc320c1
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.taxonomy_term.field_service_summary
+    - field.storage.taxonomy_term.field_summary
     - filter.format.basic_html
     - taxonomy.vocabulary.services
   module:
@@ -13,13 +13,13 @@ third_party_settings:
   allowed_formats:
     allowed_formats:
       - basic_html
-id: taxonomy_term.services.field_service_summary
-field_name: field_service_summary
+id: taxonomy_term.services.field_summary
+field_name: field_summary
 entity_type: taxonomy_term
 bundle: services
 label: Summary
-description: 'Enter a summary for this service to be displayed on listing pages.'
-required: false
+description: 'Enter a summary for this topic to be displayed on listing pages.'
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''

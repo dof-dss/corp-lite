@@ -92,7 +92,7 @@ process:
         title: title
         width: width
         height: height
-  field_topic_summary:
+  field_summary:
     - plugin: get
       source: field_summary
     - plugin: media_wysiwyg_filter
@@ -106,7 +106,7 @@ process:
     - plugin: site_files_filter
       from_ref: sites/afbini.gov.uk/files
       to_ref: files/afbini
-  field_topic_summary/0/format:
+  field_summary/0/format:
     - plugin: static_map
       bypass: true
       source: field_summary/0/format

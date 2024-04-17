@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.services.field_service_summary
+    - field.field.taxonomy_term.services.field_summary
     - taxonomy.vocabulary.services
   module:
     - text
@@ -19,12 +19,12 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  field_service_summary:
+  field_summary:
     type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
 hidden:
   langcode: true
