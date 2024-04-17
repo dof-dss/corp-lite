@@ -6,7 +6,7 @@ dependencies:
     - field.field.taxonomy_term.site_topics.field_enable_toc
     - field.field.taxonomy_term.site_topics.field_photo
     - field.field.taxonomy_term.site_topics.field_site_services
-    - field.field.taxonomy_term.site_topics.field_topic_summary
+    - field.field.taxonomy_term.site_topics.field_summary
     - taxonomy.vocabulary.site_topics
   module:
     - text
@@ -22,12 +22,12 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-  field_topic_summary:
+  field_summary:
     type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 2
     region: content
 hidden:
   field_enable_toc: true

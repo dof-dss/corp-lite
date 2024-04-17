@@ -6,6 +6,6 @@ _core:
   default_config_hash: CGjRvT5VPNYJoJUKoH3ZsUCQVvlWzVaQ1BEZEytmq5c
 id: qa
 label: 'Quality Assurance'
-weight: 5
+weight: -3
 is_admin: false
 permissions: {  }

@@ -1,16 +1,16 @@
-uuid: 93c55348-a3b6-4208-8242-b690be662fb0
+uuid: b5441dcc-0113-49f3-9b82-bb51efd169d4
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - field.storage.taxonomy_term.field_summary
-    - taxonomy.vocabulary.site_topics
+    - taxonomy.vocabulary.services
   module:
     - taxonomy
     - text
     - user
-id: areas_of_expertise
-label: 'Areas of Expertise'
+id: services
+label: Services
 module: views
 description: ''
 tag: ''
@@ -179,7 +179,7 @@ display:
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -209,22 +209,7 @@ display:
         type: tag
         options: {  }
       empty: {  }
-      sorts:
-        weight:
-          id: weight
-          table: taxonomy_term_field_data
-          field: weight
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: taxonomy_term
-          entity_field: weight
-          plugin_id: standard
-          order: ASC
-          expose:
-            label: ''
-            field_identifier: ''
-          exposed: false
+      sorts: {  }
       arguments: {  }
       filters:
         status:
@@ -246,14 +231,13 @@ display:
           entity_field: vid
           plugin_id: bundle
           value:
-            site_topics: site_topics
+            services: services
       style:
         type: default
         options:
           grouping: {  }
           row_class: ''
-          default_row_class: true
-          uses_fields: false
+          default_row_class: false
       row:
         type: fields
         options:
@@ -271,16 +255,8 @@ display:
           query_tags: {  }
       relationships: {  }
       header: {  }
-      footer:
-        area:
-          id: area
-          table: views
-          field: area
-          plugin_id: text
-      display_extenders:
-        metatag_display_extender:
-          metatags: {  }
-          tokenize: false
+      footer: {  }
+      display_extenders: {  }
     cache_metadata:
       max-age: -1
       contexts:
@@ -289,16 +265,26 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.taxonomy_term.field_summary'
-  areas_of_expertise:
-    id: areas_of_expertise
-    display_title: Block
-    display_plugin: block
+  services:
+    id: services
+    display_title: Page
+    display_plugin: page
     position: 1
     display_options:
       display_extenders:
         metatag_display_extender:
           metatags: {  }
           tokenize: false
+      path: services
+      menu:
+        type: tab
+        title: Services
+        description: ''
+        weight: 0
+        expanded: false
+        menu_name: main
+        parent: ''
+        context: '0'
     cache_metadata:
       max-age: -1
       contexts:
