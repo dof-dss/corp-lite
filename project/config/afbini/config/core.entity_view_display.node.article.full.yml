@@ -32,21 +32,35 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 3
+    region: content
+  field_site_services:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
     weight: 1
+    region: content
+  field_site_topics:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
     region: content
   field_summary:
     type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 2
     region: content
 hidden:
   content_moderation_control: true
   field_enable_toc: true
   field_meta_tags: true
-  field_site_services: true
-  field_site_topics: true
   field_tags: true
   langcode: true
   links: true
