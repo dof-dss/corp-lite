@@ -34,7 +34,7 @@ third_party_settings:
       label: Featured
       region: content
       parent_name: ''
-      weight: 9
+      weight: 17
       format_type: fieldset
       format_settings:
         classes: ''
@@ -51,7 +51,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 10
+    weight: 13
     region: content
     settings:
       rows: 9
@@ -67,14 +67,14 @@ content:
     third_party_settings: {  }
   field_feature_home_page:
     type: boolean_checkbox
-    weight: 21
+    weight: 20
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   field_main_feature:
     type: boolean_checkbox
-    weight: 20
+    weight: 19
     region: content
     settings:
       display_label: true
@@ -89,13 +89,13 @@ content:
     third_party_settings: {  }
   field_news_type:
     type: options_select
-    weight: 3
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
   field_notes_to_editors:
     type: string_textarea
-    weight: 18
+    weight: 14
     region: content
     settings:
       rows: 5
@@ -103,7 +103,7 @@ content:
     third_party_settings: {  }
   field_photo:
     type: media_library_widget
-    weight: 16
+    weight: 12
     region: content
     settings:
       media_types: {  }
@@ -112,19 +112,19 @@ content:
         show_edit: '1'
   field_published_date:
     type: datetime_default
-    weight: 5
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
   field_site_topics:
     type: options_select
-    weight: 4
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
   field_summary:
     type: string_textarea
-    weight: 15
+    weight: 11
     region: content
     settings:
       rows: 5
@@ -132,7 +132,7 @@ content:
     third_party_settings: {  }
   field_teaser:
     type: string_textfield
-    weight: 7
+    weight: 10
     region: content
     settings:
       size: 120
@@ -152,33 +152,33 @@ content:
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 8
+    weight: 16
     region: content
     settings: {  }
     third_party_settings: {  }
   path:
     type: path
-    weight: 6
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 4
+    weight: 5
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 10
+    weight: 18
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 5
+    weight: 7
     region: content
     settings:
       display_label: true
@@ -202,7 +202,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 7
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }
