@@ -29,7 +29,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   field_attachment:
     type: entity_reference_entity_view
@@ -38,11 +38,19 @@ content:
       view_mode: embed
       link: false
     third_party_settings: {  }
-    weight: 2
+    weight: 3
+    region: content
+  field_publication_type:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 1
     region: content
   field_published_date:
     type: datetime_default
-    label: hidden
+    label: inline
     settings:
       timezone_override: ''
       format_type: corplite_medium
@@ -54,7 +62,6 @@ hidden:
   field_feature_home_page: true
   field_meta_tags: true
   field_photo: true
-  field_publication_type: true
   field_site_topics: true
   field_summary: true
   langcode: true

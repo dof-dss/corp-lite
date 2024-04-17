@@ -6,7 +6,7 @@ dependencies:
     - field.field.taxonomy_term.site_topics.field_enable_toc
     - field.field.taxonomy_term.site_topics.field_photo
     - field.field.taxonomy_term.site_topics.field_site_services
-    - field.field.taxonomy_term.site_topics.field_topic_summary
+    - field.field.taxonomy_term.site_topics.field_summary
     - taxonomy.vocabulary.site_topics
   module:
     - entity_browser
@@ -52,9 +52,9 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_topic_summary:
+  field_summary:
     type: text_textarea
-    weight: 7
+    weight: 6
     region: content
     settings:
       rows: 5
