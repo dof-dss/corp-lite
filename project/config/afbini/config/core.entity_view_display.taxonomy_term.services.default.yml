@@ -1,0 +1,31 @@
+uuid: 7bdbc918-215c-4409-808a-9e1f88e472fe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.services.field_summary
+    - taxonomy.vocabulary.services
+  module:
+    - text
+id: taxonomy_term.services.default
+targetEntityType: taxonomy_term
+bundle: services
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_summary:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true
