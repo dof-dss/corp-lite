@@ -48,7 +48,6 @@ process:
     - plugin: migration_lookup
       migration:
         - upgrade_d7_taxonomy_term_site_topics
-        - upgrade_d7_taxonomy_term_research_support
   parent:
     - plugin: default_value
       default_value: 0
