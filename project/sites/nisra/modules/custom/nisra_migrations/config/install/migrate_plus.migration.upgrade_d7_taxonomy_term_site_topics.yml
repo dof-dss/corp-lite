@@ -62,7 +62,7 @@ process:
   langcode:
     - plugin: get
       source: language
-  field_summary:
+  field_topic_summary:
     - plugin: get
       source: field_summary
     - plugin: media_wysiwyg_filter
@@ -76,7 +76,7 @@ process:
     - plugin: site_files_filter
       from_ref: sites/nisra.gov.uk/files
       to_ref: files/nisra
-  field_summary/0/format:
+  field_topic_summary/0/format:
     - plugin: static_map
       bypass: true
       source: field_summary/0/format
@@ -86,7 +86,7 @@ process:
         filtered_html_with_tokens: basic_html
         restricted_html: basic_html
         plain_text: plain_text
-  field_term_photo:
+  field_topic_icon:
     - plugin: sub_process
       source: field_photo
       process:
@@ -95,7 +95,7 @@ process:
         title: title
         width: width
         height: height
-  field_term_image:
+  field_featured_image:
     - plugin: sub_process
       source: field_featured_image
       process:
@@ -111,7 +111,7 @@ process:
     - plugin: d7_metatag_entities
       source: pseudo_metatag_entities
 destination:
-  plugin: 'entity:taxonomy_term'
+  plugin: 'entity:node'
   default_bundle: site_topics
 migration_dependencies:
   required:
