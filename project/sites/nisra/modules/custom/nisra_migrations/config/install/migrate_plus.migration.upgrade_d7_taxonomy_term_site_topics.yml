@@ -18,10 +18,6 @@ process:
   tid:
     - plugin: get
       source: tid
-  vid:
-    - plugin: migration_lookup
-      migration: upgrade_d7_taxonomy_vocabulary
-      source: vid
   title:
     - plugin: get
       source: name
@@ -38,9 +34,6 @@ process:
         filtered_html_with_tokens: basic_html
         restricted_html: basic_html
         plain_text: plain_text
-  weight:
-    - plugin: get
-      source: weight
   field_parent:
     - plugin: skip_on_empty
       method: process
@@ -55,9 +48,6 @@ process:
   forum_container:
     - plugin: get
       source: is_container
-  changed:
-    - plugin: get
-      source: timestamp
   langcode:
     - plugin: get
       source: language
