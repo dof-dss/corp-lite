@@ -1,0 +1,70 @@
+uuid: c5173a11-cf6d-4a00-a1d3-86075d7f488b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.site_topics.field_featured_image
+    - field.field.node.site_topics.field_hide_topic
+    - field.field.node.site_topics.field_parent
+    - field.field.node.site_topics.field_topic_icon
+    - field.field.node.site_topics.field_topic_summary
+    - node.type.site_topics
+  module:
+    - text
+    - user
+id: node.site_topics.default
+targetEntityType: node
+bundle: site_topics
+mode: default
+content:
+  field_featured_image:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_hide_topic:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_parent:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_topic_icon:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_topic_summary:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true
