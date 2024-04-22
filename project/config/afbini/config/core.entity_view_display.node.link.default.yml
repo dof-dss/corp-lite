@@ -9,7 +9,6 @@ dependencies:
     - node.type.link
   module:
     - link
-    - options
     - user
 id: node.link.default
 targetEntityType: node
@@ -17,11 +16,12 @@ bundle: link
 mode: default
 content:
   field_link_type:
-    type: list_default
+    type: entity_reference_label
     label: above
-    settings: {  }
+    settings:
+      link: true
     third_party_settings: {  }
-    weight: 1
+    weight: 3
     region: content
   field_link_url:
     type: link
