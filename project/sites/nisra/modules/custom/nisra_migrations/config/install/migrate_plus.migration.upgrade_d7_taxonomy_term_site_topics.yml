@@ -25,10 +25,10 @@ process:
   title:
     - plugin: get
       source: name
-  description/value:
+  field_description/value:
     - plugin: get
       source: description
-  description/format:
+  field_description/format:
     - plugin: static_map
       bypass: true
       source: body/0/format
