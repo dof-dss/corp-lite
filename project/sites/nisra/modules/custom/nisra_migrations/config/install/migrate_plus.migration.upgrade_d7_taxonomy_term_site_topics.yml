@@ -24,6 +24,8 @@ process:
   field_description/value:
     - plugin: get
       source: description
+    -
+      plugin: taxonomy_ref_filter
   field_description/format:
     - plugin: static_map
       bypass: true
