@@ -1,0 +1,8 @@
+uuid: 5b5a897f-b921-48d7-9eba-a1670f2d2cde
+langcode: en
+status: true
+dependencies: {  }
+name: 'Link types'
+vid: link_types
+description: ''
+weight: 0

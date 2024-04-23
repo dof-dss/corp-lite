@@ -18,6 +18,7 @@ dependencies:
   module:
     - content_moderation
     - contextual
+    - corplite_common
     - file
     - media
     - menu_admin_per_menu
@@ -103,6 +104,7 @@ permissions:
   - 'edit own page content'
   - 'edit own publication content'
   - 'edit own remote_video media'
+  - 'hide topic or feature on homepage'
   - 'revert all revisions'
   - 'revert contact revisions'
   - 'revert department_management revisions'

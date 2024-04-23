@@ -77,9 +77,12 @@ process:
       plugin: get
       source: comment
   field_link_type:
-    -
-      plugin: get
+    - plugin: static_map
       source: field_link_type
+      default_value: null
+      map:
+        quicklink: 29
+        agencylink: 30
   field_link_url:
     -
       plugin: field_link
