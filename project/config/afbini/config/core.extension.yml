@@ -27,6 +27,7 @@ module:
   content_moderation: 0
   contextual: 0
   cookie_content_blocker: 0
+  corplite_common: 0
   corplite_eu_cookie_compliance: 0
   corplite_image_styles: 0
   csp: 0
@@ -35,6 +36,7 @@ module:
   datetime: 0
   datetime_range: 0
   diff: 0
+  draggableviews: 0
   dynamic_entity_reference: 0
   dynamic_page_cache: 0
   editor: 0
