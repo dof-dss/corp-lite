@@ -665,7 +665,7 @@ display:
         metatag_display_extender:
           metatags: {  }
           tokenize: false
-      path: admin/content/links
+      path: admin/content/link
       menu:
         type: normal
         title: Links
@@ -2237,7 +2237,7 @@ display:
         weight: 0
         expanded: false
         menu_name: admin
-        parent: 'admin_toolbar_tools.extra_links:node.add.link'
+        parent: 'views_view:views.links.all_links'
         context: '0'
     cache_metadata:
       max-age: 0
@@ -2661,7 +2661,7 @@ display:
         weight: 0
         expanded: false
         menu_name: admin
-        parent: 'admin_toolbar_tools.extra_links:node.add.link'
+        parent: 'views_view:views.links.all_links'
         context: '0'
     cache_metadata:
       max-age: 0
@@ -3085,7 +3085,7 @@ display:
         weight: 0
         expanded: false
         menu_name: admin
-        parent: 'admin_toolbar_tools.extra_links:node.add.link'
+        parent: 'views_view:views.links.all_links'
         context: '0'
     cache_metadata:
       max-age: 0
@@ -3494,7 +3494,7 @@ display:
         weight: 0
         expanded: false
         menu_name: admin
-        parent: 'admin_toolbar_tools.extra_links:node.add.link'
+        parent: 'views_view:views.links.all_links'
         context: '0'
     cache_metadata:
       max-age: 0
