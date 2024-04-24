@@ -87,6 +87,9 @@ class MediaWysiwygFilter extends ProcessPluginBase implements ContainerFactoryPl
    * {@inheritdoc}
    */
   public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
+    if (empty($value))
+      return $value;
+
     $pattern = '/\[\[(?<tag_info>.+?"type":"media".+?)\]\]/s';
 
     $messenger = $this->messenger();

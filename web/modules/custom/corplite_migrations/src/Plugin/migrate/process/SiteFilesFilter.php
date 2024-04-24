@@ -20,6 +20,8 @@ class SiteFilesFilter extends ProcessPluginBase {
    * {@inheritdoc}
    */
   public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
+    if (empty($value))
+      return $value;
     $matches = [];
     // Look for all anchors in the body field.
     if (preg_match_all('|href\=[\'"]+([^ >"\']*)[\'"]+[^>]*>|', $value['value'], $matches)) {
