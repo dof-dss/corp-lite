@@ -102,8 +102,12 @@ process:
         plain_text: plain_text
   field_news_type:
     -
-      plugin: get
+      plugin: static_map
       source: field_news_type
+      default_value: null
+      map:
+        news: 45
+        pressrelease: 46
   field_notes_to_editors:
     -
       plugin: get
