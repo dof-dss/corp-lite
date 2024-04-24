@@ -89,14 +89,6 @@ content:
     third_party_settings: {  }
     weight: 5
     region: content
-  field_news_type:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: false
-    third_party_settings: {  }
-    weight: 6
-    region: content
   field_notes_to_editors:
     type: basic_string
     label: above
@@ -147,6 +139,7 @@ content:
     region: content
 hidden:
   content_moderation_control: true
+  field_news_type: true
   langcode: true
   links: true
   search_api_excerpt: true
