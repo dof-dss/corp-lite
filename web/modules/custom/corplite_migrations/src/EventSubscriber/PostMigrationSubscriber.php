@@ -70,7 +70,6 @@ class PostMigrationSubscriber implements EventSubscriberInterface {
    *   The import event object.
    */
   public function onMigratePostImport(MigrateImportEvent $event) {
-    $this->logger->notice('onMigratePostImport');
     $event_id = $event->getMigration()->getBaseId();
 
     // If we have just migrated site topics then we need to
