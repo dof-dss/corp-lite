@@ -70,6 +70,7 @@ class PostMigrationSubscriber implements EventSubscriberInterface {
    *   The import event object.
    */
   public function onMigratePostImport(MigrateImportEvent $event) {
+    $this->logger->notice('onMigratePostImport');
     $event_id = $event->getMigration()->getBaseId();
 
     // If we have just migrated site topics then we need to
@@ -87,40 +88,21 @@ class PostMigrationSubscriber implements EventSubscriberInterface {
     $query = $this->dbConnD10->query("SELECT NID FROM {node} where type = 'site_topics'");
     $topics = $query->fetchAll();
 
+    $this->logger->notice('processTaxonomyRefs - starting');
+
     $node_storage = $this->entityTypeManager->getStorage('node');
     foreach ($topics as $topic) {
       // Load up the node.
       $topic_node = $node_storage->load($topic->nid);
+      $this->logger->notice('nid is ' . $topic->nid);
       // Look for the pattern '/taxonomy/term/@@nnn@@' in description and summary.
-      if (!empty($topic_node->))
-
-      // Load the corresponding alias from the Drupal 10 database.
-      $alias_objects = $path_alias_storage->loadByProperties([
-        'alias' => '/' . $row->ALIAS
-      ]);
-      $first_alias = TRUE;
-      if (count($alias_objects) > 0) {
-        foreach ($alias_objects as $alias) {
-          // Check the language code.
-          if ($alias->langcode != $row->LANGUAGE) {
-            // The language code was incorrect on Drupal 10 so update the
-            // corresponding alias with the same language code.
-            $this->logger->notice('Updating alias ' . $alias->id() . ', ' . $row->ALIAS . ', to ' . $row->LANGUAGE);
-            $alias->langcode = $row->LANGUAGE;
-            $alias->save();
-          }
-          if ($first_alias) {
-            $first_alias = FALSE;
-          }
-          else {
-            // We have already processed an alias with this path, so
-            // we must delete duplicates.
-            $this->logger->notice('Deleting alias ' . $alias->id() . ', ' . $alias->getAlias());
-            $path_alias_storage->delete([$alias]);
-          }
-        }
+      if (!empty($topic_node->field_description)) {
+        $description = $topic_node->field_description;
+        $this->logger->notice('description is ' . $description);
       }
     }
+
+    $this->logger->notice('processTaxonomyRefs - finishing');
   }
 
 }
