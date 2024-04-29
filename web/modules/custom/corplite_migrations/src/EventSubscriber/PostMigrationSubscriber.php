@@ -84,20 +84,40 @@ class PostMigrationSubscriber implements EventSubscriberInterface {
    */
   protected function processTaxonomyRefs() {
     // Loop through all site topics and look for taxonomy refs.
-    $query = $this->dbConnD10->query("SELECT NID FROM {node} where type = 'site_topics'");
+    $query = $this->dbConnD10->query("SELECT nid FROM {node} where type = 'site_topics'");
     $topics = $query->fetchAll();
 
-    $this->logger->notice('processTaxonomyRefs - starting');
+    $this->logger->notice("Starting processTaxonomyRefs");
 
     $node_storage = $this->entityTypeManager->getStorage('node');
     foreach ($topics as $topic) {
       // Load up the node.
       $topic_node = $node_storage->load($topic->nid);
-      $this->logger->notice('nid is ' . $topic->nid);
       // Look for the pattern '/taxonomy/term/@@nnn@@' in description and summary.
-      if (!empty($topic_node->field_description)) {
-        $description = $topic_node->field_description;
-        $this->logger->notice('description is ' . $description);
+      if (!empty($topic_node->field_description->getString())) {
+        $description = $topic_node->field_description->getString();
+        $matches = [];
+        if (preg_match_all('/@@([[:digit:]]+)@@/', $description, $matches)) {
+          if (count($matches) > 1) {
+            foreach ($matches[1] as $tid) {
+              // Get a list of all migrate map tables and search through them for this tid.
+              $this->logger->notice("Node " . $topic->nid . " looking for $tid");
+              $map_query = $this->dbConnD10->query("select table_name from information_schema.tables where table_name like 'migrate_map_upgrade_d7_taxonomy_term%' and table_schema = 'nisra'");
+              $map_tables = $map_query->fetchAll();
+              foreach ($map_tables as $map_table) {
+                $map_table_name = $map_table->table_name;
+                $tid_query = $this->dbConnD10->query("select destid1 from $map_table_name where sourceid1 = $tid");
+                $new_tids = $tid_query->fetchAll();
+                if (count($new_tids) > 0) {
+                  foreach ($new_tids as $new_tid) {
+                    $ntid = $new_tid->destid1;
+                    $this->logger->notice("Old tid was $tid, new tid is $ntid");
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
 
