@@ -101,7 +101,6 @@ class PostMigrationSubscriber implements EventSubscriberInterface {
           if (count($matches) > 1) {
             foreach ($matches[1] as $tid) {
               // Get a list of all migrate map tables and search through them for this tid.
-              $this->logger->notice("Node " . $topic->nid . " looking for $tid");
               $map_query = $this->dbConnD10->query("select table_name from information_schema.tables where table_name like 'migrate_map_upgrade_d7_taxonomy_term%' and table_schema = database()");
               $map_tables = $map_query->fetchAll();
               foreach ($map_tables as $map_table) {
@@ -111,13 +110,14 @@ class PostMigrationSubscriber implements EventSubscriberInterface {
                 if (count($new_tids) > 0) {
                   foreach ($new_tids as $new_tid) {
                     $ntid = $new_tid->destid1;
-                    $this->logger->notice("Old tid was $tid, new tid is $ntid");
                     if (preg_match('/site_topics/', $map_table_name)) {
                       // Link now points to a site topic node.
                       $description = str_replace("/taxonomy/term/@@$tid@@", "/node/$ntid", $description);
+                      $this->logger->notice("NODE - Node " . $topic->nid . " Old tid was $tid, new tid is $ntid");
                     } else {
                       // Link is still a taxonomy ref.
                       $description = str_replace("@@$tid@@", $ntid, $description);
+                      $this->logger->notice("TAXONOMY - Node " . $topic->nid . " Old tid was $tid, new tid is $ntid");
                     }
                     $topic_node->set('field_description', $description);
                     $topic_node->save();
