@@ -102,39 +102,50 @@ class PostMigrationSubscriber implements EventSubscriberInterface {
     $this->logger->notice('processTaxonomyRefs - finishing');
   }
 
+  /**
+   * Process links in specified field.
+   */
   protected function processField($field, $node) {
-    $description = $node->get($field)->getString();
-    if (!empty($description)) {
+    $field_text = $node->get($field)->getString();
+    if (!empty($field_text)) {
       $matches = [];
       // Look for the pattern '/taxonomy/term/@@nnn@@' in the text.
-      if (preg_match_all('/@@([[:digit:]]+)@@/', $description, $matches)) {
+      if (preg_match_all('/@@([[:digit:]]+)@@/', $field_text, $matches)) {
         if (count($matches) > 1) {
           foreach ($matches[1] as $tid) {
             // Get a list of all migrate map tables and search through them for this tid.
             $map_query = $this->dbConnD10->query("select table_name from information_schema.tables where table_name like 'migrate_map_upgrade_d7_taxonomy_term%' and table_schema = database()");
             $map_tables = $map_query->fetchAll();
             foreach ($map_tables as $map_table) {
-              $map_table_name = $map_table->table_name;
-              $tid_query = $this->dbConnD10->query("select destid1 from $map_table_name where sourceid1 = $tid");
-              $new_tids = $tid_query->fetchAll();
-              if (count($new_tids) > 0) {
-                foreach ($new_tids as $new_tid) {
-                  $ntid = $new_tid->destid1;
-                  if (preg_match('/site_topics/', $map_table_name)) {
-                    // Link now points to a site topic node.
-                    $description = str_replace("/taxonomy/term/@@$tid@@", "/node/$ntid", $description);
-                    $this->logger->notice("NODE - $field Old tid was $tid, new tid is $ntid");
-                  } else {
-                    // Link is still a taxonomy ref.
-                    $description = str_replace("@@$tid@@", $ntid, $description);
-                    $this->logger->notice("TAXONOMY - $field Old tid was $tid, new tid is $ntid");
-                  }
-                  $node->set($field, $description);
-                }
-              }
+              $node = $this->processMapTable($map_table, $field, $field_text, $tid, $node);
             }
           }
         }
+      }
+    }
+    return $node;
+  }
+
+  /**
+   * Process map table.
+   */
+  protected function processMapTable($map_table, $field, $field_text, $tid, $node) {
+    $map_table_name = $map_table->table_name;
+    $tid_query = $this->dbConnD10->query("select destid1 from $map_table_name where sourceid1 = $tid");
+    $new_tids = $tid_query->fetchAll();
+    if (count($new_tids) > 0) {
+      foreach ($new_tids as $new_tid) {
+        $ntid = $new_tid->destid1;
+        if (preg_match('/site_topics/', $map_table_name)) {
+          // Link now points to a site topic node.
+          $field_text = str_replace("/taxonomy/term/@@$tid@@", "/node/$ntid", $field_text);
+          $this->logger->notice("NODE - $field Old tid was $tid, new tid is $ntid");
+        } else {
+          // Link is still a taxonomy ref.
+          $field_text = str_replace("@@$tid@@", $ntid, $field_text);
+          $this->logger->notice("TAXONOMY - $field Old tid was $tid, new tid is $ntid");
+        }
+        $node->set($field, $field_text);
       }
     }
     return $node;
