@@ -135,7 +135,8 @@ class PostMigrationSubscriber implements EventSubscriberInterface {
         if (preg_match('/site_topics/', $map_table_name)) {
           // Link now points to a site topic node.
           $field_text = str_replace("/taxonomy/term/@@$tid@@", "/node/$ntid", $field_text);
-        } else {
+        }
+        else {
           // Link is still a taxonomy ref.
           $field_text = str_replace("@@$tid@@", $ntid, $field_text);
         }
