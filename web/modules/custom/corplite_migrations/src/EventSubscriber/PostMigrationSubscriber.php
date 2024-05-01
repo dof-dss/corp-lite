@@ -86,20 +86,16 @@ class PostMigrationSubscriber implements EventSubscriberInterface {
     // Loop through all site topics and look for taxonomy refs.
     $query = $this->dbConnD10->query("SELECT nid FROM {node} where type = 'site_topics'");
     $topics = $query->fetchAll();
-
-    $this->logger->notice("Starting processTaxonomyRefs");
-
     $node_storage = $this->entityTypeManager->getStorage('node');
     foreach ($topics as $topic) {
       // Load up the node.
       $topic_node = $node_storage->load($topic->nid);
-      $this->logger->notice("NODE " . $topic->nid);
+      // Process fields that may contain taxonomy links.
       $topic_node = $this->processField('field_description', $topic_node);
       $topic_node = $this->processField('field_topic_summary', $topic_node);
+      // Save the node.
       $topic_node->save();
     }
-
-    $this->logger->notice('processTaxonomyRefs - finishing');
   }
 
   /**
@@ -139,11 +135,9 @@ class PostMigrationSubscriber implements EventSubscriberInterface {
         if (preg_match('/site_topics/', $map_table_name)) {
           // Link now points to a site topic node.
           $field_text = str_replace("/taxonomy/term/@@$tid@@", "/node/$ntid", $field_text);
-          $this->logger->notice("NODE - $field Old tid was $tid, new tid is $ntid");
         } else {
           // Link is still a taxonomy ref.
           $field_text = str_replace("@@$tid@@", $ntid, $field_text);
-          $this->logger->notice("TAXONOMY - $field Old tid was $tid, new tid is $ntid");
         }
         $node->set($field, $field_text);
       }
