@@ -1,11 +1,12 @@
-uuid: 2e9699cb-fa75-4f82-8c72-f2003e0f1fe8
+uuid: 49826fc1-c39d-4f83-8469-0d9c5cbfb5c0
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.taxonomy_term.field_summary
+    - field.storage.node.field_description
     - filter.format.basic_html
-    - taxonomy.vocabulary.site_topics
+    - filter.format.plain_text
+    - node.type.site_topics
   module:
     - allowed_formats
     - text
@@ -13,17 +14,19 @@ third_party_settings:
   allowed_formats:
     allowed_formats:
       - basic_html
-id: taxonomy_term.site_topics.field_summary
-field_name: field_summary
-entity_type: taxonomy_term
+      - plain_text
+id: node.site_topics.field_description
+field_name: field_description
+entity_type: node
 bundle: site_topics
-label: Summary
-description: 'Enter a summary for this topic to be displayed on listing pages.'
-required: true
+label: Description
+description: ''
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
   allowed_formats:
     - basic_html
+    - plain_text
 field_type: text_long

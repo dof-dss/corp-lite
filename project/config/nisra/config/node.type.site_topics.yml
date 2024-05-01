@@ -1,0 +1,29 @@
+uuid: 0e1a5bbe-6f0b-44e8-8d0d-bcf9a4c0b889
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - origins_toc
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  origins_toc:
+    toc_enable: 0
+    toc_title: 'Table of contents'
+    toc_location: ''
+    toc_insert: after
+    toc_source_container: ''
+    toc_element: h2
+    toc_exclusions: ''
+    toc_screen_depth: '1'
+    toc_debug: 0
+name: 'Site Topics'
+type: site_topics
+description: 'Use this content type to create a site topic page'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false
