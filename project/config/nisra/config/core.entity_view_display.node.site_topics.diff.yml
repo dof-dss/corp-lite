@@ -1,9 +1,9 @@
-uuid: a059b0da-c914-4cff-9851-623e88782798
+uuid: 54573048-f964-4c07-a767-ba2f5ba0bfeb
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.diff
     - field.field.node.site_topics.field_banner_image
     - field.field.node.site_topics.field_banner_image_overlay
     - field.field.node.site_topics.field_banner_image_thin
@@ -16,12 +16,20 @@ dependencies:
     - field.field.node.site_topics.field_topic_summary
     - node.type.site_topics
   module:
+    - metatag
     - user
-id: node.site_topics.teaser
+id: node.site_topics.diff
 targetEntityType: node
 bundle: site_topics
-mode: teaser
+mode: diff
 content:
+  field_meta_tags:
+    type: metatag_empty_formatter
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 8
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
@@ -34,7 +42,6 @@ hidden:
   field_description: true
   field_featured_image: true
   field_hide_topic: true
-  field_meta_tags: true
   field_parent: true
   field_topic_icon: true
   field_topic_summary: true

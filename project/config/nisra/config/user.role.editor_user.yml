@@ -35,7 +35,6 @@ dependencies:
     - scheduled_transitions
     - system
     - toolbar
-    - whatlinkshere
 id: editor_user
 label: 'editor user'
 weight: -1
@@ -184,7 +183,6 @@ permissions:
   - 'view any unpublished content'
   - 'view application revisions'
   - 'view contact revisions'
-  - 'view content references'
   - 'view department_management revisions'
   - 'view easychart revisions'
   - 'view gallery revisions'
