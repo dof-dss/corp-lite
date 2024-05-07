@@ -1,5 +1,5 @@
 uuid: f47b21aa-47e7-4172-acc1-03c0b44cb9d6
-langcode: en-gb
+langcode: en
 status: true
 dependencies:
   config:
@@ -14,13 +14,13 @@ field_name: body
 entity_type: node
 bundle: publication
 label: Body
-description: ''
+description: 'Use this field for optional additional information. Use ‘Normal’ format, no headings required.'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  display_summary: true
+  display_summary: false
   required_summary: false
   allowed_formats: {  }
 field_type: text_with_summary

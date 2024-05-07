@@ -1,0 +1,25 @@
+uuid: 58fba0e4-2601-4ce3-afa8-e1be6b35554f
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.default_content
+    - views.view.search
+  module:
+    - search_api
+id: search_summary
+name: 'Search summary'
+facet_source_id: 'search_api:views_page__search__search_page'
+processor_configs:
+  hide_when_not_rendered:
+    processor_id: hide_when_not_rendered
+    weights:
+      build: '45'
+    settings: {  }
+facets:
+  content_type:
+    checked: true
+    label: 'Content type'
+    separator: ', '
+    show_count: false
+    weight: 0

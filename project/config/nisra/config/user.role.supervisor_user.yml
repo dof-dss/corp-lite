@@ -34,7 +34,6 @@ dependencies:
     - scheduled_transitions
     - system
     - toolbar
-    - whatlinkshere
 _core:
   default_config_hash: GSKFpUySicd58w9jyeILZLfIMj4c0kbTRwyj2uXgpqU
 id: supervisor_user
@@ -177,7 +176,6 @@ permissions:
   - 'view any unpublished content'
   - 'view application revisions'
   - 'view contact revisions'
-  - 'view content references'
   - 'view department_management revisions'
   - 'view easychart revisions'
   - 'view gallery revisions'

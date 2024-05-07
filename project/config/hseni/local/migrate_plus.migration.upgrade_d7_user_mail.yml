@@ -1,5 +1,5 @@
 uuid: 0174b179-d3c1-4fc5-b0fa-9ab5cc64a31b
-langcode: en-gb
+langcode: en
 status: true
 dependencies: {  }
 id: upgrade_d7_user_mail

@@ -1,12 +1,25 @@
 uuid: 2ee78f71-6710-4ec5-bcf2-a0d41f1cfc06
-langcode: en-gb
+langcode: en
 status: true
 dependencies:
   module:
     - menu_ui
+    - origins_toc
 third_party_settings:
   menu_ui:
+    available_menus:
+      - main
     parent: 'main-menu:0:'
+  origins_toc:
+    toc_enable: 1
+    toc_title: Contents
+    toc_location: '#post-content .page-content'
+    toc_insert: before
+    toc_source_container: '#post-content .page-content'
+    toc_element: h2
+    toc_exclusions: ''
+    toc_screen_depth: '2'
+    toc_debug: 0
 name: Page
 type: page
 description: 'Use this content type for general purpose pages.'

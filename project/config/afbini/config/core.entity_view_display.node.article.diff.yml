@@ -1,11 +1,13 @@
 uuid: b7933cae-4722-4eb9-9dd7-1e09155042fa
-langcode: en-gb
-status: true
+langcode: en
+status: false
 dependencies:
   config:
     - core.entity_view_mode.node.diff
     - field.field.node.article.body
+    - field.field.node.article.field_enable_toc
     - field.field.node.article.field_meta_tags
+    - field.field.node.article.field_site_services
     - field.field.node.article.field_site_topics
     - field.field.node.article.field_summary
     - field.field.node.article.field_tags
@@ -74,6 +76,8 @@ content:
     region: content
 hidden:
   content_moderation_control: true
+  field_enable_toc: true
+  field_site_services: true
   field_tags: true
   langcode: true
   links: true

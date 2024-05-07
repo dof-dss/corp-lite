@@ -1,5 +1,5 @@
 uuid: c0693ee0-7d1b-487a-8fdc-c4bbc5d7dbcc
-langcode: en-gb
+langcode: en
 status: true
 dependencies:
   config:
@@ -35,6 +35,7 @@ settings:
       - importWord
       - specialCharacters
       - fullScreen
+      - sourceEditing
   plugins:
     ckeditor5_heading:
       enabled_headings:
@@ -46,6 +47,10 @@ settings:
     ckeditor5_list:
       reversed: false
       startIndex: true
+    ckeditor5_sourceEditing:
+      allowed_tags: {  }
+    linkit_extension:
+      linkit_enabled: false
     media_media:
       allow_view_mode_override: false
 image_upload:

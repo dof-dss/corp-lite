@@ -1,14 +1,32 @@
 uuid: 7bba412e-2114-41f2-83c6-93fd2ed2902a
-langcode: en-gb
+langcode: en
 status: true
 dependencies:
   config:
+    - filter.format.basic_html
+    - media.type.audio
+    - media.type.document
+    - media.type.file
+    - media.type.image
+    - media.type.remote_video
     - node.type.contact
+    - node.type.department_management
+    - node.type.link
     - node.type.news
+    - node.type.page
     - node.type.publication
+    - workflows.workflow.nics_editorial_workflow
   module:
+    - content_moderation
+    - file
+    - filter
+    - media
+    - menu_admin_per_menu
+    - moderation_sidebar
     - node
+    - path
     - system
+    - toolbar
 _core:
   default_config_hash: vNEkQI-Oi5HpFydAyizLa6qCCV8SkpSWLiyMrYoGO94
 id: author_user
@@ -17,13 +35,68 @@ weight: 2
 is_admin: false
 permissions:
   - 'access administration pages'
+  - 'access content overview'
+  - 'access toolbar'
+  - 'administer main menu items'
+  - 'create audio media'
   - 'create contact content'
+  - 'create department_management content'
+  - 'create document media'
+  - 'create file media'
+  - 'create image media'
+  - 'create link content'
   - 'create news content'
+  - 'create page content'
   - 'create publication content'
+  - 'create remote_video media'
+  - 'create url aliases'
+  - 'delete own audio media'
+  - 'delete own contact content'
+  - 'delete own department_management content'
+  - 'delete own document media'
+  - 'delete own file media'
+  - 'delete own files'
+  - 'delete own image media'
+  - 'delete own link content'
+  - 'delete own news content'
+  - 'delete own page content'
+  - 'delete own publication content'
+  - 'delete own remote_video media'
   - 'edit any contact content'
+  - 'edit any department_management content'
+  - 'edit any link content'
   - 'edit any news content'
+  - 'edit any page content'
   - 'edit any publication content'
+  - 'edit own audio media'
   - 'edit own contact content'
+  - 'edit own department_management content'
+  - 'edit own document media'
+  - 'edit own file media'
+  - 'edit own image media'
+  - 'edit own link content'
   - 'edit own news content'
   - 'edit own publication content'
+  - 'edit own remote_video media'
+  - 'revert contact revisions'
+  - 'revert department_management revisions'
+  - 'revert link revisions'
+  - 'revert news revisions'
+  - 'revert page revisions'
+  - 'revert publication revisions'
+  - 'use moderation sidebar'
+  - 'use nics_editorial_workflow transition create_new_draft'
+  - 'use nics_editorial_workflow transition draft_of_published'
+  - 'use nics_editorial_workflow transition reject'
+  - 'use nics_editorial_workflow transition submit_for_review'
+  - 'use text format basic_html'
+  - 'view any unpublished content'
+  - 'view contact revisions'
+  - 'view department_management revisions'
+  - 'view latest version'
+  - 'view link revisions'
+  - 'view news revisions'
+  - 'view own unpublished media'
+  - 'view page revisions'
+  - 'view publication revisions'
   - 'view the administration theme'

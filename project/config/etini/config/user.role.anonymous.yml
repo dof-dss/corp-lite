@@ -1,20 +1,14 @@
 uuid: 79110378-29e6-4fe9-b34e-1706c618aaf6
-langcode: en-gb
+langcode: en
 status: true
 dependencies:
   module:
-    - eu_cookie_compliance
-    - media
-    - search
     - system
 _core:
   default_config_hash: P5H-ZbvA8txEPNYisWPYiorfSqVXrHsa9-CttKUf6GQ
 id: anonymous
 label: 'anonymous user'
-weight: -10
+weight: 0
 is_admin: false
 permissions:
   - 'access content'
-  - 'display eu cookie compliance popup'
-  - 'search content'
-  - 'view media'

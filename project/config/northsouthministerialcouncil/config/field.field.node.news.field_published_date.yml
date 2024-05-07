@@ -1,5 +1,5 @@
 uuid: 67e47507-5427-451f-91b8-68ee3ea96721
-langcode: en-gb
+langcode: en
 status: true
 dependencies:
   config:
@@ -17,7 +17,10 @@ label: 'Publication date'
 description: 'Please select the publication date of this news item, or accept the default value of today.'
 required: true
 translatable: false
-default_value: {  }
+default_value:
+  -
+    default_date_type: now
+    default_date: now
 default_value_callback: ''
 settings: {  }
 field_type: datetime

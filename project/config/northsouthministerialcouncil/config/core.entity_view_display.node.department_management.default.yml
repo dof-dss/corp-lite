@@ -1,11 +1,12 @@
 uuid: 41518edf-0303-4a86-b960-e77158858b97
-langcode: en-gb
+langcode: en
 status: true
 dependencies:
   config:
     - field.field.node.department_management.body
     - field.field.node.department_management.field_access_to_information
     - field.field.node.department_management.field_contact_information
+    - field.field.node.department_management.field_departmental_map
     - field.field.node.department_management.field_facebook_url
     - field.field.node.department_management.field_flickr_url
     - field.field.node.department_management.field_linkedin_url
@@ -25,20 +26,17 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 101
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
 hidden:
   field_access_to_information: true
   field_contact_information: true
+  field_departmental_map: true
   field_facebook_url: true
   field_flickr_url: true
   field_linkedin_url: true
   field_twitter_url: true
   field_youtube_url: true
   langcode: true
+  links: true
   search_api_excerpt: true

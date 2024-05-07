@@ -1,4 +1,4 @@
-langcode: en-gb
+langcode: en
 entity_type_groups: {  }
 separator: ''
 tag_trim_method: beforeValue

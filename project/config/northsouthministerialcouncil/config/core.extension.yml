@@ -1,6 +1,6 @@
 _core:
   default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc
-langcode: en-gb
+langcode: en
 module:
   address: 0
   admin_toolbar: 0
@@ -27,15 +27,16 @@ module:
   content_moderation: 0
   contextual: 0
   cookie_content_blocker: 0
+  corplite_common: 0
   corplite_eu_cookie_compliance: 0
   corplite_image_styles: 0
-  corplite_migrations: 0
   csp: 0
   ctools: 0
   date_facet_drilldown: 0
   datetime: 0
   datetime_range: 0
   diff: 0
+  draggableviews: 0
   dynamic_entity_reference: 0
   dynamic_page_cache: 0
   editor: 0

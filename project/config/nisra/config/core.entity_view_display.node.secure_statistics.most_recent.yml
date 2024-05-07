@@ -1,0 +1,46 @@
+uuid: 9a162787-a36e-45c0-a45c-e7822c789b72
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.most_recent
+    - field.field.node.secure_statistics.body
+    - field.field.node.secure_statistics.field_external_publication
+    - field.field.node.secure_statistics.field_meta_tags
+    - field.field.node.secure_statistics.field_publication_type
+    - field.field.node.secure_statistics.field_published_date
+    - field.field.node.secure_statistics.field_research_support
+    - field.field.node.secure_statistics.field_secure_attachment
+    - field.field.node.secure_statistics.field_site_topics
+    - field.field.node.secure_statistics.field_summary
+    - node.type.secure_statistics
+  module:
+    - datetime
+    - user
+id: node.secure_statistics.most_recent
+targetEntityType: node
+bundle: secure_statistics
+mode: most_recent
+content:
+  field_published_date:
+    type: datetime_default
+    label: inline
+    settings:
+      timezone_override: ''
+      format_type: corplite_format
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true
+  content_moderation_control: true
+  field_external_publication: true
+  field_meta_tags: true
+  field_publication_type: true
+  field_research_support: true
+  field_secure_attachment: true
+  field_site_topics: true
+  field_summary: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

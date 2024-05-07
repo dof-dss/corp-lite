@@ -4,6 +4,7 @@ description: To provide common functionality for various NICS Corp Lite websites
 core_version_requirement: ^8.8 || ^9 || ^10
 distribution:
   name: corplite
+  langcode: en
 install:
   - address
   - admin_toolbar

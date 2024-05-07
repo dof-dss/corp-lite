@@ -1,0 +1,21 @@
+uuid: 6ec4c6c5-768e-4f22-9245-01bcd841c8d4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_map
+    - node.type.contact
+  module:
+    - geolocation
+id: node.contact.field_map
+field_name: field_map
+entity_type: node
+bundle: contact
+label: map
+description: "Set the location for this point of contact using Google Maps.<br />\r\nGive the map a name, and click the 'Set Map Marker' button to browse Google Maps and choose a location."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geolocation

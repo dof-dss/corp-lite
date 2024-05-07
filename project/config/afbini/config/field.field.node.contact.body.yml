@@ -1,5 +1,5 @@
 uuid: 585783f8-27cc-40f4-996e-748a501e435f
-langcode: en-gb
+langcode: en
 status: true
 dependencies:
   config:
@@ -16,11 +16,11 @@ bundle: contact
 label: Body
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  display_summary: true
+  display_summary: false
   required_summary: false
   allowed_formats: {  }
 field_type: text_with_summary

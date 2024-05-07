@@ -108,8 +108,8 @@ process:
         independentreports: 80
         inspectionreports: 81
         memoranda: 82
-        surveys: 83
-        supportmaterial: 84
+        surveys: 84
+        supportmaterial: 83
   field_published_date:
     - plugin: sub_process
       source: field_published_date
@@ -133,17 +133,17 @@ process:
       default_value: null
       map:
         parents: 60
-        learners: 61
-        trainees: 62
-        youngpeople: 63
-        manager: 64
-        principal: 65
-        teacher: 66
-        support: 67
-        lecturer: 68
-        employer: 69
-        governor: 70
-        managementcommittee: 71
+        learners: 55
+        trainees: 64
+        youngpeople: 65
+        manager: 58
+        principal: 61
+        teacher: 63
+        support: 62
+        lecturer: 56
+        employer: 54
+        governor: 59
+        managementcommittee: 57
   field_reference:
     - plugin: get
       source: field_reference

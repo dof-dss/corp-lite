@@ -1,12 +1,18 @@
 uuid: 39719abb-0c0c-4058-9094-a580c07616b2
-langcode: en-gb
+langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_contact_information
+    - filter.format.basic_html
     - node.type.department_management
   module:
+    - allowed_formats
     - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - basic_html
 id: node.department_management.field_contact_information
 field_name: field_contact_information
 entity_type: node
@@ -17,9 +23,10 @@ required: true
 translatable: false
 default_value:
   -
-    value: '<address>[Address line 1],<br />[Address ine 2],<br />[Address line 3],</address><address>[Postal Area]</address><address>[Postcode]<br /><br />Telephone: [xxx xxxx xxxx]</address><address>Email: <a href="mailto:something@somethingni.gov.uk">something@somethingni.gov.uk</a></address>'
-    format: filtered_html_with_no_images
+    value: '<address><p>[Address line 1],<br>[Address ine 2],<br>[Address line 3],</p></address><address><p>[Postal Area]</p></address><address><p>[Postcode]<br><br>Telephone: [xxx xxxx xxxx]</p></address><address><p>Email: <a href="mailto:something@somethingni.gov.uk">something@somethingni.gov.uk</a></p></address>'
+    format: basic_html
 default_value_callback: ''
 settings:
-  allowed_formats: {  }
+  allowed_formats:
+    - basic_html
 field_type: text_long

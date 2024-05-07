@@ -1,38 +1,148 @@
 uuid: 9dc675c8-d423-4b6d-8ece-0413d5e7a44e
-langcode: en-gb
+langcode: en
 status: true
 dependencies:
   config:
+    - filter.format.basic_html
+    - media.type.audio
+    - media.type.document
+    - media.type.file
+    - media.type.image
+    - media.type.remote_video
     - node.type.article
+    - node.type.contact
+    - node.type.gallery
+    - node.type.link
+    - node.type.news
+    - node.type.publication
+    - workflows.workflow.nics_editorial_workflow
   module:
+    - content_moderation
     - contextual
+    - corplite_common
     - file
+    - filter
+    - media
+    - media_file_delete
+    - menu_admin_per_menu
+    - moderation_sidebar
     - node
-    - path
+    - origins_metatag
+    - origins_workflow
+    - redirect
+    - scheduled_transitions
     - system
     - toolbar
-    - tour
+    - whatlinkshere
 _core:
   default_config_hash: InLQf8PwOUHWyhgZ3L4N-2yxx2biUCe8504w3ZNo8Jc
 id: supervisor_user
-label: 'Supervisor user'
-weight: 3
+label: 'supervisor user'
+weight: -6
 is_admin: false
 permissions:
   - 'access administration pages'
   - 'access content overview'
   - 'access contextual links'
-  - 'access files overview'
   - 'access toolbar'
-  - 'access tour'
-  - 'administer url aliases'
+  - 'administer main menu items'
+  - 'administer media file delete'
+  - 'administer redirects'
+  - 'audit content'
   - 'create article content'
-  - 'create url aliases'
+  - 'create audio media'
+  - 'create contact content'
+  - 'create document media'
+  - 'create file media'
+  - 'create gallery content'
+  - 'create image media'
+  - 'create link content'
+  - 'create news content'
+  - 'create publication content'
+  - 'create remote_video media'
+  - 'delete all revisions'
+  - 'delete any article content'
+  - 'delete any audio media'
+  - 'delete any contact content'
+  - 'delete any document media'
+  - 'delete any file'
+  - 'delete any file media'
+  - 'delete any gallery content'
+  - 'delete any image media'
+  - 'delete any link content'
+  - 'delete any news content'
+  - 'delete any publication content'
+  - 'delete any remote_video media'
   - 'delete article revisions'
+  - 'delete contact revisions'
+  - 'delete gallery revisions'
+  - 'delete link revisions'
+  - 'delete news revisions'
   - 'delete own article content'
+  - 'delete own audio media'
+  - 'delete own contact content'
+  - 'delete own document media'
+  - 'delete own file media'
   - 'delete own files'
+  - 'delete own gallery content'
+  - 'delete own image media'
+  - 'delete own link content'
+  - 'delete own news content'
+  - 'delete own publication content'
+  - 'delete own remote_video media'
+  - 'delete publication revisions'
+  - 'edit any article content'
+  - 'edit any audio media'
+  - 'edit any contact content'
+  - 'edit any document media'
+  - 'edit any file media'
+  - 'edit any gallery content'
+  - 'edit any image media'
+  - 'edit any link content'
+  - 'edit any news content'
+  - 'edit any publication content'
+  - 'edit any remote_video media'
+  - 'edit basic meta tags'
   - 'edit own article content'
+  - 'edit own audio media'
+  - 'edit own contact content'
+  - 'edit own document media'
+  - 'edit own file media'
+  - 'edit own gallery content'
+  - 'edit own image media'
+  - 'edit own link content'
+  - 'edit own news content'
+  - 'edit own publication content'
+  - 'edit own remote_video media'
+  - 'hide topic or feature on homepage'
   - 'revert all revisions'
+  - 'revert article revisions'
+  - 'revert contact revisions'
+  - 'revert gallery revisions'
+  - 'revert link revisions'
+  - 'revert news revisions'
+  - 'revert publication revisions'
+  - 'use moderation sidebar'
+  - 'use nics_editorial_workflow transition archive'
+  - 'use nics_editorial_workflow transition create_new_draft'
+  - 'use nics_editorial_workflow transition draft_of_published'
+  - 'use nics_editorial_workflow transition publish'
+  - 'use nics_editorial_workflow transition reject'
+  - 'use nics_editorial_workflow transition restore'
+  - 'use nics_editorial_workflow transition restore_to_draft'
+  - 'use nics_editorial_workflow transition submit_for_review'
+  - 'use nics_editorial_workflow transition unpublish'
+  - 'use text format basic_html'
   - 'view all revisions'
-  - 'view own unpublished content'
+  - 'view all scheduled transitions'
+  - 'view any unpublished content'
+  - 'view article revisions'
+  - 'view contact revisions'
+  - 'view content references'
+  - 'view gallery revisions'
+  - 'view latest version'
+  - 'view link revisions'
+  - 'view news revisions'
+  - 'view own unpublished media'
+  - 'view publication revisions'
   - 'view the administration theme'

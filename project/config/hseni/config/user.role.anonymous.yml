@@ -1,14 +1,18 @@
 uuid: ec39f412-06da-417b-8684-4a975233e024
-langcode: en-gb
+langcode: en
 status: true
 dependencies:
   module:
+    - media
+    - search
     - system
 _core:
   default_config_hash: P5H-ZbvA8txEPNYisWPYiorfSqVXrHsa9-CttKUf6GQ
 id: anonymous
 label: 'anonymous user'
-weight: 0
+weight: -10
 is_admin: false
 permissions:
   - 'access content'
+  - 'search content'
+  - 'view media'

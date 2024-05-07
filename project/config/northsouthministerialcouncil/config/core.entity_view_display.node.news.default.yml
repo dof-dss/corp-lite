@@ -1,21 +1,17 @@
 uuid: 482c0051-5942-41ee-b920-d8e4fb6ca9c2
-langcode: en-gb
+langcode: en
 status: true
 dependencies:
   config:
     - field.field.node.news.body
-    - field.field.node.news.field_feature_home_page
-    - field.field.node.news.field_main_feature
     - field.field.node.news.field_meta_tags
-    - field.field.node.news.field_news_type
     - field.field.node.news.field_notes_to_editors
     - field.field.node.news.field_photo
     - field.field.node.news.field_published_date
-    - field.field.node.news.field_site_topics
     - field.field.node.news.field_summary
-    - field.field.node.news.field_teaser
     - node.type.news
   module:
+    - datetime
     - text
     - user
 _core:
@@ -30,47 +26,43 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   field_notes_to_editors:
     type: basic_string
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
   field_photo:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: default
+      view_mode: landscape_float
       link: false
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
-  field_site_topics:
-    type: entity_reference_label
-    label: above
+  field_published_date:
+    type: datetime_default
+    label: inline
     settings:
-      link: true
+      timezone_override: ''
+      format_type: corplite_medium
     third_party_settings: {  }
-    weight: 4
+    weight: 0
     region: content
   field_summary:
     type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
 hidden:
   content_moderation_control: true
-  field_feature_home_page: true
-  field_main_feature: true
   field_meta_tags: true
-  field_news_type: true
-  field_published_date: true
-  field_teaser: true
   langcode: true
   links: true
   search_api_excerpt: true

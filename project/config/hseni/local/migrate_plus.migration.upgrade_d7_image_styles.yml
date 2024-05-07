@@ -1,5 +1,5 @@
 uuid: a232dfb4-f75c-4034-9c52-09968b9bf23a
-langcode: en-gb
+langcode: en
 status: true
 dependencies: {  }
 id: upgrade_d7_image_styles

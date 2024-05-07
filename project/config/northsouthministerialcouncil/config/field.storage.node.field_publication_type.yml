@@ -1,43 +1,19 @@
-uuid: 10722b85-df2c-4fbe-82c5-a650cca4bc61
-langcode: und
+uuid: 50d151db-54f2-4de3-ac93-7d0b5dc9e95c
+langcode: en
 status: true
 dependencies:
   module:
     - node
-    - options
-_core:
-  default_config_hash: kRdu5qVgBPeAkcdeF4EvlRid44T-bSi44nfN3dNStXo
+    - taxonomy
 id: node.field_publication_type
 field_name: field_publication_type
 entity_type: node
-type: list_string
+type: entity_reference
 settings:
-  allowed_values:
-    -
-      value: jointcommuniques
-      label: 'Plenary Joint Communiqués'
-    -
-      value: annualreports
-      label: 'Annual Report'
-    -
-      value: foi
-      label: 'Freedom of Information'
-    -
-      value: institutionaljointcommuniques
-      label: 'Institutional Joint Communiqués'
-    -
-      value: interimprocedures
-      label: 'Interim Procedures'
-    -
-      value: other
-      label: Other
-    -
-      value: sectoraljointcommuniques
-      label: 'Sectoral Joint Communiqués'
-  allowed_values_function: ''
-module: options
+  target_type: taxonomy_term
+module: core
 locked: false
-cardinality: 3
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

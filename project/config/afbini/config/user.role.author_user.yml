@@ -1,33 +1,85 @@
 uuid: 1c55ac3b-0159-4bf1-990c-5b4186679b27
-langcode: en-gb
+langcode: en
 status: true
 dependencies:
   config:
+    - filter.format.basic_html
+    - media.type.audio
+    - media.type.document
+    - media.type.file
+    - media.type.image
+    - media.type.remote_video
     - node.type.article
+    - node.type.contact
+    - node.type.gallery
+    - node.type.link
+    - node.type.news
+    - node.type.publication
+    - workflows.workflow.nics_editorial_workflow
   module:
+    - content_moderation
     - file
+    - filter
+    - media
+    - menu_admin_per_menu
+    - moderation_sidebar
     - node
-    - path
     - system
     - toolbar
-    - tour
 _core:
   default_config_hash: vNEkQI-Oi5HpFydAyizLa6qCCV8SkpSWLiyMrYoGO94
 id: author_user
-label: 'Author user'
-weight: 2
+label: 'author user'
+weight: -7
 is_admin: false
 permissions:
   - 'access administration pages'
   - 'access content overview'
-  - 'access files overview'
   - 'access toolbar'
-  - 'access tour'
-  - 'administer url aliases'
+  - 'administer main menu items'
   - 'create article content'
-  - 'create url aliases'
+  - 'create audio media'
+  - 'create contact content'
+  - 'create document media'
+  - 'create file media'
+  - 'create gallery content'
+  - 'create image media'
+  - 'create link content'
+  - 'create news content'
+  - 'create publication content'
+  - 'create remote_video media'
+  - 'delete own audio media'
+  - 'delete own document media'
+  - 'delete own file media'
   - 'delete own files'
+  - 'delete own image media'
+  - 'delete own remote_video media'
+  - 'edit any article content'
+  - 'edit any contact content'
+  - 'edit any gallery content'
+  - 'edit any link content'
+  - 'edit any news content'
+  - 'edit any publication content'
   - 'edit own article content'
-  - 'view all revisions'
-  - 'view own unpublished content'
+  - 'edit own contact content'
+  - 'edit own gallery content'
+  - 'edit own link content'
+  - 'edit own news content'
+  - 'edit own publication content'
+  - 'use moderation sidebar'
+  - 'use nics_editorial_workflow transition create_new_draft'
+  - 'use nics_editorial_workflow transition draft_of_published'
+  - 'use nics_editorial_workflow transition reject'
+  - 'use nics_editorial_workflow transition restore_to_draft'
+  - 'use nics_editorial_workflow transition submit_for_review'
+  - 'use text format basic_html'
+  - 'view any unpublished content'
+  - 'view article revisions'
+  - 'view contact revisions'
+  - 'view gallery revisions'
+  - 'view latest version'
+  - 'view link revisions'
+  - 'view news revisions'
+  - 'view own unpublished media'
+  - 'view publication revisions'
   - 'view the administration theme'

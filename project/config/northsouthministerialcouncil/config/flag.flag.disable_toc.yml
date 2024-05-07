@@ -1,12 +1,13 @@
 uuid: d3bfce26-7243-4eca-b96e-cff10c331a6c
-langcode: en-gb
+langcode: en
 status: true
 dependencies:
   module:
     - node
 id: disable_toc
 label: 'Disable Table of Contents'
-bundles: {  }
+bundles:
+  - page
 entity_type: node
 global: true
 flag_short: 'Disable ToC'

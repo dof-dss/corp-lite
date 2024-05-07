@@ -1,5 +1,5 @@
 uuid: ca60033e-23ae-4e32-b404-5c5ec84698ea
-langcode: en-gb
+langcode: en
 status: true
 dependencies:
   module:

@@ -1,5 +1,5 @@
 uuid: 52f3f084-5980-473d-b7b5-68c086ec8b71
-langcode: en-gb
+langcode: en
 status: true
 dependencies:
   config:
@@ -352,24 +352,16 @@ content:
       use_details: true
     third_party_settings: {  }
   field_research_support:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 12
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: 'Choose some options'
+    settings: {  }
     third_party_settings: {  }
   field_site_topics:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 11
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: 'Choose some options'
+    settings: {  }
     third_party_settings: {  }
   flag:
     weight: 4

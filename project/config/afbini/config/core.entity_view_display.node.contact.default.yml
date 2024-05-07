@@ -1,13 +1,15 @@
 uuid: d4b0b450-dced-4d31-9958-7a0ec641ae87
-langcode: en-gb
+langcode: en
 status: true
 dependencies:
   config:
     - field.field.node.contact.body
+    - field.field.node.contact.field_map
     - field.field.node.contact.field_meta_tags
     - field.field.node.contact.field_site_topics
     - node.type.contact
   module:
+    - geolocation
     - text
     - user
 _core:
@@ -24,17 +26,17 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  field_site_topics:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
+  field_map:
+    type: geolocation_latlng
+    label: hidden
+    settings: {  }
     third_party_settings: {  }
     weight: 1
     region: content
 hidden:
   content_moderation_control: true
   field_meta_tags: true
+  field_site_topics: true
   langcode: true
   links: true
   search_api_excerpt: true

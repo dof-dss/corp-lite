@@ -1,12 +1,25 @@
 uuid: 43745353-29df-4bf6-aa00-be0bc41da4eb
-langcode: en-gb
+langcode: en
 status: true
 dependencies:
   module:
     - menu_ui
+    - origins_toc
 third_party_settings:
   menu_ui:
+    available_menus:
+      - main
     parent: 'main-menu:0:'
+  origins_toc:
+    toc_enable: 0
+    toc_title: 'Table of contents'
+    toc_location: ''
+    toc_insert: after
+    toc_source_container: ''
+    toc_element: h2
+    toc_exclusions: ''
+    toc_screen_depth: '1'
+    toc_debug: 0
 name: Link
 type: link
 description: 'Use this content type to create links for Quick Links and Agency links.'

@@ -1,6 +1,6 @@
 _core:
   default_config_hash: Tjbqbv8qsEuiquVIg8iKEemwQEVbvDuqJZSr7yFndGk
-langcode: en-gb
+langcode: en
 definitions:
   contact__site_page:
     menu_name: footer

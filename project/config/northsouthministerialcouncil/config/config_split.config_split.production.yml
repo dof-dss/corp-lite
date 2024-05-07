@@ -1,13 +1,12 @@
 uuid: 2556066e-1bd5-4b5c-86d7-13c47777c396
-langcode: en-gb
-status: false
+langcode: en
+status: true
 dependencies: {  }
 id: production
 label: Production
 description: 'Used for the production site only.'
 weight: 0
 stackable: false
-no_patching: false
 storage: folder
 folder: ../project/config/northsouthministerialcouncil/production
 module:

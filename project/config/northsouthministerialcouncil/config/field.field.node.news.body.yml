@@ -1,12 +1,18 @@
 uuid: 62983924-6dd9-4850-bc1a-5794e46c75be
-langcode: en-gb
+langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.body
+    - filter.format.basic_html
     - node.type.news
   module:
+    - allowed_formats
     - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - basic_html
 _core:
   default_config_hash: yFhECJy35Ol1t4iF_o_EbqbWF9eTRr5M2zPF7LxwxwA
 id: node.news.body
@@ -22,5 +28,6 @@ default_value_callback: ''
 settings:
   display_summary: false
   required_summary: false
-  allowed_formats: {  }
+  allowed_formats:
+    - basic_html
 field_type: text_with_summary

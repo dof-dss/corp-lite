@@ -1,5 +1,5 @@
 uuid: 16513ccf-8dab-4293-aec5-1acbe84fbcfc
-langcode: en-gb
+langcode: en
 status: true
 dependencies: {  }
 id: upgrade_text_settings

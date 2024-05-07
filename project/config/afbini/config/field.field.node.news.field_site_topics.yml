@@ -1,5 +1,5 @@
 uuid: 2eb2afae-a4a2-4896-b7a9-7e291cbefe9f
-langcode: en-gb
+langcode: en
 status: true
 dependencies:
   config:
@@ -12,8 +12,8 @@ id: node.news.field_site_topics
 field_name: field_site_topics
 entity_type: node
 bundle: news
-label: 'Site topics'
-description: ''
+label: 'Areas of Expertise'
+description: 'Choose relevant area(s) of expertise for this news item. Hold down Ctrl to choose multiple topics. '
 required: false
 translatable: false
 default_value: {  }
@@ -24,8 +24,5 @@ settings:
     target_bundles:
       site_topics: site_topics
     sort:
-      field: name
-      direction: asc
-    auto_create: false
-    auto_create_bundle: ''
+      field: _none
 field_type: entity_reference

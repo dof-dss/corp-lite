@@ -1,5 +1,5 @@
 uuid: bb834ebb-6b0b-43e9-a4d7-4d1c62537c08
-langcode: en-gb
+langcode: en
 status: true
 dependencies:
   config:
@@ -97,14 +97,10 @@ content:
       use_details: true
     third_party_settings: {  }
   field_publication_type:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 13
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_published_date:
     type: datetime_default
@@ -113,24 +109,16 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_research_support:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 12
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_site_topics:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 11
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_summary:
     type: string_textarea

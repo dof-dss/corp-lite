@@ -1,0 +1,33 @@
+uuid: 22b348a4-9079-45a3-a6fe-51c9f5b419c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.most_recent
+    - field.field.node.link.field_link_type
+    - field.field.node.link.field_link_url
+    - field.field.node.link.field_site_topics
+    - node.type.link
+  module:
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.link.most_recent
+targetEntityType: node
+bundle: link
+mode: most_recent
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_link_type: true
+  field_link_url: true
+  field_site_topics: true
+  langcode: true
+  search_api_excerpt: true

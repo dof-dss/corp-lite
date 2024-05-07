@@ -10,10 +10,10 @@ dependencies:
     - system.menu.admin
     - taxonomy.vocabulary.link_types
   content:
-    - 'taxonomy_term:link_types:24c80a62-2872-408d-979c-be234307b930'
-    - 'taxonomy_term:link_types:2700ca47-e8ed-49a0-a3a9-500f0e47b7b6'
-    - 'taxonomy_term:link_types:430f2222-0539-46af-81aa-3b7f52e070fc'
-    - 'taxonomy_term:link_types:5cb8fb69-b184-4685-abd3-b3e28f8138f1'
+    - 'taxonomy_term:link_types:08a1c52c-e2d8-488a-87b3-e891b1602d42'
+    - 'taxonomy_term:link_types:6a89add2-8b42-469b-bc34-72e4b3e3d67f'
+    - 'taxonomy_term:link_types:b83eab55-ffc0-4110-80e8-babb8448a345'
+    - 'taxonomy_term:link_types:d6ae9689-3f20-4e7f-99d0-9a84e0ff69f4'
   module:
     - draggableviews
     - link
@@ -665,7 +665,7 @@ display:
         metatag_display_extender:
           metatags: {  }
           tokenize: false
-      path: admin/content/links
+      path: admin/content/link
       menu:
         type: normal
         title: Links
@@ -893,7 +893,7 @@ display:
           plugin_id: taxonomy_index_tid
           operator: or
           value:
-            55: 55
+            67: 67
           group: 1
           exposed: false
           expose:
@@ -1181,7 +1181,7 @@ display:
           plugin_id: taxonomy_index_tid
           operator: or
           value:
-            56: 56
+            68: 68
           group: 1
           exposed: false
           expose:
@@ -1469,7 +1469,7 @@ display:
           plugin_id: taxonomy_index_tid
           operator: or
           value:
-            57: 57
+            66: 66
           group: 1
           exposed: false
           expose:
@@ -1757,7 +1757,7 @@ display:
           plugin_id: taxonomy_index_tid
           operator: or
           value:
-            54: 54
+            69: 69
           group: 1
           exposed: false
           expose:
@@ -2140,7 +2140,7 @@ display:
           plugin_id: taxonomy_index_tid
           operator: or
           value:
-            55: 55
+            67: 67
           group: 1
           exposed: false
           expose:
@@ -2237,7 +2237,7 @@ display:
         weight: 0
         expanded: false
         menu_name: admin
-        parent: 'admin_toolbar_tools.extra_links:node.add.link'
+        parent: 'views_view:views.links.all_links'
         context: '0'
     cache_metadata:
       max-age: 0
@@ -2549,7 +2549,7 @@ display:
           plugin_id: taxonomy_index_tid
           operator: or
           value:
-            56: 56
+            68: 68
           group: 1
           exposed: false
           expose:
@@ -2661,7 +2661,7 @@ display:
         weight: 0
         expanded: false
         menu_name: admin
-        parent: 'admin_toolbar_tools.extra_links:node.add.link'
+        parent: 'views_view:views.links.all_links'
         context: '0'
     cache_metadata:
       max-age: 0
@@ -2973,7 +2973,7 @@ display:
           plugin_id: taxonomy_index_tid
           operator: or
           value:
-            57: 57
+            66: 66
           group: 1
           exposed: false
           expose:
@@ -3085,7 +3085,7 @@ display:
         weight: 0
         expanded: false
         menu_name: admin
-        parent: 'admin_toolbar_tools.extra_links:node.add.link'
+        parent: 'views_view:views.links.all_links'
         context: '0'
     cache_metadata:
       max-age: 0
@@ -3397,7 +3397,7 @@ display:
           plugin_id: taxonomy_index_tid
           operator: or
           value:
-            54: 54
+            69: 69
           group: 1
           exposed: false
           expose:
@@ -3494,7 +3494,7 @@ display:
         weight: 0
         expanded: false
         menu_name: admin
-        parent: 'admin_toolbar_tools.extra_links:node.add.link'
+        parent: 'views_view:views.links.all_links'
         context: '0'
     cache_metadata:
       max-age: 0

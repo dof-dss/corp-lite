@@ -1,0 +1,24 @@
+uuid: 3ab1e71a-cd1e-4c94-9e4e-cb0d2a4774ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_site_services
+    - node.type.article
+id: node.article.field_site_services
+field_name: field_site_services
+entity_type: node
+bundle: article
+label: Service
+description: 'Choose relevant services for this article. Hold down Ctrl to choose multiple tags.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles: {  }
+    sort:
+      field: _none
+field_type: entity_reference

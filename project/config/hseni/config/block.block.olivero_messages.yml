@@ -1,5 +1,5 @@
 uuid: dcad7047-6190-46b3-a7a7-80ce95cf9118
-langcode: en-gb
+langcode: en
 status: true
 dependencies:
   module:

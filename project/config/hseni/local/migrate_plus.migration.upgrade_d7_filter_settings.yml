@@ -1,5 +1,5 @@
 uuid: 9ee83982-7635-47b0-af64-6175427036cc
-langcode: en-gb
+langcode: en
 status: true
 dependencies: {  }
 id: upgrade_d7_filter_settings

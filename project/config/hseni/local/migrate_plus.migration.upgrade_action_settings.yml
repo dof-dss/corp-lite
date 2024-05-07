@@ -1,5 +1,5 @@
 uuid: 8b2d2213-d6ca-4904-9d83-1a3b0d7c63bc
-langcode: en-gb
+langcode: en
 status: true
 dependencies: {  }
 id: upgrade_action_settings

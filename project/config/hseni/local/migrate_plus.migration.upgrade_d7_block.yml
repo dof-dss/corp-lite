@@ -1,5 +1,5 @@
 uuid: beb4ef83-9611-4923-9dbe-31bc90d06090
-langcode: en-gb
+langcode: en
 status: true
 dependencies: {  }
 id: upgrade_d7_block

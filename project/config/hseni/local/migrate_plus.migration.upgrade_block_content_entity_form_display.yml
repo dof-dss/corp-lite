@@ -1,5 +1,5 @@
 uuid: 6b5bfb6c-58c2-4931-b3c8-cbeb4bf06acd
-langcode: en-gb
+langcode: en
 status: true
 dependencies: {  }
 id: upgrade_block_content_entity_form_display

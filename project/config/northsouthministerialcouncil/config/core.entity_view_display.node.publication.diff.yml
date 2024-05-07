@@ -1,5 +1,5 @@
 uuid: 28199e53-45ff-47a6-a64f-efd37392bc12
-langcode: en-gb
+langcode: en
 status: true
 dependencies:
   config:
@@ -29,7 +29,7 @@ third_party_settings:
       label: 'Additional content details'
       parent_name: ''
       region: content
-      weight: 8
+      weight: 5
       format_type: html_element
       format_settings:
         classes: field-collection
@@ -54,16 +54,16 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 4
+    weight: 1
     region: content
   field_attachment:
     type: entity_reference_entity_view
-    label: hidden
+    label: above
     settings:
       view_mode: default
       link: true
     third_party_settings: {  }
-    weight: 6
+    weight: 2
     region: content
   field_feature_home_page:
     type: boolean
@@ -82,14 +82,6 @@ content:
     third_party_settings: {  }
     weight: 9
     region: content
-  field_publication_type:
-    type: entity_reference_label
-    label: inline
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 1
-    region: content
   field_published_date:
     type: datetime_default
     label: inline
@@ -97,7 +89,7 @@ content:
       timezone_override: ''
       format_type: medium
     third_party_settings: {  }
-    weight: 0
+    weight: 3
     region: content
   field_site_topics:
     type: entity_reference_label
@@ -105,17 +97,18 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 2
+    weight: 4
     region: content
   field_summary:
     type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 5
+    weight: 0
     region: content
 hidden:
   content_moderation_control: true
+  field_publication_type: true
   field_sectors: true
   langcode: true
   links: true

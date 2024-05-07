@@ -1,5 +1,5 @@
 uuid: f79e8fb3-9a5a-4330-8c8a-565398bf6d4e
-langcode: en-gb
+langcode: en
 status: true
 dependencies:
   config:
@@ -12,9 +12,9 @@ id: node.article.field_site_topics
 field_name: field_site_topics
 entity_type: node
 bundle: article
-label: 'Site topics'
-description: ''
-required: false
+label: 'Areas of Expertise'
+description: 'Choose relevant areas of expertise for this article. Hold down Ctrl to choose multiple site tags.'
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
@@ -24,8 +24,5 @@ settings:
     target_bundles:
       site_topics: site_topics
     sort:
-      field: name
-      direction: asc
-    auto_create: false
-    auto_create_bundle: ''
+      field: _none
 field_type: entity_reference

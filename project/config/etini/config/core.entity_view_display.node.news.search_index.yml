@@ -1,5 +1,5 @@
 uuid: 34a05160-1548-475b-83bc-c2f1bb9b3e49
-langcode: en-gb
+langcode: en
 status: true
 dependencies:
   config:
@@ -31,14 +31,6 @@ targetEntityType: node
 bundle: news
 mode: search_index
 content:
-  field_news_type:
-    type: entity_reference_label
-    label: hidden
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 1
-    region: content
   field_published_date:
     type: datetime_default
     label: inline
@@ -48,17 +40,25 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_teaser:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
 hidden:
   body: true
   content_moderation_control: true
   field_feature_home_page: true
   field_main_feature: true
   field_meta_tags: true
+  field_news_type: true
   field_notes_to_editors: true
   field_photo: true
   field_site_topics: true
   field_summary: true
-  field_teaser: true
   langcode: true
   links: true
   search_api_excerpt: true

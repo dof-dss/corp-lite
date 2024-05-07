@@ -1,5 +1,5 @@
 uuid: 46786542-47d4-45a8-ace5-4f41d8b4683f
-langcode: en-gb
+langcode: en
 status: true
 dependencies: {  }
 id: upgrade_d7_user_flood

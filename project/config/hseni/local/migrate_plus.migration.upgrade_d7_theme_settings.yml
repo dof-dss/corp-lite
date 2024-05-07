@@ -1,5 +1,5 @@
 uuid: 1d9ed5d5-947c-4533-ba66-a8c2ce4f61ef
-langcode: en-gb
+langcode: en
 status: true
 dependencies: {  }
 id: upgrade_d7_theme_settings

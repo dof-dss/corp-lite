@@ -1,5 +1,5 @@
 _core:
   default_config_hash: kD94yfd2kPemLUutJ4i2fo_0dXV9rBrcqH29u2zvmXk
-langcode: en-gb
+langcode: en
 enabled: true
 interval_hours: 6

@@ -1,9 +1,10 @@
 uuid: b3a844d3-d985-445c-af23-4480d05f2b3a
-langcode: en-gb
+langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_attachment
+    - media.type.document
     - node.type.publication
 _core:
   default_config_hash: VXSG9SUvpR3obkpag_2t7hhTvuTMDEJCyRHRVHiYLYw
@@ -19,5 +20,12 @@ default_value: {  }
 default_value_callback: ''
 settings:
   handler: 'default:media'
-  handler_settings: {  }
+  handler_settings:
+    target_bundles:
+      document: document
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: document
 field_type: entity_reference

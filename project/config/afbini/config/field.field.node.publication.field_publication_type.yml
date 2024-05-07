@@ -1,23 +1,29 @@
-uuid: 3901f4df-cb89-4c13-90d8-6bf7d7711042
-langcode: en-gb
+uuid: fa72822e-6356-42d4-8ce0-469684bb1412
+langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_publication_type
     - node.type.publication
-  module:
-    - options
-_core:
-  default_config_hash: 6SEIqbb0hxYft_q5t-6b8ou7Q2LV6UpBiuZY6Ng5YDw
+    - taxonomy.vocabulary.publication_types
 id: node.publication.field_publication_type
 field_name: field_publication_type
 entity_type: node
 bundle: publication
-label: Type
-description: 'Please choose a type for this publication.'
+label: 'Publication type'
+description: ''
 required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
-field_type: list_string
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      publication_types: publication_types
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

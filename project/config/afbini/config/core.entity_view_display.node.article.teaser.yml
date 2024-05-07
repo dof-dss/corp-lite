@@ -1,11 +1,13 @@
 uuid: cfe81dfe-ebf9-4f71-bbf1-a82d73357a52
-langcode: en-gb
+langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.article.body
+    - field.field.node.article.field_enable_toc
     - field.field.node.article.field_meta_tags
+    - field.field.node.article.field_site_services
     - field.field.node.article.field_site_topics
     - field.field.node.article.field_summary
     - field.field.node.article.field_tags
@@ -30,7 +32,9 @@ content:
     region: content
 hidden:
   content_moderation_control: true
+  field_enable_toc: true
   field_meta_tags: true
+  field_site_services: true
   field_site_topics: true
   field_summary: true
   field_tags: true

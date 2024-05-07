@@ -1,5 +1,5 @@
 uuid: a6994ebe-324e-45f3-843c-824ad3316f9a
-langcode: en-gb
+langcode: en
 status: true
 dependencies:
   config:
@@ -55,7 +55,7 @@ filters:
     status: true
     weight: 100
     settings:
-      default_view_mode: article_full
+      default_view_mode: default
       allowed_view_modes:
         article_float: article_float
         article_float_expandable: article_float_expandable

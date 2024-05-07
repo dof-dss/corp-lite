@@ -1,5 +1,5 @@
 uuid: 949e9094-07ad-4f4f-906b-df6e4ae3b0fb
-langcode: en-gb
+langcode: en
 status: true
 dependencies:
   config:
@@ -31,7 +31,7 @@ mode: search_index
 content:
   field_publication_type:
     type: entity_reference_label
-    label: hidden
+    label: above
     settings:
       link: false
     third_party_settings: {  }

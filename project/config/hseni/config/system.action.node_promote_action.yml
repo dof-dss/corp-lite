@@ -1,5 +1,5 @@
 uuid: cb800dfa-9832-42fb-a098-fc1ea23295b6
-langcode: en-gb
+langcode: en
 status: true
 dependencies:
   module:

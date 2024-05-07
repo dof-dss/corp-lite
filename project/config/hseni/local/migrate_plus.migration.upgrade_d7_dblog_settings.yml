@@ -1,5 +1,5 @@
 uuid: e028b516-b5aa-4d63-a429-5f2814f13b84
-langcode: en-gb
+langcode: en
 status: true
 dependencies: {  }
 id: upgrade_d7_dblog_settings

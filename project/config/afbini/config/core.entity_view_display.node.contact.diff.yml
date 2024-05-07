@@ -1,10 +1,11 @@
 uuid: 86bf74a2-eb73-409d-bc92-7bf9f51dccf7
-langcode: en-gb
+langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.diff
     - field.field.node.contact.body
+    - field.field.node.contact.field_map
     - field.field.node.contact.field_meta_tags
     - field.field.node.contact.field_site_topics
     - node.type.contact
@@ -65,6 +66,7 @@ content:
     region: content
 hidden:
   content_moderation_control: true
+  field_map: true
   langcode: true
   links: true
   search_api_excerpt: true

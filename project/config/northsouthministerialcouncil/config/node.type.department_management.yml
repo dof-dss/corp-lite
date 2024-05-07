@@ -1,14 +1,25 @@
 uuid: 3b8cd9c2-b666-4283-9150-71558e28e93b
-langcode: en-gb
+langcode: en
 status: true
 dependencies:
   module:
     - menu_ui
+    - origins_toc
 third_party_settings:
   menu_ui:
     available_menus:
       - main-menu
     parent: 'main-menu:0:'
+  origins_toc:
+    toc_enable: 0
+    toc_title: 'Table of contents'
+    toc_location: ''
+    toc_insert: after
+    toc_source_container: ''
+    toc_element: h2
+    toc_exclusions: ''
+    toc_screen_depth: '1'
+    toc_debug: 0
 name: 'Departmental information'
 type: department_management
 description: 'This content type is used to group departmental information used on the homepage for contact details, links for social media & info on departmental management.'

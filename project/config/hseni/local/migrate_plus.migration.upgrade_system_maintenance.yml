@@ -1,5 +1,5 @@
 uuid: 2ec4524d-ad26-44e1-9b2b-aa55afed9c7c
-langcode: en-gb
+langcode: en
 status: true
 dependencies: {  }
 id: upgrade_system_maintenance

@@ -1,10 +1,12 @@
 uuid: 13f5f3e5-0e6a-4e59-9ec2-3e192408c01d
-langcode: en-gb
+langcode: en
 status: true
 dependencies:
   config:
     - field.field.node.article.body
+    - field.field.node.article.field_enable_toc
     - field.field.node.article.field_meta_tags
+    - field.field.node.article.field_site_services
     - field.field.node.article.field_site_topics
     - field.field.node.article.field_summary
     - field.field.node.article.field_tags
@@ -24,7 +26,17 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 2
+    region: content
+  field_enable_toc:
+    type: boolean
+    label: inline
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 3
     region: content
   field_site_topics:
     type: entity_reference_label
@@ -32,7 +44,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 2
+    weight: 0
     region: content
   field_summary:
     type: basic_string
@@ -44,6 +56,7 @@ content:
 hidden:
   content_moderation_control: true
   field_meta_tags: true
+  field_site_services: true
   field_tags: true
   langcode: true
   links: true

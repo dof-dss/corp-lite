@@ -1,0 +1,25 @@
+uuid: e2f68eeb-df0c-4fd8-84a5-03d941758597
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.content_by_site_topic
+  module:
+    - views
+  theme:
+    - olivero
+id: content_by_site_topic_site_topic_publications
+theme: olivero
+region: content
+weight: -6
+provider: null
+plugin: 'views_block:content_by_site_topic-site_topic_publications'
+settings:
+  id: 'views_block:content_by_site_topic-site_topic_publications'
+  label: ''
+  label_display: visible
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: none
+visibility: {  }

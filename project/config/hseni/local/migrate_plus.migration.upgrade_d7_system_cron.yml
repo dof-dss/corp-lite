@@ -1,5 +1,5 @@
 uuid: 66d0f983-1669-4aad-af6d-37d0c48ec4df
-langcode: en-gb
+langcode: en
 status: true
 dependencies: {  }
 id: upgrade_d7_system_cron

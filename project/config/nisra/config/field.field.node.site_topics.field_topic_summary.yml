@@ -1,0 +1,32 @@
+uuid: f479c857-2ab9-47ea-8891-92259f3b6c1b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_topic_summary
+    - filter.format.basic_html
+    - filter.format.plain_text
+    - node.type.site_topics
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - basic_html
+      - plain_text
+id: node.site_topics.field_topic_summary
+field_name: field_topic_summary
+entity_type: node
+bundle: site_topics
+label: Summary
+description: 'Enter a summary for this topic to be displayed on listing pages.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+    - plain_text
+field_type: text_long

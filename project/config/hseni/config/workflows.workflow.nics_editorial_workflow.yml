@@ -1,15 +1,20 @@
 uuid: aa1fe4dd-070f-47ff-97dc-24ec1725cc5b
-langcode: en-gb
+langcode: en
 status: true
 dependencies:
   config:
+    - node.type.alert
     - node.type.application
     - node.type.article
     - node.type.consultation
     - node.type.contact
+    - node.type.department_management
+    - node.type.link
     - node.type.news
+    - node.type.page
     - node.type.profile
     - node.type.publication
+    - node.type.webform
   module:
     - content_moderation
 _core:
@@ -102,11 +107,16 @@ type_settings:
       weight: 2
   entity_types:
     node:
+      - alert
       - application
       - article
       - consultation
       - contact
+      - department_management
+      - link
       - news
+      - page
       - profile
       - publication
+      - webform
   default_moderation_state: draft
