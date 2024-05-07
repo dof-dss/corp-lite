@@ -1,0 +1,22 @@
+uuid: 86c781f1-34b8-4381-b53e-6a6c884f3590
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: site_topics_pattern
+label: 'Site topics pattern'
+type: 'canonical_entities:node'
+pattern: 'statistics/[node:field_parent]/[node:title]'
+selection_criteria:
+  3759b395-494e-438f-9502-24205d6e8bba:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 3759b395-494e-438f-9502-24205d6e8bba
+    context_mapping:
+      node: node
+    bundles:
+      site_topics: site_topics
+selection_logic: and
+weight: -5
+relationships: {  }
