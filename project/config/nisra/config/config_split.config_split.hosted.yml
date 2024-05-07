@@ -9,8 +9,7 @@ weight: 0
 stackable: false
 storage: folder
 folder: ../project/config/nisra/hosted
-module:
-  permissions_filter: 0
+module: {  }
 theme: {  }
 complete_list: {  }
 partial_list: {  }
