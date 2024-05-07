@@ -15,6 +15,7 @@ dependencies:
     - node.type.publication
     - node.type.secure_market_statistics
     - node.type.secure_statistics
+    - node.type.site_topics
     - node.type.webform
   module:
     - content_moderation
@@ -120,5 +121,6 @@ type_settings:
       - publication
       - secure_market_statistics
       - secure_statistics
+      - site_topics
       - webform
   default_moderation_state: draft
