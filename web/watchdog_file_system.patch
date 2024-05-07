@@ -1,0 +1,12 @@
+diff --git a/core/lib/Drupal/Component/PhpStorage/FileStorage.php b/core/lib/Drupal/Component/PhpStorage/FileStorage.php
+index a694144b71..39369320e4 100644
+--- a/core/lib/Drupal/Component/PhpStorage/FileStorage.php
++++ b/core/lib/Drupal/Component/PhpStorage/FileStorage.php
+@@ -120,6 +120,7 @@ protected function createDirectory($directory, $mode = 0777) {
+       }
+       else {
+         // Something failed and the directory doesn't exist.
++        \Drupal::logger('file_storage')->error("directory is $directory");
+         trigger_error('mkdir(): Permission Denied', E_USER_WARNING);
+       }
+     }
