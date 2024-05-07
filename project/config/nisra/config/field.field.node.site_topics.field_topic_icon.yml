@@ -1,14 +1,14 @@
-uuid: 5ff53e86-39a7-4c2d-8ecf-940f5a5c6144
+uuid: cb30c40b-d4d3-4c63-bf8c-0c64d922c65e
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.taxonomy_term.field_term_photo
+    - field.storage.node.field_topic_icon
     - media.type.image
-    - taxonomy.vocabulary.site_topics
-id: taxonomy_term.site_topics.field_term_photo
-field_name: field_term_photo
-entity_type: taxonomy_term
+    - node.type.site_topics
+id: node.site_topics.field_topic_icon
+field_name: field_topic_icon
+entity_type: node
 bundle: site_topics
 label: Icon
 description: ''

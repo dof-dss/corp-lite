@@ -1,0 +1,28 @@
+uuid: df342168-deb4-437b-9696-e54a3f346d32
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_parent
+    - node.type.site_topics
+id: node.site_topics.field_parent
+field_name: field_parent
+entity_type: node
+bundle: site_topics
+label: Parent
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      site_topics: site_topics
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
