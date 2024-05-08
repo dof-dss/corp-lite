@@ -7,7 +7,6 @@ dependencies:
     - field.storage.node.field_publication_type
     - field.storage.node.field_published_date
     - field.storage.node.field_research_support
-    - field.storage.node.field_site_topics
     - field.storage.node.field_summary
     - search_api.server.solr_default
   module:
@@ -99,14 +98,6 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_research_support
-  field_site_topics:
-    label: Statistics
-    datasource_id: 'entity:node'
-    property_path: field_site_topics
-    type: integer
-    dependencies:
-      config:
-        - field.storage.node.field_site_topics
   field_summary:
     label: Summary
     datasource_id: 'entity:node'
@@ -124,16 +115,6 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_research_support
-      module:
-        - taxonomy
-  name_1:
-    label: 'Statistics » Taxonomy term » Name'
-    datasource_id: 'entity:node'
-    property_path: 'field_site_topics:entity:name'
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.field_site_topics
       module:
         - taxonomy
   name_2:
@@ -206,7 +187,6 @@ processor_settings:
       - body
       - field_summary
       - name
-      - name_1
       - name_2
       - title
       - type

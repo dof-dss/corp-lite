@@ -1,23 +1,29 @@
-uuid: 7a0536b8-dfbe-4792-b461-59784348732a
+uuid: 5141781e-e736-48ef-bdb3-b2fadab4e414
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_site_topics
     - node.type.secure_market_statistics
+    - node.type.site_topics
 id: node.secure_market_statistics.field_site_topics
 field_name: field_site_topics
 entity_type: node
 bundle: secure_market_statistics
-label: Statistics
-description: 'Choose relevant site topic(s) for this publication. Hold down Ctrl to choose multiple site topic'
+label: 'Site topics'
+description: 'Choose relevant site topic(s) for this application. Hold down Ctrl to choose multiple site topics.'
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:taxonomy_term'
+  handler: 'default:node'
   handler_settings:
+    target_bundles:
+      site_topics: site_topics
     sort:
       field: _none
+      direction: ASC
+    auto_create: true
+    auto_create_bundle: ''
 field_type: entity_reference

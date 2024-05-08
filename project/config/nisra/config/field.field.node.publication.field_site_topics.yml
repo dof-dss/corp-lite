@@ -1,29 +1,29 @@
-uuid: 9b61e9a1-b68f-4fe3-b156-cbdb6c489441
+uuid: d1d5ecf5-f709-4577-ae7a-b0bc4fc38617
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_site_topics
     - node.type.publication
-_core:
-  default_config_hash: YoiRiUHjRRjX-FIPMeknFk34I_bo0BscNF7bqBMmoq4
+    - node.type.site_topics
 id: node.publication.field_site_topics
 field_name: field_site_topics
 entity_type: node
 bundle: publication
-label: Statistics
-description: 'Choose relevant site topic(s) for this publication. Hold down Ctrl to choose multiple site topic'
+label: 'Site topics'
+description: 'Choose relevant site topic(s) for this application. Hold down Ctrl to choose multiple site topics.'
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:taxonomy_term'
+  handler: 'default:node'
   handler_settings:
-    target_bundles: {  }
+    target_bundles:
+      site_topics: site_topics
     sort:
       field: _none
-      direction: asc
-    auto_create: false
+      direction: ASC
+    auto_create: true
     auto_create_bundle: ''
 field_type: entity_reference

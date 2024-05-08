@@ -21,7 +21,6 @@ third_party_settings:
   field_group:
     group_additional_content_details:
       children:
-        - field_site_topics
         - field_meta_tags
       label: 'Additional content details'
       parent_name: ''
@@ -83,7 +82,7 @@ content:
     type: entity_reference_label
     label: inline
     settings:
-      link: false
+      link: true
     third_party_settings: {  }
     weight: 0
     region: content

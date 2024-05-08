@@ -26,7 +26,7 @@ third_party_settings:
       label: 'Additional content details'
       parent_name: ''
       region: content
-      weight: 2
+      weight: 3
       format_type: html_element
       format_settings:
         classes: field-collection
@@ -51,7 +51,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
   field_map:
     type: gmaps_lazy_load_formatter
@@ -64,7 +64,7 @@ content:
       map_width: '300'
       map_height: '300'
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   field_meta_tags:
     type: metatag_empty_formatter
@@ -85,9 +85,9 @@ content:
     type: entity_reference_label
     label: inline
     settings:
-      link: false
+      link: true
     third_party_settings: {  }
-    weight: 6
+    weight: 0
     region: content
 hidden:
   content_moderation_control: true

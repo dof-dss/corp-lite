@@ -1,29 +1,29 @@
-uuid: 06eff085-26ab-49a5-b379-adf390b4ddfe
+uuid: d4629e2c-7c02-4c51-8c12-86ac78daba21
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_site_topics
     - node.type.contact
-_core:
-  default_config_hash: TNO3jTbjcjcujgdNOn-PlEaN1Kxrg7bjk_H_hdmpt_s
+    - node.type.site_topics
 id: node.contact.field_site_topics
 field_name: field_site_topics
 entity_type: node
 bundle: contact
-label: Statistics
-description: 'Choose relevant site topic(s) for this point of contact. Hold down Ctrl to choose multiple site topics.'
+label: 'Site topics'
+description: 'Choose relevant site topic(s) for this application. Hold down Ctrl to choose multiple site topics.'
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:taxonomy_term'
+  handler: 'default:node'
   handler_settings:
-    target_bundles: {  }
+    target_bundles:
+      site_topics: site_topics
     sort:
       field: _none
-      direction: asc
-    auto_create: false
+      direction: ASC
+    auto_create: true
     auto_create_bundle: ''
 field_type: entity_reference

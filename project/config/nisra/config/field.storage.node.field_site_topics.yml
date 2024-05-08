@@ -1,18 +1,15 @@
-uuid: 22f89ae0-1032-4279-b290-fcedad8c8481
-langcode: und
+uuid: 06cc8445-59ef-492e-9143-a26f8bcb2874
+langcode: en
 status: true
 dependencies:
   module:
     - node
-    - taxonomy
-_core:
-  default_config_hash: sVOH9JfDoc01vhdw6IkoACb1-__xLEGhuPO-ysSdPA0
 id: node.field_site_topics
 field_name: field_site_topics
 entity_type: node
 type: entity_reference
 settings:
-  target_type: taxonomy_term
+  target_type: node
 module: core
 locked: false
 cardinality: -1

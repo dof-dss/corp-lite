@@ -1,25 +1,29 @@
-uuid: 136abdd0-8d6e-448f-a6b7-3bbd20d8f28a
+uuid: ef3ea652-9651-484a-be7c-6508ccfd063f
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_site_topics
     - node.type.application
-_core:
-  default_config_hash: IblUwvoZ90S40V3bWtjLWz9epKwsnSj2Pl8Iytw7xEk
+    - node.type.site_topics
 id: node.application.field_site_topics
 field_name: field_site_topics
 entity_type: node
 bundle: application
 label: 'Site topics'
 description: 'Choose relevant site topic(s) for this application. Hold down Ctrl to choose multiple site topics.'
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:taxonomy_term'
+  handler: 'default:node'
   handler_settings:
+    target_bundles:
+      site_topics: site_topics
     sort:
       field: _none
+      direction: ASC
+    auto_create: true
+    auto_create_bundle: ''
 field_type: entity_reference

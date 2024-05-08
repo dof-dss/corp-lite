@@ -112,9 +112,9 @@ content:
     type: entity_reference_label
     label: inline
     settings:
-      link: false
+      link: true
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
   field_summary:
     type: basic_string

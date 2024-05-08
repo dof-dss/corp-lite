@@ -7,7 +7,6 @@ dependencies:
     - field.storage.node.field_news_type
     - field.storage.node.field_notes_to_editors
     - field.storage.node.field_published_date
-    - field.storage.node.field_site_topics
     - field.storage.node.field_summary
     - field.storage.node.field_teaser
     - search_api.server.solr_default
@@ -101,14 +100,6 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_published_date
-  field_site_topics:
-    label: 'Site topics'
-    datasource_id: 'entity:node'
-    property_path: field_site_topics
-    type: integer
-    dependencies:
-      config:
-        - field.storage.node.field_site_topics
   field_summary:
     label: 'Introductory paragraph'
     datasource_id: 'entity:node'
@@ -134,16 +125,6 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_news_type
-      module:
-        - taxonomy
-  name_1:
-    label: 'Site topics » Taxonomy term » Name'
-    datasource_id: 'entity:node'
-    property_path: 'field_site_topics:entity:name'
-    type: string
-    dependencies:
-      config:
-        - field.storage.node.field_site_topics
       module:
         - taxonomy
   node_grants:
@@ -220,7 +201,6 @@ processor_settings:
       - field_summary
       - field_teaser
       - name
-      - name_1
       - title
       - type
     title: true
