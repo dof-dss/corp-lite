@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.site_topics.field_hide_topic
     - field.field.node.site_topics.field_meta_tags
     - field.field.node.site_topics.field_parent
+    - field.field.node.site_topics.field_topic_content
     - field.field.node.site_topics.field_topic_icon
     - field.field.node.site_topics.field_topic_summary
     - node.type.site_topics
@@ -85,6 +86,16 @@ content:
   field_parent:
     type: entity_reference_autocomplete
     weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_topic_content:
+    type: entity_reference_autocomplete
+    weight: 29
     region: content
     settings:
       match_operator: CONTAINS
