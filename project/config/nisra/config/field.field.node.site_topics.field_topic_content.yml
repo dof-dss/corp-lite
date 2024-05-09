@@ -1,0 +1,43 @@
+uuid: b232360f-152d-4e4f-9979-029e6651d987
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_topic_content
+    - node.type.application
+    - node.type.contact
+    - node.type.gallery
+    - node.type.link
+    - node.type.news
+    - node.type.publication
+    - node.type.secure_market_statistics
+    - node.type.secure_statistics
+    - node.type.site_topics
+id: node.site_topics.field_topic_content
+field_name: field_topic_content
+entity_type: node
+bundle: site_topics
+label: 'Topic content'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      application: application
+      contact: contact
+      gallery: gallery
+      link: link
+      news: news
+      publication: publication
+      secure_market_statistics: secure_market_statistics
+      secure_statistics: secure_statistics
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: application
+field_type: entity_reference
