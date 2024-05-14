@@ -40,10 +40,21 @@ class SiteTopicReference extends ProcessPluginBase {
           // Load up the site topic node.
           $node = \Drupal\node\Entity\Node::load($topic_nid);
           if (!empty($node)) {
-            // Add this publication nid to the list of nids referenced by this topic.
-            $node->field_topic_content->appendItem(['target_id' => $publication_nid]);
-            $node->save();
-            \Drupal::logger('site_topic_reference')->notice("Added publication to topic node nid " . $topic_nid . ", " . $node->getTitle());
+            // Add this publication nid to the list of nids referenced by this topic (if it isn't already there).
+            $found = FALSE;
+            foreach ($node->field_topic_content as $topic) {
+              $nid = $topic->getString();
+              if ($nid == $publication_nid) {
+                $found = TRUE;
+              }
+            }
+            if (!$found) {
+              $node->field_topic_content->appendItem(['target_id' => $publication_nid]);
+              $node->save();
+              \Drupal::logger('site_topic_reference')->notice("Added publication to topic node nid " . $topic_nid . ", " . $node->getTitle());
+            } else {
+              \Drupal::logger('site_topic_reference')->notice("Skipped as ref exists for nid " . $topic_nid . ", " . $node->getTitle());
+            }
           }
         }
       }
