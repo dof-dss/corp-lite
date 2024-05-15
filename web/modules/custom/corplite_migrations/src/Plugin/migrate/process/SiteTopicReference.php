@@ -3,10 +3,13 @@
 namespace Drupal\corplite_migrations\Plugin\migrate\process;
 
 use Drupal\Core\Database\Database;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\migrate\MigrateException;
 use Drupal\migrate\MigrateExecutableInterface;
 use Drupal\migrate\ProcessPluginBase;
 use Drupal\migrate\Row;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides an 'SiteTopicReference' migrate process plugin.
@@ -15,7 +18,44 @@ use Drupal\migrate\Row;
  *  id = "site_topic_reference"
  * )
  */
-class SiteTopicReference extends ProcessPluginBase {
+class SiteTopicReference extends ProcessPluginBase implements ContainerFactoryPluginInterface {
+
+  /**
+   * The entity type manager.
+   *
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
+   */
+  protected $entityTypeManager;
+
+  /**
+   * Constructs a new SiteTopicReference object.
+   *
+   * @param array $configuration
+   *   A configuration array containing information about the plugin instance.
+   * @param string $plugin_id
+   *   The plugin_id for the plugin instance.
+   * @param array $plugin_definition
+   *   The plugin implementation definition.
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
+   *   The entity type manager.
+   */
+  public function __construct(array $configuration, $plugin_id, array $plugin_definition, EntityTypeManagerInterface $entity_type_manager) {
+    parent::__construct($configuration, $plugin_id, $plugin_definition);
+
+    $this->entityTypeManager = $entity_type_manager;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
+    return new static(
+      $configuration,
+      $plugin_id,
+      $plugin_definition,
+      $container->get('entity_type.manager'),
+    );
+  }
 
   /**
    * {@inheritdoc}
@@ -34,7 +74,7 @@ class SiteTopicReference extends ProcessPluginBase {
         foreach ($new_tids as $new_tid) {
           $topic_nid = $new_tid->destid1;
           // Load up the site topic node.
-          $node = \Drupal\node\Entity\Node::load($topic_nid);
+          $node = $this->entityTypeManager->getStorage('node')->load($topic_nid);
           if (!empty($node)) {
             // Add this nid of the node being migrated to the list of nids referenced by this topic (if it isn't already there).
             $found = FALSE;
