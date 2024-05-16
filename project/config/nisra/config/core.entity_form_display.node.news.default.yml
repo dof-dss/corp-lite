@@ -11,7 +11,6 @@ dependencies:
     - field.field.node.news.field_notes_to_editors
     - field.field.node.news.field_photo
     - field.field.node.news.field_published_date
-    - field.field.node.news.field_site_topics
     - field.field.node.news.field_summary
     - field.field.node.news.field_teaser
     - node.type.news
@@ -110,12 +109,6 @@ content:
   field_published_date:
     type: datetime_default
     weight: 13
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_site_topics:
-    type: options_select
-    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }

@@ -140,10 +140,7 @@ process:
       source: field_summary
     - plugin: strip_html_filter
   field_site_topics:
-    - plugin: sub_process
-      source: field_site_topics
-      process:
-        target_id: tid
+    - plugin: site_topic_reference
   field_research_support:
     - plugin: sub_process
       source: field_research_support
@@ -163,6 +160,7 @@ migration_dependencies:
   required:
     - upgrade_d7_user
     - upgrade_d7_node_type
+    - upgrade_d7_taxonomy_term_site_topics
   optional:
     - upgrade_d7_field_instance
     - upgrade_d7_metatag_field_node

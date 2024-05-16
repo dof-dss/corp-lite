@@ -120,10 +120,7 @@ process:
     - plugin: get
       source: field_teaser
   field_site_topics:
-    - plugin: sub_process
-      source: field_site_topics
-      process:
-        target_id: tid
+    - plugin: site_topic_reference
   field_metatag:
     - plugin: d7_metatag_entities
       source: pseudo_metatag_entities
@@ -135,6 +132,7 @@ migration_dependencies:
   required:
     - upgrade_d7_user
     - upgrade_d7_node_type
+    - upgrade_d7_taxonomy_term_site_topics
   optional:
     - upgrade_d7_field_instance
     - upgrade_d7_metatag_field_node
