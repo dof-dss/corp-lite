@@ -64,8 +64,8 @@
         "drupal/config_update": "^2.0@alpha",
         "drupal/content_lock": "^2.3",
         "drupal/cookie_content_blocker": "^2.2",
-        "drupal/core-composer-scaffold": "^10.1",
-        "drupal/core-recommended": "^10.1",
+        "drupal/core-composer-scaffold": "^10.2",
+        "drupal/core-recommended": "^10.2",
         "drupal/csp": "^1.20",
         "drupal/date_facet_drilldown": "^5.0@dev",
         "drupal/diff": "^1.1",
@@ -168,7 +168,8 @@
             "drupal/core-composer-scaffold": true,
             "phpstan/extension-installer": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
-            "cweagans/composer-patches": true
+            "cweagans/composer-patches": true,
+            "php-http/discovery": true
         },
         "sort-packages": true
     },
