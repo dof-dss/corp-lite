@@ -30,7 +30,7 @@ class DocumentEmbed extends ProcessPluginBase {
     MigrateExecutableInterface $migrate_executable,
     Row $row,
     $destination_property,
-    ) {
+  ) {
 
     // Create REGEX string to match file links.
     $embed_regex = '/<a[\w\s\.]*href="([\w:\-\/\.]*)(pdf|doc|docx)[\w\s\.\=\-"\':><(&);\/]+<\/a>/U';
