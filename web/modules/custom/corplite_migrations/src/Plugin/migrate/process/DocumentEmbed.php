@@ -26,10 +26,10 @@ class DocumentEmbed extends ProcessPluginBase {
    * Transform Functionality.
    */
   public function transform(
-        $value,
-        MigrateExecutableInterface $migrate_executable,
-        Row $row,
-  $destination_property
+    $value,
+    MigrateExecutableInterface $migrate_executable,
+    Row $row,
+    $destination_property,
     ) {
 
     // Create REGEX string to match file links.
