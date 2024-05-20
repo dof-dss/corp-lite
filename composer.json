@@ -135,7 +135,8 @@
         "drupal/whatlinkshere": "^2.1",
         "drush/drush": "^12.5",
         "highcharts/highcharts": "^10",
-        "platformsh/config-reader": "^2.4"
+        "platformsh/config-reader": "^2.4",
+        "symfony/http-client": "^5.4"
     },
     "require-dev": {
         "dof-dss/maestro-hosting": "^1.0",
