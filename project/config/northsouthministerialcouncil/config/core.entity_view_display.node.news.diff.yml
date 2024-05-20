@@ -6,7 +6,6 @@ dependencies:
     - core.entity_view_mode.node.diff
     - field.field.node.news.body
     - field.field.node.news.field_meta_tags
-    - field.field.node.news.field_notes_to_editors
     - field.field.node.news.field_photo
     - field.field.node.news.field_published_date
     - field.field.node.news.field_summary
@@ -60,13 +59,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 5
-    region: content
-  field_notes_to_editors:
-    type: basic_string
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 2
     region: content
   field_photo:
     type: entity_reference_label
