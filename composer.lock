@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "42060261ad6ef1b53ea718e24d60c780",
+    "content-hash": "58419fc62d2f710d2f1311cc0d59b86c",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -6990,32 +6990,30 @@
         },
         {
             "name": "drupal/scheduled_transitions",
-            "version": "2.4.1",
+            "version": "2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/scheduled_transitions.git",
-                "reference": "2.4.1"
+                "reference": "2.3.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/scheduled_transitions-2.4.1.zip",
-                "reference": "2.4.1",
-                "shasum": "3c325fff7837b8fb9d50b19a6f64754d1c19f953"
+                "url": "https://ftp.drupal.org/files/projects/scheduled_transitions-2.3.0.zip",
+                "reference": "2.3.0",
+                "shasum": "240e389d549141e24ec9d7d7c2223cca7b4357ca"
             },
             "require": {
-                "drupal/core": ">=9.5",
+                "drupal/core": "^9.2 || ^10",
                 "drupal/dynamic_entity_reference": "^1.0 || ^2.0 || ^3.0 || ^4.0",
-                "php": ">=8.1"
+                "php": ">=8.0"
             },
             "require-dev": {
-                "dealerdirect/phpcodesniffer-composer-installer": "^1",
-                "micheh/phpcs-gitlab": "^1.1",
-                "mockery/mockery": "^1.5",
-                "phpstan/extension-installer": "^1.3",
-                "phpstan/phpstan": "^1.11",
-                "phpstan/phpstan-deprecation-rules": "*",
-                "phpstan/phpstan-strict-rules": "^1@stable",
-                "previousnext/coding-standard": "^0.1.2"
+                "dealerdirect/phpcodesniffer-composer-installer": "dev-master",
+                "drupal/coder": "^8.3",
+                "drush/drush": "^10 || ^11",
+                "mglaman/phpstan-drupal": "^1",
+                "phpstan/phpstan": "^1",
+                "phpstan/phpstan-deprecation-rules": "*"
             },
             "suggest": {
                 "drupal/token": "Shows Token UI on Add Scheduled Transitions form."
@@ -7023,8 +7021,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.4.1",
-                    "datestamp": "1706674777",
+                    "version": "2.3.0",
+                    "datestamp": "1670235101",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -8215,17 +8213,17 @@
         },
         {
             "name": "drupal/whatlinkshere",
-            "version": "2.1.9",
+            "version": "2.1.3",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/whatlinkshere.git",
-                "reference": "2.1.9"
+                "reference": "2.1.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/whatlinkshere-2.1.9.zip",
-                "reference": "2.1.9",
-                "shasum": "bcf07953ad6e3d2b6470da3503cf79c5c09a2df4"
+                "url": "https://ftp.drupal.org/files/projects/whatlinkshere-2.1.3.zip",
+                "reference": "2.1.3",
+                "shasum": "463b4c5db0857376fdf509661650ec41aa49c1bc"
             },
             "require": {
                 "drupal/core": "^8 || ^9 || ^10"
@@ -8233,8 +8231,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.1.9",
-                    "datestamp": "1705074589",
+                    "version": "2.1.3",
+                    "datestamp": "1689085699",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"

@@ -113,7 +113,7 @@
         "drupal/readonlymode": "^1.2",
         "drupal/redirect": "^1.8",
         "drupal/redis": "^1.7",
-        "drupal/scheduled_transitions": "^2.3",
+        "drupal/scheduled_transitions": "2.3.0",
         "drupal/search_api": "^1.26",
         "drupal/search_api_autocomplete": "^1.4",
         "drupal/search_api_location": "^1.0@alpha",
@@ -132,7 +132,7 @@
         "drupal/views_custom_cache_tag": "^1.3",
         "drupal/views_tree": "^2.0@RC",
         "drupal/webform": "^6.2@beta",
-        "drupal/whatlinkshere": "^2.1",
+        "drupal/whatlinkshere": "2.1.3",
         "drush/drush": "^12.5",
         "highcharts/highcharts": "^10",
         "platformsh/config-reader": "^2.4",
@@ -191,7 +191,8 @@
                 "Entityquery - add access control check": "https://www.drupal.org/files/issues/2023-10-25/3366202-7-accessCheck-auto-entity-queue.patch"
             },
             "drupal/content_lock": {
-                "fix 10.2 $time deprecation message": "https://www.drupal.org/files/issues/2023-05-22/3343964-5.patch"
+                "fix 10.2 $time deprecation message": "https://www.drupal.org/files/issues/2023-05-22/3343964-5.patch",
+                "Fix PHP 8.2+ deprecation notices": "https://www.drupal.org/files/issues/2023-05-22/3343964-5.patch"
             },
             "drupal/clientside_validation": {
                 "core/jquery.once is required": "https://www.drupal.org/files/issues/2021-02-23/3200022-01.patch"
