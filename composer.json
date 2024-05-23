@@ -191,7 +191,8 @@
                 "Entityquery - add access control check": "https://www.drupal.org/files/issues/2023-10-25/3366202-7-accessCheck-auto-entity-queue.patch"
             },
             "drupal/content_lock": {
-                "fix 10.2 $time deprecation message": "https://www.drupal.org/files/issues/2023-05-22/3343964-5.patch"
+                "fix 10.2 $time deprecation message": "https://www.drupal.org/files/issues/2023-05-22/3343964-5.patch",
+                "Fix PHP 8.2+ deprecation notices": "https://www.drupal.org/files/issues/2023-05-22/3343964-5.patch"
             },
             "drupal/clientside_validation": {
                 "core/jquery.once is required": "https://www.drupal.org/files/issues/2021-02-23/3200022-01.patch"
@@ -200,9 +201,6 @@
                 "Render blocks in preview page": "https://www.drupal.org/files/issues/2019-10-03/3085364_2.patch",
                 "User enable email exception": "https://www.drupal.org/files/issues/2023-05-19/user_email_exception-3355151-3.patch",
                 "Expand menu_tree field sizes": "https://www.drupal.org/files/issues/2022-10-11/3106205-36.patch"
-            },
-            "drupal/content_lock": {
-                "Fix PHP 8.2+ deprecation notices": "https://www.drupal.org/files/issues/2023-05-22/3343964-5.patch"
             },
             "drupal/ckeditor5_dev": {
                 "Report that lists enabled plugins": "https://git.drupalcode.org/project/ckeditor5_dev/-/merge_requests/6.diff"
