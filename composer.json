@@ -113,7 +113,7 @@
         "drupal/readonlymode": "^1.2",
         "drupal/redirect": "^1.8",
         "drupal/redis": "^1.7",
-        "drupal/scheduled_transitions": "^2.3",
+        "drupal/scheduled_transitions": "2.3.0",
         "drupal/search_api": "^1.26",
         "drupal/search_api_autocomplete": "^1.4",
         "drupal/search_api_location": "^1.0@alpha",
@@ -200,6 +200,9 @@
                 "Render blocks in preview page": "https://www.drupal.org/files/issues/2019-10-03/3085364_2.patch",
                 "User enable email exception": "https://www.drupal.org/files/issues/2023-05-19/user_email_exception-3355151-3.patch",
                 "Expand menu_tree field sizes": "https://www.drupal.org/files/issues/2022-10-11/3106205-36.patch"
+            },
+            "drupal/content_lock": {
+                "Fix PHP 8.2+ deprecation notices": "https://www.drupal.org/files/issues/2023-05-22/3343964-5.patch"
             },
             "drupal/ckeditor5_dev": {
                 "Report that lists enabled plugins": "https://git.drupalcode.org/project/ckeditor5_dev/-/merge_requests/6.diff"
