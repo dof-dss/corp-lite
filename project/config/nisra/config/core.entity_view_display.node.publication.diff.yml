@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.publication.field_publication_type
     - field.field.node.publication.field_published_date
     - field.field.node.publication.field_research_support
+    - field.field.node.publication.field_site_topics
     - field.field.node.publication.field_summary
     - node.type.publication
   module:
@@ -123,6 +124,14 @@ content:
       link: false
     third_party_settings: {  }
     weight: 2
+    region: content
+  field_site_topics:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 0
     region: content
   field_summary:
     type: basic_string

@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.news.field_notes_to_editors
     - field.field.node.news.field_photo
     - field.field.node.news.field_published_date
+    - field.field.node.news.field_site_topics
     - field.field.node.news.field_summary
     - field.field.node.news.field_teaser
     - node.type.news
@@ -63,6 +64,7 @@ hidden:
   field_meta_tags: true
   field_notes_to_editors: true
   field_photo: true
+  field_site_topics: true
   field_summary: true
   langcode: true
   search_api_excerpt: true

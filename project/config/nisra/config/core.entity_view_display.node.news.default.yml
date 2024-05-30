@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.news.field_notes_to_editors
     - field.field.node.news.field_photo
     - field.field.node.news.field_published_date
+    - field.field.node.news.field_site_topics
     - field.field.node.news.field_summary
     - field.field.node.news.field_teaser
     - node.type.news
@@ -45,6 +46,14 @@ content:
     settings:
       timezone_override: ''
       format_type: corplite_format
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_site_topics:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
     third_party_settings: {  }
     weight: 0
     region: content
