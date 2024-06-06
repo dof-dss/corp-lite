@@ -77,7 +77,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
   field_summary:
     type: basic_string

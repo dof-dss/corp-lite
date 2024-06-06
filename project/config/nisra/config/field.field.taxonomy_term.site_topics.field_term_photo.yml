@@ -1,17 +1,17 @@
-uuid: cb30c40b-d4d3-4c63-bf8c-0c64d922c65e
+uuid: 006ba8ef-35c2-49c8-8112-49e8eb03b1d1
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_topic_icon
+    - field.storage.taxonomy_term.field_term_photo
     - media.type.image
-    - node.type.site_topics
-id: node.site_topics.field_topic_icon
-field_name: field_topic_icon
-entity_type: node
+    - taxonomy.vocabulary.site_topics
+id: taxonomy_term.site_topics.field_term_photo
+field_name: field_term_photo
+entity_type: taxonomy_term
 bundle: site_topics
 label: Icon
-description: ''
+description: 'Upload an icon image to be displayed with this topic.'
 required: false
 translatable: false
 default_value: {  }
