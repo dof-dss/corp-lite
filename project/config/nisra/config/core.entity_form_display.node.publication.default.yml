@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.publication.field_publication_type
     - field.field.node.publication.field_published_date
     - field.field.node.publication.field_research_support
+    - field.field.node.publication.field_site_topics
     - field.field.node.publication.field_summary
     - node.type.publication
     - workflows.workflow.nics_editorial_workflow
@@ -112,6 +113,16 @@ content:
     weight: 12
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_site_topics:
+    type: entity_reference_autocomplete
+    weight: 10
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: 'Choose some topics'
     third_party_settings: {  }
   field_summary:
     type: string_textarea

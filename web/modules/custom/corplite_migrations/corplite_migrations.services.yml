@@ -2,9 +2,4 @@ services:
   corplite_migrations.migrationprocessors:
     class: 'Drupal\corplite_migrations\MigrationProcessors'
     arguments: ['@module_handler', '@entity_type.manager']
-  corplite_migrations.eventsubscriber.post:
-    class: Drupal\corplite_migrations\EventSubscriber\PostMigrationSubscriber
-    arguments: [ '@entity_type.manager', '@logger.factory' ]
-    tags:
-      - { name: event_subscriber }
 

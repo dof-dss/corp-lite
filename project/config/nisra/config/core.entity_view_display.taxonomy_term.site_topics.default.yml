@@ -1,0 +1,62 @@
+uuid: 02f02ddd-3552-427a-9305-ba413658311a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.site_topics.field_hide_topic
+    - field.field.taxonomy_term.site_topics.field_summary
+    - field.field.taxonomy_term.site_topics.field_term_image
+    - field.field.taxonomy_term.site_topics.field_term_photo
+    - taxonomy.vocabulary.site_topics
+  module:
+    - text
+id: taxonomy_term.site_topics.default
+targetEntityType: taxonomy_term
+bundle: site_topics
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_hide_topic:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_summary:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_term_image:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_term_photo:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

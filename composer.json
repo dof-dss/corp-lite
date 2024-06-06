@@ -101,7 +101,7 @@
         "drupal/menu_admin_per_menu": "^1.5",
         "drupal/menu_breadcrumb": "^2.0@alpha",
         "drupal/metatag": "^2.0",
-        "drupal/migrate_absolute_links": "3.x-dev@dev",
+        "drupal/migrate_absolute_links": "^4.0",
         "drupal/migrate_upgrade": "^4.0",
         "drupal/moderation_sidebar": "^1.7",
         "drupal/node_edit_protection": "^1.1",
@@ -196,7 +196,8 @@
             "drupal/core": {
                 "Render blocks in preview page": "https://www.drupal.org/files/issues/2019-10-03/3085364_2.patch",
                 "User enable email exception": "https://www.drupal.org/files/issues/2023-05-19/user_email_exception-3355151-3.patch",
-                "Expand menu_tree field sizes": "https://www.drupal.org/files/issues/2022-10-11/3106205-36.patch"
+                "Expand menu_tree field sizes": "https://www.drupal.org/files/issues/2022-10-11/3106205-36.patch",
+                "Call to getTranslation() on null": "https://www.drupal.org/files/issues/2024-01-17/3108528_35.patch"
             },
             "drupal/ckeditor5_dev": {
                 "Report that lists enabled plugins": "https://git.drupalcode.org/project/ckeditor5_dev/-/merge_requests/6.diff"

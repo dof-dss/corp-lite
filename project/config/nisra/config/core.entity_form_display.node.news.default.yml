@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.news.field_notes_to_editors
     - field.field.node.news.field_photo
     - field.field.node.news.field_published_date
+    - field.field.node.news.field_site_topics
     - field.field.node.news.field_summary
     - field.field.node.news.field_teaser
     - node.type.news
@@ -111,6 +112,16 @@ content:
     weight: 13
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_site_topics:
+    type: entity_reference_autocomplete
+    weight: 10
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: 'Choose some topics'
     third_party_settings: {  }
   field_summary:
     type: string_textarea

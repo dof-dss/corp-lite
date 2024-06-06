@@ -1,0 +1,29 @@
+uuid: 85ff6331-d53a-4e36-b45c-c6ebf4ffeb7a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_site_topics
+    - node.type.news
+    - taxonomy.vocabulary.site_topics
+id: node.news.field_site_topics
+field_name: field_site_topics
+entity_type: node
+bundle: news
+label: 'Site topics'
+description: 'Choose optional site topic(s) for this news item. Hold down Ctrl to choose multiple site topics.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      site_topics: site_topics
+    sort:
+      field: _none
+      direction: asc
+    auto_create: false
+    auto_create_bundle: publication_types
+field_type: entity_reference

@@ -1,17 +1,17 @@
-uuid: 275c8f4b-eb73-4cc1-861d-85c4f8df4518
+uuid: 3264d9f6-451e-4dfc-811e-35ebad7e4146
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_banner_image_thin
+    - field.storage.taxonomy_term.field_term_image
     - media.type.image
-    - node.type.site_topics
-id: node.site_topics.field_banner_image_thin
-field_name: field_banner_image_thin
-entity_type: node
+    - taxonomy.vocabulary.site_topics
+id: taxonomy_term.site_topics.field_term_image
+field_name: field_term_image
+entity_type: taxonomy_term
 bundle: site_topics
-label: 'Banner image thin'
-description: 'Smaller banner image displayed on topic child pages.'
+label: 'Featured image'
+description: ''
 required: false
 translatable: false
 default_value: {  }

@@ -1,0 +1,29 @@
+uuid: 08c1bc6c-4c60-47df-87f3-f2edf941528f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_site_topics
+    - node.type.publication
+    - taxonomy.vocabulary.site_topics
+id: node.publication.field_site_topics
+field_name: field_site_topics
+entity_type: node
+bundle: publication
+label: Statistics
+description: 'Choose relevant site topic(s) for this publication. Hold down Ctrl to choose multiple site topics.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      site_topics: site_topics
+    sort:
+      field: _none
+      direction: asc
+    auto_create: false
+    auto_create_bundle: news_types
+field_type: entity_reference
