@@ -8,5 +8,6 @@ _core:
   default_config_hash: Slix2m7zIp_6G18J0xJStUKCGYIIXRpqHdDDHEPZ-dA
 id: node.teaser_large
 label: 'Teaser large'
+description: ''
 targetEntityType: node
 cache: true
