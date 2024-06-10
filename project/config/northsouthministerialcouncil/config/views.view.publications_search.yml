@@ -244,6 +244,11 @@ display:
     display_plugin: page
     position: 1
     display_options:
+      cache:
+        type: search_api_tag
+        options: {  }
+      defaults:
+        cache: false
       exposed_block: true
       display_extenders:
         metatag_display_extender:
@@ -251,7 +256,7 @@ display:
           tokenize: false
       path: publications
     cache_metadata:
-      max-age: -1
+      max-age: 0
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
@@ -259,6 +264,9 @@ display:
         - url.query_args
         - 'user.node_grants:view'
       tags:
+        - 'config:facets.facet.publication_sectors'
+        - 'config:facets.facet.publication_type'
+        - 'config:facets.facet.published_date'
         - 'config:field.storage.node.body'
         - 'config:search_api.index.publications_index'
         - 'search_api_list:publications_index'
