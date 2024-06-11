@@ -1,4 +1,4 @@
-uuid: e2e5224f-cc39-415e-be1d-f0ab94661cae
+uuid: 30016b41-ca89-4c23-8f3f-c17bdfd79a69
 langcode: en
 status: true
 dependencies:
@@ -10,8 +10,8 @@ dependencies:
     - node
     - user
     - views_custom_cache_tag
-id: home_publications
-label: 'Home publications'
+id: homepage_publications
+label: 'Homepage Publications'
 module: views
 description: ''
 tag: ''
@@ -24,7 +24,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'Home publications'
+      title: Publications
       fields:
         title:
           id: title
@@ -178,7 +178,7 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: '<p><a href="/publications">See all our Publications</a></p>'
+            value: '<p><a href="/publications">See all our publications</a></p>'
             format: basic_html
           tokenize: false
       display_extenders: {  }
@@ -192,10 +192,11 @@ display:
       tags: {  }
   publications_home:
     id: publications_home
-    display_title: Block
+    display_title: 'Home publications'
     display_plugin: block
     position: 1
     display_options:
+      display_description: ''
       display_extenders:
         metatag_display_extender:
           metatags: {  }
