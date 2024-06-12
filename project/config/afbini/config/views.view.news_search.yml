@@ -130,7 +130,7 @@ display:
         type: none
         options: {  }
       cache:
-        type: none
+        type: search_api_none
         options: {  }
       empty:
         area:
@@ -268,7 +268,8 @@ display:
     position: 1
     display_options:
       cache:
-        type: none
+        type: search_api_tag
+        options: {  }
       defaults:
         cache: false
       exposed_block: true
@@ -278,7 +279,7 @@ display:
           tokenize: false
       path: news
     cache_metadata:
-      max-age: -1
+      max-age: 0
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
@@ -286,6 +287,8 @@ display:
         - url.query_args
         - 'user.node_grants:view'
       tags:
+        - 'config:facets.facet.news_type'
+        - 'config:facets.facet.publication_date'
         - 'config:field.storage.node.body'
         - 'config:search_api.index.news'
         - 'search_api_list:news'
