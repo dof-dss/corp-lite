@@ -8,5 +8,6 @@ _core:
   default_config_hash: OiQJlL0BqmwGeaTUXRcPzvD4jmwY7plJXmp6YP7bk_o
 id: node.social_media
 label: 'Social media'
+description: ''
 targetEntityType: node
 cache: true

@@ -8,5 +8,6 @@ _core:
   default_config_hash: uiqrEdZD86B-0I2PrgCHcIVLlenn930DdP0jgn0_Dzk
 id: user.token
 label: Token
+description: ''
 targetEntityType: user
 cache: true
