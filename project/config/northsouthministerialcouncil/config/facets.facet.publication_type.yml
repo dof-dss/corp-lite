@@ -1,10 +1,10 @@
-uuid: de8fa77c-a002-4b88-8ec3-50b04a1b7ee6
+uuid: 4d781227-1bb1-41de-82cb-42fa5ce850af
 langcode: en
 status: true
 dependencies:
   config:
     - search_api.index.publications_index
-    - views.view.publication_search
+    - views.view.publications_search
   module:
     - search_api
 id: publication_type
@@ -14,7 +14,7 @@ min_count: 1
 missing: false
 missing_label: others
 url_alias: type
-facet_source_id: 'search_api:views_page__publication_search__publications_search'
+facet_source_id: 'search_api:views_page__publications_search__publications_search_page'
 field_identifier: field_publication_type
 query_operator: and
 hard_limit: 0

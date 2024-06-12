@@ -8,5 +8,6 @@ _core:
   default_config_hash: T8Q9622xKK2_YOcFCoV8Ck6wjJalqDHkyrYkgB1XicI
 id: user.full
 label: 'User account'
+description: ''
 targetEntityType: user
 cache: true

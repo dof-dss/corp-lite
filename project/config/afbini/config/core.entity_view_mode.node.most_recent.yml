@@ -8,5 +8,6 @@ _core:
   default_config_hash: EXqIXlLJkTgLRhPRgSJElcCu9cuiKwPiR3UzC4jVRHs
 id: node.most_recent
 label: 'Most recent'
+description: ''
 targetEntityType: node
 cache: true
