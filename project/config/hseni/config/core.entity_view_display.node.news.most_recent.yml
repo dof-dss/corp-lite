@@ -31,6 +31,15 @@ targetEntityType: node
 bundle: news
 mode: most_recent
 content:
+  field_photo:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
   field_published_date:
     type: datetime_default
     label: hidden
@@ -48,7 +57,6 @@ hidden:
   field_meta_tags: true
   field_news_type: true
   field_notes_to_editors: true
-  field_photo: true
   field_site_topics: true
   field_summary: true
   field_teaser: true
