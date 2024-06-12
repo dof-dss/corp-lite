@@ -1,17 +1,17 @@
-uuid: ce2f4e06-beb7-4d0b-90f0-882a11bebcf9
+uuid: 2cf592ce-d9a8-47d6-a83c-0433582e0556
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.most_recent
-    - node.type.news
+    - field.storage.node.field_consultation_dates
+    - node.type.consultation
   module:
     - datetime
+    - datetime_range
     - node
     - user
-    - views_custom_cache_tag
-id: home_news
-label: 'Home news'
+id: homepage_consultations
+label: 'Homepage Consultations'
 module: views
 description: ''
 tag: ''
@@ -24,7 +24,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: News
+      title: Consultations
       fields:
         title:
           id: title
@@ -89,11 +89,76 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        field_consultation_dates:
+          id: field_consultation_dates
+          table: node__field_consultation_dates
+          field: field_consultation_dates
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: 'Closing date'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: daterange_default
+          settings:
+            timezone_override: ''
+            format_type: corplite_medium
+            separator: '-'
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
       pager:
         type: some
         options:
           offset: 0
-          items_per_page: 2
+          items_per_page: 3
       exposed_form:
         type: basic
         options:
@@ -109,9 +174,8 @@ display:
         options:
           perm: 'access content'
       cache:
-        type: custom_tag
-        options:
-          custom_tag: "handy_cache_tags:node:news\r\n"
+        type: tag
+        options: {  }
       empty: {  }
       sorts:
         field_published_date_value:
@@ -145,51 +209,24 @@ display:
           id: type
           table: node_field_data
           field: type
-          relationship: none
-          group_type: group
-          admin_label: ''
           entity_type: node
           entity_field: type
           plugin_id: bundle
-          operator: in
           value:
-            news: news
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
+            consultation: consultation
       style:
         type: default
-      row:
-        type: 'entity:node'
         options:
-          relationship: none
-          view_mode: most_recent
+          grouping: {  }
+          row_class: Item
+          default_row_class: true
+      row:
+        type: fields
+        options:
+          default_field_elements: false
+          inline: {  }
+          separator: ''
+          hide_empty: false
       query:
         type: views_query
         options:
@@ -211,7 +248,7 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: '<p><a href="/news">See all our Newss</a></p>'
+            value: '<p><a href="/consultations">See all our consultations</a></p>'
             format: basic_html
           tokenize: false
       display_extenders: {  }
@@ -222,10 +259,11 @@ display:
         - 'languages:language_interface'
         - 'user.node_grants:view'
         - user.permissions
-      tags: {  }
-  news_home:
-    id: news_home
-    display_title: 'Home news'
+      tags:
+        - 'config:field.storage.node.field_consultation_dates'
+  homepage_consultations:
+    id: homepage_consultations
+    display_title: 'Homepage Consultations'
     display_plugin: block
     position: 1
     display_options:
@@ -241,4 +279,5 @@ display:
         - 'languages:language_interface'
         - 'user.node_grants:view'
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:field.storage.node.field_consultation_dates'

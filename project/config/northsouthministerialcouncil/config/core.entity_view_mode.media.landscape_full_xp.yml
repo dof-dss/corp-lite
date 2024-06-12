@@ -8,5 +8,6 @@ _core:
   default_config_hash: JkmOJ4wSdNIX0q1ikwTIfHz8o7H-9vWSzj1T6hredcA
 id: media.landscape_full_xp
 label: 'Landscape full XP'
+description: ''
 targetEntityType: media
 cache: true
