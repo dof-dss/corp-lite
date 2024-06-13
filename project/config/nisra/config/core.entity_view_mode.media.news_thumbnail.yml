@@ -8,5 +8,6 @@ _core:
   default_config_hash: X6ixaSgw_bWeake2yScb2xH4SlBT90vB3FZHvJdRuc4
 id: media.news_thumbnail
 label: 'News thumbnail'
+description: ''
 targetEntityType: media
 cache: true
