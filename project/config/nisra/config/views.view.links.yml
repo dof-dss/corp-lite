@@ -10,9 +10,9 @@ dependencies:
     - system.menu.admin
     - taxonomy.vocabulary.link
   content:
-    - 'taxonomy_term:publication_types:29b13456-f5ac-452d-8d7e-d3896fe6e79c'
-    - 'taxonomy_term:publication_types:8266d1a6-4855-4b82-ad51-3c27d9ca8d14'
-    - 'taxonomy_term:publication_types:ff6b7ddd-1075-467c-a022-fe7e0f92e50d'
+    - 'taxonomy_term:link:2b5abacb-a246-4ad0-987c-eeee93379766'
+    - 'taxonomy_term:link:a16c8dbf-16de-4e55-85c5-18f0a2d30367'
+    - 'taxonomy_term:link:db9e550a-ffcb-490f-b937-e2599e3f6307'
   module:
     - draggableviews
     - link
@@ -796,7 +796,7 @@ display:
           plugin_id: taxonomy_index_tid
           operator: or
           value:
-            489: 489
+            510: 510
           group: 1
           exposed: false
           expose:
@@ -1112,7 +1112,7 @@ display:
           plugin_id: taxonomy_index_tid
           operator: or
           value:
-            491: 491
+            509: 509
           group: 1
           exposed: false
           expose:
@@ -1428,7 +1428,7 @@ display:
           plugin_id: taxonomy_index_tid
           operator: or
           value:
-            491: 491
+            512: 512
           group: 1
           exposed: false
           expose:
@@ -1808,7 +1808,7 @@ display:
           plugin_id: taxonomy_index_tid
           operator: or
           value:
-            489: 489
+            510: 510
           group: 1
           exposed: false
           expose:
@@ -2194,7 +2194,7 @@ display:
           plugin_id: taxonomy_index_tid
           operator: or
           value:
-            491: 491
+            509: 509
           group: 1
           exposed: false
           expose:
@@ -2580,7 +2580,7 @@ display:
           plugin_id: taxonomy_index_tid
           operator: or
           value:
-            492: 492
+            512: 512
           group: 1
           exposed: false
           expose:
