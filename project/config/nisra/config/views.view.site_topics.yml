@@ -181,7 +181,23 @@ display:
         type: tag
         options: {  }
       empty: {  }
-      sorts: {  }
+      sorts:
+        weight:
+          id: weight
+          table: draggableviews_structure
+          field: weight
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: draggable_views_sort_default
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
+          draggable_views_reference: 'site_topics:draggable_site_topics'
+          draggable_views_null_order: after
+          draggable_views_pass_arguments: false
       arguments: {  }
       filters:
         vid:
@@ -1703,7 +1719,7 @@ display:
             label: ''
             field_identifier: ''
           exposed: false
-          draggable_views_reference: this
+          draggable_views_reference: 'site_topics:draggable_site_topics'
           draggable_views_null_order: after
           draggable_views_pass_arguments: false
       defaults:
