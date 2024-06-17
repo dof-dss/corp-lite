@@ -10,9 +10,9 @@ dependencies:
     - system.menu.admin
     - taxonomy.vocabulary.link
   content:
-    - 'taxonomy_term:link:2d3fd0eb-525e-41e8-9f4c-f7d01533d7c5'
-    - 'taxonomy_term:link:63203f71-5d3f-4d89-aa62-9c775c167e26'
-    - 'taxonomy_term:link:72f0b7d5-cc21-410e-8cc4-91d2f43ef4fe'
+    - 'taxonomy_term:publication_types:29b13456-f5ac-452d-8d7e-d3896fe6e79c'
+    - 'taxonomy_term:publication_types:8266d1a6-4855-4b82-ad51-3c27d9ca8d14'
+    - 'taxonomy_term:publication_types:ff6b7ddd-1075-467c-a022-fe7e0f92e50d'
   module:
     - draggableviews
     - link
@@ -516,7 +516,6 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
@@ -555,7 +554,6 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
@@ -873,7 +871,6 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
@@ -1190,7 +1187,6 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
@@ -1507,7 +1503,6 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
@@ -1775,7 +1770,7 @@ display:
             label: ''
             field_identifier: ''
           exposed: false
-          draggable_views_reference: this
+          draggable_views_reference: 'links:draggable_corporatelink'
           draggable_views_null_order: after
           draggable_views_pass_arguments: false
         title:
@@ -1895,7 +1890,6 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
@@ -2162,7 +2156,7 @@ display:
             label: ''
             field_identifier: ''
           exposed: false
-          draggable_views_reference: this
+          draggable_views_reference: 'links:draggable_quicklink'
           draggable_views_null_order: after
           draggable_views_pass_arguments: false
         title:
@@ -2282,7 +2276,6 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
@@ -2549,7 +2542,7 @@ display:
             label: ''
             field_identifier: ''
           exposed: false
-          draggable_views_reference: this
+          draggable_views_reference: 'links:draggable_usefullink'
           draggable_views_null_order: after
           draggable_views_pass_arguments: false
         title:
@@ -2669,7 +2662,6 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
