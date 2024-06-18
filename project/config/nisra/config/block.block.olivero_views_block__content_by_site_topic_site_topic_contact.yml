@@ -11,7 +11,7 @@ dependencies:
 id: olivero_views_block__content_by_site_topic_site_topic_contact
 theme: olivero
 region: content
-weight: 0
+weight: -5
 provider: null
 plugin: 'views_block:content_by_site_topic-site_topic_contact'
 settings:
