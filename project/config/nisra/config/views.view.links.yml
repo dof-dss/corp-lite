@@ -10,9 +10,9 @@ dependencies:
     - system.menu.admin
     - taxonomy.vocabulary.link
   content:
-    - 'taxonomy_term:link:2d3fd0eb-525e-41e8-9f4c-f7d01533d7c5'
-    - 'taxonomy_term:link:63203f71-5d3f-4d89-aa62-9c775c167e26'
-    - 'taxonomy_term:link:72f0b7d5-cc21-410e-8cc4-91d2f43ef4fe'
+    - 'taxonomy_term:link:2b5abacb-a246-4ad0-987c-eeee93379766'
+    - 'taxonomy_term:link:a16c8dbf-16de-4e55-85c5-18f0a2d30367'
+    - 'taxonomy_term:link:db9e550a-ffcb-490f-b937-e2599e3f6307'
   module:
     - draggableviews
     - link
@@ -516,7 +516,6 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
@@ -555,7 +554,6 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
@@ -798,7 +796,7 @@ display:
           plugin_id: taxonomy_index_tid
           operator: or
           value:
-            489: 489
+            510: 510
           group: 1
           exposed: false
           expose:
@@ -873,7 +871,6 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
@@ -1115,7 +1112,7 @@ display:
           plugin_id: taxonomy_index_tid
           operator: or
           value:
-            491: 491
+            509: 509
           group: 1
           exposed: false
           expose:
@@ -1190,7 +1187,6 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
@@ -1432,7 +1428,7 @@ display:
           plugin_id: taxonomy_index_tid
           operator: or
           value:
-            491: 491
+            512: 512
           group: 1
           exposed: false
           expose:
@@ -1507,7 +1503,6 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
@@ -1775,7 +1770,7 @@ display:
             label: ''
             field_identifier: ''
           exposed: false
-          draggable_views_reference: this
+          draggable_views_reference: 'links:draggable_corporatelink'
           draggable_views_null_order: after
           draggable_views_pass_arguments: false
         title:
@@ -1813,7 +1808,7 @@ display:
           plugin_id: taxonomy_index_tid
           operator: or
           value:
-            489: 489
+            510: 510
           group: 1
           exposed: false
           expose:
@@ -1895,7 +1890,6 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
@@ -2162,7 +2156,7 @@ display:
             label: ''
             field_identifier: ''
           exposed: false
-          draggable_views_reference: this
+          draggable_views_reference: 'links:draggable_quicklink'
           draggable_views_null_order: after
           draggable_views_pass_arguments: false
         title:
@@ -2200,7 +2194,7 @@ display:
           plugin_id: taxonomy_index_tid
           operator: or
           value:
-            491: 491
+            509: 509
           group: 1
           exposed: false
           expose:
@@ -2282,7 +2276,6 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
@@ -2549,7 +2542,7 @@ display:
             label: ''
             field_identifier: ''
           exposed: false
-          draggable_views_reference: this
+          draggable_views_reference: 'links:draggable_usefullink'
           draggable_views_null_order: after
           draggable_views_pass_arguments: false
         title:
@@ -2587,7 +2580,7 @@ display:
           plugin_id: taxonomy_index_tid
           operator: or
           value:
-            492: 492
+            512: 512
           group: 1
           exposed: false
           expose:
@@ -2669,7 +2662,6 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }

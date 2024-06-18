@@ -107,6 +107,9 @@ process:
   field_enable_toc:
     - plugin: get
       source: field_enable_toc
+  field_hide_topic:
+    plugin: default_value
+    default_value: 0
   field_metatag:
     - plugin: d7_metatag_entities
       source: pseudo_metatag_entities
