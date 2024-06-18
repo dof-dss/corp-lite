@@ -403,12 +403,12 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: taxonomy_index_tid
-          operator: empty
+          operator: or
           value:
-            510: 510
-            511: 511
-            509: 509
-            512: 512
+            - 510
+            - 511
+            - 509
+            - 512
           group: 1
           exposed: true
           expose:
