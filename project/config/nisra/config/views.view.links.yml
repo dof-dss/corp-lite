@@ -11,6 +11,7 @@ dependencies:
     - taxonomy.vocabulary.link
   content:
     - 'taxonomy_term:link:2b5abacb-a246-4ad0-987c-eeee93379766'
+    - 'taxonomy_term:link:399e0464-5984-4b42-b01a-8250ae4cba12'
     - 'taxonomy_term:link:a16c8dbf-16de-4e55-85c5-18f0a2d30367'
     - 'taxonomy_term:link:db9e550a-ffcb-490f-b937-e2599e3f6307'
   module:
@@ -402,8 +403,12 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: taxonomy_index_tid
-          operator: or
-          value: {  }
+          operator: empty
+          value:
+            510: 510
+            511: 511
+            509: 509
+            512: 512
           group: 1
           exposed: true
           expose:
@@ -718,7 +723,7 @@ display:
             label: ''
             field_identifier: ''
           exposed: false
-          draggable_views_reference: this
+          draggable_views_reference: 'links:draggable_corporatelink'
           draggable_views_null_order: after
           draggable_views_pass_arguments: false
         title:
@@ -1034,7 +1039,7 @@ display:
             label: ''
             field_identifier: ''
           exposed: false
-          draggable_views_reference: this
+          draggable_views_reference: 'links:draggable_quicklink'
           draggable_views_null_order: after
           draggable_views_pass_arguments: false
         title:
@@ -1350,7 +1355,7 @@ display:
             label: ''
             field_identifier: ''
           exposed: false
-          draggable_views_reference: this
+          draggable_views_reference: 'links:draggable_usefullink'
           draggable_views_null_order: after
           draggable_views_pass_arguments: false
         title:

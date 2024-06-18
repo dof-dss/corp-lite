@@ -22,22 +22,12 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  field_hide_topic:
-    type: boolean
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    weight: 4
-    region: content
   field_summary:
     type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
   field_term_image:
     type: entity_reference_entity_view
@@ -58,5 +48,6 @@ content:
     weight: 2
     region: content
 hidden:
+  field_hide_topic: true
   langcode: true
   search_api_excerpt: true
