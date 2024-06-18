@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_site_topics
     - node.type.contact
+    - taxonomy.vocabulary.site_topics
 _core:
   default_config_hash: TNO3jTbjcjcujgdNOn-PlEaN1Kxrg7bjk_H_hdmpt_s
 id: node.contact.field_site_topics
@@ -20,7 +21,8 @@ default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'
   handler_settings:
-    target_bundles: {  }
+    target_bundles:
+      site_topics: site_topics
     sort:
       field: _none
       direction: asc
