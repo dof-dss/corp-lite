@@ -90,35 +90,35 @@ process:
       source: field_publication_type
       default_value: null
       map:
-        agendas: 495
-        businessplans: 497
-        circulars: 498
-        consultationreports: 499
-        contractmanagement: 500
-        corporatereports: 501
-        correspondence: 502
-        decisions: 503
-        developmentplanframework: 504
-        financial: 505
-        foiresponses: 506
-        forms: 507
-        guidance: 508
-        impactassessments: 509
-        independentreports: 510
-        inspectionreports: 511
-        jointcommuniques: 512
-        legislation: 513
-        listsregisters: 514
-        maps: 515
-        memoranda: 516
-        notices: 517
-        policypapers: 518
-        promotional: 519
-        researchanalysis: 520
-        speeches: 521
-        surveys: 524
-        supportmaterial: 523
-        statisticalreports: 522
+        agendas: 555
+        businessplans: 556
+        circulars: 557
+        consultationreports: 558
+        contractmanagement: 559
+        corporatereports: 560
+        correspondence: 561
+        decisions: 562
+        developmentplanframework: 563
+        financial: 489
+        foiresponses: 490
+        forms: 491
+        guidance: 492
+        impactassessments: 493
+        independentreports: 494
+        inspectionreports: 495
+        jointcommuniques: 496
+        legislation: 497
+        listsregisters: 498
+        maps: 499
+        memoranda: 500
+        notices: 501
+        policypapers: 502
+        promotional: 503
+        researchanalysis: 504
+        speeches: 505
+        surveys: 506
+        supportmaterial: 507
+        statisticalreports: 508
   field_published_date:
     - plugin: sub_process
       source: field_published_date
