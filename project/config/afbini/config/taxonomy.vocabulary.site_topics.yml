@@ -8,3 +8,4 @@ name: 'Areas of Expertise'
 vid: site_topics
 description: 'Areas of Expertise topics'
 weight: 0
+new_revision: false

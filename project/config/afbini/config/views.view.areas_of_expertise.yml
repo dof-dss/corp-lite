@@ -1,6 +1,6 @@
-uuid: 59e760e7-5d43-44b4-ae8f-ad701119fe17
+uuid: 93c55348-a3b6-4208-8242-b690be662fb0
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - field.storage.taxonomy_term.field_summary
@@ -9,8 +9,8 @@ dependencies:
     - taxonomy
     - text
     - user
-id: site_topics
-label: 'Site topics'
+id: areas_of_expertise
+label: 'Areas of Expertise'
 module: views
 description: ''
 tag: ''
@@ -116,7 +116,7 @@ display:
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: false
+          element_default_classes: true
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -188,10 +188,9 @@ display:
           output_url_as_text: false
           absolute: false
       pager:
-        type: some
+        type: none
         options:
           offset: 0
-          items_per_page: 7
       exposed_form:
         type: basic
         options:
@@ -210,7 +209,22 @@ display:
         type: tag
         options: {  }
       empty: {  }
-      sorts: {  }
+      sorts:
+        weight:
+          id: weight
+          table: taxonomy_term_field_data
+          field: weight
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: taxonomy_term
+          entity_field: weight
+          plugin_id: standard
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
       arguments: {  }
       filters:
         status:
@@ -238,11 +252,12 @@ display:
         options:
           grouping: {  }
           row_class: ''
-          default_row_class: false
+          default_row_class: true
+          uses_fields: false
       row:
         type: fields
         options:
-          default_field_elements: false
+          default_field_elements: true
           inline: {  }
           separator: ''
           hide_empty: false
@@ -255,12 +270,17 @@ display:
           replica: false
           query_tags: {  }
       relationships: {  }
-      use_more: false
-      use_more_always: false
-      use_more_text: ''
       header: {  }
-      footer: {  }
-      display_extenders: {  }
+      footer:
+        area:
+          id: area
+          table: views
+          field: area
+          plugin_id: text
+      display_extenders:
+        metatag_display_extender:
+          metatags: {  }
+          tokenize: false
     cache_metadata:
       max-age: -1
       contexts:
@@ -269,8 +289,8 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.taxonomy_term.field_summary'
-  site_topics_block:
-    id: site_topics_block
+  areas_of_expertise:
+    id: areas_of_expertise
     display_title: Block
     display_plugin: block
     position: 1
