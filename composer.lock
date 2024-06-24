@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cb366cfba8cd0935a6e4bad8712aa7d1",
+    "content-hash": "dd93a59dfb07edbb1afaf12e284e22df",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -8213,17 +8213,17 @@
         },
         {
             "name": "drupal/whatlinkshere",
-            "version": "2.1.3",
+            "version": "2.1.9",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/whatlinkshere.git",
-                "reference": "2.1.3"
+                "reference": "2.1.9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/whatlinkshere-2.1.3.zip",
-                "reference": "2.1.3",
-                "shasum": "463b4c5db0857376fdf509661650ec41aa49c1bc"
+                "url": "https://ftp.drupal.org/files/projects/whatlinkshere-2.1.9.zip",
+                "reference": "2.1.9",
+                "shasum": "bcf07953ad6e3d2b6470da3503cf79c5c09a2df4"
             },
             "require": {
                 "drupal/core": "^8 || ^9 || ^10"
@@ -8231,8 +8231,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.1.3",
-                    "datestamp": "1689085699",
+                    "version": "2.1.9",
+                    "datestamp": "1705074589",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
