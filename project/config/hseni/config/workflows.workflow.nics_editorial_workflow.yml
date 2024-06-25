@@ -15,6 +15,7 @@ dependencies:
     - node.type.profile
     - node.type.publication
     - node.type.webform
+    - taxonomy.vocabulary.site_topics
   module:
     - content_moderation
 _core:
@@ -119,4 +120,6 @@ type_settings:
       - profile
       - publication
       - webform
+    taxonomy_term:
+      - site_topics
   default_moderation_state: draft
