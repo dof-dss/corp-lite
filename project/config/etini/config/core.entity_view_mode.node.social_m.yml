@@ -6,5 +6,6 @@ dependencies:
     - node
 id: node.social_m
 label: 'Social media'
+description: ''
 targetEntityType: node
 cache: true

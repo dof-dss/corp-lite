@@ -1,6 +1,5 @@
 _core:
   default_config_hash: _1XAydKmKaQERaIYLSGPjdR4OtaVK0-7puvjx3sMFSI
-langcode: en
 context:
   lines_leading: 2
   lines_trailing: 2
