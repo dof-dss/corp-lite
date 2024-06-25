@@ -8,5 +8,6 @@ _core:
   default_config_hash: CmU9aRcVehioapgDN54bLG3RZScCoU8wAJQd8IlCrDU
 id: node.search_index
 label: 'Search index'
+description: ''
 targetEntityType: node
 cache: true

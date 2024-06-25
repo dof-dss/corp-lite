@@ -6,3 +6,4 @@ name: 'Site topics'
 vid: site_topics
 description: 'Site topics and subtopics.'
 weight: 0
+new_revision: false
