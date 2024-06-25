@@ -4,5 +4,6 @@ status: true
 dependencies: {  }
 name: 'Joint Communiques'
 vid: joint_communiques
-description: ''
+description: null
 weight: 0
+new_revision: false

@@ -5,9 +5,10 @@ dependencies:
   config:
     - field.field.taxonomy_term.site_topics.field_enable_toc
     - field.field.taxonomy_term.site_topics.field_photo
+    - field.field.taxonomy_term.site_topics.field_summary
     - taxonomy.vocabulary.site_topics
   module:
-    - file
+    - entity_browser
     - path
     - text
 id: taxonomy_term.site_topics.default
@@ -16,26 +17,41 @@ bundle: site_topics
 mode: default
 content:
   description:
-    type: text_textfield
-    weight: 0
+    type: text_textarea
+    weight: 1
     region: content
     settings:
-      size: 60
+      rows: 5
       placeholder: ''
     third_party_settings: {  }
   field_enable_toc:
     type: boolean_checkbox
-    weight: 3
+    weight: 5
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   field_photo:
-    type: file_generic
-    weight: 2
+    type: entity_browser_file
+    weight: 4
     region: content
     settings:
-      progress_indicator: throbber
+      entity_browser: null
+      field_widget_edit: true
+      field_widget_remove: true
+      field_widget_replace: false
+      open: false
+      selection_mode: selection_append
+      view_mode: default
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_summary:
+    type: text_textarea
+    weight: 3
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
     third_party_settings: {  }
   langcode:
     type: language_select
@@ -46,7 +62,7 @@ content:
     third_party_settings: {  }
   name:
     type: string_textfield
-    weight: -5
+    weight: 0
     region: content
     settings:
       size: 60
@@ -54,13 +70,13 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 30
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 100
+    weight: 7
     region: content
     settings:
       display_label: true
