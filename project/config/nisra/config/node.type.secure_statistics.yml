@@ -22,7 +22,7 @@ third_party_settings:
 name: 'Secure statistics'
 type: secure_statistics
 description: 'Use this content type for statistic publications which need a secure file attachment.'
-help: ''
+help: null
 new_revision: true
 preview_mode: 1
 display_submitted: false

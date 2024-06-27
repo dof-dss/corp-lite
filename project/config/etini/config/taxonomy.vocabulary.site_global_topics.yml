@@ -6,3 +6,4 @@ name: 'Site topics'
 vid: site_global_topics
 description: 'Site topics'
 weight: 0
+new_revision: true

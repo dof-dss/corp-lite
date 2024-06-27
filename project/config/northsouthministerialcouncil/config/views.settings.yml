@@ -1,6 +1,5 @@
 _core:
   default_config_hash: yGr1pUqVvVkqqijwAzmQN4L50uCPA8skKXraA4HYwkc
-langcode: en
 display_extenders:
   - metatag_display_extender
 sql_signature: false

@@ -6,5 +6,6 @@ dependencies:
     - node
 id: node.home_teaser
 label: 'Home teaser'
+description: ''
 targetEntityType: node
 cache: true

@@ -13,6 +13,7 @@ dependencies:
     - node.type.page
     - node.type.profile
     - node.type.publication
+    - taxonomy.vocabulary.site_global_topics
   module:
     - content_moderation
 _core:
@@ -115,4 +116,6 @@ type_settings:
       - page
       - profile
       - publication
+    taxonomy_term:
+      - site_global_topics
   default_moderation_state: draft
