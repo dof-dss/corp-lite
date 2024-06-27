@@ -8,5 +8,6 @@ _core:
   default_config_hash: hvXXMCPPsljjNtqkNQFjA7IwW7-h9KR0EqLiz5W7GMY
 id: media.card_large
 label: 'Card large'
+description: ''
 targetEntityType: media
 cache: true

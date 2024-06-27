@@ -24,7 +24,7 @@ _core:
 name: Chart
 type: easychart
 description: "Create a chart using the world's best web charting tool: Highcharts"
-help: ''
+help: null
 new_revision: true
 preview_mode: 0
 display_submitted: false

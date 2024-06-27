@@ -63,10 +63,11 @@
         "drupal/config_split": "^2.0-beta",
         "drupal/config_update": "^2.0@alpha",
         "drupal/content_lock": "^2.3",
-        "drupal/cookie_content_blocker": "^2.2",
-        "drupal/core-composer-scaffold": "^10.2",
-        "drupal/core-recommended": "^10.2",
+        "drupal/cookie_content_blocker": "^2.4",
+        "drupal/core-composer-scaffold": "^10.3",
+        "drupal/core-recommended": "^10.3",
         "drupal/csp": "^1.20",
+        "drupal/ctools": "^4.1",
         "drupal/date_facet_drilldown": "^5.0@dev",
         "drupal/diff": "^1.1",
         "drupal/draggableviews": "^2.1",
@@ -113,7 +114,7 @@
         "drupal/readonlymode": "^1.2",
         "drupal/redirect": "^1.8",
         "drupal/redis": "^1.7",
-        "drupal/scheduled_transitions": "2.3.0",
+        "drupal/scheduled_transitions": "^2.5",
         "drupal/search_api": "^1.26",
         "drupal/search_api_autocomplete": "^1.4",
         "drupal/search_api_location": "^1.0@alpha",
@@ -131,8 +132,8 @@
         "drupal/views_contextual_filters_or": "^1.4",
         "drupal/views_custom_cache_tag": "^1.3",
         "drupal/views_tree": "^2.0@RC",
-        "drupal/webform": "^6.2@beta",
-        "drupal/whatlinkshere": "2.1.3",
+        "drupal/webform": "^6.2",
+        "drupal/whatlinkshere": "^2.1",
         "drush/drush": "^12.5",
         "highcharts/highcharts": "^10",
         "platformsh/config-reader": "^2.4",
@@ -190,6 +191,9 @@
             "drupal/auto_entityqueue": {
                 "Entityquery - add access control check": "https://www.drupal.org/files/issues/2023-10-25/3366202-7-accessCheck-auto-entity-queue.patch"
             },
+            "drupal/ckeditor5_premium_features": {
+                "Avoid missing plugin TrackChangesEditing error": "https://git.drupalcode.org/project/ckeditor5_premium_features/-/merge_requests/6.diff"
+            },
             "drupal/clientside_validation": {
                 "core/jquery.once is required": "https://www.drupal.org/files/issues/2021-02-23/3200022-01.patch"
             },
@@ -205,6 +209,9 @@
             "drupal/easy_install": {
                 "Handle missing core version": "https://www.drupal.org/files/issues/2019-12-19/easy_install_core_version-3101883-0.patch",
                 "non-existent service entity.manager": "https://www.drupal.org/files/issues/2020-12-08/3162621-4.patch"
+            },
+            "drupal/entity_browser": {
+                "TypeError: key(): Argument #1 ($array) must be of type array": "https://www.drupal.org/files/issues/2024-06-12/2914385-35.patch"
             },
             "drupal/facets": {
                 "Pass facet object onto child items": "https://www.drupal.org/files/issues/2019-11-13/child_item-3094143-2.patch"

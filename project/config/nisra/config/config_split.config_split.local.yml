@@ -7,6 +7,7 @@ label: local
 description: 'Local development split. Enables debugging and development modules'
 weight: 0
 stackable: false
+no_patching: false
 storage: folder
 folder: ../project/config/nisra/local
 module:

@@ -94,7 +94,7 @@ field_settings:
     label: Sectors
     datasource_id: 'entity:node'
     property_path: field_sectors
-    type: text
+    type: string
     dependencies:
       config:
         - field.storage.node.field_sectors

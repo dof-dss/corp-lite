@@ -7,6 +7,7 @@ dependencies:
     - node.type.contact
     - node.type.news
     - node.type.publication
+    - taxonomy.vocabulary.site_topics
   module:
     - content_moderation
 _core:
@@ -103,4 +104,6 @@ type_settings:
       - contact
       - news
       - publication
+    taxonomy_term:
+      - site_topics
   default_moderation_state: draft

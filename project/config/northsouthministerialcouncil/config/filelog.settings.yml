@@ -1,6 +1,5 @@
 _core:
   default_config_hash: 3cKTrUUF7V69Wa8cBh3qbScW_I15rH3dW4-AEVtM9EQ
-langcode: en
 enabled: true
 location: /app/log/northsouthministerialcouncil
 rotation:

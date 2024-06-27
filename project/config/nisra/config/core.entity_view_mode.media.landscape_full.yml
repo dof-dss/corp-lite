@@ -8,5 +8,6 @@ _core:
   default_config_hash: T2v43NwHGWP2fu235LMDnW70Uqwi5fLNJvQHOVOzlOg
 id: media.landscape_full
 label: 'Landscape full'
+description: ''
 targetEntityType: media
 cache: true
