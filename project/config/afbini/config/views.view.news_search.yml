@@ -116,6 +116,7 @@ display:
             offset: false
             offset_label: Offset
           quantity: 5
+          pagination_heading_level: h4
       exposed_form:
         type: basic
         options:
@@ -268,8 +269,7 @@ display:
     position: 1
     display_options:
       cache:
-        type: search_api_tag
-        options: {  }
+        type: search_api_none
       defaults:
         cache: false
       exposed_block: true
@@ -279,7 +279,7 @@ display:
           tokenize: false
       path: news
     cache_metadata:
-      max-age: 0
+      max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
@@ -287,8 +287,6 @@ display:
         - url.query_args
         - 'user.node_grants:view'
       tags:
-        - 'config:facets.facet.news_type'
-        - 'config:facets.facet.publication_date'
         - 'config:field.storage.node.body'
         - 'config:search_api.index.news'
         - 'search_api_list:news'

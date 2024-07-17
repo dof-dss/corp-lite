@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.storage.taxonomy_term.field_site_services
-    - taxonomy.vocabulary.services
     - taxonomy.vocabulary.site_topics
 id: taxonomy_term.site_topics.field_site_services
 field_name: field_site_services
@@ -19,11 +18,7 @@ default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'
   handler_settings:
-    target_bundles:
-      services: services
+    target_bundles: {  }
     sort:
       field: _none
-      direction: asc
-    auto_create: false
-    auto_create_bundle: ''
 field_type: entity_reference

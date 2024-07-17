@@ -167,7 +167,6 @@ display:
           default_argument_type: fixed
           default_argument_options:
             argument: ''
-          default_argument_skip_url: false
           summary_options:
             base_path: ''
             count: true
@@ -272,7 +271,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: numeric
+          plugin_id: entity_target_id
           default_action: 'not found'
           exception:
             value: all
@@ -283,7 +282,6 @@ display:
           default_argument_type: fixed
           default_argument_options:
             argument: ''
-          default_argument_skip_url: false
           summary_options:
             base_path: ''
             count: true
@@ -305,6 +303,7 @@ display:
             multiple: 1
           break_phrase: false
           not: false
+          target_entity_type_id: taxonomy_term
       defaults:
         title: false
         pager: false
@@ -884,7 +883,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: numeric
+          plugin_id: entity_target_id
           default_action: default
           exception:
             value: all
@@ -900,7 +899,6 @@ display:
             vids:
               site_global_topics: site_global_topics
             anyall: ','
-          default_argument_skip_url: false
           summary_options:
             base_path: ''
             count: true
@@ -922,6 +920,7 @@ display:
             multiple: 1
           break_phrase: false
           not: false
+          target_entity_type_id: taxonomy_term
       filters:
         type:
           id: type

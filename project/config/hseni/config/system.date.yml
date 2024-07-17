@@ -1,9 +1,8 @@
 _core:
   default_config_hash: VRCkbBrQVaHvfYIorPGc4JtI_6sh5bvEy1ccZDZWVwk
-langcode: en
 first_day: 0
 country:
-  default: ''
+  default: null
 timezone:
   default: Europe/London
   user:

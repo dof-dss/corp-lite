@@ -6,3 +6,4 @@ name: Sectors
 vid: sectors
 description: 'NSMC sectors'
 weight: 0
+new_revision: false
