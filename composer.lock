@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "081b6d7e2750974394bce9239f2ce3d4",
+    "content-hash": "80001b40b0a6a0ffbe69af0a41d94e5b",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -6197,11 +6197,11 @@
         },
         {
             "name": "drupal/migrate_absolute_links",
-            "version": "dev-4.0.x",
+            "version": "dev-5.0.x",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/migrate_absolute_links.git",
-                "reference": "4cf09168102bb17032defe58ee049f01ea7b96a2"
+                "reference": "bb752f1e4cfe275808f3bdc741e7d34abed1ecc4"
             },
             "require": {
                 "drupal/core": "^8 || ^9 || ^10"
@@ -6209,11 +6209,11 @@
             "type": "drupal-module",
             "extra": {
                 "branch-alias": {
-                    "dev-4.0.x": "4.0.x-dev"
+                    "dev-5.0.x": "5.0.x-dev"
                 },
                 "drupal": {
-                    "version": "4.0.x-dev",
-                    "datestamp": "1691058031",
+                    "version": "5.0.x-dev",
+                    "datestamp": "1720619511",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
