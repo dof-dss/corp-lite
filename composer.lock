@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5c143db41798e5d5a93d23f6226e31a1",
+    "content-hash": "caf8c4f2496befb7919fba165b0b8ee6",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -15781,16 +15781,16 @@
         },
         {
             "name": "dof-dss/maestro-shell",
-            "version": "10.1.2",
+            "version": "10.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dof-dss/maestro-shell.git",
-                "reference": "e89f2c12d7744e92b44a920c0c0a5a8f3d1138df"
+                "reference": "dea5f7b4ec12d346baa1b6fe026db77e4fb04922"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dof-dss/maestro-shell/zipball/e89f2c12d7744e92b44a920c0c0a5a8f3d1138df",
-                "reference": "e89f2c12d7744e92b44a920c0c0a5a8f3d1138df",
+                "url": "https://api.github.com/repos/dof-dss/maestro-shell/zipball/dea5f7b4ec12d346baa1b6fe026db77e4fb04922",
+                "reference": "dea5f7b4ec12d346baa1b6fe026db77e4fb04922",
                 "shasum": ""
             },
             "require": {
@@ -15833,9 +15833,9 @@
             "description": "Shell for working with Maestro projects.",
             "support": {
                 "issues": "https://github.com/dof-dss/maestro-shell/issues",
-                "source": "https://github.com/dof-dss/maestro-shell/tree/10.1.2"
+                "source": "https://github.com/dof-dss/maestro-shell/tree/10.1.3"
             },
-            "time": "2024-03-20T16:06:13+00:00"
+            "time": "2024-10-29T12:09:09+00:00"
         },
         {
             "name": "drupal/coder",
@@ -21010,6 +21010,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/block_field": 5,
+        "drupal/ckeditor5_allowed_html": 20,
         "drupal/clone_nodes": 20,
         "drupal/config_readonly": 10,
         "drupal/config_update": 15,
