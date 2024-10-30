@@ -6,7 +6,7 @@
 # is built.                                                                 #
 #############################################################################
 name: corp_lite
-type: 'php:8.2'
+type: 'php:8.3'
 dependencies:
     php:
         composer/composer: ^2

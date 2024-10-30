@@ -171,7 +171,8 @@
             "phpstan/extension-installer": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "cweagans/composer-patches": true,
-            "php-http/discovery": true
+            "php-http/discovery": true,
+            "tbachert/spi": true
         },
         "sort-packages": true
     },
@@ -224,9 +225,7 @@
                 "Allow unique records only": "https://www.drupal.org/files/issues/2021-02-07/entity_queue_unique_records-1240856-3197148.patch"
             },
             "drupal/facets": {
-                "Pass facet object onto child items": "https://www.drupal.org/files/issues/2019-11-13/child_item-3094143-2.patch",
-                "Fix to deprecated function $transliterateDisplayValue": "https://www.drupal.org/files/issues/2024-02-21/facets-php82-3406085-18.patch",
-                "Fatal errors on config import": "https://www.drupal.org/files/issues/2023-10-20/3395567.patch"
+                "Pass facet object onto child items": "https://www.drupal.org/files/issues/2019-11-13/child_item-3094143-2.patch"
             },
             "drupal/fastly": {
                 "Allow disabling of logging": "https://git.drupalcode.org/project/fastly/-/merge_requests/6.patch"
