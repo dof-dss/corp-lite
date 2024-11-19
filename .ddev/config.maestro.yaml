@@ -5,20 +5,10 @@
 # original repository.Any changes here will be overwritten when the project #
 # is built.                                                                 #
 #############################################################################
-name: unity.svr.3
+name: corp.lite
 additional_hostnames:
-    - pacni
-    - judiciaryni
-    - boundarycommission
-    - industrialcourt
-    - interchangeni
-    - infolibrarynics
-    - pressclippingsnics
-    - parolecomni
-    - lgbcni
-    - semcommittee
-    - nibureau
-    - nicscommissioners
-    - liofa
-    - independentpaneltruthrecoveryni
-    - horizoneuropeni
+    - nisra
+    - afbini
+    - hseni
+    - etini
+    - northsouthministerialcouncil
