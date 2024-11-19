@@ -1,0 +1,25 @@
+#############################################################################
+###                           --== IMPORTANT ==--                         ###
+#############################################################################
+# If you require changes to this file you must edit the file within the     #
+# original repository.Any changes here will be overwritten when the project #
+# is built.                                                                 #
+#############################################################################
+services:
+    solr:
+        volumes:
+            - './solr-cores/pacni:/solr-pacni-conf'
+            - './solr-cores/judiciaryni:/solr-judiciaryni-conf'
+            - './solr-cores/boundarycommission:/solr-boundarycommission-conf'
+            - './solr-cores/industrialcourt:/solr-industrialcourt-conf'
+            - './solr-cores/interchangeni:/solr-interchangeni-conf'
+            - './solr-cores/pressclippingsnics:/solr-pressclippingsnics-conf'
+            - './solr-cores/parolecomni:/solr-parolecomni-conf'
+            - './solr-cores/lgbcni:/solr-lgbcni-conf'
+            - './solr-cores/semcommittee:/solr-semcommittee-conf'
+            - './solr-cores/nibureau:/solr-nibureau-conf'
+            - './solr-cores/nicscommissioners:/solr-nicscommissioners-conf'
+            - './solr-cores/liofa:/solr-liofa-conf'
+            - './solr-cores/independentpaneltruthrecoveryni:/solr-independentpaneltruthrecoveryni-conf'
+            - './solr-cores/horizoneuropeni:/solr-horizoneuropeni-conf'
+        entrypoint: 'bash -c "VERBOSE=yes docker-entrypoint.sh precreate-core pacni /solr-pacni-conf; precreate-core judiciaryni /solr-judiciaryni-conf; precreate-core boundarycommission /solr-boundarycommission-conf; precreate-core industrialcourt /solr-industrialcourt-conf; precreate-core interchangeni /solr-interchangeni-conf; precreate-core pressclippingsnics /solr-pressclippingsnics-conf; precreate-core parolecomni /solr-parolecomni-conf; precreate-core lgbcni /solr-lgbcni-conf; precreate-core semcommittee /solr-semcommittee-conf; precreate-core nibureau /solr-nibureau-conf; precreate-core nicscommissioners /solr-nicscommissioners-conf; precreate-core liofa /solr-liofa-conf; precreate-core independentpaneltruthrecoveryni /solr-independentpaneltruthrecoveryni-conf; precreate-core horizoneuropeni /solr-horizoneuropeni-conf; exec solr -f"'
