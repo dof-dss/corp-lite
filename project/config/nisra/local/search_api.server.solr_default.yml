@@ -41,8 +41,8 @@ backend_config:
   connector: standard
   connector_config:
     scheme: http
-    host: nisra_solr.internal
-    port: 8080
+    host: solr
+    port: 8983
     path: /
     core: nisra
     timeout: 5
