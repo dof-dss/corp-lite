@@ -1,4 +1,4 @@
-uuid: b5bc0336-1213-41a7-8835-55f1aa3a3f57
+uuid: 950ae7f9-9c80-46a1-a85d-b870e0c1ac08
 langcode: en
 status: true
 dependencies:
@@ -27,8 +27,8 @@ dependencies:
     - search_api_solr.solr_request_handler.request_handler_tvrh_default_7_0_0
   module:
     - search_api_solr
-id: solr_default
-name: 'Solr default'
+id: default
+name: 'HSENI search'
 description: ''
 backend: search_api_solr
 backend_config:
@@ -44,7 +44,7 @@ backend_config:
     host: solr
     port: 8983
     path: /
-    core: etini
+    core: hseni
     timeout: 5
     index_timeout: 5
     optimize_timeout: 10
