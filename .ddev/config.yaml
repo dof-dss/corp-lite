@@ -18,7 +18,7 @@ hooks:
   post-start:
     - composer: install
     - exec: ".ddev/homeadditions/appserver_build.sh"
-    - exec: ".ddev/commands/db/create_legacy_dbs.sh"
+    - exec: ".ddev/homeadditions/create_legacy_dbs.sh"
   post-import-db:
     # Use --skip-hooks flag to skip these commands, eg: when importing the migration db for the first time.
     # Ensure the local config split profile is detected and active.
