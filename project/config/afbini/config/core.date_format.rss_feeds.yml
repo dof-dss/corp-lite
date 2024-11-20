@@ -1,0 +1,8 @@
+uuid: f3723f97-1930-4988-88cc-f6e37d9342a2
+langcode: en
+status: true
+dependencies: {  }
+id: rss_feeds
+label: 'RSS Feeds'
+locked: false
+pattern: r
