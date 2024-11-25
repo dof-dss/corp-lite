@@ -19,7 +19,7 @@
     "––––––– WATCH SCRIPTS": "–––––––––––––",
     "watch": "npm-run-all --parallel watch-*",
     "watch-corplite-scss": "onchange 'web/themes/custom/nicsdru_corplite_theme/src/scss/**/*.scss' -- npm run scss:dev",
-    "watch-afbini:scss": "onchange 'project/sites/afbini/themes/afbini_theme_theme/src/scss/**/*.scss' -- npm run scss:dev",
+    "watch-afbini:scss": "onchange 'project/sites/afbini/themes/afbini_theme/src/scss/**/*.scss' -- npm run scss:dev",
     "watch-etini:scss": "onchange 'project/sites/etini/themes/etini_theme/src/scss/**/*.scss' -- npm run scss:dev",
     "watch-hseni:scss": "onchange 'project/sites/hseni/themes/hseni_theme/src/scss/**/*.scss' -- npm run scss:dev",
     "watch-nisra:scss": "onchange 'project/sites/nisra/themes/nisra_theme/src/scss/**/*.scss' -- npm run scss:dev",
