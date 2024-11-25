@@ -13,7 +13,6 @@ proxy:
         - hseni.gov.uk.lndo.site
         - etini.gov.uk.lndo.site
         - northsouthministerialcouncil.org.lndo.site
-        - fred.gov.uk.lndo.site
 services:
     nisra_solr:
         type: 'solr:8.11'
@@ -40,12 +39,6 @@ services:
         config:
             dir: .lando/config/solr/
     northsouthministerialcouncil_solr:
-        type: 'solr:8.11'
-        portforward: true
-        core: default
-        config:
-            dir: .lando/config/solr/
-    fred_solr:
         type: 'solr:8.11'
         portforward: true
         core: default
