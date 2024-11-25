@@ -1,0 +1,1 @@
+(s=>{Drupal.behaviors.nicsdruCorpliteTablesXScroll={attach:function(l){s(once("x-scroll","#main-article table",l)).each(function(l){s(this).closest("div").hasClass("x-scroll")||s(this).wrap('<div class="x-scroll"></div>')})}}})(jQuery);
