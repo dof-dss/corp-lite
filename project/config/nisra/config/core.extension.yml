@@ -119,7 +119,6 @@ module:
   redis: 0
   responsive_image: 0
   scheduled_transitions: 0
-  search: 0
   search_api: 0
   search_api_autocomplete: 0
   search_api_location: 0
@@ -153,8 +152,8 @@ module:
   views: 10
   paragraphs: 11
   nicsdru_corplite_profile: 1000
-  eu_cookie_compliance: 1001
   readonlymode: 9999
+  eu_cookie_compliance: 10000
 theme:
   olivero: 0
   claro: 0

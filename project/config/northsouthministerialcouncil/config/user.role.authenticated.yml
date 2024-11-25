@@ -10,7 +10,6 @@ dependencies:
     - filter
     - media
     - node
-    - search
     - system
 _core:
   default_config_hash: 5VGJw7pgPFTBuJrCG9pBukHNqdclr8NPzvsAwTZXVwY

@@ -11,3 +11,4 @@ dependencies:
   - drupal:migrate_tools
   - drupal:migrate_drupal
   - drupal:migrate_absolute_links
+  - drupal:corplite_migrations

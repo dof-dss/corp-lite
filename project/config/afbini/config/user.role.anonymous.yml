@@ -5,7 +5,6 @@ dependencies:
   module:
     - eu_cookie_compliance
     - media
-    - search
     - system
 _core:
   default_config_hash: P5H-ZbvA8txEPNYisWPYiorfSqVXrHsa9-CttKUf6GQ
