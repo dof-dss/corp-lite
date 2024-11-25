@@ -1,0 +1,89 @@
+corplite-styling:
+  version: 1.0
+  css:
+    # The SMACSS category, "base", is loaded before other categories.
+    # D10 and newer loads stylesheets based on the SMACSS ordering of:
+    # base, layout, component, state, theme
+    base:
+      css/1_base/root.css: { minified: true }
+      css/1_base/html5.css: { minified: true }
+      css/1_base/links.css: { minified: true }
+      css/1_base/headings.css: { minified: true }
+      css/1_base/text.css: { minified: true }
+      css/1_base/grouping.css: { minified: true }
+      css/1_base/embedded.css: { minified: true }
+      css/1_base/forms.css: { minified: true }
+      css/3_components/form/form.css: { minified: true }
+      css/1_base/tables.css: { minified: true }
+    # The SMACSS category, "layout", is loaded after "base" styles.
+    layout:
+      css/2_layouts/layouts-common.css: { weight: -100, minified: true }
+      css/2_layouts/nics-1-col-layouts.css: { minified: true }
+      css/2_layouts/nics-2-col-layouts.css: { minified: true }
+      css/2_layouts/nics-3-col-layouts.css: { minified: true }
+      css/2_layouts/front.css: { minified: true }
+    # The SMACSS category, "component", is loaded after "base and layout" styles.
+    component:
+      css/3_components/field/file-link.css: { minified: true }
+      css/3_components/form/honeypot.css: { minified: true }
+    theme:
+      css/3_components/navigation/pager.css: { minified: true }
+      css/3_components/content/tables.css: { minified: true }
+  js:
+    js/ext-win-script.js: { minified: true }
+    js/empty-tags-script.js: { minified: true }
+    js/table-xscroll.js: { minified: true }
+    js/main-menu-toggle.js: { minified: true }
+    js/notices-and-messages.js: { minified: true }
+    js/thwoop-images.js: { minified: true }
+    js/site-search.js: { minified: true }
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/once
+    - core/modernizr
+
+# Extend the core functionality for auto-complete
+autocomplete:
+  version: VERSION
+  js:
+    js/autocomplete.js: { minified: true }
+
+# Extend the core functionality for ajax progress indicators (throbbers)
+throbber:
+  js:
+    js/throbber.js: { }
+  css:
+    component:
+      css/3_components/form/throbber.css: { minified: true }
+  dependencies:
+    - core/jquery
+    - core/drupal
+
+corplite-search:
+  version: VERSION
+  css:
+    component:
+      css/3_components/form/search-form.css: { minified: true }
+      css/3_components/block/search-facets.css: { minified: true }
+  js:
+    js/search-facets-script.js: { minified: true }
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/once
+
+moderation-sidebar:
+  version: VERSION
+  js:
+    js/moderation-sidebar.js: { minified: true }
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/once
+
+media_library_styles:
+  css:
+    theme:
+      css/3_components/field/file-link.css: { minified: true }
+

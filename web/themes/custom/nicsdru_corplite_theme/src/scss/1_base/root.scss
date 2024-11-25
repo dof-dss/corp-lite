@@ -1,0 +1,107 @@
+/*
+ * @file
+ * Resets and creates defaults for root html elements.
+ */
+@use 'sass:math';
+@use '../init' as *;
+
+// sass-lint:disable no-vendor-prefixes
+
+// Root
+//
+// The HTML root component contains the doctype, HTML element, HEAD element and BODY element. It also contains the CSS
+// for those elements and the `*` universal selector.
+// An example file for the standard markup is included for completeness, however it is not render in the style guide.
+// Otherwise, the style guide will have multiple HTML and BODY elements.
+//
+// weight: -10
+//
+// Style guide: base.root
+
+// Use the saner border-box model for all elements.
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: $base-font-family; /* 1 */
+  font-size: 100% * math.div($base-font-size, 16px); /* 3 */
+  line-height: 1.5;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased; // more subtle on larger fonts, makes smaller fonts more substantial.
+  // On short pages, we want any background gradients to fill the entire height
+  // of the browser.
+  min-height: 100%;
+}
+
+:root {
+  // Color custom properties
+  --clr-black: #000;
+  --clr-charcoal: #333;
+  --clr-grey: #949494;
+  --clr-grey-medium: #666;
+  --clr-grey-dark: #4d4d4d;
+  --clr-grey-light: #e8e7e7;
+  --clr-grey-lightest: #e8e7e7;
+  --clr-white: #fff;
+  --clr-body-text: #222;
+  --clr-mark-bkgd: #ff0;
+  --clr-heading-text: #19315a;
+  --clr-body-bkgd: #fff;
+  --clr-link: #0e6bb3;
+  --clr-link-visited: #5e60b5;
+  --clr-link-hover: #0e6bb3;
+  --clr-link-active: #d1431f;
+  --clr-border: #e8e7e7;
+  --clr-table-border: #666;
+  --clr-button: #666;
+  --clr-button-disabled: #e8e7e7;
+  --clr-brand-primary: #00aae5;
+  --clr-brand-primary-light: #cee4f6;
+  --clr-brand-secondary: #0b1647;
+
+  // Typography and rhythm spacing custom properties
+  --base-font-size: 1.6rem;
+  --base-rhythm: .8rem;
+  --base-rhythm-frag: .2rem;
+
+  @include breakpoint($lap) {
+    --base-font-size: 1.8rem;
+    --base-rhythm: .9rem;
+    --base-rhythm-frag: .3rem;
+  }
+
+  @include breakpoint($desk-plus) {
+    --base-font-size: 2rem;
+    --base-rhythm: 1rem;
+    --base-rhythm-frag: .5rem;
+  }
+
+  //--rhythm-spacing-xs: var(--base-rhythm-frag); // 2, 3, 5
+  //--rhythm-spacing-sm: var(--base-rhythm); // 8, 9, 10
+  //--rhythm-spacing-md: calc(var(--base-rhythm) + var(--base-rhythm-frag)); // 10, 12, 15
+  --rhythm-spacing: calc(var(--base-rhythm) * 2); // 16, 18, 20
+  //--rhythm-spacing-lg: calc(var(--base-rhythm) * 2 + var(--base-rhythm-frag)); // 18, 21, 25
+  --rhythm-spacing-xl: calc(var(--base-rhythm) * 3); // 24, 27, 30
+  //--rhythm-spacing-xxl: calc(var(--base-rhythm) * 4); // 32, 36, 40
+  //--rhythm-spacing-xxxl: calc(var(--base-rhythm) * 5); // 40, 45, 50
+}
+
+body {
+  color: var(--body-text-colour);
+  background-color: var(--body-bkgd-clr);
+  font-size: 1.6rem;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+
+  @include breakpoint($lap) {
+    font-size: 1.8rem;
+  }
+
+  @include breakpoint($desk-plus) {
+    font-size: 2rem;
+  }
+}
