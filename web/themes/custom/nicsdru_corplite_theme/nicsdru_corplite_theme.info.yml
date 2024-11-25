@@ -1,0 +1,74 @@
+name: NICS Corplite Theme
+type: theme
+description: 'Base theme for Drupal Corp-lite sites'
+package: NICS
+core_version_requirement: ^8.8 || ^9 || ^10
+base theme: stable9
+
+libraries:
+  - nicsdru_corplite_theme/corplite-styling
+
+ckeditor5-stylesheets:
+  #  - css/1_base/root.css
+  - css/1_base/html5.css
+  - css/1_base/headings.css
+  - css/1_base/grouping.css
+  - css/1_base/links.css
+  - css/1_base/tables.css
+  - css/1_base/text.css
+  - css/3_components/content/lists.css
+  #  - css/3_components/ckeditor.css
+  #  - css/3_components/content/responsive-images-ckeditor.css
+  #  - css/3_components/content/icons-messages.css
+  - css/3_components/content/video.css
+  - css/3_components/content/tables.css
+
+libraries-override:
+  system/base:
+    css:
+      component:
+        css/components/sticky-header.module.css: false
+        css/components/autocomplete-loading.module.css: css/3_components/form/autocomplete-loading.css
+  search_api_autocomplete/search_api_autocomplete:
+    css:
+      theme:
+        css/search_api_autocomplete.css: css/3_components/form/search_api_autocomplete.css
+  diff/diff.general:
+    css:
+      theme:
+        css/diff.general.css: css/drupal/drupal-diff.css
+  layout_builder/drupal.layout_builder:
+    css:
+      theme:
+        /core/themes/stable/css/layout_builder/layout-builder.css: false
+  eu_cookie_compliance/eu_cookie_compliance_bare:
+    css:
+      state:
+        css/eu_cookie_compliance.bare.css: css/4_state/block/eu-cookie-compliance.css
+  webform/webform.element.counter:
+    css:
+      component:
+        css/webform.element.counter.css: false
+
+libraries-extend:
+  core/drupal.autocomplete:
+    - nicsdru_corplite_theme/autocomplete
+  core/drupal.ajax:
+    - nicsdru_corplite_theme/throbber
+  moderation_sidebar/main:
+    - nicsdru_corplite_theme/moderation-sidebar
+
+regions:
+  header: 'Header'
+  primary_menu: 'Primary menu'
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+  highlighted: 'Highlighted'
+  help: 'Help'
+  top_banner: 'Banner top'
+  content: 'Content'
+  sidebar_first: 'Search'
+  sidebar_second: 'Aside'
+  related: 'Related page footer'
+  bottom_banner: 'Page bottom'
+  footer: 'Footer'
