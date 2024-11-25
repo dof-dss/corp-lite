@@ -1,0 +1,14 @@
+#############################################################################
+###                           --== IMPORTANT ==--                         ###
+#############################################################################
+# If you require changes to this file you must edit the file within the     #
+# original repository.Any changes here will be overwritten when the project #
+# is built.                                                                 #
+#############################################################################
+name: corp.lite
+additional_hostnames:
+    - nisra
+    - afbini
+    - hseni
+    - etini
+    - northsouthministerialcouncil

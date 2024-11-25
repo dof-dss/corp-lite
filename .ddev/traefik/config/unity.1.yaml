@@ -1,0 +1,93 @@
+#ddev-generated
+# If you remove the ddev-generated line above you
+# are responsible for maintaining this file. DDEV will not then
+# update it, for example if you add `additional_hostnames`, etc.
+
+http:
+  routers:
+    unity.1-solr-8983-http:
+      entrypoints:
+        - http-8983
+      rule: HostRegexp(`^solr\.unity\.1\.ddev\.site$`)|| HostRegexp(`^attorneygeneralni\.ddev\.site$`)|| HostRegexp(`^cscsreviewni\.ddev\.site$`)|| HostRegexp(`^employmenttribunalsni\.ddev\.site$`)|| HostRegexp(`^fiscalcommissionni\.ddev\.site$`)|| HostRegexp(`^independentreviewofeducation\.ddev\.site$`)|| HostRegexp(`^investnireview\.ddev\.site$`)|| HostRegexp(`^mahinquiry\.ddev\.site$`)|| HostRegexp(`^niauditoffice\.ddev\.site$`)|| HostRegexp(`^nifiscalcouncil\.ddev\.site$`)|| HostRegexp(`^nipolicingboard\.ddev\.site$`)|| HostRegexp(`^octf\.ddev\.site$`)|| HostRegexp(`^odscni\.ddev\.site$`)|| HostRegexp(`^pbni\.ddev\.site$`)|| HostRegexp(`^pcsps\.ddev\.site$`)|| HostRegexp(`^uregni\.ddev\.site$`)|| HostRegexp(`^urologyservicesinquiry\.ddev\.site$`)
+      
+      service: "unity.1-solr-8983"
+      ruleSyntax: v3
+      tls: false
+      # middlewares:
+      #   - "unity.1-redirectHttps"
+    unity.1-web-80-http:
+      entrypoints:
+        - http-80
+      rule: HostRegexp(`^unity\.1\.ddev\.site$`)|| HostRegexp(`^attorneygeneralni\.ddev\.site$`)|| HostRegexp(`^cscsreviewni\.ddev\.site$`)|| HostRegexp(`^employmenttribunalsni\.ddev\.site$`)|| HostRegexp(`^fiscalcommissionni\.ddev\.site$`)|| HostRegexp(`^independentreviewofeducation\.ddev\.site$`)|| HostRegexp(`^investnireview\.ddev\.site$`)|| HostRegexp(`^mahinquiry\.ddev\.site$`)|| HostRegexp(`^niauditoffice\.ddev\.site$`)|| HostRegexp(`^nifiscalcouncil\.ddev\.site$`)|| HostRegexp(`^nipolicingboard\.ddev\.site$`)|| HostRegexp(`^octf\.ddev\.site$`)|| HostRegexp(`^odscni\.ddev\.site$`)|| HostRegexp(`^pbni\.ddev\.site$`)|| HostRegexp(`^pcsps\.ddev\.site$`)|| HostRegexp(`^uregni\.ddev\.site$`)|| HostRegexp(`^urologyservicesinquiry\.ddev\.site$`)
+      
+      service: "unity.1-web-80"
+      ruleSyntax: v3
+      tls: false
+      # middlewares:
+      #   - "unity.1-redirectHttps"
+    unity.1-web-8025-http:
+      entrypoints:
+        - http-8025
+      rule: HostRegexp(`^unity\.1\.ddev\.site$`)|| HostRegexp(`^attorneygeneralni\.ddev\.site$`)|| HostRegexp(`^cscsreviewni\.ddev\.site$`)|| HostRegexp(`^employmenttribunalsni\.ddev\.site$`)|| HostRegexp(`^fiscalcommissionni\.ddev\.site$`)|| HostRegexp(`^independentreviewofeducation\.ddev\.site$`)|| HostRegexp(`^investnireview\.ddev\.site$`)|| HostRegexp(`^mahinquiry\.ddev\.site$`)|| HostRegexp(`^niauditoffice\.ddev\.site$`)|| HostRegexp(`^nifiscalcouncil\.ddev\.site$`)|| HostRegexp(`^nipolicingboard\.ddev\.site$`)|| HostRegexp(`^octf\.ddev\.site$`)|| HostRegexp(`^odscni\.ddev\.site$`)|| HostRegexp(`^pbni\.ddev\.site$`)|| HostRegexp(`^pcsps\.ddev\.site$`)|| HostRegexp(`^uregni\.ddev\.site$`)|| HostRegexp(`^urologyservicesinquiry\.ddev\.site$`)
+      
+      service: "unity.1-web-8025"
+      ruleSyntax: v3
+      tls: false
+      # middlewares:
+      #   - "unity.1-redirectHttps"
+    
+    
+    
+    
+    unity.1-web-80-https:
+      entrypoints:
+        - http-443
+      rule: HostRegexp(`^unity\.1\.ddev\.site$`) || HostRegexp(`^attorneygeneralni\.ddev\.site$`) || HostRegexp(`^cscsreviewni\.ddev\.site$`) || HostRegexp(`^employmenttribunalsni\.ddev\.site$`) || HostRegexp(`^fiscalcommissionni\.ddev\.site$`) || HostRegexp(`^independentreviewofeducation\.ddev\.site$`) || HostRegexp(`^investnireview\.ddev\.site$`) || HostRegexp(`^mahinquiry\.ddev\.site$`) || HostRegexp(`^niauditoffice\.ddev\.site$`) || HostRegexp(`^nifiscalcouncil\.ddev\.site$`) || HostRegexp(`^nipolicingboard\.ddev\.site$`) || HostRegexp(`^octf\.ddev\.site$`) || HostRegexp(`^odscni\.ddev\.site$`) || HostRegexp(`^pbni\.ddev\.site$`) || HostRegexp(`^pcsps\.ddev\.site$`) || HostRegexp(`^uregni\.ddev\.site$`) || HostRegexp(`^urologyservicesinquiry\.ddev\.site$`)
+      
+      service: "unity.1-web-80"
+      ruleSyntax: v3
+      
+      tls: true
+      
+    unity.1-web-8025-https:
+      entrypoints:
+        - http-8026
+      rule: HostRegexp(`^unity\.1\.ddev\.site$`) || HostRegexp(`^attorneygeneralni\.ddev\.site$`) || HostRegexp(`^cscsreviewni\.ddev\.site$`) || HostRegexp(`^employmenttribunalsni\.ddev\.site$`) || HostRegexp(`^fiscalcommissionni\.ddev\.site$`) || HostRegexp(`^independentreviewofeducation\.ddev\.site$`) || HostRegexp(`^investnireview\.ddev\.site$`) || HostRegexp(`^mahinquiry\.ddev\.site$`) || HostRegexp(`^niauditoffice\.ddev\.site$`) || HostRegexp(`^nifiscalcouncil\.ddev\.site$`) || HostRegexp(`^nipolicingboard\.ddev\.site$`) || HostRegexp(`^octf\.ddev\.site$`) || HostRegexp(`^odscni\.ddev\.site$`) || HostRegexp(`^pbni\.ddev\.site$`) || HostRegexp(`^pcsps\.ddev\.site$`) || HostRegexp(`^uregni\.ddev\.site$`) || HostRegexp(`^urologyservicesinquiry\.ddev\.site$`)
+      
+      service: "unity.1-web-8025"
+      ruleSyntax: v3
+      
+      tls: true
+      
+    
+
+  middlewares:
+    unity.1-redirectHttps:
+      redirectScheme:
+        scheme: https
+        permanent: true
+
+  services:
+    unity.1-solr-8983:
+      loadbalancer:
+        servers:
+          - url: http://ddev-unity.1-solr:8983
+        
+    unity.1-web-80:
+      loadbalancer:
+        servers:
+          - url: http://ddev-unity.1-web:80
+        
+    unity.1-web-8025:
+      loadbalancer:
+        servers:
+          - url: http://ddev-unity.1-web:8025
+        
+    
+    
+    
+
+tls:
+  certificates:
+    - certFile: /mnt/ddev-global-cache/traefik/certs/unity.1.crt
+      keyFile: /mnt/ddev-global-cache/traefik/certs/unity.1.key
