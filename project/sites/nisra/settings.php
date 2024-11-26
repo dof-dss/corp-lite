@@ -22,3 +22,7 @@ include $app_root . '/sites/site.settings.php';
  */
 $settings['file_private_path'] = $app_root . '/../private/nisra';
 
+if (getenv('IS_DDEV_PROJECT')) {
+  $databases['default']['default']['database'] = $subsite_id;
+}
+
