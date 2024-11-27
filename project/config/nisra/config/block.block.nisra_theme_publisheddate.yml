@@ -1,0 +1,29 @@
+uuid: a82e9918-c493-46e9-90c9-83eb92af9d29
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.publication_published_date
+  module:
+    - facets
+    - system
+  theme:
+    - nisra_theme
+id: nisra_theme_publisheddate
+theme: nisra_theme
+region: sidebar_first
+weight: -4
+provider: null
+plugin: 'facet_block:publication_published_date'
+settings:
+  id: 'facet_block:publication_published_date'
+  label: 'Publication date'
+  label_display: visible
+  provider: facets
+  context_mapping: {  }
+  block_id: nisra_theme_publisheddate
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/publications\r\n/publications/date/*\r\n/publications/topic/*\r\n/publications/type/*"
