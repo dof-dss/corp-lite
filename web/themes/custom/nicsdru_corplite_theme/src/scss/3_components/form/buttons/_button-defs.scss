@@ -5,7 +5,6 @@
 @use "sass:color";
 
 @mixin btn($size: default, $arrow-direction: none, $arrow-colour: white) {
-
   // Default coloring for all buttons.
   @include btn-color($btn, $btn, $white, 'dark'); // bg-color, border-color, txt-color, scheme.
 
