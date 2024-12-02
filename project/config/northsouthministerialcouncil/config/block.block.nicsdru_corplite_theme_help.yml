@@ -1,16 +1,16 @@
-uuid: 60893d84-1a03-4eb9-ae26-11b4918677bc
+uuid: bf918f94-483f-4b3c-a59c-f2889d607b6e
 langcode: en
 status: true
 dependencies:
   module:
     - help
   theme:
-    - olivero
+    - nicsdru_corplite_theme
 _core:
   default_config_hash: 1Jao549wm6_jRW4zTEuoMstjSNOmUAKiwsWjnlfzgJw
-id: olivero_help
-theme: olivero
-region: content_above
+id: nicsdru_corplite_theme_help
+theme: nicsdru_corplite_theme
+region: header
 weight: 0
 provider: null
 plugin: help_block

@@ -1,22 +1,20 @@
-uuid: 77470bac-a6ee-47eb-9a3c-7d11730c7eef
+uuid: 23bb505b-fc6f-4abd-9e96-ea45dd4c72cc
 langcode: en
 status: true
 dependencies:
   module:
     - system
   theme:
-    - olivero
-_core:
-  default_config_hash: hwGNEMbmUoXB0MG3RrVTk72hI2kQOUIyLcR4xv7SzoU
-id: olivero_messages
-theme: olivero
+    - northsouthministerialcouncil_theme
+id: northsouthministerialcouncil_theme_messages_2
+theme: northsouthministerialcouncil_theme
 region: highlighted
-weight: -5
+weight: -3
 provider: null
 plugin: system_messages_block
 settings:
   id: system_messages_block
-  label: 'Status messages'
+  label: Messages
   label_display: '0'
   provider: system
 visibility: {  }

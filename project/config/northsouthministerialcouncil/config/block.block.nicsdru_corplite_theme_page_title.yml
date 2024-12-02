@@ -1,14 +1,14 @@
-uuid: a740be37-6d96-45cd-8e37-7a0713183220
+uuid: c434ff24-56eb-4c00-a7c2-51833d606c83
 langcode: en
 status: true
 dependencies:
   theme:
-    - olivero
+    - nicsdru_corplite_theme
 _core:
   default_config_hash: jc4FPJHbAaeJkH4fPoqNbVpfVPBlrn5ccyNDWskxSBc
-id: olivero_page_title
-theme: olivero
-region: content_above
+id: nicsdru_corplite_theme_page_title
+theme: nicsdru_corplite_theme
+region: header
 weight: -5
 provider: null
 plugin: page_title_block

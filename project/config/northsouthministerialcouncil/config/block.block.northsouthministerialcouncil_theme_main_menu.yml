@@ -1,4 +1,4 @@
-uuid: 693f7a9b-4370-4d06-8155-7ba45c7eeb0b
+uuid: 593d2f29-d1eb-4e8f-9b70-c77cb74a4a33
 langcode: en
 status: true
 dependencies:
@@ -7,11 +7,11 @@ dependencies:
   module:
     - system
   theme:
-    - olivero
+    - northsouthministerialcouncil_theme
 _core:
   default_config_hash: vEnGyvUYVwDo4JfvnSNMFSGFqVIxXNc713lo-_9gneg
-id: olivero_main_menu
-theme: olivero
+id: northsouthministerialcouncil_theme_main_menu
+theme: northsouthministerialcouncil_theme
 region: primary_menu
 weight: 0
 provider: null

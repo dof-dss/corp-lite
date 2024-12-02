@@ -1,16 +1,16 @@
-uuid: 38f89742-c557-4514-bd75-93a45a4fa417
+uuid: 2c8a5412-3490-412b-86d7-82090a225aed
 langcode: en
 status: true
 dependencies:
   module:
     - node
   theme:
-    - olivero
+    - nicsdru_corplite_theme
 _core:
   default_config_hash: gu4xas6Ix1BoqvKzB-hM8VznmI6nmHUFF_wbb69Yy7g
-id: olivero_syndicate
-theme: olivero
-region: social
+id: nicsdru_corplite_theme_syndicate
+theme: nicsdru_corplite_theme
+region: header
 weight: 0
 provider: null
 plugin: node_syndicate_block
