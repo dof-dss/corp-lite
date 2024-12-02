@@ -13,11 +13,6 @@
 //
 // Style guide: components.file-links
 
-.nav-menu {
-  background-color: red;
-  position: relative;
-}
-
 .file {
   &-link {
     $lh: math.div(28, 18);
