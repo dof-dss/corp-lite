@@ -24,8 +24,11 @@ corplite-styling:
       css/2_layouts/front.css: { minified: true }
     # The SMACSS category, "component", is loaded after "base and layout" styles.
     component:
+      css/3_components/content/lists.css: { minified: true }
       css/3_components/form/buttons.css: { minified: true }
       css/3_components/field/file-link.css: { minified: true }
+      css/3_components/navigation/topics-list.css: { minified: true }
+
     theme:
       css/3_components/navigation/pager.css: { minified: true }
       css/3_components/content/tables.css: { minified: true }

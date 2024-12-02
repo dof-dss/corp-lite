@@ -1,0 +1,29 @@
+uuid: 639bca25-655a-485a-bf19-354d0ea8a28f
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.news_topic
+  module:
+    - facets
+    - system
+  theme:
+    - nisra_theme
+id: nisra_theme_newstopic
+theme: nisra_theme
+region: sidebar_first
+weight: -2
+provider: null
+plugin: 'facet_block:news_topic'
+settings:
+  id: 'facet_block:news_topic'
+  label: 'News topic'
+  label_display: visible
+  provider: facets
+  context_mapping: {  }
+  block_id: nisra_theme_newstopic
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/news\r\n/news/date/*\r\n/news/topic/*\r\n/news/type/*"
