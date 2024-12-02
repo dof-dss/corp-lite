@@ -1,0 +1,22 @@
+uuid: 2308f910-2ad0-468a-8d0c-25d133fc48f4
+langcode: en
+status: true
+dependencies:
+  theme:
+    - hseni_theme
+_core:
+  default_config_hash: trYkad5WQkhP-D3KFBfB8m_2rK3nEzMI6u_efXvVHaM
+id: hseni_theme_primary_local_tasks
+theme: hseni_theme
+region: highlighted
+weight: -3
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary tabs'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility: {  }

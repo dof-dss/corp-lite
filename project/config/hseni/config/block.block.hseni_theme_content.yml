@@ -1,0 +1,22 @@
+uuid: f54e57cf-fbec-498c-b889-8f365d84d363
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - hseni_theme
+_core:
+  default_config_hash: wPsfrXA_4wKhNdkE9Bo4CPtOFQlMu5yR3Zlr0NOsXbE
+id: hseni_theme_content
+theme: hseni_theme
+region: content
+weight: -3
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

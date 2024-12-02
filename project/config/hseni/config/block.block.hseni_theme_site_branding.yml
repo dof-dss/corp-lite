@@ -1,0 +1,25 @@
+uuid: 475e3f3c-ab45-4cc7-a8a0-ebb1c1fa063e
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - hseni_theme
+_core:
+  default_config_hash: uX9yAGSNB1h9bkLT5ckxEiX6kegngz2lHah7uA_t5HA
+id: hseni_theme_site_branding
+theme: hseni_theme
+region: header
+weight: -5
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }
