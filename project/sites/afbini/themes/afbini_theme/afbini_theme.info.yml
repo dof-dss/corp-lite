@@ -3,7 +3,7 @@ type: theme
 description: 'Base theme for Drupal Corp-lite sites'
 package: NICS
 core_version_requirement: ^8.8 || ^9 || ^10
-base theme: stable9
+base theme: nicsdru_corplite_theme
 
 libraries:
   - afbini_theme/afbini-styling
