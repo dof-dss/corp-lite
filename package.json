@@ -11,7 +11,7 @@
     "js:compile": "node web/themes/custom/nicsdru_corplite_theme/config/uglify-js.js",
     "js:lint": "node web/themes/custom/nicsdru_corplite_theme/config/eslint.js -c ",
     "––––––– CSS SCRIPTS": "–––––––––––––",
-    "scss:dev": "sass --style=expanded --source-map --embed-sources --no-error-css $npm_package_config_corplite $npm_package_config_nsmc",
+    "scss:dev": "sass --style=expanded --source-map --embed-sources --no-error-css $npm_package_config_corplite",
     "scss:prod": "sass --style=compressed --no-source-map --no-error-css $npm_package_config_compileDir_corplite",
     "scss:lint": "stylelint web/themes/custom/nicsdru_corplite_theme/src/scss/**/*.scss",
     "scss:lint:fix": "stylelint web/themes/custom/nicsdru_corplite_theme/src/scss/**/*.scss --fix",
