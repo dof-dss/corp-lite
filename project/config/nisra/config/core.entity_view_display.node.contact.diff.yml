@@ -13,7 +13,6 @@ dependencies:
   module:
     - field_group
     - metatag
-    - origins_common
     - text
     - user
 third_party_settings:
@@ -53,19 +52,6 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  field_map:
-    type: gmaps_lazy_load_formatter
-    label: above
-    settings:
-      zoom: '10'
-      map_type: roadmap
-      placeholder: empty
-      link_text: ''
-      map_width: '300'
-      map_height: '300'
-    third_party_settings: {  }
-    weight: 1
-    region: content
   field_meta_tags:
     type: metatag_empty_formatter
     label: above
@@ -91,6 +77,7 @@ content:
     region: content
 hidden:
   content_moderation_control: true
+  field_map: true
   langcode: true
   links: true
   search_api_excerpt: true

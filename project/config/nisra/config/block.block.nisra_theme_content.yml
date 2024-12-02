@@ -11,7 +11,7 @@ _core:
 id: nisra_theme_content
 theme: nisra_theme
 region: content
-weight: -4
+weight: -7
 provider: null
 plugin: system_main_block
 settings:
