@@ -151,6 +151,8 @@ module:
   readonlymode: 9999
   eu_cookie_compliance: 10000
 theme:
-  olivero: 0
   claro: 0
+  stable9: 0
+  nicsdru_corplite_theme: 0
+  northsouthministerialcouncil_theme: 0
 profile: nicsdru_corplite_profile
