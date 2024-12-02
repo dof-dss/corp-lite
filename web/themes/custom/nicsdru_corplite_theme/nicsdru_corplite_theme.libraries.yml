@@ -24,11 +24,12 @@ corplite-styling:
       css/2_layouts/front.css: { minified: true }
     # The SMACSS category, "component", is loaded after "base and layout" styles.
     component:
+      css/3_components/form/buttons.css: { minified: true }
       css/3_components/field/file-link.css: { minified: true }
-      css/3_components/form/honeypot.css: { minified: true }
     theme:
       css/3_components/navigation/pager.css: { minified: true }
       css/3_components/content/tables.css: { minified: true }
+      '//fonts.googleapis.com/css2?family=Roboto': { type: external }
   js:
     js/ext-win-script.js: { minified: true }
     js/empty-tags-script.js: { minified: true }
@@ -87,3 +88,11 @@ media_library_styles:
     theme:
       css/3_components/field/file-link.css: { minified: true }
 
+# This library provides styling for common admin interface components - the library is only loaded for
+# authenticated users and on the user login form - @see nicsdru_corplite_theme.theme for processing functions
+authenticated-styles:
+  version: 1.0
+  css:
+    theme:
+      css/3_components/form/layout-builder-form.css: { minified: true, weight: -6 }
+      css/3_components/layout/layout-builder.css: { minified: true, weight: -5 }

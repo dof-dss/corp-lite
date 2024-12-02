@@ -11,8 +11,8 @@
     "js:compile": "node web/themes/custom/nicsdru_corplite_theme/config/uglify-js.js",
     "js:lint": "node web/themes/custom/nicsdru_corplite_theme/config/eslint.js -c ",
     "––––––– CSS SCRIPTS": "–––––––––––––",
-    "scss:dev": "sass --style=expanded --source-map --embed-sources --no-error-css $npm_package_config_corplite",
-    "scss:prod": "sass --style=compressed --no-source-map --no-error-css $npm_package_config_compileDir_corplite",
+    "scss:dev": "sass --style=expanded --source-map --embed-sources --no-error-css $npm_package_config_compileDir_corplite $npm_package_config_compileDir_afbini $npm_package_config_compileDir_etini $npm_package_config_compileDir_hseni $npm_package_config_compileDir_nisra $npm_package_config_compileDir_nsmc",
+    "scss:prod": "sass --style=compressed --no-source-map --no-error-css $npm_package_config_compileDir_corplite $npm_package_config_compileDir_afbini $npm_package_config_compileDir_etini $npm_package_config_compileDir_hseni $npm_package_config_compileDir_nisra $npm_package_config_compileDir_nsmc",
     "scss:lint": "stylelint web/themes/custom/nicsdru_corplite_theme/src/scss/**/*.scss",
     "scss:lint:fix": "stylelint web/themes/custom/nicsdru_corplite_theme/src/scss/**/*.scss --fix",
     "css-post": "postcss --config web/themes/custom/nicsdru_corplite_theme/config/postcss.config.js --replace \"web/themes/custom/nicsdru_corplite_theme/css/**/*.css\"",
@@ -32,11 +32,11 @@
   "config": {
     "//": "Some useful configuration we can use to pass back to scripts",
     "compileDir_corplite": "web/themes/custom/nicsdru_corplite_theme/src/scss/:web/themes/custom/nicsdru_corplite_theme/css/",
-    "compileDir_afbini": "",
-    "compileDir_etini": "",
-    "compileDir_hseni": "",
-    "compileDir_nisra": "",
-    "compileDir_nsmc": "project/sites/northsouthministerialcouncil/themes/northsouthministerialcouncil_theme/src/scss/**/*.scss:project/sites/northsouthministerialcouncil/themes/northsouthministerialcouncil_theme/css/"
+    "compileDir_afbini": "project/sites/afbini/themes/afbini_theme/src/scss/:project/sites/afbini/themes/afbini_theme/css/",
+    "compileDir_etini": "project/sites/etini/themes/etini_theme/src/scss/:project/sites/etini/themes/etini_theme/css/",
+    "compileDir_hseni": "project/sites/hseni/themes/hseni_theme/src/scss/:project/sites/hseni/themes/hseni_theme/css/",
+    "compileDir_nisra": "project/sites/nisra/themes/nisra_theme/src/scss/:project/sites/nisra/themes/nisra_theme/css/",
+    "compileDir_nsmc": "project/sites/northsouthministerialcouncil/themes/northsouthministerialcouncil_theme/src/scss/:project/sites/northsouthministerialcouncil/themes/northsouthministerialcouncil_theme/css/"
   },
   "browserslist": [
     "> 1%",
