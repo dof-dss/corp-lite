@@ -12,6 +12,7 @@ use Drupal\Core\StringTranslation\ByteSizeMarkup;
 use Drupal\Core\Template\Attribute;
 use Drupal\Core\Url;
 use Drupal\file\FileInterface;
+use Drupal\node\Entity\Node;
 
 /**
  * Implements hook_preprocess().
@@ -142,6 +143,20 @@ function nicsdru_corplite_theme_theme_suggestions_field_alter(array &$suggestion
     $element['#field_name'] . '__' .
     $element['#view_mode'] . '__' .
     $element['#bundle'];
+
+  // Force related info/More useful links fields to use the
+  // related_info template.
+
+  $publication_taxonomy_fields = [
+    'field_site_topics',
+    'field_research_support',
+  ];
+
+  foreach ($publication_taxonomy_fields as $publication_taxonomy_field) {
+    if ($variables['element']['#field_name'] === $publication_taxonomy_field) {
+      $suggestions = ['field__node__field_site_topics'];
+    }
+  }
 }
 
 /**
@@ -362,6 +377,21 @@ function nicsdru_corplite_theme_preprocess_media(&$variables)
     // Do not output the langcode if is undefined.
     if ($variables['media_langcode'] === 'und') {
       unset($variables['media_langcode']);
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function nicsdru_corplite_theme_preprocess_field(&$variables) {
+
+  if ($variables['field_name'] == 'field_attachment') {
+    $path = \Drupal::service('path_alias.manager')
+      ->getPathByAlias('/help-viewing-documents');
+    if (preg_match('/node\/(\d+)/', $path, $matches)) {
+      $node = Node::load($matches[1]);
+      $variables['node_id'] = $node->id();
     }
   }
 }

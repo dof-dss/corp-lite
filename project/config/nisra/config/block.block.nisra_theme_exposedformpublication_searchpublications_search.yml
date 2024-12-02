@@ -1,0 +1,28 @@
+uuid: 3fadc487-6b4f-469f-8523-665462ff7d6f
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.publication_search
+  module:
+    - system
+    - views
+  theme:
+    - nisra_theme
+id: nisra_theme_exposedformpublication_searchpublications_search
+theme: nisra_theme
+region: sidebar_first
+weight: -8
+provider: null
+plugin: 'views_exposed_filter_block:publication_search-publications_search'
+settings:
+  id: 'views_exposed_filter_block:publication_search-publications_search'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/publications\r\n/publications/date/*\r\n/publications/topic/*\r\n/publications/type/*"
