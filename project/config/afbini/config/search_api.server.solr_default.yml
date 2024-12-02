@@ -41,10 +41,10 @@ backend_config:
   connector: standard
   connector_config:
     scheme: http
-    host: solr
+    host: afbini_solr
     port: 8983
     path: /
-    core: afbini
+    core: default
     timeout: 5
     index_timeout: 5
     optimize_timeout: 10

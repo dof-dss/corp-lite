@@ -1,0 +1,22 @@
+uuid: 5bd64034-8e62-455d-9e0f-dfc26b70601c
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - afbini_theme
+_core:
+  default_config_hash: wPsfrXA_4wKhNdkE9Bo4CPtOFQlMu5yR3Zlr0NOsXbE
+id: afbini_theme_content
+theme: afbini_theme
+region: content
+weight: -5
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

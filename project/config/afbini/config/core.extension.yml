@@ -30,6 +30,7 @@ module:
   corplite_common: 0
   corplite_eu_cookie_compliance: 0
   corplite_image_styles: 0
+  corplite_search: 0
   csp: 0
   ctools: 0
   date_facet_drilldown: 0
@@ -153,4 +154,7 @@ module:
 theme:
   olivero: 0
   claro: 0
+  stable9: 0
+  nicsdru_corplite_theme: 0
+  afbini_theme: 0
 profile: nicsdru_corplite_profile
