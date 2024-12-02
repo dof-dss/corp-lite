@@ -45,6 +45,7 @@ html {
   --clr-grey-dark: #4d4d4d;
   --clr-grey-light: #e8e7e7;
   --clr-grey-lightest: #e8e7e7;
+  --clr-tangaroa: #041e34;
   --clr-white: #fff;
   --clr-body-text: #222;
   --clr-mark-bkgd: #ff0;
@@ -57,24 +58,29 @@ html {
   --clr-border: #e8e7e7;
   --clr-table-border: #666;
   --clr-button: #666;
+  --clr-button-action: #048a05;
+  --clr-button-danger: #d1431f;
   --clr-button-disabled: #e8e7e7;
+  --clr-button-primary: #0a78cd;
+  --clr-button-secondary: #154365;
+  --clr-button-warning: #bf5803;
   --clr-brand-primary: #00aae5;
   --clr-brand-primary-light: #cee4f6;
   --clr-brand-secondary: #0b1647;
 
   // Typography and rhythm spacing custom properties
-  --base-font-size: 1.6rem;
+  --fs-base-size: 1.6rem;
   --base-rhythm: .8rem;
   --base-rhythm-frag: .2rem;
 
   @include breakpoint($lap) {
-    --base-font-size: 1.8rem;
+    --fs-base-size: 1.8rem;
     --base-rhythm: .9rem;
     --base-rhythm-frag: .3rem;
   }
 
   @include breakpoint($desk-plus) {
-    --base-font-size: 2rem;
+    --fs-base-size: 2rem;
     --base-rhythm: 1rem;
     --base-rhythm-frag: .5rem;
   }
@@ -92,16 +98,8 @@ html {
 body {
   color: var(--body-text-colour);
   background-color: var(--body-bkgd-clr);
-  font-size: 1.6rem;
+  font-size: var(--fs-base-size);
   line-height: 1.5;
   margin: 0;
   padding: 0;
-
-  @include breakpoint($lap) {
-    font-size: 1.8rem;
-  }
-
-  @include breakpoint($desk-plus) {
-    font-size: 2rem;
-  }
 }
