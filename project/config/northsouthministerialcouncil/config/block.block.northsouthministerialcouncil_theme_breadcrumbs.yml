@@ -1,0 +1,22 @@
+uuid: c27cbc46-332d-4bac-a0a1-073aaf0b7a67
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - northsouthministerialcouncil_theme
+_core:
+  default_config_hash: szcv3LpZ29RfR5WAmA0i0xHKRx_jQauU2FP3Exof_FE
+id: northsouthministerialcouncil_theme_breadcrumbs
+theme: northsouthministerialcouncil_theme
+region: breadcrumb
+weight: -2
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

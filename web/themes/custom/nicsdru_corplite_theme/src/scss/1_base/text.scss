@@ -23,7 +23,7 @@
 
 p,
 pre {
-  font-size: var(--base-font-size);
+  font-size: var(--fs-base-size);
   line-height: 1.5;
   margin: 1em 0 1.5em;
 }
@@ -261,7 +261,7 @@ sup {
 
 address {
   color: var(--clr-charcoal);
-  font-size: var(--base-font-size);
+  font-size: var(--fs-base-size);
   font-style: normal;
   font-weight: normal;
   line-height: 1.5;

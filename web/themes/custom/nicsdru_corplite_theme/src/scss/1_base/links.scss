@@ -19,10 +19,12 @@
 
 a,
 %link {
-  color: var(--clr-link);
-  // Remove gaps in links underline in iOS 8+ and Safari 8+.
-  -webkit-text-decoration-skip: objects;
-  text-decoration: none;
+  @include link-state-style();
+
+  &:active:not(.button, .btn) {
+    // Remove the gray background on active links in IE 10.
+    background-color: transparent;
+  }
 }
 
 // Any element can receive focus, but only links can be visited, so we can
@@ -30,7 +32,6 @@ a,
 // with additional styles won't have their styles overridden.
 :visited {
   color: var(--clr-link-visited);
-  text-decoration: none;
 }
 
 a:hover,
@@ -53,11 +54,56 @@ a:active {
   }
 }
 
-// Remove the outline on focused links when they are also active or hovered
-// in all browsers (opinionated).
-a:active,
-a:hover {
-  outline-width: 0;
+a[aria-hidden='true'] {
+  @include visually-hidden;
+}
+
+// Temp fix for admin toolbar which doesn't set :visited state for links!
+.toolbar-tray a:visited {
+  color: #565656;
+}
+
+$link-skip: (
+  color: (
+    default: #fff
+  ),
+  background-color: (
+    default: $charcoal
+  ),
+  text-decoration: (
+    default: none,
+  ),
+  outline: 3px solid #ff0,
+  outline-offset: -6px,
+  opacity: (
+    default: 0,
+    hover: 1,
+    focus: 1
+  ),
+  transition: 'opacity .25s'
+) !default;
+
+.skip-link {
+  @include link-state-style($link-skip);
+
+  text-align: center;
+
+  &::after {
+    content: ' ';
+    display: inline-block;
+    width: 1.5em;
+    height: .75em;
+    background: transparent url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAPCAQAAAC7b6xuAAAAsUlEQVR4AY3LQ2KEURSFwbOU2LbNcTQMd5s1xLaNL7i/0a9rXpJYYpNSOdHINhuSmOcT2KfCERo4B75ZFeeYQ6odwVyIUZ4wx9TmhPogPDAoiUEeMKfUFwyPDMrQzx3mnOZUOEsEQw+3mEvaFKAuEoYURwfXmGs6gnCKebKQQBuXmFt6JGojYVjZaOEcc8eKMxgaOIOAhREVRi0nsTAqN6q5doQ0pnjhL4yreMxylBd+ABWdFyV4bCZyAAAAAElFTkSuQmCC') no-repeat 50% 50%;
+    background-size: 1.6rem auto;
+  }
+}
+
+.skip-link:focus,
+.skip-link:hover {
+  display: block;
+  padding: .9rem 3.5rem;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 @media print {
@@ -71,7 +117,7 @@ a:hover {
   a[href]::after {
     content: ' (' attr(href) ')';
     font-weight: normal;
-    font-size: $base-font-size;
+    font-size: var(--fs-base-size);
     text-decoration: none;
   }
 

@@ -66,13 +66,13 @@
     </div>
   {%- endif -%}
   {% if content_wrapper_attr is not empty %}
-    <div{{ content_wrapper_attr }}>
+    <div{{ content_wrapper_attr.setAttribute('role', presentation) }}>
       {{- page.content -}}
     </div>
   {% else %}
     {{- page.content -}}
   {% endif %}
-  {%- if page.sidebar_second -%}
+  {%- if page.sidebar_second|render|striptags('<img>')|trim|length -%}
     <aside{{ sidebar_second_attr }}>
       {{- page.sidebar_second -}}
     </aside>
