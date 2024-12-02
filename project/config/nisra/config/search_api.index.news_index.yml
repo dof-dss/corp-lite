@@ -60,7 +60,6 @@ third_party_settings:
       use_language_undefined_as_fallback_language: false
       specific_languages:
         en: '0'
-        en-gb: '0'
       use_universal_collation: false
 id: news_index
 name: 'News index'
