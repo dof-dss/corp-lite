@@ -5,12 +5,11 @@ dependencies:
   config:
     - field.storage.node.body
     - field.storage.taxonomy_term.field_summary
-    - search_api.server.default
   module:
-    - search_api_solr
     - node
-    - taxonomy
     - search_api
+    - search_api_solr
+    - taxonomy
 third_party_settings:
   search_api_solr:
     finalize: false
@@ -298,4 +297,4 @@ options:
   cron_limit: 50
   index_directly: true
   track_changes_in_references: true
-server: default
+server: null

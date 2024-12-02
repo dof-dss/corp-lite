@@ -12,5 +12,6 @@ storage: folder
 folder: ../project/config/hseni/hosted
 module: {  }
 theme: {  }
-complete_list: {  }
+complete_list:
+  - search_api.server.default
 partial_list: {  }
