@@ -8,8 +8,8 @@ base theme: nicsdru_corplite_theme
 libraries:
   - nicsdru_corplite_theme/corplite-styling
 
-ckeditor5-stylesheets:
-  - css/1_base/links.css
+#ckeditor5-stylesheets:
+#  - css/1_base/links.css
 
 libraries-override:
   layout_builder/drupal.layout_builder:
