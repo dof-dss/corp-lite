@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Primary module hooks for Dept Publications module.
+ * Primary module hooks for Nisra common module.
  */
 
 use Drupal\Core\Form\FormStateInterface;
