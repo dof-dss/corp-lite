@@ -412,3 +412,12 @@ function nicsdru_corplite_theme_preprocess_field(&$variables) {
     }
   }
 }
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function nicsdru_corplite_theme_theme_suggestions_views_view_unformatted_alter(array &$suggestions, array $variables) {
+  if (!empty($variables['view']->element['#display_id'])) {
+    $suggestions[] = 'views_view_unformatted__' . $variables['view']->element['#display_id'];
+  }
+}
