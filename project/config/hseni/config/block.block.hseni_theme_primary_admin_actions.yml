@@ -1,0 +1,20 @@
+uuid: 86a9f86a-6062-4a64-8c07-d80307f1660c
+langcode: en
+status: true
+dependencies:
+  theme:
+    - hseni_theme
+_core:
+  default_config_hash: UUuHLwdntNDDZdOU5kP43GWc49i0FQ7_w23cUOISpeM
+id: hseni_theme_primary_admin_actions
+theme: hseni_theme
+region: highlighted
+weight: -5
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

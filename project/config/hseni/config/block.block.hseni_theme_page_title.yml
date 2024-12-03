@@ -1,0 +1,20 @@
+uuid: fcec7bbc-16d8-4118-9d99-1831146e47e4
+langcode: en
+status: true
+dependencies:
+  theme:
+    - hseni_theme
+_core:
+  default_config_hash: jc4FPJHbAaeJkH4fPoqNbVpfVPBlrn5ccyNDWskxSBc
+id: hseni_theme_page_title
+theme: hseni_theme
+region: content
+weight: -4
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

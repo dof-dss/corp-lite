@@ -28,6 +28,7 @@ module:
   cookie_content_blocker: 0
   corplite_eu_cookie_compliance: 0
   corplite_image_styles: 0
+  corplite_search: 0
   csp: 0
   ctools: 0
   date_facet_drilldown: 0
@@ -47,6 +48,7 @@ module:
   facets: 0
   facets_pretty_paths: 0
   facets_summary: 0
+  fastly: 0
   field: 0
   field_group: 0
   field_ui: 0
@@ -154,6 +156,8 @@ module:
   readonlymode: 9999
   eu_cookie_compliance: 10000
 theme:
-  olivero: 0
   claro: 0
+  stable9: 0
+  hseni_theme: 0
+  nicsdru_corplite_theme: 0
 profile: nicsdru_corplite_profile

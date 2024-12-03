@@ -1,0 +1,22 @@
+uuid: 980fe9c0-505d-42d0-b939-dd18900c03dc
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - nicsdru_corplite_theme
+_core:
+  default_config_hash: szcv3LpZ29RfR5WAmA0i0xHKRx_jQauU2FP3Exof_FE
+id: nicsdru_corplite_theme_breadcrumbs
+theme: nicsdru_corplite_theme
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

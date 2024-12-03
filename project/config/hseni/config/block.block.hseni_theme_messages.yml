@@ -1,0 +1,22 @@
+uuid: 8c1b6798-ccc3-4759-9aec-2edfe8e57213
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - hseni_theme
+_core:
+  default_config_hash: hwGNEMbmUoXB0MG3RrVTk72hI2kQOUIyLcR4xv7SzoU
+id: hseni_theme_messages
+theme: hseni_theme
+region: highlighted
+weight: -4
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }
