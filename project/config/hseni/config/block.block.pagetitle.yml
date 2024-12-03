@@ -1,15 +1,15 @@
-uuid: fcec7bbc-16d8-4118-9d99-1831146e47e4
+uuid: e3fe08e7-8ae4-4d45-84b2-abf58532ef29
 langcode: en
 status: true
 dependencies:
+  module:
+    - system
   theme:
     - hseni_theme
-_core:
-  default_config_hash: jc4FPJHbAaeJkH4fPoqNbVpfVPBlrn5ccyNDWskxSBc
-id: hseni_theme_page_title
+id: pagetitle
 theme: hseni_theme
 region: content
-weight: -4
+weight: -5
 provider: null
 plugin: page_title_block
 settings:
@@ -17,4 +17,8 @@ settings:
   label: 'Page title'
   label_display: '0'
   provider: core
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: '/node/*/revisions/view/*'

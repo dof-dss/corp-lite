@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["../src/scss/components.scss"],"names":[],"mappings":"AAAA;AAAA;AAAA;AAAA","file":"components.css","sourcesContent":["/*\n * @file\n * Defines the components for the theme.\n */\n\n\n"]}
+{"version":3,"sourceRoot":"","sources":["../src/scss/components.scss"],"names":[],"mappings":"AAAA;AAAA;AAAA;AAAA;AAKA;EACE","file":"components.css","sourcesContent":["/*\n * @file\n * Defines the components for the theme.\n */\n\n.block-views-block-featured-news-homepage-latest-news ul li .date-published {\n  display: block;\n}\n"]}
