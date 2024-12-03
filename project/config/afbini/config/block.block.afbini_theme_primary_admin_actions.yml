@@ -1,13 +1,13 @@
-uuid: 9e265bd4-3d82-4e16-b14a-a6839f3a1ae7
+uuid: a9cf291c-8d14-4424-b937-96c4f44d734a
 langcode: en
 status: true
 dependencies:
   theme:
-    - olivero
+    - afbini_theme
 _core:
   default_config_hash: UUuHLwdntNDDZdOU5kP43GWc49i0FQ7_w23cUOISpeM
-id: olivero_primary_admin_actions
-theme: olivero
+id: afbini_theme_primary_admin_actions
+theme: afbini_theme
 region: highlighted
 weight: -5
 provider: null

@@ -144,9 +144,8 @@ function nicsdru_corplite_theme_theme_suggestions_field_alter(array &$suggestion
     $element['#view_mode'] . '__' .
     $element['#bundle'];
 
-  // Force related info/More useful links fields to use the
-  // related_info template.
-
+  // Force publication taxonomy reference fields to use
+  // site topics template.
   $publication_taxonomy_fields = [
     'field_site_topics',
     'field_research_support',

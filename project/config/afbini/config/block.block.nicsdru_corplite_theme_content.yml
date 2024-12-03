@@ -1,15 +1,15 @@
-uuid: 18da16a1-39b8-45b6-a0c1-0f2ef09f36c6
+uuid: 96a9b590-7c47-4f19-801f-4d77b224a98e
 langcode: en
 status: true
 dependencies:
   module:
     - system
   theme:
-    - olivero
+    - nicsdru_corplite_theme
 _core:
   default_config_hash: wPsfrXA_4wKhNdkE9Bo4CPtOFQlMu5yR3Zlr0NOsXbE
-id: olivero_content
-theme: olivero
+id: nicsdru_corplite_theme_content
+theme: nicsdru_corplite_theme
 region: content
 weight: 0
 provider: null
