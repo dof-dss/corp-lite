@@ -1,17 +1,15 @@
-uuid: 0f534ab8-c2a1-413e-b70a-4411c9a1f5c9
+uuid: 7338ad2d-0a64-4a99-a2c0-bd513b781a98
 langcode: en
 status: true
 dependencies:
   module:
     - system
   theme:
-    - olivero
-_core:
-  default_config_hash: szcv3LpZ29RfR5WAmA0i0xHKRx_jQauU2FP3Exof_FE
-id: olivero_breadcrumbs
-theme: olivero
+    - afbini_theme
+id: breadcrumbs
+theme: afbini_theme
 region: breadcrumb
-weight: 0
+weight: -6
 provider: null
 plugin: system_breadcrumb_block
 settings:
@@ -19,4 +17,8 @@ settings:
   label: Breadcrumbs
   label_display: '0'
   provider: system
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: '<front>'
