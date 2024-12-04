@@ -8,6 +8,7 @@
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Link;
+use Drupal\Core\Render\Markup;
 use Drupal\Core\StringTranslation\ByteSizeMarkup;
 use Drupal\Core\Template\Attribute;
 use Drupal\Core\Url;
@@ -392,5 +393,31 @@ function nicsdru_corplite_theme_preprocess_field(&$variables) {
       $node = Node::load($matches[1]);
       $variables['node_id'] = $node->id();
     }
+  }
+
+  // Add a class to the anchor tag on application link fields & append the icon.
+  if (isset($variables['element'])
+    && $variables['element']['#field_name'] === 'field_link'
+    && $variables['element']['#bundle'] === 'application'
+  ) {
+    foreach ($variables['items'] as $key => $item) {
+      $icon = '<svg aria-hidden="true" class="ico ico-arrow-right"><use xlink:href="#arrow"></use></svg>';
+      $title = $item['content']['#title'];
+      $classes = ['call-to-action'];
+
+      $formattedTitle = Markup::create($title . $icon);
+
+      $variables['items'][0]['content']['#title'] = $formattedTitle;
+      $variables['items'][0]['content']['#url']->setOption('attributes', ['class' => $classes]);
+    }
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function nicsdru_corplite_theme_theme_suggestions_views_view_unformatted_alter(array &$suggestions, array $variables) {
+  if (!empty($variables['view']->element['#display_id'])) {
+    $suggestions[] = 'views_view_unformatted__' . $variables['view']->element['#display_id'];
   }
 }

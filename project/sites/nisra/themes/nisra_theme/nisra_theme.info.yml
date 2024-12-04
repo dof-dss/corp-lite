@@ -1,29 +1,15 @@
 name: Nisra Theme
 type: theme
-description: 'Base theme for Drupal Corp-lite sites'
+description: 'Sub-theme for NISRA'
 package: NICS
 core_version_requirement: ^8.8 || ^9 || ^10
 base theme: nicsdru_corplite_theme
 
 libraries:
-  - nicsdru_corplite_theme/corplite-styling
+  - nisra_theme/site-styling
 
-#ckeditor5-stylesheets:
-#  - css/1_base/links.css
-
-libraries-override:
-  layout_builder/drupal.layout_builder:
-    css:
-      theme:
-        /core/themes/stable/css/layout_builder/layout-builder.css: false
-  eu_cookie_compliance/eu_cookie_compliance_bare:
-    css:
-      state:
-        css/eu_cookie_compliance.bare.css: css/4_state/block/eu-cookie-compliance.css
-  webform/webform.element.counter:
-    css:
-      component:
-        css/webform.element.counter.css: false
+ckeditor5-stylesheets:
+  - css/1_base/root.css
 
 regions:
   header: 'Header'
