@@ -1,4 +1,4 @@
-uuid: f3db3028-cf83-405b-a5ad-442571066c12
+uuid: 7a3b1537-04c8-41b3-818a-27a1fc526453
 langcode: en
 status: true
 dependencies:
@@ -8,17 +8,15 @@ dependencies:
     - system
   theme:
     - hseni_theme
-_core:
-  default_config_hash: vEnGyvUYVwDo4JfvnSNMFSGFqVIxXNc713lo-_9gneg
-id: hseni_theme_main_menu
+id: mainmenu
 theme: hseni_theme
 region: primary_menu
-weight: 0
+weight: -2
 provider: null
 plugin: 'system_menu_block:main'
 settings:
   id: 'system_menu_block:main'
-  label: 'Main navigation'
+  label: 'Main menu'
   label_display: '0'
   provider: system
   level: 1

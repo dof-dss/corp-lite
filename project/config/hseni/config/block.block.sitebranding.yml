@@ -1,4 +1,4 @@
-uuid: 475e3f3c-ab45-4cc7-a8a0-ebb1c1fa063e
+uuid: faf82d29-c776-4ada-aac4-9d4600d29a64
 langcode: en
 status: true
 dependencies:
@@ -6,12 +6,10 @@ dependencies:
     - system
   theme:
     - hseni_theme
-_core:
-  default_config_hash: uX9yAGSNB1h9bkLT5ckxEiX6kegngz2lHah7uA_t5HA
-id: hseni_theme_site_branding
+id: sitebranding
 theme: hseni_theme
 region: header
-weight: -5
+weight: -3
 provider: null
 plugin: system_branding_block
 settings:
