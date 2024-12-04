@@ -1,0 +1,22 @@
+uuid: 96a9b590-7c47-4f19-801f-4d77b224a98e
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - nicsdru_corplite_theme
+_core:
+  default_config_hash: wPsfrXA_4wKhNdkE9Bo4CPtOFQlMu5yR3Zlr0NOsXbE
+id: nicsdru_corplite_theme_content
+theme: nicsdru_corplite_theme
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }
