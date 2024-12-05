@@ -9,7 +9,7 @@ dependencies:
 id: system_branding
 theme: nisra_theme
 region: header
-weight: -3
+weight: -9
 provider: null
 plugin: system_branding_block
 settings:

@@ -1,0 +1,25 @@
+uuid: 7a3b1537-04c8-41b3-818a-27a1fc526453
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - hseni_theme
+id: mainmenu
+theme: hseni_theme
+region: primary_menu
+weight: -2
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 2
+  expand_all_items: true
+visibility: {  }

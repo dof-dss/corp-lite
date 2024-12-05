@@ -8,8 +8,8 @@ _core:
   default_config_hash: jc4FPJHbAaeJkH4fPoqNbVpfVPBlrn5ccyNDWskxSBc
 id: nisra_theme_page_title
 theme: nisra_theme
-region: top_banner
-weight: -3
+region: content
+weight: -8
 provider: null
 plugin: page_title_block
 settings:
