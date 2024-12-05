@@ -11,8 +11,8 @@ dependencies:
     - afbini_theme
 id: views_block__featured_news_homepage_latest_news
 theme: afbini_theme
-region: content
-weight: -5
+region: sidebar_second
+weight: -7
 provider: null
 plugin: 'views_block:featured_news_homepage-latest_news'
 settings:
