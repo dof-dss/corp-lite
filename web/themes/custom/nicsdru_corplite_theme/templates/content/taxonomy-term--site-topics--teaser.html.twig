@@ -23,11 +23,13 @@
  * @see template_preprocess_taxonomy_term()
  */
 #}
-<article class="card">
-  {% if name and not page %}
-  <h3 class="card__title"><a href="{{ url }}">{{ name }}</a></h3>
-  {% endif %}
+<a class="card" href="{{ url }}">
+<article>
   <div class="card__content">
-  {{ content }}
+    {{ content }}
   </div>
+  {% if name and not page %}
+  <h3 class="card__title">{{ name }}</h3>
+  {% endif %}
 </article>
+</a>

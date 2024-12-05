@@ -136,6 +136,9 @@ a.card {
     .card__title::after {
       background-color: var(--clr-charcoal);
       background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2025%2015%22%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%20.st0%7Bfill%3A%23ffffff%3Bfill-rule%3Aevenodd%3Bclip-rule%3Aevenodd%3B%7D%20%3C%2Fstyle%3E%3Cpath%20class%3D%22st0%22%20d%3D%22M12.5%200L0%2012l3%203%209.5-10L22%2015l3-3L12.5%200z%22%2F%3E%3C%2Fsvg%3E%0A');
+      background-repeat: no-repeat;
+      background-size: 75%;
+      background-position: top 40% right 60%;
     }
   }
 
@@ -473,6 +476,17 @@ a.card {
   &--topics {
     @include breakpoint($tab) {
       grid-gap: 2em 3em;
+    }
+
+    &.card-deck--x3 {
+      .card {
+        &:nth-child(-n + 3) {
+          @include breakpoint($tab) {
+            box-shadow: none;
+            padding-top: 0;
+          }
+        }
+      }
     }
 
     .card {
