@@ -1,8 +1,9 @@
-uuid: 6016ace8-e3dd-4ef6-ac18-8216a8d0ce27
+uuid: 77f40a56-da56-4d05-a188-2576cbd04cbd
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.taxonomy_term.teaser
     - field.field.taxonomy_term.research_support.field_hide_topic
     - field.field.taxonomy_term.research_support.field_summary
     - field.field.taxonomy_term.research_support.field_term_image
@@ -10,18 +11,11 @@ dependencies:
     - taxonomy.vocabulary.research_support
   module:
     - text
-id: taxonomy_term.research_support.default
+id: taxonomy_term.research_support.teaser
 targetEntityType: taxonomy_term
 bundle: research_support
-mode: default
+mode: teaser
 content:
-  description:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 1
-    region: content
   field_summary:
     type: text_default
     label: hidden
@@ -31,6 +25,7 @@ content:
     region: content
 hidden:
   content_moderation_control: true
+  description: true
   field_hide_topic: true
   field_term_image: true
   field_term_photo: true

@@ -10,8 +10,8 @@ dependencies:
     - nisra_theme
 id: nisra_theme_views_block__site_subtopics_site_subtopics
 theme: nisra_theme
-region: related
-weight: -7
+region: content
+weight: -6
 provider: null
 plugin: 'views_block:site_subtopics-site_subtopics'
 settings:

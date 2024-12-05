@@ -35,6 +35,9 @@ corplite-styling:
       css/3_components/content/lists.css: { minified: true }
       css/3_components/field/file-link.css: { minified: true }
       css/3_components/navigation/topics-list.css: { minified: true }
+      css/3_components/block/section-related.css: { minified: true }
+      css/3_components/content/cards.css: { minified: true }
+      css/3_components/navigation/toc-menu.css: { minified: true }
     theme:
       css/3_components/navigation/pager.css: { minified: true }
       css/3_components/content/tables.css: { minified: true }

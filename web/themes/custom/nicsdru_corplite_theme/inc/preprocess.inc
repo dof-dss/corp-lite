@@ -14,6 +14,8 @@ use Drupal\Core\Template\Attribute;
 use Drupal\Core\Url;
 use Drupal\file\FileInterface;
 use Drupal\node\Entity\Node;
+use Drupal\taxonomy\Entity\Term;
+use Drupal\taxonomy\Entity\Vocabulary;
 
 /**
  * Implements hook_preprocess().
@@ -419,5 +421,39 @@ function nicsdru_corplite_theme_preprocess_field(&$variables) {
 function nicsdru_corplite_theme_theme_suggestions_views_view_unformatted_alter(array &$suggestions, array $variables) {
   if (!empty($variables['view']->element['#display_id'])) {
     $suggestions[] = 'views_view_unformatted__' . $variables['view']->element['#display_id'];
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function nicsdru_corplite_theme_theme_suggestions_taxonomy_term_alter(array &$suggestions, array $variables) {
+
+  /** @var \Drupal\taxonomy\TermInterface $term */
+  $term = $variables['elements']['#taxonomy_term'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'taxonomy_term__' . $sanitized_view_mode;
+  $suggestions[] = 'taxonomy_term__' . $term->bundle();
+  $suggestions[] = 'taxonomy_term__' . $term->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'taxonomy_term__' . $term->id();
+  $suggestions[] = 'taxonomy_term__' . $term->id() . '__' . $sanitized_view_mode;
+
+  return $suggestions;
+}
+
+/**
+ * Implements hook_preprocess_region().
+ */
+function nicsdru_corplite_theme_preprocess_region(&$variables) {
+  // Make the title field text available in the related region.
+  if ($variables['region'] == 'related') {
+    // Get the term id from the current path.
+    $current_path = \Drupal::service('path.current')->getPath();
+    $split_path = pathinfo($current_path);
+    $tid = $split_path['filename'];
+    $term = Term::load($tid);
+    // Set the variable as the term label.
+    $variables['topic_title'] = $term->label();
   }
 }
