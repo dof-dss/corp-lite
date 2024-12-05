@@ -26,6 +26,7 @@
   grid-template-rows: 12.6rem 6.5rem;
   align-items: center;
   justify-content: space-between;
+  padding: 0 var(--rhythm-spacing);
 
   // IE fix.
   // IE does not support align-items on parent grid container - but does support align-self on grid items.
@@ -42,7 +43,7 @@
     grid-template-rows: 15.3rem;
     margin: 0 auto;
     max-width: $max-grid-width;
-    padding: 0 20px;
+    padding: 0 var(--rhythm-spacing-xl);
 
     // IE fix.
     // IE does not support justify-content: space-between. So we need a grid gap.

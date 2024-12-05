@@ -34,7 +34,9 @@
  */
 #}
 {% set heading_id = attributes.id ~ '-heading'|clean_id %}
-<nav class="main-menu  clearfix" aria-labelledby="{{ heading_id }}"{{ attributes|without('role') }}>
+{% set main_menu_classes = ['main-menu', 'clearfix'] %}
+<nav
+  aria-labelledby="{{ heading_id }}"{{ attributes.setAttribute('id', 'block-mainnavigation').addClass(main_menu_classes)|without('role') }}>
   {# Label. If not displayed, we still provide it for screen readers. #}
   {%- if not configuration.label_display -%}
     {%- set title_attributes = title_attributes.addClass('visually-hidden') -%}

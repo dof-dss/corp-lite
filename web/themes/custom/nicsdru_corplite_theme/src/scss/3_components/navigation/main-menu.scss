@@ -62,12 +62,14 @@ $link-main-menu-active: (
 ) !default;
 $link-main-menu-horizontal-active: (
   color: '#fff',
-  background: var(--clr-main-nav-border),
+  background: var(--clr-main-nav-active-bkgd),
   outline: none,
 ) !default;
 
 .main-menu {
   background-color: var(--clr-main-nav-bkgd);
+  border-bottom: 2px solid var(--clr-main-nav-brd-btm);
+  border-top: 2px solid var(--clr-main-nav-brd-top);
   position: relative;
 
   .nav {
@@ -92,24 +94,26 @@ $link-main-menu-horizontal-active: (
       padding: 0;
 
       @include breakpoint($tab) {
-        border-bottom: 2px solid var(--clr-main-nav-border);
         display: flex;
         width: auto;
       }
     }
 
-    &-link, &-item .active {
+    &-link,
+    &-item .active {
+      --main-nav-fs: 1.6rem;
+
       @include link-state-style($link-main-menu);
 
       display: block;
+      font-size: var(--main-nav-fs);
+      line-height: 2.7rem;
       padding: 1em 1.6rem;
 
       @include breakpoint($tab) {
         @include link-state-style($link-main-menu-horizontal);
 
-        font-size: 1.6rem;
-        line-height: 2.7rem;
-        padding: 0.9rem 1.2rem;
+        padding: 0.9rem var(--rhythm-spacing-xl);
         margin-right: 3px;
 
         // IE fix.
@@ -136,8 +140,7 @@ $link-main-menu-horizontal-active: (
       }
 
       @include breakpoint($lap) {
-        font-size: 1.8rem;
-        padding: 0.5em 1.5rem;
+        --clr-main-nav-fs: 1.8rem;
       }
     }
 

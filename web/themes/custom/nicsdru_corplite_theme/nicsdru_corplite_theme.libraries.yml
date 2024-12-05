@@ -41,6 +41,7 @@ corplite-styling:
       '//fonts.googleapis.com/css2?family=Roboto': { type: external }
   js:
     js/ext-win-script.js: { minified: true }
+    js/link-manager.js: { minified: true }
     js/empty-tags-script.js: { minified: true }
     js/table-xscroll.js: { minified: true }
     js/main-menu-toggle.js: { minified: true }
@@ -82,6 +83,12 @@ corplite-search:
     - core/drupal
     - core/jquery
     - core/once
+
+corplite-breadcrumb:
+  version: 1.0
+  css:
+    component:
+      css/3_components/navigation/breadcrumb.css: { minified: true }
 
 moderation-sidebar:
   version: VERSION
