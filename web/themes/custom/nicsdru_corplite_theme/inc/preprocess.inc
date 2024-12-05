@@ -20,13 +20,13 @@ use Drupal\taxonomy\Entity\Vocabulary;
 /**
  * Implements hook_preprocess().
  */
-function nicsdru_corplite_theme_preprocess(&$variables, $hook)
-{
+function nicsdru_corplite_theme_preprocess(&$variables, $hook) {
   // Set a variable based on the path.matcher.
   if (!isset($variables['is_front'])) {
     try {
       $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
-    } catch (\Exception $e) {
+    }
+    catch (\Exception $e) {
       $variables['is_front'] = FALSE;
     }
   }
@@ -38,9 +38,7 @@ function nicsdru_corplite_theme_preprocess(&$variables, $hook)
 /**
  * Implements hook_page_attachments_alter().
  */
-function nicsdru_corplite_theme_page_attachments_alter(array &$page)
-{
-
+function nicsdru_corplite_theme_page_attachments_alter(array &$page) {
   // Attach our drupal components library for authenticated users.
   $userCurrent = \Drupal::currentUser();
 
@@ -62,8 +60,7 @@ function nicsdru_corplite_theme_page_attachments_alter(array &$page)
 /**
  * Implements hook_preprocess_page() for page.html.twig.
  */
-function nicsdru_corplite_theme_preprocess_page(array &$variables)
-{
+function nicsdru_corplite_theme_preprocess_page(array &$variables) {
   // Set some render attributes for various regions on the page.html.twig
   // we can hook into these to add additional classes for layout in sub theming.
   $variables['main_content_attr'] = [
@@ -99,8 +96,7 @@ function nicsdru_corplite_theme_preprocess_page(array &$variables)
 /**
  * Implements hook_preprocess_pager().
  */
-function nicsdru_corplite_theme_preprocess_pager(&$variables)
-{
+function nicsdru_corplite_theme_preprocess_pager(&$variables) {
   if (empty($variables['items'])) {
     return;
   }
@@ -116,8 +112,7 @@ function nicsdru_corplite_theme_preprocess_pager(&$variables)
 /**
  * Implements hook_preprocess_block().
  */
-function nicsdru_corplite_theme_preprocess_block(array &$variables)
-{
+function nicsdru_corplite_theme_preprocess_block(array &$variables) {
   // Include social links as part of main/footer menu blocks to ease the
   // process of wrapping menu + links elements in a parent element to set
   // a max width on.
@@ -133,8 +128,7 @@ function nicsdru_corplite_theme_preprocess_block(array &$variables)
 /**
  * Implements hook_theme_suggestions_field_alter().
  */
-function nicsdru_corplite_theme_theme_suggestions_field_alter(array &$suggestions, array $variables)
-{
+function nicsdru_corplite_theme_theme_suggestions_field_alter(array &$suggestions, array $variables) {
   // Add view mode to node field theme suggestions.
   $element = $variables['element'];
 
@@ -164,8 +158,7 @@ function nicsdru_corplite_theme_theme_suggestions_field_alter(array &$suggestion
 /**
  * Implements hook_preprocess_views_view().
  */
-function nicsdru_corplite_theme_preprocess_views_view(&$variables)
-{
+function nicsdru_corplite_theme_preprocess_views_view(&$variables) {
   $variables['attributes']['role'] = 'presentation';
 
   if ($variables['id'] === 'search') {
@@ -187,8 +180,7 @@ function nicsdru_corplite_theme_preprocess_views_view(&$variables)
 /**
  * Implements template_preprocess_input().
  */
-function nicsdru_corplite_theme_preprocess_input(&$variables)
-{
+function nicsdru_corplite_theme_preprocess_input(&$variables) {
   // Set up configurable autocomplete message.
   $type_html = $variables['attributes']['type'];
   $text_types_html = [
@@ -234,18 +226,20 @@ function nicsdru_corplite_theme_preprocess_input(&$variables)
 /**
  * Implements template_preprocess_file_link().
  */
-function nicsdru_corplite_theme_preprocess_file_link(array &$variables)
-{
+function nicsdru_corplite_theme_preprocess_file_link(array &$variables) {
   if (!$variables['file'] instanceof FileInterface) {
     return;
   }
 
   // Map file mimetypes to user friendly document types.
-  $pretty_mimes = \Drupal::service('origins_media.pretty_mime_types')->getMimeTypes();
+  $pretty_mimes = \Drupal::service('origins_media.pretty_mime_types')
+    ->getMimeTypes();
 
   $file = $variables['file'];
 
-  $variables['file_size'] = ByteSizeMarkup::create($file->getSize(), \Drupal::languageManager()->getCurrentLanguage()->getId());
+  $variables['file_size'] = ByteSizeMarkup::create($file->getSize(), \Drupal::languageManager()
+    ->getCurrentLanguage()
+    ->getId());
   $variables['file_url'] = $file->createFileUrl();
   $file_extension = pathinfo($variables['file_url'], PATHINFO_EXTENSION);
   $variables['attributes']->addClass([
@@ -257,7 +251,8 @@ function nicsdru_corplite_theme_preprocess_file_link(array &$variables)
   $file_mimetype = $file->getMimeType();
   if (array_key_exists($file->getMimeType(), $pretty_mimes)) {
     $variables['file_type'] = $pretty_mimes[$file_mimetype];
-  } else {
+  }
+  else {
     $variables['file_type'] = strtoupper(preg_replace('/^application\/(\w+)$/', '\1', $file_mimetype));
   }
 }
@@ -265,8 +260,7 @@ function nicsdru_corplite_theme_preprocess_file_link(array &$variables)
 /**
  * Implements hook_form_FORM_ID_alter().
  */
-function nicsdru_corplite_theme_form_user_login_form_alter(&$form, FormStateInterface $form_state, $form_id)
-{
+function nicsdru_corplite_theme_form_user_login_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   // Alter login form to add out admin theming components.
   $form['#attached']['library'][] = 'nicsdru_corplite_theme/authenticated-styles';
 }
@@ -274,22 +268,21 @@ function nicsdru_corplite_theme_form_user_login_form_alter(&$form, FormStateInte
 /**
  * Implements hook_form_FORM_ID_alter().
  */
-function nicsdru_corplite_theme_form_user_pass_alter(&$form, FormStateInterface $form_state, $form_id = NULL)
-{
+function nicsdru_corplite_theme_form_user_pass_alter(&$form, FormStateInterface $form_state, $form_id = NULL) {
   $form['#attached']['library'][] = 'nicsdru_corplite_theme/authenticated-styles';
 }
 
 /**
  * Implements hook_preprocess_facets_item_list().
  */
-function nicsdru_corplite_theme_preprocess_facets_item_list(array &$variables)
-{
+function nicsdru_corplite_theme_preprocess_facets_item_list(array &$variables) {
   if (!empty($variables["facet"])) {
     if (!empty($variables["facet"]->getWidget()) && $variables["facet"]->getWidget()["type"] === 'links') {
       foreach ($variables["items"] as $key => $item) {
         if (array_key_exists('class', $item["value"]["#attributes"])) {
           $variables["items"][$key]["value"]["#attributes"]["class"][] = 'facet-item--link';
-        } else {
+        }
+        else {
           $variables["items"][$key]["value"]["#attributes"]["class"] = ['facet-item--link'];
         }
       }
@@ -303,8 +296,7 @@ function nicsdru_corplite_theme_preprocess_facets_item_list(array &$variables)
  * @return array
  *   List of social media provider links.
  */
-function _nicsdru_corplite_social_links()
-{
+function _nicsdru_corplite_social_links() {
   $platforms = [
     'twitter' => t('Twitter'),
     'facebook' => t('Facebook'),
@@ -341,8 +333,7 @@ function _nicsdru_corplite_social_links()
 /**
  * Implements hook_preprocess_media().
  */
-function nicsdru_corplite_theme_preprocess_media(&$variables)
-{
+function nicsdru_corplite_theme_preprocess_media(&$variables) {
   if (empty($variables['media'])
     || ($variables['media']->bundle() !== 'document' && $variables['media']->bundle() !== 'secure_file')) {
     return;
@@ -350,7 +341,8 @@ function nicsdru_corplite_theme_preprocess_media(&$variables)
 
   if (!empty($variables['content']['field_media_file']) || !empty($variables['content']['field_media_file_1'])) {
     // Map file mimetypes to user friendly document types.
-    $pretty_mimes = \Drupal::service('origins_media.pretty_mime_types')->getMimeTypes();
+    $pretty_mimes = \Drupal::service('origins_media.pretty_mime_types')
+      ->getMimeTypes();
 
     $media_fields = [
       'field_media_file',
@@ -364,13 +356,16 @@ function nicsdru_corplite_theme_preprocess_media(&$variables)
     }
 
     if (!empty($file)) {
-      $variables['file_size'] = ByteSizeMarkup::create($file->getSize(), \Drupal::languageManager()->getCurrentLanguage()->getId());
+      $variables['file_size'] = ByteSizeMarkup::create($file->getSize(), \Drupal::languageManager()
+        ->getCurrentLanguage()
+        ->getId());
       $variables['file_url'] = $file->createFileUrl();
       $variables['file_extension'] = pathinfo($variables['file_url'], PATHINFO_EXTENSION);
       $file_mimetype = $file->getMimeType();
       if (array_key_exists($file->getMimeType(), $pretty_mimes)) {
         $variables['file_type'] = $pretty_mimes[$file_mimetype];
-      } else {
+      }
+      else {
         $variables['file_type'] = strtoupper(preg_replace('/^application\/(\w+)$/', '\1', $file_mimetype));
       }
     }
@@ -387,7 +382,6 @@ function nicsdru_corplite_theme_preprocess_media(&$variables)
  * Implements hook_preprocess_HOOK().
  */
 function nicsdru_corplite_theme_preprocess_field(&$variables) {
-
   if ($variables['field_name'] == 'field_attachment') {
     $path = \Drupal::service('path_alias.manager')
       ->getPathByAlias('/help-viewing-documents');
@@ -428,7 +422,6 @@ function nicsdru_corplite_theme_theme_suggestions_views_view_unformatted_alter(a
  * Implements hook_theme_suggestions_HOOK_alter().
  */
 function nicsdru_corplite_theme_theme_suggestions_taxonomy_term_alter(array &$suggestions, array $variables) {
-
   /** @var \Drupal\taxonomy\TermInterface $term */
   $term = $variables['elements']['#taxonomy_term'];
   $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
@@ -452,8 +445,10 @@ function nicsdru_corplite_theme_preprocess_region(&$variables) {
     $current_path = \Drupal::service('path.current')->getPath();
     $split_path = pathinfo($current_path);
     $tid = $split_path['filename'];
-    $term = Term::load($tid);
-    // Set the variable as the term label.
-    $variables['topic_title'] = $term->label();
+    if (str_contains($split_path['dirname'], 'term') && is_numeric($tid)) {
+      $term = Term::load($tid);
+      // Set the variable as the term label.
+      $variables['topic_title'] = $term->label();
+    }
   }
 }
