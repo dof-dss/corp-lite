@@ -9,7 +9,7 @@ dependencies:
 id: pagetitle
 theme: afbini_theme
 region: content
-weight: -7
+weight: -8
 provider: null
 plugin: page_title_block
 settings:
