@@ -3,7 +3,7 @@
  * Sets out the base behaviour of form elements.
  */
 @use '../init' as *;
-@use '../3_components/form/buttons/button-defs' as *;
+//@use '../3_components/form/buttons/button-defs' as *;
 
 // sass-lint:disable no-vendor-prefixes, no-css-comments
 
@@ -104,7 +104,7 @@ button,
 [type='button'],
 [type='reset'],
 [type='submit'] {
-  @extend %button--disabled;
+  //@extend %button--disabled;
   box-sizing: border-box;
   // Some styles don't apply to <a> links since they are inline elements by default.
   display: inline-block;
