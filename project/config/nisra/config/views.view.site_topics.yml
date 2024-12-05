@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.taxonomy_term.teaser
     - field.storage.taxonomy_term.field_summary
     - field.storage.taxonomy_term.field_term_photo
     - system.menu.admin
@@ -1722,8 +1723,21 @@ display:
           draggable_views_reference: 'site_topics:draggable_site_topics'
           draggable_views_null_order: after
           draggable_views_pass_arguments: false
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: false
+      row:
+        type: 'entity:taxonomy_term'
+        options:
+          relationship: none
+          view_mode: teaser
       defaults:
         title: false
+        style: false
+        row: false
         sorts: false
       display_description: ''
       display_extenders:
