@@ -12,8 +12,8 @@ _core:
   default_config_hash: vEnGyvUYVwDo4JfvnSNMFSGFqVIxXNc713lo-_9gneg
 id: nisra_theme_main_menu
 theme: nisra_theme
-region: header
-weight: -2
+region: primary_menu
+weight: -8
 provider: null
 plugin: 'system_menu_block:main'
 settings:

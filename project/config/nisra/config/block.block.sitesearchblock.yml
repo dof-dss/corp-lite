@@ -9,7 +9,7 @@ dependencies:
 id: sitesearchblock
 theme: nisra_theme
 region: header
-weight: 0
+weight: -8
 provider: null
 plugin: site_search_block
 settings:
