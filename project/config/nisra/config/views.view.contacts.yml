@@ -1,6 +1,6 @@
 uuid: a4a5830f-e2ea-43d8-991f-04a828b38bbf
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - field.storage.node.field_contact_information
