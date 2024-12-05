@@ -27,6 +27,13 @@
 //
 // Style guide: components.content.cards
 
+// Just adding this in here temporarily.
+.subtopics {
+  box-shadow: 0 -1.5px 0 0 var(--clr-brand-primary);
+  margin-top: 2em;
+  padding-top: 2em;
+}
+
 .card {
   // A classic card with an image on top of a card body. The card edges are defined with box-shadow.
   display: flex;

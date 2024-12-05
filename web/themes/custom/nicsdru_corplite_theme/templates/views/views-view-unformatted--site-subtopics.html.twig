@@ -19,9 +19,8 @@
   <h2 class="subtopics__title visually-hidden">{{ title }} contents</h2>
   <div class="card-deck card-deck--x2 card-deck--topics">
   {% for row in rows %}
-    <li{{ row.attributes }}>
+    {{ row.attributes }}
       {{- row.content -}}
-    </li>
   {% endfor %}
   </div>
 </div>
