@@ -11,7 +11,7 @@ default_docker_image: &docker_image
         PHP_INI_MEMORY_LIMIT: 1g
 
 workflows:
-  version: 2
+  version: 2 
 #  build-test:
 #    jobs:
 #      - build
