@@ -53,21 +53,21 @@ if ($platformsh->hasRelationship($relationship_name)) {
   $config['search_api.server.' . $solr_server_name]['backend_config']['connector_config'] = $platformsh->formattedCredentials($relationship_name, 'drupal-solr');
 }
 
-//// Configure file paths.
-//if (!isset($settings['file_private_path'])) {
-//  $settings['file_private_path'] = $platformsh->appDir . '/private/' . $subsite_id;
-//}
+// Configure file paths.
+if (!isset($settings['file_private_path'])) {
+  $settings['file_private_path'] = $platformsh->appDir . '/private/' . $subsite_id;
+}
 if (!isset($config['file_temp_path'])) {
   $config['file_temp_path'] = $platformsh->appDir . '/tmp/' . $subsite_id;
 }
 
-//// Configure the default PhpStorage and Twig template cache directories.
-//if (!isset($settings['php_storage']['default'])) {
-//  $settings['php_storage']['default']['directory'] = $settings['file_private_path'];
-//}
-//if (!isset($settings['php_storage']['twig'])) {
-//  $settings['php_storage']['twig']['directory'] = $settings['file_private_path'];
-//}
+// Configure the default PhpStorage and Twig template cache directories.
+if (!isset($settings['php_storage']['default'])) {
+  $settings['php_storage']['default']['directory'] = $settings['file_private_path'];
+}
+if (!isset($settings['php_storage']['twig'])) {
+  $settings['php_storage']['twig']['directory'] = $settings['file_private_path'];
+}
 
 // The 'trusted_hosts_pattern' setting allows an admin to restrict the Host header values
 // that are considered trusted.  If an attacker sends a request with a custom-crafted Host
