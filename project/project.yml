@@ -13,7 +13,7 @@ sites:
         cron_cmd: 'cd web/sites/nisra ; drush core-cron'
         database: nisra
         status: development
-        default: false
+        default: true
     afbini:
         name: afbini
         url: afbini.gov.uk
@@ -22,7 +22,7 @@ sites:
         cron_cmd: 'cd web/sites/afbini ; drush core-cron'
         database: afbini
         status: development
-        default: true
+        default: false
     hseni:
         name: hseni
         url: hseni.gov.uk
