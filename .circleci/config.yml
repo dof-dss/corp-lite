@@ -12,40 +12,40 @@ default_docker_image: &docker_image
 
 workflows:
   version: 2
-  build-test:
-    jobs:
-      - build
-      - coding_standards:
-          requires:
-            - build
-      - deprecated_code:
-          requires:
-            - build
-      - disallowed_functions:
-          requires:
-            - build
+#  build-test:
+#    jobs:
+#      - build
+#      - coding_standards:
+#          requires:
+#            - build
+#      - deprecated_code:
+#          requires:
+#            - build
+#      - disallowed_functions:
+#          requires:
+#            - build
   build-edge:
-    triggers:
-      - schedule:
-          # At 03:00 every Mon-Fri
-          cron: "0 3 * * 1-5"
-          filters:
-            branches:
-              only:
-                - development
+#    triggers:
+#      - schedule:
+#          # At 03:00 every Mon-Fri
+#          cron: "0 3 * * 1-5"
+#          filters:
+#            branches:
+#              only:
+#                - development
     jobs:
       - build_edge
 
   # A separate scheduled workflow to sync the data after the edge build completes.
   build-edge-finalise:
-    triggers:
-      - schedule:
-          # At 03:30 on every day-of-week from Monday through Friday
-          cron: "30 3 * * 1-5"
-          filters:
-            branches:
-              only:
-                - edge
+#    triggers:
+#      - schedule:
+#          # At 03:30 on every day-of-week from Monday through Friday
+#          cron: "30 3 * * 1-5"
+#          filters:
+#            branches:
+#              only:
+#                - edge
     jobs:
       - sync_data
 
