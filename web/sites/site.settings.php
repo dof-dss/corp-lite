@@ -21,8 +21,8 @@ $settings['file_scan_ignore_directories'] = [
 // Site hash salt.
 $settings['hash_salt'] = getenv('HASH_SALT');
 
-// Private directory.
-$settings["file_private_path"] = getenv('FILE_PRIVATE_PATH' . $subsite_id);
+//// Private directory.
+//$settings["file_private_path"] = getenv('FILE_PRIVATE_PATH' . $subsite_id);
 
 // Temp directory.
 $settings["file_temp_path"] = getenv('FILE_TEMP_PATH') ?? '/tmp';
