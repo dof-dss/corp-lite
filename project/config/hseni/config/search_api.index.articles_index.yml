@@ -6,11 +6,12 @@ dependencies:
     - field.storage.node.body
     - field.storage.node.field_site_topics
     - field.storage.node.field_summary
+    - search_api.server.solr_default
   module:
-    - node
-    - search_api
     - search_api_solr
     - taxonomy
+    - node
+    - search_api
 third_party_settings:
   search_api_solr:
     finalize: false
@@ -55,7 +56,7 @@ third_party_settings:
       include_language_independent: true
       use_language_undefined_as_fallback_language: false
       specific_languages:
-        en-gb: '0'
+        en: '0'
       use_universal_collation: false
 id: articles_index
 name: 'Articles index'
@@ -191,4 +192,4 @@ options:
   cron_limit: 50
   index_directly: true
   track_changes_in_references: true
-server: null
+server: solr_default
