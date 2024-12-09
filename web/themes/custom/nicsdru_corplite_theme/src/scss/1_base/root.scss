@@ -67,6 +67,7 @@ html {
   --clr-brand-primary: #00aae5;
   --clr-brand-primary-light: #cee4f6;
   --clr-brand-secondary: #0b1647;
+  --clr-main-nav-active-bkgd: #0f3286;
 
   // Typography and rhythm spacing custom properties
   --fs-base-size: 1.6rem;
@@ -85,14 +86,14 @@ html {
     --base-rhythm-frag: .5rem;
   }
 
-  //--rhythm-spacing-xs: var(--base-rhythm-frag); // 2, 3, 5
-  //--rhythm-spacing-sm: var(--base-rhythm); // 8, 9, 10
-  //--rhythm-spacing-md: calc(var(--base-rhythm) + var(--base-rhythm-frag)); // 10, 12, 15
+  --rhythm-spacing-xs: var(--base-rhythm-frag); // 2, 3, 5
+  --rhythm-spacing-sm: var(--base-rhythm); // 8, 9, 10
+  --rhythm-spacing-md: calc(var(--base-rhythm) + var(--base-rhythm-frag)); // 10, 12, 15
   --rhythm-spacing: calc(var(--base-rhythm) * 2); // 16, 18, 20
-  //--rhythm-spacing-lg: calc(var(--base-rhythm) * 2 + var(--base-rhythm-frag)); // 18, 21, 25
+  --rhythm-spacing-lg: calc(var(--base-rhythm) * 2 + var(--base-rhythm-frag)); // 18, 21, 25
   --rhythm-spacing-xl: calc(var(--base-rhythm) * 3); // 24, 27, 30
-  //--rhythm-spacing-xxl: calc(var(--base-rhythm) * 4); // 32, 36, 40
-  //--rhythm-spacing-xxxl: calc(var(--base-rhythm) * 5); // 40, 45, 50
+  --rhythm-spacing-xxl: calc(var(--base-rhythm) * 4); // 32, 36, 40
+  --rhythm-spacing-xxxl: calc(var(--base-rhythm) * 5); // 40, 45, 50
 }
 
 body {

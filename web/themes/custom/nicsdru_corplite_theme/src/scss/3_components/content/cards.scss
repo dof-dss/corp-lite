@@ -34,6 +34,35 @@
   padding-top: 2em;
 }
 
+$link-heading-no-visited: (
+  color: (
+    default: var(--clr-link),
+    focus: var(--clr-white),
+    active: var(--clr-link-active)
+  ),
+  background-color: (
+    default: transparent,
+    focus: var(--clr-link),
+  ),
+  text-decoration: (
+    default: underline,
+    focus: none,
+  ),
+  text-decoration-color: (
+    hover: var(--clr-charcoal),
+  ),
+  text-decoration-thickness: (
+    default: 1px,
+    hover: 2px,
+  ),
+  text-underline-offset: 3px,
+  outline: (
+    default: 0,
+    focus: '2px solid #0e6bb3',
+  ),
+  outline-offset: 0
+);
+
 .card {
   // A classic card with an image on top of a card body. The card edges are defined with box-shadow.
   display: flex;
@@ -155,7 +184,7 @@ a.card {
       right: -.6rem;
       width: 3.5rem;
       height: 3.5rem;
-      background: var(--brand-primary-color) url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2025%2015%22%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%20.st0%7Bfill%3A%23fff%3Bfill-rule%3Aevenodd%3Bclip-rule%3Aevenodd%3B%7D%20%3C%2Fstyle%3E%3Cpath%20class%3D%22st0%22%20d%3D%22M12.5%200L0%2012l3%203%209.5-10L22%2015l3-3L12.5%200z%22%2F%3E%3C%2Fsvg%3E%0A') center center / 2.2rem auto no-repeat;
+      background: var(--brand-primary) url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2025%2015%22%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%20.st0%7Bfill%3A%23fff%3Bfill-rule%3Aevenodd%3Bclip-rule%3Aevenodd%3B%7D%20%3C%2Fstyle%3E%3Cpath%20class%3D%22st0%22%20d%3D%22M12.5%200L0%2012l3%203%209.5-10L22%2015l3-3L12.5%200z%22%2F%3E%3C%2Fsvg%3E%0A') center center / 2.2rem auto no-repeat;
       border-radius: 50%;
       transform: rotate(90deg);
     }
@@ -430,7 +459,7 @@ a.card {
         > div,
         .field {
           display: inline-block;
-          color: var(--clr-grey);
+          color: var(--clr-grey-medium);
           margin: 0 1em 0 0;
 
           &.label-inline {
@@ -511,7 +540,7 @@ a.card {
         margin: 0;
 
         a {
-          //@include link-state-style($link-heading-no-visited);
+          @include link-state-style($link-heading-no-visited);
         }
       }
 
