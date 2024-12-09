@@ -1,0 +1,29 @@
+uuid: 7add3ee2-c8f1-442b-a9b0-ca902a3a2f27
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.site_topics
+  module:
+    - system
+    - views
+  theme:
+    - nisra_theme
+id: nisra_theme_views_block__site_topics_topics_home
+theme: nisra_theme
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:site_topics-topics_home'
+settings:
+  id: 'views_block:site_topics-topics_home'
+  label: 'Select a topic to explore statistics'
+  label_display: visible
+  provider: views
+  views_label: 'Select a topic to explore statistics'
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

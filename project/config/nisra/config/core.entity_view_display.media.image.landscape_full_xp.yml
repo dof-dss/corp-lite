@@ -1,0 +1,36 @@
+uuid: 5bbfc84e-774a-4c08-b49d-820161cdf788
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.landscape_full_xp
+    - field.field.media.image.field_media_image
+    - media.type.image
+    - responsive_image.styles.inline_xl_expandable
+  module:
+    - responsive_image
+_core:
+  default_config_hash: Bx5e4kwBPZzBzDxnhpI2Gt-3va1eqhjDVlz8U_LXp0s
+id: media.image.landscape_full_xp
+targetEntityType: media
+bundle: image
+mode: landscape_full_xp
+content:
+  field_media_image:
+    type: responsive_image
+    label: visually_hidden
+    settings:
+      responsive_image_style: inline_xl_expandable
+      image_link: ''
+      image_loading:
+        attribute: eager
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true
