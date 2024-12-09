@@ -55,7 +55,9 @@ if ($platformsh->hasRelationship($relationship_name)) {
 
 // Configure file paths.
 if (!isset($settings['file_private_path'])) {
+  print "<br/>Setting private path<br/>";
   $settings['file_private_path'] = $platformsh->appDir . '/private/' . $subsite_id;
+  print "<br/>Private path is " . $settings['file_private_path'] . "<br/>";
 }
 if (!isset($config['file_temp_path'])) {
   $config['file_temp_path'] = $platformsh->appDir . '/tmp/' . $subsite_id;
@@ -66,7 +68,7 @@ if (!isset($settings['php_storage']['default'])) {
   $settings['php_storage']['default']['directory'] = $settings['file_private_path'];
 }
 if (!isset($settings['php_storage']['twig'])) {
-  print "Setting twig path to " . $settings['file_private_path'];
+  print "<br/>Setting twig path to " . $settings['file_private_path'] . "<br/>";
   $settings['php_storage']['twig']['directory'] = $settings['file_private_path'];
 }
 

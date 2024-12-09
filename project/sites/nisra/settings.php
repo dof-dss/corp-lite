@@ -21,6 +21,7 @@ include $app_root . '/sites/site.settings.php';
  * about securing private files.
  */
 $settings['file_private_path'] = $app_root . '/../private/statistics';
+print "<br/>Setting private path afterwards to " . $settings['file_private_path'] . "<br/>";
 
 if (getenv('IS_DDEV_PROJECT')) {
   $databases['default']['default']['database'] = $subsite_id;
