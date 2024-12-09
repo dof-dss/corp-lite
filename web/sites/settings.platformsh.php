@@ -66,6 +66,8 @@ if (!isset($settings['php_storage']['default'])) {
   $settings['php_storage']['default']['directory'] = $settings['file_private_path'];
 }
 if (!isset($settings['php_storage']['twig'])) {
+  $message = "Setting twig path to " . $settings['file_private_path'];
+  \Drupal::logger('nisra_settings')->notice(t($message));
   $settings['php_storage']['twig']['directory'] = $settings['file_private_path'];
 }
 
