@@ -14,7 +14,7 @@
 .layout--front {
 
   > * {
-   grid-column: auto;
+    grid-column: auto;
   }
 
   // IE fix.
@@ -33,19 +33,9 @@
 }
 
 .section {
-
-  &--info-services h2 {
-    margin-top: 0;
-  }
-
-  &--info-services,
-  &--popular {
-    padding-bottom: 1.5em;
-  }
-
   &--popular {
     background-color: var(--clr-grey-light);
-    padding: 2em 15px 0;
+    padding: 2em 15px 1.5em;
     border-top: 5px solid var(--clr-brand-primary);
 
     @include breakpoint($phab) {
@@ -62,29 +52,6 @@
       @at-root .breadcrumb ~ .layout--theme-term & {
         margin-top: 4.2rem;
         padding-top: 1.5em;
-      }
-    }
-  }
-
-  &--featured {
-
-    h2 {
-      padding: 3.6rem 0 2.8rem;
-      margin: 0;
-      border-top: 10px solid var(--clr-brand-primary);
-    }
-
-    > .contextual {
-      top: auto;
-      right: -32px;
-    }
-
-    &-highlights {
-      margin-top: 2em;
-      margin-bottom: 2em;
-
-      > .contextual {
-        right: -52px;
       }
     }
   }
