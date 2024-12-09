@@ -1,0 +1,20 @@
+uuid: f857499a-1b42-46bd-8cf8-939adf0b79ec
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - hseni_theme
+id: messages
+theme: hseni_theme
+region: highlighted
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: Messages
+  label_display: '0'
+  provider: system
+visibility: {  }

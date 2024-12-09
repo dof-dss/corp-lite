@@ -1,0 +1,90 @@
+/*
+ * @file
+ * Provides the styling for a navigation breadcrumb.
+ */
+@use '../../init' as *;
+
+// Breadcrumb navigation
+//
+// The path to the current page in the form of a list of links.
+//
+// Markup: breadcrumb.twig
+//
+// Style guide: components.navigation.breadcrumb
+$link-body-no-visited: (
+  color: (
+    default: var(--clr-link),
+    focus: #fff,
+    active: var(--clr-link-active)
+  ),
+  background-color: (
+    default: transparent,
+    focus: var(--clr-link),
+  ),
+  text-decoration: (
+    default: underline,
+    focus: none,
+  ),
+  text-decoration-color: (
+    hover: var(--clr-charcoal),
+  ),
+  text-decoration-thickness: (
+    default: 1px,
+    hover: 2px,
+  ),
+  text-underline-offset: 3px,
+  outline: (
+    default: 0,
+    focus: '2px solid var(--clr-link)',
+  ),
+  outline-offset: 0
+) !default;
+
+.breadcrumb,
+%breadcrumb {
+  margin: 1.2rem auto 0;
+
+  @include breakpoint($phab) {
+    margin: 2.1rem auto 0;
+  }
+
+  @at-root .path-taxonomy &--list {
+    @include breakpoint($tab) {
+      max-width: $article-max-width;
+    }
+  }
+
+  @media print {
+    display: none;
+  }
+
+  &--list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &--item {
+    display: inline;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    list-style-type: none;
+    margin: 0 5px 0 0;
+    padding: 0;
+
+    &::after {
+      content: '\203A';
+      font-size: 1.6rem;
+    }
+
+    &:last-child::after {
+      content: '';
+    }
+  }
+
+  a {
+    @include link-state-style($link-body-no-visited);
+
+    margin-right: 5px;
+  }
+}

@@ -1,0 +1,20 @@
+uuid: 98e9baa8-1df9-4708-baa3-d484929159c6
+langcode: en
+status: true
+dependencies:
+  theme:
+    - nicsdru_corplite_theme
+_core:
+  default_config_hash: jc4FPJHbAaeJkH4fPoqNbVpfVPBlrn5ccyNDWskxSBc
+id: nicsdru_corplite_theme_page_title
+theme: nicsdru_corplite_theme
+region: header
+weight: -5
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

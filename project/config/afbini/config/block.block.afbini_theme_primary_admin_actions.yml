@@ -1,0 +1,20 @@
+uuid: a9cf291c-8d14-4424-b937-96c4f44d734a
+langcode: en
+status: true
+dependencies:
+  theme:
+    - afbini_theme
+_core:
+  default_config_hash: UUuHLwdntNDDZdOU5kP43GWc49i0FQ7_w23cUOISpeM
+id: afbini_theme_primary_admin_actions
+theme: afbini_theme
+region: highlighted
+weight: -5
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

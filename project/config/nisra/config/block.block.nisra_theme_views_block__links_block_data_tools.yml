@@ -1,0 +1,29 @@
+uuid: f54ab213-768f-407f-95af-4bb06bfed966
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.links
+  module:
+    - system
+    - views
+  theme:
+    - nisra_theme
+id: nisra_theme_views_block__links_block_data_tools
+theme: nisra_theme
+region: sidebar_second
+weight: -9
+provider: null
+plugin: 'views_block:links-block_data_tools'
+settings:
+  id: 'views_block:links-block_data_tools'
+  label: 'Data tools / Popular links'
+  label_display: visible
+  provider: views
+  views_label: 'Data tools / Popular links'
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

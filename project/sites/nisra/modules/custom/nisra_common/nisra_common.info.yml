@@ -1,0 +1,5 @@
+name: 'Nisra common'
+type: module
+description: 'Nisra common'
+core_version_requirement: 8.x || ^9 || ^10
+package: 'Custom'

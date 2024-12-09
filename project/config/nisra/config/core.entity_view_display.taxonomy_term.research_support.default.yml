@@ -24,30 +24,15 @@ content:
     region: content
   field_summary:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 0
     region: content
-  field_term_image:
-    type: entity_reference_entity_view
-    label: above
-    settings:
-      view_mode: default
-      link: false
-    third_party_settings: {  }
-    weight: 3
-    region: content
-  field_term_photo:
-    type: entity_reference_entity_view
-    label: above
-    settings:
-      view_mode: default
-      link: false
-    third_party_settings: {  }
-    weight: 2
-    region: content
 hidden:
+  content_moderation_control: true
   field_hide_topic: true
+  field_term_image: true
+  field_term_photo: true
   langcode: true
   search_api_excerpt: true

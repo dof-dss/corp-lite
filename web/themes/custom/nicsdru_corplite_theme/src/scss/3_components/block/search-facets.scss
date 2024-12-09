@@ -1,0 +1,314 @@
+/*
+ * @file
+ * Provides styling for search facets.
+ */
+@use "sass:color";
+@use '../../init' as *;
+
+// Search facets
+//
+// A search facet is a list of contextual links used to scope (filter) search results.
+//
+// Style guide: components.search-facets
+
+$facet-btn-color: #333 !default;
+$facet-btn-hover: #111 !default;
+$facet-btn-focus-outline: #949494 !default;
+$facet-btn-active: #111 !default;
+// Use the sass lightness function to determine whether to use a light / dark text color in the facet btn.
+$facet-text-color: null;
+
+@if (color.lightness($facet-btn-color) < 50) {
+  $facet-text-color: #fff;
+} @else {
+  $facet-text-color: $text;
+}
+
+.facet {
+  &--btn {
+    background-color: $facet-btn-color;
+    // Touch target of 44px (border + height).
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    display: block;
+    line-height: 4rem;
+    min-height: 4rem;
+    min-width: 100px;
+    padding: 0 .5em;
+    text-align: left;
+    text-decoration: none;
+    vertical-align: middle;
+    width: 100%;
+    font-size: 1.6rem;
+
+    @include breakpoint($phab, $no-query: true) {
+      min-width: 120px;
+      font-size: 1.8rem;
+    }
+
+    &:link,
+    &:visited {
+      color: $facet-text-color;
+    }
+
+    &:hover {
+      background-color: $facet-btn-hover;
+      text-decoration: none;
+    }
+
+    &:focus {
+      outline: 3px solid $facet-btn-focus-outline;
+      outline-offset: -2px;
+      background-color: $facet-btn-hover;
+      border-bottom-width: 2px;
+    }
+
+    &:active,
+    &.active {
+      background-color: $facet-btn-active;
+      border-color: $facet-btn-active;
+      text-decoration: none;
+    }
+
+    .ico-arrow-down {
+      fill: $facet-text-color;
+      float: right;
+      height: 2rem;
+      margin: 1rem;
+      width: 2rem;
+      transition: transform .4s ease;
+    }
+
+    &.active .ico-arrow-down {
+      transform: rotate(270deg);
+    }
+  }
+
+  &--dropdown-links {
+    margin: 1em 0;
+  }
+
+  &--title {
+    margin: 0;
+  }
+
+  &-list__links {
+    margin: .1rem 0 .6rem;
+
+    // applied to nested list items.
+    .facet-item ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+
+      .facet-item {
+        position: relative;
+        padding: 0 0 0 1.2rem;
+        margin: 0;
+
+        &::before {
+          content: '-';
+          position: absolute;
+          left: .5em;
+          top: .5em;
+        }
+      }
+    }
+  }
+
+  &-item,
+  &-summary-item--facet {
+    margin: 0;
+    padding: 0;
+
+    &__label {
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+      padding: 1rem 0;
+
+      &::after {
+        content: ':';
+      }
+    }
+
+    a,
+    &--link {
+      display: inline-flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      width: auto;
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+      padding: .4rem .6rem;
+      margin: .6rem 0;
+      text-decoration: none;
+      border: 0;
+      background-color: transparent;
+      box-shadow: none;
+      color: var(--clr-link);
+
+      .facet-item__value {
+        text-decoration: 1px underline;
+      }
+
+      .facet-item__status {
+        flex-shrink: 0;
+      }
+
+      &:visited {
+        color: var(--clr-link);
+      }
+
+      &:focus {
+        background-color: var(--clr-link);
+        color: #fff;
+        outline: 0;
+
+        > * {
+          text-decoration: none;
+        }
+      }
+    }
+
+    &-summary-item--facet a {
+      margin: 0 .4rem;
+    }
+
+    &__value {
+      display: inline-block;
+      padding: 0 .4rem;
+    }
+
+    &__count {
+      display: inline-block;
+      text-decoration: none;
+      white-space: nowrap;
+      padding-right: .4rem;
+    }
+
+    &__status {
+      display: inline-block;
+      position: relative;
+      vertical-align: middle;
+      width: 2rem;
+      height: 2rem;
+      margin: 0;
+      padding: 0;
+      background-color: var(--clr-grey-medium);
+      color: #fff;
+      text-decoration: none;
+
+      &::before,
+      &::after {
+        content: ' ';
+        display: block;
+        width: .2rem;
+        height: 1rem;
+        background-color: #fff;
+        transform: rotate(45deg);
+        position: absolute;
+        left: .9rem;
+        top: .5rem;
+      }
+
+      &::after {
+        transform: rotate(130deg);
+      }
+    }
+  }
+
+  &-item a.is-active {
+    margin-left: 4px;
+  }
+
+  &-item a.is-active,
+  &-summary-item--facet a {
+    background-color: #cee4f6;
+    color: #333;
+
+    &:visited {
+      color: #333;
+    }
+
+    &:focus {
+      outline: 3px solid #333;
+      outline-offset: -1px;
+      background-color: #cee4f6;
+    }
+
+    .facet-item__value {
+      text-decoration: none;
+      padding-left: 0;
+    }
+
+    &:hover .facet-item__status,
+    &:focus .facet-item__status {
+      background-color: darkorange;
+    }
+  }
+
+  &-summary-item--facet a {
+    margin: 0 .5em;
+  }
+
+  &-summary {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+
+    &__label {
+      margin: 0;
+      padding: 0;
+    }
+
+    &__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-flow: row wrap;
+    }
+  }
+}
+
+.facets-soft-limit-link {
+  display: inline-block;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  padding: 0.4rem 4rem 0.4rem 0.8rem;
+  position: relative;
+
+  &:focus {
+    outline: 0;
+    background-color: var(--clr-link);
+    color: #fff;
+    text-decoration: none;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0.4rem;
+    right: 0.4rem;
+    width: 2.4rem;
+    height: 2.4rem;
+    border: 1px solid var(--clr-charcoal);
+    background: #fff url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2025%2015%22%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%20.st0%7Bfill%3A%23333333%3Bfill-rule%3Aevenodd%3Bclip-rule%3Aevenodd%3B%7D%20%3C%2Fstyle%3E%3Cpath%20class%3D%22st0%22%20d%3D%22M12.5%200L0%2012l3%203%209.5-10L22%2015l3-3L12.5%200z%22%2F%3E%3C%2Fsvg%3E%0A") no-repeat scroll center center/12px auto;
+    transform: rotate(180deg);
+  }
+
+  &:hover::after,
+  &:focus::after {
+    border-color: #fff;
+    background: var(--clr-link) url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2025%2015%22%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%20.st0%7Bfill%3A%23ffffff%3Bfill-rule%3Aevenodd%3Bclip-rule%3Aevenodd%3B%7D%20%3C%2Fstyle%3E%3Cpath%20class%3D%22st0%22%20d%3D%22M12.5%200L0%2012l3%203%209.5-10L22%2015l3-3L12.5%200z%22%2F%3E%3C%2Fsvg%3E%0A") no-repeat scroll center center/12px auto;
+  }
+
+  &.open {
+    &::after {
+      transform: rotate(0deg);
+    }
+  }
+}

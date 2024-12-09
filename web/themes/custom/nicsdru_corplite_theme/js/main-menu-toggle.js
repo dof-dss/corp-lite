@@ -1,0 +1,1 @@
+(e=>{Drupal.behaviors.nicsdruCorpliteMainMenuToggle={attach:function(a){e(once("mainMenuToggle",".nav-main",a)).each(function(){e("#nav-main-toggle").removeAttr("hidden").click(function(){var a="true"===e(this).attr("aria-expanded")||!1;e(this).attr("aria-expanded",!a),e(this).attr("aria-label",a?"Open menu":"Close menu")})})}}})(jQuery);

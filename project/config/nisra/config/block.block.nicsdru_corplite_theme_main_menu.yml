@@ -1,0 +1,27 @@
+uuid: 145434ae-4954-4154-bac1-eb1fd04f0da5
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - nicsdru_corplite_theme
+_core:
+  default_config_hash: vEnGyvUYVwDo4JfvnSNMFSGFqVIxXNc713lo-_9gneg
+id: nicsdru_corplite_theme_main_menu
+theme: nicsdru_corplite_theme
+region: primary_menu
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 2
+  expand_all_items: true
+visibility: {  }

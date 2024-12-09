@@ -1,0 +1,26 @@
+uuid: a12cf9cd-7656-48ea-870f-cebba6be4687
+langcode: en
+status: true
+dependencies:
+  module:
+    - nisra_homepage
+    - system
+  theme:
+    - nisra_theme
+id: featuredcontent
+theme: nisra_theme
+region: top_banner
+weight: 0
+provider: null
+plugin: featured_content
+settings:
+  id: featured_content
+  label: 'Featured content'
+  label_display: visible
+  provider: nisra_homepage
+  featured_items: '4122'
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

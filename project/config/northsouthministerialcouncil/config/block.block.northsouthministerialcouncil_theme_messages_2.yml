@@ -1,0 +1,20 @@
+uuid: 23bb505b-fc6f-4abd-9e96-ea45dd4c72cc
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - northsouthministerialcouncil_theme
+id: northsouthministerialcouncil_theme_messages_2
+theme: northsouthministerialcouncil_theme
+region: highlighted
+weight: -3
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: Messages
+  label_display: '0'
+  provider: system
+visibility: {  }

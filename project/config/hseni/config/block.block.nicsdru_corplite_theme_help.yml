@@ -1,0 +1,22 @@
+uuid: 5182f42a-11b6-4969-a301-c680069964f9
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - nicsdru_corplite_theme
+_core:
+  default_config_hash: 1Jao549wm6_jRW4zTEuoMstjSNOmUAKiwsWjnlfzgJw
+id: nicsdru_corplite_theme_help
+theme: nicsdru_corplite_theme
+region: header
+weight: 0
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

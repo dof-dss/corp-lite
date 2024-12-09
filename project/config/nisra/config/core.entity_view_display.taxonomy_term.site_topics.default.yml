@@ -48,6 +48,7 @@ content:
     weight: 2
     region: content
 hidden:
+  content_moderation_control: true
   field_hide_topic: true
   langcode: true
   search_api_excerpt: true
