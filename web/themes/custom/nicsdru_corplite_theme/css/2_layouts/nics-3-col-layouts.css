@@ -1,1 +1,13 @@
-@media(min-width: 768px){.layout--triptych{grid-template-columns:1fr 1fr 1fr;grid-template-rows:auto;grid-gap:2.4rem}}
+/* Vertical rhythm presets =========================================== */
+/* Set the base images folder */
+/* Breakpoints ======================================================== */
+/* Layout max widths for larger breakpoints =========================== */
+@media (min-width: 768px) {
+  .layout--triptych {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 2.4rem;
+  }
+}
+
+/*# sourceMappingURL=nics-3-col-layouts.css.map */

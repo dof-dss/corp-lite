@@ -30,12 +30,16 @@
     grid-template-rows: auto;
     grid-gap: 0 20px;
   }
+
+  h2 {
+    margin-top: 0;
+  }
 }
 
 .section {
   &--popular {
     background-color: var(--clr-grey-light);
-    padding: 2em 15px 1.5em;
+    padding: 1em 15px 1.5em;
     border-top: 5px solid var(--clr-brand-primary);
 
     @include breakpoint($phab) {
@@ -56,3 +60,4 @@
     }
   }
 }
+

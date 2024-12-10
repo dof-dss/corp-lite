@@ -1,1 +1,19 @@
-.layout--main .ga-main{width:100%}.layout--main-limited .ga-main{max-width:76rem}.page-node-type-article .layout--main-limited .ga-main{max-width:64rem}
+/*
+ * @file
+ * Provides the layout styles for common nics 2 column layouts.
+ */
+/* Vertical rhythm presets =========================================== */
+/* Set the base images folder */
+/* Breakpoints ======================================================== */
+/* Layout max widths for larger breakpoints =========================== */
+.layout--main .ga-main {
+  width: 100%;
+}
+.layout--main-limited .ga-main {
+  max-width: 76rem;
+}
+.page-node-type-article .layout--main-limited .ga-main {
+  max-width: 64rem;
+}
+
+/*# sourceMappingURL=nics-1-col-layouts.css.map */

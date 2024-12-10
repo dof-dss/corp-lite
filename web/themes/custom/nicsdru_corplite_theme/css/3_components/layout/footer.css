@@ -1,1 +1,26 @@
-.footer{width:100%;background-color:var(--clr-grey-light);-webkit-box-shadow:0 50vh 0 50vh var(--clr-grey-light);box-shadow:0 50vh 0 50vh var(--clr-grey-light);padding:0 0 4.5em;margin-top:3em;border-top:5px solid var(--clr-brand-primary)}@media(min-width: 992px){.footer .nav-menu{margin-bottom:0}}.footer .nav-social{grid-area:social}
+/*
+ * @file
+ * Provides the layout styles for the footer area.
+ */
+/* Vertical rhythm presets =========================================== */
+/* Set the base images folder */
+/* Breakpoints ======================================================== */
+/* Layout max widths for larger breakpoints =========================== */
+.footer {
+  width: 100%;
+  background-color: var(--clr-grey-light);
+  box-shadow: 0 50vh 0 50vh var(--clr-grey-light);
+  padding: 0 0 4.5em;
+  margin-top: 3em;
+  border-top: 5px solid var(--clr-brand-primary);
+}
+@media (min-width: 992px) {
+  .footer .nav-menu {
+    margin-bottom: 0;
+  }
+}
+.footer .nav-social {
+  grid-area: social;
+}
+
+/*# sourceMappingURL=footer.css.map */

@@ -1,1 +1,37 @@
-.header{display:grid;grid-gap:0;grid-template-columns:1fr;grid-template-rows:12.6rem 6.5rem;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;padding:0 var(--rhythm-spacing)}.header>*{-ms-flex-item-align:center;align-self:center}@media(min-width: 576px){.header{grid-template-rows:13.5rem 6.5rem}}@media(min-width: 768px){.header{grid-template-columns:45% 42.56%;grid-template-rows:15.3rem;margin:0 auto;max-width:1140px;padding:0 var(--rhythm-spacing-xl);grid-gap:12.44%}}
+/*
+ * @file
+ * Provides the layout styles for the header area.
+ */
+/* Vertical rhythm presets =========================================== */
+/* Set the base images folder */
+/* Breakpoints ======================================================== */
+/* Layout max widths for larger breakpoints =========================== */
+.header {
+  display: grid;
+  grid-gap: 0;
+  grid-template-columns: 1fr;
+  grid-template-rows: 12.6rem 6.5rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--rhythm-spacing);
+}
+.header > * {
+  align-self: center;
+}
+@media (min-width: 576px) {
+  .header {
+    grid-template-rows: 13.5rem 6.5rem;
+  }
+}
+@media (min-width: 768px) {
+  .header {
+    grid-template-columns: 45% 42.56%;
+    grid-template-rows: 15.3rem;
+    margin: 0 auto;
+    max-width: 1140px;
+    padding: 0 var(--rhythm-spacing-xl);
+    grid-gap: 12.44%;
+  }
+}
+
+/*# sourceMappingURL=header.css.map */

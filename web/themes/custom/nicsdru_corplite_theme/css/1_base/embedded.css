@@ -1,1 +1,28 @@
-img{border:0;width:auto}img,svg{max-width:100%;height:auto}svg{fill:currentcolor}svg:not(:root){overflow:hidden}picture{font-size:.1px;line-height:0}
+/*
+ * @file
+ * Sets out the base behaviour of embedded content, for example images.
+ */
+img {
+  border: 0;
+  width: auto;
+}
+
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+svg {
+  fill: currentcolor;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+
+picture {
+  font-size: 0.1px;
+  line-height: 0;
+}
+
+/*# sourceMappingURL=embedded.css.map */
