@@ -23,6 +23,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
+      title: 'Areas of Expertise'
       fields:
         name:
           id: name

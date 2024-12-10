@@ -9,7 +9,7 @@ dependencies:
 id: mainpagecontent
 theme: afbini_theme
 region: content
-weight: -7
+weight: -9
 provider: null
 plugin: system_main_block
 settings:

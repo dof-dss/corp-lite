@@ -8,8 +8,8 @@ dependencies:
     - afbini_theme
 id: pagetitle
 theme: afbini_theme
-region: content
-weight: -8
+region: top_banner
+weight: -9
 provider: null
 plugin: page_title_block
 settings:
