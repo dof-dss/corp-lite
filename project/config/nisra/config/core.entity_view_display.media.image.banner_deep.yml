@@ -1,0 +1,38 @@
+uuid: f79756e1-c3ff-44b3-b010-2f22adb531f9
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.banner_deep
+    - field.field.media.image.field_caption
+    - field.field.media.image.field_media_image
+    - media.type.image
+    - responsive_image.styles.deep_banner
+  module:
+    - responsive_image
+_core:
+  default_config_hash: Bx5e4kwBPZzBzDxnhpI2Gt-3va1eqhjDVlz8U_LXp0s
+id: media.image.banner_deep
+targetEntityType: media
+bundle: image
+mode: banner_deep
+content:
+  field_media_image:
+    type: responsive_image
+    label: visually_hidden
+    settings:
+      responsive_image_style: deep_banner
+      image_link: ''
+      image_loading:
+        attribute: eager
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_caption: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

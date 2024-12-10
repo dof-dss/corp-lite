@@ -101,6 +101,7 @@ module:
   moderation_sidebar: 0
   mysql: 0
   nisra_common: 0
+  nisra_homepage: 0
   node: 0
   node_edit_protection: 0
   noreferrer: 0

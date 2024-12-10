@@ -468,3 +468,38 @@ function nicsdru_corplite_theme_preprocess_form(array &$variables) {
       break;
   }
 }
+
+///**
+// * Implements hook_form_element_label().
+// */
+//function nicsdru_corplite_theme_preprocess_form_element_label(&$variables) {
+//  // Search the exposed filter label for text: 'Search' any word e.g. Search consultations.
+//  if (preg_match('/Search\D[a-z]+/', $variables['title']['#markup'])) {
+//    // Make the label invisible.
+//    $variables['title_display'] = "invisible";
+//  }
+//}
+//
+///**
+// * Implements hook_preprocess_views_view().
+// */
+//function nicsdru_corplite_theme_preprocess_views_view(&$variables) {
+//  $variables['attributes']['role'] = 'presentation';
+//
+//  if ($variables['id'] === 'search') {
+//    $variables['exposed']['#attributes']['class'][] = Html::cleanCssIdentifier('search-form');
+//    $variables['exposed']['#attributes']['class'][] = Html::cleanCssIdentifier('search-form--site');
+//    // Make the site search required.
+//    $variables['exposed']['query']['#required'] = TRUE;
+//    // See nicsdru_unity_theme_form_alter for a required pattern on the input. The data-msg-pattern overrides the default error message.
+//    $variables['exposed']['query']['#attributes']['data-msg-pattern'] = t('Query must begin with a letter or number.');
+//    // If a label for the search input is not defined in the view, set
+//    // default label text.
+//    $search_label =& $variables['exposed']['#info']['filter-search_api_fulltext']['label'];
+//    if (isset($search_label) && empty($search_label)) {
+//      $search_label = t("Search this site");
+//    }
+//    // The label should be visually hidden.
+//    $variables['exposed']['query']['#title_display'] = 'invisible';
+//  }
+//}
