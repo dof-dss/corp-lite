@@ -58,6 +58,8 @@ if (!isset($settings['file_private_path'])) {
   print "<br/>Setting private path<br/>";
   $settings['file_private_path'] = $platformsh->appDir . '/private/' . $subsite_id;
   print "<br/>Private path is " . $settings['file_private_path'] . "<br/>";
+} else {
+  print "<br/>Private path is already set to " . $settings['file_private_path'] . "<br/>";
 }
 if (!isset($config['file_temp_path'])) {
   $config['file_temp_path'] = $platformsh->appDir . '/tmp/' . $subsite_id;
