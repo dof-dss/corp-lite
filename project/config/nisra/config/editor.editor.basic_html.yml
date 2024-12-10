@@ -37,7 +37,6 @@ settings:
       - specialCharacters
       - fullScreen
       - chart
-      - sourceEditing
   plugins:
     ckeditor5_heading:
       enabled_headings:
@@ -57,8 +56,6 @@ settings:
         media_bundle: image
         media_field_name: field_media_image
         image_destination_dir: cke5-word-import-images
-    ckeditor5_sourceEditing:
-      allowed_tags: {  }
     ckeditor5_style:
       styles:
         -

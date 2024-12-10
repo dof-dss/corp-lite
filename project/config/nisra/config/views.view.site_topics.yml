@@ -1681,7 +1681,20 @@ display:
         operator: AND
         groups:
           1: AND
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: false
+      row:
+        type: 'entity:taxonomy_term'
+        options:
+          relationship: none
+          view_mode: teaser
       defaults:
+        style: false
+        row: false
         fields: false
         filters: false
         filter_groups: false
@@ -1759,6 +1772,20 @@ display:
     display_plugin: block
     position: 1
     display_options:
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: false
+      row:
+        type: 'entity:taxonomy_term'
+        options:
+          relationship: none
+          view_mode: teaser
+      defaults:
+        style: false
+        row: false
       display_description: ''
       display_extenders:
         metatag_display_extender:

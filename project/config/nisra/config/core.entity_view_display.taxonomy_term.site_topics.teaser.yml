@@ -13,21 +13,13 @@ id: taxonomy_term.site_topics.teaser
 targetEntityType: taxonomy_term
 bundle: site_topics
 mode: teaser
-content:
-  field_term_photo:
-    type: entity_reference_entity_view
-    label: hidden
-    settings:
-      view_mode: default
-      link: false
-    third_party_settings: {  }
-    weight: 0
-    region: content
+content: {  }
 hidden:
   content_moderation_control: true
   description: true
   field_hide_topic: true
   field_summary: true
   field_term_image: true
+  field_term_photo: true
   langcode: true
   search_api_excerpt: true

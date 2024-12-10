@@ -1,0 +1,25 @@
+uuid: 87df3291-0519-48bb-8153-174a35176f17
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.menu-links
+  module:
+    - system
+  theme:
+    - nisra_theme
+id: nisra_theme_links
+theme: nisra_theme
+region: footer
+weight: -11
+provider: null
+plugin: 'system_menu_block:menu-links'
+settings:
+  id: 'system_menu_block:menu-links'
+  label: Links
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

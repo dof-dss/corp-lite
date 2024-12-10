@@ -56,25 +56,25 @@ filters:
     id: editor_file_reference
     provider: editor
     status: false
-    weight: -45
+    weight: -41
     settings: {  }
   entity_embed:
     id: entity_embed
     provider: entity_embed
     status: true
-    weight: -42
+    weight: -47
     settings: {  }
   filter_align:
     id: filter_align
     provider: filter
     status: false
-    weight: -48
+    weight: -44
     settings: {  }
   filter_allowed:
     id: filter_allowed
     provider: ckeditor5_allowed_html
     status: true
-    weight: -43
+    weight: -48
     settings:
       allowed_html: '<a class href hreflang> <em> <strong> <cite> <blockquote cite> <code> <ul class type> <ol class start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <p class translate> <br> <span> <img src alt height width data-* typeof> <sup> <table class> <caption> <tbody> <thead> <tfoot> <th scope> <td> <tr> <drupal-entity data-entity-type data-entity-uuid data-entity-embed-display data-entity-embed-display-settings data-align data-caption data-embed-button alt title class> <picture data-* alt title class> <source srcset media type> <address> <drupal-media data-entity-type data-entity-id data-entity-uuid data-entity-embed-display data-entity-embed-display-settings data-align data-caption data-embed-button data-view-mode alt title class> data-embed-button="chart" data-entity-embed-display="easychart"'
       filter_html_help: false
@@ -89,13 +89,13 @@ filters:
     id: filter_caption
     provider: filter
     status: false
-    weight: -47
+    weight: -43
     settings: {  }
   filter_html:
     id: filter_html
     provider: filter
     status: false
-    weight: -50
+    weight: -45
     settings:
       allowed_html: '<p class="info-notice"> <a class="btn">'
       filter_html_help: false
@@ -110,7 +110,7 @@ filters:
     id: filter_html_image_secure
     provider: filter
     status: false
-    weight: -46
+    weight: -42
     settings: {  }
   filter_htmlcorrector:
     id: filter_htmlcorrector
@@ -142,7 +142,7 @@ filters:
     id: media_embed
     provider: media
     status: true
-    weight: -41
+    weight: -46
     settings:
       default_view_mode: article_full
       allowed_view_modes:
@@ -158,7 +158,7 @@ filters:
     id: noreferrer
     provider: noreferrer
     status: true
-    weight: -44
+    weight: -50
     settings: {  }
   origins_media_cookie_content_blocker_embed_filter:
     id: origins_media_cookie_content_blocker_embed_filter
@@ -170,7 +170,7 @@ filters:
   token_filter:
     id: token_filter
     provider: token_filter
-    status: false
+    status: true
     weight: -49
     settings:
       replace_empty: false
