@@ -6,3 +6,44 @@
 .block-views-block-featured-news-homepage-latest-news ul li .date-published {
   display: block;
 }
+
+#block-mainnavigation {
+  max-width: 980px;
+  border-bottom: 8px solid var(--clr-main-nav-brd-btm);
+  padding: 1.5em;
+  margin: 0 auto;
+}
+
+#main-content {
+  display: grid;
+
+  .featurednews {
+    grid-column: 1 / span 7;
+    grid-row: 1 / span 2;
+  }
+
+  .quicklinks {
+    grid-column: 9 / span 4;
+  }
+
+  #block-views-block-areas-of-expertise-areas-of-expertise {
+    border-top: 8px solid var(--clr-main-nav-brd-btm);
+    grid-column: 1 / span 12;
+  }
+
+  #block-views-block-publications-homepage-publications-homepage {
+    border-top: 8px solid var(--clr-main-nav-brd-btm);
+  }
+
+  #block-aboutus {
+    border-top: 8px solid var(--clr-main-nav-brd-btm);
+  }
+}
+
+#block-footerlinks .nav-menu {
+  display: block;
+
+  .nav-item {
+    display: inline-block;
+  }
+}

@@ -56,7 +56,7 @@
 
   @include breakpoint($tab) {
     --ctr-mw: 980px;
-    
+
     padding: 0 var(--rhythm-spacing-xl);
   }
 
@@ -145,5 +145,48 @@
   &--triptych {
     word-wrap: break-word;
     word-break: break-word;
+  }
+}
+
+.page-node-type-news {
+  .container {
+    max-width: 980px;
+  }
+
+  #main-content {
+    max-width: 980px;
+    width:100%;
+    grid-template-columns: 590fr 300fr;
+    grid-gap: 3.6rem;
+    grid-template-rows: auto;
+    grid-template-areas: 'main side';
+
+    #main-article {
+      grid-area: main;
+
+      .published-date {
+        margin: 2.1rem 0 0.6rem 0;
+      }
+
+      .field--name-field-site-topics {
+        margin: .6rem 0 .6rem 0;
+      }
+    }
+
+    #second_sidebar {
+      grid-area: side;
+
+      #block-views-block-featured-news-homepage-latest-news .item-list ul li .date-published {
+        display: block;
+      }
+    }
+
+    .news-image {
+      clear: right;
+      float: right;
+      width: 48.3871%;
+      max-width: 300px;
+      margin-left: 1em;
+    }
   }
 }
