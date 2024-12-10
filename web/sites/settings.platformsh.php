@@ -66,7 +66,7 @@ if (!isset($settings['php_storage']['default'])) {
   $settings['php_storage']['default']['directory'] = $settings['file_private_path'];
 }
 if (!isset($settings['php_storage']['twig'])) {
-  $settings['php_storage']['twig']['directory'] = $platformsh->appDir . '/private/' . $subsite_id;
+  $settings['php_storage']['twig']['directory'] = $settings['file_private_path'];
 }
 
 // The 'trusted_hosts_pattern' setting allows an admin to restrict the Host header values
