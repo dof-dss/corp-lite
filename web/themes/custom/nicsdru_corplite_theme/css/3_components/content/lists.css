@@ -1,15 +1,1 @@
-/*
- * @file
- * Provides the styling for list components.
- */
-.list--no-bullet {
-  list-style: none;
-  padding: 0;
-}
-.list--inline .list li, .list--inline .list-item {
-  display: inline-block;
-  padding-right: 0.334em;
-  white-space: nowrap;
-}
-
-/*# sourceMappingURL=lists.css.map */
+.list--no-bullet{list-style:none;padding:0}.list--inline .list li,.list--inline .list-item{display:inline-block;padding-right:.334em;white-space:nowrap}
