@@ -1,22 +1,22 @@
-uuid: 61777dae-a3f2-4089-8ed6-df28e4f75a8e
+uuid: 963e0b88-5c94-4557-b221-500873ed17a9
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.publications_homepage
+    - views.view.areas_of_expertise
   module:
     - system
     - views
   theme:
     - afbini_theme
-id: views_block__publications_homepage_publications_homepage
+id: views_block__areas_of_expertise_areas_of_expertise
 theme: afbini_theme
 region: content
-weight: -5
+weight: -6
 provider: null
-plugin: 'views_block:publications_homepage-publications_homepage'
+plugin: 'views_block:areas_of_expertise-areas_of_expertise'
 settings:
-  id: 'views_block:publications_homepage-publications_homepage'
+  id: 'views_block:areas_of_expertise-areas_of_expertise'
   label: ''
   label_display: visible
   provider: views

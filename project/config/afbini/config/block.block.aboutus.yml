@@ -11,8 +11,8 @@ dependencies:
     - afbini_theme
 id: aboutus
 theme: afbini_theme
-region: bottom_banner
-weight: -7
+region: content
+weight: -4
 provider: null
 plugin: 'block_content:d024ca87-0418-41b4-9ba0-f0954349179e'
 settings:

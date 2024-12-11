@@ -11,8 +11,8 @@ dependencies:
     - afbini_theme
 id: quicklinks
 theme: afbini_theme
-region: highlighted
-weight: 0
+region: content
+weight: -7
 provider: null
 plugin: 'block_content:c10ec028-0c3c-4315-8e7b-11fccdbafe53'
 settings:

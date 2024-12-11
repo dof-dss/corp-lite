@@ -41,68 +41,8 @@ mounts:
 build:
     flavor: composer
 hooks:
-    build: |
-        set -e
-        echo "Update robots.txt with Corp Lite customisations"
-        cp -f web/robots_custom.txt web/robots.txt
-    post_deploy: |
-        set -e
-
-        # Save the Fastly service value and overwrite with a dummy one in order to break
-        # the connection to Fastly, otherwise any cache clear of any site will purge the
-        # entire Fastly cache - we don't want this to happen as we'd like Fastly to continue
-        # serving the sites to anonymous users during a release.
-        echo "***** Breaking connection to Fastly ******"
-        temp=$FASTLY_API_SERVICE
-        export FASTLY_API_SERVICE=dummyservice
-
-        # For each multi site - run db-updates and import config.
-        for site in nisra afbini hseni etini northsouthministerialcouncil
-        do
-          result=$(drush -l $site st | grep "Drupal bootstrap : Successful" | awk {'print $4'})
-          if [ "$result" = "Successful" ]; then
-            echo "****** $site deployment ******"
-            cd /app/web/sites/$site
-            # Readonlymode module should be installed on all sites,
-            # but we'll just make sure.
-            drush en readonlymode -l $site -y
-            # Set site to readonly just in case editors are logged on.
-            drush -l $site cset readonlymode.settings enabled 1 -y
-            drush -l $site -y cache-rebuild
-            drush -l $site -y updatedb
-            drush -l $site -y config-import
-            # Import blocks and taxonomies
-            drush -l $site import-blocks --choice=safe
-            drush -l $site import-taxonomies --choice=safe
-            if [ "$PLATFORM_ENVIRONMENT_TYPE" = production ]; then
-              # Disable QA logons
-              drush -l $site bulk_update_qa_accounts disable
-            else
-              # Enable QA logons
-              drush -l $site bulk_update_qa_accounts enable
-            fi
-            # Turn off readonly mode.
-            #drush -l $site cset readonlymode.settings enabled 0 -y
-          else
-            echo "****** Skipping $site as there is no database ******"
-            echo ""
-          fi
-        done
-
-        # Reconnect to Fastly
-        echo "***** Reinstate connection to Fastly ******"
-        export FASTLY_API_SERVICE=$temp
-
-        # For each multi site - clear cache (including Fastly cache)
-        for site in nisra afbini hseni etini northsouthministerialcouncil
-        do
-          result=$(drush -l $site st | grep "Drupal bootstrap : Successful" | awk {'print $4'})
-          if [ "$result" = "Successful" ]; then
-            echo "****** $site cache clear ******"
-            cd /app/web/sites/$site
-            drush -l $site -y cache-rebuild
-          fi
-        done
+    build: "set -e\necho \"Update robots.txt with Corp Lite customisations\"\ncp -f web/robots_custom.txt web/robots.txt\n"
+    post_deploy: "set -e\n\n# Save the Fastly service value and overwrite with a dummy one in order to break\n# the connection to Fastly, otherwise any cache clear of any site will purge the\n# entire Fastly cache - we don't want this to happen as we'd like Fastly to continue\n# serving the sites to anonymous users during a release.\necho \"***** Breaking connection to Fastly ******\"\ntemp=$FASTLY_API_SERVICE\nexport FASTLY_API_SERVICE=dummyservice\n\n# For each multi site - run db-updates and import config.\nfor site in nisra afbini hseni etini northsouthministerialcouncil\ndo\n  result=$(drush -l $site st | grep \"Drupal bootstrap : Successful\" | awk {'print $4'})\n  if [ \"$result\" = \"Successful\" ]; then\n    echo \"****** $site deployment ******\"\n    cd /app/web/sites/$site\n    # Readonlymode module should be installed on all sites,\n    # but we'll just make sure.\n    drush en readonlymode -l $site -y\n    # Set site to readonly just in case editors are logged on.\n    drush -l $site cset readonlymode.settings enabled 1 -y\n    drush -l $site -y cache-rebuild\n    drush -l $site -y updatedb\n    drush -l $site -y config-import\n    # Import blocks and taxonomies\n    drush -l $site import-blocks --choice=safe\n    drush -l $site import-taxonomies --choice=safe\n    if [ \"$PLATFORM_ENVIRONMENT_TYPE\" = production ]; then\n      # Disable QA logons\n      drush -l $site bulk_update_qa_accounts disable\n    else\n      # Enable QA logons\n      drush -l $site bulk_update_qa_accounts enable\n    fi\n    # Turn off readonly mode.\n    #drush -l $site cset readonlymode.settings enabled 0 -y\n  else\n    echo \"****** Skipping $site as there is no database ******\"\n    echo \"\"\n  fi\ndone\n\n# Reconnect to Fastly\necho \"***** Reinstate connection to Fastly ******\"\nexport FASTLY_API_SERVICE=$temp\n\n# For each multi site - clear cache (including Fastly cache)\nfor site in nisra afbini hseni etini northsouthministerialcouncil\ndo\n  result=$(drush -l $site st | grep \"Drupal bootstrap : Successful\" | awk {'print $4'})\n  if [ \"$result\" = \"Successful\" ]; then\n    echo \"****** $site cache clear ******\"\n    cd /app/web/sites/$site\n    drush -l $site -y cache-rebuild\n  fi\ndone\n"
 web:
     locations:
         /:
