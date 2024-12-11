@@ -11,8 +11,8 @@ dependencies:
     - afbini_theme
 id: block__featured_news_homepage_news_homepage
 theme: afbini_theme
-region: highlighted
-weight: 0
+region: content
+weight: -8
 provider: null
 plugin: 'views_block:featured_news_homepage-news_homepage'
 settings:
