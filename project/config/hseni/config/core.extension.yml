@@ -34,6 +34,7 @@ module:
   date_facet_drilldown: 0
   datetime: 0
   datetime_range: 0
+  dblog: 0
   devel: 0
   diff: 0
   draggableviews: 0
@@ -70,6 +71,7 @@ module:
   help: 0
   history: 0
   honeypot: 0
+  hseni_homepage: 0
   image: 0
   inline_entity_form: 0
   inline_form_errors: 0
@@ -122,7 +124,6 @@ module:
   search_api_solr: 0
   shortcut: 0
   simplei: 0
-  stage_file_proxy: 0
   structure_sync: 0
   system: 0
   taxonomy: 0
@@ -140,6 +141,7 @@ module:
   user: 0
   views_custom_cache_tag: 0
   views_tree: 0
+  views_ui: 0
   webform: 0
   webform_access: 0
   webform_node: 0

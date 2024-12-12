@@ -11,8 +11,8 @@ dependencies:
     - afbini_theme
 id: views_block__publications_homepage_publications_homepage
 theme: afbini_theme
-region: bottom_banner
-weight: -8
+region: content
+weight: -5
 provider: null
 plugin: 'views_block:publications_homepage-publications_homepage'
 settings:
