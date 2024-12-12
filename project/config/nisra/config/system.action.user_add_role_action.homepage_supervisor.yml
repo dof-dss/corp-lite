@@ -1,0 +1,14 @@
+uuid: 334e2b22-8b57-44b5-9248-538ef20897a3
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.homepage_supervisor
+  module:
+    - user
+id: user_add_role_action.homepage_supervisor
+label: 'Add the Homepage supervisor role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: homepage_supervisor
