@@ -16,4 +16,20 @@
       white-space: nowrap;
     }
   }
+
+  &--hyphen-bullet {
+    list-style: none;
+    padding: 0;
+
+    li {
+      position: relative;
+      padding-left: 1em;
+
+      &::before {
+        content: '-';
+        position: absolute;
+        left: 0;
+      }
+    }
+  }
 }
