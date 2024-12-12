@@ -29,21 +29,38 @@
   #block-views-block-areas-of-expertise-areas-of-expertise {
     border-top: 8px solid var(--clr-main-nav-brd-btm);
     grid-column: 1 / span 12;
+
+    .areas-of-expertise {
+      display: flex;
+      flex-wrap: wrap;
+
+      .columnItem {
+        width: 48.75%;
+        border: 3px solid var(--clr-brand-primary-light);
+        padding: 0.9rem 1.2rem 1.2rem;
+        margin: 0 11px 2rem 0;
+
+        &:hover,
+        &:focus {
+          background: var(--clr-brand-primary-light);
+        }
+      }
+    }
   }
 
   #block-views-block-publications-homepage-publications-homepage {
+    grid-column: 1/span 12;
     border-top: 8px solid var(--clr-main-nav-brd-btm);
   }
 
   #block-aboutus {
+    grid-column: 1/span 12;
     border-top: 8px solid var(--clr-main-nav-brd-btm);
   }
 }
 
-#block-footerlinks .nav-menu {
-  display: block;
-
-  .nav-item {
+.footer-links {
+  p, li {
     display: inline-block;
   }
 }
