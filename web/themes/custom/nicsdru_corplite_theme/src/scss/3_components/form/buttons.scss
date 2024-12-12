@@ -1,0 +1,405 @@
+/*
+ * @file
+ * Provides the styling for button components.
+ */
+@use '../../init' as *;
+
+// Buttons
+//
+// Responsive buttons in various sizes and colours and with arrows. Component classes set the size of the buttons
+// and add arrows to the left or right.  Modifier classes can be combined with component classes to set colours and
+// and other things.
+//
+// *NOTE*:
+// * In all the component and modifier classes below ".btn" is interchangeable with ".button" so `.btn-small` is the
+// the same thing as `.button-small`.
+// * You should avoid combining button component classes together.
+// * DO NOT do this: `class="btn btn-right btn-small"`. If you want a small button with a right arrow you just need
+// one component class `class=".btn-small-right"`.
+// * You can, of course, combine a component class with one or more modifier classes - `btn-small-right btn--primary btn--block`
+// is totally fine.
+//
+// A basic button component:
+// * `.btn` or `.button` - add to buttons, input[type=button] or links to make a basic standard sized button.
+//
+// Small, medium and large button components
+//
+// These act as standalone button component classes. There is no need to combine with `.btn` (or `button`).  Each of
+// these act in a responsive way. The font-size, line-height and padding all adjust at different breakpoints.
+// So a button with class `.btn-small` will be smaller on a small screen compared to larger screen. It will be
+// relatively smaller than `.btn-medium` and `.btn-large` buttons at any screen size.
+//
+// * Small `.btn-small`
+// * Standard `.btn-standard`
+// * Medium `.btn-medium`
+// * Large `.btn-large`
+//
+// *Caution* the small button is smaller than recommended touch target sizes in WCAG and other user interface
+// guidelines. So don't cram them together.  Make sure there is ample white-space around small buttons to separate
+// them from adjacent buttons or links.
+//
+// Button with arrow component
+// * `.btn-left` | `.btn-right` - creates a standard sized button with a left or right arrow.
+// * Small  `btn-small-left` `.btn-small-right` - a small button with a left or right arrow.
+// * Medium `.btn-medium-left` `.btn-medium-right` - a medium button with a left or right arrow.
+// * Large `.btn-large-left` `.btn-large-right` - a large button with a left or right arrow.
+//
+// Button action (colour) modifiers - use these modifier classes in combination with component classes to change the
+// style of the button (usually the colour) depending on its purpose.
+// * `btn--primary` - used for the primary actions in a form like submitting it.
+// * `btn--secondary` - used for secondary actions in a form.
+// * `btn--action` - used for call to action buttons where we really (really) want people to hit that button.
+// * `btn--warning` - used for actions that carry some risk.
+// * `btn--danger` - used for actions that are dangerous (e.g. Delete).
+//
+// Button modifiers (other):
+// * `btn--link` makes a button look like a link - but it is still an inline-block like other buttons.
+// * 'btn--link-inline' makes a button look and behave like an inline link.
+// * 'btn--block' makes a button a block (rather than an inline-block) so that it will sit on a line by itself
+//   and by default will be 100% width of the parent container.
+//
+// Style guide: components.buttons
+
+.btn,
+.button,
+#drupal-off-canvas .button {
+  --btn-bkgd-clr: #666;
+  --btn-brd-clr: tranparent;
+  --btn-txt-clr: #fff;
+  --btn-fs: 1.6rem;
+  --btn-lh: 1.5;
+  --btn-min-size: 4.4rem;
+  --btn-icon-pad: 2.4rem;
+
+  border: 1px solid var(--btn-bkgd-clr);
+  border-radius: 0;
+  color: var(--btn-txt-clr);
+  display: inline-block;
+  font-size: var(--btn-fs);
+  line-height: var(--btn-lh);
+  text-align: center;
+  text-decoration: none;
+  background-color: var(--btn-bkgd-clr);
+  background-repeat: no-repeat;
+  background-position-y: center;
+  appearance: none;
+  min-width: var(--btn-min-size);
+  min-height: var(--btn-min-size);
+  padding: 0.8rem 1.2rem;
+
+  &:link,
+  &:visited {
+    --btn-txt-clr: var(--clr-white);
+  }
+
+  &:focus {
+    --btn-bkgd-clr: #525252;
+    --btn-brd-clr: #595959;
+
+    outline: 3px solid #000;
+  }
+
+  &:hover {
+    --btn-bkgd-clr: #595959;
+    --btn-brd-clr: #595959;
+
+    text-decoration: none;
+  }
+
+  &:active {
+    --btn-bkgd-clr: #525252;
+    --btn-brd-clr: #4d4d4d;
+
+    outline: 0;
+  }
+
+  @include breakpoint($tab) {
+    --btn-min-size: 4.5rem;
+
+    padding: 0.8rem 1.3rem;
+  }
+
+  @include breakpoint($lap) {
+    --btn-fs: 1.8rem;
+    --btn-icon-pad: 2.6rem;
+  }
+
+  @include breakpoint($desk-plus) {
+    --btn-fs: 2.0rem;
+    --btn-min-size: 5rem;
+    --btn-icon-pad: 3rem;
+
+    padding: 0.9rem 1.5rem;
+  }
+
+  &-right,
+  &-left {
+    background-image: url('/themes/custom/nicsdru_corplite_theme/images/btn-arrow.svg');
+    background-size: var(--btn-fs) auto;
+  }
+
+  &-right {
+    background-position: right 4px top 50%;
+    padding-right: var(--btn-icon-pad);
+  }
+
+  &-left {
+    background-position: left 4px top 50%;
+    padding-left: var(--btn-icon-pad);
+  }
+
+  &-small {
+    padding: 0.4rem;
+
+    --btn-fs: 1.4rem;
+    --btn-lh: 2.2rem;
+    --btn-min-size: 3.6rem;
+    --btn-icon-pad: 0.8rem;
+    --btn-icon-size: 5.33336px;
+    --btn-icon-position: 1.3332px;
+
+    @include breakpoint($tab) {
+      --btn-min-size: 3.9rem;
+      --btn-icon-size: 8.0004px;
+      --btn-icon-pad: 1.2rem;
+      --btn-icon-position: 1.9998px;
+    }
+
+    @include breakpoint($lap) {
+      --btn-fs: 1.6rem;
+      --btn-lh: 2.4rem;
+    }
+
+    @include breakpoint($desk-plus) {
+      --btn-fs: 1.7rem;
+      --btn-lh: 2.5rem;
+      --btn-min-size: 4rem;
+      --btn-icon-pad: 1.4rem;
+      --btn-icon-size: 9.33338px;
+      --btn-icon-position: 2.3331px;
+    }
+
+    &-right,
+    &-left {
+      background-image: url('/themes/custom/nicsdru_corplite_theme/images/btn-arrow.svg');
+      background-size: var(--btn-icon-size) auto;
+    }
+
+    &-right {
+      background-position: right var(--btn-icon-position) top 50%;
+      padding-right: var(--btn-icon-pad);
+    }
+
+    &-left {
+      background-position: left var(--btn-icon-position) top 50%;
+      padding-left: var(--btn-icon-pad);
+    }
+  }
+
+  &-medium {
+    padding: 0.7rem 1.4rem;
+
+    --btn-fs: 1.8rem;
+    --btn-lh: 2.4rem;
+    --btn-min-size: 4.8rem;
+    --btn-icon-pad: 2.8rem;
+    --btn-icon-size: 18.6667px;
+    --btn-icon-position: 4.666px;
+
+    @include breakpoint($tab) {
+      padding: 0.6rem 1.7rem;
+
+      --btn-min-size: 5.1rem;
+      --btn-icon-size: 22.667px;
+      --btn-icon-pad: 3.4rem;
+      --btn-icon-position: 5.666px;
+    }
+
+    @include breakpoint($lap) {
+      --btn-fs: 2.1rem;
+      --btn-lh: 3rem;
+    }
+
+    @include breakpoint($desk-plus) {
+      padding: 0.5rem 2rem;
+
+      --btn-fs: 2.2rem;
+      --btn-lh: 3.5rem;
+      --btn-min-size: 5.5rem;
+      --btn-icon-pad: 4rem;
+      --btn-icon-size: 26.668px;
+      --btn-icon-position: 6.666px;
+    }
+
+    &-right,
+    &-left {
+      background-image: url('/themes/custom/nicsdru_corplite_theme/images/btn-arrow.svg');
+      background-size: var(--btn-icon-size) auto;
+    }
+
+    &-right {
+      background-position: right var(--btn-icon-position) top 50%;
+      padding-right: var(--btn-icon-pad);
+    }
+
+    &-left {
+      background-position: left var(--btn-icon-position) top 50%;
+      padding-left: var(--btn-icon-pad);
+    }
+  }
+
+  &-large {
+    padding: 0.7rem 1.6rem;
+
+    --btn-fs: 2.1rem;
+    --btn-lh: 3.2rem;
+    --btn-min-size: 5.2rem;
+    --btn-icon-pad: 3.2rem;
+    --btn-icon-size: 21.334px;
+    --btn-icon-position: 5.333px;
+
+    @include breakpoint($tab) {
+      padding: 0.8rem 1.9rem;
+
+      --btn-min-size: 5.4rem;
+      --btn-icon-size: 25.334px;
+      --btn-icon-pad: 3.8rem;
+      --btn-icon-position: 6.333px;
+    }
+
+    @include breakpoint($lap) {
+      --btn-fs: 2.4rem;
+      --btn-lh: 3.6rem;
+    }
+
+    @include breakpoint($desk-plus) {
+      padding: 0.9rem 2rem;
+
+      --btn-fs: 2.5rem;
+      --btn-lh: 4rem;
+      --btn-min-size: 6rem;
+      --btn-icon-pad: 4rem;
+      --btn-icon-size: 26.668px;
+      --btn-icon-position: 6.666px;
+    }
+
+    &-right,
+    &-left {
+      background-image: url('/themes/custom/nicsdru_corplite_theme/images/btn-arrow.svg');
+      background-size: var(--btn-icon-size) auto;
+    }
+
+    &-right {
+      background-position: right var(--btn-icon-position) top 50%;
+      padding-right: var(--btn-icon-pad);
+    }
+
+    &-left {
+      background-position: left var(--btn-icon-position) top 50%;
+      padding-left: var(--btn-icon-pad);
+    }
+  }
+
+  &-block {
+    display: block !important;
+    width: 100%;
+  }
+
+  &--primary {
+    --btn-bkgd-clr: #0a78cd;
+    --btn-brd-clr: #0a78cd;
+
+    &:hover {
+      --btn-bkgd-clr: #096ab5;
+      --btn-brd-clr: #096ab5;
+    }
+
+    &:active {
+      --btn-bkgd-clr: #0861a6;
+      --btn-brd-clr: #085c9c;
+    }
+
+    &:focus {
+      --btn-bkgd-clr: #0861a6;
+      --btn-brd-clr: #096ab5;
+    }
+  }
+
+  &--action {
+    --btn-bkgd-clr: #048a05;
+    --btn-brd-clr: #048a05;
+
+    &:hover {
+      --btn-bkgd-clr: #037104;
+      --btn-brd-clr: #037104;
+    }
+
+    &:active {
+      --btn-bkgd-clr: #036204;
+      --btn-brd-clr: #035803;
+    }
+
+    &:focus {
+      --btn-bkgd-clr: #036204;
+      --btn-brd-clr: #037104;
+    }
+  }
+
+  &--danger {
+    --btn-bkgd-clr: #d1431f;
+    --btn-brd-clr: #d1431f;
+
+    &:hover {
+      --btn-bkgd-clr: #bb3c1c;
+      --btn-brd-clr: #bb3c1c;
+    }
+
+    &:active {
+      --btn-bkgd-clr: #ad381a;
+      --btn-brd-clr: #a53518;
+    }
+
+    &:focus {
+      --btn-bkgd-clr: #ad381a;
+      --btn-brd-clr: #bb3c1c;
+    }
+  }
+
+  &--warning {
+    --btn-bkgd-clr: #bf5803;
+    --btn-brd-clr: #bf5803;
+
+    &:hover {
+      --btn-bkgd-clr: #a64c03;
+      --btn-brd-clr: #a64c03;
+    }
+
+    &:active {
+      --btn-bkgd-clr: #974502;
+      --btn-brd-clr: #8d4102;
+    }
+
+    &:focus {
+      --btn-bkgd-clr: #974502;
+      --btn-brd-clr: #a64c03;
+    }
+  }
+
+  .dropbutton-widget & {
+    color: var(--clr-charcoal);
+  }
+}
+
+.call-to-action {
+  position: relative;
+  padding-right: 3.9rem !important;
+
+  .ico-arrow-right {
+    height: 2.5rem;
+    margin-right: 1.2rem;
+    position: absolute;
+    right: 0;
+    top: calc(50% - 1.25rem);
+    width: 1.5rem;
+  }
+}

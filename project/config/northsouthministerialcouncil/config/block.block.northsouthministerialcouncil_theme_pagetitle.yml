@@ -1,0 +1,24 @@
+uuid: fd3a52e0-575e-446b-96f9-71bf8ec2da23
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - northsouthministerialcouncil_theme
+id: northsouthministerialcouncil_theme_pagetitle
+theme: northsouthministerialcouncil_theme
+region: content
+weight: 0
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: "<front>\r\n/node/*\r\n/taxonomy/term/*\r\n/publications*"

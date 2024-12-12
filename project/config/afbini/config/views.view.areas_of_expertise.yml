@@ -1,6 +1,6 @@
 uuid: 93c55348-a3b6-4208-8242-b690be662fb0
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - field.storage.taxonomy_term.field_summary
@@ -23,6 +23,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
+      title: 'Areas of Expertise'
       fields:
         name:
           id: name

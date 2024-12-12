@@ -1,0 +1,28 @@
+name: NICS Afbini Theme
+type: theme
+description: 'Base theme for Drupal Corp-lite sites'
+package: NICS
+core_version_requirement: ^8.8 || ^9 || ^10
+base theme: nicsdru_corplite_theme
+
+libraries:
+  - afbini_theme/afbini-styling
+
+ckeditor5-stylesheets:
+  - css/1_base/links.css
+
+regions:
+  header: 'Header'
+  primary_menu: 'Primary menu'
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+  breadcrumb: 'Breadcrumb'
+  highlighted: 'Highlighted'
+  help: 'Help'
+  top_banner: 'Banner top'
+  content: 'Content'
+  sidebar_first: 'Search'
+  sidebar_second: 'Aside'
+  related: 'Related page footer'
+  bottom_banner: 'Page bottom'
+  footer: 'Footer'

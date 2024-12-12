@@ -1,0 +1,29 @@
+uuid: bb86a0fa-87a8-4187-9aee-3917607ea671
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.publication_type
+  module:
+    - facets
+    - system
+  theme:
+    - nisra_theme
+id: nisra_theme_publicationtype
+theme: nisra_theme
+region: sidebar_first
+weight: -6
+provider: null
+plugin: 'facet_block:publication_type'
+settings:
+  id: 'facet_block:publication_type'
+  label: 'Publication type'
+  label_display: visible
+  provider: facets
+  context_mapping: {  }
+  block_id: nisra_theme_publicationtype
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/publications\r\n/publications/date/*\r\n/publications/topic/*\r\n/publications/type/*"

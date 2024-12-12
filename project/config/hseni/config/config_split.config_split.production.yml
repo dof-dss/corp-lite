@@ -13,5 +13,6 @@ folder: ../project/config/hseni/production
 module:
   fastly: 0
 theme: {  }
-complete_list: {  }
+complete_list:
+  - search_api.server.default
 partial_list: {  }

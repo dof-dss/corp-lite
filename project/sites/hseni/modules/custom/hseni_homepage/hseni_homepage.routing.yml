@@ -1,0 +1,7 @@
+hseni_homepage.homepage_controller_default:
+  path: '/homepage'
+  defaults:
+    _controller: '\Drupal\hseni_homepage\Controller\HomepageController::default'
+    _title: 'Home'
+  requirements:
+    _permission: 'access content'

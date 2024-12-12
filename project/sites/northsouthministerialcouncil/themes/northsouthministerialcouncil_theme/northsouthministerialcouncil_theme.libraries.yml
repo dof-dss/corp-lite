@@ -1,0 +1,7 @@
+site-styling:
+  version: 1.0
+  css:
+    base:
+      css/1_base/root.css: { minified: true, weight: -100 }
+    theme:
+      css/3_components/navigation/pager.css: { minified: true }

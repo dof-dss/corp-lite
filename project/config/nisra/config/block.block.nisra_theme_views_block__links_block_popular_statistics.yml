@@ -1,0 +1,29 @@
+uuid: 7910f9b3-82cf-4ac9-b25e-92065fe54771
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.links
+  module:
+    - system
+    - views
+  theme:
+    - nisra_theme
+id: nisra_theme_views_block__links_block_popular_statistics
+theme: nisra_theme
+region: sidebar_second
+weight: -10
+provider: null
+plugin: 'views_block:links-block_popular_statistics'
+settings:
+  id: 'views_block:links-block_popular_statistics'
+  label: 'Popular statistics'
+  label_display: visible
+  provider: views
+  views_label: 'Popular statistics'
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

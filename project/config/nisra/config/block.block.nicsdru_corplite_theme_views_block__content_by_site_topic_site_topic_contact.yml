@@ -1,0 +1,24 @@
+uuid: 2d3ac323-3fb9-4322-b34d-66f863841b97
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.content_by_site_topic
+  module:
+    - views
+  theme:
+    - nicsdru_corplite_theme
+id: nicsdru_corplite_theme_views_block__content_by_site_topic_site_topic_contact
+theme: nicsdru_corplite_theme
+region: content
+weight: -5
+provider: null
+plugin: 'views_block:content_by_site_topic-site_topic_contact'
+settings:
+  id: 'views_block:content_by_site_topic-site_topic_contact'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility: {  }

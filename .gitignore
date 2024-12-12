@@ -54,3 +54,7 @@ log
 # Ignore Wraith screenshots
 /wraith_project/shots
 /wraith_project/output.txt
+
+# Ignore sass map files.
+
+/project/sites/**/*.css.map

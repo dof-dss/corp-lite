@@ -1,0 +1,16 @@
+#############################################################################
+###                           --== IMPORTANT ==--                         ###
+#############################################################################
+# If you require changes to this file you must edit the file within the     #
+# original repository.Any changes here will be overwritten when the project #
+# is built.                                                                 #
+#############################################################################
+services:
+    solr:
+        volumes:
+            - './solr-cores/nisra:/solr-nisra-conf'
+            - './solr-cores/afbini:/solr-afbini-conf'
+            - './solr-cores/hseni:/solr-hseni-conf'
+            - './solr-cores/etini:/solr-etini-conf'
+            - './solr-cores/northsouthministerialcouncil:/solr-northsouthministerialcouncil-conf'
+        entrypoint: 'bash -c "VERBOSE=yes docker-entrypoint.sh precreate-core nisra /solr-nisra-conf; precreate-core afbini /solr-afbini-conf; precreate-core hseni /solr-hseni-conf; precreate-core etini /solr-etini-conf; precreate-core northsouthministerialcouncil /solr-northsouthministerialcouncil-conf; exec solr -f"'

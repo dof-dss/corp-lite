@@ -1,0 +1,30 @@
+uuid: 6b645d9d-cba7-4189-a31e-67a46b653b95
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.site_subtopics
+  module:
+    - system
+    - views
+  theme:
+    - hseni_theme
+id: views_block__site_subtopics_site_subtopics
+theme: hseni_theme
+region: content
+weight: -5
+provider: null
+plugin: 'views_block:site_subtopics-site_subtopics'
+settings:
+  id: 'views_block:site_subtopics-site_subtopics'
+  label: ''
+  label_display: '0'
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /topics

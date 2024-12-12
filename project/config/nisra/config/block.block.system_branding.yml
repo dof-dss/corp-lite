@@ -1,0 +1,23 @@
+uuid: cffaaf83-93c6-4c9d-b228-cc9287c1d33a
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - nisra_theme
+id: system_branding
+theme: nisra_theme
+region: header
+weight: -9
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

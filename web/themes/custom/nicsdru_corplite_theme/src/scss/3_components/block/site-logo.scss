@@ -1,0 +1,72 @@
+@use '../../init' as *;
+
+$grey: var(--clr-grey) !default;
+$grey-dark: var(--clr-grey-dark) !default;
+
+$link-site-logo: (
+  color: transparent,
+  background-color: transparent,
+  text-decoration: none,
+  outline: (
+    default: 0,
+    focus: '.3rem dashed #{$grey}',
+    hover: '.3rem dashed #{$grey}',
+    active: '.3rem dashed #{$grey-dark}',
+  ),
+  font-size: 0
+) !default;
+
+.layout-header--logo {
+  margin: 2.4rem auto;
+  max-width: 305px;
+  max-height: 10rem;
+  padding: 0 15px;
+
+  @include breakpoint($phone) {
+    padding: 0;
+  }
+
+  @include breakpoint($tab) {
+    width: auto;
+    max-width: none;
+    margin: 0;
+  }
+
+  a {
+    @include link-state-style($link-site-logo);
+
+    display: inline-block;
+    outline-offset: 0.6rem;
+
+    @include breakpoint($phone) {
+      outline-offset: 1.2rem;
+    }
+  }
+}
+
+.site-logo {
+  height: 10rem;
+}
+
+// IE fix.
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .layout-header--logo a {
+    // IE does not support outline-offset. So fake it with a pseudo element.
+    position: relative;
+    outline: none !important;
+
+    &::after {
+      content: '';
+      display: block;
+      width: calc(100% + 24px);
+      height: calc(100% + 24px);
+      position: absolute;
+      left: -12px;
+      top: -12px;
+    }
+
+    &:focus::after {
+      border: 3px dashed var(--clr-grey);
+    }
+  }
+}

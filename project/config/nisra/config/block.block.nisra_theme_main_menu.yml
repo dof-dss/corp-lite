@@ -1,0 +1,27 @@
+uuid: ed1db8b6-4f1d-442e-bb01-e961a2b106d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - nisra_theme
+_core:
+  default_config_hash: vEnGyvUYVwDo4JfvnSNMFSGFqVIxXNc713lo-_9gneg
+id: nisra_theme_main_menu
+theme: nisra_theme
+region: primary_menu
+weight: -8
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 2
+  expand_all_items: true
+visibility: {  }
