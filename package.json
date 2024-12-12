@@ -1,0 +1,61 @@
+{
+  "name": "nicsdru_corp_lite",
+  "version": "1.0.0",
+  "description": "A package of utilities and scripts used to theme sites in the corp-lite project",
+  "engines": {
+    "yarn": ">= 1.6",
+    "node": ">= 18.0"
+  },
+  "scripts": {
+    "––––––– JS SCRIPTS": "–––––––––––––",
+    "js:compile": "node web/themes/custom/nicsdru_corplite_theme/config/uglify-js.js",
+    "js:lint": "node web/themes/custom/nicsdru_corplite_theme/config/eslint.js -c ",
+    "––––––– CSS SCRIPTS": "–––––––––––––",
+    "scss:dev": "sass --style=expanded --source-map --embed-sources --no-error-css $npm_package_config_compileDir_corplite $npm_package_config_compileDir_afbini $npm_package_config_compileDir_etini $npm_package_config_compileDir_hseni $npm_package_config_compileDir_nisra $npm_package_config_compileDir_nsmc",
+    "scss:prod": "sass --style=compressed --no-source-map --no-error-css $npm_package_config_compileDir_corplite $npm_package_config_compileDir_afbini $npm_package_config_compileDir_etini $npm_package_config_compileDir_hseni $npm_package_config_compileDir_nisra $npm_package_config_compileDir_nsmc",
+    "scss:lint": "stylelint web/themes/custom/nicsdru_corplite_theme/src/scss/**/*.scss",
+    "scss:lint:fix": "stylelint web/themes/custom/nicsdru_corplite_theme/src/scss/**/*.scss --fix",
+    "css-post": "postcss --config web/themes/custom/nicsdru_corplite_theme/config/postcss.config.js --replace \"web/themes/custom/nicsdru_corplite_theme/css/**/*.css\"",
+    "––––––– WATCH SCRIPTS": "–––––––––––––",
+    "watch": "npm-run-all --parallel watch-*",
+    "watch-corplite-scss": "onchange 'web/themes/custom/nicsdru_corplite_theme/src/scss/**/*.scss' -- npm run scss:dev",
+    "watch-afbini:scss": "onchange 'project/sites/afbini/themes/afbini_theme/src/scss/**/*.scss' -- npm run scss:dev",
+    "watch-etini:scss": "onchange 'project/sites/etini/themes/etini_theme/src/scss/**/*.scss' -- npm run scss:dev",
+    "watch-hseni:scss": "onchange 'project/sites/hseni/themes/hseni_theme/src/scss/**/*.scss' -- npm run scss:dev",
+    "watch-nisra:scss": "onchange 'project/sites/nisra/themes/nisra_theme/src/scss/**/*.scss' -- npm run scss:dev",
+    "watch-nsmc:scss": "onchange 'project/sites/northsouthministerialcouncil/themes/northsouthministerialcouncil_theme/src/scss/**/*.scss' -- npm run scss:dev",
+    "––––––– BUILD SCRIPTS": "–––––––––––––",
+    "build": "npm-run-all --parallel build-*",
+    "build-css": "npm-run-all --parallel scss:prod --sequential css-post",
+    "build-js": "npm run js:compile"
+  },
+  "config": {
+    "//": "Some useful configuration we can use to pass back to scripts",
+    "compileDir_corplite": "web/themes/custom/nicsdru_corplite_theme/src/scss/:web/themes/custom/nicsdru_corplite_theme/css/",
+    "compileDir_afbini": "project/sites/afbini/themes/afbini_theme/src/scss/:project/sites/afbini/themes/afbini_theme/css/",
+    "compileDir_etini": "project/sites/etini/themes/etini_theme/src/scss/:project/sites/etini/themes/etini_theme/css/",
+    "compileDir_hseni": "project/sites/hseni/themes/hseni_theme/src/scss/:project/sites/hseni/themes/hseni_theme/css/",
+    "compileDir_nisra": "project/sites/nisra/themes/nisra_theme/src/scss/:project/sites/nisra/themes/nisra_theme/css/",
+    "compileDir_nsmc": "project/sites/northsouthministerialcouncil/themes/northsouthministerialcouncil_theme/src/scss/:project/sites/northsouthministerialcouncil/themes/northsouthministerialcouncil_theme/css/"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ],
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "breakpoint-sass": "^3.0.0",
+    "eslint": "^9.9.1",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^7.1.0",
+    "parallelshell": "^3.0.2",
+    "postcss": "^8.4.49",
+    "postcss-assets": "^6.0.0",
+    "postcss-cli": "^11.0.0",
+    "postcss-inline-svg": "^6.0.0",
+    "sass": "^1.77.8",
+    "stylelint": "^16.9.0",
+    "stylelint-config-standard-scss": "^13.1.0",
+    "uglify-js": "^3.19.3"
+  }
+}

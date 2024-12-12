@@ -1,0 +1,25 @@
+uuid: 6d272c73-a0a8-4691-8fe9-f762ac2472a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.menu-footer
+  module:
+    - system
+  theme:
+    - nisra_theme
+id: nisra_theme_footer
+theme: nisra_theme
+region: footer
+weight: 0
+provider: null
+plugin: 'system_menu_block:menu-footer'
+settings:
+  id: 'system_menu_block:menu-footer'
+  label: Footer
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

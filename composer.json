@@ -87,6 +87,7 @@
         "drupal/flood_control": "^2.3",
         "drupal/geocoder": "^4.9",
         "drupal/geolocation": "^3.12",
+        "drupal/google_map_field": "^2.0",
         "drupal/google_tag": "^2.0",
         "drupal/handy_cache_tags": "^1.4",
         "drupal/honeypot": "^2.1",
@@ -115,12 +116,13 @@
         "drupal/redirect": "^1.8",
         "drupal/redis": "^1.7",
         "drupal/scheduled_transitions": "^2.5",
-        "drupal/search_api": "^1.26",
+        "drupal/search_api": "1.30.0",
         "drupal/search_api_autocomplete": "^1.4",
         "drupal/search_api_location": "^1.0@alpha",
         "drupal/search_api_solr": "4.3.0",
         "drupal/search_api_spellcheck": "^4.0",
         "drupal/shs": "^2.0@RC",
+        "drupal/simple_gmap": "^3.1",
         "drupal/simplei": "^2.1",
         "drupal/structure_sync": "^2.0",
         "drupal/telephone_plus": "^9.1",
@@ -225,7 +227,8 @@
                 "Allow unique records only": "https://www.drupal.org/files/issues/2021-02-07/entity_queue_unique_records-1240856-3197148.patch"
             },
             "drupal/facets": {
-                "Pass facet object onto child items": "https://www.drupal.org/files/issues/2019-11-13/child_item-3094143-2.patch"
+                "Pass facet object onto child items": "https://www.drupal.org/files/issues/2019-11-13/child_item-3094143-2.patch",
+                "SupportsFeature() on null": "https://www.drupal.org/files/issues/2024-12-10/supportsfeature_error_3492866_1.patch"
             },
             "drupal/fastly": {
                 "Allow disabling of logging": "https://git.drupalcode.org/project/fastly/-/merge_requests/6.patch"

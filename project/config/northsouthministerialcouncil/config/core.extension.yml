@@ -29,6 +29,7 @@ module:
   corplite_common: 0
   corplite_eu_cookie_compliance: 0
   corplite_image_styles: 0
+  corplite_search: 0
   csp: 0
   ctools: 0
   date_facet_drilldown: 0
@@ -151,6 +152,8 @@ module:
   readonlymode: 9999
   eu_cookie_compliance: 10000
 theme:
-  olivero: 0
   claro: 0
+  stable9: 0
+  nicsdru_corplite_theme: 0
+  northsouthministerialcouncil_theme: 0
 profile: nicsdru_corplite_profile

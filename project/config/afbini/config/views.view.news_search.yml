@@ -131,7 +131,7 @@ display:
         type: none
         options: {  }
       cache:
-        type: search_api_none
+        type: search_api_tag
         options: {  }
       empty:
         area:
@@ -269,7 +269,7 @@ display:
     position: 1
     display_options:
       cache:
-        type: search_api_none
+        type: search_api_tag
       defaults:
         cache: false
       exposed_block: true

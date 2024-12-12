@@ -1,0 +1,18 @@
+uuid: feb6e447-efc9-4cf3-8327-0dd661e18aff
+langcode: en
+status: true
+dependencies:
+  theme:
+    - nisra_theme
+id: primaryadminactions
+theme: nisra_theme
+region: top_banner
+weight: -7
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

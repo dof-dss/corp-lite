@@ -1,0 +1,25 @@
+uuid: b4bdd74d-d115-4d9b-bf56-65e1f229d24a
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.content_by_site_topic
+  module:
+    - views
+  theme:
+    - nisra_theme
+id: nisra_theme_content_by_site_topic_site_topic_publications
+theme: nisra_theme
+region: related
+weight: -8
+provider: null
+plugin: 'views_block:content_by_site_topic-site_topic_publications'
+settings:
+  id: 'views_block:content_by_site_topic-site_topic_publications'
+  label: ''
+  label_display: visible
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: none
+visibility: {  }
