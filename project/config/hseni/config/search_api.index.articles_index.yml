@@ -6,12 +6,11 @@ dependencies:
     - field.storage.node.body
     - field.storage.node.field_site_topics
     - field.storage.node.field_summary
-    - search_api.server.solr_default
   module:
-    - search_api_solr
-    - taxonomy
     - node
     - search_api
+    - search_api_solr
+    - taxonomy
 third_party_settings:
   search_api_solr:
     finalize: false
@@ -192,4 +191,4 @@ options:
   cron_limit: 50
   index_directly: true
   track_changes_in_references: true
-server: solr_default
+server: null
