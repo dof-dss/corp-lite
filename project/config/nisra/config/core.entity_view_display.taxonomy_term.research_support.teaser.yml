@@ -9,24 +9,16 @@ dependencies:
     - field.field.taxonomy_term.research_support.field_term_image
     - field.field.taxonomy_term.research_support.field_term_photo
     - taxonomy.vocabulary.research_support
-  module:
-    - text
 id: taxonomy_term.research_support.teaser
 targetEntityType: taxonomy_term
 bundle: research_support
 mode: teaser
-content:
-  field_summary:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 0
-    region: content
+content: {  }
 hidden:
   content_moderation_control: true
   description: true
   field_hide_topic: true
+  field_summary: true
   field_term_image: true
   field_term_photo: true
   langcode: true
