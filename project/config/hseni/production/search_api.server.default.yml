@@ -28,7 +28,7 @@ dependencies:
   module:
     - search_api_solr
 id: solr_default
-name: 'HSENI search'
+name: 'Solr default'
 description: ''
 backend: search_api_solr
 backend_config:
