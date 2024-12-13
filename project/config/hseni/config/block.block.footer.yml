@@ -1,4 +1,4 @@
-uuid: 8776fd96-f6b1-4e91-9c71-ef22ac100370
+uuid: 989010d2-cc44-4c2e-a821-7556a16f5688
 langcode: en
 status: true
 dependencies:
@@ -8,7 +8,7 @@ dependencies:
     - system
   theme:
     - hseni_theme
-id: footerlinks
+id: footer
 theme: hseni_theme
 region: footer
 weight: 0

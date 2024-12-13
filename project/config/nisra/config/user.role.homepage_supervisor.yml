@@ -1,0 +1,32 @@
+uuid: f302b8f8-de11-45ca-b691-9bceb335ff29
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.feature
+    - node.type.featured_content_list
+  module:
+    - corplite_common
+    - node
+id: homepage_supervisor
+label: 'Homepage supervisor'
+weight: 3
+is_admin: null
+permissions:
+  - 'create feature content'
+  - 'create featured_content_list content'
+  - 'delete any feature content'
+  - 'delete any featured_content_list content'
+  - 'delete feature revisions'
+  - 'delete featured_content_list revisions'
+  - 'delete own feature content'
+  - 'delete own featured_content_list content'
+  - 'edit any feature content'
+  - 'edit any featured_content_list content'
+  - 'edit own feature content'
+  - 'edit own featured_content_list content'
+  - 'reorder draggable views'
+  - 'revert feature revisions'
+  - 'revert featured_content_list revisions'
+  - 'view feature revisions'
+  - 'view featured_content_list revisions'
