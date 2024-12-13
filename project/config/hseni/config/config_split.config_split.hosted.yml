@@ -13,5 +13,5 @@ folder: ../project/config/hseni/hosted
 module: {  }
 theme: {  }
 complete_list:
-  - search_api.server.default
+  - search_api.server.solr_default
 partial_list: {  }

@@ -5,12 +5,11 @@ dependencies:
   config:
     - field.storage.node.body
     - field.storage.taxonomy_term.field_summary
-    - search_api.server.solr_default
   module:
-    - search_api_solr
     - node
-    - taxonomy
     - search_api
+    - search_api_solr
+    - taxonomy
 third_party_settings:
   search_api_solr:
     finalize: false
@@ -160,6 +159,7 @@ field_settings:
 
 
 
+
       fields: {  }
   status:
     label: Published
@@ -187,6 +187,7 @@ field_settings:
     configuration:
       type: concat
       separator: |+
+
 
 
 
