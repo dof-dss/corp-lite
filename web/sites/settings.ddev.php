@@ -4,7 +4,7 @@
  * @file
  * Default DDEV settings.
  */
-print "<br>in the right place<br/>>";
+
 $databases['default']['default'] = [
   'database' => $subsite_id,
   'username'  => getenv('DB_USER'),

@@ -117,7 +117,6 @@ if (getenv('LANDO') && file_exists($app_root . '/sites/settings.lando.php')) {
 }
 
 if (getenv('IS_DDEV_PROJECT') && file_exists($app_root . '/sites/settings.ddev.php')) {
-  print "<br/>Including correct ddev settings<br/>";
   include $app_root . '/sites/settings.ddev.php';
 }
 
