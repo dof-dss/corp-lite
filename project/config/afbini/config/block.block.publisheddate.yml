@@ -11,7 +11,7 @@ dependencies:
     - afbini_theme
 id: publisheddate
 theme: afbini_theme
-region: sidebar_second
+region: sidebar_first
 weight: -5
 provider: null
 plugin: 'facet_block:published_date'
