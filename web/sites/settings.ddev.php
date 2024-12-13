@@ -4,7 +4,7 @@
  * @file
  * Default DDEV settings.
  */
-
+print "<br>in the right place<br/>>";
 $databases['default']['default'] = [
   'database' => $subsite_id,
   'username'  => getenv('DB_USER'),
@@ -24,6 +24,8 @@ $databases[$subsite_id . '7']['default'] = [
   'namespace' => getenv('DB_NAMESPACE'),
   'driver' => getenv('DB_DRIVER'),
 ];
+
+$databases['migrate']['default'] = $databases[$subsite_id . '7']['default'];
 
 // Recommended setting for Drupal 10 only.
 $settings['state_cache'] = TRUE;
