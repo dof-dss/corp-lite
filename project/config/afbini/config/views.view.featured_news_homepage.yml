@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.teaser_large
     - field.storage.node.field_photo
     - field.storage.node.field_published_date
     - node.type.news
@@ -759,7 +760,20 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: false
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: teaser_large
       defaults:
+        style: false
+        row: false
         fields: false
       display_description: ''
       display_extenders:

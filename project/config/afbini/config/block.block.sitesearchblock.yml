@@ -10,7 +10,7 @@ dependencies:
 id: sitesearchblock
 theme: afbini_theme
 region: header
-weight: -5
+weight: -9
 provider: null
 plugin: site_search_block
 settings:
