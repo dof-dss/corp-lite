@@ -16,9 +16,9 @@ plugin: featured_content
 settings:
   id: featured_content
   label: 'Featured content'
-  label_display: visible
+  label_display: '0'
   provider: nisra_homepage
-  featured_items: '4122'
+  featured_items: '4131'
 visibility:
   request_path:
     id: request_path

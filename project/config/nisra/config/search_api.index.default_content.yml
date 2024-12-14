@@ -168,7 +168,8 @@ field_settings:
     type: solr_text_spellcheck
     configuration:
       type: union
-      separator: |+
+      separator: |
+
       fields:
         - 'entity:node/title'
   status:
@@ -198,6 +199,7 @@ field_settings:
     configuration:
       type: union
       separator: |+
+
 
 
 
@@ -334,4 +336,4 @@ options:
   cron_limit: 50
   index_directly: true
   track_changes_in_references: true
-server: solr_default
+server: null
