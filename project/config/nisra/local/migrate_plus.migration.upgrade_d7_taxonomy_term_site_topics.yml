@@ -1,7 +1,7 @@
 uuid: 3bcc3db1-8f65-4512-855f-e1997e2fbf1e
 langcode: en
 status: true
-dependencies: { }
+dependencies: {  }
 id: upgrade_d7_taxonomy_term_site_topics
 class: Drupal\migrate\Plugin\Migration
 field_plugin_method: null
@@ -16,20 +16,25 @@ source:
   bundle: site_topics
 process:
   tid:
-    - plugin: get
+    -
+      plugin: get
       source: tid
   vid:
-    - plugin: migration_lookup
+    -
+      plugin: migration_lookup
       migration: upgrade_d7_taxonomy_vocabulary
       source: vid
   name:
-    - plugin: get
+    -
+      plugin: get
       source: name
   description/value:
-    - plugin: get
+    -
+      plugin: get
       source: description
   description/format:
-    - plugin: static_map
+    -
+      plugin: static_map
       bypass: true
       source: format
       map:
@@ -39,45 +44,52 @@ process:
         restricted_html: basic_html
         plain_text: plain_text
   weight:
-    - plugin: get
+    -
+      plugin: get
       source: weight
   parent_id:
-    - plugin: skip_on_empty
+    -
+      plugin: skip_on_empty
       method: process
       source: parent
-    - plugin: migration_lookup
+    -
+      plugin: migration_lookup
       migration:
         - upgrade_d7_taxonomy_term_site_topics
         - upgrade_d7_taxonomy_term_research_support
   parent:
-    - plugin: default_value
+    -
+      plugin: default_value
       default_value: 0
       source: '@parent_id'
   forum_container:
-    - plugin: get
+    -
+      plugin: get
       source: is_container
   changed:
-    - plugin: get
+    -
+      plugin: get
       source: timestamp
   langcode:
-    - plugin: get
+    -
+      plugin: get
       source: language
   field_summary:
-    - plugin: get
+    -
+      plugin: get
       source: field_summary
-    - plugin: media_wysiwyg_filter
-    - plugin: filter_absolute_links
-
-      replace_urls:
-        http://www.nisra.gov.uk
-        http://nisra.gov.uk
-        https://www.nisra.gov.uk
-        https://nisra.gov.uk
-    - plugin: site_files_filter
+    -
+      plugin: media_wysiwyg_filter
+    -
+      plugin: filter_absolute_links
+      replace_urls: 'http://www.nisra.gov.uk http://nisra.gov.uk https://www.nisra.gov.uk https://nisra.gov.uk'
+    -
+      plugin: site_files_filter
       from_ref: sites/nisra.gov.uk/files
       to_ref: files/nisra
   field_summary/0/format:
-    - plugin: static_map
+    -
+      plugin: static_map
       bypass: true
       source: field_summary/0/format
       map:
@@ -87,7 +99,8 @@ process:
         restricted_html: basic_html
         plain_text: plain_text
   field_term_photo:
-    - plugin: sub_process
+    -
+      plugin: sub_process
       source: field_photo
       process:
         target_id: fid
@@ -96,7 +109,8 @@ process:
         width: width
         height: height
   field_term_image:
-    - plugin: sub_process
+    -
+      plugin: sub_process
       source: field_featured_image
       process:
         target_id: fid
@@ -105,13 +119,15 @@ process:
         width: width
         height: height
   field_enable_toc:
-    - plugin: get
+    -
+      plugin: get
       source: field_enable_toc
   field_hide_topic:
     plugin: default_value
     default_value: 0
   field_metatag:
-    - plugin: d7_metatag_entities
+    -
+      plugin: d7_metatag_entities
       source: pseudo_metatag_entities
   moderation_state:
     plugin: default_value
