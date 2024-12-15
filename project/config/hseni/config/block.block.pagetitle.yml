@@ -9,7 +9,7 @@ dependencies:
 id: pagetitle
 theme: hseni_theme
 region: top_banner
-weight: -7
+weight: -8
 provider: null
 plugin: page_title_block
 settings:

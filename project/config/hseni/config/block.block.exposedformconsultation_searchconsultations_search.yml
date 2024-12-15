@@ -1,0 +1,28 @@
+uuid: 75c5400d-acfe-4d00-94e1-d552c21056e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.consultation_search
+  module:
+    - system
+    - views
+  theme:
+    - hseni_theme
+id: exposedformconsultation_searchconsultations_search
+theme: hseni_theme
+region: sidebar_first
+weight: -8
+provider: null
+plugin: 'views_exposed_filter_block:consultation_search-consultations_search'
+settings:
+  id: 'views_exposed_filter_block:consultation_search-consultations_search'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/consultations\r\n/consultations/date/*\r\n/consultations/topic/*"
