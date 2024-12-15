@@ -83,7 +83,7 @@
   border: 2px solid;
   margin: 1.5em 0;
   padding: 1.2rem 1em 1em 5rem;
-  background: #fff url('themes/custom/nicsdru_corplite_theme/images/i.svg') no-repeat 1.1rem 1.1rem / 28px 28px;
+  background: #fff url('/themes/custom/nicsdru_corplite_theme/images/i.svg') no-repeat 1.1rem 1.1rem / 28px 28px;
 
   @include breakpoint($phab, $no-query: true) {
     padding: 1.4rem 1em 1em 6rem;
@@ -154,17 +154,17 @@
 
   &--success {
     border-color: var(--clr-button-action);
-    background-image: url('themes/custom/nicsdru_corplite_theme/images/status.svg');
+    background-image: url('/themes/custom/nicsdru_corplite_theme/images/status.svg');
   }
 
   &--error {
     border-color: #e34f4f;
-    background-image: url('themes/custom/nicsdru_corplite_theme/images/wrong.svg');
+    background-image: url('/themes/custom/nicsdru_corplite_theme/images/wrong.svg');
   }
 
   &--warning {
     border-color: #db6304;
-    background-image: url('themes/custom/nicsdru_corplite_theme/images/warning.svg');
+    background-image: url('/themes/custom/nicsdru_corplite_theme/images/warning.svg');
   }
 }
 
@@ -189,28 +189,28 @@
 
   &--error {
     border-color: #e34f4f;
-    background: #fff url('themes/custom/nicsdru_corplite_theme/images/wrong.svg') no-repeat .9rem .9rem / 24px 24px;
+    background: #fff url('/themes/custom/nicsdru_corplite_theme/images/wrong.svg') no-repeat .9rem .9rem / 24px 24px;
 
     @include breakpoint($phab, $no-query: true) {
-      background: #fff url('themes/custom/nicsdru_corplite_theme/images/wrong.svg') no-repeat 1.4rem 1.4rem / 30px 30px;
+      background: #fff url('/themes/custom/nicsdru_corplite_theme/images/wrong.svg') no-repeat 1.4rem 1.4rem / 30px 30px;
     }
   }
 
   &--status {
     border-color: var(--clr-button-action);
-    background: #fff url('themes/custom/nicsdru_corplite_theme/images/status.svg') no-repeat .9rem .9rem / 24px 24px;
+    background: #fff url('/themes/custom/nicsdru_corplite_theme/images/status.svg') no-repeat .9rem .9rem / 24px 24px;
 
     @include breakpoint($phab, $no-query: true) {
-      background: #fff url('themes/custom/nicsdru_corplite_theme/images/status.svg') no-repeat 1.4rem 1.4rem / 30px 30px;
+      background: #fff url('/themes/custom/nicsdru_corplite_theme/images/status.svg') no-repeat 1.4rem 1.4rem / 30px 30px;
     }
   }
 
   &--warning {
     border-color: #db6304;
-    background: #fff url('themes/custom/nicsdru_corplite_theme/images/warning.svg') no-repeat .9rem .9rem / 24px 24px;
+    background: #fff url('/themes/custom/nicsdru_corplite_theme/images/warning.svg') no-repeat .9rem .9rem / 24px 24px;
 
     @include breakpoint($phab, $no-query: true) {
-      background: #fff url('themes/custom/nicsdru_corplite_theme/images/warning.svg') no-repeat 1.4rem 1.4rem / 30px 30px;
+      background: #fff url('/themes/custom/nicsdru_corplite_theme/images/warning.svg') no-repeat 1.4rem 1.4rem / 30px 30px;
     }
   }
 
