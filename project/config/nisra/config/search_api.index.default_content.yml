@@ -230,6 +230,7 @@ field_settings:
 
 
 
+
       fields:
         - 'entity:node/title'
         - 'entity:taxonomy_term/name'
@@ -262,9 +263,17 @@ field_settings:
 datasource_settings:
   'entity:node':
     bundles:
-      default: true
+      default: false
       selected:
-        - webform
+        - application
+        - contact
+        - department_management
+        - news
+        - page
+        - profile
+        - publication
+        - secure_market_statistics
+        - secure_statistics
     languages:
       default: true
       selected: {  }

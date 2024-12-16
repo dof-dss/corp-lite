@@ -382,7 +382,7 @@ function nicsdru_corplite_theme_preprocess_media(&$variables) {
  * Implements hook_preprocess_HOOK().
  */
 function nicsdru_corplite_theme_preprocess_field(&$variables) {
-  if ($variables['field_name'] == 'field_attachment') {
+  if ($variables['field_name'] == 'field_attachment' || $variables['field_name'] == 'field_secure_attachment') {
     $path = \Drupal::service('path_alias.manager')
       ->getPathByAlias('/help-viewing-documents');
     if (preg_match('/node\/(\d+)/', $path, $matches)) {
