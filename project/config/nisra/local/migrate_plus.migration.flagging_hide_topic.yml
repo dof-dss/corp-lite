@@ -1,0 +1,23 @@
+uuid: 0f8fdb01-8b1e-4459-867e-091fb80fced2
+langcode: en
+status: true
+dependencies: {  }
+id: flagging_hide_topic
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - corplite_sites
+migration_group: migrate_flags
+label: 'Flags - Hide topic'
+source:
+  plugin: flagging_source
+  flag_id: 4
+process:
+  tid: entity_id
+  field_hide_topic:
+    plugin: default_value
+    default_value: 1
+destination:
+  plugin: 'entity:taxonomy_term'
+migration_dependencies: {  }

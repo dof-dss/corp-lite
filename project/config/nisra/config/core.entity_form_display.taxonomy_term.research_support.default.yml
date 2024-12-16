@@ -8,7 +8,9 @@ dependencies:
     - field.field.taxonomy_term.research_support.field_term_image
     - field.field.taxonomy_term.research_support.field_term_photo
     - taxonomy.vocabulary.research_support
+    - workflows.workflow.nics_editorial_workflow
   module:
+    - content_moderation
     - field_group
     - media_library
     - media_library_edit
@@ -82,6 +84,12 @@ content:
     region: content
     settings:
       include_locked: true
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    region: content
+    settings: {  }
     third_party_settings: {  }
   name:
     type: string_textfield
