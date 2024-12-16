@@ -15,6 +15,13 @@ targetEntityType: taxonomy_term
 bundle: site_topics
 mode: default
 content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
   field_summary:
     type: text_default
     label: hidden
@@ -24,7 +31,6 @@ content:
     region: content
 hidden:
   content_moderation_control: true
-  description: true
   field_hide_topic: true
   field_term_image: true
   field_term_photo: true
