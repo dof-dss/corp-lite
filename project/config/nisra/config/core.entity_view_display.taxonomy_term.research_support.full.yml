@@ -1,0 +1,39 @@
+uuid: 24c75951-3a46-4385-bb7d-1ca5bd59077e
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.full
+    - field.field.taxonomy_term.research_support.field_hide_topic
+    - field.field.taxonomy_term.research_support.field_summary
+    - field.field.taxonomy_term.research_support.field_term_image
+    - field.field.taxonomy_term.research_support.field_term_photo
+    - taxonomy.vocabulary.research_support
+  module:
+    - text
+id: taxonomy_term.research_support.full
+targetEntityType: taxonomy_term
+bundle: research_support
+mode: full
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_summary:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  content_moderation_control: true
+  field_hide_topic: true
+  field_term_image: true
+  field_term_photo: true
+  langcode: true
+  search_api_excerpt: true
