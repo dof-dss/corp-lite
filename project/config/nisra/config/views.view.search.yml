@@ -459,14 +459,14 @@ display:
           exposed: true
           expose:
             operator_id: search_api_fulltext_op
-            label: ''
+            label: 'Search this site ...'
             description: ''
             use_operator: false
             operator: search_api_fulltext_op
             operator_limit_selection: false
             operator_list: {  }
             identifier: query
-            required: false
+            required: true
             remember: false
             multiple: false
             remember_roles:
@@ -483,6 +483,7 @@ display:
               site_admin_user: '0'
               admin_user: '0'
               qa: '0'
+              homepage_supervisor: '0'
             expose_fields: false
             placeholder: 'Search this site...'
             searched_fields_id: search_api_fulltext_searched_fields
@@ -561,6 +562,32 @@ display:
     display_plugin: page
     position: 1
     display_options:
+      style:
+        type: default
+        options:
+          row_class: ''
+          default_row_class: false
+          uses_fields: false
+      row:
+        type: search_api
+        options:
+          view_modes:
+            'entity:node':
+              application: search_index
+              contact: search_index
+              department_management: search_index
+              news: search_index
+              page: search_index
+              profile: search_index
+              publication: search_index
+              secure_market_statistics: search_index
+              secure_statistics: search_index
+            'entity:taxonomy_term':
+              research_support: search_index
+              site_topics: search_index
+      defaults:
+        style: false
+        row: false
       display_description: ''
       display_extenders:
         metatag_display_extender:
@@ -704,6 +731,7 @@ display:
               site_admin_user: '0'
               admin_user: '0'
               qa: '0'
+              homepage_supervisor: '0'
             expose_fields: false
             placeholder: 'Search this site...'
             searched_fields_id: search_api_fulltext_searched_fields

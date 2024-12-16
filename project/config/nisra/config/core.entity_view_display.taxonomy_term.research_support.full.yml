@@ -1,19 +1,20 @@
-uuid: 02f02ddd-3552-427a-9305-ba413658311a
+uuid: 24c75951-3a46-4385-bb7d-1ca5bd59077e
 langcode: en
-status: true
+status: false
 dependencies:
   config:
-    - field.field.taxonomy_term.site_topics.field_hide_topic
-    - field.field.taxonomy_term.site_topics.field_summary
-    - field.field.taxonomy_term.site_topics.field_term_image
-    - field.field.taxonomy_term.site_topics.field_term_photo
-    - taxonomy.vocabulary.site_topics
+    - core.entity_view_mode.taxonomy_term.full
+    - field.field.taxonomy_term.research_support.field_hide_topic
+    - field.field.taxonomy_term.research_support.field_summary
+    - field.field.taxonomy_term.research_support.field_term_image
+    - field.field.taxonomy_term.research_support.field_term_photo
+    - taxonomy.vocabulary.research_support
   module:
     - text
-id: taxonomy_term.site_topics.default
+id: taxonomy_term.research_support.full
 targetEntityType: taxonomy_term
-bundle: site_topics
-mode: default
+bundle: research_support
+mode: full
 content:
   description:
     type: text_default
