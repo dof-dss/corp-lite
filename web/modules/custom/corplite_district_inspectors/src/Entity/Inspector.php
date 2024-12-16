@@ -2,6 +2,7 @@
 
 namespace Drupal\corplite_district_inspectors\Entity;
 
+use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Entity\EntityChangedTrait;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
@@ -21,6 +22,11 @@ use Drupal\user\UserInterface;
  *   base_table = "inspector",
  *   entity_keys = {
  *     "id" = "id"
+ *   },
+ *   revision_metadata_keys = {
+ *     "revision_user" = "revision_user",
+ *     "revision_created" = "revision_created",
+ *     "revision_log_message" = "revision_log_message",
  *   },
  * )
  */
