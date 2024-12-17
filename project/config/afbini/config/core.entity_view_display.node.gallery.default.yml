@@ -8,8 +8,9 @@ dependencies:
     - field.field.node.gallery.field_site_topics
     - field.field.node.gallery.field_summary
     - node.type.gallery
+    - responsive_image.styles.card_small
   module:
-    - image
+    - responsive_image
     - text
     - user
 id: node.gallery.default
@@ -25,11 +26,11 @@ content:
     weight: 1
     region: content
   field_gallery_images:
-    type: image
+    type: responsive_image
     label: hidden
     settings:
+      responsive_image_style: card_small
       image_link: ''
-      image_style: ''
       image_loading:
         attribute: lazy
     third_party_settings: {  }
