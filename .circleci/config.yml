@@ -1,7 +1,3 @@
-
-
-
-
 version: 2.1
 
 # Default docker image. (excludes functional_tests)
