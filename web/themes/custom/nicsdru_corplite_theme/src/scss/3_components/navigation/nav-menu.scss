@@ -3,6 +3,8 @@
  * Provides the styling for a navigation breadcrumb.
  */
 
+@use '../../init' as *;
+
 // menu's share common attributes
 .nav {
   // applied to menu ol / ul
@@ -29,12 +31,15 @@
 }
 
 .footer-nav-menu {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
   list-style: none;
   margin: 0;
   padding: 0;
+
+  @include breakpoint($tab) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
 
   li {
     font-size: 1.6rem;
