@@ -1,0 +1,57 @@
+uuid: a1e62339-ac49-4e9f-98ad-3273c2b454ed
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.consultation.body
+    - field.field.node.consultation.field_attachment
+    - field.field.node.consultation.field_consultation_dates
+    - field.field.node.consultation.field_email_address
+    - field.field.node.consultation.field_feature_home_page
+    - field.field.node.consultation.field_meta_tags
+    - field.field.node.consultation.field_postal
+    - field.field.node.consultation.field_published_date
+    - field.field.node.consultation.field_respond_online
+    - field.field.node.consultation.field_site_topics
+    - field.field.node.consultation.field_summary
+    - node.type.consultation
+  module:
+    - datetime
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+_core:
+  default_config_hash: KzrPm7ziIwz-bVVSpNPhGx00hHxUdUPbZQGFnRACANA
+id: node.consultation.search_index
+targetEntityType: node
+bundle: consultation
+mode: search_index
+content:
+  field_published_date:
+    type: datetime_default
+    label: inline
+    settings:
+      timezone_override: ''
+      format_type: corplite_medium
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true
+  content_moderation_control: true
+  field_attachment: true
+  field_consultation_dates: true
+  field_email_address: true
+  field_feature_home_page: true
+  field_meta_tags: true
+  field_postal: true
+  field_respond_online: true
+  field_site_topics: true
+  field_summary: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

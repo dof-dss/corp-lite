@@ -179,6 +179,7 @@ field_settings:
 
 
 
+
       fields: {  }
   status:
     label: Published
@@ -207,6 +208,7 @@ field_settings:
     configuration:
       type: concat
       separator: |+
+
 
 
 
@@ -325,4 +327,4 @@ options:
   cron_limit: 50
   index_directly: true
   track_changes_in_references: true
-server: solr_default
+server: null

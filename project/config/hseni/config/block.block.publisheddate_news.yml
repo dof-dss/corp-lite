@@ -1,29 +1,29 @@
-uuid: 64433c7f-f9c1-441b-b0ad-a9ac418a0e98
+uuid: 07e0f28b-ea37-41b0-8ce4-16f81fda71a8
 langcode: en
 status: true
 dependencies:
   config:
-    - facets.facet.published_date
+    - facets.facet.published_date_news
   module:
     - facets
     - system
   theme:
     - hseni_theme
-id: publisheddate
+id: publisheddate_news
 theme: hseni_theme
 region: sidebar_first
-weight: -7
+weight: 0
 provider: null
-plugin: 'facet_block:published_date'
+plugin: 'facet_block:published_date_news'
 settings:
-  id: 'facet_block:published_date'
+  id: 'facet_block:published_date_news'
   label: 'Published Date'
   label_display: visible
   provider: facets
   context_mapping: {  }
-  block_id: publisheddate
+  block_id: publisheddate_news
 visibility:
   request_path:
     id: request_path
     negate: false
-    pages: "/publications\r\n/publications/date/*\r\n/publications/topic/*\r\n/publications/type/*"
+    pages: "/news\r\n/news/date/*"
