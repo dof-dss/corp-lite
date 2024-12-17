@@ -1,4 +1,4 @@
-uuid: 3f049a9f-e09d-422a-b61d-eadbe651a9f2
+uuid: ec0c8f50-3c3b-4b98-9b8e-6eb05354edbd
 langcode: en
 status: true
 dependencies:
@@ -9,7 +9,7 @@ dependencies:
     - system
   theme:
     - afbini_theme
-id: publicationtype
+id: afbini_theme_publicationtype
 theme: afbini_theme
 region: sidebar_first
 weight: -6
@@ -17,13 +17,13 @@ provider: null
 plugin: 'facet_block:publication_type'
 settings:
   id: 'facet_block:publication_type'
-  label: Type
+  label: 'Publication type'
   label_display: visible
   provider: facets
   context_mapping: {  }
-  block_id: publicationtype
+  block_id: afbini_theme_publicationtype
 visibility:
   request_path:
     id: request_path
     negate: false
-    pages: "/publications\r\n/publications/date/*\r\n/publications/topics/*\r\n/publications/type/*"
+    pages: "/publications\r\n/publications/date/*\r\n/publications/topic/*\r\n/publications/type/*"
