@@ -22,7 +22,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'News search'
+      title: News
       fields:
         body:
           id: body
@@ -319,7 +319,7 @@ display:
           tokenize: false
       path: news
     cache_metadata:
-      max-age: -1
+      max-age: 0
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
@@ -327,6 +327,9 @@ display:
         - url.query_args
         - 'user.node_grants:view'
       tags:
+        - 'config:facets.facet.news_publication_date'
+        - 'config:facets.facet.news_topic'
+        - 'config:facets.facet.news_type'
         - 'config:field.storage.node.body'
         - 'config:search_api.index.news_index'
         - 'search_api_list:news_index'

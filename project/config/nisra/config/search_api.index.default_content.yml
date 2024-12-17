@@ -231,6 +231,7 @@ field_settings:
 
 
 
+
       fields:
         - 'entity:node/title'
         - 'entity:taxonomy_term/name'
