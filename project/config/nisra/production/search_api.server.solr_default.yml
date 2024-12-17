@@ -1,4 +1,4 @@
-uuid: 01e76886-8ec1-40b0-9645-37606a931f90
+uuid: ce052109-4db5-4249-aa8a-9a8a0ae2ac26
 langcode: en
 status: true
 dependencies:
@@ -42,7 +42,7 @@ backend_config:
   connector_config:
     scheme: http
     host: nisra_solr.internal
-    port: 8983
+    port: 8080
     path: /
     core: nisra_index
     timeout: 5
