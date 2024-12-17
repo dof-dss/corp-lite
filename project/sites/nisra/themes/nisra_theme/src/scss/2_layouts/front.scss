@@ -3,6 +3,7 @@
  * Provides the layout styles for nisra front page.
  */
 
+
 @use '../../../../../../../../web/themes/custom/nicsdru_corplite_theme/src/scss/init' as *;
 
 // Front page layout / theme page layout
@@ -16,6 +17,9 @@
   > * {
     grid-column: auto;
   }
+
+  grid-template-columns: auto;
+  grid-gap: 0;
 
   // IE fix.
   @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
