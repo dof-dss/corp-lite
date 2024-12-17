@@ -61,11 +61,4 @@
   --rhythm-spacing-xl: calc(var(--base-rhythm) * 3); // 24, 27, 30
   //--rhythm-spacing-xxl: calc(var(--base-rhythm) * 4); // 32, 36, 40
   //--rhythm-spacing-xxxl: calc(var(--base-rhythm) * 5); // 40, 45, 50
-
-  .drupal-entity.ck-widget .embedded-entity {
-    background: var(--clr-grey-light) url("../../../images/placeholder.png");
-    height: 15rem;
-    width: 75%;
-    position: absolute;
-  }
 }
