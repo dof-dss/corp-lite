@@ -9,7 +9,7 @@ dependencies:
     - field.field.node.contact.field_site_topics
     - node.type.contact
   module:
-    - geolocation
+    - google_map_field
     - text
     - user
 _core:
@@ -27,8 +27,8 @@ content:
     weight: 0
     region: content
   field_map:
-    type: geolocation_latlng
-    label: hidden
+    type: google_map_field_default
+    label: above
     settings: {  }
     third_party_settings: {  }
     weight: 1
