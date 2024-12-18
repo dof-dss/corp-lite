@@ -1,4 +1,4 @@
-uuid: 43343ef7-1eba-4bfd-844a-6b6b8bc3b66b
+uuid: 48e649d7-eb0d-44b7-92ae-26b5604075ec
 langcode: en
 status: true
 dependencies:
@@ -9,14 +9,14 @@ dependencies:
     - views
   theme:
     - afbini_theme
-id: exposedformpublications_searchpublications_search_page
+id: exposedformpublications_searchpublications_search
 theme: afbini_theme
 region: sidebar_first
 weight: -9
 provider: null
-plugin: 'views_exposed_filter_block:publications_search-publications_search_page'
+plugin: 'views_exposed_filter_block:publications_search-publications_search'
 settings:
-  id: 'views_exposed_filter_block:publications_search-publications_search_page'
+  id: 'views_exposed_filter_block:publications_search-publications_search'
   label: ''
   label_display: '0'
   provider: views

@@ -1,9 +1,9 @@
-uuid: 9f8affa1-54e5-4c68-8fa4-3ab7723ada4b
+uuid: 72021db8-cc7e-430f-a3bb-c5b74b1f3b3c
 langcode: en
 status: true
 dependencies:
   config:
-    - facets.facet.published_date
+    - facets.facet.publications_published_date
   module:
     - facets
     - system
@@ -12,12 +12,12 @@ dependencies:
 id: publisheddate
 theme: afbini_theme
 region: sidebar_first
-weight: -5
+weight: -4
 provider: null
-plugin: 'facet_block:published_date'
+plugin: 'facet_block:publications_published_date'
 settings:
-  id: 'facet_block:published_date'
-  label: Date
+  id: 'facet_block:publications_published_date'
+  label: 'Publication date'
   label_display: visible
   provider: facets
   context_mapping: {  }

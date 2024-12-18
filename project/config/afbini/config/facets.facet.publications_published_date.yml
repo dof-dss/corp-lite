@@ -1,4 +1,4 @@
-uuid: 18f84eea-3ce5-4e3e-8cfd-fad92c6367a3
+uuid: bc8c93a3-ef0c-4d5a-9b2e-3cfb1b4045e6
 langcode: en
 status: true
 dependencies:
@@ -7,14 +7,14 @@ dependencies:
     - views.view.publications_search
   module:
     - search_api
-id: published_date
+id: publications_published_date
 name: 'Published date'
 weight: 0
 min_count: 1
 missing: false
 missing_label: others
 url_alias: date
-facet_source_id: 'search_api:views_page__publications_search__publications_search_page'
+facet_source_id: 'search_api:views_page__publications_search__publications_search'
 field_identifier: field_published_date
 query_operator: and
 hard_limit: 0
@@ -29,7 +29,7 @@ enable_parent_when_child_gets_disabled: true
 widget:
   type: links
   config:
-    show_numbers: true
+    show_numbers: false
     soft_limit: 20
     show_reset_link: false
     reset_text: 'Show all'

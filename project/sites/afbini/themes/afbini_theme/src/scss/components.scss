@@ -59,13 +59,13 @@
 
       .columnItem {
         width: 48.75%;
-        border: 3px solid var(--clr-brand-primary-light);
+        border: 3px solid #e4eef0;
         padding: 0.9rem 1.2rem 1.2rem;
         margin: 0 11px 2rem 0;
 
         &:hover,
         &:focus {
-          background: var(--clr-brand-primary-light);
+          background: #e4eef0;
         }
       }
     }
@@ -107,13 +107,13 @@
 
   .columnItem {
     width: 48.75%;
-    border: 3px solid var(--clr-brand-primary-light);
+    border: 3px solid #e4eef0;
     padding: 0.9rem 1.2rem 1.2rem;
     margin: 0 11px 2rem 0;
 
     &:hover,
     &:focus {
-      background: var(--clr-brand-primary-light);
+      background: #e4eef0;
     }
   }
 }
