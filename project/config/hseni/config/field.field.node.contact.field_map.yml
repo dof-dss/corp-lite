@@ -1,4 +1,4 @@
-uuid: 94dbf04d-bfab-4859-8718-be4634acefcc
+uuid: a4c0f7e9-d990-45bf-b8ea-8b45fb841db4
 langcode: en
 status: true
 dependencies:
@@ -6,7 +6,7 @@ dependencies:
     - field.storage.node.field_map
     - node.type.contact
   module:
-    - geolocation
+    - google_map_field
 id: node.contact.field_map
 field_name: field_map
 entity_type: node
@@ -18,4 +18,4 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: geolocation
+field_type: google_map_field

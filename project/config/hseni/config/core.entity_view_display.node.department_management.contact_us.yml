@@ -29,6 +29,11 @@ targetEntityType: node
 bundle: department_management
 mode: contact_us
 content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
   field_contact_information:
     type: text_default
     label: hidden
