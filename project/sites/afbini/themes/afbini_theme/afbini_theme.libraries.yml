@@ -4,6 +4,4 @@ afbini-styling:
     base:
       css/1_base/root.css: { minified: true, weight: -100 }
     theme:
-      css/3_components/navigation/pager.css: { minified: true }
-      css/3_components/content/tables.css: { minified: true }
       css/components.css: { minified: true }
