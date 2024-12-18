@@ -1,0 +1,10 @@
+uuid: 50d5d588-a19d-4ea1-95bc-e9d0b7a4716a
+langcode: en
+status: true
+dependencies: {  }
+id: migrate_drupal_7_file
+label: migrate_drupal_7_file
+description: ''
+source_type: null
+module: null
+shared_configuration: null
