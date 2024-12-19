@@ -1,4 +1,4 @@
-uuid: d906b245-7fac-4925-998c-a71aac2fdfbc
+uuid: ba741005-28bb-45ea-abe9-fd203aba7db4
 langcode: en
 status: true
 dependencies:
@@ -10,7 +10,7 @@ dependencies:
 id: featuredcontent
 theme: hseni_theme
 region: top_banner
-weight: -6
+weight: -9
 provider: null
 plugin: featured_content
 settings:

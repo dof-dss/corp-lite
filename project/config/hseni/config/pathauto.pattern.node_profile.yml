@@ -1,0 +1,21 @@
+uuid: 3bc79445-6901-4a54-8623-a53c7a022991
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node_profile
+label: 'Content - Profile'
+type: 'canonical_entities:node'
+pattern: 'profiles/[node:title]'
+selection_criteria:
+  -
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: node
+    bundles:
+      profile: profile
+selection_logic: and
+weight: 0
+relationships: {  }

@@ -1,6 +1,6 @@
 uuid: 30a81d70-5991-45b1-bd62-947a673c89f0
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - core.entity_view_mode.node.diff
@@ -36,19 +36,12 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-  field_teaser:
-    type: string
-    label: inline
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 2
-    region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 3
     region: content
 hidden:
+  field_teaser: true
   langcode: true
   search_api_excerpt: true

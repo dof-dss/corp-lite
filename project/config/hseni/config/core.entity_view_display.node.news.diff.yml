@@ -116,18 +116,11 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  field_teaser:
-    type: string
-    label: inline
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 16
-    region: content
 hidden:
   content_moderation_control: true
   field_feature_home_page: true
   field_main_feature: true
+  field_teaser: true
   langcode: true
   links: true
   search_api_excerpt: true
