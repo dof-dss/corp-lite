@@ -1,4 +1,4 @@
-uuid: ec0c8f50-3c3b-4b98-9b8e-6eb05354edbd
+uuid: 9cefbec6-b9cd-4ead-a6cf-72c244e064a8
 langcode: en
 status: true
 dependencies:
@@ -12,7 +12,7 @@ dependencies:
 id: afbini_theme_publicationtype
 theme: afbini_theme
 region: sidebar_first
-weight: -6
+weight: -7
 provider: null
 plugin: 'facet_block:publication_type'
 settings:

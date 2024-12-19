@@ -1,20 +1,20 @@
-uuid: bc8c93a3-ef0c-4d5a-9b2e-3cfb1b4045e6
+uuid: fd2e1175-86c9-4071-a4e2-ddd8a8cbc43d
 langcode: en
 status: true
 dependencies:
   config:
     - search_api.index.publications
-    - views.view.publications_search
+    - views.view.publication_search
   module:
     - search_api
-id: publications_published_date
+id: published_date
 name: 'Published date'
 weight: 0
 min_count: 1
 missing: false
 missing_label: others
 url_alias: date
-facet_source_id: 'search_api:views_page__publications_search__publications_search'
+facet_source_id: 'search_api:views_page__publication_search__publications_search'
 field_identifier: field_published_date
 query_operator: and
 hard_limit: 0

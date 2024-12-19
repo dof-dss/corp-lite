@@ -6,7 +6,11 @@ dependencies:
     - search_api.index.news
     - views.view.news_search
   module:
+    - facets_pretty_paths
     - search_api
+third_party_settings:
+  facets_pretty_paths:
+    coder: default_coder
 id: publication_date
 name: 'Publication date'
 weight: 0

@@ -3,10 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.storage.node.field_site_topics
     - field.storage.node.body
     - field.storage.node.field_publication_type
     - field.storage.node.field_published_date
-    - field.storage.node.field_site_topics
     - search_api.server.solr_default
   module:
     - search_api_solr
@@ -115,8 +115,17 @@ field_settings:
 
 
 
+
       fields:
         - 'entity:node/title'
+  status:
+    label: Published
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+    dependencies:
+      module:
+        - node
   title:
     label: Title
     datasource_id: 'entity:node'
@@ -134,6 +143,7 @@ field_settings:
     configuration:
       type: union
       separator: |+
+
 
 
 
