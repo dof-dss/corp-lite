@@ -1,12 +1,16 @@
-uuid: 9d5ae5bd-65b5-4b64-87db-d53788c98a8f
+uuid: 7cca0c2a-906e-45fe-9d0c-fbd608c0480e
 langcode: en
 status: true
 dependencies:
   config:
     - search_api.index.publications
-    - views.view.publications_search
+    - views.view.publication_search
   module:
+    - facets_pretty_paths
     - search_api
+third_party_settings:
+  facets_pretty_paths:
+    coder: taxonomy_term_coder
 id: publication_type
 name: 'Publication type'
 weight: 0
@@ -14,7 +18,7 @@ min_count: 1
 missing: false
 missing_label: others
 url_alias: type
-facet_source_id: 'search_api:views_page__publications_search__publications_search'
+facet_source_id: 'search_api:views_page__publication_search__publications_search'
 field_identifier: field_publication_type
 query_operator: and
 hard_limit: 50

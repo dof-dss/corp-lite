@@ -1,0 +1,29 @@
+uuid: 4cf626d8-f90a-4dc2-be95-4b372c612326
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.news_publication_date
+  module:
+    - facets
+    - system
+  theme:
+    - afbini_theme
+id: afbini_theme_publicationdate
+theme: afbini_theme
+region: sidebar_first
+weight: -3
+provider: null
+plugin: 'facet_block:news_publication_date'
+settings:
+  id: 'facet_block:news_publication_date'
+  label: 'News date'
+  label_display: visible
+  provider: facets
+  context_mapping: {  }
+  block_id: afbini_theme_publicationdate
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/news\r\n/news/date/*\r\n/news/type/*"

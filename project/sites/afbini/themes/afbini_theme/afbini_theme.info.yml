@@ -9,7 +9,6 @@ libraries:
   - afbini_theme/afbini-styling
 
 ckeditor5-stylesheets:
-  - css/1_base/links.css
   - css/1_base/root.css
   - css/3_components/content/ckeditor.css
 
