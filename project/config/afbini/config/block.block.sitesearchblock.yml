@@ -22,4 +22,4 @@ visibility:
   request_path:
     id: request_path
     negate: true
-    pages: "/search\r\n/search*"
+    pages: "/search\r\n"
