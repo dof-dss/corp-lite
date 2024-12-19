@@ -1,17 +1,15 @@
-uuid: 006ea309-557c-4a6b-a212-adb310360641
-langcode: und
+uuid: 74216923-a7fb-4c33-bb4d-8ce6436f6be4
+langcode: en
 status: true
 dependencies:
   module:
     - node
-_core:
-  default_config_hash: tcyxCNKGec9LXjNM6gTp_pmPmgym9hWoODw9-d8Z0fA
 id: node.field_teaser
 field_name: field_teaser
 entity_type: node
 type: string
 settings:
-  max_length: 120
+  max_length: 255
   case_sensitive: false
   is_ascii: false
 module: core
