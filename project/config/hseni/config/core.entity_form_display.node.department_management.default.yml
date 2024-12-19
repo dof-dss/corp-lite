@@ -15,10 +15,11 @@ dependencies:
     - field.field.node.department_management.field_twitter_url
     - field.field.node.department_management.field_youtube_url
     - node.type.department_management
+    - workflows.workflow.nics_editorial_workflow
   module:
     - content_moderation
     - field_group
-    - geolocation
+    - google_map_field
     - link
     - metatag
     - path
@@ -114,8 +115,8 @@ content:
       placeholder_title: ''
     third_party_settings: {  }
   field_map:
-    type: geolocation_latlng
-    weight: 2
+    type: google_map_field_default
+    weight: 26
     region: content
     settings: {  }
     third_party_settings: {  }

@@ -9,7 +9,7 @@ dependencies:
 id: pagetitle
 theme: hseni_theme
 region: top_banner
-weight: -8
+weight: -11
 provider: null
 plugin: page_title_block
 settings:
@@ -21,4 +21,4 @@ visibility:
   request_path:
     id: request_path
     negate: true
-    pages: '/node/*/revisions/view/*'
+    pages: '<front>'

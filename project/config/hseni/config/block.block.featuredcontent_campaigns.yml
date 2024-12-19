@@ -1,0 +1,26 @@
+uuid: c2390f12-6d73-4db0-b576-3a040d4aaa76
+langcode: en
+status: true
+dependencies:
+  module:
+    - hseni_homepage
+    - system
+  theme:
+    - hseni_theme
+id: featuredcontent_campaigns
+theme: hseni_theme
+region: top_banner
+weight: 0
+provider: null
+plugin: featured_content
+settings:
+  id: featured_content
+  label: 'HSENI Campaigns'
+  label_display: visible
+  provider: hseni_homepage
+  featured_items: '2015'
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'
