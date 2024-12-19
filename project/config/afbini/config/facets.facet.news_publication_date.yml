@@ -1,4 +1,4 @@
-uuid: 3355a793-d0fc-45c7-98c7-73c4ade6ce42
+uuid: 2d546e63-0c0e-4981-80eb-a716de89adc1
 langcode: en
 status: true
 dependencies:
@@ -11,14 +11,14 @@ dependencies:
 third_party_settings:
   facets_pretty_paths:
     coder: default_coder
-id: publication_date
+id: news_publication_date
 name: 'Publication date'
 weight: 0
 min_count: 1
 missing: false
 missing_label: others
 url_alias: date
-facet_source_id: 'search_api:views_page__news_search__news_search_page'
+facet_source_id: 'search_api:views_page__news_search__news_search'
 field_identifier: field_published_date
 query_operator: and
 hard_limit: 0
@@ -39,7 +39,7 @@ widget:
     reset_text: 'Show all'
     hide_reset_when_no_selection: false
     soft_limit_settings:
-      show_less_label: 'Show fewer'
+      show_less_label: 'Show less'
       show_more_label: 'Show more'
 empty_behavior:
   behavior: none

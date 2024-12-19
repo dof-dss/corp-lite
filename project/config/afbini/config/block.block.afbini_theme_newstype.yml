@@ -1,27 +1,27 @@
-uuid: 594d80d1-18f2-4916-b238-61f4044fc171
+uuid: e255241a-5bfe-48b2-aa2d-49f226f01b61
 langcode: en
 status: true
 dependencies:
   config:
-    - facets.facet.publication_date
+    - facets.facet.news_type
   module:
     - facets
     - system
   theme:
     - afbini_theme
-id: publicationdate_news
+id: afbini_theme_newstype
 theme: afbini_theme
 region: sidebar_first
 weight: -4
 provider: null
-plugin: 'facet_block:publication_date'
+plugin: 'facet_block:news_type'
 settings:
-  id: 'facet_block:publication_date'
-  label: Date
+  id: 'facet_block:news_type'
+  label: 'News type'
   label_display: visible
   provider: facets
   context_mapping: {  }
-  block_id: publicationdate_news
+  block_id: afbini_theme_newstype
 visibility:
   request_path:
     id: request_path

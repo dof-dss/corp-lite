@@ -22,7 +22,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: News
+      title: 'News search'
       fields:
         body:
           id: body
@@ -272,8 +272,8 @@ display:
         - 'config:field.storage.node.body'
         - 'config:search_api.index.news'
         - 'search_api_list:news'
-  news_search_page:
-    id: news_search_page
+  news_search:
+    id: news_search
     display_title: Page
     display_plugin: page
     position: 1
@@ -289,7 +289,7 @@ display:
           tokenize: false
       path: news
     cache_metadata:
-      max-age: 0
+      max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
@@ -297,8 +297,6 @@ display:
         - url.query_args
         - 'user.node_grants:view'
       tags:
-        - 'config:facets.facet.news_type'
-        - 'config:facets.facet.publication_date'
         - 'config:field.storage.node.body'
         - 'config:search_api.index.news'
         - 'search_api_list:news'

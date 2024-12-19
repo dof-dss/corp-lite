@@ -1,4 +1,4 @@
-uuid: 22bc54dd-743d-4f76-a53e-bb6d7bc7d720
+uuid: b21e52aa-5556-433d-962a-1a08f2380fa7
 langcode: en
 status: true
 dependencies:
@@ -9,20 +9,20 @@ dependencies:
     - views
   theme:
     - afbini_theme
-id: exposedformnews_searchnews_search_page
+id: afbini_theme_exposedformnews_searchnews_search
 theme: afbini_theme
 region: sidebar_first
 weight: -8
 provider: null
-plugin: 'views_exposed_filter_block:news_search-news_search_page'
+plugin: 'views_exposed_filter_block:news_search-news_search'
 settings:
-  id: 'views_exposed_filter_block:news_search-news_search_page'
+  id: 'views_exposed_filter_block:news_search-news_search'
   label: ''
-  label_display: visible
+  label_display: '0'
   provider: views
   views_label: ''
 visibility:
   request_path:
     id: request_path
     negate: false
-    pages: "/news\r\n/news/date/*\r\n/news/type/*"
+    pages: "/news\r\n/news/date/*\r\n/news/topic/*\r\n/news/type/*"
