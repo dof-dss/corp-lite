@@ -1,19 +1,25 @@
-uuid: 4598b35b-025b-434e-a29d-088ebd2bcbb0
+uuid: 34356bf3-4bd9-4c07-96fb-b08a2d463032
 langcode: en
-status: true
+status: false
 dependencies:
   config:
+    - core.entity_view_mode.node.full
     - field.field.node.feature.field_link_url
     - field.field.node.feature.field_photo
     - field.field.node.feature.field_teaser
     - node.type.feature
   module:
+    - layout_builder
     - link
     - user
-id: node.feature.default
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.feature.full
 targetEntityType: node
 bundle: feature
-mode: default
+mode: full
 content:
   field_link_url:
     type: link
