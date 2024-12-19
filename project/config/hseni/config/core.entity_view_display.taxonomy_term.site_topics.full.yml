@@ -1,17 +1,23 @@
-uuid: 54bbe1a2-2de3-4870-8572-2f5209f03caa
+uuid: cc3a2a8b-3306-48ff-bb71-21307aecfdb6
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.taxonomy_term.full
     - field.field.taxonomy_term.site_topics.field_photo
     - field.field.taxonomy_term.site_topics.field_summary
     - taxonomy.vocabulary.site_topics
   module:
+    - layout_builder
     - text
-id: taxonomy_term.site_topics.default
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: taxonomy_term.site_topics.full
 targetEntityType: taxonomy_term
 bundle: site_topics
-mode: default
+mode: full
 content:
   description:
     type: text_default
@@ -21,11 +27,10 @@ content:
     weight: 0
     region: content
   field_photo:
-    type: entity_reference_entity_view
+    type: entity_reference_label
     label: hidden
     settings:
-      view_mode: default
-      link: false
+      link: true
     third_party_settings: {  }
     weight: 2
     region: content
