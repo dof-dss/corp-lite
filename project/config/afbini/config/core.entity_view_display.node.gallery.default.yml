@@ -8,9 +8,7 @@ dependencies:
     - field.field.node.gallery.field_site_topics
     - field.field.node.gallery.field_summary
     - node.type.gallery
-    - responsive_image.styles.card_small
   module:
-    - responsive_image
     - text
     - user
 id: node.gallery.default
@@ -26,24 +24,17 @@ content:
     weight: 1
     region: content
   field_gallery_images:
-    type: responsive_image
+    type: entity_reference_entity_view
     label: hidden
     settings:
-      responsive_image_style: card_small
-      image_link: ''
-      image_loading:
-        attribute: lazy
+      view_mode: default
+      link: false
     third_party_settings: {  }
     weight: 2
     region: content
   field_summary:
     type: basic_string
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 1
-    region: content
-  links:
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 0
@@ -51,4 +42,5 @@ content:
 hidden:
   field_site_topics: true
   langcode: true
+  links: true
   search_api_excerpt: true
