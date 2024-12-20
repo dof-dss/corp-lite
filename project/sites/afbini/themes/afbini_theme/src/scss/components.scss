@@ -7,11 +7,8 @@
   display: block;
 }
 
-#block-mainnavigation {
-  max-width: 980px;
-  border-bottom: 8px solid var(--clr-main-nav-brd-btm);
-  padding: 1.5em;
-  margin: 0 auto;
+nav#block-mainnavigation {
+  border-bottom: 2px solid var(--clr-main-nav-brd-btm);
 }
 
 #main-content {
@@ -118,8 +115,12 @@
   }
 }
 
-.footer-links {
-  p, li {
-    display: inline-block;
+.footer {
+  border-top: 5px solid #008290;
+
+  .footer-links {
+    p, li {
+      display: inline-block;
+    }
   }
 }

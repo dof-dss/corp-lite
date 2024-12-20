@@ -1,20 +1,24 @@
-uuid: bc8c93a3-ef0c-4d5a-9b2e-3cfb1b4045e6
+uuid: 2d546e63-0c0e-4981-80eb-a716de89adc1
 langcode: en
 status: true
 dependencies:
   config:
-    - search_api.index.publications
-    - views.view.publications_search
+    - search_api.index.news
+    - views.view.news_search
   module:
+    - facets_pretty_paths
     - search_api
-id: publications_published_date
-name: 'Published date'
+third_party_settings:
+  facets_pretty_paths:
+    coder: default_coder
+id: news_publication_date
+name: 'Publication date'
 weight: 0
 min_count: 1
 missing: false
 missing_label: others
 url_alias: date
-facet_source_id: 'search_api:views_page__publications_search__publications_search'
+facet_source_id: 'search_api:views_page__news_search__news_search'
 field_identifier: field_published_date
 query_operator: and
 hard_limit: 0
@@ -29,7 +33,7 @@ enable_parent_when_child_gets_disabled: true
 widget:
   type: links
   config:
-    show_numbers: false
+    show_numbers: true
     soft_limit: 20
     show_reset_link: false
     reset_text: 'Show all'
