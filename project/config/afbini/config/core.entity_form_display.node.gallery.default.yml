@@ -10,7 +10,8 @@ dependencies:
     - node.type.gallery
   module:
     - content_moderation
-    - entity_browser
+    - media_library
+    - media_library_edit
     - path
     - text
 id: node.gallery.default
@@ -35,19 +36,14 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_gallery_images:
-    type: entity_browser_file
+    type: media_library_widget
     weight: 6
     region: content
     settings:
-      entity_browser: null
-      field_widget_edit: true
-      field_widget_remove: true
-      field_widget_replace: false
-      open: false
-      selection_mode: selection_append
-      view_mode: default
-      preview_image_style: thumbnail
-    third_party_settings: {  }
+      media_types: {  }
+    third_party_settings:
+      media_library_edit:
+        show_edit: '1'
   field_site_topics:
     type: options_select
     weight: 2
