@@ -1,9 +1,9 @@
-uuid: 989010d2-cc44-4c2e-a821-7556a16f5688
+uuid: 3278da10-371c-41c1-a67f-c65afd81f69e
 langcode: en
 status: true
 dependencies:
   config:
-    - system.menu.footer
+    - system.menu.menu-footer
   module:
     - system
   theme:
@@ -13,9 +13,9 @@ theme: hseni_theme
 region: footer
 weight: 0
 provider: null
-plugin: 'system_menu_block:footer'
+plugin: 'system_menu_block:menu-footer'
 settings:
-  id: 'system_menu_block:footer'
+  id: 'system_menu_block:menu-footer'
   label: Footer
   label_display: '0'
   provider: system

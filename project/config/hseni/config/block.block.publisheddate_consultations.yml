@@ -12,7 +12,7 @@ dependencies:
 id: publisheddate_consultations
 theme: hseni_theme
 region: sidebar_first
-weight: -3
+weight: -6
 provider: null
 plugin: 'facet_block:published_date_consultations'
 settings:

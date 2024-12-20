@@ -10,7 +10,7 @@ dependencies:
 id: featuredcontent_documents
 theme: hseni_theme
 region: top_banner
-weight: 0
+weight: -7
 provider: null
 plugin: featured_content
 settings:

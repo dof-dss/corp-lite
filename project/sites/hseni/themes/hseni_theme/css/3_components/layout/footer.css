@@ -1,1 +1,1 @@
-.footer .container{display:grid;grid-template-columns:repeat(3, 1fr);grid-gap:8rem}.footer .container :last-child{grid-column:1/-1}
+@media(min-width: 768px){.footer .container{display:grid;grid-template-columns:repeat(3, 1fr);grid-gap:8rem}.footer .container :last-child{grid-column:1/-1}}
