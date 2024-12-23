@@ -339,7 +339,7 @@ function nicsdru_corplite_theme_preprocess_media(&$variables) {
     return;
   }
 
-  if (!empty($variables['content']['field_media_file']) || !empty($variables['content']['field_media_file_1'])) {
+  if (!empty($variables['content']['field_media_file']) || !empty($variables['content']['field_media_file_1']) || !empty($variables['content']['field_media_file_2'])) {
     // Map file mimetypes to user friendly document types.
     $pretty_mimes = \Drupal::service('origins_media.pretty_mime_types')
       ->getMimeTypes();
@@ -347,6 +347,7 @@ function nicsdru_corplite_theme_preprocess_media(&$variables) {
     $media_fields = [
       'field_media_file',
       'field_media_file_1',
+      'field_media_file_2',
     ];
 
     foreach ($media_fields as $media_field) {
