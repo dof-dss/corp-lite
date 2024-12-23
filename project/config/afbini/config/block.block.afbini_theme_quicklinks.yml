@@ -1,4 +1,4 @@
-uuid: 0551b440-de4e-40f9-923d-c305598966f7
+uuid: 3312100b-1a64-46b5-a4bf-d764f72b4a77
 langcode: en
 status: true
 dependencies:
@@ -9,7 +9,7 @@ dependencies:
     - system
   theme:
     - afbini_theme
-id: quicklinks
+id: afbini_theme_quicklinks
 theme: afbini_theme
 region: content
 weight: -7

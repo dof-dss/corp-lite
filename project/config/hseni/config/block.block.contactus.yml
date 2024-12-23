@@ -12,7 +12,7 @@ dependencies:
 id: contactus
 theme: hseni_theme
 region: top_banner
-weight: -7
+weight: -9
 provider: null
 plugin: 'block_content:65b8e86b-ce08-4d71-b3ed-6d90cdd49274'
 settings:
