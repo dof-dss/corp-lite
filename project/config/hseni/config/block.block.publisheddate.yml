@@ -12,7 +12,7 @@ dependencies:
 id: publisheddate
 theme: hseni_theme
 region: sidebar_first
-weight: -7
+weight: -10
 provider: null
 plugin: 'facet_block:published_date'
 settings:
