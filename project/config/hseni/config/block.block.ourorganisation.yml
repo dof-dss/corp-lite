@@ -1,23 +1,23 @@
-uuid: e3605207-f16c-4ec6-b242-258b433db04c
+uuid: 1e234559-df81-414b-8d4c-2bcb426d8df8
 langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:basic:500db94d-f286-4f85-8154-a2a195e06084'
+    - 'block_content:basic:51421a66-1c58-4236-9af5-c940374d74e1'
   module:
     - block_content
     - system
   theme:
     - hseni_theme
-id: aboutus
+id: ourorganisation
 theme: hseni_theme
 region: top_banner
-weight: -10
+weight: -6
 provider: null
-plugin: 'block_content:500db94d-f286-4f85-8154-a2a195e06084'
+plugin: 'block_content:51421a66-1c58-4236-9af5-c940374d74e1'
 settings:
-  id: 'block_content:500db94d-f286-4f85-8154-a2a195e06084'
-  label: 'About Us'
+  id: 'block_content:51421a66-1c58-4236-9af5-c940374d74e1'
+  label: 'Our Organisation'
   label_display: visible
   provider: block_content
   status: true
