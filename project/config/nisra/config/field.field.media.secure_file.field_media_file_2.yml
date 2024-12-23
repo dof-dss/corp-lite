@@ -1,0 +1,27 @@
+uuid: 93cb3121-1dc3-4fc4-a16a-12db8507c3ce
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_file_2
+    - media.type.secure_file
+  module:
+    - file
+id: media.secure_file.field_media_file_2
+field_name: field_media_file_2
+entity_type: media
+bundle: secure_file
+label: File
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'pdf doc docx xls xlsx xlsm ppt pptx odt ods odp dot csv zip html htm'
+  max_filesize: 30MB
+  description_field: false
+field_type: file
