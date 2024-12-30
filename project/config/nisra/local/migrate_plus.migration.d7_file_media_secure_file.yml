@@ -1,25 +1,25 @@
-uuid: a38a94e1-fe59-4196-938e-54dc863bb262
+uuid: c1c3a05b-1e4c-4e60-bd0d-b5dd01d21473
 langcode: en
 status: true
 dependencies: {  }
-id: upgrade_d7_file_document
+id: d7_file_media_secure_file
 class: Drupal\migrate\Plugin\Migration
 field_plugin_method: alterFieldInstanceMigration
 cck_plugin_method: null
 migration_tags:
-  - Custom
-migration_group: migrate_drupal_7
-label: 'Migrate D7 files to media document entities'
+  - dept_sites
+migration_group: migrate_files
+label: 'Migrate D7 files to "secure file" media entities'
 source:
   plugin: file_entity
   track_changes: true
   type: document
   batch_size: 1000
   constants:
-    bundle: document
-    ignore_uri_regex: '|^private://|'
+    bundle: secure_file
+    ignore_uri_regex: '|^public://|'
 process:
-  skip_private_files:
+  skip_public_files:
     plugin: skip_on_condition
     source:
       - constants/ignore_uri_regex
@@ -57,12 +57,13 @@ process:
   status: status
   created: timestamp
   changed: timestamp
-  field_media_file/target_id: fid
-  field_media_doc_file_language: field_file_language
-  field_media_doc_file_title: field_file_title
+  field_media_file_2/target_id:
+    -
+      plugin: d7_file_lookup
+      source: fid
 destination:
   plugin: 'entity:media'
 migration_dependencies:
   required:
-    - upgrade_d7_file
+    - d7_file_private
   optional: {  }
