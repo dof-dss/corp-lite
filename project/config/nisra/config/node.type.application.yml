@@ -10,14 +10,14 @@ third_party_settings:
     available_menus: {  }
     parent: ''
   origins_toc:
-    toc_enable: 0
-    toc_title: 'Table of contents'
-    toc_location: ''
-    toc_insert: after
-    toc_source_container: ''
+    toc_enable: 1
+    toc_title: Contents
+    toc_location: '#block-nisra-theme-content'
+    toc_insert: before
+    toc_source_container: '#block-nisra-theme-content'
     toc_element: h2
     toc_exclusions: ''
-    toc_screen_depth: '1'
+    toc_screen_depth: '2'
     toc_debug: 0
 _core:
   default_config_hash: VhpSPh5e7cSjFVhVXt4Eo-BfVowbOzIhjCl5XYkP66E

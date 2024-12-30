@@ -7,6 +7,7 @@ dependencies:
 id: disable_toc
 label: 'Disable Table of Contents'
 bundles:
+  - application
   - page
 entity_type: node
 global: true
