@@ -9,20 +9,43 @@ cck_plugin_method: null
 migration_tags:
   - Custom
 migration_group: migrate_drupal_7
-label: 'Public files'
+label: 'Migrate D7 files to media document entities'
 source:
   plugin: file_entity
+  track_changes: true
   type: document
+  batch_size: 1000
   constants:
     bundle: document
+    ignore_uri_regex: '|^private://|'
 process:
-  mid: fid
+  skip_private_files:
+    plugin: skip_on_condition
+    source:
+      - constants/ignore_uri_regex
+      - uri
+    condition:
+      plugin: callback
+      callable: preg_match
+      unpack_source: true
+    method: row
   bundle: constants/bundle
   langcode:
     plugin: default_value
     source: language
     default_value: und
-  name: field_file_title
+  name:
+    -
+      plugin: get
+      source:
+        - field_file_title
+        - filename
+    -
+      plugin: callback
+      callable: array_filter
+    -
+      plugin: callback
+      callable: current
   uid:
     -
       plugin: skip_on_empty
