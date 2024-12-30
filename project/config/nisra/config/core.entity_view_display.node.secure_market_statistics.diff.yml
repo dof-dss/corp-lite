@@ -17,7 +17,6 @@ dependencies:
   module:
     - datetime
     - field_group
-    - file
     - link
     - metatag
     - text
@@ -66,7 +65,7 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 5
+    weight: 6
     region: content
   field_meta_tags:
     type: metatag_empty_formatter
@@ -101,12 +100,13 @@ content:
     weight: 2
     region: content
   field_secure_attachment:
-    type: file_default
-    label: above
+    type: entity_reference_entity_view
+    label: inline
     settings:
-      use_description_as_link_text: true
+      view_mode: default
+      link: true
     third_party_settings: {  }
-    weight: 6
+    weight: 5
     region: content
   field_site_topics:
     type: entity_reference_label

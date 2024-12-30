@@ -1,64 +1,68 @@
-uuid: a38a94e1-fe59-4196-938e-54dc863bb262
+uuid: 90ac811f-5736-45a6-b8e8-bf29040984b7
 langcode: en
 status: true
-dependencies: { }
-id: upgrade_d7_file_document
-
+dependencies: {  }
+id: upgrade_d7_file_secure_file
 class: Drupal\migrate\Plugin\Migration
 field_plugin_method: alterFieldInstanceMigration
 cck_plugin_method: null
 migration_tags:
   - Custom
 migration_group: migrate_drupal_7
-label: 'Migrate D7 files to media document entities'
+label: 'Migrate D7 files to "secure file" media entities'
 source:
   plugin: file_entity
   track_changes: true
   type: document
   batch_size: 1000
   constants:
-    bundle: 'document'
-    ignore_uri_regex: '|^private://|'
+    bundle: secure_file
+    ignore_uri_regex: '|^public://|'
 process:
-  skip_private_files:
+  skip_public_files:
     plugin: skip_on_condition
     source:
-      - 'constants/ignore_uri_regex'
+      - constants/ignore_uri_regex
       - uri
     condition:
       plugin: callback
       callable: preg_match
       unpack_source: true
     method: row
-  bundle: 'constants/bundle'
+  bundle: constants/bundle
   langcode:
     plugin: default_value
     source: language
-    default_value: "und"
+    default_value: und
   name:
-    - plugin: get
+    -
+      plugin: get
       source:
         - field_file_title
         - filename
-    - plugin: callback
+    -
+      plugin: callback
       callable: array_filter
-    - plugin: callback
+    -
+      plugin: callback
       callable: current
   uid:
-    - plugin: skip_on_empty
+    -
+      plugin: skip_on_empty
       method: process
       source: uid
-    - plugin: migration_lookup
+    -
+      plugin: migration_lookup
       migration: upgrade_d7_user
   status: status
   created: timestamp
   changed: timestamp
-  field_media_file/target_id: fid
+  field_media_file_2/target_id: fid
   field_media_doc_file_language: field_file_language
   field_media_doc_file_title: field_file_title
 destination:
-  plugin: entity:media
+  plugin: 'entity:media'
 migration_dependencies:
   required:
-    - upgrade_d7_file
-  optional: { }
+    - upgrade_d7_file_private
+  optional: {  }

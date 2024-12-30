@@ -104,6 +104,7 @@
         "drupal/menu_breadcrumb": "^2.0@alpha",
         "drupal/metatag": "^2.0",
         "drupal/migrate_absolute_links": "^5.0",
+        "drupal/migrate_conditions": "^2.2",
         "drupal/migrate_upgrade": "^4.0",
         "drupal/moderation_sidebar": "^1.7",
         "drupal/node_edit_protection": "^1.1",
