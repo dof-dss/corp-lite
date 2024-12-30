@@ -8,6 +8,7 @@
 use Drupal\block\Entity\Block;
 use Drupal\nicsdru_corplite_theme\LayoutClasses;
 use Drupal\node\NodeInterface;
+use Drupal\Component\Utility\Html;
 
 /**
  * Implements hook_preprocess_page() for page.html.twig.
@@ -20,6 +21,7 @@ function nisra_theme_preprocess_page(array &$variables) {
     if (method_exists($node, 'bundle')) {
       switch ($node->bundle()) {
         // Specific node types have a main and aside.
+        case "application":
         case "news":
         case "page":
           $variables['main_content_attr']->addClass(LayoutClasses::MAIN_SIDE);
@@ -133,5 +135,17 @@ function nisra_theme_preprocess_node(array &$variables) {
       }
 
       break;
+
+    case "application":
+    case "contact":
+    case "news":
+    case "publication":
+    case "gallery":
+    case "department_management":
+      $variables['attributes']['class'][] = Html::cleanCssIdentifier('ga-main');
+      $variables['attributes']['class'][] = Html::cleanCssIdentifier('article-content');
+
+      break;
   }
+
 }
