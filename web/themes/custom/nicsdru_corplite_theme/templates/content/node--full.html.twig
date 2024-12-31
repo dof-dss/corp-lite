@@ -71,7 +71,7 @@
  */
 #}
 <article{{ attributes.setAttribute('id', 'main-article').removeAttribute('role') }}>
-
+  {{ drupal_block('page_title_block', wrapper=false) }}
  {{- content -}}
 
 </article>

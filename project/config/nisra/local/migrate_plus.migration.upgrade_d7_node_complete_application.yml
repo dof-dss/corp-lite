@@ -117,7 +117,7 @@ process:
     -
       plugin: static_map
       bypass: true
-      source: body/0/format
+      source: field_additional_info/0/format
       map:
         filtered_html: basic_html
         filtered_html_with_no_images: basic_html
