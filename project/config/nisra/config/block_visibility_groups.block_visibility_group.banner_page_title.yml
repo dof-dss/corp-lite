@@ -25,5 +25,5 @@ conditions:
     negate: false
     uuid: 7c075146-8aba-45a5-82e7-77bab2e949ce
     context_mapping: {  }
-    pages: "/publications\r\n/publications/date/*\r\n/publications/topic/*\r\n/publications/type/*\r\n/news\r\n/news/date/*\r\n/news/topic/*\r\n/statistics/*"
+    pages: "/publications\r\n/publications/date/*\r\n/publications/topic/*\r\n/publications/type/*\r\n/news\r\n/news/date/*\r\n/news/topic/*\r\n/statistics\r\n/statistics/*"
 allow_other_conditions: false
