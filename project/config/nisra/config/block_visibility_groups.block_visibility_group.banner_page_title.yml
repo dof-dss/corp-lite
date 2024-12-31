@@ -19,7 +19,6 @@ conditions:
       easychart: easychart
       feature: feature
       featured_content_list: featured_content_list
-      page: page
       profile: profile
   7c075146-8aba-45a5-82e7-77bab2e949ce:
     id: request_path
