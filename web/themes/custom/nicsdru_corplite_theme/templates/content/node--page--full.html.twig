@@ -72,11 +72,8 @@
 #}
 <article{{ attributes.setAttribute('id', 'main-article').removeAttribute('role') }}>
   {{ drupal_block('page_title_block', wrapper=false) }}
-  {% if content_attributes is not empty %}
-  <div{{ content_attributes }}>
-    {% endif %}
+  <div{{ content_attributes.addClass(['article-content', 'max-body-text-width']) }}>
     {{- content -}}
-    {% if content_attributes is not empty %}
   </div>
-  {% endif %}
+
 </article>

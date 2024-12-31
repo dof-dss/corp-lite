@@ -1,0 +1,29 @@
+uuid: 9ac4f20c-09cd-4030-8b56-f88fd563795e
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - system
+id: banner_page_title
+label: 'Banner page title'
+logic: or
+conditions:
+  26435d6b-1282-4f27-bb38-a304ca6c7402:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 26435d6b-1282-4f27-bb38-a304ca6c7402
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      easychart: easychart
+      feature: feature
+      featured_content_list: featured_content_list
+      profile: profile
+  7c075146-8aba-45a5-82e7-77bab2e949ce:
+    id: request_path
+    negate: false
+    uuid: 7c075146-8aba-45a5-82e7-77bab2e949ce
+    context_mapping: {  }
+    pages: "/publications\r\n/publications/date/*\r\n/publications/topic/*\r\n/publications/type/*\r\n/news\r\n/news/date/*\r\n/news/topic/*\r\n/statistics/*"
+allow_other_conditions: false
