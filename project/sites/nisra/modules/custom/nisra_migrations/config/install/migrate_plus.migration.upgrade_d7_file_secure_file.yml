@@ -1,6 +1,7 @@
+uuid: a38a94e1-fe59-4196-938e-54dc863bb265
 langcode: en
 status: true
-dependencies: { }
+dependencies: {  }
 id: upgrade_d7_file_secure_file
 class: Drupal\migrate\Plugin\Migration
 field_plugin_method: alterFieldInstanceMigration
@@ -8,12 +9,10 @@ cck_plugin_method: null
 migration_tags:
   - Custom
 migration_group: migrate_drupal_7
-label: 'Migrate D7 files to "secure file" media entities'
+label: 'Secure files'
 source:
   plugin: file_entity
-  track_changes: true
   type: document
-  batch_size: 1000
   constants:
     bundle: 'secure_file'
     ignore_uri_regex: '|^public://|'
@@ -28,29 +27,20 @@ process:
       callable: preg_match
       unpack_source: true
     method: row
-#  debug:
-#    plugin: callback
-#    callable: var_dump
-#    source: fid
+  mid: fid
   bundle: 'constants/bundle'
   langcode:
     plugin: default_value
     source: language
     default_value: "und"
-  name:
-    - plugin: get
-      source:
-        - field_file_title
-        - filename
-    - plugin: callback
-      callable: array_filter
-    - plugin: callback
-      callable: current
+  name: field_file_title
   uid:
-    - plugin: skip_on_empty
+    -
+      plugin: skip_on_empty
       method: process
       source: uid
-    - plugin: migration_lookup
+    -
+      plugin: migration_lookup
       migration: upgrade_d7_user
   status: status
   created: timestamp
