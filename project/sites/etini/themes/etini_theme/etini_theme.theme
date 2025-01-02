@@ -87,6 +87,7 @@ function etini_theme_preprocess_node(array &$variables) {
   switch ($variables['node']->getType()) {
 
     case "application":
+    case "article":
     case "contact":
     case "publication":
     case "gallery":
