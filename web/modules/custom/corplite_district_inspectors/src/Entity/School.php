@@ -39,17 +39,17 @@ class School extends RevisionableContentEntityBase implements ContentEntityInter
       ->setDescription(t('The name of the school'))
       ->setRevisionable(TRUE)
       ->setSettings([
-        'max_length' => 50,
+        'max_length' => 128,
         'text_processing' => 0,
       ])
       ->setRequired(TRUE);
 
     $fields['de_reference'] = BaseFieldDefinition::create('string')
       ->setLabel(t('DE Reference'))
-      ->setDescription(t('TThe DE Reference of the school'))
+      ->setDescription(t('The DE Reference of the school'))
       ->setRevisionable(TRUE)
       ->setSettings([
-        'max_length' => 12,
+        'max_length' => 32,
         'text_processing' => 0,
       ])
       ->setRequired(TRUE);

@@ -34,22 +34,12 @@ class Inspector extends RevisionableContentEntityBase implements ContentEntityIn
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
     $fields = parent::baseFieldDefinitions($entity_type);
 
-    $fields['first_name'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('First name'))
-      ->setDescription(t('The first name of the District Inspector'))
+    $fields['name'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('District Inspector Name'))
+      ->setDescription(t('The name of the District Inspector'))
       ->setRevisionable(TRUE)
       ->setSettings([
-        'max_length' => 50,
-        'text_processing' => 0,
-      ])
-      ->setRequired(TRUE);
-
-    $fields['last_name'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('Last name'))
-      ->setDescription(t('The last name of the District Inspector'))
-      ->setRevisionable(TRUE)
-      ->setSettings([
-        'max_length' => 50,
+        'max_length' => 128,
         'text_processing' => 0,
       ])
       ->setRequired(TRUE);
