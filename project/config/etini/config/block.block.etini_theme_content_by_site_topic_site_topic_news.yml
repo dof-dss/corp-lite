@@ -1,0 +1,24 @@
+uuid: 371e437d-0102-44ba-9bd9-ed14cdb2fd59
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.content_by_site_topic
+  module:
+    - views
+  theme:
+    - etini_theme
+id: etini_theme_content_by_site_topic_site_topic_news
+theme: etini_theme
+region: content
+weight: -6
+provider: null
+plugin: 'views_block:content_by_site_topic-site_topic_news'
+settings:
+  id: 'views_block:content_by_site_topic-site_topic_news'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility: {  }

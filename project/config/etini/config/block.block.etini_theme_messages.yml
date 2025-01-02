@@ -1,0 +1,20 @@
+uuid: a5a9c0c3-2d96-4dc0-bc36-82191dcdecdf
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - etini_theme
+id: etini_theme_messages
+theme: etini_theme
+region: highlighted
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: Messages
+  label_display: '0'
+  provider: system
+visibility: {  }

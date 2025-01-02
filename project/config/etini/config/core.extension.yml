@@ -10,6 +10,7 @@ module:
   blazy: 0
   block: 0
   block_content: 0
+  block_visibility_groups: 0
   book: 0
   breakpoint: 0
   ckeditor5: 0
@@ -28,8 +29,10 @@ module:
   content_moderation: 0
   contextual: 0
   cookie_content_blocker: 0
+  corplite_common: 0
   corplite_eu_cookie_compliance: 0
   corplite_image_styles: 0
+  corplite_search: 0
   csp: 0
   ctools: 0
   date_facet_drilldown: 0
@@ -155,4 +158,7 @@ module:
 theme:
   olivero: 0
   claro: 0
+  stable9: 0
+  nicsdru_corplite_theme: 0
+  etini_theme: 0
 profile: nicsdru_corplite_profile

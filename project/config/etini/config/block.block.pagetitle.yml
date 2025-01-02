@@ -1,0 +1,26 @@
+uuid: d4b17d9d-f70b-4d4b-8d6e-2e850fa17745
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.banner_page_title
+  module:
+    - block_visibility_groups
+  theme:
+    - etini_theme
+id: pagetitle
+theme: etini_theme
+region: top_banner
+weight: -7
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: banner_page_title
