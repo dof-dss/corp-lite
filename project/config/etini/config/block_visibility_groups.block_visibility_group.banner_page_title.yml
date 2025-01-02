@@ -1,0 +1,17 @@
+uuid: fefd6254-515a-45f9-8c07-7af629d9b157
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: banner_page_title
+label: 'Banner page title'
+logic: or
+conditions:
+  7811c3f8-dcf3-4430-8330-8ba95309c04a:
+    id: request_path
+    negate: false
+    uuid: 7811c3f8-dcf3-4430-8330-8ba95309c04a
+    context_mapping: {  }
+    pages: "/publications\r\n/publications/date/*\r\n/publications/topic/*\r\n/publications/type/*\r\n/publications/audience/*\r\n/news\r\n/news/date/*\r\n/news/topic/*\r\n/contact\r\n/search\r\n/search*"
+allow_other_conditions: false

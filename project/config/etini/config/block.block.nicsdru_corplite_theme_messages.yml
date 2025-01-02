@@ -1,0 +1,22 @@
+uuid: ca6cc5ff-c2bf-4be4-bd8f-92e5f8a6ded2
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - nicsdru_corplite_theme
+_core:
+  default_config_hash: hwGNEMbmUoXB0MG3RrVTk72hI2kQOUIyLcR4xv7SzoU
+id: nicsdru_corplite_theme_messages
+theme: nicsdru_corplite_theme
+region: highlighted
+weight: -5
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }

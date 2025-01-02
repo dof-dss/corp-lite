@@ -8,7 +8,7 @@ dependencies:
     - field.field.node.contact.field_meta_tags
     - node.type.contact
   module:
-    - origins_common
+    - google_map_field
     - text
     - user
 _core:
@@ -26,15 +26,9 @@ content:
     weight: 0
     region: content
   field_map:
-    type: gmaps_lazy_load_formatter
+    type: google_map_field_default
     label: above
-    settings:
-      map_type: roadmap
-      zoom: '10'
-      placeholder: empty
-      link_text: ''
-      map_width: '300'
-      map_height: '300'
+    settings: {  }
     third_party_settings: {  }
     weight: 1
     region: content

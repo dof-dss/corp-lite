@@ -1,0 +1,30 @@
+uuid: 0ca06c8e-d12f-4a5e-8537-95354b479509
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_visibility_groups
+    - corplite_search
+    - system
+  theme:
+    - etini_theme
+id: etini_theme_sitesearchblock
+theme: etini_theme
+region: header
+weight: 0
+provider: null
+plugin: site_search_block
+settings:
+  id: site_search_block
+  label: 'Site search block'
+  label_display: '0'
+  provider: corplite_search
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+  request_path:
+    id: request_path
+    negate: true
+    pages: "/search\r\n/search*"

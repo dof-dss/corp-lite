@@ -1,0 +1,23 @@
+uuid: c21c681d-a5f8-4445-b98a-dfed534194e7
+langcode: en
+status: true
+dependencies:
+  module:
+    - book
+  theme:
+    - nicsdru_corplite_theme
+_core:
+  default_config_hash: ihOiiwS6o3R7KIEOsDQ2tLrmz3MGNVRAy95rMT_T3Gs
+id: nicsdru_corplite_theme_book_navigation
+theme: nicsdru_corplite_theme
+region: header
+weight: 0
+provider: null
+plugin: book_navigation
+settings:
+  id: book_navigation
+  label: 'Book navigation'
+  label_display: visible
+  provider: book
+  block_mode: 'book pages'
+visibility: {  }

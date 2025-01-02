@@ -60,10 +60,10 @@ content:
     region: content
   field_attachment:
     type: entity_reference_entity_view
-    label: hidden
+    label: above
     settings:
-      view_mode: default
-      link: true
+      view_mode: embed
+      link: false
     third_party_settings: {  }
     weight: 6
     region: content
