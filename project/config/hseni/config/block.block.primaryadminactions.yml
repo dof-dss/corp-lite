@@ -7,7 +7,7 @@ dependencies:
 id: primaryadminactions
 theme: hseni_theme
 region: top_banner
-weight: -12
+weight: -13
 provider: null
 plugin: local_actions_block
 settings:

@@ -9,42 +9,24 @@ dependencies:
     - field.field.node.link.field_site_topics
     - node.type.link
   module:
-    - link
     - user
 id: node.link.default
 targetEntityType: node
 bundle: link
 mode: default
 content:
-  field_link_type:
+  field_site_topics:
     type: entity_reference_label
-    label: above
+    label: hidden
     settings:
       link: true
-    third_party_settings: {  }
-    weight: 1
-    region: content
-  field_link_url:
-    type: link
-    label: above
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
     third_party_settings: {  }
     weight: 0
     region: content
-  field_site_topics:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 2
-    region: content
 hidden:
+  content_moderation_control: true
+  field_link_type: true
+  field_link_url: true
   field_meta_tags: true
   langcode: true
   links: true

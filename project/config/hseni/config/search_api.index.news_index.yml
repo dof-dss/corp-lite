@@ -9,7 +9,6 @@ dependencies:
     - field.storage.node.field_published_date
     - field.storage.node.field_site_topics
     - field.storage.node.field_summary
-    - field.storage.node.field_teaser
   module:
     - node
     - search_api
@@ -116,14 +115,6 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_summary
-  field_teaser:
-    label: Teaser
-    datasource_id: 'entity:node'
-    property_path: field_teaser
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.field_teaser
   name:
     label: 'News type » Taxonomy term » Name'
     datasource_id: 'entity:node'
@@ -216,7 +207,6 @@ processor_settings:
       - body
       - field_notes_to_editors
       - field_summary
-      - field_teaser
       - name
       - name_1
       - title
@@ -241,4 +231,4 @@ options:
   cron_limit: 50
   index_directly: true
   track_changes_in_references: true
-server: solr_default
+server: null
