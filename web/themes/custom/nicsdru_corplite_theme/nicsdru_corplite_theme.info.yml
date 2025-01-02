@@ -18,8 +18,8 @@ ckeditor5-stylesheets:
   - css/1_base/text.css
   - css/3_components/content/lists.css
   #  - css/3_components/ckeditor.css
-  #  - css/3_components/content/responsive-images-ckeditor.css
-  #  - css/3_components/content/icons-messages.css
+  - css/3_components/content/responsive-images-ckeditor.css
+  - css/3_components/content/icons-messages.css
   - css/3_components/content/video.css
   - css/3_components/content/tables.css
 

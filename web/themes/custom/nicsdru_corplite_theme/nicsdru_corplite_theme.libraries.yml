@@ -42,6 +42,7 @@ corplite-styling:
       css/3_components/content/icons-messages.css: { minified: true }
       css/3_components/form/search-form.css: { minified: true }
       css/3_components/block/search-facets.css: { minified: true }
+      css/3_components/content/responsive-images.css: { minified: true }
     theme:
       css/3_components/navigation/pager.css: { minified: true }
       css/3_components/content/tables.css: { minified: true }
