@@ -52,7 +52,21 @@ class School extends RevisionableContentEntityBase implements ContentEntityInter
         'max_length' => 32,
         'text_processing' => 0,
       ])
-      ->setRequired(TRUE);
+      ->setRequired(FALSE);
+
+    $fields['c2k_email'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('C2K Email'))
+      ->setDescription(t('The C2K email for this inspector at this school'))
+      ->setRevisionable(TRUE)
+      ->setSettings([
+        'max_length' => 32,
+        'text_processing' => 0,
+      ])
+      ->setRequired(FALSE);
+
+    $fields['inspector_id'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Referenced Inspector'))
+      ->setSetting('target_type', 'inspector');
 
     return $fields;
   }
