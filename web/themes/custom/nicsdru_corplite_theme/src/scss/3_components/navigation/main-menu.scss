@@ -67,10 +67,14 @@ $link-main-menu-horizontal-active: (
 ) !default;
 
 .main-menu {
-  background-color: var(--clr-main-nav-bkgd);
+  background-color: var(--clr-main-nav-active-bkgd);
   border-bottom: 2px solid var(--clr-main-nav-brd-btm);
   border-top: 2px solid var(--clr-main-nav-brd-top);
   position: relative;
+
+  @include breakpoint($tab) {
+    background-color: var(--clr-main-nav-bkgd);
+  }
 
   .nav {
     &-main {
