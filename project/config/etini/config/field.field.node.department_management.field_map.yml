@@ -1,0 +1,21 @@
+uuid: ac7e9fe9-d143-4de0-ae77-38d0bbc22be9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_map
+    - node.type.department_management
+  module:
+    - google_map_field
+id: node.department_management.field_map
+field_name: field_map
+entity_type: node
+bundle: department_management
+label: 'Map location'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: google_map_field

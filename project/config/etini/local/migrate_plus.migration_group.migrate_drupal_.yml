@@ -1,0 +1,20 @@
+uuid: 500af9e3-dcab-4a1c-9e4d-ed4a0fed399f
+langcode: en
+status: true
+dependencies: {  }
+id: migrate_drupal_
+label: 'Import from Drupal '
+description: 'Migrations originally generated from drush migrate-upgrade --configure-only'
+source_type: 'Drupal '
+module: null
+shared_configuration:
+  source:
+    key: drupal_
+    database:
+      driver: mysql
+      username: drupal9
+      password: drupal9
+      host: database
+      port: ''
+      database: etini_legacy
+      prefix: null

@@ -1,0 +1,30 @@
+uuid: a7c39ad9-c020-4b4c-8d7f-ec5626ddc357
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:bdb1b929-8f9c-490b-8cd7-980f5edb09a3'
+  module:
+    - block_content
+    - block_visibility_groups
+  theme:
+    - etini_theme
+id: etini_theme_cselogo
+theme: etini_theme
+region: footer
+weight: -9
+provider: null
+plugin: 'block_content:bdb1b929-8f9c-490b-8cd7-980f5edb09a3'
+settings:
+  id: 'block_content:bdb1b929-8f9c-490b-8cd7-980f5edb09a3'
+  label: 'CSE logo'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''

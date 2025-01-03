@@ -1,0 +1,30 @@
+uuid: 34134e3d-7324-4d82-b417-25a6a290c4c9
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.menu-footer-menu
+  module:
+    - block_visibility_groups
+    - system
+  theme:
+    - etini_theme
+id: footermenu
+theme: etini_theme
+region: footer
+weight: -10
+provider: null
+plugin: 'system_menu_block:menu-footer-menu'
+settings:
+  id: 'system_menu_block:menu-footer-menu'
+  label: 'Footer Menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
