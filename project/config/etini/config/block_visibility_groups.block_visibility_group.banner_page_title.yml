@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   module:
+    - node
     - system
 id: banner_page_title
 label: 'Banner page title'
@@ -13,5 +14,13 @@ conditions:
     negate: false
     uuid: 7811c3f8-dcf3-4430-8330-8ba95309c04a
     context_mapping: {  }
-    pages: "/publications\r\n/publications/date/*\r\n/publications/topic/*\r\n/publications/type/*\r\n/publications/audience/*\r\n/news\r\n/news/date/*\r\n/news/topic/*\r\n/contact\r\n/search\r\n/search*"
+    pages: "/publications\r\n/publications/date/*\r\n/publications/topic/*\r\n/publications/type/*\r\n/publications/audience/*\r\n/news\r\n/news/date/*\r\n/news/topic/*\r\n/contact\r\n/search\r\n/search*\r\n/site-topics/*\r\n/phase/*"
+  4f3d0413-e870-4192-8d14-9c3742083e58:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 4f3d0413-e870-4192-8d14-9c3742083e58
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      profile: profile
 allow_other_conditions: false

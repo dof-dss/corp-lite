@@ -1,0 +1,19 @@
+uuid: 4e3f8e50-fa98-4ac5-b55b-6bd1acd39481
+langcode: en
+status: true
+dependencies: {  }
+id: migrate_drupal_7
+label: 'Import from Drupal 7'
+description: 'Migrations originally generated from drush migrate-upgrade --configure-only'
+source_type: 'Drupal 7'
+module: null
+shared_configuration:
+  source:
+    key: drupal_7
+    database:
+      driver: mysql
+      username: db
+      password: db
+      host: db
+      database: etini_legacy
+      prefix: null

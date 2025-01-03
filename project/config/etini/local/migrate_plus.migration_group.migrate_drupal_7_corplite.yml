@@ -1,0 +1,10 @@
+uuid: 374e03a0-2990-4c3c-9eb2-fb0af803132f
+langcode: en
+status: true
+dependencies: {  }
+id: migrate_drupal_7_corplite
+label: migrate_drupal_7_corplite
+description: ''
+source_type: null
+module: null
+shared_configuration: null
