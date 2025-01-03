@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.department_management.field_facebook_url
     - field.field.node.department_management.field_flickr_url
     - field.field.node.department_management.field_linkedin_url
+    - field.field.node.department_management.field_map
     - field.field.node.department_management.field_meta_tags
     - field.field.node.department_management.field_twitter_url
     - field.field.node.department_management.field_youtube_url
@@ -19,6 +20,7 @@ dependencies:
   module:
     - content_moderation
     - field_group
+    - google_map_field
     - link
     - metatag
     - path
@@ -150,6 +152,12 @@ content:
     settings:
       placeholder_url: ''
       placeholder_title: ''
+    third_party_settings: {  }
+  field_map:
+    type: google_map_field_default
+    weight: 126
+    region: content
+    settings: {  }
     third_party_settings: {  }
   field_meta_tags:
     type: metatag_firehose

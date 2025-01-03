@@ -10,6 +10,7 @@ dependencies:
     - node.type.contact
   module:
     - field_group
+    - google_map_field
     - metatag
     - text
     - user
@@ -48,6 +49,13 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_map:
+    type: google_map_field_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
   field_meta_tags:
     type: metatag_empty_formatter
     label: inline
@@ -57,7 +65,6 @@ content:
     region: content
 hidden:
   content_moderation_control: true
-  field_map: true
   langcode: true
   links: true
   search_api_excerpt: true
