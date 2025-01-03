@@ -2,7 +2,7 @@
 
 .footer {
   padding-top: 3rem;
-  
+
   @include breakpoint($tab) {
     .container {
       display: grid;
