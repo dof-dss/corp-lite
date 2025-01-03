@@ -85,8 +85,25 @@ process:
         filtered_html_with_tokens: basic_html
         restricted_html: basic_html
         plain_text: plain_text
-  field_map/lng: field_map/0/lon
-  field_map/lat: field_map/0/lat
+  field_map:
+    plugin: get
+    source: field_map
+  field_map/0/type:
+    plugin: default_value
+    default_value: 'roadmap'
+    strict: TRUE
+  field_map/0/width:
+    plugin: default_value
+    default_value: '100%'
+    strict: TRUE
+  field_map/0/height:
+    plugin: default_value
+    default_value: '400px'
+    strict: TRUE
+  field_map/0/marker:
+    plugin: default_value
+    default_value: 1
+    strict: TRUE
   field_metatag:
     - plugin: d7_metatag_entities
       source: pseudo_metatag_entities

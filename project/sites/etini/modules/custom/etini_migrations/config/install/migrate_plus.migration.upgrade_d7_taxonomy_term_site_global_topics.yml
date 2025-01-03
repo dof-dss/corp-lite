@@ -101,6 +101,9 @@ process:
   field_metatag:
     - plugin: d7_metatag_entities
       source: pseudo_metatag_entities
+  moderation_state:
+    plugin: default_value
+    default_value: published
 destination:
   plugin: 'entity:taxonomy_term'
   default_bundle: site_global_topics

@@ -147,6 +147,7 @@ function nicsdru_corplite_theme_theme_suggestions_field_alter(array &$suggestion
     'field_site_topics',
     'field_research_support',
     'field_publication_type',
+    'field_site_global_topics',
   ];
 
   foreach ($publication_taxonomy_fields as $publication_taxonomy_field) {
