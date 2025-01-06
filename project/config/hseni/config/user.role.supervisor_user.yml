@@ -14,6 +14,8 @@ dependencies:
     - node.type.consultation
     - node.type.contact
     - node.type.department_management
+    - node.type.feature
+    - node.type.featured_content_list
     - node.type.link
     - node.type.news
     - node.type.page
@@ -24,6 +26,7 @@ dependencies:
   module:
     - content_moderation
     - contextual
+    - corplite_common
     - file
     - media
     - media_file_delete
@@ -71,6 +74,8 @@ permissions:
   - 'create contact content'
   - 'create department_management content'
   - 'create document media'
+  - 'create feature content'
+  - 'create featured_content_list content'
   - 'create file media'
   - 'create image media'
   - 'create link content'
@@ -89,6 +94,8 @@ permissions:
   - 'delete any contact content'
   - 'delete any department_management content'
   - 'delete any document media'
+  - 'delete any feature content'
+  - 'delete any featured_content_list content'
   - 'delete any file media'
   - 'delete any image media'
   - 'delete any link content'
@@ -102,6 +109,8 @@ permissions:
   - 'delete consultation revisions'
   - 'delete contact revisions'
   - 'delete department_management revisions'
+  - 'delete feature revisions'
+  - 'delete featured_content_list revisions'
   - 'delete link revisions'
   - 'delete news revisions'
   - 'delete own alert content'
@@ -112,6 +121,8 @@ permissions:
   - 'delete own contact content'
   - 'delete own department_management content'
   - 'delete own document media'
+  - 'delete own feature content'
+  - 'delete own featured_content_list content'
   - 'delete own file media'
   - 'delete own files'
   - 'delete own image media'
@@ -126,6 +137,7 @@ permissions:
   - 'delete profile revisions'
   - 'delete publication revisions'
   - 'delete webform revisions'
+  - 'edit any alert content'
   - 'edit any application content'
   - 'edit any article content'
   - 'edit any audio media'
@@ -133,6 +145,8 @@ permissions:
   - 'edit any contact content'
   - 'edit any department_management content'
   - 'edit any document media'
+  - 'edit any feature content'
+  - 'edit any featured_content_list content'
   - 'edit any file media'
   - 'edit any image media'
   - 'edit any link content'
@@ -150,6 +164,8 @@ permissions:
   - 'edit own contact content'
   - 'edit own department_management content'
   - 'edit own document media'
+  - 'edit own feature content'
+  - 'edit own featured_content_list content'
   - 'edit own file media'
   - 'edit own image media'
   - 'edit own link content'
@@ -159,6 +175,7 @@ permissions:
   - 'edit own publication content'
   - 'edit own remote_video media'
   - 'edit own webform content'
+  - 'hide topic or feature on homepage'
   - 'reschedule scheduled transitions node alert'
   - 'reschedule scheduled transitions node application'
   - 'reschedule scheduled transitions node article'
@@ -177,6 +194,8 @@ permissions:
   - 'revert consultation revisions'
   - 'revert contact revisions'
   - 'revert department_management revisions'
+  - 'revert feature revisions'
+  - 'revert featured_content_list revisions'
   - 'revert link revisions'
   - 'revert news revisions'
   - 'revert page revisions'
@@ -203,6 +222,8 @@ permissions:
   - 'view contact revisions'
   - 'view content references'
   - 'view department_management revisions'
+  - 'view feature revisions'
+  - 'view featured_content_list revisions'
   - 'view latest version'
   - 'view link revisions'
   - 'view news revisions'

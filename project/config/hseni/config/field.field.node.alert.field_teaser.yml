@@ -1,4 +1,4 @@
-uuid: 72343a5e-6494-4381-bf25-5e90a69df942
+uuid: fe17bb74-918e-41d1-974d-a50631a489d5
 langcode: en
 status: true
 dependencies:
@@ -11,7 +11,7 @@ entity_type: node
 bundle: alert
 label: Teaser
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''

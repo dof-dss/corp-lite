@@ -1,0 +1,26 @@
+uuid: 2d60ae80-6668-4536-9d9d-2c1dc8e33abb
+langcode: en
+status: true
+dependencies:
+  module:
+    - hseni_homepage
+    - system
+  theme:
+    - hseni_theme
+id: featuredcontent_documents
+theme: hseni_theme
+region: top_banner
+weight: -7
+provider: null
+plugin: featured_content
+settings:
+  id: featured_content
+  label: 'Our Documents'
+  label_display: visible
+  provider: hseni_homepage
+  featured_items: '2019'
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

@@ -127,6 +127,7 @@ process:
   field_summary:
     - plugin: get
       source: field_summary
+    - plugin: strip_html_filter
   field_audience:
     - plugin: static_map
       source: field_audience

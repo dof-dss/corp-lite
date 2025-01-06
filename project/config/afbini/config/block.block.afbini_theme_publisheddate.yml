@@ -1,0 +1,29 @@
+uuid: 8464e590-8a85-4024-bf35-17a0807ff9db
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.published_date
+  module:
+    - facets
+    - system
+  theme:
+    - afbini_theme
+id: afbini_theme_publisheddate
+theme: afbini_theme
+region: sidebar_first
+weight: -5
+provider: null
+plugin: 'facet_block:published_date'
+settings:
+  id: 'facet_block:published_date'
+  label: 'Published date'
+  label_display: visible
+  provider: facets
+  context_mapping: {  }
+  block_id: afbini_theme_publisheddate
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/publications\r\n/publications/date/*\r\n/publications/topic/*\r\n/publications/type/*"

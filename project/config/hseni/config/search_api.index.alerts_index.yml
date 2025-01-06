@@ -6,7 +6,6 @@ dependencies:
     - field.storage.node.body
     - field.storage.node.field_photo
     - field.storage.node.field_published_date
-    - field.storage.node.field_teaser
   module:
     - node
     - search_api
@@ -86,15 +85,6 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_published_date
-  field_teaser:
-    label: Teaser
-    datasource_id: 'entity:node'
-    property_path: field_teaser
-    type: text
-    boost: 3.0
-    dependencies:
-      config:
-        - field.storage.node.field_teaser
   node_grants:
     label: 'Node access information'
     property_path: search_api_node_grants
@@ -165,7 +155,6 @@ processor_settings:
     all_fields: false
     fields:
       - body
-      - field_teaser
       - title
       - type
     title: true
@@ -188,4 +177,4 @@ options:
   cron_limit: 50
   index_directly: true
   track_changes_in_references: true
-server: solr_default
+server: null

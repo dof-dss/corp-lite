@@ -1,0 +1,30 @@
+uuid: 4995ec74-af7f-4f59-8f76-61cdb4eff32c
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:65b8e86b-ce08-4d71-b3ed-6d90cdd49274'
+  module:
+    - block_content
+    - system
+  theme:
+    - hseni_theme
+id: contactus
+theme: hseni_theme
+region: top_banner
+weight: -9
+provider: null
+plugin: 'block_content:65b8e86b-ce08-4d71-b3ed-6d90cdd49274'
+settings:
+  id: 'block_content:65b8e86b-ce08-4d71-b3ed-6d90cdd49274'
+  label: 'Contact Us'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

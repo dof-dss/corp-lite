@@ -1,0 +1,29 @@
+uuid: 4ef6cf8e-685e-423f-8d6a-2538f5d36d6b
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.publication_topic
+  module:
+    - facets
+    - system
+  theme:
+    - etini_theme
+id: etini_theme_phase
+theme: etini_theme
+region: sidebar_first
+weight: -5
+provider: null
+plugin: 'facet_block:publication_topic'
+settings:
+  id: 'facet_block:publication_topic'
+  label: Phase
+  label_display: visible
+  provider: facets
+  context_mapping: {  }
+  block_id: etini_theme_phase
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/publications\r\n/publications/date/*\r\n/publications/topic/*\r\n/publications/type/*\r\n/publications/audience/*"

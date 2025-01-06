@@ -1,0 +1,29 @@
+uuid: 92bdaab0-e1da-4b4a-9bef-3ae8f1013c11
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.news_topic
+  module:
+    - facets
+    - system
+  theme:
+    - etini_theme
+id: etini_theme_newstopic
+theme: etini_theme
+region: sidebar_first
+weight: -1
+provider: null
+plugin: 'facet_block:news_topic'
+settings:
+  id: 'facet_block:news_topic'
+  label: 'News topic'
+  label_display: visible
+  provider: facets
+  context_mapping: {  }
+  block_id: etini_theme_newstopic
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/news\r\n/news/date/*\r\n/news/topic/*\r\n/news/type/*"

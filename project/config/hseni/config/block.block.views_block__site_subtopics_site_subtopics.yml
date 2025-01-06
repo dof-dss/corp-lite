@@ -12,7 +12,7 @@ dependencies:
 id: views_block__site_subtopics_site_subtopics
 theme: hseni_theme
 region: content
-weight: -6
+weight: -12
 provider: null
 plugin: 'views_block:site_subtopics-site_subtopics'
 settings:

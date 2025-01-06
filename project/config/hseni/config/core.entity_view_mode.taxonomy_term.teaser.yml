@@ -1,0 +1,11 @@
+uuid: 73aae6af-133f-497e-9eca-95f4c0463703
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.teaser
+label: Teaser
+description: ''
+targetEntityType: taxonomy_term
+cache: true

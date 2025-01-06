@@ -1,4 +1,4 @@
-uuid: 3dec06c8-cf47-471c-a8f6-c1214c8337d9
+uuid: 067ef3d4-7f24-4efc-b4af-d842b71d3b59
 langcode: en
 status: true
 dependencies:
@@ -6,16 +6,16 @@ dependencies:
     - field.storage.node.field_map
     - node.type.contact
   module:
-    - geolocation
+    - google_map_field
 id: node.contact.field_map
 field_name: field_map
 entity_type: node
 bundle: contact
-label: Map
-description: "Set the location for this point of contact using Google Maps.<br />\r\nGive the map a name, and click the 'Set Map Marker' button to browse Google Maps and choose a location."
+label: 'Map location'
+description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: geolocation
+field_type: google_map_field

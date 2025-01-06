@@ -1,11 +1,16 @@
-.footer {
-  .container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 8rem;
+@use '../../../../../../../../../web/themes/custom/nicsdru_corplite_theme/src/scss/init' as *;
 
-    :last-child {
-      grid-column: 1 / -1;
+.footer {
+  @include breakpoint($tab) {
+    .container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 8rem;
+
+      :last-child {
+        grid-column: 1 / -1;
+      }
     }
   }
 }
+

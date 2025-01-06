@@ -129,7 +129,7 @@ content:
     third_party_settings: {  }
   field_teaser:
     type: string_textfield
-    weight: 17
+    weight: 27
     region: content
     settings:
       size: 60

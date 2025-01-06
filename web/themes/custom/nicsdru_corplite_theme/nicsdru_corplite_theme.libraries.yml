@@ -42,6 +42,7 @@ corplite-styling:
       css/3_components/content/icons-messages.css: { minified: true }
       css/3_components/form/search-form.css: { minified: true }
       css/3_components/block/search-facets.css: { minified: true }
+      css/3_components/content/responsive-images.css: { minified: true }
     theme:
       css/3_components/navigation/pager.css: { minified: true }
       css/3_components/content/tables.css: { minified: true }
@@ -121,3 +122,9 @@ authenticated-styles:
       css/3_components/layout/layout-builder.css: { minified: true, weight: -5 }
       css/drupal/drupal-admin.css: { minified: true, weight: -5 }
       css/drupal/drupal-diff.css: { minified: true, weight: -5 }
+
+book:
+  version: 1.0
+  css:
+    theme:
+      css/3_components/navigation/book.css: { minified: true }

@@ -1,0 +1,30 @@
+uuid: 86444688-7d2c-4d36-a888-8216eab3778d
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:3ea4448d-125a-4b42-9a74-81a584e79b06'
+  module:
+    - block_content
+    - system
+  theme:
+    - hseni_theme
+id: additionallinks
+theme: hseni_theme
+region: top_banner
+weight: -5
+provider: null
+plugin: 'block_content:3ea4448d-125a-4b42-9a74-81a584e79b06'
+settings:
+  id: 'block_content:3ea4448d-125a-4b42-9a74-81a584e79b06'
+  label: 'Additional links '
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

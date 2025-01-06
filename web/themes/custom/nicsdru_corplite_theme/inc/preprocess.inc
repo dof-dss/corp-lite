@@ -146,6 +146,8 @@ function nicsdru_corplite_theme_theme_suggestions_field_alter(array &$suggestion
   $publication_taxonomy_fields = [
     'field_site_topics',
     'field_research_support',
+    'field_publication_type',
+    'field_site_global_topics',
   ];
 
   foreach ($publication_taxonomy_fields as $publication_taxonomy_field) {
@@ -339,7 +341,7 @@ function nicsdru_corplite_theme_preprocess_media(&$variables) {
     return;
   }
 
-  if (!empty($variables['content']['field_media_file']) || !empty($variables['content']['field_media_file_1'])) {
+  if (!empty($variables['content']['field_media_file']) || !empty($variables['content']['field_media_file_1']) || !empty($variables['content']['field_media_file_2'])) {
     // Map file mimetypes to user friendly document types.
     $pretty_mimes = \Drupal::service('origins_media.pretty_mime_types')
       ->getMimeTypes();
@@ -347,6 +349,7 @@ function nicsdru_corplite_theme_preprocess_media(&$variables) {
     $media_fields = [
       'field_media_file',
       'field_media_file_1',
+      'field_media_file_2',
     ];
 
     foreach ($media_fields as $media_field) {
@@ -461,7 +464,7 @@ function nicsdru_corplite_theme_preprocess_form(array &$variables) {
   switch ($view) {
     case "views-exposed-form-search-site-search":
     case "views-exposed-form-publication-search-publications-search":
-    case "views-exposed-form-consultations-search-consultations-search":
+    case "views-exposed-form-consultation-search-consultations-search":
     case "views-exposed-form-news-search-news-search":
       $variables['attributes']['class'][] = Html::cleanCssIdentifier('search-form');
       $variables['attributes']['class'][] = Html::cleanCssIdentifier('search-form--page');

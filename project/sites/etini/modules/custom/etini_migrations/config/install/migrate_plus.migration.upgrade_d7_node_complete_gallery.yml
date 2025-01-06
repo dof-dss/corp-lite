@@ -102,6 +102,7 @@ process:
   field_summary:
     - plugin: get
       source: field_summary
+    - plugin: strip_html_filter
   field_metatag:
     - plugin: d7_metatag_entities
       source: pseudo_metatag_entities

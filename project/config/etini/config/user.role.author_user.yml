@@ -3,6 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
+    - media.type.audio
+    - media.type.document
+    - media.type.file
+    - media.type.image
+    - media.type.remote_video
     - node.type.application
     - node.type.article
     - node.type.contact
@@ -13,7 +18,13 @@ dependencies:
     - node.type.page
     - node.type.profile
     - node.type.publication
+    - workflows.workflow.nics_editorial_workflow
   module:
+    - content_moderation
+    - file
+    - media
+    - menu_admin_per_menu
+    - moderation_sidebar
     - node
     - system
 _core:
@@ -24,15 +35,27 @@ weight: 2
 is_admin: false
 permissions:
   - 'access administration pages'
+  - 'administer main menu items'
   - 'create application content'
   - 'create article content'
+  - 'create audio media'
   - 'create contact content'
+  - 'create document media'
+  - 'create file media'
   - 'create gallery content'
+  - 'create image media'
   - 'create link content'
   - 'create news content'
   - 'create page content'
   - 'create profile content'
   - 'create publication content'
+  - 'create remote_video media'
+  - 'delete own audio media'
+  - 'delete own document media'
+  - 'delete own file media'
+  - 'delete own files'
+  - 'delete own image media'
+  - 'delete own remote_video media'
   - 'edit any application content'
   - 'edit any article content'
   - 'edit any contact content'
@@ -45,12 +68,36 @@ permissions:
   - 'edit any publication content'
   - 'edit own application content'
   - 'edit own article content'
+  - 'edit own audio media'
   - 'edit own contact content'
   - 'edit own department_management content'
+  - 'edit own document media'
+  - 'edit own file media'
   - 'edit own gallery content'
+  - 'edit own image media'
   - 'edit own link content'
   - 'edit own news content'
   - 'edit own page content'
   - 'edit own profile content'
   - 'edit own publication content'
+  - 'edit own remote_video media'
+  - 'use moderation sidebar'
+  - 'use nics_editorial_workflow transition create_new_draft'
+  - 'use nics_editorial_workflow transition draft_of_published'
+  - 'use nics_editorial_workflow transition reject'
+  - 'use nics_editorial_workflow transition submit_for_review'
+  - 'view all revisions'
+  - 'view any unpublished content'
+  - 'view application revisions'
+  - 'view article revisions'
+  - 'view contact revisions'
+  - 'view department_management revisions'
+  - 'view gallery revisions'
+  - 'view latest version'
+  - 'view link revisions'
+  - 'view news revisions'
+  - 'view own unpublished media'
+  - 'view page revisions'
+  - 'view profile revisions'
+  - 'view publication revisions'
   - 'view the administration theme'

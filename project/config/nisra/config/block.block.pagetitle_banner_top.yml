@@ -1,0 +1,26 @@
+uuid: 23021f86-0219-47f2-8acb-47045392dc9f
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.banner_page_title
+  module:
+    - block_visibility_groups
+  theme:
+    - nisra_theme
+id: pagetitle_banner_top
+theme: nisra_theme
+region: top_banner
+weight: -12
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: banner_page_title

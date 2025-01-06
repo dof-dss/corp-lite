@@ -1,0 +1,29 @@
+uuid: 5226f404-6c31-45e2-afb4-1ace52dabde8
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.published_date_consultations
+  module:
+    - facets
+    - system
+  theme:
+    - hseni_theme
+id: publisheddate_consultations
+theme: hseni_theme
+region: sidebar_first
+weight: -6
+provider: null
+plugin: 'facet_block:published_date_consultations'
+settings:
+  id: 'facet_block:published_date_consultations'
+  label: 'Published Date'
+  label_display: visible
+  provider: facets
+  context_mapping: {  }
+  block_id: publisheddate_consultations
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/consultations\r\n/consultations/date/*\r\n/consultations/topic/*"

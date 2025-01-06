@@ -10,8 +10,8 @@ dependencies:
     - node.type.contact
   module:
     - field_group
+    - google_map_field
     - metatag
-    - origins_common
     - text
     - user
 third_party_settings:
@@ -50,15 +50,9 @@ content:
     weight: 0
     region: content
   field_map:
-    type: gmaps_lazy_load_formatter
+    type: google_map_field_default
     label: above
-    settings:
-      zoom: '10'
-      map_type: roadmap
-      placeholder: empty
-      link_text: ''
-      map_width: '300'
-      map_height: '300'
+    settings: {  }
     third_party_settings: {  }
     weight: 1
     region: content
