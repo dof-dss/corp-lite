@@ -1,0 +1,23 @@
+uuid: 3fb6c7b3-7205-41f9-882a-647190a1328e
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.inspector_from_solr
+  module:
+    - views
+  theme:
+    - olivero
+id: olivero_exposedforminspector_from_solrpage_1
+theme: olivero
+region: content
+weight: -8
+provider: null
+plugin: 'views_exposed_filter_block:inspector_from_solr-page_1'
+settings:
+  id: 'views_exposed_filter_block:inspector_from_solr-page_1'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: 'Inspector from Solr Block'
+visibility: {  }

@@ -7,18 +7,25 @@ dependencies:
     - views.view.inspector_from_solr
   module:
     - views
-    - search_api_autocomplete
+    - search_api_solr_autocomplete
 id: inspector_from_solr
 label: 'Inspector from Solr'
 index_id: school
 suggester_settings:
-  server:
+  search_api_solr_terms:
     fields: {  }
-suggester_weights: {  }
+suggester_weights:
+  search_api_solr_terms: 0
 suggester_limits: {  }
 search_settings:
   'views:inspector_from_solr':
     displays:
       default: true
       selected: {  }
-options: {  }
+options:
+  limit: 10
+  min_length: 1
+  show_count: false
+  delay: null
+  submit_button_selector: ':submit'
+  autosubmit: true

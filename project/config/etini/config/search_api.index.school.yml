@@ -61,7 +61,7 @@ field_settings:
     label: 'DE Reference'
     datasource_id: 'entity:School'
     property_path: de_reference
-    type: string
+    type: text
     dependencies:
       module:
         - corplite_district_inspectors
@@ -77,7 +77,7 @@ field_settings:
     label: Name
     datasource_id: 'entity:School'
     property_path: Name
-    type: string
+    type: text
     dependencies:
       module:
         - corplite_district_inspectors
@@ -99,4 +99,4 @@ options:
   cron_limit: 50
   index_directly: true
   track_changes_in_references: true
-server: solr_default
+server: null
