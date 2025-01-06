@@ -57,9 +57,9 @@ class School extends RevisionableContentEntityBase implements ContentEntityInter
       ])
       ->setRequired(FALSE);
 
-    $fields['c2k_email'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('C2K Email'))
-      ->setDescription(t('The C2K email for this inspector at this school'))
+    $fields['phases'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Phases'))
+      ->setDescription(t('The phases supported by this school'))
       ->setRevisionable(TRUE)
       ->setSettings([
         'max_length' => 32,
