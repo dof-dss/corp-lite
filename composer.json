@@ -253,6 +253,9 @@
             },
             "drupal/readonlymode": {
                 "Fatal typerror fix": "https://www.drupal.org/files/issues/2020-12-23/readonlymode-string_not_array-3115119-9.patch"
+            },
+            "drupal/structure_sync": {
+                "Avoid typeerror when no blocks to import" : "https://www.drupal.org/files/issues/2025-01-06/typerror_no_blocks_3497649.patch"
             }
         },
         "drupal-scaffold": {
