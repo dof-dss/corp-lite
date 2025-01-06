@@ -5,6 +5,7 @@ dependencies:
   config:
     - search_api.index.school
   module:
+    - corplite_district_inspectors
     - search_api
 id: inspector_from_solr
 label: 'Inspector from Solr'
@@ -65,7 +66,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -163,14 +164,14 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-        inspector_id:
-          id: inspector_id
-          table: search_api_datasource_school_entity_School
-          field: inspector_id
-          relationship: none
+        name:
+          id: name
+          table: search_api_entity_inspector
+          field: name
+          relationship: inspector_id
           group_type: group
           admin_label: ''
-          entity_type: School
+          entity_type: inspector
           plugin_id: search_api_field
           label: ''
           exclude: false
@@ -213,11 +214,10 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: true
-          group_column: target_id
+          click_sort_column: value
+          type: string
+          settings: {  }
+          group_column: value
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -228,15 +228,12 @@ display:
           separator: ', '
           field_api_classes: false
           field_rendering: true
-          fallback_handler: search_api_entity
+          fallback_handler: search_api
           fallback_options:
             link_to_item: false
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-            display_methods:
-              inspector:
-                display_method: label
       pager:
         type: mini
         options:
@@ -287,7 +284,18 @@ display:
           skip_access: true
           preserve_facet_query_args: false
           query_tags: {  }
-      relationships: {  }
+      relationships:
+        inspector_id:
+          id: inspector_id
+          table: search_api_datasource_school_entity_School
+          field: inspector_id
+          relationship: none
+          group_type: group
+          admin_label: 'Referenced Inspector: District Inspector'
+          entity_type: School
+          plugin_id: search_api
+          required: false
+          skip_access: true
       header: {  }
       footer: {  }
       display_extenders: {  }
@@ -306,6 +314,7 @@ display:
     display_plugin: page
     position: 1
     display_options:
+      exposed_block: true
       display_extenders:
         metatag_display_extender:
           metatags: {  }
