@@ -150,23 +150,6 @@ field_settings:
     configuration:
       type: union
       separator: |+
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       fields:
         - 'entity:node/title'
   status:
@@ -209,10 +192,13 @@ field_settings:
 
 
 
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> 2fdf3ef9 (Create Schools index and initial view)
       fields:
         - 'entity:node/title'
   type:
@@ -314,4 +300,4 @@ options:
   cron_limit: 50
   index_directly: true
   track_changes_in_references: true
-server: solr_default
+server: null

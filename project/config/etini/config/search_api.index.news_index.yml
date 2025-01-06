@@ -242,4 +242,4 @@ options:
   cron_limit: 50
   index_directly: true
   track_changes_in_references: true
-server: solr_default
+server: null

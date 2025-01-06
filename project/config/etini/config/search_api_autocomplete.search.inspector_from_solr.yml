@@ -1,0 +1,24 @@
+uuid: 56fd72c1-4eb7-46c0-858b-dfa34e11b15e
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.school
+    - views.view.inspector_from_solr
+  module:
+    - views
+    - search_api_autocomplete
+id: inspector_from_solr
+label: 'Inspector from Solr'
+index_id: school
+suggester_settings:
+  server:
+    fields: {  }
+suggester_weights: {  }
+suggester_limits: {  }
+search_settings:
+  'views:inspector_from_solr':
+    displays:
+      default: true
+      selected: {  }
+options: {  }
