@@ -28,6 +28,9 @@ use Drupal\user\UserInterface;
  *     "revision_created" = "revision_created",
  *     "revision_log_message" = "revision_log_message",
  *   },
+ *   handlers = {
+ *      "views_data" = "Drupal\views\EntityViewsData"
+ *   }
  * )
  */
 class School extends RevisionableContentEntityBase implements ContentEntityInterface {
