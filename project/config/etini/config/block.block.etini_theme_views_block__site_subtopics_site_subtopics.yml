@@ -1,26 +1,27 @@
-uuid: 62d00e80-5a6a-49e0-8471-882cb2e70a24
+uuid: bc60f5d6-2a4b-494f-91a2-0341dd7a014e
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.articles_by_term
+    - views.view.site_subtopics
   module:
     - block_visibility_groups
     - views
   theme:
     - etini_theme
-id: etini_theme_views_block__articles_by_term_articles_all
+id: etini_theme_views_block__site_subtopics_site_subtopics
 theme: etini_theme
 region: content
-weight: -7
+weight: -10
 provider: null
-plugin: 'views_block:articles_by_term-articles_all'
+plugin: 'views_block:site_subtopics-site_subtopics'
 settings:
-  id: 'views_block:articles_by_term-articles_all'
-  label: Articles
-  label_display: visible
+  id: 'views_block:site_subtopics-site_subtopics'
+  label: ''
+  label_display: '0'
   provider: views
-  views_label: Articles
+  context_mapping: {  }
+  views_label: ''
   items_per_page: none
 visibility:
   condition_group:
