@@ -1,0 +1,53 @@
+blocks:
+  -
+    info: 'About Us'
+    langcode: en
+    uuid: 500db94d-f286-4f85-8154-a2a195e06084
+    bundle: basic
+    revision_id: null
+    rev_id_current: null
+    fields:
+      body:
+        -
+          value: '<div class="about-us-container"><div class="text-content"><h2>Promoting and enforcing health and safety at<br>work standards in Northern Ireland</h2><p>The Health and Safety Executive for Northern Ireland (HSENI)<br>is an executive non-departmental public body sponsored by the<br>Department for the Economy (DfE).</p></div><div class="image-content"><drupal-media data-entity-type="media" data-entity-uuid="abd1acf8-aace-4482-98cb-69e57c2b2c11">&nbsp;</drupal-media></div></div>'
+          summary: ''
+          format: full_html
+  -
+    info: 'Contact Us'
+    langcode: en
+    uuid: 65b8e86b-ce08-4d71-b3ed-6d90cdd49274
+    bundle: basic
+    revision_id: null
+    rev_id_current: null
+    fields:
+      body:
+        -
+          value: '<div class="contact-us-container"><div class="text-content"><p>Do you want to report a Health and Safety incident, accident, or disease?<br>Do you want to make a complaint about an unsafe or unhealthy work activity?</p><ul><li>Report Online</li><li>Call 0800 0320 121</li><li>Email <a href="mailto:Mail@hseni.gov.uk">Mail@hseni.gov.uk</a></li><li>RIDDOR Forms</li><li>Notification of a new construction project</li><li>Media enquiries: <a href="mailto:media@hseni.gov.uk">media@hseni.gov.uk</a></li></ul></div><div class="image-content"><drupal-media data-entity-type="media" data-entity-uuid="91286d07-b3c3-46cc-9879-66e3ac74a3d8">&nbsp;</drupal-media></div></div>'
+          summary: ''
+          format: full_html
+  -
+    info: 'Our Organisation'
+    langcode: en
+    uuid: 51421a66-1c58-4236-9af5-c940374d74e1
+    bundle: basic
+    revision_id: null
+    rev_id_current: null
+    fields:
+      body:
+        -
+          value: '<div class="organisation-container"><div class="text-content"><h2>Chief Executive</h2><p>Robert Kidd is the HSENI Chief Executive. He took up his position&nbsp;<br>on the 28 February 2019.</p><ul><li><a href="/hseni-senior-management-team-0">HSENI Senior Management Team (SMT)</a></li><li><a href="/hseni-board">HSENI Board</a></li><li><a href="/about-hseni">Corporate Information</a></li></ul></div><div class="image-content"><drupal-media data-entity-type="media" data-entity-uuid="6db14dfd-74fe-4496-8a59-002229ce70ef">&nbsp;</drupal-media></div></div>'
+          summary: ''
+          format: full_html
+  -
+    info: 'Additional links and address'
+    langcode: en
+    uuid: 3ea4448d-125a-4b42-9a74-81a584e79b06
+    bundle: basic
+    revision_id: null
+    rev_id_current: null
+    fields:
+      body:
+        -
+          value: '<div class="links-wrapper"><div class="links-content"><ul><li><a href="/articles/health-and-safety-events">Health and safety events</a></li><li><a href="/alerts">Safety alerts</a></li><li><a href="/hseni-public-register-prosecutions">Public register of prosecution and enforcement notices</a></li><li><a href="https://x.com/Hsenigov">Follow us on social media</a></li></ul></div><div class="address-content"><p>Health and Safety Executive for Northern Ireland<br>83 Ladas Drive<br>Belfast<br>BT6 9FR<br>Email: mail@hseni.gov.uk<br>Phone: 0800 0320 121</p></div></div>'
+          summary: ''
+          format: full_html
