@@ -122,3 +122,9 @@ authenticated-styles:
       css/3_components/layout/layout-builder.css: { minified: true, weight: -5 }
       css/drupal/drupal-admin.css: { minified: true, weight: -5 }
       css/drupal/drupal-diff.css: { minified: true, weight: -5 }
+
+book:
+  version: 1.0
+  css:
+    theme:
+      css/3_components/navigation/book.css: { minified: true }
