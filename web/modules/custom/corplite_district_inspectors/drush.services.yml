@@ -1,0 +1,5 @@
+services:
+  corplite_district_inspectors.commands:
+    class: \Drupal\corplite_district_inspectors\Commands\InspectorDrushCommands
+    tags:
+      - { name: drush.command }
