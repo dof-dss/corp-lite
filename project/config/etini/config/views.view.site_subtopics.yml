@@ -3,8 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.taxonomy_term.teaser
     - taxonomy.vocabulary.site_global_topics
   module:
+    - node
     - taxonomy
     - user
 id: site_subtopics
@@ -204,16 +206,20 @@ display:
           entity_type: taxonomy_term
           entity_field: parent
           plugin_id: taxonomy
-          default_action: ignore
+          default_action: default
           exception:
             value: all
             title_enable: false
             title: All
           title_enable: false
           title: ''
-          default_argument_type: fixed
+          default_argument_type: taxonomy_tid
           default_argument_options:
-            argument: ''
+            term_page: '1'
+            node: false
+            limit: false
+            vids: {  }
+            anyall: ','
           summary_options:
             base_path: ''
             count: true
@@ -280,12 +286,10 @@ display:
           row_class: ''
           default_row_class: false
       row:
-        type: fields
+        type: 'entity:taxonomy_term'
         options:
-          default_field_elements: false
-          inline: {  }
-          separator: ''
-          hide_empty: false
+          relationship: none
+          view_mode: teaser
       query:
         type: views_query
         options:
