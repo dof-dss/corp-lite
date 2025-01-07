@@ -446,7 +446,8 @@ a.card {
         }
       }
 
-      &__meta {
+      &__meta,
+      .site-topics--item {
         font-size: 1.6rem;
         line-height: 2.4rem;
         margin: var(--rhythm-spacing-sm) 0 0;
