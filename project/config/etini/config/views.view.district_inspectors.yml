@@ -1,4 +1,4 @@
-uuid: d2b0df45-22ca-4464-b5a1-f58030890021
+uuid: ba258d84-5f63-4727-9951-5675752a14a4
 langcode: en
 status: true
 dependencies:
@@ -7,8 +7,8 @@ dependencies:
   module:
     - corplite_district_inspectors
     - search_api
-id: inspector_from_solr
-label: 'Inspector from Solr'
+id: district_inspectors
+label: 'District Inspectors'
 module: views
 description: ''
 tag: ''
@@ -21,7 +21,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'Inspector from Solr'
+      title: 'Find a District Inspector'
       fields:
         name:
           id: name
@@ -31,76 +31,6 @@ display:
           group_type: group
           admin_label: ''
           entity_type: inspector
-          plugin_id: search_api_field
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          field_rendering: true
-          fallback_handler: search_api
-          fallback_options:
-            link_to_item: false
-            use_highlighting: false
-            multi_type: separator
-            multi_separator: ', '
-        de_reference:
-          id: de_reference
-          table: search_api_datasource_school_entity_School
-          field: de_reference
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: School
           plugin_id: search_api_field
           label: ''
           exclude: false
@@ -245,7 +175,7 @@ display:
           reset_button: false
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
-          expose_sort_order: true
+          expose_sort_order: false
           sort_asc_label: Asc
           sort_desc_label: Desc
       access:
@@ -272,7 +202,7 @@ display:
           exposed: true
           expose:
             operator_id: search_api_fulltext_op
-            label: 'Fulltext search'
+            label: 'DE Reference'
             description: ''
             use_operator: false
             operator: search_api_fulltext_op
@@ -308,7 +238,7 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           parse_mode: terms
-          min_length: 3
+          min_length: 1
           fields:
             - de_reference
       style:
@@ -334,7 +264,6 @@ display:
           plugin_id: search_api
           required: false
           skip_access: true
-      use_ajax: true
       header: {  }
       footer: {  }
       display_extenders: {  }
@@ -358,7 +287,7 @@ display:
         metatag_display_extender:
           metatags: {  }
           tokenize: false
-      path: inspector-from-solr
+      path: district-inspectors
     cache_metadata:
       max-age: -1
       contexts:
