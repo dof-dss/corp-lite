@@ -2,6 +2,8 @@ uuid: ef9779c8-060d-4d0e-aa08-db441f57614a
 langcode: en-gb
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: PDqUlQ5QLDrjigVhl9ZE7kw7_1cxaL7W-WNDmKwTVGI
 id: upgrade_d7_node_complete_link
 class: Drupal\node\Plugin\migrate\D7NodeTranslation
 field_plugin_method: null
@@ -77,7 +79,8 @@ process:
       plugin: get
       source: comment
   field_link_type:
-    - plugin: static_map
+    -
+      plugin: static_map
       source: field_link_type
       default_value: null
       map:

@@ -1,7 +1,9 @@
 uuid: a38a94e1-fe59-4196-938e-54dc863bb262
 langcode: en
 status: true
-dependencies: { }
+dependencies: {  }
+_core:
+  default_config_hash: cMO9MhNBSzd3qt5jBxXAc5UsIAc4eEve7bRBosiKugE
 id: upgrade_d7_file_document
 class: Drupal\migrate\Plugin\Migration
 field_plugin_method: alterFieldInstanceMigration
@@ -14,20 +16,22 @@ source:
   plugin: file_entity
   type: document
   constants:
-    bundle: 'document'
+    bundle: document
 process:
   mid: fid
-  bundle: 'constants/bundle'
+  bundle: constants/bundle
   langcode:
     plugin: default_value
     source: language
-    default_value: "und"
+    default_value: und
   name: field_file_title
   uid:
-    - plugin: skip_on_empty
+    -
+      plugin: skip_on_empty
       method: process
       source: uid
-    - plugin: migration_lookup
+    -
+      plugin: migration_lookup
       migration: upgrade_d7_user
   status: status
   created: timestamp
@@ -36,8 +40,8 @@ process:
   field_media_doc_file_language: field_file_language
   field_media_doc_file_title: field_file_title
 destination:
-  plugin: entity:media
+  plugin: 'entity:media'
 migration_dependencies:
   required:
     - upgrade_d7_file
-  optional: { }
+  optional: {  }
