@@ -131,7 +131,8 @@
     }
 
     figcaption {
-      //@include responsive-typo-map($smallish-text);
+      font-size: 1.5rem;
+      line-height: 2.4rem;
       display: block;
       padding: .5em;
       background-color: var(--clr-grey-lightest);

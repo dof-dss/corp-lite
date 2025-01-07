@@ -1,0 +1,174 @@
+/*
+ * @file
+ * Provides very specific styling for search index pages.
+ */
+@import '../init';
+
+.page-search {
+  h1 em.placeholder {
+    font-style: normal;
+    font-size: smaller;
+  }
+}
+
+.search-intro {
+
+  @include breakpoint($tab) {
+    width: 80%;
+    margin: 3rem auto;
+  }
+}
+
+.search-results {
+
+  header {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: baseline;
+
+    > * {
+      flex: 100% 1 1;
+    }
+
+    h2,
+    .view--count,
+    .view--rss-link {
+      flex: auto 0 1;
+      order: -1;
+    }
+  }
+
+  h2:first-of-type,
+  .view--count {
+    margin: var(--rhythm-spacing-sm) 0 0;
+
+    @include breakpoint($tab) {
+      margin: 0;
+    }
+
+    .subtitle,
+    + .subtitle {
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+      color: var(--clr-grey-medium);
+      display: block;
+      margin: var(--rhythm-spacing-xs) 0 0;
+
+      > * {
+        font-size: inherit;
+        line-height: inherit;
+      }
+    }
+  }
+
+  .view-sort-options {
+
+    * {
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+    }
+
+    .label-inline {
+      color: var(--clr-ash-grey);
+
+      &:not(:last-child)::after {
+        content: ' | ';
+      }
+    }
+
+    + .facet-summary {
+      margin-top: var(--rhythm-spacing-sm);
+    }
+  }
+
+
+  .facet-summary-item--facet {
+    line-height: 2.5em;
+  }
+
+  .view--rss-link {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+
+    .feed-icon {
+      display: flex;
+      column-gap: .5rem;
+    }
+  }
+
+  &-list {
+    margin: 0;
+  }
+
+  &--title {
+    margin-top: 0;
+  }
+
+  h3 {
+    font-size: 2rem;
+    line-height: 3.3rem;
+    margin: 0 0 var(--rhythm-spacing-xs);
+  }
+
+  .meta {
+    margin: var(--rhythm-spacing-sm) 0;
+
+    &:empty {
+      margin: 0;
+    }
+
+    .meta-list-item {
+      margin-left: var(--rhythm-spacing-sm);
+    }
+  }
+}
+
+// Contacts index page
+//
+// The contacts search has a few rules that are only applicable to the search page(s) that contacts lists of contacts.
+// These rules are in essence to enhance aesthetics to the original design.
+//
+// Weight: -2
+//
+// Style guide: theme.searches.contacts
+#contacts-az--title {
+  margin: .5em 0;
+}
+
+.search-form--contacts {
+  margin-bottom: 0; // On contact search results page, no bottom margin under search box.
+}
+
+// Overrides for Origins Search facet styling.
+a.facet--btn {
+
+  line-height: 4.4rem;
+  min-height: 4.4rem;
+  border: 0 !important;
+
+  @include breakpoint($tab, $no-query: true) {
+    line-height: 4.5rem;
+    min-height: 4.5rem;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:focus-visible {
+    outline: 3px solid var(--clr-black);
+    outline-offset: -3px;
+    box-shadow: 0 0 0 3px #ff4da4;
+  }
+
+  .ico-arrow-down {
+    margin: 1.2rem;
+  }
+}
+
+.list--inline li {
+  display: inline-block;
+  padding-right: .334em;
+  white-space: nowrap;
+}

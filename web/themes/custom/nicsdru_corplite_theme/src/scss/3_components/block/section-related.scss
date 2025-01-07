@@ -41,7 +41,8 @@
   }
 
   .card__title {
-    //@include responsive-typo-map($normal-text-no-margins);
+    font-size: 1.6rem;
+    line-height: 2.4rem;
     margin-bottom: 0;
   }
 
@@ -63,7 +64,8 @@
   }
 
   #block-related-departmental-details-access-info p {
-    //@include responsive-typo-map($smallish-text);
+    font-size: 1.5rem;
+    line-height: 2.4rem;
     margin: var(--rhythm-spacing-sm) 0 var(--rhythm-spacing);
   }
 }

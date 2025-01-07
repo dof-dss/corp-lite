@@ -26,8 +26,6 @@ third_party_settings:
   field_group:
     group_additional_content_details:
       children:
-        - field_published_date
-        - field_site_topics
         - field_photo
         - field_news_type
         - field_meta_tags
@@ -107,9 +105,10 @@ content:
     weight: 4
     region: content
   field_photo:
-    type: entity_reference_label
+    type: entity_reference_entity_view
     label: inline
     settings:
+      view_mode: article_float
       link: false
     third_party_settings: {  }
     weight: 2
@@ -129,7 +128,7 @@ content:
     settings:
       link: false
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
   field_summary:
     type: basic_string
