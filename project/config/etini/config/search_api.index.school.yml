@@ -46,7 +46,7 @@ third_party_settings:
       collection: ''
       timezone: ''
     multilingual:
-      limit_to_content_language: false
+      limit_to_content_language: true
       include_language_independent: true
       use_language_undefined_as_fallback_language: false
       specific_languages:
@@ -61,22 +61,6 @@ field_settings:
     label: 'DE Reference'
     datasource_id: 'entity:School'
     property_path: de_reference
-    type: text
-    dependencies:
-      module:
-        - corplite_district_inspectors
-  inspector_id:
-    label: 'Referenced Inspector'
-    datasource_id: 'entity:School'
-    property_path: inspector_id
-    type: integer
-    dependencies:
-      module:
-        - corplite_district_inspectors
-  name:
-    label: Name
-    datasource_id: 'entity:School'
-    property_path: Name
     type: text
     dependencies:
       module:
