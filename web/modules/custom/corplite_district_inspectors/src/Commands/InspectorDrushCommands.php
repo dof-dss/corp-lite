@@ -34,13 +34,14 @@ class InspectorDrushCommands extends DrushCommands {
    */
   public function indexSchools() {
     $database = \Drupal::database();
-    $query = $database->query("SELECT * FROM school");
-    $result = $query->fetchAll();
-    foreach ($result as $school_row) {
-      $school = School::load($school_row->id);
+    $results = $this->entityTypeManager->getStorage('School')->loadMultiple();
+    //$query = $database->query("SELECT * FROM school");
+    //$result = $query->fetchAll();
+    foreach ($results as $school_row) {
+      $school = School::load($school_row->id());
       $school->save();
     }
-    $this->io()->write(count($result) . " schools indexed", TRUE);
+    $this->io()->write(count($results) . " schools indexed", TRUE);
   }
 
 }
