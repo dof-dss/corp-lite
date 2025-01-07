@@ -14,7 +14,8 @@
 // Style guide: components.file-links
 
 .file {
-  &-link {
+  &-link,
+  &--media-library-preview {
     $lh: math.div(28, 18);
 
     --fs-label: 1.8rem;
@@ -158,5 +159,8 @@
         --lh: #{$lh};
       }
     }
+  }
+  &--media-library-preview.file--ico::before {
+    width: 4rem;
   }
 }
