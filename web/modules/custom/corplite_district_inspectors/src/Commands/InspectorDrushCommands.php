@@ -2,6 +2,7 @@
 
 namespace Drupal\corplite_district_inspectors\Commands;
 
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drush\Commands\DrushCommands;
 use Drupal\corplite_district_inspectors\Entity\School;
 use Drupal\corplite_district_inspectors\Entity\Inspector;
@@ -20,10 +21,13 @@ class InspectorDrushCommands extends DrushCommands {
 
   /**
    * Class constructor.
+   *
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entityManager
+   *   The entity type manager.
    */
-  public function __construct() {
+  public function __construct(EntityTypeManagerInterface $entityManager) {
     parent::__construct();
-    $this->entityTypeManager = \Drupal::entityTypeManager();
+    $this->entityTypeManager = $entityManager;
   }
 
   /**
@@ -33,10 +37,7 @@ class InspectorDrushCommands extends DrushCommands {
    * @command index-schools
    */
   public function indexSchools() {
-    $database = \Drupal::database();
     $results = $this->entityTypeManager->getStorage('School')->loadMultiple();
-    //$query = $database->query("SELECT * FROM school");
-    //$result = $query->fetchAll();
     foreach ($results as $school_row) {
       $school = School::load($school_row->id());
       $school->save();
