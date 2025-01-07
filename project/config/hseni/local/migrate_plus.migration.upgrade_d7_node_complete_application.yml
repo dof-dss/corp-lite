@@ -2,6 +2,8 @@ uuid: b306adac-1ef5-4273-b311-2ca74ce1bfc3
 langcode: en-gb
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: Ttgoy-ltYXVTgOSbaN4l4cKPo83bRngdjIG0RWWlihI
 id: upgrade_d7_node_complete_application
 class: Drupal\node\Plugin\migrate\D7NodeTranslation
 field_plugin_method: null
@@ -77,21 +79,21 @@ process:
       plugin: get
       source: comment
   body:
-    - plugin: get
+    -
+      plugin: get
       source: body
-    - plugin: media_wysiwyg_filter
-    - plugin: filter_absolute_links
-
-      replace_urls:
-        http://www.hseni.gov.uk
-        http://hseni.gov.uk
-        https://www.hseni.gov.uk
-        https://hseni.gov.uk
-    - plugin: site_files_filter
+    -
+      plugin: media_wysiwyg_filter
+    -
+      plugin: filter_absolute_links
+      replace_urls: 'http://www.hseni.gov.uk http://hseni.gov.uk https://www.hseni.gov.uk https://hseni.gov.uk'
+    -
+      plugin: site_files_filter
       from_ref: sites/hseni.gov.uk/files
       to_ref: files/hseni
   body/0/format:
-    - plugin: static_map
+    -
+      plugin: static_map
       bypass: true
       source: body/0/format
       map:
@@ -101,21 +103,21 @@ process:
         restricted_html: basic_html
         plain_text: plain_text
   field_additional_information:
-    - plugin: get
+    -
+      plugin: get
       source: field_additional_info
-    - plugin: media_wysiwyg_filter
-    - plugin: filter_absolute_links
-
-      replace_urls:
-        http://www.hseni.gov.uk
-        http://hseni.gov.uk
-        https://www.hseni.gov.uk
-        https://hseni.gov.uk
-    - plugin: site_files_filter
+    -
+      plugin: media_wysiwyg_filter
+    -
+      plugin: filter_absolute_links
+      replace_urls: 'http://www.hseni.gov.uk http://hseni.gov.uk https://www.hseni.gov.uk https://hseni.gov.uk'
+    -
+      plugin: site_files_filter
       from_ref: sites/hseni.gov.uk/files
       to_ref: files/hseni
   field_additional_information/0/format:
-    - plugin: static_map
+    -
+      plugin: static_map
       bypass: true
       source: body/0/format
       map:
