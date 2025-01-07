@@ -40,7 +40,7 @@ class InspectorDrushCommands extends DrushCommands {
       $school = School::load($school_row->id);
       $school->save();
     }
-    $this->io()->write("Schools indexed", TRUE);
+    $this->io()->write(count($result) . " schools indexed", TRUE);
   }
 
 }
