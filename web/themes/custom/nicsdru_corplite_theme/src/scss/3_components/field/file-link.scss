@@ -140,8 +140,9 @@
       --lh: #{$lh};
 
       display: block;
-      font-size: var(--fs-label);
-      line-height: var(--lh);
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+      color: #4d4d4d;
       margin: var(--rhythm-spacing-xs) 0;
 
       @include breakpoint($lap, $no-query: true) {

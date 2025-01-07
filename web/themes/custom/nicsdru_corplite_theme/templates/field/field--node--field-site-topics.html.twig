@@ -56,27 +56,27 @@
 
 {% if label_hidden %}
   {% if multiple %}
-    <div{{ attributes.addClass(classes, 'site-topics--list') }}>
+    <p{{ attributes.addClass(classes, 'site-topics--list') }}>
       {% for item in items %}
-        <div{{ item.attributes.addClass('site-topics--item') }}>{{ item.content }}</div>
+        <span{{ item.attributes.addClass('site-topics--item') }}>{{ item.content }}</span>
       {% endfor %}
-    </div>
+    </p>
   {% else %}
     {% for item in items %}
-      <div{{ attributes.addClass(classes, 'site-topics--item') }}>{{ item.content }}</div>
+      <span{{ attributes.addClass(classes, 'site-topics--item') }}>{{ item.content }}</span>
     {% endfor %}
   {% endif %}
 {% else %}
-  <div{{ attributes.addClass(classes) }}>
-    <div{{ title_attributes.addClass(title_classes) }}>{{ label }}: </div>
+  <p{{ attributes.addClass(classes) }}>
+    <span{{ title_attributes.addClass(title_classes) }}>{{ label }}: </span>
     {% if multiple %}
-    <div class="site-topics--list">
+    <span class="site-topics--list">
       {% endif %}
       {% for item in items %}
-        <div{{ item.attributes.addClass('site-topics--item') }}>{{ item.content }}{% if not loop.last %}{{ ',&ensp;' }}{% endif %}</div>
+        <span{{ item.attributes.addClass('site-topics--item') }}>{{ item.content }}{% if not loop.last %}{{ ',&ensp;' }}{% endif %}</span>
       {% endfor %}
       {% if multiple %}
-    </div>
+    </span>
     {% endif %}
-  </div>
+  </p>
 {% endif %}
