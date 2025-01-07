@@ -23,30 +23,30 @@
 #}
 {%
   set classes = [
-    'facet-summary__list',
-    'list--inline',
-    'list--no-bullet',
-    context.list_style ? 'item-list__' ~ context.list_style,
-  ]
+  'facet-summary__list',
+  'list--inline',
+  'list--no-bullet',
+  context.list_style ? 'item-list__' ~ context.list_style,
+]
 %}
 {% set attributes = attributes.addClass(classes).setAttribute('aria-describedby', 'facet-summary-label') %}
 {% if items or empty %}
   {%- if title is not empty -%}
     <h3>{{ title }}</h3>
   {%- endif -%}
-  {%- if items -%}
+  {%- if summaries -%}
     <{{ list_type }}{{ attributes }}>
-    {%- set facet_name = items[0].value['#title']['#facet'].description ?: items[0].value['#title']['#facet'].name -%}
-    <span aria-label="Selected filter" class="facet-item__label">
-      {{ facet_name|t }}
-    </span>
-    {%- for item in items -%}
-      <li{{ item.attributes }}>
-        {{ link(item.value['#title'], item.value["#url"], { 'data-self-ref': ['true']}) }}
-      </li>
+    {%- for summary, facets in summaries -%}
+      <ul>
+          <span aria-label="Selected filter" class="facet-item__label">
+            {{ summary|t }}
+          </span>
+        {%- for facet in facets -%}
+          <li class="{{ facet['#wrapper_attributes']['class'][0] }}">
+            {{ link(facet['#title'], facet['#url'], { 'data-self-ref': ['true']}) }}
+          </li>
+        {%- endfor -%}
+      </ul>
     {%- endfor -%}
-    </{{ list_type }}>
-  {%- else -%}
-    {{- empty -}}
-  {%- endif -%}
+  {%- endif %}
 {%- endif %}

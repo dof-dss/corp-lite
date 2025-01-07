@@ -72,7 +72,8 @@
 
     // Caption text
     p {
-      //@include responsive-typo-map($large-text);
+      font-size: 2rem;
+      line-height: 3.3rem;
       margin-top: 0;
 
       &:last-child {
@@ -83,7 +84,8 @@
 
   &--above &__caption p,
   &--below &__caption p {
-    //@include responsive-typo-map($xl-text);
+    font-size: 2.2rem;
+    line-height: 3.2rem;
     margin-bottom: 0;
   }
 
