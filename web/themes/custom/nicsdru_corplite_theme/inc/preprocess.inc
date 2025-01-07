@@ -8,11 +8,13 @@
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Link;
+use Drupal\Core\Render\Element;
 use Drupal\Core\Render\Markup;
 use Drupal\Core\StringTranslation\ByteSizeMarkup;
 use Drupal\Core\Template\Attribute;
 use Drupal\Core\Url;
 use Drupal\file\FileInterface;
+use Drupal\media\Entity\Media;
 use Drupal\node\Entity\Node;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\taxonomy\Entity\Vocabulary;
@@ -472,37 +474,53 @@ function nicsdru_corplite_theme_preprocess_form(array &$variables) {
   }
 }
 
-///**
-// * Implements hook_form_element_label().
-// */
-//function nicsdru_corplite_theme_preprocess_form_element_label(&$variables) {
-//  // Search the exposed filter label for text: 'Search' any word e.g. Search consultations.
-//  if (preg_match('/Search\D[a-z]+/', $variables['title']['#markup'])) {
-//    // Make the label invisible.
-//    $variables['title_display'] = "invisible";
-//  }
-//}
-//
-///**
-// * Implements hook_preprocess_views_view().
-// */
-//function nicsdru_corplite_theme_preprocess_views_view(&$variables) {
-//  $variables['attributes']['role'] = 'presentation';
-//
-//  if ($variables['id'] === 'search') {
-//    $variables['exposed']['#attributes']['class'][] = Html::cleanCssIdentifier('search-form');
-//    $variables['exposed']['#attributes']['class'][] = Html::cleanCssIdentifier('search-form--site');
-//    // Make the site search required.
-//    $variables['exposed']['query']['#required'] = TRUE;
-//    // See nicsdru_unity_theme_form_alter for a required pattern on the input. The data-msg-pattern overrides the default error message.
-//    $variables['exposed']['query']['#attributes']['data-msg-pattern'] = t('Query must begin with a letter or number.');
-//    // If a label for the search input is not defined in the view, set
-//    // default label text.
-//    $search_label =& $variables['exposed']['#info']['filter-search_api_fulltext']['label'];
-//    if (isset($search_label) && empty($search_label)) {
-//      $search_label = t("Search this site");
-//    }
-//    // The label should be visually hidden.
-//    $variables['exposed']['query']['#title_display'] = 'invisible';
-//  }
-//}
+/**
+ * Implements template_preprocess_field_group_html_element().
+ * Preprocessing the Additional content details field group used in the
+ * revision comparison view mode to remove the need to the contrib classy theme Drupal 10.
+ */
+function nicsdru_corplite_theme_preprocess_field_group_html_element(&$variables) {
+  $element = $variables['element'];
+  // Skipping News bundle as it has an image that can't be rendered as markup.
+  if ($element['#bundle'] === 'news') {
+    return;
+  }
+  if ($element['#group_name'] === 'group_additional_content_details') {
+    // Get group element children.
+    $children = Element::children($element);
+
+    if (!empty($children)) {
+      $new_children_output = '';
+      foreach ($children as $child) {
+        if (!empty($element[$child]['#object']) && !empty($variables['element'][$child]['#title'])) {
+          $child_title = $element[$child]['#title'];
+          $child_object = $element[$child]['#object'];
+          // Build new HTML to add the required classes to make the revision comparison styling to work.
+          $new_children_output .= '<div class="field field--label-inline">';
+          $new_children_output .= '<div class="field__label">' . $child_title . '</div>';
+          // If value is a number load the taxonomy term or a node.
+          if (is_numeric(current($child_object->get($child)->getValue()[0]))) {
+            $term = Term::load(current($child_object->get($child)
+              ->getValue()[0]));
+            // Check the term exists.
+            if (!empty($term)) {
+              $new_children_output .= '<div class="field__item">' . $term->getName() . '</div>';
+              // If it isn't a term then check if it is a node.
+            }
+            else {
+              $node = Node::load(current($child_object->get($child)->getValue()[0]));
+              if (!empty($node)) {
+                $new_children_output .= '<div class="field__item">' . $node->getTitle() . '</div>';
+              }
+            }
+          }
+          else {
+            $new_children_output .= '<div class="field__item">' . current($child_object->get($child)->getValue()[0]) . '</div>';
+          }
+          $new_children_output .= '</div>';
+        }
+      }
+      $variables['children'] = Markup::create($new_children_output);
+    }
+  }
+}
