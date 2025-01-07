@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.body
     - search_api.index.news_index
   module:
+    - corplite_search
     - search_api
     - text
     - views_custom_cache_tag
@@ -285,7 +286,16 @@ display:
           admin_label: ''
           plugin_id: result
           empty: false
-          content: '@total News items'
+          content: '@total Results'
+        search_sort_by:
+          id: search_sort_by
+          table: views
+          field: search_sort_by
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_sort_by
+          empty: false
       footer: {  }
       display_extenders: {  }
     cache_metadata:
@@ -306,6 +316,10 @@ display:
     display_plugin: page
     position: 1
     display_options:
+      cache:
+        type: none
+      defaults:
+        cache: false
       exposed_block: true
       display_extenders:
         metatag_display_extender:
