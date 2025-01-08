@@ -7,4 +7,32 @@
 
 function corplite_published_releases_feed_import() {
   \Drupal::logger('corplite_published_releases_feed')->notice("Called feed import successfully");
+  $data = NULL;
+  $client = \Drupal::service('http_client');
+  $config = \Drupal::config('corplite_published_releases_feed.settings');
+  $url = $config->get('data_source_url');
+
+  try {
+    $response = $client->get($url);
+
+    if ($response->getStatusCode() == 200) {
+      $xml_string = $response->getBody()->getContents();
+      $xml_doc = simplexml_load_string($xml_string);
+
+      $data = [];
+      foreach ($xml_doc->EDrow as $hospital) {
+        $data[] = [
+          'name' => (string) $hospital->{'EDName'},
+          'type' => (string) $hospital->{'EDType'},
+          'wait' => (string) $hospital->{'AverageWait'},
+          'hours' => (string) $hospital->{'EDHours'},
+        ];
+      }
+    }
+  }
+  catch (Exception $e) {
+    \Drupal::logger('corplite_published_releases_feed')->error($e);
+  }
+  Drupal::logger('corplite_published_releases_feed')->notice("Imported " . count($data));
+  Drupal::logger('corplite_published_releases_feed')->notice("Finished feed import successfully");
 }
