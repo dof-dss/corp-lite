@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\corplite_nisra_publications_feed\Entity;
+namespace Drupal\corplite_published_releases_feed\Entity;
 
 use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Entity\ContentEntityInterface;
