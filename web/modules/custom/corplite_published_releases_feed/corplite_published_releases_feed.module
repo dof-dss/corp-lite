@@ -5,13 +5,23 @@
  * Contains corplite_published_releases_feed.module.
  */
 
+use Drupal\corplite_published_releases_feed\Entity\PublishedReleases;
+
 function corplite_published_releases_feed_import() {
   \Drupal::logger('corplite_published_releases_feed')->notice("Called feed import successfully");
   $data = fetch_feed();
-  foreach ($data as $feed_item) {
-
-  }
   \Drupal::logger('corplite_published_releases_feed')->notice("Imported " . count($data));
+  foreach ($data as $feed_item) {
+    $release = new PublishedReleases();
+    $release->id = $data['id'];
+    $release->title = $data['title'];
+    $release->summary = $data['summary'];
+    $release->url = $data['url'];
+    $release->release_date = strtotime($data['release_date']);
+    $release->updated = strtotime($data['updated']);
+    $release->save();
+    \Drupal::logger('corplite_published_releases_feed')->notice("Stored id " . $data['id'] ." in database");
+  }
   \Drupal::logger('corplite_published_releases_feed')->notice("Finished feed import successfully");
 }
 
