@@ -1,0 +1,10 @@
+<?php
+
+/**
+ * @file
+ * Contains corplite_published_releases_feed.module.
+ */
+
+function corplite_published_releases_feed_import() {
+  \Drupal::logger('corplite_published_releases_feed')->notice("Called feed import successfully");
+}
