@@ -7,6 +7,12 @@
 
 function corplite_published_releases_feed_import() {
   \Drupal::logger('corplite_published_releases_feed')->notice("Called feed import successfully");
+  $data = fetch_feed();
+  \Drupal::logger('corplite_published_releases_feed')->notice("Imported " . count($data));
+  \Drupal::logger('corplite_published_releases_feed')->notice("Finished feed import successfully");
+}
+
+function fetch_feed() {
   $data = NULL;
   $client = \Drupal::service('http_client');
   $config = \Drupal::config('corplite_published_releases_feed.settings');
@@ -16,16 +22,18 @@ function corplite_published_releases_feed_import() {
     $response = $client->get($url);
 
     if ($response->getStatusCode() == 200) {
-      $xml_string = $response->getBody()->getContents();
-      $xml_doc = simplexml_load_string($xml_string);
+      //$feed_contents = $response->getBody()->getContents();
+      $feed_contents = json_decode(dummy_feed());
 
       $data = [];
-      foreach ($xml_doc->EDrow as $hospital) {
+      foreach ($feed_contents->entries as $row) {
         $data[] = [
-          'name' => (string) $hospital->{'EDName'},
-          'type' => (string) $hospital->{'EDType'},
-          'wait' => (string) $hospital->{'AverageWait'},
-          'hours' => (string) $hospital->{'EDHours'},
+          'id' => (integer) $row->id,
+          'title' => (string) $row->title,
+          'summary' => (string) $row->summary,
+          'url' => (string) $row->url,
+          'release_date' => (string) $row->release_date,
+          'updated' => (string) $row->updated,
         ];
       }
     }
@@ -33,6 +41,46 @@ function corplite_published_releases_feed_import() {
   catch (Exception $e) {
     \Drupal::logger('corplite_published_releases_feed')->error($e);
   }
-  Drupal::logger('corplite_published_releases_feed')->notice("Imported " . count($data));
-  Drupal::logger('corplite_published_releases_feed')->notice("Finished feed import successfully");
+  return $data;
+}
+
+function dummy_feed() {
+  return '{
+      "name": "nisra release calendar",
+      "updated": "2024-06-26T08:30:06Z",
+      "entries": [
+          {
+              "id": "2025012901",
+              "title": "Digital Skills in Northern Ireland 2023/24",
+              "summary": "",
+              "url": "",
+              "release_date": "2025-01-29T09:30:00Z",
+              "updated": "2024-12-03T10:31:00Z"
+          },
+          {
+              "id": "2025010301",
+              "title": "Deaths Registered in Northern Ireland - Week ending 27 December 2024",
+              "summary": "",
+              "url": "https://www.nisra.gov.uk/statistics/death-statistics/weekly-death-registrations-northern-ireland",
+              "release_date": "2025-01-03T09:30:00Z",
+              "updated": "2025-01-03T09:31:00Z"
+          },
+  {
+    "id": "2024122002",
+              "title": "Police recorded injury road traffic collisions and casualties Northern Ireland monthly report to 31 October 2024",
+              "summary": "",
+              "url": "https://www.psni.police.uk/about-us/our-publications-and-reports/official-statistics/road-traffic-collision-statistics",
+              "release_date": "2024-12-20T09:30:00Z",
+              "updated": "2024-12-21T00:30:06Z"
+          },
+  {
+    "id": "2024122001",
+              "title": "DVA Monthly Tests Conducted Statistics: November 2024",
+              "summary": "",
+              "url": "https://packages.drupal.org/8",
+              "release_date": "2024-12-20T09:30:006Z",
+              "updated": "2024-12-20T10:30:06Z"
+          }
+  ]
+  }';
 }
