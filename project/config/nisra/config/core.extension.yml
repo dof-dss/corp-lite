@@ -33,6 +33,7 @@ module:
   corplite_common: 0
   corplite_eu_cookie_compliance: 0
   corplite_image_styles: 0
+  corplite_published_releases_feed: 0
   corplite_search: 0
   csp: 0
   ctools: 0
