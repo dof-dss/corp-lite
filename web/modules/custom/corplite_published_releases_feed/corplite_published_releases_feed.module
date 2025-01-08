@@ -12,15 +12,14 @@ function corplite_published_releases_feed_import() {
   $data = fetch_feed();
   \Drupal::logger('corplite_published_releases_feed')->notice("Imported " . count($data));
   foreach ($data as $feed_item) {
-    $release = new PublishedReleases();
-    $release->id = $data['id'];
-    $release->title = $data['title'];
-    $release->summary = $data['summary'];
-    $release->url = $data['url'];
-    $release->release_date = strtotime($data['release_date']);
-    $release->updated = strtotime($data['updated']);
+    $release = PublishedReleases::create(['id' => $feed_item['id']]);
+    $release->set('title', $feed_item['title']);
+    $release->set('summary', $feed_item['summary']);
+    $release->set('url', $feed_item['url']);
+    $release->set('release_date', strtotime($feed_item['release_date']));
+    $release->set('updated', strtotime($feed_item['updated']));
     $release->save();
-    \Drupal::logger('corplite_published_releases_feed')->notice("Stored id " . $data['id'] ." in database");
+    \Drupal::logger('corplite_published_releases_feed')->notice("Stored id " . $feed_item['id'] ." in database");
   }
   \Drupal::logger('corplite_published_releases_feed')->notice("Finished feed import successfully");
 }
