@@ -38,7 +38,7 @@ class PublishedReleases extends ContentEntityBase implements ContentEntityInterf
       ->setLabel(t('Title'))
       ->setDescription(t('The name of the imported published release'))
       ->setSettings([
-        'max_length' => 128,
+        'max_length' => 256,
         'text_processing' => 0,
       ])
       ->setRequired(TRUE);
