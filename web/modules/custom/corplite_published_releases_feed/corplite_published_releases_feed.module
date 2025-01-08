@@ -8,6 +8,9 @@
 function corplite_published_releases_feed_import() {
   \Drupal::logger('corplite_published_releases_feed')->notice("Called feed import successfully");
   $data = fetch_feed();
+  foreach ($data as $feed_item) {
+
+  }
   \Drupal::logger('corplite_published_releases_feed')->notice("Imported " . count($data));
   \Drupal::logger('corplite_published_releases_feed')->notice("Finished feed import successfully");
 }
