@@ -1,0 +1,5 @@
+name: 'Corplite Nisra publications feed'
+type: module
+description: 'Import Nisra published releases from feed'
+core_version_requirement: ^8.8 || ^9 || ^10 || ^11
+package: 'Custom'
