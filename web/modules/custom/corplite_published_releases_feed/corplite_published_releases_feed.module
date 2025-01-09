@@ -12,14 +12,33 @@ function corplite_published_releases_feed_import() {
   $data = fetch_feed();
   \Drupal::logger('corplite_published_releases_feed')->notice("Imported " . count($data));
   foreach ($data as $feed_item) {
-    $release = PublishedReleases::create(['id' => $feed_item['id']]);
-    $release->set('title', $feed_item['title']);
-    $release->set('summary', $feed_item['summary']);
-    $release->set('url', $feed_item['url']);
-    $release->set('release_date', strtotime($feed_item['release_date']));
-    $release->set('updated', strtotime($feed_item['updated']));
-    $release->save();
-    \Drupal::logger('corplite_published_releases_feed')->notice("Stored id " . $feed_item['id'] ." in database");
+    $release = PublishedReleases::Load($feed_item['id']);
+    if (!empty($release)) {
+      // Published release exists, see if we need to update it.
+      if (strtotime($feed_item['updated']) > $release->updated->getString()) {
+        // Update the published release.
+        \Drupal::logger('corplite_published_releases_feed')->notice("Updating id " . $feed_item['id'] ." as has changed");
+        $release->set('title', $feed_item['title']);
+        $release->set('summary', $feed_item['summary']);
+        $release->set('url', $feed_item['url']);
+        $release->set('release_date', strtotime($feed_item['release_date']));
+        $release->set('updated', strtotime($feed_item['updated']));
+        $release->save();
+      } else {
+        // Published release has not changed, do nothing.
+        \Drupal::logger('corplite_published_releases_feed')->notice("Skipped id " . $feed_item['id'] ." as has not changed");
+      }
+    } else {
+      // Published release does not exist in the database, so store it.
+      $release = PublishedReleases::create(['id' => $feed_item['id']]);
+      $release->set('title', $feed_item['title']);
+      $release->set('summary', $feed_item['summary']);
+      $release->set('url', $feed_item['url']);
+      $release->set('release_date', strtotime($feed_item['release_date']));
+      $release->set('updated', strtotime($feed_item['updated']));
+      $release->save();
+      \Drupal::logger('corplite_published_releases_feed')->notice("Stored id " . $feed_item['id'] ." in database");
+    }
   }
   \Drupal::logger('corplite_published_releases_feed')->notice("Finished feed import successfully");
 }
@@ -91,7 +110,7 @@ function dummy_feed() {
               "summary": "",
               "url": "https://packages.drupal.org/8",
               "release_date": "2024-12-20T09:30:06Z",
-              "updated": "2024-12-20T10:30:06Z"
+              "updated": "2024-12-20T10:30:08Z"
           }
   ]
   }';
