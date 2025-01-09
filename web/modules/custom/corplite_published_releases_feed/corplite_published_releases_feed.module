@@ -7,6 +7,9 @@
 
 use Drupal\corplite_published_releases_feed\Entity\PublishedReleases;
 
+/**
+ * Cron callback function to run feed.
+ */
 function corplite_published_releases_feed_import() {
   \Drupal::logger('corplite_published_releases_feed')->notice("Called feed import successfully");
   $data = fetch_feed();
@@ -18,12 +21,7 @@ function corplite_published_releases_feed_import() {
       if (strtotime($feed_item['updated']) > $release->updated->getString()) {
         // Update the published release.
         \Drupal::logger('corplite_published_releases_feed')->notice("Updating id " . $feed_item['id'] ." as has changed");
-        $release->set('title', $feed_item['title']);
-        $release->set('summary', $feed_item['summary']);
-        $release->set('url', $feed_item['url']);
-        $release->set('release_date', strtotime($feed_item['release_date']));
-        $release->set('updated', strtotime($feed_item['updated']));
-        $release->save();
+        update_release_object($release, $feed_item);
       } else {
         // Published release has not changed, do nothing.
         \Drupal::logger('corplite_published_releases_feed')->notice("Skipped id " . $feed_item['id'] ." as has not changed");
@@ -31,18 +29,28 @@ function corplite_published_releases_feed_import() {
     } else {
       // Published release does not exist in the database, so store it.
       $release = PublishedReleases::create(['id' => $feed_item['id']]);
-      $release->set('title', $feed_item['title']);
-      $release->set('summary', $feed_item['summary']);
-      $release->set('url', $feed_item['url']);
-      $release->set('release_date', strtotime($feed_item['release_date']));
-      $release->set('updated', strtotime($feed_item['updated']));
-      $release->save();
+      update_release_object($release, $feed_item);
       \Drupal::logger('corplite_published_releases_feed')->notice("Stored id " . $feed_item['id'] ." in database");
     }
   }
   \Drupal::logger('corplite_published_releases_feed')->notice("Finished feed import successfully");
 }
 
+/**
+ * Update the release object.
+ */
+function update_release_object($release, $feed_item) {
+  $release->set('title', $feed_item['title']);
+  $release->set('summary', $feed_item['summary']);
+  $release->set('url', $feed_item['url']);
+  $release->set('release_date', strtotime($feed_item['release_date']));
+  $release->set('updated', strtotime($feed_item['updated']));
+  $release->save();
+}
+
+/**
+ * Retrieve the JSON feed.
+ */
 function fetch_feed() {
   $data = NULL;
   $client = \Drupal::service('http_client');
