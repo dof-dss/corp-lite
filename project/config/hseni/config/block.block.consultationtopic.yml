@@ -12,7 +12,7 @@ dependencies:
 id: consultationtopic
 theme: hseni_theme
 region: sidebar_first
-weight: -7
+weight: -6
 provider: null
 plugin: 'facet_block:consultation_topic'
 settings:

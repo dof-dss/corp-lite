@@ -1,0 +1,8 @@
+uuid: e9db1bde-689b-4b6f-b21f-500d1ebe384d
+langcode: en
+status: true
+dependencies: {  }
+id: consultation_format
+label: 'Consultation format'
+locked: false
+pattern: 'd F Y, g:i a'
