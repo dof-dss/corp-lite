@@ -29,7 +29,6 @@ function corplite_published_releases_feed_import() {
     } else {
       // Published release does not exist in the database, so store it.
       $release = PublishedReleases::create(['id' => $feed_item['id']]);
-      $release->set('id', $feed_item['id']);
       update_release_object($release, $feed_item);
       $imported++;
       //\Drupal::logger('corplite_published_releases_feed')->notice("Stored id " . $feed_item['id'] ." in database");
