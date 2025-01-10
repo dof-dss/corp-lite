@@ -5,7 +5,6 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser_large
     - field.field.node.news.body
-    - field.field.node.news.field_feature_home_page
     - field.field.node.news.field_main_feature
     - field.field.node.news.field_meta_tags
     - field.field.node.news.field_news_type
@@ -59,7 +58,6 @@ content:
 hidden:
   body: true
   content_moderation_control: true
-  field_feature_home_page: true
   field_main_feature: true
   field_meta_tags: true
   field_notes_to_editors: true
