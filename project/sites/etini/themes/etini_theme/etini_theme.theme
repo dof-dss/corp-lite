@@ -32,6 +32,9 @@ function etini_theme_preprocess_page(array &$variables) {
           $variables['main_content_attr']->addClass(LayoutClasses::MAIN_LIMITED);
           break;
       }
+      // Add the main with a limited width to taxonomy terms also.
+    } else {
+      $variables['main_content_attr']->addClass(LayoutClasses::MAIN_LIMITED);
     }
   }
 

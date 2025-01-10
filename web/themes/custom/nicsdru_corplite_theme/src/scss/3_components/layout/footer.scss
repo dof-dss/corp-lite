@@ -4,6 +4,31 @@
  */
 @use '../../init' as *;
 
+$link-footer: (
+  color: (
+    default: #558,
+    focus: #fff,
+    active: #d1431f
+  ),
+  background-color: (
+    default: transparent,
+    focus: #558,
+  ),
+  text-decoration: (
+    default: underline 1px !important,
+    hover: underline 2px !important,
+  ),
+  text-underline-offset: 3px,
+  outline: (
+    default: 0,
+    focus: '3px solid #558',
+  ),
+  outline-offset: (
+    default: null,
+    focus: 0,
+  )
+);
+
 .footer {
   width: 100%;
   background-color: var(--clr-grey-light);
@@ -14,12 +39,25 @@
   margin-top: 3em;
   border-top: 5px solid var(--clr-brand-primary);
 
+  a {
+    @include link-state-style($link-footer);
+
+    &:active:not(.button, .btn) {
+      // Remove the gray background on active links in IE 10.
+      background-color: transparent;
+    }
+  }
+
   .nav {
     &-menu {
       @include breakpoint($lap) {
         margin-bottom: 0;
       }
     }
+
+    //.nav-menu a, .nav-link {
+    //  text-decoration: none;
+    //}
 
     &-social {
       grid-area: social;

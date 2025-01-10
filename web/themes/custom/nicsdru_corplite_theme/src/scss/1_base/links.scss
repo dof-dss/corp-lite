@@ -27,32 +27,32 @@ a,
   }
 }
 
-// Any element can receive focus, but only links can be visited, so we can
-// safely lower this selector's specificity. This also ensures visited links
-// with additional styles won't have their styles overridden.
-:visited {
-  color: var(--clr-link-visited);
-}
-
-a:hover,
-a:focus {
-  color: var(--clr-link-hover);
-  text-decoration: underline;
-}
-
-// address 'outline' inconsistency between Chrome and other browsers
-a:focus {
-  outline: thin dotted;
-}
-
-a:active {
-  color: var(--clr-link-active);
-
-  &:not(.button) {
-    // Remove the gray background on active links in IE 10.
-    background-color: transparent;
-  }
-}
+//// Any element can receive focus, but only links can be visited, so we can
+//// safely lower this selector's specificity. This also ensures visited links
+//// with additional styles won't have their styles overridden.
+//:visited {
+//  color: var(--clr-link-visited);
+//}
+//
+//a:hover,
+//a:focus {
+//  color: var(--clr-link-hover);
+//  text-decoration: underline;
+//}
+//
+//// address 'outline' inconsistency between Chrome and other browsers
+//a:focus {
+//  outline: thin dotted;
+//}
+//
+//a:active {
+//  color: var(--clr-link-active);
+//
+//  &:not(.button) {
+//    // Remove the gray background on active links in IE 10.
+//    background-color: transparent;
+//  }
+//}
 
 a[aria-hidden='true'] {
   @include visually-hidden;

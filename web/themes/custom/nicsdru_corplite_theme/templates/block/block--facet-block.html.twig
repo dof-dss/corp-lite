@@ -37,7 +37,7 @@
 <div{{ attributes }}>
   {{ title_prefix }}
   {% if label %}
-    <div{{ title_attributes.addClass('facet--title') }}>{{ 'Filter by'|t }} {{ label|lower }}</div>
+    <div{{ title_attributes.addClass('facet--title') }}>{{ label }}</div>
   {% endif %}
   {{ title_suffix }}
   {% block content %}
