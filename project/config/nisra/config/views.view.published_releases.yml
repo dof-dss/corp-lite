@@ -31,7 +31,7 @@ display:
           entity_field: title
           plugin_id: field
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -66,7 +66,7 @@ display:
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -95,7 +95,7 @@ display:
           entity_field: summary
           plugin_id: field
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -130,7 +130,7 @@ display:
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -159,7 +159,7 @@ display:
           entity_field: url
           plugin_id: field
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -194,7 +194,7 @@ display:
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -225,8 +225,8 @@ display:
           label: ''
           exclude: false
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: "<div>\r\n{% if url|length > 0 %}\r\n  <p><a href='{{ url }}'>{{ title }}</a></p>\r\n{% else %}\r\n  <p><b'>{{ title }}</b></p>\r\n{% endif %}\r\n<p>{{ summary }}</p>\r\n<p>Updated: {{ release_date }}</p>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -258,7 +258,7 @@ display:
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -395,11 +395,14 @@ display:
         operator: AND
         groups: {  }
       style:
-        type: default
+        type: html_list
         options:
           grouping: {  }
           row_class: ''
           default_row_class: true
+          type: ul
+          wrapper_class: item-list
+          class: ''
       row:
         type: fields
         options:
@@ -458,8 +461,8 @@ display:
           plugin_id: text
           empty: true
           content:
-            value: "<h1>Current Published Releases</h1>\r\n<br/>\r\n<a href=\"/published-releases-upcoming\">See upcoming releases</a>"
-            format: basic_html
+            value: "<h1>Current Published Releases</h1>\r\n<a href=\"/published-releases-upcoming\">See upcoming releases</a>\r\n<br/>\r\n<br/>"
+            format: full_html
           tokenize: false
       display_extenders:
         metatag_display_extender:
@@ -548,8 +551,8 @@ display:
           plugin_id: text
           empty: true
           content:
-            value: "<h1>Upcoming Published Releases</h1>\r\n<br/>\r\n<a href=\"/published-releases-current\">See current releases</a>"
-            format: basic_html
+            value: "<h1>Upcoming Published Releases</h1>\r\n<a href=\"/published-releases-current\">See current releases</a>\r\n<br/>\r\n<br/>"
+            format: full_html
           tokenize: false
       display_extenders:
         metatag_display_extender:
