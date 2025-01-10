@@ -1,0 +1,25 @@
+uuid: 76d6e98c-ef33-4bbc-9ef4-330468c05059
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.alerts_index
+    - views.view.alerts_search
+  module:
+    - search_api
+id: alerts_summary
+name: 'Alerts Summary'
+facet_source_id: 'search_api:views_page__alerts_search__alerts_search'
+processor_configs:
+  hide_when_not_rendered:
+    processor_id: hide_when_not_rendered
+    weights:
+      build: '45'
+    settings: {  }
+facets:
+  published_date_alerts:
+    checked: true
+    label: 'Published date'
+    separator: ', '
+    show_count: false
+    weight: 0

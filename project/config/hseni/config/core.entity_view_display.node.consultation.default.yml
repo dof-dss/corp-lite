@@ -17,9 +17,34 @@ dependencies:
     - node.type.consultation
   module:
     - datetime_range
+    - field_group
     - link
     - text
     - user
+third_party_settings:
+  field_group:
+    group_ways_to_respond:
+      children:
+        - field_respond_online
+        - field_email_address
+        - field_postal
+      label: 'Ways to respond'
+      parent_name: ''
+      region: content
+      weight: 4
+      format_type: html_element
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        description: ''
 _core:
   default_config_hash: KzrPm7ziIwz-bVVSpNPhGx00hHxUdUPbZQGFnRACANA
 id: node.consultation.default
@@ -32,7 +57,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 2
     region: content
   field_attachment:
     type: entity_reference_entity_view
@@ -41,14 +66,14 @@ content:
       view_mode: default
       link: false
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   field_consultation_dates:
     type: daterange_default
     label: above
     settings:
       timezone_override: ''
-      format_type: medium
+      format_type: consultation_format
       from_to: both
       separator: '-'
     third_party_settings: {  }
@@ -59,28 +84,18 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 5
-    region: content
-  field_feature_home_page:
-    type: boolean
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    weight: 5
+    weight: 6
     region: content
   field_postal:
     type: basic_string
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 6
+    weight: 7
     region: content
   field_respond_online:
     type: link
-    label: hidden
+    label: above
     settings:
       trim_length: 80
       url_only: false
@@ -88,7 +103,7 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 4
+    weight: 5
     region: content
   field_summary:
     type: basic_string
@@ -99,6 +114,7 @@ content:
     region: content
 hidden:
   content_moderation_control: true
+  field_feature_home_page: true
   field_meta_tags: true
   field_published_date: true
   field_site_topics: true
