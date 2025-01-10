@@ -20,7 +20,6 @@ function corplite_published_releases_feed_import() {
       // Published release exists, see if we need to update it.
       if (strtotime($feed_item['updated']) > $release->updated->getString()) {
         // Update the published release.
-        \Drupal::logger('corplite_published_releases_feed')->notice("Updating id " . $feed_item['id'] ." as has changed");
         update_release_object($release, $feed_item);
         $updated++;
       } else {
@@ -31,7 +30,6 @@ function corplite_published_releases_feed_import() {
       $release = PublishedReleases::create(['id' => $feed_item['id']]);
       update_release_object($release, $feed_item);
       $imported++;
-      //\Drupal::logger('corplite_published_releases_feed')->notice("Stored id " . $feed_item['id'] ." in database");
     }
   }
   \Drupal::logger('corplite_published_releases_feed')->notice("Nisra published releases feed - imported " . $imported . ", updated " . $updated);
@@ -84,45 +82,4 @@ function fetch_feed() {
     \Drupal::logger('corplite_published_releases_feed')->error($e);
   }
   return $data;
-}
-
-function dummy_feed() {
-  return '{
-      "name": "nisra release calendar",
-      "updated": "2024-06-26T08:30:06Z",
-      "entries": [
-          {
-              "id": "2025012901",
-              "title": "Digital Skills in Northern Ireland 2023/24",
-              "summary": "",
-              "url": "",
-              "release_date": "2025-01-29T09:30:00Z",
-              "updated": "2024-12-03T10:31:00Z"
-          },
-          {
-              "id": "2025010301",
-              "title": "Deaths Registered in Northern Ireland - Week ending 27 December 2024",
-              "summary": "",
-              "url": "https://www.nisra.gov.uk/statistics/death-statistics/weekly-death-registrations-northern-ireland",
-              "release_date": "2025-01-03T09:30:00Z",
-              "updated": "2025-01-03T09:31:00Z"
-          },
-  {
-    "id": "2024122002",
-              "title": "Police recorded injury road traffic collisions and casualties Northern Ireland monthly report to 31 October 2024",
-              "summary": "",
-              "url": "https://www.psni.police.uk/about-us/our-publications-and-reports/official-statistics/road-traffic-collision-statistics",
-              "release_date": "2024-12-20T09:30:00Z",
-              "updated": "2024-12-21T00:30:06Z"
-          },
-  {
-    "id": "2024122001",
-              "title": "DVA Monthly Tests Conducted Statistics: November 2024",
-              "summary": "",
-              "url": "https://packages.drupal.org/8",
-              "release_date": "2024-12-20T09:30:06Z",
-              "updated": "2024-12-20T10:30:08Z"
-          }
-  ]
-  }';
 }
