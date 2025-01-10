@@ -23,6 +23,7 @@ function hseni_theme_preprocess_page(array &$variables) {
         case "news":
         case "page":
         case "alert":
+        case "article":
           $variables['main_content_attr']->addClass(LayoutClasses::MAIN_SIDE);
           $variables['sidebar_second_attr']->addClass('ga-aside');
           break;

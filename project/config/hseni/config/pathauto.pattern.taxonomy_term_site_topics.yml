@@ -7,11 +7,12 @@ dependencies:
 id: taxonomy_term_site_topics
 label: 'Taxonomy term - Site topics'
 type: 'canonical_entities:taxonomy_term'
-pattern: 'topic/[term:parent:name]/[term:name]'
+pattern: '[term:name]'
 selection_criteria:
-  -
+  9793826a-cc84-46b7-9c03-7968e7c731be:
     id: 'entity_bundle:taxonomy_term'
     negate: false
+    uuid: 9793826a-cc84-46b7-9c03-7968e7c731be
     context_mapping:
       taxonomy_term: taxonomy_term
     bundles:
