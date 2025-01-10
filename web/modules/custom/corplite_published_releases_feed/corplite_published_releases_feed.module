@@ -61,8 +61,8 @@ function fetch_feed() {
     $response = $client->get($url);
 
     if ($response->getStatusCode() == 200) {
-      //$feed_contents = $response->getBody()->getContents();
-      $feed_contents = json_decode(dummy_feed());
+      $feed_contents = $response->getBody()->getContents();
+      $feed_contents = json_decode($feed_contents);
 
       $data = [];
       foreach ($feed_contents->entries as $row) {
