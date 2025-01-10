@@ -11,7 +11,7 @@ field_name: field_site_topics
 entity_type: node
 bundle: secure_market_statistics
 label: Statistics
-description: 'Choose relevant site topic(s) for this publication.'
+description: 'Choose relevant site topic(s) for this publication. Hold down Ctrl to choose multiple site topics.'
 required: false
 translatable: false
 default_value: {  }
