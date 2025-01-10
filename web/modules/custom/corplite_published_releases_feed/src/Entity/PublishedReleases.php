@@ -28,17 +28,21 @@ class PublishedReleases extends ContentEntityBase implements ContentEntityInterf
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
     $fields = parent::baseFieldDefinitions($entity_type);
 
-    $fields['id'] = BaseFieldDefinition::create('integer')
+    $fields['id'] = BaseFieldDefinition::create('string')
       ->setLabel(t('ID'))
       ->setDescription(t('The ID of the imported published release'))
       ->setReadOnly(TRUE)
+      ->setSettings([
+        'max_length' => 512,
+        'text_processing' => 0,
+      ])
       ->setRequired(TRUE);
 
     $fields['title'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Title'))
       ->setDescription(t('The name of the imported published release'))
       ->setSettings([
-        'max_length' => 256,
+        'max_length' => 512,
         'text_processing' => 0,
       ])
       ->setRequired(TRUE);
@@ -47,7 +51,7 @@ class PublishedReleases extends ContentEntityBase implements ContentEntityInterf
       ->setLabel(t('Summary'))
       ->setDescription(t('Summary text for the imported published release'))
       ->setSettings([
-        'max_length' => 512,
+        'max_length' => 1024,
         'text_processing' => 0,
       ])
       ->setRequired(FALSE);
@@ -56,7 +60,7 @@ class PublishedReleases extends ContentEntityBase implements ContentEntityInterf
       ->setLabel(t('URL'))
       ->setDescription(t('URL for the release document'))
       ->setSettings([
-        'max_length' => 256,
+        'max_length' => 512,
         'text_processing' => 0,
       ])
       ->setRequired(FALSE);

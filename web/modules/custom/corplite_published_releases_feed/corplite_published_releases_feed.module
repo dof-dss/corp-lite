@@ -11,9 +11,9 @@ use Drupal\corplite_published_releases_feed\Entity\PublishedReleases;
  * Cron callback function to run feed.
  */
 function corplite_published_releases_feed_import() {
-  \Drupal::logger('corplite_published_releases_feed')->notice("Called feed import successfully");
   $data = fetch_feed();
-  \Drupal::logger('corplite_published_releases_feed')->notice("Imported " . count($data));
+  $updated = 0;
+  $imported = 0;
   foreach ($data as $feed_item) {
     $release = PublishedReleases::Load($feed_item['id']);
     if (!empty($release)) {
@@ -22,18 +22,20 @@ function corplite_published_releases_feed_import() {
         // Update the published release.
         \Drupal::logger('corplite_published_releases_feed')->notice("Updating id " . $feed_item['id'] ." as has changed");
         update_release_object($release, $feed_item);
+        $updated++;
       } else {
         // Published release has not changed, do nothing.
-        \Drupal::logger('corplite_published_releases_feed')->notice("Skipped id " . $feed_item['id'] ." as has not changed");
       }
     } else {
       // Published release does not exist in the database, so store it.
       $release = PublishedReleases::create(['id' => $feed_item['id']]);
+      $release->set('id', $feed_item['id']);
       update_release_object($release, $feed_item);
-      \Drupal::logger('corplite_published_releases_feed')->notice("Stored id " . $feed_item['id'] ." in database");
+      $imported++;
+      //\Drupal::logger('corplite_published_releases_feed')->notice("Stored id " . $feed_item['id'] ." in database");
     }
   }
-  \Drupal::logger('corplite_published_releases_feed')->notice("Finished feed import successfully");
+  \Drupal::logger('corplite_published_releases_feed')->notice("Nisra published releases feed - imported " . $imported . ", updated " . $updated);
 }
 
 /**
@@ -66,14 +68,16 @@ function fetch_feed() {
 
       $data = [];
       foreach ($feed_contents->entries as $row) {
-        $data[] = [
-          'id' => (integer) $row->id,
-          'title' => (string) $row->title,
-          'summary' => (string) $row->summary,
-          'url' => (string) $row->url,
-          'release_date' => (string) $row->release_date,
-          'updated' => (string) $row->updated,
-        ];
+        if (!empty($row->id)) {
+          $data[] = [
+            'id' => (string) $row->id,
+            'title' => (string) !empty($row->title) ? $row->title : '',
+            'summary' => (string) !empty($row->summary) ? $row->summary : '',
+            'url' => (string) !empty($row->url) ? $row->url : '',
+            'release_date' => (string) !empty($row->release_date) ? $row->release_date : '',
+            'updated' => (string) !empty($row->updated) ? $row->updated : '',
+          ];
+        }
       }
     }
   }
