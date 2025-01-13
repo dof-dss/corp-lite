@@ -20,7 +20,7 @@ function corplite_published_releases_feed_import() {
       // Published release exists, see if we need to update it.
       if (strtotime($feed_item['updated']) > $release->updated->getString()) {
         // Update the published release.
-        corplite_published_releases_update_release_object($release, $feed_item);
+        corplite_published_releases_feed_update_release_object($release, $feed_item);
         $updated++;
       }
       else {
@@ -30,7 +30,7 @@ function corplite_published_releases_feed_import() {
     else {
       // Published release does not exist in the database, so store it.
       $release = PublishedReleases::create(['id' => $feed_item['id']]);
-      corplite_published_releases_update_release_object($release, $feed_item);
+      corplite_published_releases_feed_update_release_object($release, $feed_item);
       $imported++;
     }
   }
@@ -40,7 +40,7 @@ function corplite_published_releases_feed_import() {
 /**
  * Update the release object.
  */
-function corplite_published_releases_update_release_object($release, $feed_item) {
+function corplite_published_releases_feed_update_release_object($release, $feed_item) {
   $release->set('title', $feed_item['title']);
   $release->set('summary', $feed_item['summary']);
   $release->set('url', $feed_item['url']);
@@ -52,7 +52,7 @@ function corplite_published_releases_update_release_object($release, $feed_item)
 /**
  * Retrieve the JSON feed.
  */
-function corplite_published_releases_fetch_feed() {
+function corplite_published_releases_feed_fetch_feed() {
   $data = NULL;
   $client = \Drupal::service('http_client');
   $config = \Drupal::config('corplite_published_releases_feed.settings');
