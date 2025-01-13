@@ -25,7 +25,7 @@ use Drupal\Core\Field\BaseFieldDefinition;
  * )
  */
 class PublishedReleases extends ContentEntityBase implements ContentEntityInterface {
-  
+
   /**
    * Base field definitions.
    */
