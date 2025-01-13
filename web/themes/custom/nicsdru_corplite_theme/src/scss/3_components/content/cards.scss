@@ -88,19 +88,22 @@ $link-heading-no-visited: (
     > p,
     > ul,
     > ol {
-      //@include responsive-typo-map($smallish-text);
+      font-size: 1.5rem;
+      line-height: 2.4rem;
       margin: var(--rhythm-spacing-sm) 0;
     }
   }
 
   &__title {
-    //@include responsive-typo-map($card-title);
+    font-size: 2.4rem;
+    line-height: 3.3rem;
     margin: 0 0 var(--rhythm-spacing-sm);
     color: var(--clr-link)
   }
 
   &__meta {
-    //@include responsive-typo-map($small-text);
+    font-size: 1.6rem;
+    line-height: 2.4rem;
     color: var(--clr-grey-dark);
     margin: var(--rhythm-spacing-sm) 0 0;
 
@@ -414,14 +417,16 @@ a.card {
       border: 0;
 
       &__title {
-        //@include responsive-typo-map($medium-text);
+        font-size: 2rem;
+        line-height: 3.3rem;
         margin: 0;
         padding: 0;
       }
 
       &__summary,
       &__content {
-        //@include responsive-typo-map($smallish-text);
+        font-size: 1.7rem;
+        line-height: 2.4rem;
         margin: var(--rhythm-spacing-xs) 0 0;
 
         * {
@@ -432,7 +437,7 @@ a.card {
         p,
         div {
           &:first-child {
-            margin-top: 0;
+            margin-top: .3rem;
           }
 
           &:last-child {
@@ -441,8 +446,10 @@ a.card {
         }
       }
 
-      &__meta {
-        //@include responsive-typo-map($small-text);
+      &__meta,
+      .site-topics--item {
+        font-size: 1.6rem;
+        line-height: 2.4rem;
         margin: var(--rhythm-spacing-sm) 0 0;
         padding: 0;
 
@@ -531,7 +538,8 @@ a.card {
       }
 
       &__title {
-        //@include responsive-typo-map($large-text);
+        font-size: 2rem;
+        line-height: 3.3rem;
         margin: 0;
 
         a {
@@ -543,7 +551,8 @@ a.card {
         margin: .5em 0 0;
 
         *:not(ul) {
-         // @include responsive-typo-map($smallish-text);
+          font-size: 1.5rem;
+          line-height: 2.4rem;
         }
 
         p,

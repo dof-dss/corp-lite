@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.body
     - search_api.index.publications_index
   module:
+    - corplite_search
     - search_api
     - text
 id: publication_search
@@ -290,7 +291,16 @@ display:
           admin_label: ''
           plugin_id: result
           empty: false
-          content: '@total publication results'
+          content: '@total publications'
+        search_sort_by:
+          id: search_sort_by
+          table: views
+          field: search_sort_by
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_sort_by
+          empty: false
       footer: {  }
       display_extenders: {  }
     cache_metadata:

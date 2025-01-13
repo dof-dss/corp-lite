@@ -65,14 +65,10 @@ content:
       use_details: true
     third_party_settings: {  }
   field_site_topics:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 10
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: 'Choose some topics'
+    settings: {  }
     third_party_settings: {  }
   field_summary:
     type: string_textarea

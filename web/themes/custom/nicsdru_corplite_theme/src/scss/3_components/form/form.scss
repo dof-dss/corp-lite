@@ -7,7 +7,8 @@
 
 %error-bubble {
 
-  //@include responsive-typo-map($normal-text-no-margins);
+  font-size: 1.6rem;
+  line-height: 2.4rem;
   display: block;
   position: relative;
   z-index: 101;
@@ -128,12 +129,14 @@ form > .form-item,
 }
 
 .description {
-  //@include responsive-typo-map($small-text);
+  font-size: 1.6rem;
+  line-height: 2.4rem;
   margin: .5em 0;
 
   .fieldset-wrapper .field-prefix &,
   .fieldset-wrapper .field-suffix & {
-    //@include responsive-typo-map($normal-text-no-margins);
+    font-size: 1.6rem;
+    line-height: 2.4rem;
     margin: 1em 0 0;
   }
 }
@@ -177,7 +180,8 @@ form > .form-wrapper > section {
   > legend,
   > .legend,
   > h2 {
-    //@include responsive-typo-map($form-legend);
+    font-size: 2.1rem;
+    line-height: 2.8rem;
     color: #333;
     font-weight: normal;
   }
@@ -186,7 +190,8 @@ form > .form-wrapper > section {
  .legend--plain,
   fieldset legend,
   section h2 {
-    //@include responsive-typo-map($form-legend-plain);
+    font-size: 1.6rem;
+    line-height: 2.4rem;
     color: var(--clr-body-text);
   }
 
@@ -197,7 +202,8 @@ form > .form-wrapper > section {
 
 label,
 .label {
-  //@include responsive-typo-map($normal-text-no-margins);
+  font-size: 1.6rem;
+  line-height: 2.4rem;
   display: block;
   margin: 0;
   padding: 0;
@@ -205,7 +211,8 @@ label,
   font-weight: normal;
 
   &--small {
-    //@include responsive-typo-map($small-text);
+    font-size: 1.6rem;
+    line-height: 2.4rem;
     margin: 0 0 .8rem;
 
     @include breakpoint($tab) {

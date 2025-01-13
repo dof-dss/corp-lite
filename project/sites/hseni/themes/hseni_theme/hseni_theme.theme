@@ -22,6 +22,8 @@ function hseni_theme_preprocess_page(array &$variables) {
         // Specific node types have a main and aside.
         case "news":
         case "page":
+        case "alert":
+        case "article":
           $variables['main_content_attr']->addClass(LayoutClasses::MAIN_SIDE);
           $variables['sidebar_second_attr']->addClass('ga-aside');
           break;
@@ -31,6 +33,9 @@ function hseni_theme_preprocess_page(array &$variables) {
           $variables['main_content_attr']->addClass(LayoutClasses::MAIN_LIMITED);
           break;
       }
+      // Add the main with a limited width to taxonomy terms also.
+    } else {
+      $variables['main_content_attr']->addClass(LayoutClasses::MAIN_LIMITED);
     }
   }
 
@@ -64,6 +69,14 @@ function hseni_theme_preprocess_page(array &$variables) {
           ->addClass('ga-aside')
           ->setAttribute('role', 'search')
           ->setAttribute('aria-roledescription', t('search consultations'));
+        break;
+
+      case "alerts_search":
+        $variables['main_content_attr']->addClass(LayoutClasses::SIDE_MAIN);
+        $variables['sidebar_first_attr']
+          ->addClass('ga-aside')
+          ->setAttribute('role', 'search')
+          ->setAttribute('aria-roledescription', t('search alerts'));
         break;
 
       case "search":

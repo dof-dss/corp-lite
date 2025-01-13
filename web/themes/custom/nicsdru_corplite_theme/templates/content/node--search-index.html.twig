@@ -5,6 +5,11 @@
 #}
 <a class="card card--plain no-ext-icon" href="{{ url }}">
   <h3 class="card__title">{{ label }}</h3>
+  {%- if content.field_summary %}
+  <div class="card__summary">
+    {{ content.field_summary }}
+  </div>
+  {% endif %}
   <div class="card__meta">
     {%- if content.field_published_date %}
       <span class="card__meta-item field-published-date">{{ 'Published'|t }} {{ content.field_published_date }}</span>

@@ -23,11 +23,7 @@
  * @see template_preprocess_taxonomy_term()
  */
 #}
-<article class="card card--plain">
-  {% if name and not page %}
-  <h3 class="card__title"><a href="{{ url }}">{{ name }}</a></h3>
-  {% endif %}
-  <div class="card__content">
+<article{{ attributes.addClass('ga-main').setAttribute('id', 'main-article').removeAttribute('role') }}>
+  {{ drupal_block('page_title_block', wrapper=false) }}
   {{ content }}
-  </div>
 </article>

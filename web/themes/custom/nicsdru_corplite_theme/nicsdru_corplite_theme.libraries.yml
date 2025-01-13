@@ -46,6 +46,8 @@ corplite-styling:
     theme:
       css/3_components/navigation/pager.css: { minified: true }
       css/3_components/content/tables.css: { minified: true }
+      css/5_theme/searches.css: { minified: true }
+      css/5_theme/entities.css: { minified: true }
       '//fonts.googleapis.com/css2?family=Roboto': { type: external }
   js:
     js/ext-win-script.js: { minified: true }

@@ -1,7 +1,9 @@
 uuid: a38a90e1-fe56-4196-938e-54dc863bb262
 langcode: en
 status: true
-dependencies: { }
+dependencies: {  }
+_core:
+  default_config_hash: wBjcR8BnBrDs7u_xsikZW37yj-2OJOr7clO6NCgCvLM
 id: upgrade_d7_file_video
 class: Drupal\migrate\Plugin\Migration
 field_plugin_method: alterFieldInstanceMigration
@@ -15,34 +17,35 @@ source:
   type: video
   batch_size: 1000
   constants:
-    bundle: 'remote_video'
+    bundle: remote_video
 process:
   mid: fid
-  bundle: 'constants/bundle'
+  bundle: constants/bundle
   langcode:
     plugin: default_value
     source: language
-    default_value: "und"
+    default_value: und
   name: filename
   uid:
-    - plugin: skip_on_empty
+    -
+      plugin: skip_on_empty
       method: process
       source: uid
-    - plugin: migration_lookup
+    -
+      plugin: migration_lookup
       migration: my_users
   status: status
   created: timestamp
   changed: timestamp
   field_media_oembed_video:
-    - source: uri
+    -
+      source: uri
       plugin: video_url
-  # Title field.
   field_title: field_title
-  # Transcript field.
   field_transcript: field_transcript
 destination:
-  plugin: entity:media
+  plugin: 'entity:media'
 migration_dependencies:
   required:
     - upgrade_d7_file
-  optional: { }
+  optional: {  }
