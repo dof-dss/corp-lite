@@ -486,6 +486,23 @@ display:
     position: 1
     display_options:
       title: 'Published Releases - Upcoming'
+      sorts:
+        release_date:
+          id: release_date
+          table: published_releases
+          field: release_date
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: published_releases
+          entity_field: release_date
+          plugin_id: date
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
+          granularity: second
       filters:
         release_date:
           id: release_date
@@ -540,6 +557,7 @@ display:
           1: AND
       defaults:
         title: false
+        sorts: false
         filters: false
         filter_groups: false
         header: false
