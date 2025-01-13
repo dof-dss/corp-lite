@@ -154,7 +154,7 @@
         "drupal/masquerade": "^2.0@RC",
         "drupal/migrate_plus": "^6.0",
         "drupal/migrate_tools": "^6.0",
-        "drupal/stage_file_proxy": "^2.1",
+        "drupal/stage_file_proxy": "^3.0.x.dev",
         "drupal/upgrade_status": "^4.0",
         "kint-php/kint": "^5.0",
         "mglaman/drupal-check": "^1.4",
