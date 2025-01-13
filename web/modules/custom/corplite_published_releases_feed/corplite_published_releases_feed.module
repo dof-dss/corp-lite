@@ -22,10 +22,12 @@ function corplite_published_releases_feed_import() {
         // Update the published release.
         update_release_object($release, $feed_item);
         $updated++;
-      } else {
+      }
+      else {
         // Published release has not changed, do nothing.
       }
-    } else {
+    }
+    else {
       // Published release does not exist in the database, so store it.
       $release = PublishedReleases::create(['id' => $feed_item['id']]);
       update_release_object($release, $feed_item);
@@ -38,7 +40,7 @@ function corplite_published_releases_feed_import() {
 /**
  * Update the release object.
  */
-function update_release_object($release, $feed_item) {
+private function update_release_object($release, $feed_item) {
   $release->set('title', $feed_item['title']);
   $release->set('summary', $feed_item['summary']);
   $release->set('url', $feed_item['url']);
@@ -50,7 +52,7 @@ function update_release_object($release, $feed_item) {
 /**
  * Retrieve the JSON feed.
  */
-function fetch_feed() {
+private function fetch_feed() {
   $data = NULL;
   $client = \Drupal::service('http_client');
   $config = \Drupal::config('corplite_published_releases_feed.settings');

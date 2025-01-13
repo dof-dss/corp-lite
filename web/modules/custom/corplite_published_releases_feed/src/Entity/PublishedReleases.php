@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains PublishedReleases class.
- */
-
 namespace Drupal\corplite_published_releases_feed\Entity;
 
 use Drupal\Core\Entity\ContentEntityBase;
@@ -30,6 +25,7 @@ use Drupal\Core\Field\BaseFieldDefinition;
  * )
  */
 class PublishedReleases extends ContentEntityBase implements ContentEntityInterface {
+  
   /**
    * Base field definitions.
    */
