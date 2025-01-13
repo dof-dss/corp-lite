@@ -61,18 +61,18 @@ function fetch_feed() {
 
     if ($response->getStatusCode() == 200) {
       $feed_contents = $response->getBody()->getContents();
-      $feed_contents = json_decode($feed_contents);
+      $feed_contents = json_decode($feed_contents, TRUE);
 
       $data = [];
-      foreach ($feed_contents->entries as $row) {
-        if (!empty($row->id)) {
+      foreach ($feed_contents['entries'] as $row) {
+        if (!empty($row['id'])) {
           $data[] = [
-            'id' => (string) $row->id,
-            'title' => (string) !empty($row->title) ? $row->title : '',
-            'summary' => (string) !empty($row->summary) ? $row->summary : '',
-            'url' => (string) !empty($row->url) ? $row->url : '',
-            'release_date' => (string) !empty($row->release_date) ? $row->release_date : '',
-            'updated' => (string) !empty($row->updated) ? $row->updated : '',
+            'id' => (string) $row['id'],
+            'title' => (string) !empty($row['title']) ? $row['title'] : '',
+            'summary' => (string) !empty($row['summary']) ? $row['summary'] : '',
+            'url' => (string) !empty($row['url']) ? $row['url'] : '',
+            'release_date' => (string) !empty($row['release_date']) ? $row['release_date'] : '',
+            'updated' => (string) !empty($row['updated']) ? $row['updated'] : '',
           ];
         }
       }
