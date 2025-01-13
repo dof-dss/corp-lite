@@ -266,7 +266,7 @@ display:
           click_sort_column: value
           type: timestamp
           settings:
-            date_format: medium
+            date_format: corplite_format
             custom_date_format: ''
             timezone: ''
             tooltip:
