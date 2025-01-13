@@ -1,0 +1,20 @@
+uuid: cabd82b6-12e1-4099-b111-1e562f7974ce
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - nisra_theme
+id: messages
+theme: nisra_theme
+region: highlighted
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: Messages
+  label_display: '0'
+  provider: system
+visibility: {  }

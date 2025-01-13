@@ -1,0 +1,25 @@
+uuid: 022eb412-dcc0-4b79-a26a-0feee73f9c4d
+langcode: en
+status: true
+dependencies:
+  module:
+    - corplite_search
+    - system
+  theme:
+    - nisra_theme
+id: sitesearchblock
+theme: nisra_theme
+region: header
+weight: -8
+provider: null
+plugin: site_search_block
+settings:
+  id: site_search_block
+  label: 'Site search block'
+  label_display: '0'
+  provider: corplite_search
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: "/search\r\n/search*"

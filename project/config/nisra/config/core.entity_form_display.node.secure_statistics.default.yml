@@ -17,8 +17,9 @@ dependencies:
   module:
     - content_moderation
     - datetime
-    - file
     - link
+    - media_library
+    - media_library_edit
     - metatag
     - path
     - text
@@ -78,12 +79,14 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_secure_attachment:
-    type: file_generic
-    weight: 11
+    type: media_library_widget
+    weight: 26
     region: content
     settings:
-      progress_indicator: throbber
-    third_party_settings: {  }
+      media_types: {  }
+    third_party_settings:
+      media_library_edit:
+        show_edit: '1'
   field_site_topics:
     type: options_select
     weight: 4

@@ -1,0 +1,22 @@
+uuid: ef82bcf2-b174-40ab-ab92-6080c3c9bd8c
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - nicsdru_corplite_theme
+_core:
+  default_config_hash: OBFh3SU9-Z89sf7qK389Anbl0oxs5v5yqQoHNjoejrM
+id: nicsdru_corplite_theme_powered
+theme: nicsdru_corplite_theme
+region: header
+weight: 0
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }

@@ -1,0 +1,11 @@
+uuid: ec3d808f-e7d3-4949-935a-20896b0d98cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.site_global_topics
+id: taxonomy_term.site_global_topics
+target_entity_type_id: taxonomy_term
+target_bundle: site_global_topics
+default_langcode: site_default
+language_alterable: false

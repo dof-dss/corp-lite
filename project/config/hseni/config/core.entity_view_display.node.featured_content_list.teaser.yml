@@ -1,0 +1,24 @@
+uuid: 07eff8cc-1596-472c-a8fc-34e1f7c2df7a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.featured_content_list.field_featured_content
+    - node.type.featured_content_list
+  module:
+    - user
+id: node.featured_content_list.teaser
+targetEntityType: node
+bundle: featured_content_list
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_featured_content: true
+  langcode: true
+  search_api_excerpt: true

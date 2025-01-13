@@ -1,0 +1,7 @@
+afbini-styling:
+  version: 1.x
+  css:
+    base:
+      css/1_base/root.css: { minified: true, weight: -100 }
+    theme:
+      css/components.css: { minified: true }

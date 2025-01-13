@@ -10,6 +10,7 @@ module:
   blazy: 0
   block: 0
   block_content: 0
+  block_visibility_groups: 0
   book: 0
   breakpoint: 0
   ckeditor5: 0
@@ -28,8 +29,10 @@ module:
   content_moderation: 0
   contextual: 0
   cookie_content_blocker: 0
+  corplite_common: 0
   corplite_eu_cookie_compliance: 0
   corplite_image_styles: 0
+  corplite_search: 0
   csp: 0
   ctools: 0
   date_facet_drilldown: 0
@@ -64,8 +67,7 @@ module:
   geolocation: 0
   geolocation_address: 0
   geolocation_google_maps: 0
-  geolocation_google_static_maps: 0
-  geolocation_search_api: 0
+  google_map_field: 0
   google_tag: 0
   handy_cache_tags: 0
   help: 0
@@ -78,6 +80,7 @@ module:
   jquery_ui_menu: 0
   language: 0
   layout_builder: 0
+  layout_builder_expose_all_field_blocks: 0
   layout_discovery: 0
   link: 0
   link_fix_absolute_urls: 0
@@ -114,13 +117,13 @@ module:
   redis: 0
   responsive_image: 0
   scheduled_transitions: 0
-  search: 0
   search_api: 0
   search_api_autocomplete: 0
   search_api_location: 0
   search_api_location_views: 0
   search_api_solr: 0
   shortcut: 0
+  simple_gmap: 0
   simplei: 0
   structure_sync: 0
   system: 0
@@ -137,6 +140,7 @@ module:
   ultimate_cron: 0
   user: 0
   views_custom_cache_tag: 0
+  views_field_view: 0
   views_tree: 0
   webform: 0
   webform_access: 0
@@ -155,4 +159,7 @@ module:
 theme:
   olivero: 0
   claro: 0
+  stable9: 0
+  nicsdru_corplite_theme: 0
+  etini_theme: 0
 profile: nicsdru_corplite_profile

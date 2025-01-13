@@ -1,0 +1,25 @@
+uuid: 3be9fdff-f84e-4bd9-a7ab-1bf1a85650bc
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - afbini_theme
+_core:
+  default_config_hash: uX9yAGSNB1h9bkLT5ckxEiX6kegngz2lHah7uA_t5HA
+id: afbini_theme_site_branding
+theme: afbini_theme
+region: header
+weight: -10
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: false
+visibility: {  }

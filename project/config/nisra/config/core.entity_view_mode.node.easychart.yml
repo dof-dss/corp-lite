@@ -1,0 +1,11 @@
+uuid: e1edbf56-4d11-4ab0-8327-fa43ee97d8ea
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.easychart
+label: Easychart
+description: ''
+targetEntityType: node
+cache: true

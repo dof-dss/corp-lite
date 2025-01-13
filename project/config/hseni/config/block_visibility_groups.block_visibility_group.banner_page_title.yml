@@ -1,0 +1,37 @@
+uuid: 0bc00034-785e-49e4-a80f-fc70388ff3da
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - system
+    - taxonomy
+id: banner_page_title
+label: 'Banner page title'
+logic: or
+conditions:
+  ac722d66-ae57-4918-8dd7-609bc502fae2:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: ac722d66-ae57-4918-8dd7-609bc502fae2
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      feature: feature
+      featured_content_list: featured_content_list
+      profile: profile
+  3c4eeeb4-fdce-4e9d-8eb9-91fba4c8b9b4:
+    id: request_path
+    negate: false
+    uuid: 3c4eeeb4-fdce-4e9d-8eb9-91fba4c8b9b4
+    context_mapping: {  }
+    pages: "/publications\r\n/publications/date/*\r\n/publications/topic/*\r\n/publications/type/*\r\n/news\r\n/news/date/*\r\n/consultations\r\n/consultations/topic/*\r\n/consultations/date/*\r\n/advice_and_guidance\r\n/alerts\r\n/alerts/date/*\r\n"
+  3c86109d-75dd-4af2-a25a-ffafe4398232:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: 3c86109d-75dd-4af2-a25a-ffafe4398232
+    context_mapping:
+      taxonomy_term: '@taxonomy_term.taxonomy_term_route_context:taxonomy_term'
+    bundles:
+      site_topics: site_topics
+allow_other_conditions: false

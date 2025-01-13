@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.alert.field_published_date
     - field.field.node.alert.field_teaser
     - node.type.alert
+    - workflows.workflow.nics_editorial_workflow
   module:
     - content_moderation
     - datetime
@@ -50,7 +51,7 @@ content:
     third_party_settings: {  }
   field_teaser:
     type: string_textfield
-    weight: 2
+    weight: 27
     region: content
     settings:
       size: 60

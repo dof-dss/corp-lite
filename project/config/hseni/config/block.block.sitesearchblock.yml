@@ -1,0 +1,25 @@
+uuid: 1810b426-0c49-44b0-a0f5-fb3ea490e0b8
+langcode: en
+status: true
+dependencies:
+  module:
+    - corplite_search
+    - system
+  theme:
+    - hseni_theme
+id: sitesearchblock
+theme: hseni_theme
+region: header
+weight: 0
+provider: null
+plugin: site_search_block
+settings:
+  id: site_search_block
+  label: 'Site search block'
+  label_display: '0'
+  provider: corplite_search
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: "/search\r\n"

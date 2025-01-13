@@ -1,0 +1,29 @@
+uuid: 9a8ecdaf-e8ef-48c4-8111-7c4fc13dac3c
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.consultation_topic
+  module:
+    - facets
+    - system
+  theme:
+    - hseni_theme
+id: consultationtopic
+theme: hseni_theme
+region: sidebar_first
+weight: -6
+provider: null
+plugin: 'facet_block:consultation_topic'
+settings:
+  id: 'facet_block:consultation_topic'
+  label: 'Consultation Topic'
+  label_display: visible
+  provider: facets
+  context_mapping: {  }
+  block_id: consultationtopic
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/consultations\r\n/consultations/date/*\r\n/consultations/topic/*"

@@ -1,0 +1,33 @@
+uuid: 9b8e1596-f44c-4b66-b117-b7f5fe27ac59
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.news_type
+  module:
+    - facets
+    - google_tag
+  theme:
+    - etini_theme
+id: etini_theme_newstype
+theme: etini_theme
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'facet_block:news_type'
+settings:
+  id: 'facet_block:news_type'
+  label: 'News type'
+  label_display: visible
+  provider: facets
+  context_mapping: {  }
+  block_id: etini_theme_newstype
+visibility:
+  response_code:
+    id: response_code
+    negate: false
+    response_codes: |-
+      /news
+      /news/date/*
+      /news/topic/*
+      /news/type/*

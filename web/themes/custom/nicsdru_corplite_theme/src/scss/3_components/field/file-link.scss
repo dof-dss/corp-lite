@@ -1,0 +1,166 @@
+/**
+ * @file
+ * Provides the layout links to downloadable files.
+ */
+@use 'sass:math';
+@use '../../init' as *;
+
+// File links
+//
+// It is common to link to downloadable non-html files. When such a link is provided from a fielded entity, there is a
+// custom formatter provided in the nics origins_common module that handles the mark up and output of the link in order
+// that useful classes and attributes are provided to the an end user and user agents.
+//
+// Style guide: components.file-links
+
+.file {
+  &-link,
+  &--media-library-preview {
+    $lh: math.div(28, 18);
+
+    --fs-label: 1.8rem;
+    --lh: #{$lh};
+
+    font-size: var(--fs-label);
+    line-height: var(--lh);
+
+    @include breakpoint($tab, $no-query: true) {
+      $lh: math.div(30, 19);
+
+      --fs-label: 1.9rem;
+      --lh: #{$lh};
+    }
+
+    @include breakpoint($lap, $no-query: true) {
+      $lh: math.div(33, 20);
+
+      --fs-label: 2rem;
+      --lh: #{$lh};
+    }
+
+    @include breakpoint($desk, $no-query: true) {
+      $lh: math.div(35, 21);
+      --fs-label: 2.1rem;
+      --lh: #{$lh};
+    }
+
+    &.file--ico {
+      display: block;
+      min-height: 5rem;
+      padding-left: 5rem;
+      position: relative;
+
+      &:focus {
+        background-color: var(--clr-link);
+        color: #fff;
+        outline: 5px solid var(--clr-link);
+        text-decoration: none;
+
+        &::before {
+          background-position-y: bottom;
+        }
+
+        .meta {
+          color: #fff;
+        }
+      }
+
+      &::before {
+        background: url('../../../images/nigov-file-icons.svg') -750px 0 / auto no-repeat;
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 5rem;
+        width: 5rem;
+      }
+
+      &__word::before,
+      &__doc::before,
+      &__docx::before,
+      &__dot::before {
+        background-position-x: 0;
+      }
+
+      &__pdf::before {
+        background-position-x: -75px;
+      }
+
+      &__excel::before,
+      &__xls::before,
+      &__xlsx::before,
+      &__xlsm::before {
+        background-position-x: -150px;
+      }
+
+      &__powerpoint::before,
+      &__ppt::before,
+      &__pptx::before,
+      &__pptm::before {
+        background-position-x: -225px;
+      }
+
+      &__opendocument-text::before,
+      &__odt::before {
+        background-position-x: -300px;
+      }
+
+      &__opendocument-spreadsheet::before,
+      &__ods::before {
+        background-position-x: -375px;
+      }
+
+      &__opendocument-presentation::before,
+      &__odp::before {
+        background-position-x: -450px;
+      }
+
+      &__csv::before {
+        background-position-x: -525px;
+      }
+
+      &__zip::before {
+        background-position-x: -600px;
+      }
+
+      &__html::before {
+        background-position-x: -675px;
+      }
+    }
+
+    &--simple {
+      font-size: var(--fs-base-size);
+      line-height: 1.5;
+      margin: 1em 0 1.5em;;
+    }
+
+    .meta {
+      $lh: math.div(22, 15);
+
+      --fs-label: 1.5rem;
+      --lh: #{$lh};
+
+      display: block;
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+      color: #4d4d4d;
+      margin: var(--rhythm-spacing-xs) 0;
+
+      @include breakpoint($lap, $no-query: true) {
+        $lh: math.div(24, 16);
+
+        --fs-label: 1.6rem;
+        --lh: #{$lh};
+      }
+
+      @include breakpoint($desk, $no-query: true) {
+        $lh: math.div(25, 17);
+        --fs-label: 1.7rem;
+        --lh: #{$lh};
+      }
+    }
+  }
+  &--media-library-preview.file--ico::before {
+    width: 4rem;
+  }
+}

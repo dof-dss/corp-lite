@@ -15,7 +15,6 @@ dependencies:
     - node.type.secure_market_statistics
   module:
     - datetime
-    - file
     - link
     - text
     - user
@@ -61,10 +60,11 @@ content:
     weight: 2
     region: content
   field_secure_attachment:
-    type: file_default
-    label: hidden
+    type: entity_reference_entity_view
+    label: above
     settings:
-      use_description_as_link_text: true
+      view_mode: default
+      link: false
     third_party_settings: {  }
     weight: 5
     region: content

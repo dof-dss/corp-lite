@@ -8,5 +8,6 @@ _core:
   default_config_hash: 1zNu-cDG2ft8UNmpitFxCVFsgILIFTNMFRDjNtyWV2w
 id: media.portrait_float
 label: 'Portrait float'
+description: ''
 targetEntityType: media
 cache: true

@@ -1,0 +1,14 @@
+uuid: 2071f347-77bf-4769-947a-3b0065df525a
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.homepage_supervisor
+  module:
+    - user
+id: user_remove_role_action.homepage_supervisor
+label: 'Remove the Homepage supervisor role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: homepage_supervisor

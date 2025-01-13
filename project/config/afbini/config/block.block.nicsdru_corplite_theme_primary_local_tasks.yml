@@ -1,0 +1,22 @@
+uuid: 4efd059d-1a7c-4a88-939b-9a0ed88360c2
+langcode: en
+status: true
+dependencies:
+  theme:
+    - nicsdru_corplite_theme
+_core:
+  default_config_hash: trYkad5WQkhP-D3KFBfB8m_2rK3nEzMI6u_efXvVHaM
+id: nicsdru_corplite_theme_primary_local_tasks
+theme: nicsdru_corplite_theme
+region: highlighted
+weight: -4
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary tabs'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility: {  }

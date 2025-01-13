@@ -1,15 +1,15 @@
-uuid: f80e5330-deef-4d62-be33-e59b9e6818a2
+uuid: 1b8d5805-f7bb-47ee-b579-9efb8329cfb6
 langcode: en
 status: true
 dependencies:
   config:
     - search_api.index.publications_index
-    - views.view.publication_search
+    - views.view.publications_search
   module:
     - search_api
 id: publications_summary
 name: 'Publications summary'
-facet_source_id: 'search_api:views_page__publication_search__publications_search'
+facet_source_id: 'search_api:views_page__publications_search__publications_search_page'
 processor_configs:
   hide_when_not_rendered:
     processor_id: hide_when_not_rendered

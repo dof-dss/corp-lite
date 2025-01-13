@@ -8,5 +8,6 @@ _core:
   default_config_hash: B8oNLuTi6rMwpnlBl7ReVyL9oU5-oSDMsJAV96HYI50
 id: path_alias.token
 label: Token
+description: ''
 targetEntityType: path_alias
 cache: true

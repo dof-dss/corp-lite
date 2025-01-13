@@ -1,0 +1,29 @@
+uuid: 7320d876-53e6-4d4f-81ad-e7ef53f23dd0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.secure_file.field_media_file_2
+    - media.type.secure_file
+  module:
+    - file
+id: media.secure_file.default
+targetEntityType: media
+bundle: secure_file
+mode: default
+content:
+  field_media_file_2:
+    type: file_default
+    label: visually_hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

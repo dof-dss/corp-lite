@@ -1,0 +1,25 @@
+uuid: 88ebca86-4631-4f2b-8075-86222ff61434
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - nicsdru_corplite_theme
+_core:
+  default_config_hash: uX9yAGSNB1h9bkLT5ckxEiX6kegngz2lHah7uA_t5HA
+id: nicsdru_corplite_theme_site_branding
+theme: nicsdru_corplite_theme
+region: header
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: false
+visibility: {  }

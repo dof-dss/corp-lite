@@ -7,10 +7,12 @@ label: production
 description: ''
 weight: 0
 stackable: false
+no_patching: false
 storage: folder
 folder: ../project/config/hseni/production
 module:
   fastly: 0
 theme: {  }
-complete_list: {  }
+complete_list:
+  - search_api.server.solr_default
 partial_list: {  }

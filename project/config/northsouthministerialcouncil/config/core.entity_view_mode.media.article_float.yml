@@ -8,5 +8,6 @@ _core:
   default_config_hash: ho9DBBOkZewO1tQ1JRxDfc-tBFMjxWcNbN0UeNXxxV4
 id: media.article_float
 label: 'Article float'
+description: ''
 targetEntityType: media
 cache: true

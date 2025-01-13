@@ -1,0 +1,34 @@
+uuid: c906a7be-7e4c-4bf6-8170-a9a860a08b3d
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.published_date_alerts
+  module:
+    - block_visibility_groups
+    - facets
+    - system
+  theme:
+    - hseni_theme
+id: publisheddate_alerts
+theme: hseni_theme
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'facet_block:published_date_alerts'
+settings:
+  id: 'facet_block:published_date_alerts'
+  label: 'Published Date'
+  label_display: visible
+  provider: facets
+  context_mapping: {  }
+  block_id: publisheddate_alerts
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/alerts\r\n/alerts/date/*"

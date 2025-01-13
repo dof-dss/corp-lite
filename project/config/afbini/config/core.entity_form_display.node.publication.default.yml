@@ -29,9 +29,9 @@ third_party_settings:
       children:
         - field_feature_home_page
       label: Featured
-      region: content
+      region: hidden
       parent_name: ''
-      weight: 15
+      weight: 18
       format_type: fieldset
       format_settings:
         classes: ''
@@ -71,16 +71,9 @@ content:
     third_party_settings:
       media_library_edit:
         show_edit: '1'
-  field_feature_home_page:
-    type: boolean_checkbox
-    weight: 20
-    region: content
-    settings:
-      display_label: true
-    third_party_settings: {  }
   field_meta_tags:
     type: metatag_firehose
-    weight: 18
+    weight: 17
     region: content
     settings:
       sidebar: true
@@ -140,7 +133,7 @@ content:
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 16
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -159,7 +152,7 @@ content:
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 17
+    weight: 16
     region: content
     settings:
       display_label: true
@@ -194,4 +187,5 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_feature_home_page: true

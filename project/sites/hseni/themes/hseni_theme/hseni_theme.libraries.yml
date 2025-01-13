@@ -1,0 +1,10 @@
+site-styling:
+  version: 1.0
+  css:
+    base:
+      css/1_base/root.css: { minified: true, weight: -100 }
+    layout:
+      css/2_layouts/front.css: { minified: true }
+    theme:
+      css/3_components/layout/footer.css: { minified: true }
+      css/3_components/layout/components.css: { minified: true }

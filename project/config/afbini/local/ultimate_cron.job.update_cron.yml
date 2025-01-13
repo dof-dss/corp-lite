@@ -1,10 +1,10 @@
-uuid: e144a1e2-bf93-40e1-80dc-3095c07ade37
+uuid: 46957ce3-fc3b-406f-9310-08903f534624
 langcode: en
 status: true
 dependencies:
   module:
     - update
-title: 'Update indexes'
+title: 'Check for updates'
 id: update_cron
 weight: 0
 module: update

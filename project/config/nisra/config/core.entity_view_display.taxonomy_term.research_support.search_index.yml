@@ -1,0 +1,25 @@
+uuid: 0d84f60d-cc48-4d1c-bf1c-2ec18cfee795
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.search_index
+    - field.field.taxonomy_term.research_support.field_hide_topic
+    - field.field.taxonomy_term.research_support.field_summary
+    - field.field.taxonomy_term.research_support.field_term_image
+    - field.field.taxonomy_term.research_support.field_term_photo
+    - taxonomy.vocabulary.research_support
+id: taxonomy_term.research_support.search_index
+targetEntityType: taxonomy_term
+bundle: research_support
+mode: search_index
+content: {  }
+hidden:
+  content_moderation_control: true
+  description: true
+  field_hide_topic: true
+  field_summary: true
+  field_term_image: true
+  field_term_photo: true
+  langcode: true
+  search_api_excerpt: true

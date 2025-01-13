@@ -8,5 +8,6 @@ _core:
   default_config_hash: bVMPEDKHfATgkR8idUl-XjMMxHxP66zImEyWfhkWDGk
 id: block.token
 label: Token
+description: ''
 targetEntityType: block
 cache: true

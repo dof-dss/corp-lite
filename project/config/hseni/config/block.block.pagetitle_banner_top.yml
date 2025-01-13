@@ -1,0 +1,26 @@
+uuid: 45225850-5cbd-47dd-8341-e37d39d6749c
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.banner_page_title
+  module:
+    - block_visibility_groups
+  theme:
+    - hseni_theme
+id: pagetitle_banner_top
+theme: hseni_theme
+region: top_banner
+weight: -12
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: banner_page_title

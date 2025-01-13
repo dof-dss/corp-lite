@@ -1,0 +1,25 @@
+uuid: 3278da10-371c-41c1-a67f-c65afd81f69e
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.menu-footer
+  module:
+    - system
+  theme:
+    - hseni_theme
+id: footer
+theme: hseni_theme
+region: footer
+weight: 0
+provider: null
+plugin: 'system_menu_block:menu-footer'
+settings:
+  id: 'system_menu_block:menu-footer'
+  label: Footer
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

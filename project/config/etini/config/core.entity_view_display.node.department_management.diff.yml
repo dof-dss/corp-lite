@@ -19,9 +19,9 @@ dependencies:
     - node.type.department_management
   module:
     - field_group
+    - google_map_field
     - link
     - metatag
-    - origins_common
     - text
     - user
 third_party_settings:
@@ -142,17 +142,11 @@ content:
     weight: 7
     region: content
   field_map:
-    type: gmaps_lazy_load_formatter
-    label: inline
-    settings:
-      zoom: '10'
-      map_type: roadmap
-      placeholder: empty
-      link_text: ''
-      map_width: '300'
-      map_height: '300'
+    type: google_map_field_default
+    label: above
+    settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
   field_meta_tags:
     type: metatag_empty_formatter

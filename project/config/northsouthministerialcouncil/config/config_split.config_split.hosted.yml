@@ -7,9 +7,11 @@ label: hosted
 description: "Use for any that are 'hosted' and not running locally, apart from production (which has its own split)."
 weight: 0
 stackable: false
+no_patching: false
 storage: folder
 folder: ../project/config/northsouthministerialcouncil/hosted
 module: {  }
 theme: {  }
-complete_list: {  }
+complete_list:
+  - search_api.server.solr_default
 partial_list: {  }

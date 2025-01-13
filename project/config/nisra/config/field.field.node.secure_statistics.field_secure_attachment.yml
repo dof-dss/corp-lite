@@ -1,27 +1,29 @@
-uuid: 5815afd0-0e18-481a-98c6-82d4e571842d
+uuid: 92acb2ce-3355-4da1-aba5-5f8f13ae75c8
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_secure_attachment
+    - media.type.secure_file
     - node.type.secure_statistics
-  module:
-    - file
 id: node.secure_statistics.field_secure_attachment
 field_name: field_secure_attachment
 entity_type: node
 bundle: secure_statistics
 label: 'Secure attachment'
 description: 'Choose one or more individual files to attach to this secure statistics publication. These files will only be accessible to the public once the secure statistics publication page is published.'
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:file'
-  handler_settings: {  }
-  file_directory: statistics
-  file_extensions: 'pdf doc docx xls xlsx xlsm ppt pptx odt ods odp dot csv zip'
-  max_filesize: 30MB
-  description_field: false
-field_type: file
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      secure_file: secure_file
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

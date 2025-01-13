@@ -1,0 +1,40 @@
+uuid: 53dc746f-bd55-4291-bce7-fc7b0ec7eb97
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.most_recent
+    - field.field.node.feature.field_link_url
+    - field.field.node.feature.field_photo
+    - field.field.node.feature.field_teaser
+    - node.type.feature
+  module:
+    - link
+    - user
+id: node.feature.most_recent
+targetEntityType: node
+bundle: feature
+mode: most_recent
+content:
+  field_link_url:
+    type: link
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: true
+      url_plain: true
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_photo: true
+  field_teaser: true
+  langcode: true
+  search_api_excerpt: true

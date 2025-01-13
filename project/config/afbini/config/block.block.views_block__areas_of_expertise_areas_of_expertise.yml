@@ -1,0 +1,29 @@
+uuid: 963e0b88-5c94-4557-b221-500873ed17a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.areas_of_expertise
+  module:
+    - system
+    - views
+  theme:
+    - afbini_theme
+id: views_block__areas_of_expertise_areas_of_expertise
+theme: afbini_theme
+region: content
+weight: -6
+provider: null
+plugin: 'views_block:areas_of_expertise-areas_of_expertise'
+settings:
+  id: 'views_block:areas_of_expertise-areas_of_expertise'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

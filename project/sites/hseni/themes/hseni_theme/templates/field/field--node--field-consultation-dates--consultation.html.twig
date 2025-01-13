@@ -1,0 +1,62 @@
+{#
+/**
+ * @file
+ * Theme override for a field.
+ *
+ * To override output, copy the "field.html.twig" from the templates directory
+ * to your theme's directory and customize it, just like customizing other
+ * Drupal templates such as page.html.twig or node.html.twig.
+ *
+ * Instead of overriding the theming for all fields, you can also just override
+ * theming for a subset of fields using
+ * @link themeable Theme hook suggestions. @endlink For example,
+ * here are some theme hook suggestions that can be used for a field_foo field
+ * on an article node type:
+ * - field--node--field-foo--article.html.twig
+ * - field--node--field-foo.html.twig
+ * - field--node--article.html.twig
+ * - field--field-foo.html.twig
+ * - field--text-with-summary.html.twig
+ * - field.html.twig
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the containing element.
+ * - label_hidden: Whether to show the field label or not.
+ * - title_attributes: HTML attributes for the title.
+ * - label: The label for the field.
+ * - multiple: TRUE if a field can contain multiple items.
+ * - items: List of all the field items. Each item contains:
+ *   - attributes: List of HTML attributes for each item.
+ *   - content: The field item's content.
+ * - entity_type: The entity type to which the field belongs.
+ * - field_name: The name of the field.
+ * - field_type: The type of the field.
+ * - label_display: The display settings for the label.
+ *
+ * @see template_preprocess_field()
+ */
+#}
+<div class="consultation_dates">
+  {% for item in items %}
+
+    {# Pull the start and end date values #}
+    {% set start_date = item.content.start_date['#text'] %}
+    {% set end_date = item.content.end_date['#text'] %}
+
+    {# End date timestamp #}
+    {% set end_timestamp = end_date|date("U") %}
+
+    {# Get the current timestamp #}
+    {% set current_timestamp = "now"|date("U") %}
+
+    {# check if the consultation is open or closed #}
+    {% if end_timestamp < current_timestamp %}
+      <p class="consultation-status closed"><strong>Consultation Closed</strong></p>
+      <p>Consultation opened {{ start_date }} and closed {{ end_date }}.</p>
+    {% else %}
+      <p class="consultation-status open"><strong>Consultation Open</strong></p>
+      <p>Consultation opened {{ start_date }} and closes {{ end_date }}.</p>
+    {% endif %}
+  {% endfor %}
+</div>
+

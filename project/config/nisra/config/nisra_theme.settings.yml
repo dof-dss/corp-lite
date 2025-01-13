@@ -1,0 +1,16 @@
+features:
+  node_user_picture: 1
+  comment_user_picture: true
+  comment_user_verification: true
+  favicon: 1
+logo:
+  use_default: 1
+  path: sites/nisra/themes/nisra_theme/images/logo.jpg
+favicon:
+  use_default: 1
+social_links_twitter: ''
+social_links_facebook: ''
+social_links_youtube: ''
+social_links_instagram: ''
+social_links_linkedin: ''
+social_links_rss: ''

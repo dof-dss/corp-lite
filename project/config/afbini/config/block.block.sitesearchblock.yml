@@ -1,0 +1,25 @@
+uuid: 95ea6ce6-4678-4387-9794-1341f8e2e9e0
+langcode: en
+status: true
+dependencies:
+  module:
+    - corplite_search
+    - system
+  theme:
+    - afbini_theme
+id: sitesearchblock
+theme: afbini_theme
+region: header
+weight: -9
+provider: null
+plugin: site_search_block
+settings:
+  id: site_search_block
+  label: 'Site search block'
+  label_display: '0'
+  provider: corplite_search
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: "/search\r\n"

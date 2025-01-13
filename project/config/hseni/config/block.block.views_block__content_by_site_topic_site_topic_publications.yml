@@ -1,0 +1,25 @@
+uuid: e6a6e870-5d66-4a71-b6f8-a4454c6fe18e
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.content_by_site_topic
+  module:
+    - views
+  theme:
+    - hseni_theme
+id: views_block__content_by_site_topic_site_topic_publications
+theme: hseni_theme
+region: content
+weight: -11
+provider: null
+plugin: 'views_block:content_by_site_topic-site_topic_publications'
+settings:
+  id: 'views_block:content_by_site_topic-site_topic_publications'
+  label: ''
+  label_display: visible
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: none
+visibility: {  }

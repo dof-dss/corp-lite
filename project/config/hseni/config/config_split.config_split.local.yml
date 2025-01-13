@@ -7,12 +7,14 @@ label: local
 description: ''
 weight: 0
 stackable: false
+no_patching: false
 storage: folder
 folder: ../project/config/hseni/local
 module:
+  dblog: 0
+  views_ui: 0
   clone_nodes: 0
   corplite_migrations: 0
-  dblog: 0
   easy_install: 0
   hseni_migrations: 0
   migrate: 0
@@ -22,7 +24,7 @@ module:
   migrate_plus: 0
   migrate_tools: 0
   migrate_upgrade: 0
-  views_ui: 0
 theme: {  }
-complete_list: {  }
+complete_list:
+  - search_api.server.solr_default
 partial_list: {  }

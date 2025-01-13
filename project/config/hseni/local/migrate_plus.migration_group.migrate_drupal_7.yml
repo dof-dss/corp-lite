@@ -2,6 +2,8 @@ uuid: dfc2c2b4-f77b-4df6-8b52-989d91d3c9d3
 langcode: en-gb
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: c8JLzoj28EdfnxRtbe1zssnF89mCK4ThCu2WCdFLqHo
 id: migrate_drupal_7
 label: 'Import from Drupal 7'
 description: 'Migrations originally generated from drush migrate-upgrade --configure-only'
@@ -12,9 +14,9 @@ shared_configuration:
     key: drupal_7
     database:
       driver: mysql
-      username: drupal9
-      password: drupal9
-      host: database
+      username: db
+      password: db
+      host: db
       port: ''
       database: hseni_legacy
       prefix: null

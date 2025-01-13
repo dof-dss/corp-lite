@@ -1118,6 +1118,7 @@ display:
             offset: false
             offset_label: Offset
           quantity: 9
+          pagination_heading_level: h4
       sorts:
         field_published_date_value:
           id: field_published_date_value

@@ -16,6 +16,8 @@ dependencies:
     - node.type.secure_market_statistics
     - node.type.secure_statistics
     - node.type.webform
+    - taxonomy.vocabulary.research_support
+    - taxonomy.vocabulary.site_topics
   module:
     - content_moderation
 _core:
@@ -121,4 +123,7 @@ type_settings:
       - secure_market_statistics
       - secure_statistics
       - webform
+    taxonomy_term:
+      - research_support
+      - site_topics
   default_moderation_state: draft

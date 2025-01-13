@@ -10,7 +10,6 @@ dependencies:
     - filter
     - media
     - node
-    - search
     - system
 _core:
   default_config_hash: 5VGJw7pgPFTBuJrCG9pBukHNqdclr8NPzvsAwTZXVwY
@@ -21,7 +20,6 @@ is_admin: false
 permissions:
   - 'access content'
   - 'delete own files'
-  - 'search content'
   - 'use text format basic_html'
   - 'use text format webform_default'
   - 'view all revisions'

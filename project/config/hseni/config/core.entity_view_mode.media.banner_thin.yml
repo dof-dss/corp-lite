@@ -8,5 +8,6 @@ _core:
   default_config_hash: aNQgQd4KGVXfTKZF0cNG8Zl91PTbpH--oO24EOHzOos
 id: media.banner_thin
 label: 'Banner thin'
+description: ''
 targetEntityType: media
 cache: true

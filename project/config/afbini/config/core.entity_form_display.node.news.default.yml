@@ -32,9 +32,9 @@ third_party_settings:
         - field_main_feature
         - field_feature_home_page
       label: Featured
-      region: content
+      region: hidden
       parent_name: ''
-      weight: 17
+      weight: 19
       format_type: fieldset
       format_settings:
         classes: ''
@@ -65,23 +65,9 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_feature_home_page:
-    type: boolean_checkbox
-    weight: 21
-    region: content
-    settings:
-      display_label: true
-    third_party_settings: {  }
-  field_main_feature:
-    type: boolean_checkbox
-    weight: 19
-    region: content
-    settings:
-      display_label: true
-    third_party_settings: {  }
   field_meta_tags:
     type: metatag_firehose
-    weight: 19
+    weight: 18
     region: content
     settings:
       sidebar: true
@@ -171,7 +157,7 @@ content:
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 18
+    weight: 17
     region: content
     settings:
       display_label: true
@@ -206,4 +192,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_feature_home_page: true
+  field_main_feature: true

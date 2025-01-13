@@ -1,0 +1,18 @@
+uuid: 8ca83cab-4f05-4c24-958c-95fc9c68f466
+langcode: en
+status: true
+dependencies:
+  theme:
+    - hseni_theme
+id: primaryadminactions
+theme: hseni_theme
+region: top_banner
+weight: -13
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

@@ -1,0 +1,29 @@
+uuid: aa003571-b1ca-4ce3-89da-68f37d26b87c
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.featured_news_homepage
+  module:
+    - system
+    - views
+  theme:
+    - afbini_theme
+id: block__featured_news_homepage_news_homepage
+theme: afbini_theme
+region: content
+weight: -8
+provider: null
+plugin: 'views_block:featured_news_homepage-news_homepage'
+settings:
+  id: 'views_block:featured_news_homepage-news_homepage'
+  label: Featured
+  label_display: visible
+  provider: views
+  views_label: Featured
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

@@ -5,12 +5,13 @@ dependencies:
   config:
     - field.storage.node.field_site_topics
     - node.type.link
+    - taxonomy.vocabulary.site_topics
 id: node.link.field_site_topics
 field_name: field_site_topics
 entity_type: node
 bundle: link
 label: 'Site topics'
-description: 'Choose optional site topics for this link.'
+description: 'Choose optional site topics for this link. Hold down Ctrl to choose multiple site topics.'
 required: false
 translatable: false
 default_value: {  }
@@ -18,7 +19,8 @@ default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'
   handler_settings:
-    target_bundles: {  }
+    target_bundles:
+      site_topics: site_topics
     sort:
       field: _none
       direction: asc

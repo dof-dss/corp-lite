@@ -109,6 +109,7 @@ process:
   field_summary:
     - plugin: get
       source: field_summary
+    - plugin: strip_html_filter
   field_teaser:
     - plugin: get
       source: field_teaser

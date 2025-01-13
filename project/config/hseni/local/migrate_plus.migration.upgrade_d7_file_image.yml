@@ -2,6 +2,8 @@ uuid: a38a90e1-fe59-4196-938e-54dc863bb262
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: AGle7gVVJ21Me7tp2VnmIoLvGO7eQx-h9CnUU0FlC5k
 id: upgrade_d7_file_image
 class: Drupal\migrate\Plugin\Migration
 field_plugin_method: alterFieldInstanceMigration

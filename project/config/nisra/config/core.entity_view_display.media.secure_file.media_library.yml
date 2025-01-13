@@ -1,0 +1,34 @@
+uuid: 2dc2c981-c67d-4f90-995b-bc1b4e597b35
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.media_library
+    - field.field.media.secure_file.field_media_file_2
+    - image.style.medium
+    - media.type.secure_file
+  module:
+    - image
+id: media.secure_file.media_library
+targetEntityType: media
+bundle: secure_file
+mode: media_library
+content:
+  thumbnail:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: medium
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_media_file_2: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  uid: true

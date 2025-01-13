@@ -1,5 +1,4 @@
 _core:
   default_config_hash: d8rPYXAOeCP6sbnCMBFSjn96ZeenLu2PD8BCz4MJV6E
-langcode: en
 items:
-  view_mode: rss
+  view_mode: fulltext

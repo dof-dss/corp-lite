@@ -1,0 +1,29 @@
+uuid: f2e12eba-ba85-481b-a520-7fdcf71b07d0
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.publication_type
+  module:
+    - facets
+    - system
+  theme:
+    - hseni_theme
+id: publicationtype
+theme: hseni_theme
+region: sidebar_first
+weight: -7
+provider: null
+plugin: 'facet_block:publication_type'
+settings:
+  id: 'facet_block:publication_type'
+  label: 'Publication Type'
+  label_display: visible
+  provider: facets
+  context_mapping: {  }
+  block_id: publicationtype
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/publications\r\n/publications/date/*\r\n/publications/topic/*\r\n/publications/type/*"

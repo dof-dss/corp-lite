@@ -11,7 +11,7 @@ dependencies:
     - workflows.workflow.nics_editorial_workflow
   module:
     - content_moderation
-    - geolocation_google_maps
+    - google_map_field
     - metatag
     - path
     - text
@@ -39,39 +39,10 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_map:
-    type: geolocation_googlegeocoder
-    weight: 3
+    type: google_map_field_default
+    weight: 26
     region: content
-    settings:
-      auto_client_location: ''
-      auto_client_location_marker: ''
-      allow_override_map_settings: 0
-      hide_textfield_form: false
-      centre:
-        fit_bounds:
-          enable: true
-      google_map_settings:
-        map_features:
-          marker_infowindow:
-            enabled: true
-          control_locate:
-            enabled: true
-          control_zoom:
-            enabled: true
-          control_maptype:
-            enabled: true
-          control_geocoder:
-            weight: -100
-            enabled: true
-          control_recenter:
-            enabled: true
-        type: ROADMAP
-        zoom: 10
-        minZoom: 0
-        maxZoom: 20
-        height: 400px
-        width: 100%
-        gestureHandling: auto
+    settings: {  }
     third_party_settings: {  }
   field_meta_tags:
     type: metatag_firehose

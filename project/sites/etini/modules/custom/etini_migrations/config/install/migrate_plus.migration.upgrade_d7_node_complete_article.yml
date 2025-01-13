@@ -91,6 +91,7 @@ process:
   field_summary:
     - plugin: get
       source: field_summary
+    - plugin: strip_html_filter
   field_site_global_topics:
     - plugin: sub_process
       source: field_site_global_topics

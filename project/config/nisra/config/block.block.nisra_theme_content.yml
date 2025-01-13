@@ -1,0 +1,22 @@
+uuid: 2c18d03a-de25-41ed-b32c-44ff0b501d5c
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - nisra_theme
+_core:
+  default_config_hash: wPsfrXA_4wKhNdkE9Bo4CPtOFQlMu5yR3Zlr0NOsXbE
+id: nisra_theme_content
+theme: nisra_theme
+region: content
+weight: -12
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

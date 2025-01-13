@@ -8,5 +8,6 @@ _core:
   default_config_hash: tj7hOiDxShMQtI_GYw0sliUfiAS2q3mrPFondiwZffQ
 id: node.teaser
 label: Teaser
+description: ''
 targetEntityType: node
 cache: true
