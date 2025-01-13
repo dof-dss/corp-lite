@@ -12,6 +12,7 @@ module:
   block: 0
   block_content: 0
   block_field: 0
+  block_visibility_groups: 0
   breakpoint: 0
   ckeditor5: 0
   ckeditor5_allowed_html: 0
@@ -32,6 +33,7 @@ module:
   corplite_common: 0
   corplite_eu_cookie_compliance: 0
   corplite_image_styles: 0
+  corplite_published_releases_feed: 0
   corplite_search: 0
   csp: 0
   ctools: 0
@@ -121,6 +123,7 @@ module:
   redis: 0
   responsive_image: 0
   scheduled_transitions: 0
+  search: 0
   search_api: 0
   search_api_autocomplete: 0
   search_api_location: 0

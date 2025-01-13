@@ -22,7 +22,8 @@
   }
 
   .menu-title {
-    //@include responsive-typo-map($normal-text-no-margins);
+    font-size: 1.6rem;
+    line-height: 2.4rem;
     font-weight: bold;
     margin: 0 0 1em;
   }
@@ -34,7 +35,8 @@
 
     // applied to the menu li
     &-item {
-      //@include responsive-typo-map($normal-text-no-margins);
+      font-size: 1.6rem;
+      line-height: 2.4rem;
       position: relative;
       list-style: none;
       padding: 0 1rem 0 1.5rem;

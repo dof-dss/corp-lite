@@ -1,0 +1,34 @@
+/*
+ * @file
+ * Provides very specific styling for entities / content types.
+ */
+@import '../init';
+
+.page-node-type-publication,
+.page-node-type-news,
+.page-node-type-consultation {
+  .published-date,
+  .field--type-entity-reference {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    margin: 1.8rem 0 0; // Tightens up to the h1.
+    color: #4d4d4d;
+
+    @include breakpoint($tab) {
+      margin: 2.1rem 0 .7rem;
+    };
+
+    @include breakpoint($desk-plus) {
+      margin: 2.5rem 0 1rem;
+    };
+  }
+
+  .field--type-entity-reference {
+    margin-top: 0;
+    padding-bottom: 0;
+  }
+
+  .file-link {
+    margin-bottom: 1.5em;
+  }
+}

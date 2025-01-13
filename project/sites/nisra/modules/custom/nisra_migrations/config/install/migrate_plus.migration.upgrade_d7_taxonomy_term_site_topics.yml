@@ -29,8 +29,15 @@ process:
     - plugin: get
       source: description
   description/format:
-    - plugin: default_value
-      default_value: basic_html
+    - plugin: static_map
+      bypass: true
+      source: format
+      map:
+        filtered_html: basic_html
+        filtered_html_with_no_images: basic_html
+        filtered_html_with_tokens: basic_html
+        restricted_html: basic_html
+        plain_text: plain_text
   weight:
     - plugin: get
       source: weight
@@ -106,6 +113,9 @@ process:
   field_metatag:
     - plugin: d7_metatag_entities
       source: pseudo_metatag_entities
+  moderation_state:
+    plugin: default_value
+    default_value: published
 destination:
   plugin: 'entity:taxonomy_term'
   default_bundle: site_topics

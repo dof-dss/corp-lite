@@ -9,7 +9,7 @@ dependencies:
     - search_api
 id: news_summary
 name: 'News summary'
-facet_source_id: 'search_api:views_page__news_search__news_search_page'
+facet_source_id: 'search_api:views_page__news_search__news_search'
 processor_configs:
   hide_when_not_rendered:
     processor_id: hide_when_not_rendered
@@ -23,7 +23,7 @@ facets:
     separator: ', '
     show_count: false
     weight: 0
-  publication_date:
+  news_publication_date:
     checked: true
     label: 'Publication date'
     separator: ', '

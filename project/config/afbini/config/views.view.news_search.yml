@@ -22,7 +22,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: News
+      title: 'News search'
       fields:
         body:
           id: body
@@ -99,6 +99,7 @@ display:
         type: full
         options:
           offset: 0
+          pagination_heading_level: h4
           items_per_page: 20
           total_pages: null
           id: 0
@@ -116,7 +117,6 @@ display:
             offset: false
             offset_label: Offset
           quantity: 5
-          pagination_heading_level: h4
       exposed_form:
         type: basic
         options:
@@ -247,7 +247,17 @@ display:
           preserve_facet_query_args: false
           query_tags: {  }
       relationships: {  }
-      header: {  }
+      header:
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: result
+          empty: false
+          content: '@total news items'
       footer: {  }
       display_extenders: {  }
     cache_metadata:
@@ -262,8 +272,8 @@ display:
         - 'config:field.storage.node.body'
         - 'config:search_api.index.news'
         - 'search_api_list:news'
-  news_search_page:
-    id: news_search_page
+  news_search:
+    id: news_search
     display_title: Page
     display_plugin: page
     position: 1

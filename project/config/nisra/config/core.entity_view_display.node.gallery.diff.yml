@@ -48,10 +48,11 @@ content:
     weight: 1
     region: content
   field_gallery_images:
-    type: entity_reference_label
+    type: entity_reference_entity_view
     label: hidden
     settings:
-      link: true
+      view_mode: article_float
+      link: false
     third_party_settings: {  }
     weight: 2
     region: content

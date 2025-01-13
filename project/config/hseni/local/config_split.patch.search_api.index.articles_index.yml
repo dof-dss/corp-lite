@@ -1,7 +1,0 @@
-adding:
-  dependencies:
-    config:
-      - search_api.server.default
-  server: default
-removing:
-  server: null

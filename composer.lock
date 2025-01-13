@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "aa14f0b17c1705782185dcfccc5c6c48",
+    "content-hash": "613e1bd4bbc8586f23778096960e0181",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1682,16 +1682,16 @@
         },
         {
             "name": "dof-dss/nicsdru_origins_modules",
-            "version": "10.4.3",
+            "version": "10.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dof-dss/nicsdru_origins_modules.git",
-                "reference": "7fdc6bd3d818a3b82ff2433e5bd5df9df1916ca9"
+                "reference": "0d96d5bcd7b56c342324a2c6a6a42c4c11faf0c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dof-dss/nicsdru_origins_modules/zipball/7fdc6bd3d818a3b82ff2433e5bd5df9df1916ca9",
-                "reference": "7fdc6bd3d818a3b82ff2433e5bd5df9df1916ca9",
+                "url": "https://api.github.com/repos/dof-dss/nicsdru_origins_modules/zipball/0d96d5bcd7b56c342324a2c6a6a42c4c11faf0c5",
+                "reference": "0d96d5bcd7b56c342324a2c6a6a42c4c11faf0c5",
                 "shasum": ""
             },
             "require": {
@@ -1706,9 +1706,9 @@
             "description": "Generic modules for DOF-DSS Drupal sites",
             "support": {
                 "issues": "https://github.com/dof-dss/nicsdru_origins_modules/issues",
-                "source": "https://github.com/dof-dss/nicsdru_origins_modules/tree/10.4.3"
+                "source": "https://github.com/dof-dss/nicsdru_origins_modules/tree/10.4.4"
             },
-            "time": "2024-11-04T16:26:51+00:00"
+            "time": "2024-12-11T12:00:37+00:00"
         },
         {
             "name": "drupal/address",
@@ -6022,26 +6022,26 @@
         },
         {
             "name": "drupal/media_library_edit",
-            "version": "3.0.3",
+            "version": "3.0.4",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/media_library_edit.git",
-                "reference": "3.0.3"
+                "reference": "3.0.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/media_library_edit-3.0.3.zip",
-                "reference": "3.0.3",
-                "shasum": "f5d28e121bc2f21762d446553d61d48151d1b391"
+                "url": "https://ftp.drupal.org/files/projects/media_library_edit-3.0.4.zip",
+                "reference": "3.0.4",
+                "shasum": "92f1c1f58b5579363a9f18ffb5632cc368066dfe"
             },
             "require": {
-                "drupal/core": "^8 || ^9 || ^10"
+                "drupal/core": "^9.2 || ^10 || ^11"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "3.0.3",
-                    "datestamp": "1706394959",
+                    "version": "3.0.4",
+                    "datestamp": "1724358009",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -6294,6 +6294,50 @@
             "homepage": "https://www.drupal.org/project/migrate_absolute_links",
             "support": {
                 "source": "https://git.drupalcode.org/project/migrate_absolute_links"
+            }
+        },
+        {
+            "name": "drupal/migrate_conditions",
+            "version": "2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/migrate_conditions.git",
+                "reference": "2.2.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/migrate_conditions-2.2.0.zip",
+                "reference": "2.2.0",
+                "shasum": "b969de27f3fa9075d03802d64d87f1bf0599a6be"
+            },
+            "require": {
+                "drupal/core": "^10.3 || ^11"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.2.0",
+                    "datestamp": "1719236630",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "danflanagan8",
+                    "homepage": "https://www.drupal.org/user/3615359"
+                }
+            ],
+            "description": "Provides framework of conditions plugins and process plugins that use them",
+            "homepage": "https://www.drupal.org/project/migrate_conditions",
+            "support": {
+                "source": "https://git.drupalcode.org/project/migrate_conditions"
             }
         },
         {
@@ -7628,30 +7672,30 @@
         },
         {
             "name": "drupal/structure_sync",
-            "version": "2.0.7",
+            "version": "2.0.8",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/structure_sync.git",
-                "reference": "2.0.7"
+                "reference": "2.0.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/structure_sync-2.0.7.zip",
-                "reference": "2.0.7",
-                "shasum": "d77a8b3cfd614cf7699187fce610e4d490f8f0fc"
+                "url": "https://ftp.drupal.org/files/projects/structure_sync-2.0.8.zip",
+                "reference": "2.0.8",
+                "shasum": "3f1bd24d7f048cdd9f49e178af9fa47d291d3525"
             },
             "require": {
                 "drupal/core": "^8 || ^9 || ^10 || ^11",
                 "php": ">=7.1"
             },
             "require-dev": {
-                "drush/drush": "^9 || ^10 || ^11 || ^12"
+                "drush/drush": "^9 || ^10 || ^11 || ^12 || ^13"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.7",
-                    "datestamp": "1711457726",
+                    "version": "2.0.8",
+                    "datestamp": "1728580642",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -7659,7 +7703,7 @@
                 },
                 "drush": {
                     "services": {
-                        "drush.services.yml": "^9 || ^10 || ^11 || ^12"
+                        "drush.services.yml": "^9 || ^10 || ^11 || ^12 || ^13"
                     }
                 }
             },
@@ -8157,6 +8201,66 @@
             "homepage": "https://www.drupal.org/project/views_custom_cache_tag",
             "support": {
                 "source": "https://git.drupalcode.org/project/views_custom_cache_tag"
+            }
+        },
+        {
+            "name": "drupal/views_field_view",
+            "version": "1.0.0-beta5",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/views_field_view.git",
+                "reference": "8.x-1.0-beta5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/views_field_view-8.x-1.0-beta5.zip",
+                "reference": "8.x-1.0-beta5",
+                "shasum": "fe6f0d62661cc764229c01ab01916a13ba3e8c22"
+            },
+            "require": {
+                "drupal/core": "^9 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.0-beta5",
+                    "datestamp": "1675318984",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "damiankloip",
+                    "homepage": "https://www.drupal.org/user/1037976"
+                },
+                {
+                    "name": "dawehner",
+                    "homepage": "https://www.drupal.org/user/99340"
+                },
+                {
+                    "name": "jibran",
+                    "homepage": "https://www.drupal.org/user/1198144"
+                },
+                {
+                    "name": "tizzo",
+                    "homepage": "https://www.drupal.org/user/168251"
+                },
+                {
+                    "name": "voxpelli",
+                    "homepage": "https://www.drupal.org/user/341713"
+                }
+            ],
+            "description": "Adds a view field handler to embed views inside views.",
+            "homepage": "https://www.drupal.org/project/views_field_view",
+            "support": {
+                "source": "https://git.drupalcode.org/project/views_field_view"
             }
         },
         {
@@ -16395,39 +16499,37 @@
         },
         {
             "name": "drupal/stage_file_proxy",
-            "version": "2.1.4",
+            "version": "3.1.4",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/stage_file_proxy.git",
-                "reference": "2.1.4"
+                "reference": "3.1.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/stage_file_proxy-2.1.4.zip",
-                "reference": "2.1.4",
-                "shasum": "85f8451f123fcfb1b272f5a0cc11e6bd1673476c"
+                "url": "https://ftp.drupal.org/files/projects/stage_file_proxy-3.1.4.zip",
+                "reference": "3.1.4",
+                "shasum": "57be6bfd1a429d41852e049e047b3ac0e277d277"
             },
             "require": {
-                "drupal/core": "^9 || ^10",
-                "php": ">=8"
+                "drupal/core": "^10.3 || ^11",
+                "php": ">=8.1"
+            },
+            "conflict": {
+                "drush/drush": "<12"
             },
             "require-dev": {
                 "drupal/coder": "^8.3",
-                "drush/drush": "^11 || ^12"
+                "drush/drush": ">=12"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.1.4",
-                    "datestamp": "1706627704",
+                    "version": "3.1.4",
+                    "datestamp": "1733151924",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
-                    }
-                },
-                "drush": {
-                    "services": {
-                        "stage_file_proxy.drush.services.yml": "^11"
                     }
                 }
             },
@@ -21499,7 +21601,9 @@
         "drupal/menu_breadcrumb": 15,
         "drupal/search_api_location": 15,
         "drupal/shs": 5,
+        "drupal/stage_file_proxy": 20,
         "drupal/ultimate_cron": 15,
+        "drupal/views_field_view": 10,
         "drupal/views_tree": 5
     },
     "prefer-stable": true,

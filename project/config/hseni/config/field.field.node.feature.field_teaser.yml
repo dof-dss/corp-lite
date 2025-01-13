@@ -1,4 +1,4 @@
-uuid: 384d33b7-f9fd-44ba-b4ca-5f237d9f3c67
+uuid: 8ec264fd-276e-45f8-a41f-719706f69c77
 langcode: en
 status: true
 dependencies:
@@ -10,8 +10,8 @@ field_name: field_teaser
 entity_type: node
 bundle: feature
 label: Teaser
-description: 'Enter some short teaser text for this feature.'
-required: true
+description: ''
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''

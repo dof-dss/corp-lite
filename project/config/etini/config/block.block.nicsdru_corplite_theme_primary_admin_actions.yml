@@ -1,0 +1,20 @@
+uuid: 13800eb1-0a89-4a21-a8f8-a94a383e9b22
+langcode: en
+status: true
+dependencies:
+  theme:
+    - nicsdru_corplite_theme
+_core:
+  default_config_hash: UUuHLwdntNDDZdOU5kP43GWc49i0FQ7_w23cUOISpeM
+id: nicsdru_corplite_theme_primary_admin_actions
+theme: nicsdru_corplite_theme
+region: highlighted
+weight: -5
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

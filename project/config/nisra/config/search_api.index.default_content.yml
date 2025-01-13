@@ -168,7 +168,8 @@ field_settings:
     type: solr_text_spellcheck
     configuration:
       type: union
-      separator: |+
+      separator: |
+
       fields:
         - 'entity:node/title'
   status:
@@ -198,6 +199,16 @@ field_settings:
     configuration:
       type: union
       separator: |+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -260,9 +271,17 @@ field_settings:
 datasource_settings:
   'entity:node':
     bundles:
-      default: true
+      default: false
       selected:
-        - webform
+        - application
+        - contact
+        - department_management
+        - news
+        - page
+        - profile
+        - publication
+        - secure_market_statistics
+        - secure_statistics
     languages:
       default: true
       selected: {  }

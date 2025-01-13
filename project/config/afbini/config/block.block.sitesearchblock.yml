@@ -10,7 +10,7 @@ dependencies:
 id: sitesearchblock
 theme: afbini_theme
 region: header
-weight: -5
+weight: -9
 provider: null
 plugin: site_search_block
 settings:
@@ -22,4 +22,4 @@ visibility:
   request_path:
     id: request_path
     negate: true
-    pages: /search
+    pages: "/search\r\n"

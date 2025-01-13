@@ -14,6 +14,8 @@ dependencies:
     - node.type.consultation
     - node.type.contact
     - node.type.department_management
+    - node.type.feature
+    - node.type.featured_content_list
     - node.type.link
     - node.type.news
     - node.type.page
@@ -49,6 +51,8 @@ permissions:
   - 'create contact content'
   - 'create department_management content'
   - 'create document media'
+  - 'create feature content'
+  - 'create featured_content_list content'
   - 'create file media'
   - 'create image media'
   - 'create link content'
@@ -80,6 +84,8 @@ permissions:
   - 'edit own consultation content'
   - 'edit own contact content'
   - 'edit own department_management content'
+  - 'edit own feature content'
+  - 'edit own featured_content_list content'
   - 'edit own link content'
   - 'edit own news content'
   - 'edit own page content'
@@ -98,6 +104,8 @@ permissions:
   - 'view consultation revisions'
   - 'view contact revisions'
   - 'view department_management revisions'
+  - 'view feature revisions'
+  - 'view featured_content_list revisions'
   - 'view latest version'
   - 'view link revisions'
   - 'view news revisions'

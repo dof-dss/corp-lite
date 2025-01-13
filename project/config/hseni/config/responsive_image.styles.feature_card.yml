@@ -3,8 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
-    - image.style.nigov_card_small_300x150_x1
     - image.style.nigov_card_small_600x300_x2
+    - image.style.nigov_landscape_600x400_x2
 _core:
   default_config_hash: 9iPKIAWmb7dCU914soaB137TFfpYf0yxntZjcdD4FVU
 id: feature_card
@@ -15,9 +15,8 @@ image_style_mappings:
     image_mapping:
       sizes: 100vw
       sizes_image_styles:
-        - nigov_card_small_300x150_x1
-        - nigov_card_small_600x300_x2
+        - nigov_landscape_600x400_x2
     breakpoint_id: responsive_image.viewport_sizing
     multiplier: 1x
 breakpoint_group: responsive_image
-fallback_image_style: nigov_card_small_300x150_x1
+fallback_image_style: nigov_card_small_600x300_x2

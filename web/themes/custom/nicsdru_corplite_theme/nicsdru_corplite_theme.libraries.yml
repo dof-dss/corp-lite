@@ -32,6 +32,7 @@ corplite-styling:
       css/3_components/navigation/breadcrumb.css: { minified: true }
       css/3_components/block/site-logo.css: { minified: true }
       css/3_components/form/buttons.css: { minified: true }
+      css/3_components/form/form.css: { minified: true }
       css/3_components/content/lists.css: { minified: true }
       css/3_components/field/file-link.css: { minified: true }
       css/3_components/navigation/topics-list.css: { minified: true }
@@ -41,9 +42,12 @@ corplite-styling:
       css/3_components/content/icons-messages.css: { minified: true }
       css/3_components/form/search-form.css: { minified: true }
       css/3_components/block/search-facets.css: { minified: true }
+      css/3_components/content/responsive-images.css: { minified: true }
     theme:
       css/3_components/navigation/pager.css: { minified: true }
       css/3_components/content/tables.css: { minified: true }
+      css/5_theme/searches.css: { minified: true }
+      css/5_theme/entities.css: { minified: true }
       '//fonts.googleapis.com/css2?family=Roboto': { type: external }
   js:
     js/ext-win-script.js: { minified: true }
@@ -118,3 +122,11 @@ authenticated-styles:
     theme:
       css/3_components/form/layout-builder-form.css: { minified: true, weight: -6 }
       css/3_components/layout/layout-builder.css: { minified: true, weight: -5 }
+      css/drupal/drupal-admin.css: { minified: true, weight: -5 }
+      css/drupal/drupal-diff.css: { minified: true, weight: -5 }
+
+book:
+  version: 1.0
+  css:
+    theme:
+      css/3_components/navigation/book.css: { minified: true }

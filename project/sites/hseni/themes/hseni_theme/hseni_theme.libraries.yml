@@ -6,5 +6,5 @@ site-styling:
     layout:
       css/2_layouts/front.css: { minified: true }
     theme:
-      css/3_components/navigation/pager.css: { minified: true }
-      css/3_components/content/tables.css: { minified: true }
+      css/3_components/layout/footer.css: { minified: true }
+      css/3_components/layout/components.css: { minified: true }

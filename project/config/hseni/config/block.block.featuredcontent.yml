@@ -1,4 +1,4 @@
-uuid: d906b245-7fac-4925-998c-a71aac2fdfbc
+uuid: ba741005-28bb-45ea-abe9-fd203aba7db4
 langcode: en
 status: true
 dependencies:
@@ -9,14 +9,14 @@ dependencies:
     - hseni_theme
 id: featuredcontent
 theme: hseni_theme
-region: content
-weight: -7
+region: top_banner
+weight: -11
 provider: null
 plugin: featured_content
 settings:
   id: featured_content
   label: 'Featured content'
-  label_display: visible
+  label_display: '0'
   provider: hseni_homepage
   featured_items: '2006'
 visibility:

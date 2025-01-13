@@ -8,11 +8,13 @@
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Link;
+use Drupal\Core\Render\Element;
 use Drupal\Core\Render\Markup;
 use Drupal\Core\StringTranslation\ByteSizeMarkup;
 use Drupal\Core\Template\Attribute;
 use Drupal\Core\Url;
 use Drupal\file\FileInterface;
+use Drupal\media\Entity\Media;
 use Drupal\node\Entity\Node;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\taxonomy\Entity\Vocabulary;
@@ -146,6 +148,8 @@ function nicsdru_corplite_theme_theme_suggestions_field_alter(array &$suggestion
   $publication_taxonomy_fields = [
     'field_site_topics',
     'field_research_support',
+    'field_publication_type',
+    'field_site_global_topics',
   ];
 
   foreach ($publication_taxonomy_fields as $publication_taxonomy_field) {
@@ -339,7 +343,7 @@ function nicsdru_corplite_theme_preprocess_media(&$variables) {
     return;
   }
 
-  if (!empty($variables['content']['field_media_file']) || !empty($variables['content']['field_media_file_1'])) {
+  if (!empty($variables['content']['field_media_file']) || !empty($variables['content']['field_media_file_1']) || !empty($variables['content']['field_media_file_2'])) {
     // Map file mimetypes to user friendly document types.
     $pretty_mimes = \Drupal::service('origins_media.pretty_mime_types')
       ->getMimeTypes();
@@ -347,6 +351,7 @@ function nicsdru_corplite_theme_preprocess_media(&$variables) {
     $media_fields = [
       'field_media_file',
       'field_media_file_1',
+      'field_media_file_2',
     ];
 
     foreach ($media_fields as $media_field) {
@@ -382,7 +387,7 @@ function nicsdru_corplite_theme_preprocess_media(&$variables) {
  * Implements hook_preprocess_HOOK().
  */
 function nicsdru_corplite_theme_preprocess_field(&$variables) {
-  if ($variables['field_name'] == 'field_attachment') {
+  if ($variables['field_name'] == 'field_attachment' || $variables['field_name'] == 'field_secure_attachment') {
     $path = \Drupal::service('path_alias.manager')
       ->getPathByAlias('/help-viewing-documents');
     if (preg_match('/node\/(\d+)/', $path, $matches)) {
@@ -461,45 +466,11 @@ function nicsdru_corplite_theme_preprocess_form(array &$variables) {
   switch ($view) {
     case "views-exposed-form-search-site-search":
     case "views-exposed-form-publication-search-publications-search":
-    case "views-exposed-form-consultations-search-consultations-search":
+    case "views-exposed-form-consultation-search-consultations-search":
     case "views-exposed-form-news-search-news-search":
+    case "views-exposed-form-alerts-search-alerts-search":
       $variables['attributes']['class'][] = Html::cleanCssIdentifier('search-form');
       $variables['attributes']['class'][] = Html::cleanCssIdentifier('search-form--page');
       break;
   }
 }
-
-///**
-// * Implements hook_form_element_label().
-// */
-//function nicsdru_corplite_theme_preprocess_form_element_label(&$variables) {
-//  // Search the exposed filter label for text: 'Search' any word e.g. Search consultations.
-//  if (preg_match('/Search\D[a-z]+/', $variables['title']['#markup'])) {
-//    // Make the label invisible.
-//    $variables['title_display'] = "invisible";
-//  }
-//}
-//
-///**
-// * Implements hook_preprocess_views_view().
-// */
-//function nicsdru_corplite_theme_preprocess_views_view(&$variables) {
-//  $variables['attributes']['role'] = 'presentation';
-//
-//  if ($variables['id'] === 'search') {
-//    $variables['exposed']['#attributes']['class'][] = Html::cleanCssIdentifier('search-form');
-//    $variables['exposed']['#attributes']['class'][] = Html::cleanCssIdentifier('search-form--site');
-//    // Make the site search required.
-//    $variables['exposed']['query']['#required'] = TRUE;
-//    // See nicsdru_unity_theme_form_alter for a required pattern on the input. The data-msg-pattern overrides the default error message.
-//    $variables['exposed']['query']['#attributes']['data-msg-pattern'] = t('Query must begin with a letter or number.');
-//    // If a label for the search input is not defined in the view, set
-//    // default label text.
-//    $search_label =& $variables['exposed']['#info']['filter-search_api_fulltext']['label'];
-//    if (isset($search_label) && empty($search_label)) {
-//      $search_label = t("Search this site");
-//    }
-//    // The label should be visually hidden.
-//    $variables['exposed']['query']['#title_display'] = 'invisible';
-//  }
-//}

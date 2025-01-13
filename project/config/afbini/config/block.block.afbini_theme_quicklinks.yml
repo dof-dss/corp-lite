@@ -1,0 +1,30 @@
+uuid: 3312100b-1a64-46b5-a4bf-d764f72b4a77
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:c10ec028-0c3c-4315-8e7b-11fccdbafe53'
+  module:
+    - block_content
+    - system
+  theme:
+    - afbini_theme
+id: afbini_theme_quicklinks
+theme: afbini_theme
+region: content
+weight: -7
+provider: null
+plugin: 'block_content:c10ec028-0c3c-4315-8e7b-11fccdbafe53'
+settings:
+  id: 'block_content:c10ec028-0c3c-4315-8e7b-11fccdbafe53'
+  label: 'Quick Links'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

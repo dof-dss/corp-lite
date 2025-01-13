@@ -1,0 +1,176 @@
+uuid: 1e39414c-60c9-43dd-8fe8-a1079e2e8edb
+langcode: en-gb
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: RaK-zULXDWDOL_hHMDoI6lOxH4mUkILzTcWrLob4qFc
+id: upgrade_d7_node_complete_publication
+class: Drupal\node\Plugin\migrate\D7NodeTranslation
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+migration_group: migrate_drupal_7
+label: 'Node complete (Publication)'
+source:
+  plugin: d7_node_complete
+  node_type: publication
+process:
+  nid:
+    -
+      plugin: get
+      source: tnid
+  vid:
+    -
+      plugin: get
+      source: vid
+  langcode:
+    -
+      plugin: default_value
+      source: language
+      default_value: und
+  title:
+    -
+      plugin: get
+      source: title
+  uid:
+    -
+      plugin: get
+      source: node_uid
+  status:
+    -
+      plugin: get
+      source: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: timestamp
+  promote:
+    -
+      plugin: get
+      source: promote
+  sticky:
+    -
+      plugin: get
+      source: sticky
+  revision_uid:
+    -
+      plugin: get
+      source: revision_uid
+  revision_log:
+    -
+      plugin: get
+      source: log
+  revision_timestamp:
+    -
+      plugin: get
+      source: timestamp
+  content_translation_source:
+    -
+      plugin: get
+      source: source_langcode
+  comment_node_publication/0/status:
+    -
+      plugin: get
+      source: comment
+  body:
+    -
+      plugin: get
+      source: body
+    -
+      plugin: media_wysiwyg_filter
+    -
+      plugin: filter_absolute_links
+      replace_urls: 'http://www.hseni.gov.uk http://hseni.gov.uk https://www.hseni.gov.uk https://hseni.gov.uk'
+    -
+      plugin: site_files_filter
+      from_ref: sites/hseni.gov.uk/files
+      to_ref: files/hseni
+  body/0/format:
+    -
+      plugin: static_map
+      bypass: true
+      source: body/0/format
+      map:
+        filtered_html: basic_html
+        filtered_html_with_no_images: basic_html
+        filtered_html_with_tokens: basic_html
+        restricted_html: basic_html
+        plain_text: plain_text
+  field_attachment:
+    -
+      plugin: sub_process
+      source: field_attachment
+      process:
+        target_id: fid
+        display: display
+        description: description
+  field_publication_type:
+    -
+      plugin: static_map
+      source: field_publication_type
+      default_value: null
+      map:
+        forms: 93
+        notices: 98
+        promotional: 101
+        advice_and_guidance: 86
+        annual_report_and_accounts: 87
+        authorisations_and_exemptions: 88
+        board_meeting_minutes: 89
+        consultations: 90
+        corporate_plans: 91
+        foi_eir_responses: 92
+        impact_assessments: 94
+        legislation_and_regulations: 95
+        lists_and_registers: 96
+        managementminutes: 103
+        memorandums_of_understanding: 97
+        operating_plans: 99
+        policies: 100
+        prosecutions: 102
+        speeches_and_statements: 104
+  field_published_date:
+    -
+      plugin: sub_process
+      source: field_published_date
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d H:i:s'
+          to_format: Y-m-d
+          source: value
+  field_site_topics:
+    -
+      plugin: sub_process
+      source: field_site_topics
+      process:
+        target_id: tid
+  field_summary:
+    -
+      plugin: get
+      source: field_summary
+    -
+      plugin: strip_html_filter
+  field_metatag:
+    -
+      plugin: d7_metatag_entities
+      source: pseudo_metatag_entities
+destination:
+  plugin: 'entity_complete:node'
+  translations: true
+  default_bundle: publication
+migration_dependencies:
+  required:
+    - upgrade_d7_user
+    - upgrade_d7_node_type
+  optional:
+    - upgrade_d7_field_instance
+    - upgrade_d7_metatag_field_node
+    - upgrade_d7_metatag_field_instance_node_publication
+    - upgrade_d7_metatag_field_instance_widget_settings_node_publication
