@@ -95,9 +95,7 @@ class MediaChartFilter extends ProcessPluginBase implements ContainerFactoryPlug
 
     $pattern = '/\[\[chart-nid:(\d+),chart-view-mode:full]]/';
 
-    //$messenger = $this->messenger();
-    //$nid = $row->getSourceProperty('nid');
-    $value['value'] = preg_replace_callback($pattern, function($matches) {
+    $value['value'] = preg_replace_callback($pattern, function ($matches) {
       $replacement_template = <<<'TEMPLATE'
 <drupal-entity
 data-entity-type="node"
