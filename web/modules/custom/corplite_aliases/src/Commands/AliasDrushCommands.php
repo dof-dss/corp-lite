@@ -55,7 +55,7 @@ class AliasDrushCommands extends DrushCommands {
    *
    * @command alias-taxonomy-terms
    */
-  public function aliasTaxonomyTerms(string $option = NULL) {
+  public function aliasTaxonomyTerms(string $option) {
     $n = 0;
     if (empty($option)) {
       $this->io()->write("Please specify a vocabulary name, or a tid", TRUE);
@@ -64,14 +64,14 @@ class AliasDrushCommands extends DrushCommands {
     if (is_numeric($option)) {
       $tid = $option;
       $term = $this->entityTypeManager->getStorage('taxonomy_term')->load($tid);
-      $alias = $this->aliasManager->getAliasByPath('/taxonomy/term/'.$tid);
+      $alias = $this->aliasManager->getAliasByPath('/taxonomy/term/' . $tid);
       // If the alias hasn't been set at all then update it.
       if ($alias == '/taxonomy/term/' . $tid) {
-        //\Drupal::service('pathauto.generator')->updateEntityAlias($term, 'update', ['force' => TRUE]);
         $this->pathautoGenerator->updateEntityAlias($term, 'update', ['force' => TRUE]);
         $n++;
       }
-    } else {
+    }
+    else {
       $entities = $this->entityTypeManager->getStorage('taxonomy_term')->loadByProperties(['vid' => $option]);
       // Update URL aliases for this vocabulary.
       foreach ($entities as $entity) {
