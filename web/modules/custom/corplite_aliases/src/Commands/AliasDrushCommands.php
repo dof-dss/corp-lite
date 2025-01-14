@@ -51,7 +51,7 @@ class AliasDrushCommands extends DrushCommands {
   public function aliasTaxonomyTerms(string $option = NULL) {
     $n = 0;
     if (empty($option)) {
-      $this->io()->write("Please specify 'all', or a vocabulary name, or a tid", TRUE);
+      $this->io()->write("Please specify a vocabulary name, or a tid", TRUE);
       return;
     }
     if (is_numeric($option)) {
