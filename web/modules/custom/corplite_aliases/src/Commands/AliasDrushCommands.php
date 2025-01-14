@@ -46,7 +46,7 @@ class AliasDrushCommands extends DrushCommands {
   public function __construct(EntityTypeManagerInterface $entityManager, AliasManagerInterface $alias_manager, PathautoGenerator $generator) {
     parent::__construct();
     $this->entityTypeManager = $entityManager;
-    $this->aliasManager = $alias_manager;
+    $this->pathAliasManager = $alias_manager;
     $this->pathautoGenerator = $generator;
   }
 
@@ -64,7 +64,7 @@ class AliasDrushCommands extends DrushCommands {
     if (is_numeric($option)) {
       $tid = $option;
       $term = $this->entityTypeManager->getStorage('taxonomy_term')->load($tid);
-      $alias = $this->aliasManager->getAliasByPath('/taxonomy/term/' . $tid);
+      $alias = $this->pathAliasManager->getAliasByPath('/taxonomy/term/' . $tid);
       // If the alias hasn't been set at all then update it.
       if ($alias == '/taxonomy/term/' . $tid) {
         $this->pathautoGenerator->updateEntityAlias($term, 'update', ['force' => TRUE]);
