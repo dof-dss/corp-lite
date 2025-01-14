@@ -3,6 +3,8 @@
 namespace Drupal\corplite_aliases\Commands;
 
 use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\path_alias\AliasManagerInterface;
+use Drupal\pathauto\PathautoGenerator;
 use Drush\Commands\DrushCommands;
 
 /**
@@ -18,14 +20,27 @@ class AliasDrushCommands extends DrushCommands {
   protected $entityTypeManager;
 
   /**
+   * The path alias manager.
+   *
+   * @var \Drupal\path_alias\AliasManagerInterface|\PHPUnit\Framework\MockObject\MockObject
+   */
+  protected $pathAliasManager;
+
+  protected $pathautoGenerator;
+
+  /**
    * Class constructor.
    *
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entityManager
    *   The entity type manager.
+   * @param \Drupal\path_alias\AliasManagerInterface $alias_manager
+   *   The alias manager.
    */
-  public function __construct(EntityTypeManagerInterface $entityManager) {
+  public function __construct(EntityTypeManagerInterface $entityManager, AliasManagerInterface $alias_manager, PathautoGenerator $generator) {
     parent::__construct();
     $this->entityTypeManager = $entityManager;
+    $this->aliasManager = $alias_manager;
+    $this->pathautoGenerator = $generator;
   }
 
   /**
@@ -41,26 +56,20 @@ class AliasDrushCommands extends DrushCommands {
     }
     if (is_numeric($option)) {
       $tid = $option;
-      $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($tid);
-      $aliasManager = \Drupal::service('path_alias.manager');
-      $alias = $aliasManager->getAliasByPath('/taxonomy/term/'.$tid);
+      $term = $this->entityTypeManager->getStorage('taxonomy_term')->load($tid);
+      $alias = $this->aliasManager->getAliasByPath('/taxonomy/term/'.$tid);
       // If the alias hasn't been set at all then update it.
       if ($alias == '/taxonomy/term/' . $tid) {
-        \Drupal::service('pathauto.generator')->updateEntityAlias($term, 'update', ['force' => TRUE]);
+        //\Drupal::service('pathauto.generator')->updateEntityAlias($term, 'update', ['force' => TRUE]);
+        $this->pathautoGenerator->updateEntityAlias($term, 'update', ['force' => TRUE]);
         $n++;
       }
     } else {
-      $result = \Drupal::entityQuery('taxonomy_term')->accessCheck(FALSE)->execute();
-      $entities = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadMultiple($result);
-      $vid = NULL;
-      // Has a vocabulary been specified.
-      if ($option != 'all') {
-        $vid = $option;
-      }
-      // Update URL aliases.
+      $entities = $this->entityTypeManager->getStorage('taxonomy_term')->loadByProperties(['vid' => $option]);
+      // Update URL aliases for this vocabulary.
       foreach ($entities as $entity) {
-        if (($vid) && ($vid == $entity->vid->getString())) {
-          \Drupal::service('pathauto.generator')->updateEntityAlias($entity, 'update', ['force' => TRUE]);
+        if (($option) && ($option == $entity->vid->getString())) {
+          $this->pathautoGenerator->updateEntityAlias($entity, 'update', ['force' => TRUE]);
           $n++;
         }
       }

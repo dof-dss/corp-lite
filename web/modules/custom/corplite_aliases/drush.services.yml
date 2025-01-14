@@ -1,6 +1,6 @@
 services:
   corplite_aliases.commands:
     class: \Drupal\corplite_aliases\Commands\AliasDrushCommands
-    arguments: ['@entity_type.manager']
+    arguments: ['@entity_type.manager', '@path_alias.manager', '@pathauto.generator']
     tags:
       - { name: drush.command }
