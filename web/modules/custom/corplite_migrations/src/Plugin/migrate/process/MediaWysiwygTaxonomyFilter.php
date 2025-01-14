@@ -161,7 +161,7 @@ TEMPLATE;
       catch (NotEncodableValueException $e) {
         // There was an error decoding the JSON. Remove code.
         $messenger->addWarning(sprintf('The following media_wysiwyg token in node %d does not have valid JSON: %s',
-          $nid, $matches[0]));
+          $tid, $matches[0]));
         return NULL;
       }
       return NULL;
