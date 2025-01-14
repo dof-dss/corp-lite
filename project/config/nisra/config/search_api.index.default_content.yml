@@ -199,44 +199,6 @@ field_settings:
     configuration:
       type: union
       separator: |+
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       fields:
         - 'entity:node/title'
         - 'entity:taxonomy_term/name'

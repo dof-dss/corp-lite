@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b4c97e74d0dd4ce6a05a02de0424e6ea",
+    "content-hash": "613e1bd4bbc8586f23778096960e0181",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1682,16 +1682,16 @@
         },
         {
             "name": "dof-dss/nicsdru_origins_modules",
-            "version": "10.4.3",
+            "version": "10.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dof-dss/nicsdru_origins_modules.git",
-                "reference": "7fdc6bd3d818a3b82ff2433e5bd5df9df1916ca9"
+                "reference": "0d96d5bcd7b56c342324a2c6a6a42c4c11faf0c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dof-dss/nicsdru_origins_modules/zipball/7fdc6bd3d818a3b82ff2433e5bd5df9df1916ca9",
-                "reference": "7fdc6bd3d818a3b82ff2433e5bd5df9df1916ca9",
+                "url": "https://api.github.com/repos/dof-dss/nicsdru_origins_modules/zipball/0d96d5bcd7b56c342324a2c6a6a42c4c11faf0c5",
+                "reference": "0d96d5bcd7b56c342324a2c6a6a42c4c11faf0c5",
                 "shasum": ""
             },
             "require": {
@@ -1706,9 +1706,9 @@
             "description": "Generic modules for DOF-DSS Drupal sites",
             "support": {
                 "issues": "https://github.com/dof-dss/nicsdru_origins_modules/issues",
-                "source": "https://github.com/dof-dss/nicsdru_origins_modules/tree/10.4.3"
+                "source": "https://github.com/dof-dss/nicsdru_origins_modules/tree/10.4.4"
             },
-            "time": "2024-11-04T16:26:51+00:00"
+            "time": "2024-12-11T12:00:37+00:00"
         },
         {
             "name": "drupal/address",
@@ -16499,39 +16499,37 @@
         },
         {
             "name": "drupal/stage_file_proxy",
-            "version": "2.1.4",
+            "version": "3.1.4",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/stage_file_proxy.git",
-                "reference": "2.1.4"
+                "reference": "3.1.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/stage_file_proxy-2.1.4.zip",
-                "reference": "2.1.4",
-                "shasum": "85f8451f123fcfb1b272f5a0cc11e6bd1673476c"
+                "url": "https://ftp.drupal.org/files/projects/stage_file_proxy-3.1.4.zip",
+                "reference": "3.1.4",
+                "shasum": "57be6bfd1a429d41852e049e047b3ac0e277d277"
             },
             "require": {
-                "drupal/core": "^9 || ^10",
-                "php": ">=8"
+                "drupal/core": "^10.3 || ^11",
+                "php": ">=8.1"
+            },
+            "conflict": {
+                "drush/drush": "<12"
             },
             "require-dev": {
                 "drupal/coder": "^8.3",
-                "drush/drush": "^11 || ^12"
+                "drush/drush": ">=12"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.1.4",
-                    "datestamp": "1706627704",
+                    "version": "3.1.4",
+                    "datestamp": "1733151924",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
-                    }
-                },
-                "drush": {
-                    "services": {
-                        "stage_file_proxy.drush.services.yml": "^11"
                     }
                 }
             },
@@ -21603,6 +21601,7 @@
         "drupal/menu_breadcrumb": 15,
         "drupal/search_api_location": 15,
         "drupal/shs": 5,
+        "drupal/stage_file_proxy": 20,
         "drupal/ultimate_cron": 15,
         "drupal/views_field_view": 10,
         "drupal/views_tree": 5
