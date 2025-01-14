@@ -29,8 +29,7 @@ class AliasDrushCommands extends DrushCommands {
   }
 
   /**
-   * Drush command to update all school
-   * entities to make them available to Solr.
+   * Drush command to force update taxonomy term aliases.
    *
    * @command alias-taxonomy-terms
    */
@@ -45,6 +44,7 @@ class AliasDrushCommands extends DrushCommands {
       $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($tid);
       $aliasManager = \Drupal::service('path_alias.manager');
       $alias = $aliasManager->getAliasByPath('/taxonomy/term/'.$tid);
+      // If the alias hasn't been set at all then update it.
       if ($alias == '/taxonomy/term/' . $tid) {
         \Drupal::service('pathauto.generator')->updateEntityAlias($term, 'update', ['force' => TRUE]);
         $n++;
@@ -53,6 +53,7 @@ class AliasDrushCommands extends DrushCommands {
       $result = \Drupal::entityQuery('taxonomy_term')->accessCheck(FALSE)->execute();
       $entities = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadMultiple($result);
       $vid = NULL;
+      // Has a vocabulary been specified.
       if ($option != 'all') {
         $vid = $option;
       }
