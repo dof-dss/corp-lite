@@ -90,14 +90,15 @@ class MediaChartFilter extends ProcessPluginBase implements ContainerFactoryPlug
    */
   public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
     if (empty($value)) {
-      return $value['value'];
+      return $value;
     }
 
     $pattern = '/\[\[chart-nid:(\d+),chart-view-mode:full]]/';
 
-    $messenger = $this->messenger();
-    $nid = $row->getSourceProperty('nid');
-    $value = preg_replace_callback($pattern, function($matches) use ($messenger, $nid) {
+//    $messenger = $this->messenger();
+//    $nid = $row->getSourceProperty('nid');
+    $value['value'] = preg_replace_callback($pattern, function($matches) {
+
       $replacement_template = <<<'TEMPLATE'
 <drupal-entity
 data-entity-type="node"
@@ -117,8 +118,9 @@ TEMPLATE;
       $node = $query->execute()->fetchAssoc();
 
       return sprintf($replacement_template, $node['uuid']);
-    }, $value);
+    }, $value['value']);
 
     return $value;
   }
+
 }

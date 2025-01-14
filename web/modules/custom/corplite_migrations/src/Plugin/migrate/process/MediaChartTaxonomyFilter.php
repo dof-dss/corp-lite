@@ -95,9 +95,10 @@ class MediaChartTaxonomyFilter extends ProcessPluginBase implements ContainerFac
 
     $pattern = '/\[\[chart-nid:(\d+),chart-view-mode:full]]/';
 
-    $messenger = $this->messenger();
-    $tid = $row->getSourceProperty('tid');
-    $value = preg_replace_callback($pattern, function($matches) use ($messenger, $tid) {
+//    $messenger = $this->messenger();
+//    $tid = $row->getSourceProperty('tid');
+    $value = preg_replace_callback($pattern, function($matches) {
+
       $replacement_template = <<<'TEMPLATE'
 <drupal-entity
 data-entity-type="node"
@@ -121,4 +122,5 @@ TEMPLATE;
 
     return $value;
   }
+
 }
