@@ -27,7 +27,7 @@ process:
     -
       plugin: default_value
       source: language
-      default_value: en
+      default_value: und
   title:
     -
       plugin: get
