@@ -26,6 +26,11 @@ class AliasDrushCommands extends DrushCommands {
    */
   protected $pathAliasManager;
 
+  /**
+   * The Pathauto generator.
+   *
+   * @var \Drupal\pathauto\PathautoGenerator
+   */
   protected $pathautoGenerator;
 
   /**
@@ -35,6 +40,8 @@ class AliasDrushCommands extends DrushCommands {
    *   The entity type manager.
    * @param \Drupal\path_alias\AliasManagerInterface $alias_manager
    *   The alias manager.
+   * @param \Drupal\pathauto\PathautoGenerator $generator
+   *   The pathauto generator.
    */
   public function __construct(EntityTypeManagerInterface $entityManager, AliasManagerInterface $alias_manager, PathautoGenerator $generator) {
     parent::__construct();
