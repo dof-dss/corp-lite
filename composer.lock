@@ -8205,7 +8205,6 @@
         },
         {
             "name": "drupal/views_field_view",
-<<<<<<< HEAD
             "version": "1.0.0-beta5",
             "source": {
                 "type": "git",
@@ -8220,33 +8219,12 @@
             },
             "require": {
                 "drupal/core": "^9 || ^10"
-=======
-            "version": "1.0.0-beta6",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/views_field_view.git",
-                "reference": "8.x-1.0-beta6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/views_field_view-8.x-1.0-beta6.zip",
-                "reference": "8.x-1.0-beta6",
-                "shasum": "a43a286dc185c2f6cebb2833c8d16ed28a1a1df6"
-            },
-            "require": {
-                "drupal/core": "^9 || ^10 || ^11"
->>>>>>> 4ef3ef3d (Add views_field_view module)
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-<<<<<<< HEAD
                     "version": "8.x-1.0-beta5",
                     "datestamp": "1675318984",
-=======
-                    "version": "8.x-1.0-beta6",
-                    "datestamp": "1736794891",
->>>>>>> 4ef3ef3d (Add views_field_view module)
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
