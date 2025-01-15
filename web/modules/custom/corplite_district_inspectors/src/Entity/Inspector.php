@@ -53,5 +53,5 @@ class Inspector extends RevisionableContentEntityBase implements ContentEntityIn
 
     return $fields;
   }
-  
+
 }
