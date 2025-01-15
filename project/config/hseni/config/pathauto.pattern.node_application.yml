@@ -17,5 +17,5 @@ selection_criteria:
     bundles:
       application: application
 selection_logic: and
-weight: 0
+weight: -9
 relationships: {  }

@@ -24,13 +24,13 @@ third_party_settings:
   field_group:
     group_ways_to_respond:
       children:
-        - field_respond_online
         - field_email_address
         - field_postal
+        - field_respond_online
       label: 'Ways to respond'
       parent_name: ''
       region: hidden
-      weight: 4
+      weight: 12
       format_type: fieldset
       format_settings:
         classes: ''
@@ -56,7 +56,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   field_attachment:
     type: entity_reference_entity_view
@@ -65,7 +65,7 @@ content:
       view_mode: default
       link: false
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
   field_consultation_dates:
     type: daterange_default
@@ -76,6 +76,14 @@ content:
       from_to: both
       separator: '-'
     third_party_settings: {  }
+    weight: 1
+    region: content
+  field_site_topics:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
     weight: 0
     region: content
   field_summary:
@@ -83,7 +91,7 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
 hidden:
   content_moderation_control: true
@@ -93,7 +101,6 @@ hidden:
   field_postal: true
   field_published_date: true
   field_respond_online: true
-  field_site_topics: true
   langcode: true
   links: true
   search_api_excerpt: true
