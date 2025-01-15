@@ -28,6 +28,8 @@ process:
   description/value:
     - plugin: get
       source: description
+    - plugin: media_chart_taxonomy_filter
+    - plugin: media_wysiwyg_taxonomy_filter
   description/format:
     - plugin: static_map
       bypass: true

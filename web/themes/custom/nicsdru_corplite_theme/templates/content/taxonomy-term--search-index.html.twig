@@ -1,0 +1,13 @@
+{#
+/**
+ * @file
+ * Theme override to display a node in search result view mode.
+#}
+<a class="card card--plain no-ext-icon" href="{{ url }}">
+  <h3 class="card__title">{{ name }}</h3>
+  {%- if content.field_summary %}
+  <div class="card__summary">
+    {{ content.field_summary }}
+  </div>
+  {% endif %}
+</a>

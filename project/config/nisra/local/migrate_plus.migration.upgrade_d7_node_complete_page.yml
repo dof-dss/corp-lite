@@ -81,6 +81,8 @@ process:
       plugin: get
       source: body
     -
+      plugin: media_chart_filter
+    -
       plugin: media_wysiwyg_filter
     -
       plugin: filter_absolute_links
