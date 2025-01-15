@@ -9,10 +9,10 @@ label: 'Taxonomy term - Site topics'
 type: 'canonical_entities:taxonomy_term'
 pattern: '[term:name]'
 selection_criteria:
-  9793826a-cc84-46b7-9c03-7968e7c731be:
+  e02139f6-fe6f-4212-b683-70278d8c5213:
     id: 'entity_bundle:taxonomy_term'
     negate: false
-    uuid: 9793826a-cc84-46b7-9c03-7968e7c731be
+    uuid: e02139f6-fe6f-4212-b683-70278d8c5213
     context_mapping:
       taxonomy_term: taxonomy_term
     bundles:
