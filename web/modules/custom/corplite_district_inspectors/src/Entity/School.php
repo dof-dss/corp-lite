@@ -34,6 +34,10 @@ use Drupal\user\UserInterface;
  * )
  */
 class School extends RevisionableContentEntityBase implements ContentEntityInterface {
+
+  /**
+   * Specify fields.
+   */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
     $fields = parent::baseFieldDefinitions($entity_type);
 
@@ -73,4 +77,5 @@ class School extends RevisionableContentEntityBase implements ContentEntityInter
 
     return $fields;
   }
+
 }

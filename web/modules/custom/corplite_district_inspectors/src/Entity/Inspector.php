@@ -34,6 +34,10 @@ use Drupal\user\UserInterface;
  * )
  */
 class Inspector extends RevisionableContentEntityBase implements ContentEntityInterface {
+
+  /**
+   * Specify fields.
+   */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
     $fields = parent::baseFieldDefinitions($entity_type);
 
@@ -49,4 +53,5 @@ class Inspector extends RevisionableContentEntityBase implements ContentEntityIn
 
     return $fields;
   }
+  
 }
