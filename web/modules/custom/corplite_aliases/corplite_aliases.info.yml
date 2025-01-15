@@ -1,0 +1,5 @@
+name: 'Corplite Aliases'
+type: module
+description: 'Update taxonomy aliases'
+core_version_requirement: ^8.8 || ^9 || ^10 || ^11
+package: 'Custom'
