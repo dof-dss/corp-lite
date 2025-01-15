@@ -179,31 +179,6 @@ field_settings:
     configuration:
       type: union
       separator: |+
-
-
-
-
-
-
-
-
-
-
-
-
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-
-
-
-=======
->>>>>>> 2fdf3ef9 (Create Schools index and initial view)
-=======
-
-
->>>>>>> 8ae58489 (Recreate district inspectors view)
       fields:
         - 'entity:node/title'
   type:
