@@ -1,0 +1,24 @@
+uuid: 3955f8b6-7d9b-445c-9d2a-c03f7e4ea8ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.school
+    - views.view.district_inspectors
+  module:
+    - views
+    - search_api_autocomplete
+id: district_inspectors
+label: 'District Inspectors'
+index_id: school
+suggester_settings:
+  server:
+    fields: {  }
+suggester_weights: {  }
+suggester_limits: {  }
+search_settings:
+  'views:district_inspectors':
+    displays:
+      default: true
+      selected: {  }
+options: {  }

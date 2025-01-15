@@ -150,23 +150,6 @@ field_settings:
     configuration:
       type: union
       separator: |+
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       fields:
         - 'entity:node/title'
   status:
@@ -196,23 +179,6 @@ field_settings:
     configuration:
       type: union
       separator: |+
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       fields:
         - 'entity:node/title'
   type:

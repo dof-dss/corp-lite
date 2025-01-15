@@ -9,7 +9,7 @@ cck_plugin_method: null
 migration_tags:
   - Custom
 migration_group: migrate_drupal_7
-label: 'Public files'
+label: 'Secure files'
 source:
   plugin: file_entity
   type: document
@@ -17,7 +17,7 @@ source:
     bundle: secure_file
     ignore_uri_regex: '|^public://|'
 process:
-  skip_private_files:
+  skip_public_files:
     plugin: skip_on_condition
     source:
       - constants/ignore_uri_regex
