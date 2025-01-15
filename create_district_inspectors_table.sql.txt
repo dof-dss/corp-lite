@@ -1,7 +1,0 @@
-create table inspector_import (
-	de_reference varchar(128),
-	school_name varchar(128),
-	 phases varchar(128),
-	district varchar(128),
-	district_inspector varchar(128)
-);

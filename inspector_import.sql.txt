@@ -1,5 +1,0 @@
-insert into inspector_import (de_reference, school_name, district, district_inspector, c2k_email) values ('4420259','Our Lady and St Patrick’s College','BSE4','Susan O’Boyle','4420259Prince@c2kni.net');
-insert into inspector_import (de_reference, school_name, district, district_inspector, c2k_email) values ('4316273','Longstone Special School','BSE4','Susan O’Boyle','4316273Prince@c2kni.net');
-insert into inspector_import (de_reference, school_name, district, district_inspector, c2k_email) values ('4316515','Parkview Special School','BSE4','Susan O’Boyle','4316515Prince@c2kni.net');
-insert into inspector_import (de_reference, school_name, district, district_inspector, c2k_email) values ('N/A','Lagan Valley Project EOTAS','BSE4','Susan O’Boyle','mccabeanthony@hotmail.com');
-insert into inspector_import (de_reference, school_name, district, district_inspector, c2k_email) values ('N/A','Newstart Education Centre','BSE2','Wendy Crawford','julie.quinn@eani.org.uk');
