@@ -241,6 +241,7 @@ display:
           min_length: 1
           fields:
             - de_reference
+            - name
       style:
         type: default
       row:

@@ -65,6 +65,14 @@ field_settings:
     dependencies:
       module:
         - corplite_district_inspectors
+  name:
+    label: Name
+    datasource_id: 'entity:School'
+    property_path: Name
+    type: text
+    dependencies:
+      module:
+        - corplite_district_inspectors
 datasource_settings:
   'entity:School': {  }
 processor_settings:
@@ -83,4 +91,4 @@ options:
   cron_limit: 50
   index_directly: true
   track_changes_in_references: true
-server: solr_default
+server: null
