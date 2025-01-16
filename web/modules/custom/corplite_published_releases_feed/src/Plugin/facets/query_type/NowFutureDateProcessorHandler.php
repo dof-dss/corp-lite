@@ -23,32 +23,31 @@ class NowFutureDateProcessorHandler extends QueryTypePluginBase {
     $query = $this->query;
 
     // Only alter the query when there's an actual query object to alter.
-    // if (!empty($query)) {
-      $operator = $this->facet->getQueryOperator();
-      $field_identifier = $this->facet->getFieldIdentifier();
+    $operator = $this->facet->getQueryOperator();
+    $field_identifier = $this->facet->getFieldIdentifier();
 
-      if ($query->getProcessingLevel() === QueryInterface::PROCESSING_FULL) {
-        // Set the options for the actual query.
-        $options = &$query->getOptions();
-        $options['search_api_facets'][$field_identifier] = $this->getFacetOptions();
-      }
-
-      // Add the filter to the query if there are active values.
-      $active_items = $this->facet->getActiveItems();
-
-      if (count($active_items)) {
-        // Add custom query condition.
-        $filter = $query->createConditionGroup($operator, ['facet:' . $field_identifier]);
-        foreach ($active_items as $value) {
-          $now = \Drupal::service('datetime.time')->getRequestTime();
-          $comp_op = $value === 'now' ? '<=' : '>';
-          $filter->addCondition($field_identifier, $now, $comp_op);
-        }
-
-        $query->addConditionGroup($filter);
-      }
+    if ($query->getProcessingLevel() === QueryInterface::PROCESSING_FULL) {
+      // Set the options for the actual query.
+      $options = &$query->getOptions();
+      $options['search_api_facets'][$field_identifier] = $this->getFacetOptions();
     }
-    //  }
+
+    // Add the filter to the query if there are active values.
+    $active_items = $this->facet->getActiveItems();
+
+    if (count($active_items)) {
+      // Add custom query condition.
+      $filter = $query->createConditionGroup($operator, ['facet:' . $field_identifier]);
+      foreach ($active_items as $value) {
+        $now = \Drupal::service('datetime.time')->getRequestTime();
+        $comp_op = $value === 'now' ? '<=' : '>';
+        $filter->addCondition($field_identifier, $now, $comp_op);
+      }
+
+      $query->addConditionGroup($filter);
+    }
+
+  }
 
   /**
    * {@inheritdoc}
