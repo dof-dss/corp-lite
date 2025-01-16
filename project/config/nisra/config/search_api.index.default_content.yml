@@ -198,7 +198,8 @@ field_settings:
     boost: 21.0
     configuration:
       type: union
-      separator: |+
+      separator: |
+
       fields:
         - 'entity:node/title'
         - 'entity:taxonomy_term/name'
