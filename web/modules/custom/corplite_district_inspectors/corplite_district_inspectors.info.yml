@@ -1,0 +1,5 @@
+name: 'Corplite district inspectors'
+type: module
+description: 'Entities, forms and views for Corplite district inspectors'
+package: 'Custom'
+core_version_requirement: ^8 || ^9 || ^10 || ^11
