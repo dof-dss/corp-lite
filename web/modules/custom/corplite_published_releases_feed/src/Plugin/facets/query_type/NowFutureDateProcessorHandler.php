@@ -24,12 +24,12 @@ class NowFutureDateProcessorHandler extends QueryTypePluginBase {
 
     // Only alter the query when there's an actual query object to alter.
     if (!empty($query)) {
-      $operator         = $this->facet->getQueryOperator();
+      $operator = $this->facet->getQueryOperator();
       $field_identifier = $this->facet->getFieldIdentifier();
 
       if ($query->getProcessingLevel() === QueryInterface::PROCESSING_FULL) {
         // Set the options for the actual query.
-        $options                                         = &$query->getOptions();
+        $options = &$query->getOptions();
         $options['search_api_facets'][$field_identifier] = $this->getFacetOptions();
       }
 
@@ -40,7 +40,7 @@ class NowFutureDateProcessorHandler extends QueryTypePluginBase {
         // Add custom query condition
         $filter = $query->createConditionGroup($operator, ['facet:' . $field_identifier]);
         foreach ($active_items as $value) {
-          $now     = \Drupal::service('datetime.time')->getRequestTime();
+          $now = \Drupal::service('datetime.time')->getRequestTime();
           $comp_op = $value === 'now' ? '<=' : '>';
           $filter->addCondition($field_identifier, $now, $comp_op);
         }
@@ -54,18 +54,18 @@ class NowFutureDateProcessorHandler extends QueryTypePluginBase {
    * {@inheritdoc}
    */
   public function build() {
-    $query_operator  = $this->facet->getQueryOperator();
-    $now             = \Drupal::service('datetime.time')->getRequestTime();
+    $query_operator = $this->facet->getQueryOperator();
+    $now = \Drupal::service('datetime.time')->getRequestTime();
     $new_facet_items = [
       'all' => 'All',
-      'now'    => 'Available Now',
+      'now' => 'Available Now',
       'future' => 'Available in the Future',
     ];
 
     if (!empty($this->results)) {
       $facet_results = [];
-      $counts        = [
-        'now'    => 0,
+      $counts = [
+        'now' => 0,
         'future' => 0,
         'all' => 0,
       ];
@@ -91,8 +91,8 @@ class NowFutureDateProcessorHandler extends QueryTypePluginBase {
 
       // Build new facet results
       foreach ($new_facet_items as $key => $label) {
-        $count           = $counts[$key];
-        $result          = new Result($this->facet, $key, $label, $count);
+        $count = $counts[$key];
+        $result = new Result($this->facet, $key, $label, $count);
         $facet_results[] = $result;
       }
 
@@ -101,4 +101,5 @@ class NowFutureDateProcessorHandler extends QueryTypePluginBase {
       return $this->facet;
     }
   }
+
 }

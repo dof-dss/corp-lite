@@ -32,4 +32,5 @@ class ExampleProcessor extends ProcessorPluginBase {
   public function getQueryType() {
     return 'example';
   }
+
 }
