@@ -1,0 +1,11 @@
+uuid: a90a1891-326c-48d5-ba19-eb3643a2609e
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.teaser_with_summary
+label: 'Teaser with summary'
+description: ''
+targetEntityType: taxonomy_term
+cache: true

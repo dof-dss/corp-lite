@@ -73,6 +73,11 @@ function nisra_theme_preprocess_page(array &$variables) {
         $variables['content_wrapper_attr']
           ->addClass(['ga-main', 'contacts-content'])
           ->setAttribute('role', 'presentation');
+      case "published_releases_search":
+        $variables['main_content_attr']->addClass(LayoutClasses::SIDE_MAIN);
+        $variables['content_wrapper_attr']
+          ->addClass(['ga-main', 'search'])
+          ->setAttribute('role', 'presentation');
     }
   }
 

@@ -1,0 +1,34 @@
+uuid: 1bede907-4ae9-4df1-bff9-a1c065907f6b
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.now_future
+  module:
+    - block_visibility_groups
+    - facets
+    - system
+  theme:
+    - nisra_theme
+id: nisra_theme_nowfuture
+theme: nisra_theme
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'facet_block:now_future'
+settings:
+  id: 'facet_block:now_future'
+  label: Now/Future
+  label_display: visible
+  provider: facets
+  context_mapping: {  }
+  block_id: nisra_theme_nowfuture
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/published-releases\r\n/published-releases/date/*\r\n/published-releases/now_future/*"

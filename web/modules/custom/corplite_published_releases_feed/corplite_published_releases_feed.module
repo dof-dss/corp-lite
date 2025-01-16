@@ -85,3 +85,10 @@ function corplite_published_releases_feed_fetch_feed() {
   }
   return $data;
 }
+
+/**
+ * Implements hook_facets_search_api_query_type_mapping_alter().
+ */
+function corplite_published_releases_feed_facets_search_api_query_type_mapping_alter($backend_plugin_id, array &$query_types) {
+  $query_types['example'] = 'now_future_dates';
+}
