@@ -23,7 +23,7 @@ class NowFutureDateProcessorHandler extends QueryTypePluginBase {
     $query = $this->query;
 
     // Only alter the query when there's an actual query object to alter.
-    if (!empty($query)) {
+    // if (!empty($query)) {
       $operator = $this->facet->getQueryOperator();
       $field_identifier = $this->facet->getFieldIdentifier();
 
@@ -37,7 +37,7 @@ class NowFutureDateProcessorHandler extends QueryTypePluginBase {
       $active_items = $this->facet->getActiveItems();
 
       if (count($active_items)) {
-        // Add custom query condition
+        // Add custom query condition.
         $filter = $query->createConditionGroup($operator, ['facet:' . $field_identifier]);
         foreach ($active_items as $value) {
           $now = \Drupal::service('datetime.time')->getRequestTime();
@@ -48,7 +48,7 @@ class NowFutureDateProcessorHandler extends QueryTypePluginBase {
         $query->addConditionGroup($filter);
       }
     }
-  }
+    //  }
 
   /**
    * {@inheritdoc}
@@ -70,7 +70,7 @@ class NowFutureDateProcessorHandler extends QueryTypePluginBase {
         'all' => 0,
       ];
 
-      // Loop through actual facet results and aggregate counts
+      // Loop through actual facet results and aggregate counts.
       foreach ($this->results as $result) {
         if ($result['count'] || $query_operator == 'or') {
           $result_filter = trim($result['filter'], '"');
@@ -89,7 +89,7 @@ class NowFutureDateProcessorHandler extends QueryTypePluginBase {
         }
       }
 
-      // Build new facet results
+      // Build new facet results.
       foreach ($new_facet_items as $key => $label) {
         $count = $counts[$key];
         $result = new Result($this->facet, $key, $label, $count);
