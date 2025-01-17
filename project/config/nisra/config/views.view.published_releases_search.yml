@@ -5,6 +5,7 @@ dependencies:
   config:
     - search_api.index.published_releases_index
   module:
+    - corplite_search
     - search_api
 id: published_releases_search
 label: 'Published releases search'
@@ -243,7 +244,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div>\r\n{% if url|length > 0 %}\r\n  <p><a href='{{ url }}'>{{ title }}</a></p>\r\n{% else %}\r\n  <p><b'>{{ title }}</b></p>\r\n{% endif %}\r\n<p>{{ summary }}</p>\r\n<p>Updated: {{ release_date }}</p>\r\n</div>"
+            text: "<article class=\"card card--plain no-ext-icon\">\r\n{% if url|length > 0 %}\r\n  <h3 class=\"card__title\"><a href='{{ url }}'>{{ title }}</a></h3>\r\n{% else %}\r\n  <h3 class=\"card__title\"><b'>{{ title }}</b></h3>\r\n{% endif %}\r\n{% if summary %}\r\n<div class=\"card__summary\">\r\n<p>{{ summary }}</p>\r\n</div>\r\n{% endif %}\r\n<div class=\"card__meta\">\r\n<span class=\"card__meta-item field-published-date>Updated: {{ release_date }}</span>\r\n</div>\r\n</article>"
             make_link: false
             path: ''
             absolute: false
@@ -392,7 +393,27 @@ display:
           preserve_facet_query_args: false
           query_tags: {  }
       relationships: {  }
-      header: {  }
+      css_class: 'card-deck card-deck--search-results'
+      header:
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: result
+          empty: false
+          content: '@total publications'
+        search_sort_by:
+          id: search_sort_by
+          table: views
+          field: search_sort_by
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_sort_by
+          empty: false
       footer: {  }
       display_extenders: {  }
     cache_metadata:
