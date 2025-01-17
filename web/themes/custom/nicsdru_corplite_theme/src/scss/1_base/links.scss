@@ -127,3 +127,8 @@ $link-skip: (
     content: '';
   }
 }
+
+a strong,
+strong a {
+  font-weight: normal;
+}

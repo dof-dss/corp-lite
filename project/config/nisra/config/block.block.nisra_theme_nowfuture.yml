@@ -13,12 +13,12 @@ dependencies:
 id: nisra_theme_nowfuture
 theme: nisra_theme
 region: sidebar_first
-weight: 0
+weight: -5
 provider: null
 plugin: 'facet_block:now_future'
 settings:
   id: 'facet_block:now_future'
-  label: Now/Future
+  label: 'Release type'
   label_display: visible
   provider: facets
   context_mapping: {  }
