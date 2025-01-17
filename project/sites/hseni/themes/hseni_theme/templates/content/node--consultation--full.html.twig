@@ -71,7 +71,10 @@
  */
 #}
 <article{{ attributes.addClass('ga-main').setAttribute('id', 'main-article').removeAttribute('role') }}>
+{#  {{ include('@nicsdru_dept_theme/content/node-header.html.twig') }}#}
   {{ drupal_block('page_title_block', wrapper=false) }}
+
+  {#  {{ content.field_summary }}#}
 
   <div{{ content_attributes.addClass(['article-content', 'max-body-text-width']) }}>
 
@@ -87,18 +90,23 @@
         <section class="ways-to-respond">
           <h2>{{ 'Ways to Respond'|t }}</h2>
           <div class="ways-to-respond-content">
-            {# Display fields only if they have values #}
+
+            {# Respond Online Field #}
             {% if node.field_respond_online.0.url %}
               <div class="respond-online">
                 <a href="{{ node.field_respond_online.0.url }}" target="_blank" class="btn">{{ 'Respond Online'|t }}</a>
               </div>
             {% endif %}
+
+            {# Email Address Field #}
             {% if node.field_email_address.0.value %}
               <div class="respond-email">
                 <p>{{ 'Email Address'|t }}:</p>
                 <a href="mailto:{{ node.field_email_address.0.value }}">{{ node.field_email_address.0.value }}</a>
               </div>
             {% endif %}
+
+            {# Postal Address Field #}
             {% if node.field_postal.0.value %}
               <div class="respond-postal">
                 <p>{{ 'Write to'|t }}:</p>
@@ -109,5 +117,6 @@
         </section>
       {% endif %}
     {% endif %}
+   {#  {{ include('@nicsdru_dept_theme/content/node-footer.html.twig') }}#}
   </div>
 </article>
