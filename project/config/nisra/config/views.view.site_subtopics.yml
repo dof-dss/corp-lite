@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.taxonomy_term.teaser
+    - core.entity_view_mode.taxonomy_term.teaser_with_summary
     - field.storage.taxonomy_term.field_summary
     - taxonomy.vocabulary.research_support
     - taxonomy.vocabulary.site_topics
@@ -304,7 +304,7 @@ display:
         type: 'entity:taxonomy_term'
         options:
           relationship: none
-          view_mode: teaser
+          view_mode: teaser_with_summary
       query:
         type: views_query
         options:
