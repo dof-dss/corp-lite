@@ -168,59 +168,81 @@
 //
 // Style guide: components.search-form.site-search
 
-header .search-api-form {
-  padding: 0.8rem 0.8rem 0.8rem 0;
-  margin-bottom: 0;
-  max-width: 100%;
-  background-color: var(--clr-button-primary);
+header {
+  .search-form {
+    background-color: var(--clr-main-nav-active-bkgd);
+    padding: 1rem 1.5rem 1rem 6rem;
+    margin-bottom: 0;
+    max-width: 100%;
 
-  @include breakpoint($tab) {
-    background-color: inherit;
-    padding: 0;
-  }
-
-  .form-item,
-  .form-actions {
-    margin: 0;
-    padding: 0;
-  }
-
-  input {
-    height: 4.4rem; // must be min of 44px for good touch target
-
-    &[type='search'] {
-      font-size: 1.6rem;
-      max-width: 100%;
-      padding: 0 0.8rem;
-      border-width: 0;
-
-      @include breakpoint($tab) {
-        border-width: 1px;
-        border-right-width: 0;
-      }
-
-      &:focus {
-        outline: none;
-      }
-
-      &:focus-visible {
-        @include high-vis-focus();
-        position: relative;
-        z-index: 101;
-      }
+    @include breakpoint($tab) {
+      background: inherit;
+      padding: 0;
     }
 
-    &[type='submit'] {
-      border-color: var(--clr-button-primary);
-      background-color: var(--clr-button-primary);
-      color: #fff;
+    .form-actions {
+      @media screen and (max-width: $tab) {
+        bottom: 18px;
+        right: 14px;
+        margin: 0;
+      }
+    }
+  }
 
-      &:focus {
-        outline: none;
+  .search-api-form {
+    padding: 0.8rem 0.8rem 0.8rem 0;
+    margin-bottom: 0;
+    max-width: 100%;
+    background-color: var(--clr-button-primary);
+
+    @include breakpoint($tab) {
+      background-color: inherit;
+      padding: 0;
+    }
+
+    .form-item,
+    .form-actions {
+      margin: 0;
+      padding: 0;
+    }
+
+    input {
+      height: 4.4rem; // must be min of 44px for good touch target
+
+      &[type='search'] {
+        font-size: 1.6rem;
+        max-width: 100%;
+        padding: 0 0.8rem;
+        border-width: 0;
+
+        @include breakpoint($tab) {
+          border-width: 1px;
+          border-right-width: 0;
+        }
+
+        &:focus {
+          outline: none;
+        }
+
+        &:focus-visible {
+          @include high-vis-focus();
+          position: relative;
+          z-index: 101;
+        }
       }
 
-      &:focus-visible {
-        @include high-vis-focus();
+      &[type='submit'] {
+        border-color: var(--clr-button-primary);
+        background-color: var(--clr-button-primary);
+        color: #fff;
+
+        &:focus {
+          outline: none;
+        }
+
+        &:focus-visible {
+          @include high-vis-focus();
+        }
       }
     }
   }
