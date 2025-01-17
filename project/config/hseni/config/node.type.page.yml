@@ -11,14 +11,14 @@ third_party_settings:
       - main
     parent: 'main:'
   origins_toc:
-    toc_enable: 0
-    toc_title: 'Table of contents'
-    toc_location: ''
-    toc_insert: after
-    toc_source_container: ''
+    toc_enable: 1
+    toc_title: Contents
+    toc_location: .article-content
+    toc_insert: before
+    toc_source_container: .article-content
     toc_element: h2
     toc_exclusions: ''
-    toc_screen_depth: '1'
+    toc_screen_depth: '2'
     toc_debug: 0
 name: Page
 type: page
