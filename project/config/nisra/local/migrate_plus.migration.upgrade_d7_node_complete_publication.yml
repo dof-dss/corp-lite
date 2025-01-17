@@ -123,26 +123,26 @@ process:
         correspondence: 561
         decisions: 562
         developmentplanframework: 563
-        financial: 489
-        foiresponses: 490
-        forms: 491
-        guidance: 492
-        impactassessments: 493
-        independentreports: 494
-        inspectionreports: 495
-        jointcommuniques: 496
+        financial: 578
+        foiresponses: 579
+        forms: 580
+        guidance: 581
+        impactassessments: 582
+        independentreports: 583
+        inspectionreports: 584
+        jointcommuniques: 585
         legislation: 497
-        listsregisters: 498
-        maps: 499
-        memoranda: 500
-        notices: 501
-        policypapers: 502
-        promotional: 503
-        researchanalysis: 504
-        speeches: 505
-        surveys: 506
-        supportmaterial: 507
-        statisticalreports: 508
+        listsregisters: 586
+        maps: 587
+        memoranda: 588
+        notices: 589
+        policypapers: 590
+        promotional: 591
+        researchanalysis: 592
+        speeches: 593
+        surveys: 594
+        supportmaterial: 595
+        statisticalreports: 596
   field_published_date:
     -
       plugin: sub_process
