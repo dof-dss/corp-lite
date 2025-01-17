@@ -19,7 +19,7 @@ processor_configs:
 facets:
   now_future:
     checked: true
-    label: 'Now Future'
+    label: 'Release type'
     separator: ', '
     show_count: false
     weight: 0

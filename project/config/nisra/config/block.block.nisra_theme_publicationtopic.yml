@@ -12,7 +12,7 @@ dependencies:
 id: nisra_theme_publicationtopic
 theme: nisra_theme
 region: sidebar_first
-weight: -5
+weight: -10
 provider: null
 plugin: 'facet_block:publication_topic'
 settings:

@@ -11,7 +11,7 @@ use Drupal\search_api\Query\QueryInterface;
  *
  * @FacetsQueryType(
  *   id = "now_future_dates",
- *   label = @Translation("Availability | Now vs Future"),
+ *   label = @Translation("Availability | Published vs Upcoming"),
  * )
  */
 class NowFutureDateProcessorHandler extends QueryTypePluginBase {
@@ -57,8 +57,8 @@ class NowFutureDateProcessorHandler extends QueryTypePluginBase {
     $now = \Drupal::service('datetime.time')->getRequestTime();
     $new_facet_items = [
       'all' => 'All',
-      'now' => 'Available Now',
-      'future' => 'Available in the Future',
+      'now' => 'Published',
+      'future' => 'Upcoming',
     ];
 
     if (!empty($this->results)) {
