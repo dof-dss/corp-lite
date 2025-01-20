@@ -78,48 +78,45 @@
 
   <div{{ content_attributes.addClass(['article-content', 'max-body-text-width']) }}>
 
-    {{- content }}
+    {{ content }}
 
-    {# Ways to Respond Section - only show if at least one field is filled #}
-    {% if node.field_respond_online is not empty or node.field_email_address is not empty or node.field_postal is not empty %}
-      <section class="ways-to-respond">
-        <h2>{{ 'Ways to Respond'|t }}</h2>
+    {# Get the timestamp for the end date and current time #}
+    {% set end_timestamp = node.field_consultation_dates.0.end_date|date("U") %}
+    {% set current_timestamp = "now"|date("U") %}
 
-        <div class="ways-to-respond-content">
+    {# Only display Ways to Respond section if the consultation is open and any field has a value #}
+    {% if end_timestamp >= current_timestamp %}
+      {% if node.field_respond_online.0.url or node.field_email_address.0.value or node.field_postal.0.value %}
+        <section class="ways-to-respond">
+          <h2>{{ 'Ways to Respond'|t }}</h2>
+          <div class="ways-to-respond-content">
 
-          {# Respond Online Field - Display as a button #}
-          {% if node.field_respond_online is not empty %}
-            <div class="respond-online">
-              <div class="value">
+            {# Respond Online Field #}
+            {% if node.field_respond_online.0.url %}
+              <div class="respond-online">
                 <a href="{{ node.field_respond_online.0.url }}" target="_blank" class="btn">{{ 'Respond Online'|t }}</a>
               </div>
-            </div>
-          {% endif %}
+            {% endif %}
 
-          {# Email Address Field #}
-          {% if node.field_email_address is not empty %}
-            <div class="respond-email">
-              <p>{{ 'Email Address'|t }}:</p>
-              <div class="value">
+            {# Email Address Field #}
+            {% if node.field_email_address.0.value %}
+              <div class="respond-email">
+                <p>{{ 'Email Address'|t }}:</p>
                 <a href="mailto:{{ node.field_email_address.0.value }}">{{ node.field_email_address.0.value }}</a>
               </div>
-            </div>
-          {% endif %}
+            {% endif %}
 
-          {# Postal Address Field #}
-          {% if node.field_postal is not empty %}
-            <div class="respond-postal">
-              <p>{{ 'Write to'|t }}:</p>
-              <div class="value">
+            {# Postal Address Field #}
+            {% if node.field_postal.0.value %}
+              <div class="respond-postal">
+                <p>{{ 'Write to'|t }}:</p>
                 <address>{{ node.field_postal.0.value }}</address>
               </div>
-            </div>
-          {% endif %}
-        </div>
-      </section>
+            {% endif %}
+          </div>
+        </section>
+      {% endif %}
     {% endif %}
-    </div>
-  {#  {{ include('@nicsdru_dept_theme/content/node-footer.html.twig') }}#}
+   {#  {{ include('@nicsdru_dept_theme/content/node-footer.html.twig') }}#}
+  </div>
 </article>
-
-
