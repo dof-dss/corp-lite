@@ -10,7 +10,6 @@ libraries:
 
 ckeditor5-stylesheets:
   - css/1_base/root.css
-  - css/3_components/content/ckeditor.css
 
 regions:
   header: 'Header'
