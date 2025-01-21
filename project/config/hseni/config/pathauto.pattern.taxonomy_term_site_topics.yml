@@ -18,5 +18,5 @@ selection_criteria:
     bundles:
       site_topics: site_topics
 selection_logic: and
-weight: 1
+weight: 2
 relationships: {  }
