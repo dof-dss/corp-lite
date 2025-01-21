@@ -13,6 +13,8 @@ folder: ../project/config/hseni/production
 module:
   fastly: 0
 theme: {  }
+blacklist:
+  - fastly.settings
 complete_list:
   - search_api.server.solr_default
 partial_list: {  }
