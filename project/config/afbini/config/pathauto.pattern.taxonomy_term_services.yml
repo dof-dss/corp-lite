@@ -1,0 +1,22 @@
+uuid: f9a94f7d-dae6-4840-a2a6-f09669d843c6
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term_services
+label: 'Taxonomy term - Services'
+type: 'canonical_entities:taxonomy_term'
+pattern: '[term:name]'
+selection_criteria:
+  55f8723c-1a22-4f88-ade8-2977b60214ae:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: 55f8723c-1a22-4f88-ade8-2977b60214ae
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      services: services
+selection_logic: and
+weight: 0
+relationships: {  }
