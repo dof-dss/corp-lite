@@ -11,10 +11,24 @@ class AutoCompleteController extends ControllerBase {
     $matches = [];
     $string = $request->query->get('q');
     if (strlen($string) >= 3) {
-      $matches[] = [
-        'value' => '',
-        'label' => $this->t("No schools found")
-      ];
+      $index = \Drupal\search_api\Entity\Index::load('school');
+      $query = $index->query();
+      $query->keys($string);
+      $query->setFulltextFields(['name', 'de_reference']);
+      $results = $query->execute();
+      if ($results->getResultCount() > 0) {
+        foreach ($results->getResultItems() as $result) {
+          $school_name = $result->getField('name')->getValues();
+          $de_ref = $result->getField('de_reference')->getValues();
+          $matches[] = [
+            'value' => $de_ref[0] . ' - ' . $school_name[0]
+          ];
+        }
+      } else {
+        $matches[] = [
+          'value' => $this->t("No schools found")
+        ];
+      }
     }
     return new JsonResponse($matches);
   }
