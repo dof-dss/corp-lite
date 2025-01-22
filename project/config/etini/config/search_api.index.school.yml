@@ -61,7 +61,7 @@ field_settings:
     label: 'DE Reference'
     datasource_id: 'entity:School'
     property_path: de_reference
-    type: text
+    type: 'solr_text_custom:ngram'
     dependencies:
       module:
         - corplite_district_inspectors
@@ -69,7 +69,7 @@ field_settings:
     label: Name
     datasource_id: 'entity:School'
     property_path: Name
-    type: text
+    type: 'solr_text_custom:ngram'
     dependencies:
       module:
         - corplite_district_inspectors
@@ -91,4 +91,4 @@ options:
   cron_limit: 50
   index_directly: true
   track_changes_in_references: true
-server: solr_default
+server: null
