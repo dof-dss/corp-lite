@@ -1,0 +1,5 @@
+auto_submit:
+  js:
+    js/auto_submit.js: {}
+  dependencies:
+    - 'core/jquery'

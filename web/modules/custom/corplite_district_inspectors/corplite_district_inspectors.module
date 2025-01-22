@@ -8,3 +8,10 @@ use Drupal\Core\Form\FormStateInterface;
 function corplite_district_inspectors_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   $form['search_api_fulltext']['#autocomplete_route_name'] = 'inspector.autocomplete';
 }
+
+/**
+ * Implements hook_page_attachments().
+ */
+function corplite_district_inspectors_page_attachments(array &$attachments) {
+  $attachments['#attached']['library'][] = 'corplite_district_inspectors/auto_submit';
+}
