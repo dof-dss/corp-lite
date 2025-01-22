@@ -20,9 +20,15 @@ class AutoCompleteController extends ControllerBase {
         foreach ($results->getResultItems() as $result) {
           $school_name = $result->getField('name')->getValues();
           $de_ref = $result->getField('de_reference')->getValues();
-          $matches[] = [
-            'value' => $de_ref[0] . ' - ' . $school_name[0]
-          ];
+          if (is_numeric($string)) {
+            $matches[] = [
+              'value' => (string)$de_ref[0]
+            ];
+          } else {
+            $matches[] = [
+              'value' => (string)$school_name[0]
+            ];
+          }
         }
       } else {
         $matches[] = [
