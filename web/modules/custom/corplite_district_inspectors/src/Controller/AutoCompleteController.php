@@ -35,21 +35,15 @@ class AutoCompleteController extends ControllerBase {
     // How many results have we retrieved ?
     if ($results->getResultCount() > 0) {
       foreach ($results->getResultItems() as $result) {
+        // Display DE ref and school name in typeahead.
         $school_name = $result->getField('name')->getValues();
         $de_ref = $result->getField('de_reference')->getValues();
-        if (is_numeric($string)) {
-          // If the user typed a number, return DE references in the autocomplete.
-          $matches[] = [
-            'value' => (string)$de_ref[0]
-          ];
-        } else {
-          // If the user typed letters, return school names in the autocomplete.
-          $matches[] = [
-            'value' => (string)$school_name[0]
-          ];
-        }
+        $matches[] = [
+          'value' => $de_ref[0] . ' - ' . $school_name[0]
+        ];
       }
-    } else {
+    }
+    else {
       $matches[] = [
         'value' => $this->t("No schools found")
       ];
