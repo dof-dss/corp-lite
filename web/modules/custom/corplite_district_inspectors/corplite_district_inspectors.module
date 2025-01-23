@@ -6,7 +6,10 @@ use Drupal\Core\Form\FormStateInterface;
  * Implements hook_form_alter().
  */
 function corplite_district_inspectors_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  $form['search_api_fulltext']['#autocomplete_route_name'] = 'inspector.autocomplete';
+  // Add autocomplete processing to the exposed filter on teh District Inspectors view.
+  if (($form_id == 'views_exposed_form') && ($form['#action'] == '/district-inspectors')) {
+    $form['search_api_fulltext']['#autocomplete_route_name'] = 'inspector.autocomplete';
+  }
 }
 
 /**

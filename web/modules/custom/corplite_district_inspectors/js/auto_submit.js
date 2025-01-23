@@ -2,7 +2,7 @@
   "use strict";
   Drupal.behaviors.autosubmit = {
     attach: function (context) {
-      $('#edit-search-api-fulltext--3').on('autocompleteclose', function (event, data) {
+      $('input[name="search_api_fulltext"]').on('autocompleteclose', function (event, data) {
         $('#views-exposed-form-district-inspectors-page-1').submit();
       });
     }
