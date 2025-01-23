@@ -13,7 +13,7 @@ class AutoCompleteController extends ControllerBase {
     $string = $request->query->get('q');
     if (strlen($string) >= 3) {
       // Fire the autocomplete when they have typed at least 3 chars.
-      $matches = getMatches($string);
+      $matches = $this->getMatches($string);
     }
     return new JsonResponse($matches);
   }
