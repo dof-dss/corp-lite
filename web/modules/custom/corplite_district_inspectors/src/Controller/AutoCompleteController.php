@@ -3,10 +3,15 @@
 namespace Drupal\corplite_district_inspectors\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\search_api\Entity\Index;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
 class AutoCompleteController extends ControllerBase {
+
+  /**
+   * Handle autocomplete.
+   */
   public function handleAutoComplete(Request $request) {
     $matches = [];
     // Retrieve the string that the user has typed.
@@ -18,9 +23,11 @@ class AutoCompleteController extends ControllerBase {
     return new JsonResponse($matches);
   }
 
+  /**
+   * Retrieve matches from Search API.
+   */
   private function getMatches($string) {
-    // Retrieve matches from Solr.
-    $index = \Drupal\search_api\Entity\Index::load('school');
+    $index = Index::load('school');
     $query = $index->query();
     $query->keys($string);
     $query->setFulltextFields(['name', 'de_reference']);
@@ -49,4 +56,5 @@ class AutoCompleteController extends ControllerBase {
     }
     return $matches;
   }
+  
 }
