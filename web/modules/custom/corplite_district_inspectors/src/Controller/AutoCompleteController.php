@@ -32,6 +32,7 @@ class AutoCompleteController extends ControllerBase {
     $query->keys($string);
     $query->setFulltextFields(['name', 'de_reference']);
     $results = $query->execute();
+    $matches = [];
     // How many results have we retrieved ?
     if ($results->getResultCount() > 0) {
       foreach ($results->getResultItems() as $result) {
