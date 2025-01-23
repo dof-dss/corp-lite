@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * Code to provide District Inspectors search facility.
+ */
+
 use Drupal\Core\Form\FormStateInterface;
 
 /**
