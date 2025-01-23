@@ -56,5 +56,5 @@ class AutoCompleteController extends ControllerBase {
     }
     return $matches;
   }
-  
+
 }
