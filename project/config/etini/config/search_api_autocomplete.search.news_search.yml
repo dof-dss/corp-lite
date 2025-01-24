@@ -1,23 +1,23 @@
-uuid: 3955f8b6-7d9b-445c-9d2a-c03f7e4ea8ae
+uuid: b9514dbe-d72e-48db-a008-4e3b3eb66674
 langcode: en
-status: false
+status: true
 dependencies:
   config:
-    - search_api.index.school
-    - views.view.district_inspectors
+    - search_api.index.news_index
+    - views.view.news_search
   module:
     - views
     - search_api_autocomplete
-id: district_inspectors
-label: 'District Inspectors'
-index_id: school
+id: news_search
+label: 'News search'
+index_id: news_index
 suggester_settings:
   server:
     fields: {  }
 suggester_weights: {  }
 suggester_limits: {  }
 search_settings:
-  'views:district_inspectors':
+  'views:news_search':
     displays:
       default: true
       selected: {  }
