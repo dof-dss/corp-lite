@@ -17,6 +17,8 @@ dependencies:
     - node.type.news
     - node.type.profile
     - node.type.publication
+    - taxonomy.vocabulary.research_support
+    - taxonomy.vocabulary.site_topics
     - workflows.workflow.nics_editorial_workflow
   module:
     - content_moderation
@@ -33,6 +35,8 @@ dependencies:
     - redirect
     - scheduled_transitions
     - system
+    - taxonomy
+    - taxonomy_access_fix
     - toolbar
 _core:
   default_config_hash: GSKFpUySicd58w9jyeILZLfIMj4c0kbTRwyj2uXgpqU
@@ -45,6 +49,7 @@ permissions:
   - 'access content overview'
   - 'access contextual links'
   - 'access files overview'
+  - 'access taxonomy overview'
   - 'access toolbar'
   - 'add scheduled transitions node application'
   - 'add scheduled transitions node contact'
@@ -56,6 +61,8 @@ permissions:
   - 'add scheduled transitions node page'
   - 'add scheduled transitions node profile'
   - 'add scheduled transitions node publication'
+  - 'add scheduled transitions taxonomy_term research_support'
+  - 'add scheduled transitions taxonomy_term site_topics'
   - 'administer main menu items'
   - 'administer media file delete'
   - 'administer redirects'
@@ -118,6 +125,7 @@ permissions:
   - 'edit any contact content'
   - 'edit any department_management content'
   - 'edit any document media'
+  - 'edit any easychart content'
   - 'edit any file media'
   - 'edit any gallery content'
   - 'edit any image media'
@@ -141,7 +149,12 @@ permissions:
   - 'edit own profile content'
   - 'edit own publication content'
   - 'edit own remote_video media'
+  - 'edit terms in research_support'
+  - 'edit terms in site_topics'
   - 'hide topic or feature on homepage'
+  - 'reorder terms in any vocabulary'
+  - 'reorder terms in research_support'
+  - 'reorder terms in site_topics'
   - 'reschedule scheduled transitions node application'
   - 'reschedule scheduled transitions node contact'
   - 'reschedule scheduled transitions node department_management'
@@ -151,6 +164,10 @@ permissions:
   - 'reschedule scheduled transitions node news'
   - 'reschedule scheduled transitions node profile'
   - 'reschedule scheduled transitions node publication'
+  - 'reschedule scheduled transitions taxonomy_term research_support'
+  - 'reschedule scheduled transitions taxonomy_term site_topics'
+  - 'reset research_support'
+  - 'reset site_topics'
   - 'revert all revisions'
   - 'revert application revisions'
   - 'revert contact revisions'
@@ -161,6 +178,7 @@ permissions:
   - 'revert news revisions'
   - 'revert profile revisions'
   - 'revert publication revisions'
+  - 'update any term'
   - 'use moderation sidebar'
   - 'use nics_editorial_workflow transition archive'
   - 'use nics_editorial_workflow transition create_new_draft'
@@ -173,6 +191,7 @@ permissions:
   - 'use nics_editorial_workflow transition unpublish'
   - 'view all revisions'
   - 'view all scheduled transitions'
+  - 'view all taxonomy revisions'
   - 'view any unpublished content'
   - 'view application revisions'
   - 'view contact revisions'
@@ -194,4 +213,18 @@ permissions:
   - 'view scheduled transitions node news'
   - 'view scheduled transitions node profile'
   - 'view scheduled transitions node publication'
+  - 'view scheduled transitions taxonomy_term research_support'
+  - 'view scheduled transitions taxonomy_term site_topics'
+  - 'view term names in research_support'
+  - 'view term names in site_topics'
+  - 'view term revisions in research_support'
+  - 'view term revisions in site_topics'
+  - 'view terms in research_support'
+  - 'view terms in site_topics'
   - 'view the administration theme'
+  - 'view unpublished term names in research_support'
+  - 'view unpublished term names in site_topics'
+  - 'view unpublished terms in research_support'
+  - 'view unpublished terms in site_topics'
+  - 'view vocabulary name of research_support'
+  - 'view vocabulary name of site_topics'
