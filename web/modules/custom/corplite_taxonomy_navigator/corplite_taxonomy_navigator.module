@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains nisra_taxonomy_navigator.module.
+ * Contains corplite_taxonomy_navigator.module.
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
@@ -10,10 +10,10 @@ use Drupal\Core\Routing\RouteMatchInterface;
 /**
  * Implements hook_help().
  */
-function nisra_taxonomy_navigator_help($route_name, RouteMatchInterface $route_match) {
+function corplite_taxonomy_navigator_help($route_name, RouteMatchInterface $route_match) {
   switch ($route_name) {
-    // Main module help for the nisra_taxonomy_navigator module.
-    case 'help.page.nisra_taxonomy_navigator':
+    // Main module help for the corplite_taxonomy_navigator module.
+    case 'help.page.corplite_taxonomy_navigator':
       $output = '';
       $output .= '<h3>' . t('About') . '</h3>';
       $output .= '<p>' . t('Manage your large taxonomies') . '</p>';

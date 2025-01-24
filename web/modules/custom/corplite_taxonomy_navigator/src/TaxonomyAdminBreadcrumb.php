@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\nisra_taxonomy_navigator;
+namespace Drupal\corplite_taxonomy_navigator;
 
 use Drupal\Component\Utility\Unicode;
 use Drupal\Core\Access\AccessManagerInterface;
@@ -27,7 +27,7 @@ use Symfony\Component\Routing\Matcher\RequestMatcherInterface;
  * Extends the core path based breadcrumb builder but slightly
  * adjusts how the trail is assembled; see build() below.
  *
- * @package Drupal\nisra_taxonomy_navigator
+ * @package Drupal\corplite_taxonomy_navigator
  */
 class TaxonomyAdminBreadcrumb extends PathBasedBreadcrumbBuilder implements BreadcrumbBuilderInterface {
 

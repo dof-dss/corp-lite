@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\nisra_taxonomy_navigator\Form;
+namespace Drupal\corplite_taxonomy_navigator\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
@@ -48,7 +48,7 @@ class SetParentTermForm extends FormBase {
 
     if ($term === NULL) {
       $this->messenger()->addError('Unable to set parent as the term was not found.');
-      $this->redirect('nisra_taxonomy_navigator.taxonomy_navigator_controller')->send();
+      $this->redirect('corplite_taxonomy_navigator.taxonomy_navigator_controller')->send();
     }
 
     if ($route = $request->attributes->get(RouteObjectInterface::ROUTE_OBJECT)) {
@@ -172,7 +172,7 @@ class SetParentTermForm extends FormBase {
     }
 
     $this->getRequest()->query->remove('destination');
-    $form_state->setRedirect('nisra_taxonomy_navigator.taxonomy_navigator_form', [
+    $form_state->setRedirect('corplite_taxonomy_navigator.taxonomy_navigator_form', [
       'vocabulary' => $form_values['vocabulary'],
       'taxonomy_term' => $parent_tid,
     ],

@@ -1,12 +1,12 @@
 <?php
 
-namespace Drupal\nisra_taxonomy_navigator\Controller;
+namespace Drupal\corplite_taxonomy_navigator\Controller;
 
 use Drupal\Component\Utility\Xss;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Entity\Element\EntityAutocomplete;
 use Drupal\Core\Url;
-use Drupal\nisra_taxonomy_navigator\TaxonomyNavigatorAccess;
+use Drupal\corplite_taxonomy_navigator\TaxonomyNavigatorAccess;
 use Drupal\taxonomy\Entity\Vocabulary;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -69,7 +69,7 @@ class TaxonomyNavigatorController extends ControllerBase {
       $build['vocabularies'][$vocabulary->id()]['name'] = [
         '#title' => $vocabulary->label(),
         '#type' => 'link',
-        '#url' => Url::fromRoute('nisra_taxonomy_navigator.taxonomy_navigator_form', [
+        '#url' => Url::fromRoute('corplite_taxonomy_navigator.taxonomy_navigator_form', [
           'vocabulary' => $vocabulary->id(),
         ]),
       ];

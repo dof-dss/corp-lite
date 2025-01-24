@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\nisra_taxonomy_navigator;
+namespace Drupal\corplite_taxonomy_navigator;
 
 use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Routing\Access\AccessInterface;

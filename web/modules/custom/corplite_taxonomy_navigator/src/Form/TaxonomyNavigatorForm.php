@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\nisra_taxonomy_navigator\Form;
+namespace Drupal\corplite_taxonomy_navigator\Form;
 
 use Drupal\Core\Breadcrumb\Breadcrumb;
 use Drupal\Core\Cache\Cache;
@@ -10,7 +10,7 @@ use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Link;
 use Drupal\Core\Url;
-use Drupal\nisra_taxonomy_navigator\TaxonomyNavigatorAccess;
+use Drupal\corplite_taxonomy_navigator\TaxonomyNavigatorAccess;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -102,7 +102,7 @@ class TaxonomyNavigatorForm extends FormBase {
       '#type' => 'textfield',
       '#title' => $this->t('Search for term'),
       '#title_display' => 'invisible',
-      '#autocomplete_route_name' => 'nisra_taxonomy_navigator.nisra_taxonomy_navigator_search.autocomplete',
+      '#autocomplete_route_name' => 'corplite_taxonomy_navigator.corplite_taxonomy_navigator_search.autocomplete',
       '#autocomplete_route_parameters' => ['vocabulary' => $vocabulary->id()],
       '#description' => $this->t('Start typing to bring up a list of terms, select a term and press Enter to display.'),
     ];
@@ -114,7 +114,7 @@ class TaxonomyNavigatorForm extends FormBase {
 
     $breadcrumb = new Breadcrumb();
 
-    $links[] = Link::createFromRoute($vocabulary->label(), 'nisra_taxonomy_navigator.taxonomy_navigator_form', ['vocabulary' => $vocabulary->id()]);
+    $links[] = Link::createFromRoute($vocabulary->label(), 'corplite_taxonomy_navigator.taxonomy_navigator_form', ['vocabulary' => $vocabulary->id()]);
 
     if ($tid > 0) {
       // This issue https://www.drupal.org/node/2019905
@@ -123,7 +123,7 @@ class TaxonomyNavigatorForm extends FormBase {
       $ancestors = array_reverse(array_values($this->entityTypeManager->getStorage("taxonomy_term")->loadAllParents($tid)));
 
       foreach ($ancestors as $ancestor) {
-        $links[] = Link::createFromRoute($ancestor->label(), 'nisra_taxonomy_navigator.taxonomy_navigator_form', [
+        $links[] = Link::createFromRoute($ancestor->label(), 'corplite_taxonomy_navigator.taxonomy_navigator_form', [
           'vocabulary' => $vocabulary->id(),
           'taxonomy_term' => $ancestor->id(),
         ]);
@@ -172,7 +172,7 @@ class TaxonomyNavigatorForm extends FormBase {
       $form['terms'][$key]['name'] = [
         '#title' => $term->name,
         '#type' => 'link',
-        '#url' => Url::fromRoute('nisra_taxonomy_navigator.taxonomy_navigator_form', [
+        '#url' => Url::fromRoute('corplite_taxonomy_navigator.taxonomy_navigator_form', [
           'vocabulary' => $vocabulary->id(),
           'taxonomy_term' => $term->tid,
         ]),
@@ -210,7 +210,7 @@ class TaxonomyNavigatorForm extends FormBase {
 
         $form['terms'][$key]['operations']['#links']['set_parent'] = [
           'title' => t('Set parent'),
-          'url' => Url::fromRoute('nisra_taxonomy_navigator.set_parent_term_form', [
+          'url' => Url::fromRoute('corplite_taxonomy_navigator.set_parent_term_form', [
             'vocabulary' => $vocabulary->id(),
             'taxonomy_term' => $term->tid,
           ],
@@ -272,7 +272,7 @@ class TaxonomyNavigatorForm extends FormBase {
       if (count($ancestors) > 1) {
         array_shift($ancestors);
         $parent = current($ancestors);
-        $form_state->setRedirect('nisra_taxonomy_navigator.taxonomy_navigator_form', [
+        $form_state->setRedirect('corplite_taxonomy_navigator.taxonomy_navigator_form', [
           'vocabulary' => $form_values['vocabulary'],
           'taxonomy_term' => $parent->id(),
         ],
@@ -282,7 +282,7 @@ class TaxonomyNavigatorForm extends FormBase {
         ]);
       }
       else {
-        $form_state->setRedirect('nisra_taxonomy_navigator.taxonomy_navigator_form', [
+        $form_state->setRedirect('corplite_taxonomy_navigator.taxonomy_navigator_form', [
           'vocabulary' => $form_values['vocabulary'],
         ],
         [
