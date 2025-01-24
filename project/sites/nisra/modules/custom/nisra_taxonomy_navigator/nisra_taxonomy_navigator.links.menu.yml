@@ -1,0 +1,5 @@
+nisra_taxonomy_navigator.taxonomy_navigator:
+  title: Taxonomy Navigator
+  description: 'Navigate and manage large taxonomy vocabularies'
+  parent: system.admin_structure
+  route_name: nisra_taxonomy_navigator.taxonomy_navigator_controller
