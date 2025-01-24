@@ -96,14 +96,14 @@ $link-skip: (
     background: transparent url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAPCAQAAAC7b6xuAAAAsUlEQVR4AY3LQ2KEURSFwbOU2LbNcTQMd5s1xLaNL7i/0a9rXpJYYpNSOdHINhuSmOcT2KfCERo4B75ZFeeYQ6odwVyIUZ4wx9TmhPogPDAoiUEeMKfUFwyPDMrQzx3mnOZUOEsEQw+3mEvaFKAuEoYURwfXmGs6gnCKebKQQBuXmFt6JGojYVjZaOEcc8eKMxgaOIOAhREVRi0nsTAqN6q5doQ0pnjhL4yreMxylBd+ABWdFyV4bCZyAAAAAElFTkSuQmCC') no-repeat 50% 50%;
     background-size: 1.6rem auto;
   }
-}
 
-.skip-link:focus,
-.skip-link:hover {
-  display: block;
-  padding: .9rem 3.5rem;
-  overflow: hidden;
-  white-space: nowrap;
+  &:focus,
+  &:hover {
+    display: block;
+    padding: .9rem 3.5rem;
+    overflow: hidden;
+    white-space: nowrap;
+  }
 }
 
 @media print {
