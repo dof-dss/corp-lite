@@ -29,8 +29,9 @@
 .drupal-media[data-view-mode^='article_float'],
 .drupal-media[data-view-mode^='landscape_float'],
 .drupal-media[data-view-mode^='portrait_float'] {
-  @include media-image-float;
   margin: 0 0 1.5em 1em;
+
+  @include media-image-float;
 }
 
 // Non-floated styles.

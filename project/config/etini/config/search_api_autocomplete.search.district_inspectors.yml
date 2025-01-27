@@ -1,6 +1,6 @@
 uuid: 3955f8b6-7d9b-445c-9d2a-c03f7e4ea8ae
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - search_api.index.school
