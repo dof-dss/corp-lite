@@ -17,5 +17,5 @@ selection_criteria:
     bundles:
       profile: profile
 selection_logic: and
-weight: -2
+weight: -1
 relationships: {  }
