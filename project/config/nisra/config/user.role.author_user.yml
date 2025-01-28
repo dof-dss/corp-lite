@@ -61,6 +61,7 @@ permissions:
   - 'edit any application content'
   - 'edit any contact content'
   - 'edit any department_management content'
+  - 'edit any easychart content'
   - 'edit any gallery content'
   - 'edit any link content'
   - 'edit any news content'
