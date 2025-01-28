@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.article.field_tags
     - node.type.article
   module:
+    - blazy
     - text
     - user
 _core:
@@ -53,11 +54,22 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
+  field_tags:
+    type: blazy_entity
+    label: above
+    settings:
+      view_mode: ''
+      grid: ''
+      grid_medium: ''
+      grid_small: ''
+      style: ''
+    third_party_settings: {  }
+    weight: 7
+    region: content
 hidden:
   content_moderation_control: true
   field_meta_tags: true
   field_site_services: true
-  field_tags: true
   langcode: true
   links: true
   search_api_excerpt: true
