@@ -14,7 +14,9 @@ source:
   plugin: file_entity
   type: document
   constants:
-    bundle: 'document'
+    bundle:
+      - 'document'
+      - 'undefined'
     ignore_uri_regex: '|^private://|'
 process:
   skip_private_files:
