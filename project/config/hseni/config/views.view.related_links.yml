@@ -241,6 +241,10 @@ display:
             group_items: {  }
       style:
         type: default
+        options:
+          grouping: {  }
+          row_class: toggle-list
+          default_row_class: false
       row:
         type: fields
       query:
@@ -252,6 +256,7 @@ display:
           replica: false
           query_tags: {  }
       relationships: {  }
+      css_class: toggle-list
       header: {  }
       footer: {  }
       display_extenders: {  }
