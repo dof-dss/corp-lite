@@ -2,8 +2,6 @@
  * @file
  * Provides the layout styles for nisra front page.
  */
-
-
 @use '../../../../../../../../web/themes/custom/nicsdru_corplite_theme/src/scss/init' as *;
 
 // Front page layout / theme page layout
@@ -13,13 +11,12 @@
 // Style guide: layouts.front
 
 .layout--front {
+  grid-template-columns: auto;
+  grid-gap: 0;
 
   > * {
     grid-column: auto;
   }
-
-  grid-template-columns: auto;
-  grid-gap: 0;
 
   // IE fix.
   @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
@@ -52,6 +49,7 @@
       grid-template-columns: 1fr 1fr;
       grid-template-rows: repeat(2, min-content); // IE fix. Fixes autoplacement issue with weather button.
     }
+
     @include breakpoint($tab) {
       display: block;
       margin-top: -5px; // Tucks the top border under the top nav when breadcrumb is not displayed.
@@ -69,4 +67,3 @@
     margin-bottom: 2em;
   }
 }
-

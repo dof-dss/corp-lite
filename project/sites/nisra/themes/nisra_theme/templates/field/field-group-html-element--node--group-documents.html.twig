@@ -1,0 +1,24 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a fieldgroup html element.
+ *
+ * Available variables:
+ * - title: Title of the group.
+ * - title_element: Element to wrap the title.
+ * - children: The children of the group.
+ * - wrapper_element: The html element to use
+ * - attributes: A list of HTML attributes for the group wrapper.
+ *
+ * @see template_preprocess_field_group_html_element()
+ *
+ * @ingroup themeable
+ */
+#}
+<h2 class="content-field__label">{{ 'Documents'|t }}</h2>
+<{{ wrapper_element }} {{ attributes }}>
+{{ children }}
+</{{ wrapper_element }}>
+<p class="help-viewing-documents">
+  <a href="{{ path('entity.node.canonical', {'node': '383'}) }}">{{ 'Help viewing documents'|t }}</a>
+</p>

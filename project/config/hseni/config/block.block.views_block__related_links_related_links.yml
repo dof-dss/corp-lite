@@ -1,0 +1,39 @@
+uuid: da92d334-5981-4c3a-a0f1-d6c88d078920
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.related_links
+  module:
+    - block_visibility_groups
+    - node
+    - views
+  theme:
+    - hseni_theme
+id: views_block__related_links_related_links
+theme: hseni_theme
+region: sidebar_second
+weight: 0
+provider: null
+plugin: 'views_block:related_links-related_links'
+settings:
+  id: 'views_block:related_links-related_links'
+  label: 'Related Content'
+  label_display: visible
+  provider: views
+  context_mapping:
+    field_site_topics_target_id: '@taxonomy_term.taxonomy_term_route_context:taxonomy_term'
+  views_label: 'Related Content'
+  items_per_page: none
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      article: article
