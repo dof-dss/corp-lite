@@ -1,0 +1,22 @@
+uuid: 07b8a9f3-04cf-4474-9da9-d24e955ea3f5
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term_news_types
+label: 'Taxonomy term - News types'
+type: 'canonical_entities:taxonomy_term'
+pattern: '[term:name]'
+selection_criteria:
+  9824a2cd-eb52-4547-bb2e-06144592dd45:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: 9824a2cd-eb52-4547-bb2e-06144592dd45
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      news_types: news_types
+selection_logic: and
+weight: 0
+relationships: {  }

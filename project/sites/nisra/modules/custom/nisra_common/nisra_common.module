@@ -17,19 +17,36 @@ function nisra_common_form_node_form_alter(&$form, FormStateInterface $form_stat
   $node = $form_object->getEntity();
 
   if ($node->bundle() === 'secure_market_statistics' || $node->bundle() === 'secure_statistics') {
-    $form['#validate'][] = 'nisra_common_validate_publication';
+    $form['#validate'][] = 'nisra_common_validate_secure_attachment';
+  }
+
+  if ($node->bundle() === 'publication') {
+    $form['#validate'][] = 'nisra_common_validate_attachment';
   }
 }
 
 /**
  * Form validation callback.
  */
-function nisra_common_validate_publication(&$form, FormStateInterface $form_state) {
+function nisra_common_validate_secure_attachment(&$form, FormStateInterface $form_state) {
   $values = $form_state->getValues();
 
   // Validate file attachments and external links.
   if (empty($values['field_secure_attachment']["selection"][0]) && empty($values['field_external_publication'][0]['uri'])) {
     $form_state->setErrorByName('field_secure_attachment', t('You must provide an attachment or external link'));
+    $form_state->setErrorByName('field_external_publication', t('You must provide an attachment or external link'));
+  }
+}
+
+/**
+ * Form validation callback.
+ */
+function nisra_common_validate_attachment(&$form, FormStateInterface $form_state) {
+  $values = $form_state->getValues();
+
+  // Validate file attachments and external links.
+  if (empty($values['field_attachment']["selection"][0]) && empty($values['field_external_publication'][0]['uri'])) {
+    $form_state->setErrorByName('field_attachment', t('You must provide an attachment or external link'));
     $form_state->setErrorByName('field_external_publication', t('You must provide an attachment or external link'));
   }
 }

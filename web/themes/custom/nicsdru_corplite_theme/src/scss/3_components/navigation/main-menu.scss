@@ -170,7 +170,10 @@ $link-main-menu-horizontal-active: (
     align-items: center;
     justify-content: center;
     background-color: transparent;
-    color: #fff;
+    position: absolute;
+    top: -6rem;
+    left: .7rem;
+    z-index: 1;
 
     &:focus {
       outline: none;
@@ -247,31 +250,23 @@ $link-main-menu-horizontal-active: (
     // Show or hide main nav depending on the state of the hamburger.
     // @see src/js/main-menu-toggle.js.
     &:not([hidden]) ~ .nav-main {
-      width: 0;
-      height: 0;
+      display: none;
+      max-height: 0;
       overflow: hidden;
-      visibility: hidden;
-      opacity: 0;
-      transition: opacity .3s ease;
+      transition: max-height 1s ease;
 
       // Except on larger screens - the main nav must be shown.
       @include breakpoint($tab) {
-        width: 100%;
-        height: auto;
-        overflow: visible;
-        visibility: visible;
-        opacity: 1;
+        display: flex;
+        max-height: 6rem;
       }
     }
 
     // Show main nav when the hamburger aria-expanded attribute is true.
     &[aria-expanded='true'] ~ .nav-main,
     .main-nav:focus-within {
-      width: 100%;
-      height: auto;
-      overflow: visible;
-      visibility: visible;
-      opacity: 1;
+      display: flex;
+      max-height: 60rem;
     }
   }
 }

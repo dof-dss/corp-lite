@@ -1,0 +1,141 @@
+uuid: ca3f3012-0453-4b10-ab00-3f8b1714ca58
+langcode: en
+status: true
+dependencies:
+  module:
+    - corplite_published_releases_feed
+    - search_api
+    - search_api_solr
+third_party_settings:
+  search_api_solr:
+    finalize: false
+    commit_before_finalize: false
+    commit_after_finalize: false
+    debug_finalize: false
+    highlighter:
+      maxAnalyzedChars: 51200
+      fragmenter: gap
+      usePhraseHighlighter: true
+      highlightMultiTerm: true
+      preserveMulti: false
+      regex:
+        slop: 0.5
+        pattern: blank
+        maxAnalyzedChars: 10000
+      highlight:
+        mergeContiguous: false
+        requireFieldMatch: false
+        snippets: 3
+        fragsize: 0
+    mlt:
+      mintf: 1
+      mindf: 1
+      maxdf: 0
+      maxdfpct: 0
+      minwl: 0
+      maxwl: 0
+      maxqt: 100
+      maxntp: 2000
+      boost: false
+      interestingTerms: none
+    term_modifiers:
+      slop: 3
+      fuzzy: 1
+    advanced:
+      index_prefix: ''
+      collection: ''
+      timezone: ''
+    multilingual:
+      limit_to_content_language: false
+      include_language_independent: true
+      use_language_undefined_as_fallback_language: false
+      specific_languages:
+        en: '0'
+      use_universal_collation: false
+id: published_releases_index
+name: 'Published releases index'
+description: ''
+read_only: false
+field_settings:
+  id:
+    label: ID
+    datasource_id: 'entity:published_releases'
+    property_path: id
+    type: integer
+    dependencies:
+      module:
+        - corplite_published_releases_feed
+  now_future:
+    label: 'Now Future'
+    datasource_id: 'entity:published_releases'
+    property_path: release_date
+    type: date
+    dependencies:
+      module:
+        - corplite_published_releases_feed
+  release_date:
+    label: 'Release date'
+    datasource_id: 'entity:published_releases'
+    property_path: release_date
+    type: date
+    dependencies:
+      module:
+        - corplite_published_releases_feed
+  summary:
+    label: Summary
+    datasource_id: 'entity:published_releases'
+    property_path: summary
+    type: string
+    dependencies:
+      module:
+        - corplite_published_releases_feed
+  title:
+    label: Title
+    datasource_id: 'entity:published_releases'
+    property_path: title
+    type: text
+    boost: 13.0
+    dependencies:
+      module:
+        - corplite_published_releases_feed
+  updated:
+    label: Updated
+    datasource_id: 'entity:published_releases'
+    property_path: updated
+    type: date
+    dependencies:
+      module:
+        - corplite_published_releases_feed
+  url:
+    label: URL
+    datasource_id: 'entity:published_releases'
+    property_path: url
+    type: string
+    dependencies:
+      module:
+        - corplite_published_releases_feed
+datasource_settings:
+  'entity:published_releases': {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  auto_aggregated_fulltext_field: {  }
+  custom_value: {  }
+  entity_type: {  }
+  language_with_fallback: {  }
+  rendered_item: {  }
+  solr_boost_more_recent:
+    weights:
+      preprocess_query: 0
+    boosts: {  }
+  solr_date_range:
+    weights:
+      preprocess_index: 0
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  cron_limit: 50
+  index_directly: true
+  track_changes_in_references: true
+server: solr_default

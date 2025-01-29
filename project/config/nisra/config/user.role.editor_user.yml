@@ -121,6 +121,7 @@ permissions:
   - 'edit any contact content'
   - 'edit any department_management content'
   - 'edit any document media'
+  - 'edit any easychart content'
   - 'edit any file media'
   - 'edit any gallery content'
   - 'edit any image media'

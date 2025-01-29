@@ -17,5 +17,5 @@ selection_criteria:
     bundles:
       contact: contact
 selection_logic: and
-weight: 0
+weight: -6
 relationships: {  }

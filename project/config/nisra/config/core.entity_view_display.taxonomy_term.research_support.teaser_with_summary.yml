@@ -1,0 +1,33 @@
+uuid: bacc5096-ce27-47d6-b675-2afa709d1992
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.teaser_with_summary
+    - field.field.taxonomy_term.research_support.field_hide_topic
+    - field.field.taxonomy_term.research_support.field_summary
+    - field.field.taxonomy_term.research_support.field_term_image
+    - field.field.taxonomy_term.research_support.field_term_photo
+    - taxonomy.vocabulary.research_support
+  module:
+    - text
+id: taxonomy_term.research_support.teaser_with_summary
+targetEntityType: taxonomy_term
+bundle: research_support
+mode: teaser_with_summary
+content:
+  field_summary:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  content_moderation_control: true
+  description: true
+  field_hide_topic: true
+  field_term_image: true
+  field_term_photo: true
+  langcode: true
+  search_api_excerpt: true

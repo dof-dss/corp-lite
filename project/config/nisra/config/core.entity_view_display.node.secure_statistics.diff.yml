@@ -30,13 +30,31 @@ third_party_settings:
       label: 'Additional content details'
       parent_name: ''
       region: content
-      weight: 7
+      weight: 8
       format_type: html_element
       format_settings:
         classes: field-collection
         show_empty_fields: false
         id: ''
         element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_documents:
+      children: {  }
+      label: Documents
+      parent_name: ''
+      region: content
+      weight: 5
+      format_type: html_element
+      format_settings:
+        classes: list--no-bullet
+        show_empty_fields: false
+        id: ''
+        element: ul
         show_label: false
         label_element: h3
         label_element_classes: ''
@@ -59,13 +77,13 @@ content:
     type: link
     label: above
     settings:
-      trim_length: 80
+      trim_length: null
       url_only: false
       url_plain: false
-      rel: ''
-      target: ''
+      rel: '0'
+      target: '0'
     third_party_settings: {  }
-    weight: 6
+    weight: 7
     region: content
   field_meta_tags:
     type: metatag_empty_formatter
@@ -101,12 +119,12 @@ content:
     region: content
   field_secure_attachment:
     type: entity_reference_entity_view
-    label: inline
+    label: above
     settings:
-      view_mode: default
-      link: true
+      view_mode: embed
+      link: false
     third_party_settings: {  }
-    weight: 5
+    weight: 6
     region: content
   field_site_topics:
     type: entity_reference_label
