@@ -1,0 +1,7 @@
+nisra_taxonomy_navigator.add_term:
+  route_name: entity.taxonomy_term.add_form
+  title: 'Add term'
+  weight: 0
+  class: '\Drupal\nisra_taxonomy_navigator\Plugin\Menu\LocalAction\AddTermLocalAction'
+  appears_on:
+    - nisra_taxonomy_navigator.taxonomy_navigator_form

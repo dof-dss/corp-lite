@@ -100,6 +100,18 @@ corplite-breadcrumb:
     component:
       css/3_components/navigation/breadcrumb.css: { minified: true }
 
+corplite-togglelist:
+  version: 1.0
+  css:
+    component:
+      css/3_components/navigation/toggle-list.css: { minified: true }
+  js:
+    js/toggle-btn-script.js: { minified: true }
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/once
+
 moderation-sidebar:
   version: VERSION
   js:

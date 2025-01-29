@@ -1,9 +1,31 @@
 // HTML5 display definitions
 // ==========================================================================
-
 // Add the correct display in IE <10.
 // Add the correct display in Edge, IE, and Firefox for `details` or `summary`.
 // Add the correct display in IE for `main`.
+@use 'sass:math';
+@use '../init' as *;
+
+html {
+  font-family: $base-font-family; /* 1 */
+  font-size: 100% * math.div($base-font-size, 16px); /* 3 */
+  line-height: 1.5;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased; // more subtle on larger fonts, makes smaller fonts more substantial.
+  // On short pages, we want any background gradients to fill the entire height
+  // of the browser.
+  min-height: 100%;
+}
+
+body {
+  color: var(--clr-body-text);
+  background-color: var(--clr-body-bkgd);
+  font-size: var(--fs-base-size);
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
 article,
 aside,
 details,

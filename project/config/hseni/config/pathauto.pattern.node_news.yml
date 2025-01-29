@@ -17,5 +17,5 @@ selection_criteria:
     bundles:
       news: news
 selection_logic: and
-weight: -3
+weight: -2
 relationships: {  }
