@@ -96,6 +96,17 @@ nav#block-mainnavigation {
   }
 }
 
+.page-node-type-article {
+  .field-site-services {
+    display: flex;
+    column-gap: 10px;
+
+    .service-label-inline {
+      display: inline;
+    }
+  }
+}
+
 .page-node-type-gallery .field--name-field-gallery-images {
   display: flex;
   flex-wrap: wrap;

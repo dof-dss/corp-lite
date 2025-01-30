@@ -27,6 +27,13 @@
  * @ingroup themeable
  */
 #}
+{%
+  set classes = [
+  'sub-menu',
+  'sub-menu--related',
+  'toggle-list',
+]
+%}
 <nav{{ attributes.addClass('sub-menu') }}>
   {{ title_prefix }}
   {% if label %}
