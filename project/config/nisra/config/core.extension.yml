@@ -14,6 +14,9 @@ module:
   block_field: 0
   block_visibility_groups: 0
   breakpoint: 0
+  chosen: 0
+  chosen_field: 0
+  chosen_lib: 0
   ckeditor5: 0
   ckeditor5_allowed_html: 0
   ckeditor5_premium_features: 0
@@ -104,7 +107,6 @@ module:
   mysql: 0
   nisra_common: 0
   nisra_homepage: 0
-  nisra_taxonomy_navigator: 0
   node: 0
   node_edit_protection: 0
   noreferrer: 0
@@ -132,12 +134,12 @@ module:
   search_api_solr: 0
   search_api_spellcheck: 0
   shortcut: 0
+  shs: 0
   simple_gmap: 0
   simplei: 0
   structure_sync: 0
   system: 0
   taxonomy: 0
-  taxonomy_access_fix: 0
   telephone: 0
   text: 0
   token: 0
