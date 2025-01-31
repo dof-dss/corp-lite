@@ -7,12 +7,14 @@ dependencies:
     - node.type.featured_content_list
   module:
     - corplite_common
+    - draggableviews
     - node
 id: homepage_supervisor
 label: 'Homepage supervisor'
 weight: 3
 is_admin: null
 permissions:
+  - 'access draggableviews'
   - 'create feature content'
   - 'delete any feature content'
   - 'delete feature revisions'
