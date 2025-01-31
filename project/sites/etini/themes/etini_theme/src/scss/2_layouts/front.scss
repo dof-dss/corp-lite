@@ -39,7 +39,6 @@
   }
 }
 
-
 .sidebar_second {
   background-color: var(--clr-grey-light);
   padding: 1em 15px;
@@ -57,7 +56,6 @@
     grid-template-rows: repeat(2, min-content);
   }
 }
-
 
 .section--quicklinks {
   padding: 1em 15px 1.5em;
@@ -85,9 +83,9 @@
 .featured_main {
   a {
     display: flex;
-    flex-direction: row; /* Place the image to the left, text on the right */
-    border-bottom: 1px solid #000; /* Split items with a black line */
-    padding-bottom: 1rem; /* Optional: Adjust padding for space between items */
+    flex-direction: row;
+    border-bottom: 1px solid #000;
+    padding-bottom: 1rem;
     padding: 2%;
     text-decoration: none;
 
@@ -107,10 +105,10 @@
   }
 
   .featured__image {
-    width: 100%; /* Ensure image takes up full width within its container */
-    max-width: 30rem; /* Adjusted size: slightly larger than featured-content */
-    margin-right: 2rem; /* Space between image and text */
-    height: auto; /* Maintain aspect ratio */
+    width: 100%;
+    max-width: 30rem;
+    margin-right: 2rem;
+    height: auto;
     display: flex;
     align-items: center;
   }
@@ -118,25 +116,25 @@
   .featured-title {
     position: relative;
     padding-right: 2rem;
-    margin-bottom: 0.5rem; /* Adjust the spacing if needed */
+    margin-bottom: 0.5rem;
   }
 
   .featured__body {
     position: relative;
     flex: 1;
-    padding-right: 2rem; /* Space between text and the edge */
-    margin-left: 1rem; /* Space between the image and the text */
+    padding-right: 2rem;
+    margin-left: 1rem;
   }
 }
 
-/* Featured Content */
+
 .featured_content {
   padding-bottom: 2rem;
 
   a {
     display: flex;
-    flex-direction: row; /* Ensure image and text are in a row */
-    border-bottom: 1px solid #000; /* Black line separating items */
+    flex-direction: row;
+    border-bottom: 1px solid #000;
     padding: 2%;
     text-decoration: none;
 
@@ -157,10 +155,10 @@
 
 
   .featured__image {
-    width: 100%; /* Ensure image takes up full width within its container */
-    max-width: 20rem; /* Adjusted size: slightly larger than featured-content */
-    margin-right: 2rem; /* Space between image and text */
-    height: auto; /* Maintain aspect ratio */
+    width: 100%;
+    max-width: 20rem;
+    margin-right: 2rem;
+    height: auto;
     display: flex;
     align-items: center;
   }
@@ -168,12 +166,12 @@
   .featured-title {
     position: relative;
     padding-right: 2rem;
-    margin-bottom: 0.5rem; /* Adjust spacing below the title */
+    margin-bottom: 0.5rem;
   }
 
   .featured__body {
     position: relative;
-    flex: 1; /* Ensure the text container takes up remaining space */
+    flex: 1;
     padding-right: 2rem;
     margin-left: 1rem;
   }
@@ -188,36 +186,33 @@
   }
 }
 
-/* Media Query for Mobile Responsiveness */
 @media (max-width: 768px) {
-  /* Featured Main - Stack items vertically on smaller screens */
   .featured_main a {
-    flex-direction: column; /* Stack image above text */
-    padding: 1rem; /* Optional: reduce padding for smaller screens */
+    flex-direction: column;
+    padding: 1rem;
   }
 
   .featured__image {
-    max-width: 100%; /* Ensure the image takes up full width on small screens */
-    margin-right: 0; /* Remove right margin on small screens */
-    margin-bottom: 1rem; /* Add space below the image */
+    max-width: 100%;
+    margin-right: 0;
+    margin-bottom: 1rem;
   }
 
   .featured__body {
-    margin-left: 0; /* Remove margin between image and text on smaller screens */
+    margin-left: 0;
   }
 
-  /* Featured Content - Stack items vertically on smaller screens */
   .featured_content a {
-    flex-direction: column; /* Stack image above text */
+    flex-direction: column;
   }
 
   .featured__image {
-    max-width: 100%; /* Ensure the image takes up full width on small screens */
-    margin-right: 0; /* Remove right margin on small screens */
-    margin-bottom: 1rem; /* Add space below the image */
+    max-width: 100%;
+    margin-right: 0;
+    margin-bottom: 1rem;
   }
 
   .featured__body {
-    margin-left: 0; /* Remove margin between image and text on smaller screens */
+    margin-left: 0;
   }
 }
