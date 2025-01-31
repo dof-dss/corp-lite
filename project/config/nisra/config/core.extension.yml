@@ -107,6 +107,7 @@ module:
   mysql: 0
   nisra_common: 0
   nisra_homepage: 0
+  nisra_taxonomy_navigator: 0
   node: 0
   node_edit_protection: 0
   noreferrer: 0
@@ -140,6 +141,7 @@ module:
   structure_sync: 0
   system: 0
   taxonomy: 0
+  taxonomy_access_fix: 0
   telephone: 0
   text: 0
   token: 0
