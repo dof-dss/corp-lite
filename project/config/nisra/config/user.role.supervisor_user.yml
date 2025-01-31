@@ -17,6 +17,7 @@ dependencies:
     - node.type.news
     - node.type.profile
     - node.type.publication
+    - taxonomy.vocabulary.news_types
     - taxonomy.vocabulary.research_support
     - taxonomy.vocabulary.site_topics
     - workflows.workflow.nics_editorial_workflow
@@ -178,6 +179,7 @@ permissions:
   - 'revert news revisions'
   - 'revert profile revisions'
   - 'revert publication revisions'
+  - 'select terms in news_types'
   - 'update any term'
   - 'use moderation sidebar'
   - 'use nics_editorial_workflow transition archive'
