@@ -1,0 +1,223 @@
+/*
+ * @file
+ * Provides the layout styles for etini front page.
+ */
+
+@use '../../../../../../../../web/themes/custom/nicsdru_corplite_theme/src/scss/init' as *;
+
+// Front page layout / theme page layout
+//
+// Weight: -6
+//
+// Style guide: layouts.front
+
+.layout--front {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+
+
+  > * {
+    grid-column: auto;
+    padding-top: 3rem;
+  }
+
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, min-content);
+    grid-row-gap: 0;
+  }
+
+  @include breakpoint($tab) {
+    grid-template-columns: 1fr 300px;
+    grid-template-rows: auto;
+    grid-gap: 20px;
+  }
+
+  h2 {
+    margin-top: 0;
+  }
+}
+
+
+.sidebar_second {
+  background-color: var(--clr-grey-light);
+  padding: 1em 15px;
+  border-top: 5px solid var(--clr-brand-primary);
+
+  @include breakpoint($tab) {
+    grid-column: 2 / 3;
+    display: block;
+  }
+
+  @include breakpoint($phab) {
+    display: block;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0 1.5em;
+    grid-template-rows: repeat(2, min-content);
+  }
+}
+
+
+.section--quicklinks {
+  padding: 1em 15px 1.5em;
+  background-color: var(--clr-grey-light);
+  border-top: 5px solid var(--clr-brand-primary);
+
+  @include breakpoint($tab) {
+    grid-column: 2 / 3;
+  }
+}
+
+/* Optional: Mobile adjustments */
+@media screen and (max-width: 768px) {
+  .layout--front {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar_second, .section--quicklinks {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+}
+
+/* Featured Main */
+.featured_main {
+  a {
+    display: flex;
+    flex-direction: row; /* Place the image to the left, text on the right */
+    border-bottom: 1px solid #000; /* Split items with a black line */
+    padding-bottom: 1rem; /* Optional: Adjust padding for space between items */
+    padding: 2%;
+    text-decoration: none;
+
+    &:focus,
+    &:hover {
+      border: solid #0e6bb3 2px;
+
+      h3 {
+        text-decoration: underline solid 2px #000;
+      }
+    }
+  }
+
+  p.published-date {
+    margin: 0;
+    color: #000;
+  }
+
+  .featured__image {
+    width: 100%; /* Ensure image takes up full width within its container */
+    max-width: 30rem; /* Adjusted size: slightly larger than featured-content */
+    margin-right: 2rem; /* Space between image and text */
+    height: auto; /* Maintain aspect ratio */
+    display: flex;
+    align-items: center;
+  }
+
+  .featured-title {
+    position: relative;
+    padding-right: 2rem;
+    margin-bottom: 0.5rem; /* Adjust the spacing if needed */
+  }
+
+  .featured__body {
+    position: relative;
+    flex: 1;
+    padding-right: 2rem; /* Space between text and the edge */
+    margin-left: 1rem; /* Space between the image and the text */
+  }
+}
+
+/* Featured Content */
+.featured_content {
+  padding-bottom: 2rem;
+
+  a {
+    display: flex;
+    flex-direction: row; /* Ensure image and text are in a row */
+    border-bottom: 1px solid #000; /* Black line separating items */
+    padding: 2%;
+    text-decoration: none;
+
+    &:focus,
+    &:hover {
+      border: solid #0e6bb3 2px;
+
+      h3 {
+        text-decoration: underline solid 2px #000;
+      }
+    }
+  }
+
+  p.published-date {
+    margin: 0;
+    color: #000;
+  }
+
+
+  .featured__image {
+    width: 100%; /* Ensure image takes up full width within its container */
+    max-width: 20rem; /* Adjusted size: slightly larger than featured-content */
+    margin-right: 2rem; /* Space between image and text */
+    height: auto; /* Maintain aspect ratio */
+    display: flex;
+    align-items: center;
+  }
+
+  .featured-title {
+    position: relative;
+    padding-right: 2rem;
+    margin-bottom: 0.5rem; /* Adjust spacing below the title */
+  }
+
+  .featured__body {
+    position: relative;
+    flex: 1; /* Ensure the text container takes up remaining space */
+    padding-right: 2rem;
+    margin-left: 1rem;
+  }
+}
+
+.featured-summary-wrapper {
+  margin-top: 1rem;
+
+  p {
+    font-size: 1.8rem;
+    color: #000;
+  }
+}
+
+/* Media Query for Mobile Responsiveness */
+@media (max-width: 768px) {
+  /* Featured Main - Stack items vertically on smaller screens */
+  .featured_main a {
+    flex-direction: column; /* Stack image above text */
+    padding: 1rem; /* Optional: reduce padding for smaller screens */
+  }
+
+  .featured__image {
+    max-width: 100%; /* Ensure the image takes up full width on small screens */
+    margin-right: 0; /* Remove right margin on small screens */
+    margin-bottom: 1rem; /* Add space below the image */
+  }
+
+  .featured__body {
+    margin-left: 0; /* Remove margin between image and text on smaller screens */
+  }
+
+  /* Featured Content - Stack items vertically on smaller screens */
+  .featured_content a {
+    flex-direction: column; /* Stack image above text */
+  }
+
+  .featured__image {
+    max-width: 100%; /* Ensure the image takes up full width on small screens */
+    margin-right: 0; /* Remove right margin on small screens */
+    margin-bottom: 1rem; /* Add space below the image */
+  }
+
+  .featured__body {
+    margin-left: 0; /* Remove margin between image and text on smaller screens */
+  }
+}
