@@ -1,29 +1,33 @@
-uuid: 867d8d79-ec73-4474-b781-ae821f4e6a29
+uuid: 69a5ea08-7d5f-41ee-ae12-e4ffbf038ed9
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.featured_news_homepage
+    - views.view.news
   module:
+    - block_visibility_groups
     - node
     - views
   theme:
     - afbini_theme
-id: views_block__featured_news_homepage_latest_news
+id: views_block__news_news_latest
 theme: afbini_theme
 region: sidebar_second
-weight: -9
+weight: 0
 provider: null
-plugin: 'views_block:featured_news_homepage-latest_news'
+plugin: 'views_block:news-news_latest'
 settings:
-  id: 'views_block:featured_news_homepage-latest_news'
+  id: 'views_block:news-news_latest'
   label: ''
   label_display: visible
   provider: views
-  context_mapping: {  }
   views_label: ''
   items_per_page: none
 visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
   'entity_bundle:node':
     id: 'entity_bundle:node'
     negate: false
