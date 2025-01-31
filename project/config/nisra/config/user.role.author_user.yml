@@ -17,6 +17,7 @@ dependencies:
     - node.type.news
     - node.type.profile
     - node.type.publication
+    - taxonomy.vocabulary.news_types
     - workflows.workflow.nics_editorial_workflow
   module:
     - content_moderation
@@ -26,6 +27,7 @@ dependencies:
     - moderation_sidebar
     - node
     - system
+    - taxonomy_access_fix
     - toolbar
 _core:
   default_config_hash: 6EFyTrN3IKFGwa8I8F7VroTSjoGfF2NihP20G86sf5s
@@ -76,6 +78,7 @@ permissions:
   - 'edit own news content'
   - 'edit own profile content'
   - 'edit own publication content'
+  - 'select terms in news_types'
   - 'use moderation sidebar'
   - 'use nics_editorial_workflow transition create_new_draft'
   - 'use nics_editorial_workflow transition draft_of_published'
