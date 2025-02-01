@@ -15,6 +15,7 @@ dependencies:
     - google_map_field
     - metatag
     - path
+    - shs
     - text
 _core:
   default_config_hash: u_P2i3idWS-Z9CYbzT9eKI1ZnPKKN9GiwLd9MhSetro
@@ -54,16 +55,24 @@ content:
       use_details: true
     third_party_settings: {  }
   field_research_support:
-    type: options_select
+    type: options_shs
     weight: 12
     region: content
-    settings: {  }
+    settings:
+      display_node_count: false
+      create_new_items: false
+      create_new_levels: false
+      force_deepest: false
     third_party_settings: {  }
   field_site_topics:
-    type: options_select
+    type: options_shs
     weight: 11
     region: content
-    settings: {  }
+    settings:
+      display_node_count: false
+      create_new_items: false
+      create_new_levels: false
+      force_deepest: false
     third_party_settings: {  }
   flag:
     weight: 4
