@@ -1,27 +1,28 @@
-uuid: cb1bfcb9-39e7-43da-af9b-490b7538e588
+uuid: eec11391-e44c-44cd-aa72-7220bf1c0544
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.district_inspectors
+    - views.view.homepage_featured_content
   module:
     - block_visibility_groups
     - system
     - views
   theme:
     - etini_theme
-id: etini_theme_exposedformdistrict_inspectorspage_1
+id: views_block__homepage_featured_content_featured_content
 theme: etini_theme
 region: content
-weight: -10
+weight: -11
 provider: null
-plugin: 'views_exposed_filter_block:district_inspectors-page_1'
+plugin: 'views_block:homepage_featured_content-featured_content'
 settings:
-  id: 'views_exposed_filter_block:district_inspectors-page_1'
+  id: 'views_block:homepage_featured_content-featured_content'
   label: ''
   label_display: visible
   provider: views
   views_label: ''
+  items_per_page: none
 visibility:
   condition_group:
     id: condition_group
@@ -30,4 +31,4 @@ visibility:
   request_path:
     id: request_path
     negate: false
-    pages: /district-inspectors
+    pages: '<front>'
