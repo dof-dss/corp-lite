@@ -12,7 +12,7 @@ dependencies:
 id: etini_theme_views_block__site_subtopics_site_subtopics
 theme: etini_theme
 region: content
-weight: -6
+weight: -5
 provider: null
 plugin: 'views_block:site_subtopics-site_subtopics'
 settings:

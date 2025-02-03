@@ -1,28 +1,29 @@
-uuid: eec11391-e44c-44cd-aa72-7220bf1c0544
+uuid: 70e6f697-4186-41ed-ba5d-85061ff5cce6
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.homepage_featured_content
+    - views.view.site_topics
   module:
     - block_visibility_groups
     - system
     - views
   theme:
     - etini_theme
-id: views_block__homepage_featured_content_featured_content
+id: views_block__site_topics_topics_home
 theme: etini_theme
 region: content
-weight: -12
+weight: -10
 provider: null
-plugin: 'views_block:homepage_featured_content-featured_content'
+plugin: 'views_block:site_topics-topics_home'
 settings:
-  id: 'views_block:homepage_featured_content-featured_content'
-  label: Featured
+  id: 'views_block:site_topics-topics_home'
+  label: 'What we do and how we do it'
   label_display: visible
   provider: views
-  views_label: Featured
-  items_per_page: none
+  context_mapping: {  }
+  views_label: 'What we do and how we do it'
+  items_per_page: '2'
 visibility:
   condition_group:
     id: condition_group
