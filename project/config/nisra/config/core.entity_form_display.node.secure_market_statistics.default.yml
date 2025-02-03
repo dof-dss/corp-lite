@@ -22,6 +22,7 @@ dependencies:
     - media_library_edit
     - metatag
     - path
+    - shs
     - text
 id: node.secure_market_statistics.default
 targetEntityType: node
@@ -73,10 +74,14 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_research_support:
-    type: options_select
+    type: options_shs
     weight: 11
     region: content
-    settings: {  }
+    settings:
+      display_node_count: false
+      create_new_items: false
+      create_new_levels: false
+      force_deepest: false
     third_party_settings: {  }
   field_secure_attachment:
     type: media_library_widget
@@ -88,10 +93,14 @@ content:
       media_library_edit:
         show_edit: '1'
   field_site_topics:
-    type: options_select
+    type: options_shs
     weight: 10
     region: content
-    settings: {  }
+    settings:
+      display_node_count: false
+      create_new_items: false
+      create_new_levels: false
+      force_deepest: false
     third_party_settings: {  }
   field_summary:
     type: string_textarea
