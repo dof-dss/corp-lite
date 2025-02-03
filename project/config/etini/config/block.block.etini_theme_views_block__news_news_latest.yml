@@ -7,13 +7,14 @@ dependencies:
   module:
     - block_visibility_groups
     - node
+    - system
     - views
   theme:
     - etini_theme
 id: etini_theme_views_block__news_news_latest
 theme: etini_theme
 region: sidebar_second
-weight: 0
+weight: -11
 provider: null
 plugin: 'views_block:news-news_latest'
 settings:
@@ -35,3 +36,7 @@ visibility:
       node: '@node.node_route_context:node'
     bundles:
       news: news
+  request_path:
+    id: request_path
+    negate: true
+    pages: '<front>'

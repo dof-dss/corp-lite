@@ -368,6 +368,7 @@ display:
     display_plugin: page
     position: 1
     display_options:
+      enabled: true
       title: 'Draggable site topics'
       fields:
         name:
@@ -738,6 +739,7 @@ display:
     display_plugin: block
     position: 1
     display_options:
+      enabled: true
       display_description: ''
       display_extenders:
         metatag_display_extender:
@@ -758,6 +760,7 @@ display:
     display_plugin: block
     position: 1
     display_options:
+      enabled: true
       pager:
         type: some
         options:
