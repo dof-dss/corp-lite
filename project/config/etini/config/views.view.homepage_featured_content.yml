@@ -330,8 +330,16 @@ display:
           replica: false
           query_tags: {  }
       relationships: {  }
+      use_more: false
+      use_more_always: false
+      use_more_text: 'More Features'
       header: {  }
-      footer: {  }
+      footer:
+        area:
+          id: area
+          table: views
+          field: area
+          plugin_id: text
       display_extenders: {  }
     cache_metadata:
       max-age: -1
@@ -349,7 +357,23 @@ display:
     display_plugin: block
     position: 1
     display_options:
+      defaults:
+        footer: false
       display_description: ''
+      footer:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: false
+          content:
+            value: '<p><a href="/news">More features ...</a></p>'
+            format: basic_html
+          tokenize: false
       display_extenders:
         metatag_display_extender:
           metatags: {  }

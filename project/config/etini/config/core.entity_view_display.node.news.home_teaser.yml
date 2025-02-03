@@ -17,6 +17,7 @@ dependencies:
     - field.field.node.news.field_teaser
     - node.type.news
   module:
+    - datetime
     - layout_builder
     - user
 third_party_settings:
@@ -34,17 +35,26 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: default
-      link: true
+      view_mode: news_thumbnail
+      link: false
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_published_date:
+    type: datetime_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: corplite_medium
+    third_party_settings: {  }
+    weight: 1
     region: content
   field_summary:
     type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
 hidden:
   body: true
@@ -54,7 +64,6 @@ hidden:
   field_meta_tags: true
   field_news_type: true
   field_notes_to_editors: true
-  field_published_date: true
   field_site_topics: true
   field_teaser: true
   langcode: true

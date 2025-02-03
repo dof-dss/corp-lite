@@ -11,71 +11,31 @@
 //
 // Style guide: layouts.front
 
-.layout--front {
+#main-content {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 20px;
 
+  .featured-home {
+    grid-column: 1 / span 8;
+    grid-row: 1 / span 2;
 
-  > * {
-    grid-column: auto;
-    padding-top: 3rem;
-  }
-
-  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(2, min-content);
-    grid-row-gap: 0;
-  }
-
-  @include breakpoint($tab) {
-    grid-template-columns: 1fr 300px;
-    grid-template-rows: auto;
-    grid-gap: 20px;
-  }
-
-  h2 {
-    margin-top: 0;
+    @media screen and (max-width: 768px) {
+      grid-column: 1 / span 12;
+    }
   }
 }
 
-.sidebar_second {
-  background-color: var(--clr-grey-light);
-  padding: 1em 15px;
-  border-top: 5px solid var(--clr-brand-primary);
-
-  @include breakpoint($tab) {
-    grid-column: 2 / 3;
-    display: block;
-  }
-
-  @include breakpoint($phab) {
-    display: block;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 0 1.5em;
-    grid-template-rows: repeat(2, min-content);
-  }
-}
-
-.section--quicklinks {
+#quicklinks {
+  grid-column: 9 / span 4;
   padding: 1em 15px 1.5em;
   background-color: var(--clr-grey-light);
   border-top: 5px solid var(--clr-brand-primary);
 
-  @include breakpoint($tab) {
-    grid-column: 2 / 3;
-  }
-}
-
-/* Optional: Mobile adjustments */
-@media screen and (max-width: 768px) {
-  .layout--front {
-    grid-template-columns: 1fr;
+  @media screen and (max-width: 768px) {
+    grid-column: 1 / span 12;
   }
 
-  .sidebar_second, .section--quicklinks {
-    grid-column: 1 / -1;
-    width: 100%;
+  h2 {
+    border-top: none;
   }
 }
 
@@ -213,5 +173,42 @@
 
   .featured__body {
     margin-left: 0;
+  }
+}
+
+.site-topics-home {
+  border-top: 4px solid #17819b;
+  
+  .subtopics {
+    padding: 20px;
+  }
+
+  .subtopics__title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .subtopics__content {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .subtopics__item {
+    flex: 1 1 calc(50% - 10px);
+    box-sizing: border-box;
+    padding: 10px;
+    min-width: 300px;
+    border: solid 1px #4a4a4a;
+  }
+
+  @media (max-width: 768px) {
+    .subtopics__content {
+      flex-direction: column;
+    }
+
+    .subtopics__item {
+      flex: 1 1 100%;
+    }
   }
 }
