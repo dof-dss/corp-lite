@@ -85,6 +85,10 @@ nav#block-mainnavigation {
     }
   }
 
+  #block-views-block-news-news-latest  ul.list--hyphen-bullet li p.published-date {
+    font-size: 1.5rem;
+  }
+
   #block-views-block-publications-homepage-publications-homepage {
     grid-column: 1/span 12;
     border-top: 8px solid var(--clr-main-nav-brd-btm);
