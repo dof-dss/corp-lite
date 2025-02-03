@@ -19,6 +19,7 @@ dependencies:
     - node.type.profile
     - node.type.publication
     - node.type.webform
+    - taxonomy.vocabulary.news_types
     - workflows.workflow.nics_editorial_workflow
   module:
     - block
@@ -39,6 +40,7 @@ dependencies:
     - scheduled_transitions
     - system
     - taxonomy
+    - taxonomy_access_fix
     - toolbar
 id: admin_user
 label: 'admin user'
@@ -197,6 +199,7 @@ permissions:
   - 'revert profile revisions'
   - 'revert publication revisions'
   - 'revert webform revisions'
+  - 'select terms in news_types'
   - 'use moderation sidebar'
   - 'use nics_editorial_workflow transition archive'
   - 'use nics_editorial_workflow transition create_new_draft'
