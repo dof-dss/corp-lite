@@ -32,7 +32,7 @@ third_party_settings:
       label: Featured
       region: content
       parent_name: ''
-      weight: 10
+      weight: 11
       format_type: fieldset
       format_settings:
         classes: ''
@@ -40,6 +40,21 @@ third_party_settings:
         id: ''
         description: ''
         required_fields: false
+    group_publications:
+      children:
+        - field_external_publication
+        - field_attachment
+      label: Publications
+      region: content
+      parent_name: ''
+      weight: 17
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: 'You must provide an attachment or external link'
+        required_fields: true
 _core:
   default_config_hash: ocDOtKu-FFvYTRQKCbgjXCZHYM6AqzhixwjVfYUoALI
 id: node.publication.default
@@ -65,7 +80,7 @@ content:
     third_party_settings: {  }
   field_attachment:
     type: media_library_widget
-    weight: 18
+    weight: 19
     region: content
     settings:
       media_types: {  }
@@ -74,7 +89,7 @@ content:
         show_edit: '1'
   field_external_publication:
     type: link_default
-    weight: 17
+    weight: 18
     region: content
     settings:
       placeholder_url: ''
@@ -82,7 +97,7 @@ content:
     third_party_settings: {  }
   field_meta_tags:
     type: metatag_firehose
-    weight: 19
+    weight: 20
     region: content
     settings:
       sidebar: true

@@ -17,6 +17,7 @@ dependencies:
   module:
     - content_moderation
     - datetime
+    - field_group
     - link
     - media_library
     - media_library_edit
@@ -24,6 +25,23 @@ dependencies:
     - path
     - shs
     - text
+third_party_settings:
+  field_group:
+    group_publications:
+      children:
+        - field_external_publication
+        - field_secure_attachment
+      label: Publications
+      region: content
+      parent_name: ''
+      weight: 18
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: 'You must provide an attachment or external link'
+        required_fields: true
 id: node.secure_statistics.default
 targetEntityType: node
 bundle: secure_statistics
@@ -55,7 +73,7 @@ content:
     third_party_settings: {  }
   field_meta_tags:
     type: metatag_firehose
-    weight: 14
+    weight: 13
     region: content
     settings:
       sidebar: true
@@ -85,7 +103,7 @@ content:
     third_party_settings: {  }
   field_secure_attachment:
     type: media_library_widget
-    weight: 26
+    weight: 11
     region: content
     settings:
       media_types: {  }
@@ -124,33 +142,33 @@ content:
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 17
+    weight: 16
     region: content
     settings: {  }
     third_party_settings: {  }
   path:
     type: path
-    weight: 15
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 12
+    weight: 11
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 18
+    weight: 17
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 13
+    weight: 12
     region: content
     settings:
       display_label: true
@@ -174,7 +192,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 16
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }
