@@ -17,6 +17,7 @@ dependencies:
   module:
     - content_moderation
     - datetime
+    - field_group
     - link
     - media_library
     - media_library_edit
@@ -24,6 +25,23 @@ dependencies:
     - path
     - shs
     - text
+third_party_settings:
+  field_group:
+    group_publications:
+      children:
+        - field_external_publication
+        - field_secure_attachment
+      label: Publications
+      region: content
+      parent_name: ''
+      weight: 16
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: 'You must provide an attachment or external link'
+        required_fields: true
 id: node.secure_market_statistics.default
 targetEntityType: node
 bundle: secure_market_statistics
@@ -47,7 +65,7 @@ content:
     third_party_settings: {  }
   field_external_publication:
     type: link_default
-    weight: 16
+    weight: 17
     region: content
     settings:
       placeholder_url: ''
@@ -55,7 +73,7 @@ content:
     third_party_settings: {  }
   field_meta_tags:
     type: metatag_firehose
-    weight: 17
+    weight: 19
     region: content
     settings:
       sidebar: true
@@ -85,7 +103,7 @@ content:
     third_party_settings: {  }
   field_secure_attachment:
     type: media_library_widget
-    weight: 26
+    weight: 18
     region: content
     settings:
       media_types: {  }
