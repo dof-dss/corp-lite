@@ -134,16 +134,17 @@
 
   &-right,
   &-left {
-    background-image: url('/themes/custom/nicsdru_corplite_theme/images/btn-arrow.svg');
     background-size: var(--btn-fs) auto;
   }
 
   &-right {
+    background-image: url('/themes/custom/nicsdru_corplite_theme/images/arrow_forward_white.svg');
     background-position: right 4px top 50%;
     padding-right: var(--btn-icon-pad);
   }
 
   &-left {
+    background-image: url('/themes/custom/nicsdru_corplite_theme/images/arrow_back_white.svg');
     background-position: left 4px top 50%;
     padding-left: var(--btn-icon-pad);
   }
@@ -399,9 +400,6 @@
   color: var(--clr-white);
   min-width: 15rem;
   min-height: 5.4rem;
-  padding: .8rem 3.9rem .8rem 1.9rem;
-  background-size: 25.3346px auto;
-  background-position: right 6.3327px top 50%;
   background-color: #048a05;
   border-color: #048a05;
   display: inline-block;
