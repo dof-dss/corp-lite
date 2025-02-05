@@ -18,12 +18,12 @@ provider: null
 plugin: 'views_block:related_links-related_links'
 settings:
   id: 'views_block:related_links-related_links'
-  label: ''
+  label: 'Related Content'
   label_display: visible
   provider: views
   context_mapping:
     field_site_topics_target_id: '@taxonomy_term.taxonomy_term_route_context:taxonomy_term'
-  views_label: ''
+  views_label: 'Related Content'
   items_per_page: none
 visibility:
   condition_group:
