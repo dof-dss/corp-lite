@@ -5,7 +5,7 @@ timezone: Europe/Dublin
 composer_version: "2"
 docroot: web
 fail_on_hook_fail: true
-nodejs_version: 14
+nodejs_version: 20
 php_version: "8.3"
 xdebug_enabled: false
 database:
