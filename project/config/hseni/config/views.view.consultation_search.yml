@@ -6,7 +6,6 @@ dependencies:
     - field.storage.node.body
     - search_api.index.consultations_index
   module:
-    - corplite_search
     - search_api
     - text
     - views_custom_cache_tag
@@ -283,15 +282,6 @@ display:
           plugin_id: result
           empty: false
           content: '@total Consultation Results'
-        search_sort_by:
-          id: search_sort_by
-          table: views
-          field: search_sort_by
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: search_sort_by
-          empty: false
       footer: {  }
       display_extenders: {  }
     cache_metadata:
