@@ -1,0 +1,19 @@
+uuid: aab074cb-e289-4184-ad02-aa51c3466bc6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_x_formerly_twitter
+    - node.type.researcher_profiles
+id: node.researcher_profiles.field_x_formerly_twitter
+field_name: field_x_formerly_twitter
+entity_type: node
+bundle: researcher_profiles
+label: 'X (formerly Twitter)'
+description: 'Enter the X (formerly twitter) address of the researcher.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

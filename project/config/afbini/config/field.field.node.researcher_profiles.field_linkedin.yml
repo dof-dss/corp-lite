@@ -1,0 +1,19 @@
+uuid: d390a94a-2d91-4916-a1be-684b08ced5c4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_linkedin
+    - node.type.researcher_profiles
+id: node.researcher_profiles.field_linkedin
+field_name: field_linkedin
+entity_type: node
+bundle: researcher_profiles
+label: LinkedIn
+description: 'Enter the LinkedIn address of the researcher.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

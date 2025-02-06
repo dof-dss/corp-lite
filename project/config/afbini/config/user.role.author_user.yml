@@ -15,6 +15,7 @@ dependencies:
     - node.type.link
     - node.type.news
     - node.type.publication
+    - node.type.researcher_profiles
     - workflows.workflow.nics_editorial_workflow
   module:
     - content_moderation
@@ -48,6 +49,7 @@ permissions:
   - 'create news content'
   - 'create publication content'
   - 'create remote_video media'
+  - 'create researcher_profiles content'
   - 'delete own audio media'
   - 'delete own document media'
   - 'delete own file media'
@@ -60,12 +62,14 @@ permissions:
   - 'edit any link content'
   - 'edit any news content'
   - 'edit any publication content'
+  - 'edit any researcher_profiles content'
   - 'edit own article content'
   - 'edit own contact content'
   - 'edit own gallery content'
   - 'edit own link content'
   - 'edit own news content'
   - 'edit own publication content'
+  - 'edit own researcher_profiles content'
   - 'use moderation sidebar'
   - 'use nics_editorial_workflow transition create_new_draft'
   - 'use nics_editorial_workflow transition draft_of_published'
@@ -82,4 +86,5 @@ permissions:
   - 'view news revisions'
   - 'view own unpublished media'
   - 'view publication revisions'
+  - 'view researcher_profiles revisions'
   - 'view the administration theme'

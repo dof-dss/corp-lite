@@ -1,0 +1,21 @@
+uuid: fd7b19bc-16b1-44e3-a34f-f1157c57d6dd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_keywords
+    - node.type.researcher_profiles
+  module:
+    - options
+id: node.researcher_profiles.field_keywords
+field_name: field_keywords
+entity_type: node
+bundle: researcher_profiles
+label: Keywords
+description: 'Select science strategy keywords related to the researcher.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string
