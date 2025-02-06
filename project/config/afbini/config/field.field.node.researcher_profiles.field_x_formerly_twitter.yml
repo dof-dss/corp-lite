@@ -10,7 +10,7 @@ field_name: field_x_formerly_twitter
 entity_type: node
 bundle: researcher_profiles
 label: 'X (formerly Twitter)'
-description: 'Enter the X (formerly twitter) address of the researcher.'
+description: 'Enter the X (formerly Twitter) address of the researcher.'
 required: false
 translatable: false
 default_value: {  }
