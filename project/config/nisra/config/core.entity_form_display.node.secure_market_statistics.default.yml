@@ -17,12 +17,31 @@ dependencies:
   module:
     - content_moderation
     - datetime
+    - field_group
     - link
     - media_library
     - media_library_edit
     - metatag
     - path
+    - shs
     - text
+third_party_settings:
+  field_group:
+    group_publications:
+      children:
+        - field_external_publication
+        - field_secure_attachment
+      label: Publications
+      region: content
+      parent_name: ''
+      weight: 16
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: 'You must provide an attachment or external link'
+        required_fields: true
 id: node.secure_market_statistics.default
 targetEntityType: node
 bundle: secure_market_statistics
@@ -46,7 +65,7 @@ content:
     third_party_settings: {  }
   field_external_publication:
     type: link_default
-    weight: 16
+    weight: 17
     region: content
     settings:
       placeholder_url: ''
@@ -54,7 +73,7 @@ content:
     third_party_settings: {  }
   field_meta_tags:
     type: metatag_firehose
-    weight: 17
+    weight: 19
     region: content
     settings:
       sidebar: true
@@ -73,14 +92,18 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_research_support:
-    type: options_select
+    type: options_shs
     weight: 11
     region: content
-    settings: {  }
+    settings:
+      display_node_count: false
+      create_new_items: false
+      create_new_levels: false
+      force_deepest: false
     third_party_settings: {  }
   field_secure_attachment:
     type: media_library_widget
-    weight: 26
+    weight: 18
     region: content
     settings:
       media_types: {  }
@@ -88,10 +111,14 @@ content:
       media_library_edit:
         show_edit: '1'
   field_site_topics:
-    type: options_select
+    type: options_shs
     weight: 10
     region: content
-    settings: {  }
+    settings:
+      display_node_count: false
+      create_new_items: false
+      create_new_levels: false
+      force_deepest: false
     third_party_settings: {  }
   field_summary:
     type: string_textarea

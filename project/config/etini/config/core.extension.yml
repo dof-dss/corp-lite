@@ -50,6 +50,7 @@ module:
   entity_browser_entity_form: 0
   entity_embed: 0
   entity_reference_revisions: 0
+  etini_homepage: 0
   facets: 0
   facets_pretty_paths: 0
   facets_summary: 0
@@ -158,7 +159,6 @@ module:
   readonlymode: 9999
   eu_cookie_compliance: 10000
 theme:
-  olivero: 0
   claro: 0
   stable9: 0
   nicsdru_corplite_theme: 0

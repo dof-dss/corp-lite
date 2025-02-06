@@ -16,6 +16,7 @@ dependencies:
     - link
     - metatag
     - path
+    - shs
     - text
 _core:
   default_config_hash: FGr0rIg3Z0qivO0ESetuDp2uqAnD85LWM6RAaRM1BYo
@@ -65,10 +66,14 @@ content:
       use_details: true
     third_party_settings: {  }
   field_site_topics:
-    type: options_select
+    type: options_shs
     weight: 10
     region: content
-    settings: {  }
+    settings:
+      display_node_count: false
+      create_new_items: false
+      create_new_levels: false
+      force_deepest: false
     third_party_settings: {  }
   field_summary:
     type: string_textarea

@@ -1029,7 +1029,7 @@ display:
         type: some
         options:
           offset: 0
-          items_per_page: 4
+          items_per_page: 8
       sorts:
         weight:
           id: weight
@@ -1345,7 +1345,7 @@ display:
         type: some
         options:
           offset: 0
-          items_per_page: 9
+          items_per_page: 8
       sorts:
         weight:
           id: weight
@@ -2896,7 +2896,7 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: "<p>\r\nEdit useful links shown on the home page.  Drag and drop to change the display order. <strong>Only the first 5 items are displayed.</strong>\r\n</p>"
+            value: "<p>\r\nEdit useful links shown on the home page.  Drag and drop to change the display order. <strong>Only the first 8 items are displayed.</strong>\r\n</p>"
             format: basic_html
           tokenize: false
       display_extenders:
@@ -3282,7 +3282,7 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: "<p>\r\nEdit useful links shown on the home page.  Drag and drop to change the display order. <strong>Only the first 5 items are displayed.</strong>\r\n</p>"
+            value: "<p>\r\nEdit useful links shown on the home page.  Drag and drop to change the display order. <strong>Only the first 8 items are displayed.</strong>\r\n</p>"
             format: basic_html
           tokenize: false
       display_extenders:
