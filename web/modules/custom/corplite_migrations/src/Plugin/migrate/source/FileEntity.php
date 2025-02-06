@@ -33,7 +33,8 @@ class FileEntity extends FieldableEntity {
     if (isset($this->configuration['type'])) {
       if (is_array($this->configuration['type'])) {
         $query->condition('f.type', $this->configuration['type'], 'IN');
-      } else {
+      }
+      else {
         $query->condition('f.type', $this->configuration['type']);
       }
     }
