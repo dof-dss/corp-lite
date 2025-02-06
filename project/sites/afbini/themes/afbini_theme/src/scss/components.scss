@@ -65,13 +65,15 @@ nav#block-mainnavigation {
 
       .columnItem {
         width: 48.75%;
-        border: 3px solid #e4eef0;
         padding: 0.9rem 1.2rem 1.2rem;
         margin: 0 11px 2rem 0;
 
         &:hover,
         &:focus {
-          background: #e4eef0;
+          .views-field .field-content a {
+            text-decoration-thickness: 2px;
+            text-decoration-color: #0b1647;
+          }
         }
 
         @media screen and (max-width: 992px) {
@@ -83,6 +85,10 @@ nav#block-mainnavigation {
         }
       }
     }
+  }
+
+  #block-views-block-news-news-latest  ul.list--hyphen-bullet li p.published-date {
+    font-size: 1.5rem;
   }
 
   #block-views-block-publications-homepage-publications-homepage {

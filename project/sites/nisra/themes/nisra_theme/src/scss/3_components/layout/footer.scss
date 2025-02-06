@@ -7,7 +7,7 @@
       grid-template-columns: repeat(3, 1fr);
       grid-gap: 8rem;
 
-      :last-child {
+      &:last-child {
         grid-column: 1 / -1;
       }
     }
