@@ -31,7 +31,12 @@ class FileEntity extends FieldableEntity {
       ->fields('f')
       ->orderBy('f.fid');
     if (isset($this->configuration['type'])) {
-      $query->condition('f.type', $this->configuration['type']);
+      if (is_array($this->configuration['type'])) {
+        $query->condition('f.type', $this->configuration['type'], 'IN');
+      }
+      else {
+        $query->condition('f.type', $this->configuration['type']);
+      }
     }
     // Filter by scheme(s), if configured.
     if (isset($this->configuration['scheme'])) {
