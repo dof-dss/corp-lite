@@ -12,7 +12,7 @@ field_name: field_keywords
 entity_type: node
 bundle: researcher_profiles
 label: Keywords
-description: 'Select any science strategy keywords related to the researcher.'
+description: 'Select any science strategy keywords related to the researcher. Hold the Ctrl or Command button to select multiple.'
 required: true
 translatable: false
 default_value: {  }
