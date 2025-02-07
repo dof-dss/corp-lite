@@ -1,0 +1,19 @@
+uuid: d4d34167-7d8b-452a-b8b9-4a4b61e7117a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_first_name
+    - node.type.researcher_profiles
+id: node.researcher_profiles.field_first_name
+field_name: field_first_name
+entity_type: node
+bundle: researcher_profiles
+label: 'First name'
+description: 'Enter the first name of the researcher.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
