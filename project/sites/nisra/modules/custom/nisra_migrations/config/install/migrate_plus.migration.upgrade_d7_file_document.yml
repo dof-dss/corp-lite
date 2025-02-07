@@ -12,11 +12,11 @@ migration_group: migrate_drupal_7
 label: 'Public files'
 source:
   plugin: file_entity
-  type: document
+  type:
+    - document
+    - undefined
   constants:
-    bundle:
-      - 'document'
-      - 'undefined'
+    bundle: 'document'
     ignore_uri_regex: '|^private://|'
 process:
   skip_private_files:
