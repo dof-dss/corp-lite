@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   module:
-    - corplite_district_inspectors
+    - etini_district_inspectors
     - search_api
     - search_api_solr
 third_party_settings:
@@ -64,7 +64,7 @@ field_settings:
     type: 'solr_text_custom:ngram'
     dependencies:
       module:
-        - corplite_district_inspectors
+        - etini_district_inspectors
   name:
     label: Name
     datasource_id: 'entity:School'
@@ -72,7 +72,7 @@ field_settings:
     type: 'solr_text_custom:ngram'
     dependencies:
       module:
-        - corplite_district_inspectors
+        - etini_district_inspectors
 datasource_settings:
   'entity:School': {  }
 processor_settings:
