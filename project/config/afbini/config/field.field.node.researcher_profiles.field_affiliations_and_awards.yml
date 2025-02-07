@@ -1,0 +1,19 @@
+uuid: e4912119-c35c-47ce-adf8-c078d61bc7a8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_affiliations_and_awards
+    - node.type.researcher_profiles
+id: node.researcher_profiles.field_affiliations_and_awards
+field_name: field_affiliations_and_awards
+entity_type: node
+bundle: researcher_profiles
+label: 'Affiliations and awards'
+description: 'Enter any professional body memberships / representation on committiees or prizes awarded to the researcher.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

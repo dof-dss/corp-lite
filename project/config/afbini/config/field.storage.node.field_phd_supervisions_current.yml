@@ -1,0 +1,20 @@
+uuid: 87c0dac9-ec11-4397-af19-e43d71cc625a
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_phd_supervisions_current
+field_name: field_phd_supervisions_current
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

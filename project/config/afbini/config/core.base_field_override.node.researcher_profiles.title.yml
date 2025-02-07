@@ -1,0 +1,18 @@
+uuid: 1326fd2e-128a-4304-bcae-e56da085894c
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.researcher_profiles
+id: node.researcher_profiles.title
+field_name: title
+entity_type: node
+bundle: researcher_profiles
+label: Title
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
