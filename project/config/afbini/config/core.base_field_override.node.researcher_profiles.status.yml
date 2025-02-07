@@ -1,0 +1,22 @@
+uuid: 6b97bcae-4113-434f-9026-7d30f5b6b92d
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.researcher_profiles
+id: node.researcher_profiles.status
+field_name: status
+entity_type: node
+bundle: researcher_profiles
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

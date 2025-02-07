@@ -1,0 +1,22 @@
+uuid: ab0b5797-2306-40ad-b40c-427bec4dcc86
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.researcher_profiles
+id: node.researcher_profiles.promote
+field_name: promote
+entity_type: node
+bundle: researcher_profiles
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
