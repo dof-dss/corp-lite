@@ -1,0 +1,19 @@
+uuid: c4829d1f-eaae-4c68-ac8d-01196fb49ddb
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - node
+id: node.field_recent_projects
+field_name: field_recent_projects
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 5
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

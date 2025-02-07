@@ -1,0 +1,20 @@
+uuid: b3ca3568-c25c-42b2-8899-f340e07be693
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_phd_supervisions_total
+field_name: field_phd_supervisions_total
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
