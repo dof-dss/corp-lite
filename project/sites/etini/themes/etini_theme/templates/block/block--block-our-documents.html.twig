@@ -25,13 +25,13 @@
  * @see template_preprocess_block()
  */
 #}
-<div{{ attributes.addClass(['section-front__sub-section', 'publications-surveys']) }}>
+<section{{ attributes.addClass(['section-front', 'section-front--our-documents']).removeClass('views-element-container').removeAttribute('id') }}>
   {{ title_prefix }}
   {% if label %}
-    <h3{{ title_attributes.addClass('menu-title') }}>{{ label }}</h3>
+    <h2{{ title_attributes }}>{{ label }}</h2>
   {% endif %}
   {{ title_suffix }}
   {% block content %}
     {{ content }}
   {% endblock %}
-</div>
+</section>
