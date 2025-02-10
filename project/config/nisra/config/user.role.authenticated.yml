@@ -31,5 +31,7 @@ permissions:
   - 'select terms in research_support'
   - 'select terms in site_topics'
   - 'use text format basic_html'
+  - 'view any term'
+  - 'view any term name'
   - 'view media'
   - 'view own unpublished content'

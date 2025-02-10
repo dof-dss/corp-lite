@@ -1,16 +1,16 @@
-uuid: 41f95d13-6a97-4c07-9cb5-c5860230d961
+uuid: 9a00ccd8-0700-4151-b690-63d69df7711a
 langcode: en
 status: true
 dependencies:
   module:
-    - geolocation
+    - google_map_field
     - node
 id: node.field_departmental_map
 field_name: field_departmental_map
 entity_type: node
-type: geolocation
+type: google_map_field
 settings: {  }
-module: geolocation
+module: google_map_field
 locked: false
 cardinality: 1
 translatable: true
