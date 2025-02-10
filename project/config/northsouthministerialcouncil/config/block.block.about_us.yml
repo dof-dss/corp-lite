@@ -1,0 +1,30 @@
+uuid: 901a1742-0f33-454b-bc37-c4492d7d1c53
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:2b390354-1f67-40b9-83bd-0571c7849231'
+  module:
+    - block_content
+    - system
+  theme:
+    - northsouthministerialcouncil_theme
+id: about_us
+theme: northsouthministerialcouncil_theme
+region: content
+weight: -2
+provider: null
+plugin: 'block_content:2b390354-1f67-40b9-83bd-0571c7849231'
+settings:
+  id: 'block_content:2b390354-1f67-40b9-83bd-0571c7849231'
+  label: About
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

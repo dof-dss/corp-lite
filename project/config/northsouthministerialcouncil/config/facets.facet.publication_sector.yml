@@ -1,4 +1,4 @@
-uuid: 4ec87cc3-c918-46a2-8dc4-88f0d9ef8c2c
+uuid: b7a89ab3-a6c7-4eb9-a30f-1c6566efea12
 langcode: en
 status: true
 dependencies:
@@ -6,18 +6,22 @@ dependencies:
     - search_api.index.publications_index
     - views.view.publications_search
   module:
+    - facets_pretty_paths
     - search_api
-id: published_date
-name: 'Published date'
+third_party_settings:
+  facets_pretty_paths:
+    coder: taxonomy_term_coder
+id: publication_sector
+name: 'Publication sector'
 weight: 0
 min_count: 1
 missing: false
 missing_label: others
-url_alias: date
-facet_source_id: 'search_api:views_page__publications_search__publications_search_page'
-field_identifier: field_published_date
+url_alias: sector
+facet_source_id: 'search_api:views_page__publications_search__publications_search'
+field_identifier: field_sectors
 query_operator: and
-hard_limit: 0
+hard_limit: 50
 exclude: false
 use_hierarchy: false
 keep_hierarchy_parents_active: false
@@ -49,31 +53,22 @@ processor_configs:
       sort: 20
     settings:
       sort: ASC
-  date_facet_drilldown:
-    processor_id: date_facet_drilldown
+  display_value_widget_order:
+    processor_id: display_value_widget_order
     weights:
-      build: 1
-    settings: {  }
-  date_item:
-    processor_id: date_item
-    weights:
-      build: 35
+      sort: 40
     settings:
-      date_display: actual_date
-      granularity: 6
-      date_format: ''
-      hierarchy: false
+      sort: ASC
   hierarchy_processor:
     processor_id: hierarchy_processor
     weights:
       build: 100
     settings: {  }
-  raw_value_widget_order:
-    processor_id: raw_value_widget_order
+  translate_entity:
+    processor_id: translate_entity
     weights:
-      sort: 50
-    settings:
-      sort: DESC
+      build: 5
+    settings: {  }
   url_processor_handler:
     processor_id: url_processor_handler
     weights:
