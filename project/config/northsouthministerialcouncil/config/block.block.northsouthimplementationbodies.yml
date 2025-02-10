@@ -1,0 +1,30 @@
+uuid: acd4b104-1e30-4455-8c87-c468bd30137e
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:c47d3919-6b17-4acc-b256-f8d4ce82c0d5'
+  module:
+    - block_content
+    - system
+  theme:
+    - northsouthministerialcouncil_theme
+id: northsouthimplementationbodies
+theme: northsouthministerialcouncil_theme
+region: content
+weight: -1
+provider: null
+plugin: 'block_content:c47d3919-6b17-4acc-b256-f8d4ce82c0d5'
+settings:
+  id: 'block_content:c47d3919-6b17-4acc-b256-f8d4ce82c0d5'
+  label: 'North South Implementation Bodies'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

@@ -1,13 +1,14 @@
-uuid: 68cd4c8e-1444-4c9d-bf94-58fd234e76f6
+uuid: 5e5a9c7f-0738-4c91-b125-5cdbc0ba783c
 langcode: en
 status: true
 dependencies:
   module:
+    - block_visibility_groups
     - corplite_search
     - system
   theme:
     - northsouthministerialcouncil_theme
-id: northsouthministerialcouncil_theme_sitesearchblock
+id: sitesearchblock
 theme: northsouthministerialcouncil_theme
 region: header
 weight: 0
@@ -19,7 +20,11 @@ settings:
   label_display: '0'
   provider: corplite_search
 visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
   request_path:
     id: request_path
     negate: true
-    pages: '/search*'
+    pages: "/search\r\n/search*"
