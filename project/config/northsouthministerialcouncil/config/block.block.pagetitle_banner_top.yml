@@ -1,17 +1,17 @@
-uuid: c5817d20-a7c4-441e-b6e8-6a5835f24f2c
+uuid: d5484967-3bdf-4e86-9fe6-89061407671e
 langcode: en
 status: true
 dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.banner_page_title
   module:
-    - system
+    - block_visibility_groups
   theme:
     - northsouthministerialcouncil_theme
-_core:
-  default_config_hash: jc4FPJHbAaeJkH4fPoqNbVpfVPBlrn5ccyNDWskxSBc
-id: northsouthministerialcouncil_theme_page_title
+id: pagetitle_banner_top
 theme: northsouthministerialcouncil_theme
 region: top_banner
-weight: -3
+weight: 0
 provider: null
 plugin: page_title_block
 settings:
@@ -20,7 +20,7 @@ settings:
   label_display: '0'
   provider: core
 visibility:
-  request_path:
-    id: request_path
+  condition_group:
+    id: condition_group
     negate: false
-    pages: '<front>'
+    block_visibility_group: banner_page_title

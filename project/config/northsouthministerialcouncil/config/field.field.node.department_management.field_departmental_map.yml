@@ -1,4 +1,4 @@
-uuid: 6d6424e7-fe59-4b99-8525-4022bf9a3907
+uuid: 3f60c95f-94ea-4d98-b7ec-e8bf34acc45d
 langcode: en
 status: true
 dependencies:
@@ -6,16 +6,16 @@ dependencies:
     - field.storage.node.field_departmental_map
     - node.type.department_management
   module:
-    - geolocation
+    - google_map_field
 id: node.department_management.field_departmental_map
 field_name: field_departmental_map
 entity_type: node
 bundle: department_management
-label: map
+label: Map
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: geolocation
+field_type: google_map_field
