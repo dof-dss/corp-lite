@@ -12,7 +12,7 @@ dependencies:
 id: etini_theme_views_block__articles_by_term_articles_all
 theme: etini_theme
 region: content
-weight: -6
+weight: -4
 provider: null
 plugin: 'views_block:articles_by_term-articles_all'
 settings:

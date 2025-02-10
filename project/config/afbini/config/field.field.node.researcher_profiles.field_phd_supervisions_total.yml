@@ -1,0 +1,23 @@
+uuid: a0f20714-bd12-4c60-8ce6-5fbb4114da7a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_phd_supervisions_total
+    - node.type.researcher_profiles
+id: node.researcher_profiles.field_phd_supervisions_total
+field_name: field_phd_supervisions_total
+entity_type: node
+bundle: researcher_profiles
+label: 'PhD supervisions (Total)'
+description: 'Enter the total number of PhD supervisions the researcher has had.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

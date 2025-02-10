@@ -9,8 +9,8 @@ dependencies:
     - hseni_theme
 id: featuredcontent_documents
 theme: hseni_theme
-region: top_banner
-weight: -7
+region: content
+weight: -11
 provider: null
 plugin: featured_content
 settings:

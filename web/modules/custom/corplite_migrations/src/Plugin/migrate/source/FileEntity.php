@@ -30,8 +30,13 @@ class FileEntity extends FieldableEntity {
     $query = $this->select('file_managed', 'f')
       ->fields('f')
       ->orderBy('f.fid');
-    if (isset($this->configuration['constants']) && isset($this->configuration['constants']['bundle'])) {
-      $query->condition('f.type', $this->configuration['constants']['bundle'], 'IN');
+    if (isset($this->configuration['type'])) {
+      if (is_array($this->configuration['type'])) {
+        $query->condition('f.type', $this->configuration['type'], 'IN');
+      }
+      else {
+        $query->condition('f.type', $this->configuration['type']);
+      }
     }
     // Filter by scheme(s), if configured.
     if (isset($this->configuration['scheme'])) {
