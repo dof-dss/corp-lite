@@ -1,0 +1,21 @@
+uuid: 9a244ed1-b22c-45e0-8d75-d1e853a502ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location
+    - node.type.researcher_profiles
+  module:
+    - options
+id: node.researcher_profiles.field_location
+field_name: field_location
+entity_type: node
+bundle: researcher_profiles
+label: Location
+description: 'Enter the location of the researcher.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

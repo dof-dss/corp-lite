@@ -1,0 +1,19 @@
+uuid: 0790f568-9f74-4fde-a305-3d3ee268241d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_phone
+    - node.type.researcher_profiles
+id: node.researcher_profiles.field_phone
+field_name: field_phone
+entity_type: node
+bundle: researcher_profiles
+label: Phone
+description: 'Enter the phone number of the researcher.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

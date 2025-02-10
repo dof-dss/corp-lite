@@ -61,3 +61,17 @@ function nicsdru_corplite_theme_form_system_theme_settings_alter(&$form, FormSta
     '#placeholder' => 'Enter a URL, such as https://example.com/rss.xml',
   ];
 }
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function nicsdru_corplite_theme_form_node_preview_form_select_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Additional styles to the node preview form.
+  unset($form['view_mode']);
+  $form['backlink']['#options']['attributes']['class'] += [
+    'button',
+    'btn',
+    'call-to-action',
+    'btn-left'
+  ];
+}

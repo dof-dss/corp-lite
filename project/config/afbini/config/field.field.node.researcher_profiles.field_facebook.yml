@@ -1,0 +1,19 @@
+uuid: 3a674084-bc87-47e7-9bc6-ed93719aad69
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_facebook
+    - node.type.researcher_profiles
+id: node.researcher_profiles.field_facebook
+field_name: field_facebook
+entity_type: node
+bundle: researcher_profiles
+label: Facebook
+description: 'Enter the Facebook address of the researcher.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

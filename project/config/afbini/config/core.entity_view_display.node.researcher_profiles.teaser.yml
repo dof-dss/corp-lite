@@ -1,0 +1,70 @@
+uuid: f704af23-e32d-446d-8a32-5ef2bf5491b6
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.researcher_profiles.field_additional_keywords
+    - field.field.node.researcher_profiles.field_affiliations_and_awards
+    - field.field.node.researcher_profiles.field_email
+    - field.field.node.researcher_profiles.field_expertise_experience
+    - field.field.node.researcher_profiles.field_facebook
+    - field.field.node.researcher_profiles.field_first_name
+    - field.field.node.researcher_profiles.field_google_scholar
+    - field.field.node.researcher_profiles.field_instagram
+    - field.field.node.researcher_profiles.field_job_position
+    - field.field.node.researcher_profiles.field_job_title
+    - field.field.node.researcher_profiles.field_keywords
+    - field.field.node.researcher_profiles.field_linkedin
+    - field.field.node.researcher_profiles.field_location
+    - field.field.node.researcher_profiles.field_mobile
+    - field.field.node.researcher_profiles.field_orcid
+    - field.field.node.researcher_profiles.field_phd_supervisions_current
+    - field.field.node.researcher_profiles.field_phd_supervisions_total
+    - field.field.node.researcher_profiles.field_phone
+    - field.field.node.researcher_profiles.field_pronouns
+    - field.field.node.researcher_profiles.field_recent_projects
+    - field.field.node.researcher_profiles.field_research_interests
+    - field.field.node.researcher_profiles.field_researchgate
+    - field.field.node.researcher_profiles.field_second_name
+    - field.field.node.researcher_profiles.field_x_formerly_twitter
+    - node.type.researcher_profiles
+  module:
+    - user
+id: node.researcher_profiles.teaser
+targetEntityType: node
+bundle: researcher_profiles
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_additional_keywords: true
+  field_affiliations_and_awards: true
+  field_email: true
+  field_expertise_experience: true
+  field_facebook: true
+  field_first_name: true
+  field_google_scholar: true
+  field_instagram: true
+  field_job_position: true
+  field_job_title: true
+  field_keywords: true
+  field_linkedin: true
+  field_location: true
+  field_mobile: true
+  field_orcid: true
+  field_phd_supervisions_current: true
+  field_phd_supervisions_total: true
+  field_phone: true
+  field_pronouns: true
+  field_recent_projects: true
+  field_research_interests: true
+  field_researchgate: true
+  field_second_name: true
+  field_x_formerly_twitter: true
+  langcode: true
+  search_api_excerpt: true
