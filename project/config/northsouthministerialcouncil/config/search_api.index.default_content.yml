@@ -55,7 +55,7 @@ third_party_settings:
       include_language_independent: true
       use_language_undefined_as_fallback_language: false
       specific_languages:
-        en-gb: '0'
+        en: '0'
       use_universal_collation: false
 id: default_content
 name: 'Default content'
@@ -159,6 +159,7 @@ field_settings:
 
 
 
+
       fields:
         - 'entity:node/title'
   status:
@@ -195,6 +196,7 @@ field_settings:
     configuration:
       type: union
       separator: |+
+
 
 
 
