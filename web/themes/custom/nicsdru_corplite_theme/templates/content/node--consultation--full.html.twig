@@ -71,14 +71,9 @@
  */
 #}
 <article{{ attributes.addClass('ga-main').setAttribute('id', 'main-article').removeAttribute('role') }}>
-{#  {{ include('@nicsdru_dept_theme/content/node-header.html.twig') }}#}
   {{ drupal_block('page_title_block', wrapper=false) }}
-
-{#  {{ content.field_summary }}#}
-
+  {{ content.field_summary }}
   <div{{ content_attributes.addClass(['article-content', 'max-body-text-width']) }}>
-    {{- content -}}
+    {{- content|without('field_summary') -}}
   </div>
-
-{#  {{ include('@nicsdru_dept_theme/content/node-footer.html.twig') }}#}
 </article>
