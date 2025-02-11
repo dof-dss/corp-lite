@@ -1,7 +1,20 @@
 uuid: c667bb0d-58de-45aa-bfc6-d9eaf0a0e44c
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - origins_toc
+third_party_settings:
+  origins_toc:
+    toc_enable: 1
+    toc_title: Contents
+    toc_location: .page-summary
+    toc_insert: after
+    toc_source_container: '#main-content'
+    toc_element: h2
+    toc_exclusions: ''
+    toc_screen_depth: '2'
+    toc_debug: 0
 name: 'Site topics'
 vid: site_topics
 description: 'Site topics and subtopics.'
