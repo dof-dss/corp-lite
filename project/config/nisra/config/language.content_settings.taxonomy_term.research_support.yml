@@ -1,0 +1,11 @@
+uuid: b76c7a00-0071-48bd-9135-6f09b1a70774
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.research_support
+id: taxonomy_term.research_support
+target_entity_type_id: taxonomy_term
+target_bundle: research_support
+default_langcode: site_default
+language_alterable: false
