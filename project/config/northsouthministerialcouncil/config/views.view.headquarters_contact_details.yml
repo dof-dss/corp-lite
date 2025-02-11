@@ -1,14 +1,12 @@
 uuid: e9defaca-c5b0-4db2-9156-f2aa0c8aadfb
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - field.storage.node.field_contact_information
-    - field.storage.node.field_departmental_map
     - node.type.contact
     - node.type.department_management
   module:
-    - geolocation
     - node
     - text
     - user
@@ -89,69 +87,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_departmental_map:
-          id: field_departmental_map
-          table: node__field_departmental_map
-          field: field_departmental_map
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: node
-          plugin_id: geolocation_field
-          label: ''
-          exclude: false
-          alter:
-            alter_text: true
-            text: "<h2>Map location</h2>\r\n[field_map]"
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: '0'
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: '0'
-          element_wrapper_class: ''
-          element_default_classes: false
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: ''
-          type: geolocation_latlng
-          settings: {  }
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: true
       pager:
         type: none
         options:
@@ -266,7 +201,6 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.field_contact_information'
-        - 'config:field.storage.node.field_departmental_map'
   block_1:
     id: block_1
     display_title: 'Headquarters contact'
@@ -287,7 +221,6 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.field_contact_information'
-        - 'config:field.storage.node.field_departmental_map'
   contacts_list:
     id: contacts_list
     display_title: 'Contacts list'

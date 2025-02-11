@@ -12,7 +12,7 @@ dependencies:
 id: etini_theme_exposedformnews_searchnews_search
 theme: etini_theme
 region: sidebar_first
-weight: -13
+weight: -14
 provider: null
 plugin: 'views_exposed_filter_block:news_search-news_search'
 settings:

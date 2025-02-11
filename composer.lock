@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f712f437239e15d6cea23e2f406e4f06",
+    "content-hash": "807820359b946acb6352c0b0ea4e8fe9",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -6256,11 +6256,11 @@
         },
         {
             "name": "drupal/migrate_absolute_links",
-            "version": "dev-5.0.x",
+            "version": "dev-6.0.x",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/migrate_absolute_links.git",
-                "reference": "bb752f1e4cfe275808f3bdc741e7d34abed1ecc4"
+                "reference": "b56bf8ecd6f440e2e1a1aea467f0e74b1fb88e37"
             },
             "require": {
                 "drupal/core": "^8 || ^9 || ^10"
@@ -6268,11 +6268,11 @@
             "type": "drupal-module",
             "extra": {
                 "branch-alias": {
-                    "dev-5.0.x": "5.0.x-dev"
+                    "dev-6.0.x": "6.0.x-dev"
                 },
                 "drupal": {
-                    "version": "5.0.x-dev",
-                    "datestamp": "1720619511",
+                    "version": "6.0.x-dev",
+                    "datestamp": "1739205222",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -6285,7 +6285,7 @@
             ],
             "authors": [
                 {
-                    "name": "DuttonMa",
+                    "name": "duttonma",
                     "homepage": "https://www.drupal.org/user/2250396"
                 }
             ],
@@ -21666,6 +21666,7 @@
         "drupal/masquerade": 5,
         "drupal/media_entity_browser": 15,
         "drupal/menu_breadcrumb": 15,
+        "drupal/migrate_absolute_links": 20,
         "drupal/search_api_location": 15,
         "drupal/shs": 5,
         "drupal/stage_file_proxy": 20,

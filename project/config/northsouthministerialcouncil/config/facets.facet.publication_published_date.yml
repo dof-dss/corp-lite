@@ -1,4 +1,4 @@
-uuid: 107251c0-5311-4f3f-994c-4bad06bc381a
+uuid: e6f1cbf2-238d-4edd-95f5-71afd9963e5a
 langcode: en
 status: true
 dependencies:
@@ -7,15 +7,15 @@ dependencies:
     - views.view.publications_search
   module:
     - search_api
-id: publication_sectors
-name: 'Publication sectors'
+id: publication_published_date
+name: 'Publication date'
 weight: 0
 min_count: 1
 missing: false
 missing_label: others
-url_alias: sectors
-facet_source_id: 'search_api:views_page__publications_search__publications_search_page'
-field_identifier: field_sectors
+url_alias: date
+facet_source_id: 'search_api:views_page__publications_search__publications_search'
+field_identifier: field_published_date
 query_operator: and
 hard_limit: 0
 exclude: false
@@ -49,6 +49,20 @@ processor_configs:
       sort: 20
     settings:
       sort: ASC
+  date_facet_drilldown:
+    processor_id: date_facet_drilldown
+    weights:
+      build: 1
+    settings: {  }
+  date_item:
+    processor_id: date_item
+    weights:
+      build: 35
+    settings:
+      date_display: actual_date
+      granularity: 6
+      date_format: ''
+      hierarchy: false
   hierarchy_processor:
     processor_id: hierarchy_processor
     weights:
@@ -60,11 +74,6 @@ processor_configs:
       sort: 50
     settings:
       sort: DESC
-  translate_entity:
-    processor_id: translate_entity
-    weights:
-      build: 5
-    settings: {  }
   url_processor_handler:
     processor_id: url_processor_handler
     weights:

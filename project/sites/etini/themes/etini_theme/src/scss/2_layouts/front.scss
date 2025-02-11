@@ -10,6 +10,56 @@
 // Weight: -6
 //
 // Style guide: layouts.front
+.layout--front {
+  // By default, home page sections span full width
+  // of the grid.
+  > *,
+  .section-front {
+    grid-column: 1 / span 12;
+  }
+
+  .section-front {
+    &--our-documents {
+      @include breakpoint($tab) {
+        grid-column: 1 / span 12;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 0 3em;
+
+        h3 {
+          margin: 2%;
+        }
+
+        li {
+          padding: 0;
+          margin: 0;
+        }
+
+        > * {
+          grid-column: 1 / span 2;
+        }
+      }
+
+      .publications-inspections {
+        grid-column: 1;
+        grid-row: 2;
+        background: #f6f6f6;
+        padding: 2%;
+      }
+
+      .publications-surveys {
+        grid-column: 2;
+        grid-row: 2;
+        background: #f6f6f6;
+        padding: 2%;
+      }
+
+      .publications-item {
+        border-bottom: 1px solid #555;
+      }
+    }
+  }
+}
 
 #main-content {
   display: grid;
