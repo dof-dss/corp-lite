@@ -14,7 +14,6 @@ dependencies:
     - workflows.workflow.nics_editorial_workflow
   module:
     - content_moderation
-    - contextual
     - file
     - media
     - menu_admin_per_menu
@@ -23,6 +22,7 @@ dependencies:
     - scheduled_transitions
     - system
     - toolbar
+    - whatlinkshere
 id: secure_market_sensitive_supervisor_user
 label: 'secure market sensitive supervisor user'
 weight: -2
@@ -30,7 +30,6 @@ is_admin: null
 permissions:
   - 'access administration pages'
   - 'access content overview'
-  - 'access contextual links'
   - 'access files overview'
   - 'access toolbar'
   - 'add scheduled transitions node secure_market_statistics'
@@ -93,6 +92,7 @@ permissions:
   - 'use nics_editorial_workflow transition unpublish'
   - 'view all revisions'
   - 'view any unpublished content'
+  - 'view content references'
   - 'view latest version'
   - 'view own unpublished media'
   - 'view scheduled transitions node secure_market_statistics'
