@@ -11,7 +11,6 @@ dependencies:
     - workflows.workflow.nics_editorial_workflow
   module:
     - content_moderation
-    - contextual
     - corplite_common
     - file
     - media
@@ -27,7 +26,6 @@ weight: -4
 is_admin: null
 permissions:
   - 'access content overview'
-  - 'access contextual links'
   - 'access files overview'
   - 'access toolbar'
   - 'administer main menu items'
