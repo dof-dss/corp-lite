@@ -10,7 +10,7 @@ dependencies:
     - search_api
 third_party_settings:
   facets_pretty_paths:
-    coder: taxonomy_term_coder
+    coder: taxonomy_term_name_coder
 id: publication_type
 name: 'Publication type'
 weight: 0
@@ -53,17 +53,17 @@ processor_configs:
       sort: 20
     settings:
       sort: ASC
-  display_value_widget_order:
-    processor_id: display_value_widget_order
-    weights:
-      sort: 40
-    settings:
-      sort: ASC
   hierarchy_processor:
     processor_id: hierarchy_processor
     weights:
       build: 100
     settings: {  }
+  raw_value_widget_order:
+    processor_id: raw_value_widget_order
+    weights:
+      sort: 50
+    settings:
+      sort: DESC
   translate_entity:
     processor_id: translate_entity
     weights:
