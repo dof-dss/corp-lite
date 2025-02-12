@@ -22,7 +22,6 @@ dependencies:
   module:
     - book
     - content_moderation
-    - contextual
     - corplite_common
     - draggableviews
     - file
@@ -45,7 +44,6 @@ weight: -5
 is_admin: false
 permissions:
   - 'access administration pages'
-  - 'access contextual links'
   - 'access draggableviews'
   - 'access files overview'
   - 'add content to books'
