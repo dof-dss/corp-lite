@@ -12,7 +12,7 @@ dependencies:
 id: quicklinks
 theme: northsouthministerialcouncil_theme
 region: content
-weight: -3
+weight: -7
 provider: null
 plugin: 'block_content:9c03cdd7-1825-4b74-8af2-e982f9390fda'
 settings:

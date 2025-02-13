@@ -192,7 +192,7 @@ display:
         type: default
         options:
           grouping: {  }
-          row_class: ''
+          row_class: columnItem
           default_row_class: false
       row:
         type: fields
@@ -234,9 +234,9 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.taxonomy_term.field_summary'
-  page_1:
-    id: page_1
-    display_title: 'Home page topics'
+  areas_of_cooperation:
+    id: areas_of_cooperation
+    display_title: 'Site topics'
     display_plugin: page
     position: 1
     display_options:
@@ -246,6 +246,28 @@ display:
           metatags: {  }
           tokenize: false
       path: areas-of-cooperation
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - user.permissions
+      tags:
+        - 'config:field.storage.taxonomy_term.field_summary'
+  areas_of_cooperation_homepage:
+    id: areas_of_cooperation_homepage
+    display_title: 'Site topics homepage'
+    display_plugin: block
+    position: 1
+    display_options:
+      title: ' Areas of Co-Operation homepage'
+      defaults:
+        title: false
+      display_description: ''
+      display_extenders:
+        metatag_display_extender:
+          metatags: {  }
+          tokenize: false
     cache_metadata:
       max-age: -1
       contexts:

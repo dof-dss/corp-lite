@@ -1,0 +1,48 @@
+uuid: cd7647ad-417f-4671-a54a-c470df8ad137
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.contact_us
+    - field.field.node.department_management.body
+    - field.field.node.department_management.field_access_to_information
+    - field.field.node.department_management.field_contact_information
+    - field.field.node.department_management.field_departmental_map
+    - field.field.node.department_management.field_facebook_url
+    - field.field.node.department_management.field_flickr_url
+    - field.field.node.department_management.field_linkedin_url
+    - field.field.node.department_management.field_twitter_url
+    - field.field.node.department_management.field_youtube_url
+    - node.type.department_management
+  module:
+    - layout_builder
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.department_management.contact_us
+targetEntityType: node
+bundle: department_management
+mode: contact_us
+content:
+  field_contact_information:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true
+  field_access_to_information: true
+  field_departmental_map: true
+  field_facebook_url: true
+  field_flickr_url: true
+  field_linkedin_url: true
+  field_twitter_url: true
+  field_youtube_url: true
+  langcode: true
+  links: true
+  search_api_excerpt: true
