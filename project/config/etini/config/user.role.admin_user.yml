@@ -25,6 +25,7 @@ dependencies:
     - book
     - content_moderation
     - contextual
+    - corplite_common
     - draggableviews
     - file
     - image
@@ -33,6 +34,7 @@ dependencies:
     - menu_admin_per_menu
     - moderation_sidebar
     - node
+    - origins_metatag
     - origins_qa
     - origins_workflow
     - path
@@ -43,7 +45,7 @@ dependencies:
     - taxonomy
 id: admin_user
 label: 'admin user'
-weight: 6
+weight: -3
 is_admin: null
 permissions:
   - 'access administration pages'
@@ -56,6 +58,9 @@ permissions:
   - 'access site reports'
   - 'access user profiles'
   - 'add content to books'
+  - 'add scheduled transitions node application'
+  - 'add scheduled transitions node article'
+  - 'add scheduled transitions node contact'
   - 'add scheduled transitions node department_management'
   - 'add scheduled transitions node gallery'
   - 'add scheduled transitions node link'
@@ -101,6 +106,7 @@ permissions:
   - 'create publication content'
   - 'create remote_video media'
   - 'create webform content'
+  - 'delete all revisions'
   - 'delete any application content'
   - 'delete any article content'
   - 'delete any audio media'
@@ -160,6 +166,7 @@ permissions:
   - 'edit any publication content'
   - 'edit any remote_video media'
   - 'edit any webform content'
+  - 'edit basic meta tags'
   - 'edit own application content'
   - 'edit own article content'
   - 'edit own audio media'
@@ -176,7 +183,9 @@ permissions:
   - 'edit own publication content'
   - 'edit own remote_video media'
   - 'edit own webform content'
+  - 'hide topic or feature on homepage'
   - 'manage qa accounts'
+  - 'reorder draggable views'
   - 'reschedule scheduled transitions node application'
   - 'reschedule scheduled transitions node article'
   - 'reschedule scheduled transitions node contact'
