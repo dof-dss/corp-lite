@@ -321,7 +321,22 @@ display:
       title: 'Inspection reports'
       defaults:
         title: false
+        footer: false
       display_description: ''
+      footer:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: false
+          content:
+            value: "<p><a href=\"/publications/type/inspection-reports\">See all our Inspection reports</a></p>\r\n<p><a href=\"/publications\">See all our publications</a></p>"
+            format: basic_html
+          tokenize: false
       display_extenders:
         metatag_display_extender:
           metatags: {  }
@@ -430,7 +445,7 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: "<p><a href=\"\">See all our Surveys / Evaluations</a></p>\r\n<p><a href=\"/publications\">See all our publications</a></p>"
+            value: "<p><a href=\"/publications/type/surveys-evaluations\">See all our Surveys / Evaluations</a></p>\r\n<p><a href=\"/publications\">See all our publications</a></p>"
             format: basic_html
           tokenize: false
       display_extenders:

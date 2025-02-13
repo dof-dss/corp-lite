@@ -1044,7 +1044,7 @@ display:
             label: ''
             field_identifier: ''
           exposed: false
-          draggable_views_reference: 'links:draggable_usefullink'
+          draggable_views_reference: 'links:draggable_data_tools'
           draggable_views_null_order: after
           draggable_views_pass_arguments: false
         title:
@@ -1360,7 +1360,7 @@ display:
             label: ''
             field_identifier: ''
           exposed: false
-          draggable_views_reference: 'links:draggable_usefullink'
+          draggable_views_reference: 'links:draggable_popular_statistics'
           draggable_views_null_order: after
           draggable_views_pass_arguments: false
         title:
@@ -2798,7 +2798,7 @@ display:
             label: ''
             field_identifier: ''
           exposed: false
-          draggable_views_reference: 'links:draggable_usefullink'
+          draggable_views_reference: 'links:draggable_data_tools'
           draggable_views_null_order: after
           draggable_views_pass_arguments: false
         title:
@@ -3184,7 +3184,7 @@ display:
             label: ''
             field_identifier: ''
           exposed: false
-          draggable_views_reference: 'links:draggable_usefullink'
+          draggable_views_reference: 'links:draggable_popular_statistics'
           draggable_views_null_order: after
           draggable_views_pass_arguments: false
         title:

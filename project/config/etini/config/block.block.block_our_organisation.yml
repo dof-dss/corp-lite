@@ -1,0 +1,35 @@
+uuid: 168a71b1-018e-4e5f-9a41-091c71ba52f4
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:block_group:374c93d4-e414-499c-8b2f-c92c2b858282'
+  module:
+    - block_content
+    - block_visibility_groups
+    - system
+  theme:
+    - etini_theme
+id: block_our_organisation
+theme: etini_theme
+region: content
+weight: -8
+provider: null
+plugin: 'block_content:374c93d4-e414-499c-8b2f-c92c2b858282'
+settings:
+  id: 'block_content:374c93d4-e414-499c-8b2f-c92c2b858282'
+  label: 'Our Organisation'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

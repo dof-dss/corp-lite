@@ -22,6 +22,7 @@ settings:
   selection_settings:
     categories:
       Block: Block
+      'Content block': 'Content block'
       'Content fields': 'Content fields'
       'Content moderation state fields': 'Content moderation state fields'
       core: core
@@ -57,7 +58,6 @@ settings:
       'Webform access': 'Webform access'
       'Webform submission fields': 'Webform submission fields'
       'Chaos Tools': '0'
-      'Content block': '0'
       'Content block fields': '0'
       Devel: '0'
       'EU Cookie Compliance': '0'
