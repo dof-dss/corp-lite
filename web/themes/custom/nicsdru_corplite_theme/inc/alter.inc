@@ -70,8 +70,7 @@ function nicsdru_corplite_theme_form_node_preview_form_select_alter(&$form, Form
   unset($form['view_mode']);
   $form['backlink']['#options']['attributes']['class'] += [
     'button',
-    'btn',
-    'call-to-action',
-    'btn-left'
+    'btn-large-left',
+    'btn--action'
   ];
 }
