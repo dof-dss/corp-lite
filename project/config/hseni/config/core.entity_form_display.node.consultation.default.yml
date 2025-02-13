@@ -7,7 +7,6 @@ dependencies:
     - field.field.node.consultation.field_attachment
     - field.field.node.consultation.field_consultation_dates
     - field.field.node.consultation.field_email_address
-    - field.field.node.consultation.field_feature_home_page
     - field.field.node.consultation.field_meta_tags
     - field.field.node.consultation.field_postal
     - field.field.node.consultation.field_published_date
@@ -101,13 +100,6 @@ content:
     settings:
       placeholder: ''
       size: 60
-    third_party_settings: {  }
-  field_feature_home_page:
-    type: boolean_checkbox
-    weight: 4
-    region: content
-    settings:
-      display_label: true
     third_party_settings: {  }
   field_meta_tags:
     type: metatag_firehose
