@@ -16,7 +16,6 @@ dependencies:
     - node.type.department_management
   module:
     - field_group
-    - geolocation
     - layout_builder
     - link
     - text
@@ -77,13 +76,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 5
-    region: content
-  field_departmental_map:
-    type: geolocation_latlng
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 11
     region: content
   field_facebook_url:
     type: link
@@ -146,6 +138,7 @@ content:
     weight: 10
     region: content
 hidden:
+  field_departmental_map: true
   langcode: true
   links: true
   search_api_excerpt: true

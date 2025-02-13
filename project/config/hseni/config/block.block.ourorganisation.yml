@@ -11,8 +11,8 @@ dependencies:
     - hseni_theme
 id: ourorganisation
 theme: hseni_theme
-region: top_banner
-weight: -6
+region: content
+weight: -10
 provider: null
 plugin: 'block_content:51421a66-1c58-4236-9af5-c940374d74e1'
 settings:

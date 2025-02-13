@@ -12,7 +12,7 @@ dependencies:
 id: etini_theme_phase
 theme: etini_theme
 region: sidebar_first
-weight: -5
+weight: -11
 provider: null
 plugin: 'facet_block:publication_topic'
 settings:

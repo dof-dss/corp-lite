@@ -252,6 +252,7 @@ display:
           replica: false
           query_tags: {  }
       relationships: {  }
+      css_class: toggle-list
       header: {  }
       footer: {  }
       display_extenders: {  }

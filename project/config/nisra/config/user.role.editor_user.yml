@@ -18,10 +18,10 @@ dependencies:
     - node.type.page
     - node.type.profile
     - node.type.publication
+    - taxonomy.vocabulary.news_types
     - workflows.workflow.nics_editorial_workflow
   module:
     - content_moderation
-    - contextual
     - corplite_common
     - file
     - media
@@ -34,6 +34,7 @@ dependencies:
     - redirect
     - scheduled_transitions
     - system
+    - taxonomy_access_fix
     - toolbar
 id: editor_user
 label: 'editor user'
@@ -42,7 +43,6 @@ is_admin: null
 permissions:
   - 'access administration pages'
   - 'access content overview'
-  - 'access contextual links'
   - 'access files overview'
   - 'access toolbar'
   - 'add scheduled transitions node application'
@@ -169,6 +169,7 @@ permissions:
   - 'revert page revisions'
   - 'revert profile revisions'
   - 'revert publication revisions'
+  - 'select terms in news_types'
   - 'use moderation sidebar'
   - 'use nics_editorial_workflow transition archive'
   - 'use nics_editorial_workflow transition create_new_draft'

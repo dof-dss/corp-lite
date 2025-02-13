@@ -30,6 +30,13 @@ process:
       source: description
     - plugin: media_chart_taxonomy_filter
     - plugin: media_wysiwyg_taxonomy_filter
+    - plugin: filter_absolute_links
+
+      replace_urls:
+        http://www.nisra.gov.uk
+        http://nisra.gov.uk
+        https://www.nisra.gov.uk
+        https://nisra.gov.uk
   description/format:
     - plugin: static_map
       bypass: true

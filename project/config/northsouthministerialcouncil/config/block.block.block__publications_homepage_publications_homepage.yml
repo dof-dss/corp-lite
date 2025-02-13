@@ -1,0 +1,29 @@
+uuid: b4f41ce7-aa7f-46f1-96ce-fc7e165a4e59
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.publications_homepage
+  module:
+    - system
+    - views
+  theme:
+    - northsouthministerialcouncil_theme
+id: block__publications_homepage_publications_homepage
+theme: northsouthministerialcouncil_theme
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:publications_homepage-publications_homepage'
+settings:
+  id: 'views_block:publications_homepage-publications_homepage'
+  label: 'Our publications'
+  label_display: visible
+  provider: views
+  views_label: 'Our publications'
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

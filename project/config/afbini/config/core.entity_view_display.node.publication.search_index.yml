@@ -46,6 +46,13 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_summary:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
 hidden:
   body: true
   content_moderation_control: true
@@ -54,7 +61,6 @@ hidden:
   field_meta_tags: true
   field_photo: true
   field_site_topics: true
-  field_summary: true
   langcode: true
   links: true
   search_api_excerpt: true

@@ -1,0 +1,348 @@
+/*
+ * @file
+ * Provides the layout styles for etini front page.
+ */
+
+@use '../../../../../../../../web/themes/custom/nicsdru_corplite_theme/src/scss/init' as *;
+
+// Front page layout / theme page layout
+//
+// Weight: -6
+//
+// Style guide: layouts.front
+.layout--front {
+  // By default, home page sections span full width
+  // of the grid.
+  > *,
+  .section-front {
+    grid-column: 1 / span 12;
+  }
+
+  .section-front {
+    &--our-documents {
+      @include breakpoint($tab) {
+        grid-column: 1 / span 12;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 0 3em;
+        border-top: 4px solid #17819b;
+
+        h3 {
+          margin: 2%;
+        }
+
+        li {
+          padding: 0;
+          margin: 0;
+        }
+
+        > * {
+          grid-column: 1 / span 2;
+        }
+      }
+
+      .publications-inspections {
+        grid-column: 1;
+        grid-row: 2;
+        background: #f6f6f6;
+        padding: 2%;
+      }
+
+      .publications-surveys {
+        grid-column: 2;
+        grid-row: 2;
+        background: #f6f6f6;
+        padding: 2%;
+      }
+
+      .publications-item {
+        border-bottom: 1px solid #555;
+      }
+    }
+
+
+    &--promoting-improvement {
+      @include breakpoint($tab) {
+        grid-column: 1 / span 12;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 0 3em;
+        border-top: 4px solid #17819b;
+        margin-top: 5rem;
+
+        h3 {
+          margin: 2%;
+        }
+
+        li {
+          padding: 0;
+          margin: 0;
+        }
+
+        > * {
+          grid-column: 1 / span 2;
+        }
+      }
+
+      .improvement-services {
+        grid-column: 1;
+        grid-row: 2;
+        background: #f6f6f6;
+        padding: 2%;
+        line-height: 4rem;
+      }
+
+      .inspection-services {
+        grid-column: 2;
+        grid-row: 2;
+        background: #f6f6f6;
+        padding: 2%;
+        line-height: 4rem;
+      }
+    }
+
+    &--our-organisation {
+      @include breakpoint($tab) {
+        grid-column: 1 / span 12;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 0 3em;
+        border-top: 4px solid #17819b;
+        margin-top: 5rem;
+
+        h3 {
+          margin: 2%;
+        }
+
+        li {
+          padding: 0;
+          margin: 0;
+        }
+
+        > * {
+          grid-column: 1 / span 2;
+        }
+      }
+
+      .corporate-links {
+        grid-column: 1;
+        grid-row: 2;
+        background: #f6f6f6;
+        padding: 2%;
+        line-height: 4rem;
+      }
+
+      .home-contact {
+        grid-column: 2;
+        grid-row: 2;
+        background: #f6f6f6;
+        padding: 2%;
+        line-height: 4rem;
+      }
+    }
+
+  }
+}
+
+
+#main-content {
+  display: grid;
+
+  .featured-home {
+    grid-column: 1 / span 8;
+    grid-row: 1 / span 2;
+
+    @media screen and (max-width: 768px) {
+      grid-column: 1 / span 12;
+    }
+  }
+}
+
+#quicklinks {
+  grid-column: 9 / span 4;
+  padding: 1em 15px 1.5em;
+  background-color: var(--clr-grey-light);
+  border-top: 5px solid var(--clr-brand-primary);
+
+  @media screen and (max-width: 768px) {
+    grid-column: 1 / span 12;
+  }
+
+  h2 {
+    border-top: none;
+  }
+}
+
+.featured_main {
+  a {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #000;
+    padding-bottom: 1rem;
+    padding: 0rem 2rem;
+    text-decoration: none;
+
+    &:focus,
+    &:hover {
+      border: solid #0e6bb3 2px;
+
+      h3 {
+        text-decoration: underline solid 2px #000;
+      }
+    }
+  }
+
+  p.published-date {
+    margin: 0;
+    color: #000;
+  }
+
+  .featured__image {
+    width: 100%;
+    max-width: 30rem;
+    margin-right: 2rem;
+    height: auto;
+    display: flex;
+    align-items: center;
+  }
+
+  .featured-title {
+    position: relative;
+    padding-right: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .featured__body {
+    position: relative;
+    flex: 1;
+    padding-right: 2rem;
+    margin-left: 1rem;
+  }
+}
+
+
+.featured_content {
+  padding-bottom: 2rem;
+
+  a {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #000;
+    padding: 0rem 2rem;
+    text-decoration: none;
+
+    &:focus,
+    &:hover {
+      border: solid #0e6bb3 2px;
+
+      h3 {
+        text-decoration: underline solid 2px #000;
+      }
+    }
+  }
+
+  p.published-date {
+    margin: 0;
+    color: #000;
+  }
+
+
+  .featured__image {
+    width: 100%;
+    max-width: 20rem;
+    margin-right: 2rem;
+    height: auto;
+    display: flex;
+    align-items: center;
+  }
+
+  .featured-title {
+    position: relative;
+    padding-right: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .featured__body {
+    position: relative;
+    flex: 1;
+    padding-right: 2rem;
+    margin-left: 1rem;
+  }
+}
+
+.featured-summary-wrapper {
+  margin-top: 1rem;
+
+  p {
+    font-size: 1.8rem;
+    color: #000;
+  }
+}
+
+@media (max-width: 768px) {
+  .featured_main a {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .featured__image {
+    max-width: 100%;
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  .featured__body {
+    margin-left: 0;
+  }
+
+  .featured_content a {
+    flex-direction: column;
+  }
+
+  .featured__image {
+    max-width: 100%;
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  .featured__body {
+    margin-left: 0;
+  }
+}
+
+.site-topics-home {
+  border-top: 4px solid #17819b;
+
+  .subtopics {
+    padding: 20px;
+  }
+
+  .subtopics__title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .subtopics__content {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .subtopics__item {
+    flex: 1 1 calc(50% - 10px);
+    box-sizing: border-box;
+    padding: 10px;
+    min-width: 300px;
+    border: solid 1px #4a4a4a4d;
+  }
+
+  @media (max-width: 768px) {
+    .subtopics__content {
+      flex-direction: column;
+    }
+
+    .subtopics__item {
+      flex: 1 1 100%;
+    }
+  }
+}

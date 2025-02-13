@@ -1,0 +1,19 @@
+uuid: 9db7e7c7-26a8-4ffd-8bb6-8aa60b297fbd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_job_position
+    - node.type.researcher_profiles
+id: node.researcher_profiles.field_job_position
+field_name: field_job_position
+entity_type: node
+bundle: researcher_profiles
+label: 'Job position'
+description: 'Enter the researchers job position.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

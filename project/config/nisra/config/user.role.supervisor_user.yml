@@ -15,14 +15,17 @@ dependencies:
     - node.type.gallery
     - node.type.link
     - node.type.news
+    - node.type.page
     - node.type.profile
     - node.type.publication
+    - taxonomy.vocabulary.link
+    - taxonomy.vocabulary.news_types
+    - taxonomy.vocabulary.publication_types
     - taxonomy.vocabulary.research_support
     - taxonomy.vocabulary.site_topics
     - workflows.workflow.nics_editorial_workflow
   module:
     - content_moderation
-    - contextual
     - corplite_common
     - file
     - media
@@ -38,6 +41,7 @@ dependencies:
     - taxonomy
     - taxonomy_access_fix
     - toolbar
+    - whatlinkshere
 _core:
   default_config_hash: GSKFpUySicd58w9jyeILZLfIMj4c0kbTRwyj2uXgpqU
 id: supervisor_user
@@ -47,7 +51,6 @@ is_admin: null
 permissions:
   - 'access administration pages'
   - 'access content overview'
-  - 'access contextual links'
   - 'access files overview'
   - 'access taxonomy overview'
   - 'access toolbar'
@@ -78,6 +81,7 @@ permissions:
   - 'create image media'
   - 'create link content'
   - 'create news content'
+  - 'create page content'
   - 'create profile content'
   - 'create publication content'
   - 'create remote_video media'
@@ -93,6 +97,7 @@ permissions:
   - 'delete any image media'
   - 'delete any link content'
   - 'delete any news content'
+  - 'delete any page content'
   - 'delete any profile content'
   - 'delete any publication content'
   - 'delete any remote_video media'
@@ -115,9 +120,11 @@ permissions:
   - 'delete own image media'
   - 'delete own link content'
   - 'delete own news content'
+  - 'delete own page content'
   - 'delete own profile content'
   - 'delete own publication content'
   - 'delete own remote_video media'
+  - 'delete page revisions'
   - 'delete profile revisions'
   - 'delete publication revisions'
   - 'edit any application content'
@@ -131,6 +138,7 @@ permissions:
   - 'edit any image media'
   - 'edit any link content'
   - 'edit any news content'
+  - 'edit any page content'
   - 'edit any profile content'
   - 'edit any publication content'
   - 'edit any remote_video media'
@@ -146,13 +154,13 @@ permissions:
   - 'edit own image media'
   - 'edit own link content'
   - 'edit own news content'
+  - 'edit own page content'
   - 'edit own profile content'
   - 'edit own publication content'
   - 'edit own remote_video media'
   - 'edit terms in research_support'
   - 'edit terms in site_topics'
   - 'hide topic or feature on homepage'
-  - 'reorder terms in any vocabulary'
   - 'reorder terms in research_support'
   - 'reorder terms in site_topics'
   - 'reschedule scheduled transitions node application'
@@ -162,6 +170,7 @@ permissions:
   - 'reschedule scheduled transitions node gallery'
   - 'reschedule scheduled transitions node link'
   - 'reschedule scheduled transitions node news'
+  - 'reschedule scheduled transitions node page'
   - 'reschedule scheduled transitions node profile'
   - 'reschedule scheduled transitions node publication'
   - 'reschedule scheduled transitions taxonomy_term research_support'
@@ -176,9 +185,14 @@ permissions:
   - 'revert gallery revisions'
   - 'revert link revisions'
   - 'revert news revisions'
+  - 'revert page revisions'
   - 'revert profile revisions'
   - 'revert publication revisions'
-  - 'update any term'
+  - 'select terms in link'
+  - 'select terms in news_types'
+  - 'select terms in publication_types'
+  - 'select terms in research_support'
+  - 'select terms in site_topics'
   - 'use moderation sidebar'
   - 'use nics_editorial_workflow transition archive'
   - 'use nics_editorial_workflow transition create_new_draft'
@@ -195,6 +209,7 @@ permissions:
   - 'view any unpublished content'
   - 'view application revisions'
   - 'view contact revisions'
+  - 'view content references'
   - 'view department_management revisions'
   - 'view easychart revisions'
   - 'view gallery revisions'
@@ -202,6 +217,7 @@ permissions:
   - 'view link revisions'
   - 'view news revisions'
   - 'view own unpublished media'
+  - 'view page revisions'
   - 'view profile revisions'
   - 'view publication revisions'
   - 'view scheduled transitions node application'
@@ -211,6 +227,7 @@ permissions:
   - 'view scheduled transitions node gallery'
   - 'view scheduled transitions node link'
   - 'view scheduled transitions node news'
+  - 'view scheduled transitions node page'
   - 'view scheduled transitions node profile'
   - 'view scheduled transitions node publication'
   - 'view scheduled transitions taxonomy_term research_support'

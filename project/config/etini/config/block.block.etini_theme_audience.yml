@@ -12,7 +12,7 @@ dependencies:
 id: etini_theme_audience
 theme: etini_theme
 region: sidebar_first
-weight: -4
+weight: -10
 provider: null
 plugin: 'facet_block:audience'
 settings:

@@ -1,0 +1,17 @@
+uuid: 4798d65b-e886-496d-84a6-3da5a43ec8b4
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: banner_page_title
+label: 'Banner page title'
+logic: or
+conditions:
+  6d02b594-ac30-4f65-833b-56c949eb338c:
+    id: request_path
+    negate: false
+    uuid: 6d02b594-ac30-4f65-833b-56c949eb338c
+    context_mapping: {  }
+    pages: "/areas-of-cooperation\r\n/contact\r\n/publications\r\n/publications/date/*\r\n/publications/sectors/*\r\n/publications/type/*\r\n/news\r\n/news/date/*\r\n/news/topic/*\r\n/contact\r\n/search\r\n/search*"
+allow_other_conditions: false
