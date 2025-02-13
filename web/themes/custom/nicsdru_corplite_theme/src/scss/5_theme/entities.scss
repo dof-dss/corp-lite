@@ -2,6 +2,7 @@
  * @file
  * Provides very specific styling for entities / content types.
  */
+@use 'sass:math';
 @import '../init';
 
 .page-node-type-publication,
@@ -37,8 +38,26 @@
 
 .page-summary > p,
 .field-summary {
-  font-size: 2.1rem;
-  line-height: 2.7rem;
+  $lh: math.div(28, 18);
+
+  --fs-label: 1.8rem;
+  --lh: #{$lh};
+
+  font-size: var(--fs-label);
+  line-height: var(--lh);
+
+  @include breakpoint($tab) {
+    $lh: math.div(30, 19);
+
+    --fs-label: 1.9rem;
+    --lh: #{$lh};
+  }
+
+  @include breakpoint($lap) {
+    $lh: math.div(35, 21);
+    --fs-label: 2.1rem;
+    --lh: #{$lh};
+  }
 }
 
 .article-content {
