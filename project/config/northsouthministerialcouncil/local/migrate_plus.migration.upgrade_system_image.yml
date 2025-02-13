@@ -1,0 +1,32 @@
+uuid: 23764fc9-ff5e-4f83-aae0-0eb4ad0e5410
+langcode: en-gb
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: MV4P6iVrRg7EmtyWcL9VT6NwxCK7fY1am4_idB-pGrw
+id: upgrade_system_image
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 6'
+  - 'Drupal 7'
+  - Configuration
+migration_group: migrate_drupal_7
+label: 'Image toolkit configuration'
+source:
+  plugin: variable
+  variables:
+    - image_toolkit
+  source_module: system
+process:
+  toolkit:
+    -
+      plugin: get
+      source: image_toolkit
+destination:
+  plugin: config
+  config_name: system.image
+migration_dependencies:
+  required: {  }
+  optional: {  }

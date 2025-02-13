@@ -1,0 +1,73 @@
+uuid: fc2b4eca-9124-4b9f-8b2a-ae0e954eda3d
+langcode: en-gb
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 2DdX6wOt_PUmBwpdSziviJyLqX4n-b6B19WnRJMYJ5M
+id: upgrade_d7_file
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+migration_group: migrate_drupal_7
+label: 'Public files'
+source:
+  plugin: d7_file
+  scheme: public
+  constants:
+    source_base_path: 'https://www.northsouthministerialcouncil.org/'
+process:
+  fid:
+    -
+      plugin: get
+      source: fid
+  filename:
+    -
+      plugin: get
+      source: filename
+  source_full_path:
+    -
+      plugin: concat
+      delimiter: /
+      source:
+        - constants/source_base_path
+        - filepath
+    -
+      plugin: urlencode
+  uri:
+    -
+      plugin: file_copy
+      source:
+        - '@source_full_path'
+        - uri
+  filemime:
+    -
+      plugin: get
+      source: filemime
+  status:
+    -
+      plugin: get
+      source: status
+  created:
+    -
+      plugin: get
+      source: timestamp
+  changed:
+    -
+      plugin: get
+      source: timestamp
+  uid:
+    -
+      plugin: get
+      source: uid
+  field_metatag:
+    -
+      plugin: d7_metatag_entities
+      source: pseudo_metatag_entities
+destination:
+  plugin: 'entity:file'
+migration_dependencies:
+  required: {  }
+  optional: {  }

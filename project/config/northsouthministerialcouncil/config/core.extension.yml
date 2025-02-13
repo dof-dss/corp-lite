@@ -96,11 +96,13 @@ module:
   metatag_twitter_cards: 0
   metatag_verification: 0
   metatag_views: 0
+  migrate_absolute_links: 0
   moderation_sidebar: 0
   mysql: 0
   node: 0
   node_edit_protection: 0
   noreferrer: 0
+  northsouthministerialcouncil_migrations: 0
   options: 0
   origins_common: 0
   origins_internal_link_checker: 0

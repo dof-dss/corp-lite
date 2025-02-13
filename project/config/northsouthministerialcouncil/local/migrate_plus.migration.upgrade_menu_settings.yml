@@ -1,0 +1,32 @@
+uuid: daa997b0-440a-4870-871a-dcb12b8242ad
+langcode: en-gb
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: Ix2Yrr3Whv6dp_FVgIe75npMW1ks0trI8WfTV5DRePk
+id: upgrade_menu_settings
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 6'
+  - 'Drupal 7'
+  - Configuration
+migration_group: migrate_drupal_7
+label: 'Menu UI configuration'
+source:
+  plugin: variable
+  variables:
+    - menu_override_parent_selector
+  source_module: menu
+process:
+  override_parent_selector:
+    -
+      plugin: get
+      source: menu_override_parent_selector
+destination:
+  plugin: config
+  config_name: menu_ui.settings
+migration_dependencies:
+  required: {  }
+  optional: {  }

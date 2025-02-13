@@ -1,0 +1,54 @@
+uuid: 56bde082-6033-42e4-88ee-7bf75b33fc38
+langcode: en-gb
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: n1blkKebdqPCV5oi7o9OTjZKmu2Ch40jyl_hVTT9LoU
+id: upgrade_d7_metatag_field_instance_node_publication
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Configuration
+migration_group: migrate_drupal_7
+label: 'Metatag field instance of Publication content items'
+source:
+  plugin: d7_metatag_field_instance
+  source_module: metatag
+  ignore_map: true
+  constants:
+    field_name: field_metatag
+    label: 'Meta tags'
+  entity_type_id: node
+  entity_type: node
+  bundle: publication
+process:
+  bundle:
+    -
+      plugin: get
+      source: bundle
+  entity_type:
+    -
+      plugin: get
+      source: entity_type
+    -
+      plugin: static_map
+      map:
+        field_collection_item: paragraph
+        paragraphs_item: paragraph
+      bypass: true
+  field_name:
+    -
+      plugin: get
+      source: constants/field_name
+  label:
+    -
+      plugin: get
+      source: constants/label
+destination:
+  plugin: 'entity:field_config'
+migration_dependencies:
+  required:
+    - upgrade_d7_metatag_field_node
+  optional: {  }
