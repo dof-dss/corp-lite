@@ -144,7 +144,7 @@ $link-main-menu-horizontal-active: (
       }
 
       @include breakpoint($lap) {
-        --clr-main-nav-fs: 1.8rem;
+        --main-nav-fs: 1.8rem;
       }
     }
 
@@ -228,8 +228,6 @@ $link-main-menu-horizontal-active: (
 
     // Hamburger lines animate into a X close symbol when menu is opened.
     &[aria-expanded='true'] {
-      position: relative;
-
       > span {
         transform: rotate(135deg);
 
