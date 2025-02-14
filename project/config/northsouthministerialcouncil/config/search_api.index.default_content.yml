@@ -160,6 +160,8 @@ field_settings:
 
 
 
+
+
       fields:
         - 'entity:node/title'
   status:
@@ -196,6 +198,8 @@ field_settings:
     configuration:
       type: union
       separator: |+
+
+
 
 
 
@@ -300,4 +304,4 @@ options:
   cron_limit: 50
   index_directly: true
   track_changes_in_references: true
-server: null
+server: solr_default

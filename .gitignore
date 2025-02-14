@@ -11,6 +11,10 @@ console/
 project/imports
 node_modules/
 
+# Ignore migrate Yaml files in the config directory, as they should
+# now live inside custom modules e.g. web/sites/uregni/modules/custom_migrations
+/project/config/**/migrate_plus.*
+
 # Ignore sensitive information or local config.
 /project/sites/*/settings.local.php
 /web/sites/services.local.yml
