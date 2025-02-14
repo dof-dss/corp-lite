@@ -12,7 +12,7 @@ dependencies:
 id: northsouthimplementationbodies
 theme: northsouthministerialcouncil_theme
 region: content
-weight: -1
+weight: -5
 provider: null
 plugin: 'block_content:c47d3919-6b17-4acc-b256-f8d4ce82c0d5'
 settings:

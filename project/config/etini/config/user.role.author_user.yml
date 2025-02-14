@@ -27,11 +27,12 @@ dependencies:
     - moderation_sidebar
     - node
     - system
+    - taxonomy
 _core:
   default_config_hash: vNEkQI-Oi5HpFydAyizLa6qCCV8SkpSWLiyMrYoGO94
 id: author_user
 label: 'author user'
-weight: 2
+weight: -7
 is_admin: false
 permissions:
   - 'access administration pages'
@@ -40,6 +41,7 @@ permissions:
   - 'create article content'
   - 'create audio media'
   - 'create contact content'
+  - 'create department_management content'
   - 'create document media'
   - 'create file media'
   - 'create gallery content'
@@ -87,6 +89,7 @@ permissions:
   - 'use nics_editorial_workflow transition reject'
   - 'use nics_editorial_workflow transition submit_for_review'
   - 'view all revisions'
+  - 'view all taxonomy revisions'
   - 'view any unpublished content'
   - 'view application revisions'
   - 'view article revisions'

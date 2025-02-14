@@ -63,8 +63,6 @@ module:
   geocoder_field: 0
   geolocation: 0
   geolocation_address: 0
-  geolocation_google_maps: 0
-  geolocation_google_static_maps: 0
   geolocation_search_api: 0
   google_map_field: 0
   google_tag: 0
@@ -103,6 +101,7 @@ module:
   noreferrer: 0
   options: 0
   origins_common: 0
+  origins_internal_link_checker: 0
   origins_media: 0
   origins_metatag: 0
   origins_qa: 0

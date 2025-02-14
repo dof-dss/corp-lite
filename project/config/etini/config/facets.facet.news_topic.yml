@@ -10,7 +10,7 @@ dependencies:
     - search_api
 third_party_settings:
   facets_pretty_paths:
-    coder: taxonomy_term_coder
+    coder: taxonomy_term_name_coder
 id: news_topic
 name: 'News topic'
 weight: 0

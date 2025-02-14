@@ -1,0 +1,35 @@
+uuid: b6371d65-8918-4ed7-90e5-bcce026d270c
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:block_group:cf83e276-c4e1-43c1-a2ba-cf4a603a8adc'
+  module:
+    - block_content
+    - block_visibility_groups
+    - system
+  theme:
+    - etini_theme
+id: promotingimprovement
+theme: etini_theme
+region: content
+weight: -9
+provider: null
+plugin: 'block_content:cf83e276-c4e1-43c1-a2ba-cf4a603a8adc'
+settings:
+  id: 'block_content:cf83e276-c4e1-43c1-a2ba-cf4a603a8adc'
+  label: 'Promoting improvement in the interest of all learners'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

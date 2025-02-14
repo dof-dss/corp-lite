@@ -1246,8 +1246,23 @@ display:
         filters: false
         filter_groups: false
         header: false
+        footer: false
       display_description: ''
       header: {  }
+      footer:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: 'The Education and Training Inspectorate (ETI) is a ‘unitary’ inspectorate and part of the Department of Education (DE), providing independent inspection services and policy advice for DE. The ETI holds the Customer Service Excellence award.'
+            format: basic_html
+          tokenize: false
       display_extenders:
         metatag_display_extender:
           metatags: {  }
