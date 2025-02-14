@@ -248,7 +248,7 @@ TEMPLATE;
 
     // Select the appropriate display orientation based on the
     // image dimensions.
-    $orientation = ($media['width'] > $media['height']) ? 'landscape' : 'portrait';
+    $orientation = ($media['width'] >= $media['height']) ? 'landscape' : 'portrait';
 
     // Set a default image style.
     $image_style = 'article_full';
@@ -256,7 +256,7 @@ TEMPLATE;
     // Assign the image style to the embedded image if we can extract it from
     // the original image tag.
     if (isset($tag_info['attributes']['data-picture-mapping']) || array_key_exists('data-picture-mapping', $tag_info['attributes'])) {
-      if (array_key_exists($tag_info['attributes']['data-picture-mapping'], $style_map)) {
+      if (array_key_exists($tag_info['attributes']['data-picture-mapping'], $style_map[$orientation])) {
         $image_style = $style_map[$orientation][$tag_info['attributes']['data-picture-mapping']];
       }
     }
