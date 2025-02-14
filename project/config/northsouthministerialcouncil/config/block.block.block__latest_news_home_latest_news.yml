@@ -12,7 +12,7 @@ dependencies:
 id: block__latest_news_home_latest_news
 theme: northsouthministerialcouncil_theme
 region: content
-weight: -4
+weight: -8
 provider: null
 plugin: 'views_block:latest_news-home_latest_news'
 settings:
