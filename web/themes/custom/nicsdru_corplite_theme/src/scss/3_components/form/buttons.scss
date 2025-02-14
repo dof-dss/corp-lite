@@ -3,6 +3,7 @@
  * Provides the styling for button components.
  */
 @use '../../init' as *;
+@use 'button/button-defs' as *;
 
 // Buttons
 //
@@ -63,327 +64,84 @@
 .btn,
 .button,
 #drupal-off-canvas .button {
-  --btn-bkgd-clr: #666;
-  --btn-brd-clr: tranparent;
-  --btn-txt-clr: #fff;
-  --btn-fs: 1.6rem;
-  --btn-lh: 1.5;
-  --btn-min-size: 4.4rem;
-  --btn-icon-pad: 2.4rem;
-
-  border: 1px solid var(--btn-bkgd-clr);
-  border-radius: 0;
-  color: var(--btn-txt-clr);
-  display: inline-block;
-  font-size: var(--btn-fs);
-  line-height: var(--btn-lh);
-  text-align: center;
-  text-decoration: none;
-  background-color: var(--btn-bkgd-clr);
-  background-repeat: no-repeat;
-  background-position-y: center;
-  appearance: none;
-  min-width: var(--btn-min-size);
-  min-height: var(--btn-min-size);
-  padding: 0.8rem 1.2rem;
-
-  &:link,
-  &:visited {
-    --btn-txt-clr: var(--clr-white);
-  }
-
-  &:focus {
-    --btn-bkgd-clr: #525252;
-    --btn-brd-clr: #595959;
-
-    outline: 3px solid #000;
-  }
-
-  &:hover {
-    --btn-bkgd-clr: #595959;
-    --btn-brd-clr: #595959;
-
-    text-decoration: none;
-  }
-
-  &:active {
-    --btn-bkgd-clr: #525252;
-    --btn-brd-clr: #4d4d4d;
-
-    outline: 0;
-  }
-
-  @include breakpoint($tab) {
-    --btn-min-size: 4.5rem;
-
-    padding: 0.8rem 1.3rem;
-  }
-
-  @include breakpoint($lap) {
-    --btn-fs: 1.8rem;
-    --btn-icon-pad: 2.6rem;
-  }
-
-  @include breakpoint($desk-plus) {
-    --btn-fs: 2.0rem;
-    --btn-min-size: 5rem;
-    --btn-icon-pad: 3rem;
-
-    padding: 0.9rem 1.5rem;
-  }
-
-  &-right,
-  &-left {
-    background-size: var(--btn-fs) auto;
-  }
+  // button with default size, no arrow
+  @include btn(default, none, white);
 
   &-right {
-    background-image: url('/themes/custom/nicsdru_corplite_theme/images/arrow_forward_white.svg');
-    background-position: right 4px top 50%;
-    padding-right: var(--btn-icon-pad);
+    @include btn(default, right);
   }
 
   &-left {
-    background-image: url('/themes/custom/nicsdru_corplite_theme/images/arrow_back_white.svg');
-    background-position: left 4px top 50%;
-    padding-left: var(--btn-icon-pad);
+    @include btn(default, left);
   }
 
   &-small {
-    padding: 0.4rem;
-
-    --btn-fs: 1.4rem;
-    --btn-lh: 2.2rem;
-    --btn-min-size: 3.6rem;
-    --btn-icon-pad: 0.8rem;
-    --btn-icon-size: 5.33336px;
-    --btn-icon-position: 1.3332px;
-
-    @include breakpoint($tab) {
-      --btn-min-size: 3.9rem;
-      --btn-icon-size: 8.0004px;
-      --btn-icon-pad: 1.2rem;
-      --btn-icon-position: 1.9998px;
-    }
-
-    @include breakpoint($lap) {
-      --btn-fs: 1.6rem;
-      --btn-lh: 2.4rem;
-    }
-
-    @include breakpoint($desk-plus) {
-      --btn-fs: 1.7rem;
-      --btn-lh: 2.5rem;
-      --btn-min-size: 4rem;
-      --btn-icon-pad: 1.4rem;
-      --btn-icon-size: 9.33338px;
-      --btn-icon-position: 2.3331px;
-    }
-
-    &-right,
-    &-left {
-      background-image: url('/themes/custom/nicsdru_corplite_theme/images/btn-arrow.svg');
-      background-size: var(--btn-icon-size) auto;
-    }
+    @include btn(small);
 
     &-right {
-      background-position: right var(--btn-icon-position) top 50%;
-      padding-right: var(--btn-icon-pad);
+      @include btn(small, right);
     }
 
     &-left {
-      background-position: left var(--btn-icon-position) top 50%;
-      padding-left: var(--btn-icon-pad);
+      @include btn(small, left);
     }
   }
 
   &-medium {
-    padding: 0.7rem 1.4rem;
-
-    --btn-fs: 1.8rem;
-    --btn-lh: 2.4rem;
-    --btn-min-size: 4.8rem;
-    --btn-icon-pad: 2.8rem;
-    --btn-icon-size: 18.6667px;
-    --btn-icon-position: 4.666px;
-
-    @include breakpoint($tab) {
-      padding: 0.6rem 1.7rem;
-
-      --btn-min-size: 5.1rem;
-      --btn-icon-size: 22.667px;
-      --btn-icon-pad: 3.4rem;
-      --btn-icon-position: 5.666px;
-    }
-
-    @include breakpoint($lap) {
-      --btn-fs: 2.1rem;
-      --btn-lh: 3rem;
-    }
-
-    @include breakpoint($desk-plus) {
-      padding: 0.5rem 2rem;
-
-      --btn-fs: 2.2rem;
-      --btn-lh: 3.5rem;
-      --btn-min-size: 5.5rem;
-      --btn-icon-pad: 4rem;
-      --btn-icon-size: 26.668px;
-      --btn-icon-position: 6.666px;
-    }
-
-    &-right,
-    &-left {
-      background-image: url('/themes/custom/nicsdru_corplite_theme/images/btn-arrow.svg');
-      background-size: var(--btn-icon-size) auto;
-    }
+    @include btn(medium);
 
     &-right {
-      background-position: right var(--btn-icon-position) top 50%;
-      padding-right: var(--btn-icon-pad);
+      @include btn(medium, right);
     }
 
     &-left {
-      background-position: left var(--btn-icon-position) top 50%;
-      padding-left: var(--btn-icon-pad);
+      @include btn(medium, left);
     }
   }
 
   &-large {
-    padding: 0.7rem 1.6rem;
-
-    --btn-fs: 2.1rem;
-    --btn-lh: 3.2rem;
-    --btn-min-size: 5.2rem;
-    --btn-icon-pad: 3.2rem;
-    --btn-icon-size: 21.334px;
-    --btn-icon-position: 5.333px;
-
-    @include breakpoint($tab) {
-      padding: 0.8rem 1.9rem;
-
-      --btn-min-size: 5.4rem;
-      --btn-icon-size: 25.334px;
-      --btn-icon-pad: 3.8rem;
-      --btn-icon-position: 6.333px;
-    }
-
-    @include breakpoint($lap) {
-      --btn-fs: 2.4rem;
-      --btn-lh: 3.6rem;
-    }
-
-    @include breakpoint($desk-plus) {
-      padding: 0.9rem 2rem;
-
-      --btn-fs: 2.5rem;
-      --btn-lh: 4rem;
-      --btn-min-size: 6rem;
-      --btn-icon-pad: 4rem;
-      --btn-icon-size: 26.668px;
-      --btn-icon-position: 6.666px;
-    }
-
-    &-right,
-    &-left {
-      background-image: url('/themes/custom/nicsdru_corplite_theme/images/btn-arrow.svg');
-      background-size: var(--btn-icon-size) auto;
-    }
+    @include btn(large);
 
     &-right {
-      background-position: right var(--btn-icon-position) top 50%;
-      padding-right: var(--btn-icon-pad);
+      @include btn(large, right);
     }
 
     &-left {
-      background-position: left var(--btn-icon-position) top 50%;
-      padding-left: var(--btn-icon-pad);
+      @include btn(large, left);
     }
   }
 
-  &-block {
-    display: block !important;
-    width: 100%;
+  &--block {
+    @include btn--block;
+  }
+
+  &--link,
+  &.link {
+    @include btn--link;
+
+    &-inline {
+      @include btn--link-inline;
+    }
   }
 
   &--primary {
-    --btn-bkgd-clr: #0a78cd;
-    --btn-brd-clr: #0a78cd;
+    @include btn-color(var(--clr-button-primary));
+  }
 
-    &:hover {
-      --btn-bkgd-clr: #096ab5;
-      --btn-brd-clr: #096ab5;
-    }
-
-    &:active {
-      --btn-bkgd-clr: #0861a6;
-      --btn-brd-clr: #085c9c;
-    }
-
-    &:focus {
-      --btn-bkgd-clr: #0861a6;
-      --btn-brd-clr: #096ab5;
-    }
+  &--secondary {
+    @include btn-color(var(--clr-button-secondary));
   }
 
   &--action {
-    --btn-bkgd-clr: #048a05;
-    --btn-brd-clr: #048a05;
-
-    &:hover {
-      --btn-bkgd-clr: #037104;
-      --btn-brd-clr: #037104;
-    }
-
-    &:active {
-      --btn-bkgd-clr: #036204;
-      --btn-brd-clr: #035803;
-    }
-
-    &:focus {
-      --btn-bkgd-clr: #036204;
-      --btn-brd-clr: #037104;
-    }
+    @include btn-color(var(--clr-button-action));
   }
 
   &--danger {
-    --btn-bkgd-clr: #d1431f;
-    --btn-brd-clr: #d1431f;
-
-    &:hover {
-      --btn-bkgd-clr: #bb3c1c;
-      --btn-brd-clr: #bb3c1c;
-    }
-
-    &:active {
-      --btn-bkgd-clr: #ad381a;
-      --btn-brd-clr: #a53518;
-    }
-
-    &:focus {
-      --btn-bkgd-clr: #ad381a;
-      --btn-brd-clr: #bb3c1c;
-    }
+    @include btn-color(var(--clr-button-danger));
   }
 
   &--warning {
-    --btn-bkgd-clr: #bf5803;
-    --btn-brd-clr: #bf5803;
-
-    &:hover {
-      --btn-bkgd-clr: #a64c03;
-      --btn-brd-clr: #a64c03;
-    }
-
-    &:active {
-      --btn-bkgd-clr: #974502;
-      --btn-brd-clr: #8d4102;
-    }
-
-    &:focus {
-      --btn-bkgd-clr: #974502;
-      --btn-brd-clr: #a64c03;
-    }
+    @include btn-color(var(--clr-button-warning));
   }
 
   .dropbutton-widget & {
@@ -391,39 +149,26 @@
   }
 }
 
-.launch-service {
-  margin: 1.2rem 0;
-}
-
+// Call to action (a.k.a. "Big green button").
+//
+// A "call to action" is an element in a web page that invites the user to perform an action. Usually they are
+// prominent links or buttons (e.g. “Buy this now!”) or lead to a web page with additional information (e.g.
+// “Learn more…”) that asks the user to take action.
+//
+// The .call-to-action style, when added to a link or a button creates a big green button. It is commonly used on
+// application/service pages to launch a service. It can occasionally be found on landing pages too (e.g.
+// on the OSNI landing page for launching the "OSNI online Map Shop").
+//
+// Style guide: components.buttons.call-to-action
 .call-to-action {
+  @include btn(large);
+  @include btn-color(var(--clr-button-action));
   position: relative;
-  color: var(--clr-white);
-  min-width: 15rem;
-  min-height: 5.4rem;
-  background-color: #048a05;
-  border-color: #048a05;
-  display: inline-block;
-  text-decoration: none;
-  line-height: 3.7rem;
-  font-size: 2.1rem;
+  padding-right: 3.9rem !important;
 
-  &:hover {
-    background-color: #037104;
-    border-color: #037104;
-    color: var(--clr-white);
-    text-decoration: none;
-  }
-
-  &:focus {
-    background-color: #036204;
-    border-color: #037104;
-    color: var(--clr-white);
-    outline: 3px solid var(--clr-black);
-    text-decoration: none;
-  }
-
-  &:visited {
-    color: var(--clr-white);
+  @at-root a#{&} {
+    text-align: left;
+    color: white;
   }
 
   .ico-arrow-right {
@@ -435,3 +180,23 @@
     width: 1.5rem;
   }
 }
+
+// Replacement for .call-to-action suitable for use in CKEditor.
+.btn--call-to-action,
+.call-to-action {
+  @include btn(large, right);
+  @include btn-color(var(--clr-button-action));
+}
+
+// Drupal off canvas buttons - shown in "off" canvas Drupal dialogs.
+#drupal-off-canvas .button {
+  @include btn(small);
+}
+
+.facet--btn {
+  // Overrides to facet button styles coming from nicsdru_origins_theme.
+  border-top: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+}
+
+

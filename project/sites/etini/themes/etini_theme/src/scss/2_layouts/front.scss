@@ -25,6 +25,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: 0 3em;
+        border-top: 4px solid #17819b;
 
         h3 {
           margin: 2%;
@@ -58,8 +59,91 @@
         border-bottom: 1px solid #555;
       }
     }
+
+
+    &--promoting-improvement {
+      @include breakpoint($tab) {
+        grid-column: 1 / span 12;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 0 3em;
+        border-top: 4px solid #17819b;
+        margin-top: 5rem;
+
+        h3 {
+          margin: 2%;
+        }
+
+        li {
+          padding: 0;
+          margin: 0;
+        }
+
+        > * {
+          grid-column: 1 / span 2;
+        }
+      }
+
+      .improvement-services {
+        grid-column: 1;
+        grid-row: 2;
+        background: #f6f6f6;
+        padding: 2%;
+        line-height: 4rem;
+      }
+
+      .inspection-services {
+        grid-column: 2;
+        grid-row: 2;
+        background: #f6f6f6;
+        padding: 2%;
+        line-height: 4rem;
+      }
+    }
+
+    &--our-organisation {
+      @include breakpoint($tab) {
+        grid-column: 1 / span 12;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 0 3em;
+        border-top: 4px solid #17819b;
+        margin-top: 5rem;
+
+        h3 {
+          margin: 2%;
+        }
+
+        li {
+          padding: 0;
+          margin: 0;
+        }
+
+        > * {
+          grid-column: 1 / span 2;
+        }
+      }
+
+      .corporate-links {
+        grid-column: 1;
+        grid-row: 2;
+        background: #f6f6f6;
+        padding: 2%;
+        line-height: 4rem;
+      }
+
+      .home-contact {
+        grid-column: 2;
+        grid-row: 2;
+        background: #f6f6f6;
+        padding: 2%;
+        line-height: 4rem;
+      }
+    }
+
   }
 }
+
 
 #main-content {
   display: grid;
@@ -249,7 +333,7 @@
     box-sizing: border-box;
     padding: 10px;
     min-width: 300px;
-    border: solid 1px #4a4a4a;
+    border: solid 1px #4a4a4a4d;
   }
 
   @media (max-width: 768px) {

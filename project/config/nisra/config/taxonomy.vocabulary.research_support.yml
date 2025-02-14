@@ -7,10 +7,10 @@ dependencies:
 third_party_settings:
   origins_toc:
     toc_enable: 1
-    toc_title: 'Table of contents'
+    toc_title: Conents
     toc_location: .page-summary
     toc_insert: after
-    toc_source_container: '#main-content'
+    toc_source_container: .article-content
     toc_element: h2
     toc_exclusions: ''
     toc_screen_depth: '2'

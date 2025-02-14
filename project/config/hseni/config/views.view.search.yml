@@ -296,7 +296,7 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: search_api
-          order: ASC
+          order: DESC
           expose:
             label: ''
             field_identifier: ''
@@ -389,7 +389,22 @@ display:
     display_plugin: page
     position: 1
     display_options:
+      sorts:
+        search_api_relevance:
+          id: search_api_relevance
+          table: search_api_index_default_content
+          field: search_api_relevance
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api
+          order: DESC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
       defaults:
+        sorts: false
         header: false
       display_description: ''
       header:
