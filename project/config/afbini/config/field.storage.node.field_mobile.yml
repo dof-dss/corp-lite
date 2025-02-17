@@ -1,0 +1,21 @@
+uuid: a1f83415-37dc-498a-8976-cf84f70813ed
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_mobile
+field_name: field_mobile
+entity_type: node
+type: string
+settings:
+  max_length: 13
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

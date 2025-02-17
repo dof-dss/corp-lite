@@ -23,6 +23,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
+      title: ' Areas of Co-Operation'
       fields:
         name:
           id: name
@@ -152,59 +153,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        view_taxonomy_term:
-          id: view_taxonomy_term
-          table: taxonomy_term_data
-          field: view_taxonomy_term
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: taxonomy_term
-          plugin_id: entity_link
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          text: 'more ...'
-          output_url_as_text: false
-          absolute: false
       pager:
         type: some
         options:
@@ -244,7 +192,7 @@ display:
         type: default
         options:
           grouping: {  }
-          row_class: ''
+          row_class: columnItem
           default_row_class: false
       row:
         type: fields
@@ -286,12 +234,35 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.taxonomy_term.field_summary'
-  site_topics_block:
-    id: site_topics_block
-    display_title: 'Home page topics'
+  areas_of_cooperation:
+    id: areas_of_cooperation
+    display_title: 'Site topics'
+    display_plugin: page
+    position: 1
+    display_options:
+      display_description: ''
+      display_extenders:
+        metatag_display_extender:
+          metatags: {  }
+          tokenize: false
+      path: areas-of-cooperation
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - user.permissions
+      tags:
+        - 'config:field.storage.taxonomy_term.field_summary'
+  areas_of_cooperation_homepage:
+    id: areas_of_cooperation_homepage
+    display_title: 'Site topics homepage'
     display_plugin: block
     position: 1
     display_options:
+      title: ' Areas of Co-Operation homepage'
+      defaults:
+        title: false
       display_description: ''
       display_extenders:
         metatag_display_extender:

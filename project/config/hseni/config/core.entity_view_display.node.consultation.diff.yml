@@ -8,7 +8,6 @@ dependencies:
     - field.field.node.consultation.field_attachment
     - field.field.node.consultation.field_consultation_dates
     - field.field.node.consultation.field_email_address
-    - field.field.node.consultation.field_feature_home_page
     - field.field.node.consultation.field_meta_tags
     - field.field.node.consultation.field_postal
     - field.field.node.consultation.field_published_date
@@ -75,8 +74,8 @@ content:
     settings:
       timezone_override: ''
       format_type: medium
-      separator: '-'
       from_to: both
+      separator: '-'
     third_party_settings: {  }
     weight: 0
     region: content
@@ -139,7 +138,6 @@ content:
     region: content
 hidden:
   content_moderation_control: true
-  field_feature_home_page: true
   langcode: true
   links: true
   search_api_excerpt: true

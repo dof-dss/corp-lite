@@ -1,0 +1,64 @@
+uuid: b986296a-6533-48fa-974b-d421ca3cc705
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.block_group
+    - field.storage.block_content.field_blocks
+  module:
+    - block_field
+id: block_content.block_group.field_blocks
+field_name: field_blocks
+entity_type: block_content
+bundle: block_group
+label: blocks
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  selection: categories
+  selection_settings:
+    categories:
+      Block: Block
+      'Content block': 'Content block'
+      'Content fields': 'Content fields'
+      'Content moderation state fields': 'Content moderation state fields'
+      core: core
+      'Corplite sites: search': 'Corplite sites: search'
+      'Custom menu link fields': 'Custom menu link fields'
+      'District Inspector fields': 'District Inspector fields'
+      'Etini Homepage': 'Etini Homepage'
+      Facets: Facets
+      'Facets summary (Experimental)': 'Facets summary (Experimental)'
+      'Fake entity type fields': 'Fake entity type fields'
+      'File fields': 'File fields'
+      'Flagging fields': 'Flagging fields'
+      Forms: Forms
+      Geolocation: Geolocation
+      Help: Help
+      'Inline blocks': 'Inline blocks'
+      'Lists (Views)': 'Lists (Views)'
+      'Media fields': 'Media fields'
+      Menus: Menus
+      'Read Only Mode': 'Read Only Mode'
+      'Redirect fields': 'Redirect fields'
+      'scheduled transition fields': 'scheduled transition fields'
+      'School fields': 'School fields'
+      'Search task fields': 'Search task fields'
+      'Shortcut link fields': 'Shortcut link fields'
+      System: System
+      'Taxonomy term fields': 'Taxonomy term fields'
+      'URL alias fields': 'URL alias fields'
+      User: User
+      'User fields': 'User fields'
+      Views: Views
+      Webform: Webform
+      'Webform access': 'Webform access'
+      'Webform submission fields': 'Webform submission fields'
+      'Chaos Tools': '0'
+      'Content block fields': '0'
+      Devel: '0'
+      'EU Cookie Compliance': '0'
+field_type: block_field

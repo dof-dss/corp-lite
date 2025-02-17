@@ -1,0 +1,19 @@
+uuid: c30941e7-f26a-4fd0-aa34-11328ba663b0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_instagram
+    - node.type.researcher_profiles
+id: node.researcher_profiles.field_instagram
+field_name: field_instagram
+entity_type: node
+bundle: researcher_profiles
+label: Instagram
+description: 'Enter the Instagram address of the researcher.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,35 @@
+uuid: 5a264b0c-993b-408c-a1cd-033e8f489e3b
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:9e88bfda-0432-491a-b396-f3557dedd7c5'
+  module:
+    - block_content
+    - block_visibility_groups
+    - system
+  theme:
+    - northsouthministerialcouncil_theme
+id: contactus
+theme: northsouthministerialcouncil_theme
+region: content
+weight: -2
+provider: null
+plugin: 'block_content:9e88bfda-0432-491a-b396-f3557dedd7c5'
+settings:
+  id: 'block_content:9e88bfda-0432-491a-b396-f3557dedd7c5'
+  label: 'Contact us'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

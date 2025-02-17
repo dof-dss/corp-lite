@@ -1,0 +1,19 @@
+uuid: a8ef0421-9584-4689-b7fb-b02d1d3ac49a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_additional_keywords
+    - node.type.researcher_profiles
+id: node.researcher_profiles.field_additional_keywords
+field_name: field_additional_keywords
+entity_type: node
+bundle: researcher_profiles
+label: 'Additional keywords'
+description: 'Enter 5 additional keywords.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

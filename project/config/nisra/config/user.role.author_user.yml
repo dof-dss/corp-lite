@@ -27,6 +27,7 @@ dependencies:
     - moderation_sidebar
     - node
     - system
+    - taxonomy
     - taxonomy_access_fix
     - toolbar
 _core:
@@ -38,6 +39,7 @@ is_admin: null
 permissions:
   - 'access administration pages'
   - 'access content overview'
+  - 'access taxonomy overview'
   - 'access toolbar'
   - 'administer main menu items'
   - 'create application content'
@@ -84,6 +86,7 @@ permissions:
   - 'use nics_editorial_workflow transition draft_of_published'
   - 'use nics_editorial_workflow transition reject'
   - 'use nics_editorial_workflow transition submit_for_review'
+  - 'view all taxonomy revisions'
   - 'view any unpublished content'
   - 'view application revisions'
   - 'view contact revisions'

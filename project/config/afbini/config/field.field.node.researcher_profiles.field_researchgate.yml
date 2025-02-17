@@ -1,0 +1,19 @@
+uuid: f88ca2f6-de75-455c-a755-c010f9e7198a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_researchgate
+    - node.type.researcher_profiles
+id: node.researcher_profiles.field_researchgate
+field_name: field_researchgate
+entity_type: node
+bundle: researcher_profiles
+label: ResearchGate
+description: 'Enter the ResearchGate address of the researcher.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
