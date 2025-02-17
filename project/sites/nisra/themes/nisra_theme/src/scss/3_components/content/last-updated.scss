@@ -1,7 +1,9 @@
-#block-views-block-content-last-updated-content-last-updated {
+#block-views-block-content-last-updated-content-last-updated,
+#block-views-block-taxonomy-last-updated-taxonomy-last-updated {
   max-width: 30rem;
 
   .modified-date {
-    font-size: 1.6rem;
+    --fs: 1.6rem;
+    font-size: var(--fs);
   }
 }
