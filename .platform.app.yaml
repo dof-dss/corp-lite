@@ -23,7 +23,7 @@ mounts:
     /tmp:
         source: local
         source_path: tmp
-    /private:
+    /private/files:
         source: local
         source_path: private
     /.drush:
