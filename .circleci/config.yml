@@ -12,6 +12,7 @@ default_docker_image: &docker_image
 
 workflows:
   version: 2
+  build-edge:
     jobs:
       - build_edge
       - sync_data:
