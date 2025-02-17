@@ -1,0 +1,36 @@
+uuid: 56080724-745e-4842-9e16-05b0484bdc27
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_keywords
+field_name: field_keywords
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: science_strategy_1
+      label: 'Science strategy 1'
+    -
+      value: science_strategy_2
+      label: 'Science strategy 2'
+    -
+      value: science_strategy_3
+      label: 'Science strategy 3'
+    -
+      value: science_strategy_4
+      label: 'Science strategy 4'
+    -
+      value: science_strategy_5
+      label: 'Science strategy 5'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

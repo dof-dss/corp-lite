@@ -1,0 +1,11 @@
+uuid: 6d8399f7-5ef4-414e-a08a-19437fe2aed4
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.researcher_profiles
+id: node.researcher_profiles
+target_entity_type_id: node
+target_bundle: researcher_profiles
+default_langcode: site_default
+language_alterable: false

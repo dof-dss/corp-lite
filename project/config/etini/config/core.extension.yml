@@ -10,6 +10,7 @@ module:
   blazy: 0
   block: 0
   block_content: 0
+  block_field: 0
   block_visibility_groups: 0
   book: 0
   breakpoint: 0
@@ -106,6 +107,7 @@ module:
   noreferrer: 0
   options: 0
   origins_common: 0
+  origins_internal_link_checker: 0
   origins_media: 0
   origins_metatag: 0
   origins_qa: 0

@@ -42,9 +42,9 @@ backend_config:
   connector_config:
     scheme: http
     host: northsouthministerialcouncil_solr.internal
-    port: 8983
+    port: 8080
     path: /
-    core: northsouthministerialcouncil
+    core: northsouthministerialcouncil_index
     timeout: 5
     index_timeout: 5
     optimize_timeout: 10

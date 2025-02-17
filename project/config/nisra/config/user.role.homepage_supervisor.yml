@@ -5,16 +5,25 @@ dependencies:
   config:
     - node.type.feature
     - node.type.featured_content_list
+    - taxonomy.vocabulary.link
+    - taxonomy.vocabulary.research_support
+    - taxonomy.vocabulary.site_topics
   module:
     - corplite_common
     - draggableviews
     - node
+    - system
+    - taxonomy_access_fix
+    - toolbar
 id: homepage_supervisor
 label: 'Homepage supervisor'
 weight: 3
 is_admin: null
 permissions:
+  - 'access administration pages'
+  - 'access content overview'
   - 'access draggableviews'
+  - 'access toolbar'
   - 'create feature content'
   - 'delete any feature content'
   - 'delete feature revisions'
@@ -23,5 +32,16 @@ permissions:
   - 'edit any featured_content_list content'
   - 'edit own feature content'
   - 'reorder draggable views'
+  - 'reorder terms in link'
+  - 'reorder terms in research_support'
+  - 'reorder terms in site_topics'
   - 'revert feature revisions'
+  - 'view any term'
+  - 'view any term name'
+  - 'view any unpublished term'
+  - 'view any unpublished term name'
   - 'view feature revisions'
+  - 'view term names in link'
+  - 'view the administration theme'
+  - 'view unpublished term names in link'
+  - 'view unpublished terms in link'
