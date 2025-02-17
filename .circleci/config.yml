@@ -16,8 +16,8 @@ workflows:
     jobs:
       - build_edge
       - sync_data:
-        requires:
-          - build_edge
+          requires:
+            - build_edge
 
 jobs:
   # Tests the integrity of the build, stores the results in a workspace for re-use in later jobs.
