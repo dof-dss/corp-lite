@@ -33,7 +33,7 @@ enable_parent_when_child_gets_disabled: true
 widget:
   type: links
   config:
-    show_numbers: false
+    show_numbers: true
     soft_limit: 20
     show_reset_link: false
     reset_text: 'Show all'
@@ -52,18 +52,18 @@ processor_configs:
     weights:
       sort: 20
     settings:
-      sort: ASC
-  display_value_widget_order:
-    processor_id: display_value_widget_order
-    weights:
-      sort: 40
-    settings:
-      sort: ASC
+      sort: DESC
   hierarchy_processor:
     processor_id: hierarchy_processor
     weights:
       build: 100
     settings: {  }
+  raw_value_widget_order:
+    processor_id: raw_value_widget_order
+    weights:
+      sort: 50
+    settings:
+      sort: ASC
   translate_entity:
     processor_id: translate_entity
     weights:
