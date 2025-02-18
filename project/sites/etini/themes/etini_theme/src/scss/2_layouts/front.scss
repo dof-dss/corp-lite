@@ -44,14 +44,12 @@
       .publications-inspections {
         grid-column: 1;
         grid-row: 2;
-        background: #f6f6f6;
         padding: 2%;
       }
 
       .publications-surveys {
         grid-column: 2;
         grid-row: 2;
-        background: #f6f6f6;
         padding: 2%;
       }
 
@@ -87,7 +85,6 @@
       .improvement-services {
         grid-column: 1;
         grid-row: 2;
-        background: #f6f6f6;
         padding: 2%;
         line-height: 4rem;
       }
@@ -95,7 +92,6 @@
       .inspection-services {
         grid-column: 2;
         grid-row: 2;
-        background: #f6f6f6;
         padding: 2%;
         line-height: 4rem;
       }
@@ -127,7 +123,6 @@
       .corporate-links {
         grid-column: 1;
         grid-row: 2;
-        background: #f6f6f6;
         padding: 2%;
         line-height: 4rem;
       }
@@ -135,7 +130,6 @@
       .home-contact {
         grid-column: 2;
         grid-row: 2;
-        background: #f6f6f6;
         padding: 2%;
         line-height: 4rem;
       }
@@ -310,7 +304,7 @@
   border-top: 4px solid #17819b;
 
   .subtopics {
-    padding: 20px;
+    padding: 0 2rem 2rem 0;
   }
 
   .subtopics__title {
@@ -329,7 +323,10 @@
     box-sizing: border-box;
     padding: 10px;
     min-width: 300px;
-    border: solid 1px #4a4a4a4d;
+
+    a {
+      padding: 1rem;
+    }
   }
 
   @media (max-width: 768px) {
