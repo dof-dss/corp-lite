@@ -15,7 +15,6 @@ dependencies:
     - media
     - noreferrer
     - origins_common
-    - token_filter
 _core:
   default_config_hash: kuHSSL1ZhVz9zerG_2PWzdHWJisspWMRRY7hPQ0w_yI
 name: 'Basic HTML'
@@ -62,8 +61,8 @@ filters:
     weight: 0
     settings:
       allowed_html: '<a class href hreflang> <em> <strong> <cite> <blockquote cite> <code> <ul class type> <ol class start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <p class translate> <br> <span> <img src alt height width data-* typeof> <sup> <table class> <caption> <tbody> <thead> <tfoot> <th scope> <td> <tr> <drupal-entity data-entity-type data-entity-uuid data-entity-embed-display data-entity-embed-display-settings data-align data-caption data-embed-button alt title class> <picture data-* alt title class> <source srcset media type> <address> <drupal-media data-entity-type data-entity-id data-entity-uuid data-entity-embed-display data-entity-embed-display-settings data-align data-caption data-embed-button data-view-mode alt title class>'
-      filter_html_help: '0'
-      filter_html_nofollow: '0'
+      filter_html_help: false
+      filter_html_nofollow: false
   filter_caption:
     id: filter_caption
     provider: filter
@@ -76,7 +75,7 @@ filters:
     status: false
     weight: -10
     settings:
-      allowed_html: '<p class="info-notice">'
+      allowed_html: '<p class="info-notice"> <a class="call-to-action">'
       filter_html_help: false
       filter_html_nofollow: false
   media_embed:
@@ -108,10 +107,3 @@ filters:
     weight: 0
     settings:
       replacement_text: 'Click here to view the video content'
-  token_filter:
-    id: token_filter
-    provider: token_filter
-    status: false
-    weight: 0
-    settings:
-      replace_empty: '0'
