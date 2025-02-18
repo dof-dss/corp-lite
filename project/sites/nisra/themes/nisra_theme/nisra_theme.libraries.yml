@@ -8,4 +8,5 @@ site-styling:
     theme:
       css/3_components/layout/footer.css: { minified: true }
       css/3_components/content/card.css: { minified: true }
+      css/3_components/content/last-updated.css: { minified: true }
       css/3_components/navigation/main-menu.css: { minified: true }
