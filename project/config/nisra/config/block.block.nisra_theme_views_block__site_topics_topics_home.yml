@@ -12,7 +12,7 @@ dependencies:
 id: nisra_theme_views_block__site_topics_topics_home
 theme: nisra_theme
 region: content
-weight: -10
+weight: -12
 provider: null
 plugin: 'views_block:site_topics-topics_home'
 settings:
