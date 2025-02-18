@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.taxonomy_term.teaser
     - field.storage.taxonomy_term.field_summary
     - system.menu.admin
     - taxonomy.vocabulary.site_global_topics
@@ -935,12 +936,12 @@ display:
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          text: '... more'
+          text: ''
           output_url_as_text: false
           absolute: false
       pager:
@@ -964,8 +965,21 @@ display:
             label: ''
             field_identifier: ''
           exposed: false
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: false
+      row:
+        type: 'entity:taxonomy_term'
+        options:
+          relationship: none
+          view_mode: teaser
       defaults:
         pager: false
+        style: false
+        row: false
         fields: false
         sorts: false
       display_description: ''
