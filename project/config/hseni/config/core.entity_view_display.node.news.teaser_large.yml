@@ -38,7 +38,7 @@ content:
     weight: 2
     region: content
   field_notes_to_editors:
-    type: basic_string
+    type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
