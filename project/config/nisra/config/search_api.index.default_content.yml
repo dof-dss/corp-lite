@@ -7,7 +7,6 @@ dependencies:
     - field.storage.node.field_published_date
     - field.storage.node.field_summary
     - field.storage.node.field_teaser
-    - field.storage.taxonomy_term.field_summary
   module:
     - node
     - search_api
@@ -106,14 +105,6 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_summary
-  field_summary_1:
-    label: Summary
-    datasource_id: 'entity:taxonomy_term'
-    property_path: field_summary
-    type: text
-    dependencies:
-      config:
-        - field.storage.taxonomy_term.field_summary
   field_teaser:
     label: Teaser
     datasource_id: 'entity:node'
@@ -285,7 +276,6 @@ processor_settings:
     fields:
       - body
       - field_summary
-      - field_summary_1
       - field_teaser
       - name
       - revision_log
@@ -314,4 +304,4 @@ options:
   cron_limit: 50
   index_directly: true
   track_changes_in_references: true
-server: solr_default
+server: null
