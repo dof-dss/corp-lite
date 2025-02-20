@@ -33,18 +33,29 @@
 .footer-nav-menu {
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 1.5em 0 1em;
 
   @include breakpoint($tab) {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    padding-top: 2em;
   }
 
   li {
-    font-size: 1.6rem;
-    margin: .5em .5em .5em 0;
-    padding: 0 .5em 0 0;
+    font-size: var(--fs-base-size);
+    margin: .5em .5em var(--rhythm-spacing-sm) 0;
+    padding-bottom: .5em;
     line-height: 1;
+
+    @include breakpoint($tab) {
+      padding-bottom: 0;
+      padding-right: .5em;
+      box-shadow: 5px 0 0 -4px
+    }
+
+    &:last-child {
+      box-shadow: none;
+    }
   }
 }
