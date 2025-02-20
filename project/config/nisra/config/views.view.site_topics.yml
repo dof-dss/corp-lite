@@ -1893,7 +1893,7 @@ display:
         type: 'entity:taxonomy_term'
         options:
           relationship: none
-          view_mode: teaser
+          view_mode: teaser_with_summary
       defaults:
         title: false
         style: false

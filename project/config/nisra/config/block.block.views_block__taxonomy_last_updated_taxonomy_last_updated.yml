@@ -11,8 +11,8 @@ dependencies:
     - nisra_theme
 id: views_block__taxonomy_last_updated_taxonomy_last_updated
 theme: nisra_theme
-region: content
-weight: -11
+region: last_updated
+weight: -14
 provider: null
 plugin: 'views_block:taxonomy_last_updated-taxonomy_last_updated'
 settings:
