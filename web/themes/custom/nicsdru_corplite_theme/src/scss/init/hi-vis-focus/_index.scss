@@ -3,10 +3,8 @@
 // Mixin to add high contrast focus attributes around inputs, particularly search inputs.
 //
 // Style guide: init.mixins.high-vis-focus
-@mixin high-vis-focus($dark-color: black, $light-color: #ff4da4, $outline-thickness: 3px) {
+@mixin high-vis-focus($dark-color: black, $outline-thickness: 3px) {
   // Dark outline
   outline: $outline-thickness solid $dark-color;
   outline-offset: -$outline-thickness;
-  // Light shadow
-  box-shadow: 0 0 0 $outline-thickness $light-color;
 }
