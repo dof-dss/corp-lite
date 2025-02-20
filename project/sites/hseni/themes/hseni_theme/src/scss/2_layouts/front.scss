@@ -11,6 +11,25 @@
 //
 // Style guide: layouts.front
 
+$link-dark-background: (
+  color: #fff,
+  background-color: transparent,
+  text-decoration: (
+    default: underline,
+    focus: none,
+  ),
+  text-decoration-color: #fff,
+  text-decoration-thickness: (
+    default: 1px,
+    hover: 2px,
+  ),
+  text-underline-offset: 3px,
+  outline: (
+    default: 0,
+    focus: '2px solid #fff',
+  ),
+  outline-offset: 0
+);
 
 .section {
   &--featured-highlights {
@@ -52,59 +71,71 @@
 
 .contact-us-container {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: space-between;
   background: #042f59;
-}
 
-.contact-us-container .text-content {
-  color: #fff;
-  padding: 2%;
+  @include breakpoint($tab) {
+    flex-direction: row;
+    align-items: center;
+  }
 
-  li, a {
+  .text-content {
     color: #fff;
-  }
-}
+    padding: 2%;
 
-@media (max-width: 768px) {
-  .contact-us-container {
-    flex-direction: column;
-    align-items: flex-start;
+    li {
+      color: #fff;
+    }
+
+    a {
+      @include link-state-style($link-dark-background);
+    }
   }
 
-  .contact-us-container .image-content {
-    margin-top: 15px;
+  .image-content {
+    margin-top: 1.5rem;
+
+    @include breakpoint($tab) {
+      margin-top: 0;
+    }
   }
 }
 
 .organisation-container {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: space-between;
   background: #044c93;
-}
 
-.organisation-container .text-content {
-  color: #fff;
-  padding: 2%;
+  @include breakpoint($tab) {
+    flex-direction: row;
+    align-items: center;
+  }
 
-  h2, a, li {
+  .text-content {
     color: #fff;
+    padding: 2%;
+
+    h2,
+    li {
+      color: #fff;
+    }
+
+    a {
+      @include link-state-style($link-dark-background);
+    }
   }
-}
 
-.organisation-container .image-content {
-  padding: 2%;
-}
+  .image-content {
+    padding: 2%;
+    margin-top: 1.5rem;
 
-@media (max-width: 768px) {
-  .organisation-container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .organisation-container .image-content {
-    margin-top: 15px;
+    @include breakpoint($tab) {
+      margin-top: 0;
+    }
   }
 }
 
@@ -129,11 +160,7 @@
   }
 }
 
-#block-featuredcontent-documents {
+#block-featuredcontent-documents,
+#block-ourorganisation {
     border-top: #044c93 solid 5px;
 }
-
-#block-ourorganisation {
-  border-top: #044c93 solid 5px;
-}
-
