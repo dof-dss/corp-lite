@@ -45,6 +45,7 @@
 
   font-size: var(--fs-label);
   line-height: var(--lh);
+  max-width: $max-content-width;
 
   @include breakpoint($tab) {
     $lh: math.div(30, 19);
@@ -61,7 +62,6 @@
 }
 
 .article-content {
-
   * {
     max-width: $max-body-text-width;
   }
