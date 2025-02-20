@@ -9,7 +9,7 @@ field_name: field_summary
 entity_type: taxonomy_term
 type: string
 settings:
-  max_length: 255
+  max_length: 500
   case_sensitive: false
   is_ascii: false
 module: core
