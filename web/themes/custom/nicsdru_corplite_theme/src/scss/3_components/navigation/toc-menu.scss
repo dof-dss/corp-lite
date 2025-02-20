@@ -22,8 +22,8 @@
   }
 
   .menu-title {
-    font-size: 1.6rem;
-    line-height: 2.4rem;
+    font-size: var(--fs-base-size);
+    line-height: 1.5;
     font-weight: bold;
     margin: 0 0 1em;
   }
@@ -35,11 +35,12 @@
 
     // applied to the menu li
     &-item {
-      font-size: 1.6rem;
-      line-height: 2.4rem;
+      font-size: var(--fs-base-size);
+      line-height: 1.5;
       position: relative;
       list-style: none;
       padding: 0 1rem 0 1.5rem;
+      margin: .5em 0;
 
       &:last-child {
         padding-bottom: 0;
@@ -53,7 +54,7 @@
       }
 
       a {
-        //@include link-state-style($link-sub-menu);
+        @include link-state-style($link-basic);
         display: inline-block;
         width: 100%;
       }
