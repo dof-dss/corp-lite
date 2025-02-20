@@ -25,15 +25,16 @@
  * @see template_preprocess_block()
  */
 #}
-<div class="quicklinks">
-  <div{{ attributes }}>
-    {{ title_prefix }}
-    {% if label %}
-      <h2{{ title_attributes }}>{{ label }}</h2>
-    {% endif %}
-    {{ title_suffix }}
-    {% block content %}
-      {{ content }}
-    {% endblock %}
-  </div>
+{% set attributes = attributes.setAttribute('id', 'quicklinks') %}
+{% set attributes = attributes.setAttribute('role', 'presentation') %}
+{% set title_attributes = title_attributes.addClass(['menu-title', 'menu-title--large']).setAttribute('id', 'quicklinks') %}
+<div{{ attributes.setAttribute('role', 'presentation') }}>
+  {{ title_prefix }}
+  {% if label %}
+    <h2{{ title_attributes }}>{{ label }}</h2>
+  {% endif %}
+  {{ title_suffix }}
+  {% block content %}
+    {{ content }}
+  {% endblock %}
 </div>

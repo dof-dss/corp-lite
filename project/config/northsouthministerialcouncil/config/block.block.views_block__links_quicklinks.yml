@@ -1,28 +1,33 @@
-uuid: afbc38df-ca9c-4867-a59f-0ff11602741a
+uuid: 7684e5a5-59e2-4b48-b126-fd01e4b89f83
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.latest_news
+    - views.view.links
   module:
+    - block_visibility_groups
     - system
     - views
   theme:
     - northsouthministerialcouncil_theme
-id: block__latest_news_home_latest_news
+id: views_block__links_quicklinks
 theme: northsouthministerialcouncil_theme
 region: content
-weight: -8
+weight: -7
 provider: null
-plugin: 'views_block:latest_news-home_latest_news'
+plugin: 'views_block:links-quicklinks'
 settings:
-  id: 'views_block:latest_news-home_latest_news'
-  label: Latest
+  id: 'views_block:links-quicklinks'
+  label: ''
   label_display: visible
   provider: views
-  views_label: Latest
+  views_label: ''
   items_per_page: none
 visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
   request_path:
     id: request_path
     negate: false

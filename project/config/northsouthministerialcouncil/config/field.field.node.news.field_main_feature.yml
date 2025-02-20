@@ -1,0 +1,21 @@
+uuid: b521a353-9018-4218-89f5-258570b89805
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_main_feature
+    - node.type.news
+id: node.news.field_main_feature
+field_name: field_main_feature
+entity_type: node
+bundle: news
+label: 'Display as main feature'
+description: 'Check this flag to indicate that this content should be listed as Featured News on the home page.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

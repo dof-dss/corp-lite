@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - field.field.node.news.body
+    - field.field.node.news.field_feature_home_page
+    - field.field.node.news.field_main_feature
     - field.field.node.news.field_meta_tags
     - field.field.node.news.field_photo
     - field.field.node.news.field_published_date
@@ -13,11 +15,29 @@ dependencies:
   module:
     - content_moderation
     - datetime
+    - field_group
     - media_library
     - media_library_edit
     - metatag
     - path
     - text
+third_party_settings:
+  field_group:
+    group_featured:
+      children:
+        - field_main_feature
+        - field_feature_home_page
+      label: Featured
+      region: content
+      parent_name: ''
+      weight: 8
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: ''
+        required_fields: false
 _core:
   default_config_hash: mTsGhSOXEcJoKhXwR7U0vMD3YCBmWh-hEIgvSlUi_8s
 id: node.news.default
@@ -41,9 +61,23 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_feature_home_page:
+    type: boolean_checkbox
+    weight: 12
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_main_feature:
+    type: boolean_checkbox
+    weight: 11
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   field_meta_tags:
     type: metatag_firehose
-    weight: 17
+    weight: 16
     region: content
     settings:
       sidebar: true
@@ -86,7 +120,7 @@ content:
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 8
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -105,7 +139,7 @@ content:
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 9
+    weight: 10
     region: content
     settings:
       display_label: true

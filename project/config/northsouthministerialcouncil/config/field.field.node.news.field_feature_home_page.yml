@@ -1,16 +1,14 @@
-uuid: d68a4cc3-d767-4e40-8a45-1e597c75c456
+uuid: 1d3779da-f3f4-4ac8-900a-eedb6d1642fe
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_feature_home_page
-    - node.type.publication
-_core:
-  default_config_hash: Yi3qzjk4B2-2D--L4vvwxClKtLWkjoLrL85ytv2PWOs
-id: node.publication.field_feature_home_page
+    - node.type.news
+id: node.news.field_feature_home_page
 field_name: field_feature_home_page
 entity_type: node
-bundle: publication
+bundle: news
 label: 'Feature on home page'
 description: 'Check this flag to indicate that this content should be listed on the home page.'
 required: false
