@@ -24,13 +24,15 @@
  */
 #}
 
-<article class="card">
-  {% if name and not page %}
-    <h3 class="card__title">
-      <a href="{{ url }}">{{ name }}</a>
-    </h3>
-  {% endif %}
-  <div class="card__content">
-    {{ content }}
-  </div>
-</article>
+<a class="card" href="{{ url }}">
+  <article>
+    {% if name and not page %}
+      <h3 class="card__title">
+        {{ name }}
+      </h3>
+    {% endif %}
+    <div class="card__content">
+      {{ content }}
+    </div>
+  </article>
+</a>
