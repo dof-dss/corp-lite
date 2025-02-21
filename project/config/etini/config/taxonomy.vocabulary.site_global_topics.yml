@@ -1,7 +1,20 @@
 uuid: e33e9ed4-9d75-49d1-852c-8803dae7a7b6
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - origins_toc
+third_party_settings:
+  origins_toc:
+    toc_enable: 1
+    toc_title: 'Table of contents'
+    toc_location: .page-summary
+    toc_insert: after
+    toc_source_container: .article-content
+    toc_element: h2
+    toc_exclusions: ''
+    toc_screen_depth: '2'
+    toc_debug: 0
 name: 'Site topics'
 vid: site_global_topics
 description: 'Site topics'
