@@ -2,6 +2,11 @@ uuid: 51f47051-a8bd-4645-8dba-18268bb500b7
 langcode: en
 status: true
 dependencies:
+  config:
+    - core.entity_view_mode.media.article_float
+    - core.entity_view_mode.media.article_float_expandable
+    - core.entity_view_mode.media.article_full
+    - core.entity_view_mode.media.article_full_expandable
   module:
     - blazy
     - ckeditor5_allowed_html
@@ -78,8 +83,12 @@ filters:
     status: true
     weight: 100
     settings:
-      default_view_mode: default
-      allowed_view_modes: {  }
+      default_view_mode: article_full
+      allowed_view_modes:
+        article_float: article_float
+        article_float_expandable: article_float_expandable
+        article_full: article_full
+        article_full_expandable: article_full_expandable
       allowed_media_types:
         audio: audio
         image: image
