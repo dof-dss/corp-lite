@@ -9,17 +9,16 @@ dependencies:
     - field.field.taxonomy_term.site_topics.field_term_image
     - field.field.taxonomy_term.site_topics.field_term_photo
     - taxonomy.vocabulary.site_topics
-  module:
-    - text
 id: taxonomy_term.site_topics.teaser_with_summary
 targetEntityType: taxonomy_term
 bundle: site_topics
 mode: teaser_with_summary
 content:
   field_summary:
-    type: text_default
+    type: string
     label: hidden
-    settings: {  }
+    settings:
+      link_to_entity: false
     third_party_settings: {  }
     weight: 0
     region: content
