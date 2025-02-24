@@ -36,20 +36,6 @@
  * @see template_preprocess_field()
  */
 #}
-{%
-  set title_classes = [
-    label_display == 'visually_hidden' ? 'visually-hidden',
-  ]
-%}
-{%
-  set field_classes = [
-  'page-summary',
-]
-%}
-
 {% for item in items %}
-  <div{{ item.attributes.addClass(field_classes).setAttribute('role', 'presentation') }}>
-    <p>{{- item.content -}}</p>
-  </div>
+  {{ item.content }}
 {% endfor %}
-
