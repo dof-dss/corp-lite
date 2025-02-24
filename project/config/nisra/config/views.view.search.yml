@@ -573,15 +573,15 @@ display:
         options:
           view_modes:
             'entity:node':
-              application: search_index
-              contact: search_index
-              department_management: search_index
-              news: search_index
-              page: search_index
-              profile: search_index
-              publication: search_index
-              secure_market_statistics: search_index
-              secure_statistics: search_index
+              application: main_search_index
+              contact: main_search_index
+              department_management: main_search_index
+              news: main_search_index
+              page: main_search_index
+              profile: main_search_index
+              publication: main_search_index
+              secure_market_statistics: main_search_index
+              secure_statistics: main_search_index
             'entity:taxonomy_term':
               research_support: search_index
               site_topics: search_index
