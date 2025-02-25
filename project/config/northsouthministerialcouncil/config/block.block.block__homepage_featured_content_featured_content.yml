@@ -1,4 +1,4 @@
-uuid: c259077f-68b5-4029-99b5-f7786c489e3b
+uuid: 42847887-1e92-48cd-9a18-8cf3262b40cb
 langcode: en
 status: true
 dependencies:
@@ -10,7 +10,7 @@ dependencies:
     - views
   theme:
     - northsouthministerialcouncil_theme
-id: views_block__homepage_featured_content_featured_content
+id: block__homepage_featured_content_featured_content
 theme: northsouthministerialcouncil_theme
 region: content
 weight: -8
@@ -18,11 +18,11 @@ provider: null
 plugin: 'views_block:homepage_featured_content-featured_content'
 settings:
   id: 'views_block:homepage_featured_content-featured_content'
-  label: Featured
+  label: Latest
   label_display: visible
   provider: views
-  views_label: Featured
-  items_per_page: '2'
+  views_label: Latest
+  items_per_page: '3'
 visibility:
   condition_group:
     id: condition_group

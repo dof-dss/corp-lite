@@ -716,7 +716,7 @@ display:
           entity_type: node
           entity_field: title
           plugin_id: standard
-          order: ASC
+          order: DESC
           expose:
             label: ''
             field_identifier: ''
@@ -854,6 +854,7 @@ display:
         filters: false
         filter_groups: false
       display_description: ''
+      exposed_block: true
       display_extenders:
         metatag_display_extender:
           metatags: {  }
