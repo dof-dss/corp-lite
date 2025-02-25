@@ -1,9 +1,9 @@
-uuid: b42d2bd0-4e5f-4855-a891-85f2d9eb166a
+uuid: 51a7c3a7-7663-49cb-9563-8076ea7dc689
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser_large
+    - core.entity_view_mode.node.home_teaser
     - field.field.node.news.body
     - field.field.node.news.field_meta_tags
     - field.field.node.news.field_photo
@@ -19,17 +19,17 @@ third_party_settings:
     enabled: false
     allow_custom: false
 _core:
-  default_config_hash: QJQDLqavIZn0myoYAjuwhSylUU_EK43khUldiVKn7uw
-id: node.news.teaser_large
+  default_config_hash: uKzh9Iqr1gLzNmkwEza3939_lvfHHzf0Mi2ZKWoAgRI
+id: node.news.home_teaser
 targetEntityType: node
 bundle: news
-mode: teaser_large
+mode: home_teaser
 content:
   field_photo:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: card_small
+      view_mode: news_thumbnail
       link: false
     third_party_settings: {  }
     weight: 0

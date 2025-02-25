@@ -46,7 +46,7 @@ function northsouthministerialcouncil_theme_preprocess_page(array &$variables)
 
   if (!empty($viewpage)) {
     switch ($viewpage) {
-      case "publications_search":
+      case "publication_search":
         $variables['main_content_attr']->addClass(LayoutClasses::SIDE_MAIN);
         $variables['sidebar_first_attr']
           ->addClass('ga-aside')
@@ -62,5 +62,17 @@ function northsouthministerialcouncil_theme_preprocess_page(array &$variables)
             ->setAttribute('role', 'presentation');
         }
     }
+
+      if (isset($variables['is_front']) && $variables['is_front'] == TRUE) {
+        $front_classes = ['grid', 'layout--front'];
+        $variables['main_content_attr']->addClass($front_classes);
+        $variables['sidebar_second_attr']->addClass('section--popular');
+      }
   }
+
+    if (isset($variables['is_front']) && $variables['is_front'] == TRUE) {
+      $front_classes = ['grid', 'layout--front'];
+      $variables['main_content_attr']->addClass($front_classes);
+      $variables['sidebar_second_attr']->addClass('section--quicklinks');
+    }
 }
