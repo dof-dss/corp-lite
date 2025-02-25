@@ -23,7 +23,7 @@ use Drupal\user\UserInterface;
  *   revision_table = "inspector_revision",
  *   entity_keys = {
  *    "id" = "id",
- *    "revision" = "revison_id",
+ *    "revision" = "revison_id"
  *   },
  *   revision_metadata_keys = {
  *     "revision_user" = "revision_user",

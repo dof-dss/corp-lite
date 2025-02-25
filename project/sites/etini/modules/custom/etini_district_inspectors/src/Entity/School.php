@@ -20,8 +20,10 @@ use Drupal\user\UserInterface;
  *   id = "School",
  *   label = @Translation("School"),
  *   base_table = "school",
+ *   revision_table = "school_revision",
  *   entity_keys = {
- *     "id" = "id"
+ *    "id" = "id",
+ *    "revision" = "revison_id"
  *   },
  *   revision_metadata_keys = {
  *     "revision_user" = "revision_user",
