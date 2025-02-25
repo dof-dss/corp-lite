@@ -20,6 +20,7 @@ settings:
       - removeFormat
       - '|'
       - heading
+      - style
       - insertTable
       - '|'
       - link
@@ -48,10 +49,25 @@ settings:
         reversed: false
         startIndex: true
       multiBlock: true
+    ckeditor5_premium_features_import_word__import_word:
+      upload_media:
+        enabled: false
+        media_bundle: image
+        media_field_name: field_media_image
+        image_destination_dir: cke5-word-import-images
+    ckeditor5_style:
+      styles:
+        -
+          label: 'Information notice'
+          element: '<p class="info-notice">'
+        -
+          label: Button
+          element: '<a class="call-to-action">'
     linkit_extension:
-      linkit_enabled: false
+      linkit_enabled: true
+      linkit_profile: default
     media_media:
-      allow_view_mode_override: false
+      allow_view_mode_override: true
 image_upload:
   status: true
   scheme: public

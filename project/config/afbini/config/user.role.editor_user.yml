@@ -19,7 +19,6 @@ dependencies:
     - workflows.workflow.nics_editorial_workflow
   module:
     - content_moderation
-    - contextual
     - corplite_common
     - file
     - media
@@ -43,7 +42,6 @@ is_admin: false
 permissions:
   - 'access administration pages'
   - 'access content overview'
-  - 'access contextual links'
   - 'access toolbar'
   - 'administer main menu items'
   - 'administer media file delete'

@@ -38,13 +38,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_enable_toc:
-    type: boolean_checkbox
-    weight: 15
-    region: content
-    settings:
-      display_label: true
-    third_party_settings: {  }
   field_meta_tags:
     type: metatag_firehose
     weight: 14
@@ -68,7 +61,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   flag:
-    weight: 5
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -87,13 +80,13 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 8
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 6
+    weight: 5
     region: content
     settings:
       display_label: true
@@ -107,7 +100,7 @@ content:
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 7
+    weight: 6
     region: content
     settings:
       display_label: true
@@ -131,8 +124,9 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 9
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_enable_toc: true

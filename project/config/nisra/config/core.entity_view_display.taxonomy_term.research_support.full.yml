@@ -23,16 +23,10 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-  field_summary:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 0
-    region: content
 hidden:
   content_moderation_control: true
   field_hide_topic: true
+  field_summary: true
   field_term_image: true
   field_term_photo: true
   langcode: true

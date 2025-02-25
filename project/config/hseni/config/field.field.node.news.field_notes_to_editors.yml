@@ -1,21 +1,29 @@
-uuid: 21d788ea-ff9a-471a-a52f-c66650899dbb
+uuid: 384d9b51-314c-4e23-ac22-9e09a810eb16
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_notes_to_editors
+    - filter.format.basic_html
     - node.type.news
-_core:
-  default_config_hash: EPOxVmn5RJ7tQkv33210EmR6VWtezaRHKxNRmHiG0Dg
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - basic_html
 id: node.news.field_notes_to_editors
 field_name: field_notes_to_editors
 entity_type: node
 bundle: news
 label: 'Notes to editors'
-description: 'Enter some text as guidance for media editors.'
+description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
-field_type: string_long
+settings:
+  allowed_formats:
+    - basic_html
+field_type: text_long
