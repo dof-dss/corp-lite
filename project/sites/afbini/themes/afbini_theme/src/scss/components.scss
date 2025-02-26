@@ -132,20 +132,15 @@ nav#block-mainnavigation {
   }
 }
 
-.services {
+.card-deck {
   display: flex;
   flex-wrap: wrap;
 
-  .columnItem {
-    width: 48.75%;
-    border: 3px solid #e4eef0;
+  .card {
+    width: 43.75%;
     padding: 0.9rem 1.2rem 1.2rem;
     margin: 0 11px 2rem 0;
-
-    &:hover,
-    &:focus {
-      background: #e4eef0;
-    }
+    -webkit-box-shadow: none;
 
     @media screen and (max-width: 992px) {
       width: 100%;
