@@ -1,0 +1,11 @@
+entity.school.settings:
+  title: 'School'
+  description: 'Configure a School entity type.'
+  route_name:  entity.school.settings
+  parent: system.admin_structure
+
+entity.school.collection:
+  title: 'Schools'
+  description: 'List of schools.'
+  route_name: entity.school.collection
+  parent: system.admin_content

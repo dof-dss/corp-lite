@@ -1,0 +1,10 @@
+entity.school.edit_form:
+  route_name: entity.school.edit_form
+  group: school
+  title: 'Edit'
+
+entity.school.delete_form:
+  route_name: entity.school.delete_form
+  group: school
+  title: 'Delete'
+  weight: 10

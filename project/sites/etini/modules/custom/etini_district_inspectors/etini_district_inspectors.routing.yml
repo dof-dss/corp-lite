@@ -1,8 +1,7 @@
-inspector.autocomplete:
-  path: '/autocomplete'
+entity.school.settings:
+  path: 'admin/structure/school'
   defaults:
-    _title: 'Autocomplete Controller'
-    _controller: 'Drupal\etini_district_inspectors\Controller\AutoCompleteController::handleAutoComplete'
+    _form: '\Drupal\etini_district_inspectors\Form\SchoolSettingsForm'
+    _title: 'School'
   requirements:
-    _permission: 'access content'
-
+    _permission: 'administer school'
