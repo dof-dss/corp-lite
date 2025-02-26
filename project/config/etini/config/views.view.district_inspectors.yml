@@ -5,7 +5,7 @@ dependencies:
   config:
     - search_api.index.school
   module:
-    - corplite_district_inspectors
+    - etini_district_inspectors
     - search_api
 id: district_inspectors
 label: 'District Inspectors'

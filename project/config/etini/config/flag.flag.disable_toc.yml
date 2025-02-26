@@ -9,6 +9,7 @@ label: 'Disable Table of Contents'
 bundles:
   - article
   - page
+  - site_global_topics
 entity_type: node
 global: true
 flag_short: 'Disable ToC'
