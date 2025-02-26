@@ -15,3 +15,20 @@ revert school revision:
   title: 'Revert school revision'
 delete school revision:
   title: 'Delete school revision'
+administer inspector:
+  title: 'Administer inspectors'
+  restrict access: true
+view inspector:
+  title: 'View inspector'
+edit inspector:
+  title: 'Edit inspector'
+delete inspector:
+  title: 'Delete inspector'
+create inspector:
+  title: 'Create inspector'
+view inspector revision:
+  title: 'View inspector revision'
+revert inspector revision:
+  title: 'Revert inspector revision'
+delete inspector revision:
+  title: 'Delete inspector revision'
