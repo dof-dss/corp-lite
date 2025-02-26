@@ -8,3 +8,15 @@ entity.school.delete_form:
   group: school
   title: 'Delete'
   weight: 10
+
+entity.inspector.edit_form:
+  route_name: entity.inspector.edit_form
+  group: inspector
+  title: 'Edit'
+
+entity.inspector.delete_form:
+  route_name: entity.inspector.delete_form
+  group: inspector
+  title: 'Delete'
+  weight: 10
+

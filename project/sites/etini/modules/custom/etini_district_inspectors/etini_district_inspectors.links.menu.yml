@@ -9,3 +9,16 @@ entity.school.collection:
   description: 'List of schools.'
   route_name: entity.school.collection
   parent: system.admin_content
+
+entity.inspector.settings:
+  title: 'Inspector'
+  description: 'Configure an Inspector entity type.'
+  route_name:  entity.inspector.settings
+  parent: system.admin_structure
+
+entity.inspector.collection:
+  title: 'Inspectors'
+  description: 'List of inspectors.'
+  route_name: entity.inspector.collection
+  parent: system.admin_content
+
