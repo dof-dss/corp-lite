@@ -1,0 +1,34 @@
+uuid: f311feac-4488-4043-9419-167257133c3f
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.publication_published_date
+  module:
+    - block_visibility_groups
+    - facets
+    - system
+  theme:
+    - northsouthministerialcouncil_theme
+id: northsouthministerialcouncil_theme_publisheddate
+theme: northsouthministerialcouncil_theme
+region: sidebar_first
+weight: -6
+provider: null
+plugin: 'facet_block:publication_published_date'
+settings:
+  id: 'facet_block:publication_published_date'
+  label: 'Publication date'
+  label_display: visible
+  provider: facets
+  context_mapping: {  }
+  block_id: northsouthministerialcouncil_theme_publisheddate
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/publications\r\n/publications/date/*\r\n/publications/sectors/*\r\n/publications/type/*"

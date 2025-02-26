@@ -1,0 +1,39 @@
+uuid: 79ebf90c-d7d0-48d2-901c-f284c26217eb
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.main_search_index
+    - field.field.node.application.body
+    - field.field.node.application.field_additional_information
+    - field.field.node.application.field_link
+    - field.field.node.application.field_meta_tags
+    - field.field.node.application.field_site_topics
+    - field.field.node.application.field_summary
+    - node.type.application
+  module:
+    - user
+_core:
+  default_config_hash: N66JU53gKO4eB6kjuA2L9QwhRJf3eVlY7RMADsfSi5w
+id: node.application.main_search_index
+targetEntityType: node
+bundle: application
+mode: main_search_index
+content:
+  field_summary:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true
+  content_moderation_control: true
+  field_additional_information: true
+  field_link: true
+  field_meta_tags: true
+  field_site_topics: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

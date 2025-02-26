@@ -13,12 +13,19 @@ id: taxonomy_term.research_support.search_index
 targetEntityType: taxonomy_term
 bundle: research_support
 mode: search_index
-content: {  }
+content:
+  field_summary:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   content_moderation_control: true
   description: true
   field_hide_topic: true
-  field_summary: true
   field_term_image: true
   field_term_photo: true
   langcode: true

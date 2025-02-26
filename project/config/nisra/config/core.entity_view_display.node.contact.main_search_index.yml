@@ -1,0 +1,31 @@
+uuid: ef7db9e8-37e1-4375-bd6b-add78c447c5a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.main_search_index
+    - field.field.node.contact.body
+    - field.field.node.contact.field_map
+    - field.field.node.contact.field_meta_tags
+    - field.field.node.contact.field_research_support
+    - field.field.node.contact.field_site_topics
+    - node.type.contact
+  module:
+    - user
+_core:
+  default_config_hash: 91xanT9ilcQr_w3JyEHuk89RIXpc6MW7RUZBdSrt8F8
+id: node.contact.main_search_index
+targetEntityType: node
+bundle: contact
+mode: main_search_index
+content: {  }
+hidden:
+  body: true
+  content_moderation_control: true
+  field_map: true
+  field_meta_tags: true
+  field_research_support: true
+  field_site_topics: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

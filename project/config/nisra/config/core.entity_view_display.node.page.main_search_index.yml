@@ -1,0 +1,25 @@
+uuid: 8459087d-5796-4907-9b00-7d53e5940a20
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.main_search_index
+    - field.field.node.page.body
+    - field.field.node.page.field_meta_tags
+    - field.field.node.page.field_next_audit_due
+    - node.type.page
+  module:
+    - user
+id: node.page.main_search_index
+targetEntityType: node
+bundle: page
+mode: main_search_index
+content: {  }
+hidden:
+  body: true
+  content_moderation_control: true
+  field_meta_tags: true
+  field_next_audit_due: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

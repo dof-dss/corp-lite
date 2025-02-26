@@ -3,5 +3,7 @@ site-styling:
   css:
     base:
       css/1_base/root.css: { minified: true, weight: -100 }
+    layout:
+      css/2_layouts/front.css: { minified: true }
     theme:
       css/components.css: { minified: true }
