@@ -1,0 +1,31 @@
+uuid: bdeb8180-c19e-4f99-9ca3-5af2d0cf43a4
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.teaser_with_summary
+    - field.field.taxonomy_term.services.field_summary
+    - taxonomy.vocabulary.services
+  module:
+    - layout_builder
+    - text
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: taxonomy_term.services.teaser_with_summary
+targetEntityType: taxonomy_term
+bundle: services
+mode: teaser_with_summary
+content:
+  field_summary:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  description: true
+  langcode: true
+  search_api_excerpt: true

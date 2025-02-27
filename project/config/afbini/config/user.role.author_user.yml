@@ -14,6 +14,7 @@ dependencies:
     - node.type.gallery
     - node.type.link
     - node.type.news
+    - node.type.page
     - node.type.publication
     - node.type.researcher_profiles
     - workflows.workflow.nics_editorial_workflow
@@ -47,6 +48,7 @@ permissions:
   - 'create image media'
   - 'create link content'
   - 'create news content'
+  - 'create page content'
   - 'create publication content'
   - 'create remote_video media'
   - 'create researcher_profiles content'
@@ -61,6 +63,7 @@ permissions:
   - 'edit any gallery content'
   - 'edit any link content'
   - 'edit any news content'
+  - 'edit any page content'
   - 'edit any publication content'
   - 'edit any researcher_profiles content'
   - 'edit own article content'
@@ -68,13 +71,13 @@ permissions:
   - 'edit own gallery content'
   - 'edit own link content'
   - 'edit own news content'
+  - 'edit own page content'
   - 'edit own publication content'
   - 'edit own researcher_profiles content'
   - 'use moderation sidebar'
   - 'use nics_editorial_workflow transition create_new_draft'
   - 'use nics_editorial_workflow transition draft_of_published'
   - 'use nics_editorial_workflow transition reject'
-  - 'use nics_editorial_workflow transition restore_to_draft'
   - 'use nics_editorial_workflow transition submit_for_review'
   - 'use text format basic_html'
   - 'view any unpublished content'
@@ -85,6 +88,7 @@ permissions:
   - 'view link revisions'
   - 'view news revisions'
   - 'view own unpublished media'
+  - 'view page revisions'
   - 'view publication revisions'
   - 'view researcher_profiles revisions'
   - 'view the administration theme'
