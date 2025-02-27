@@ -1,11 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Drupal\etini_district_inspectors\Entity;
 
 use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Entity\RevisionableContentEntityBase;
 use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\etini_district_inspectors\SchoolInterface;
 
 /**
  * Defines the school entity class.
@@ -21,12 +24,12 @@ use Drupal\Core\Field\BaseFieldDefinition;
  *     plural = "@count schools",
  *   ),
  *   handlers = {
- *     "list_builder" = "Drupal\district_school\SchoolListBuilder",
+ *     "list_builder" = "Drupal\etini_district_inspectors\SchoolListBuilder",
  *     "views_data" = "Drupal\views\EntityViewsData",
- *     "access" = "Drupal\district_school\SchoolAccessControlHandler",
+ *     "access" = "Drupal\etini_district_inspectors\SchoolAccessControlHandler",
  *     "form" = {
- *       "add" = "Drupal\district_school\Form\SchoolForm",
- *       "edit" = "Drupal\district_school\Form\SchoolForm",
+ *       "add" = "Drupal\etini_district_inspectors\Form\SchoolForm",
+ *       "edit" = "Drupal\etini_district_inspectors\Form\SchoolForm",
  *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm",
  *       "delete-multiple-confirm" = "Drupal\Core\Entity\Form\DeleteMultipleForm",
  *       "revision-delete" = \Drupal\Core\Entity\Form\RevisionDeleteForm::class,
@@ -67,12 +70,12 @@ use Drupal\Core\Field\BaseFieldDefinition;
  *   field_ui_base_route = "entity.school.settings",
  * )
  */
-class School extends RevisionableContentEntityBase implements ContentEntityInterface {
+final class School extends RevisionableContentEntityBase implements ContentEntityInterface {
 
   /**
-   * Specify fields.
+   * {@inheritdoc}
    */
-  public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
+  public static function baseFieldDefinitions(EntityTypeInterface $entity_type): array {
 
     $fields = parent::baseFieldDefinitions($entity_type);
 
