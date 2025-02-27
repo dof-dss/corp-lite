@@ -46,9 +46,7 @@ use Drupal\etini_district_inspectors\SchoolInterface;
  *   admin_permission = "administer school",
  *   entity_keys = {
  *     "id" = "id",
- *     "revision" = "revision_id",
- *     "label" = "label",
- *     "uuid" = "uuid",
+ *     "revision" = "revision_id"
  *   },
  *   revision_metadata_keys = {
  *     "revision_user" = "revision_uid",

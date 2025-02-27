@@ -43,9 +43,7 @@ use Drupal\Core\Field\BaseFieldDefinition;
  *   admin_permission = "administer inspector",
  *   entity_keys = {
  *     "id" = "id",
- *     "revision" = "revision_id",
- *     "label" = "id",
- *     "uuid" = "uuid",
+ *     "revision" = "revision_id"
  *   },
  *   revision_metadata_keys = {
  *     "revision_user" = "revision_uid",
