@@ -17,6 +17,7 @@ final class InspectorListBuilder extends EntityListBuilder {
    */
   public function buildHeader(): array {
     $header['id'] = $this->t('ID');
+    $header['name'] = $this->t('Name');
     return $header + parent::buildHeader();
   }
 
@@ -25,7 +26,8 @@ final class InspectorListBuilder extends EntityListBuilder {
    */
   public function buildRow(EntityInterface $entity): array {
     /** @var \Drupal\etini_district_inspectors\InspectorInterface $entity */
-    $row['id'] = $entity->toLink();
+    $row['id'] = $entity->id();
+    $row['name'] = $entity->get('name')->getString();
     return $row + parent::buildRow($entity);
   }
 
