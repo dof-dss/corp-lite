@@ -19,7 +19,7 @@ settings:
   label: 'Featured content'
   label_display: '0'
   provider: nisra_homepage
-  featured_items: '4364'
+  featured_items: '4426'
 visibility:
   request_path:
     id: request_path
