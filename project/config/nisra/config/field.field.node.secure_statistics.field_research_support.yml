@@ -11,7 +11,7 @@ field_name: field_research_support
 entity_type: node
 bundle: secure_statistics
 label: 'Research and support'
-description: 'Choose relevant term(s) from the list of research and support topics for this publication. Hold down Ctrl to choose multiple research and support topics'
+description: 'Choose relevant term(s) from the list of research and support topics for this publication.'
 required: false
 translatable: false
 default_value: {  }
