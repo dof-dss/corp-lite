@@ -15,12 +15,10 @@
  * @see template_preprocess_views_view_unformatted()
  */
 #}
-
-<div class="card-deck card-deck--x2 card-deck--plain card-deck--topics">
-  {% if title %}
-    <h3>{{ title }}</h3>
-  {% endif %}
+<ul class="list--no-bullet">
   {% for row in rows %}
+    <li{{ row.attributes }}>
       {{- row.content -}}
+    </li>
   {% endfor %}
-</div>
+</ul>
