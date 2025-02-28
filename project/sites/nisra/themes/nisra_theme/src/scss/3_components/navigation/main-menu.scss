@@ -1,11 +1,5 @@
 @use '../../../../../../../../../web/themes/custom/nicsdru_corplite_theme/src/scss/init' as *;
-
-:root {
-  --clr-main-nav-bkgd: #3878c5;
-  --clr-main-nav-active-bkgd: #00050F;
-  --clr-main-nav-active-text: #fff;
-  --clr-main-nav-active-line: #c0d732;
-}
+@use '../../1_base/root' as *;
 
 $link-main-menu: (
   color: '#fff',
@@ -50,7 +44,7 @@ $link-main-menu-active: (
   outline: 2px solid,
 );
 $link-main-menu-horizontal-active: (
-  color: var(--clr-main-nav-active-text),
+  color: var(--clr-white),
   background: var(--clr-main-nav-active-bkgd),
   box-shadow: inset 0 -7px 0 0 var(--clr-main-nav-active-line),
   outline: none,
