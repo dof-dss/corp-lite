@@ -1,0 +1,7 @@
+@use '../init' as *;
+@import 'ckeditor-base';
+@import 'form/button/button-defs';
+
+$base-font-size: 10px;
+
+@include ckeditor-base(10px);
