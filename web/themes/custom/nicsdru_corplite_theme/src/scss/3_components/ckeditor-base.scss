@@ -6,19 +6,13 @@
 @import 'form/button/button-defs';
 
 @mixin ckeditor-base($base-font-size) {
-  .node-form,
-  .taxonomy-term-site-topics-form {
-    * {
-      font-size: 1.125rem;
-    }
-  }
 
   .ck .ck-editor__main {
     border: 1px solid transparent;
     background: var(--ck-color-base-background);
     position: relative;
     overflow: hidden;
-    font-size: 1.125rem;
+    font-size: var(--fs-base-size);
 
     &:has(.ck-rounded-corners) {
       border-radius: var(--ck-border-radius);
@@ -56,7 +50,7 @@
       top: 0;
       left: $article-max-width + 36px;
       z-index: 1;
-      background-color: rgba(var(--clr-black), .5);
+      background-color: #7f7f7f;
       background-clip: padding-box;
       border-left: 18px solid rgba(255, 255, 255, .5);
 
@@ -116,32 +110,82 @@
 
     h2,
     %h2 {
-      --fs-h2-size: 2.4rem;
+      --fs-h2-size: 1.5rem;
       font-size: var(--fs-h2-size);
+
+      @include breakpoint($lap) {
+        --fs-h2-size: 1.5625rem;
+        //margin: var(--rhythm-spacing-xl);
+      }
+
+      @include breakpoint($desk-plus) {
+        --fs-h2-size: 1.625rem;
+        //margin: var(--rhythm-spacing-xxxl);
+      }
     }
 
     h3,
     %h3 {
-      --fs-h3-size: 2.1rem;
+      --fs-h3-size: 1.3125rem;
       font-size: var(--fs-h3-size);
+
+      @include breakpoint($lap) {
+        --fs-h3-size: 1.375rem;
+        //margin: var(--rhythm-spacing-xl);
+      }
+
+      @include breakpoint($desk-plus) {
+        --fs-h3-size: 1.5rem;
+        //margin: var(--rhythm-spacing-xxxl);
+      }
     }
 
     h4,
     %h4 {
-      --fs-h4-size: 1.8rem;
+      --fs-h4-size: 1.125rem;
       font-size: var(--fs-h4-size);
+
+      @include breakpoint($lap) {
+        --fs-h4-size: 1.25rem;
+        //margin: var(--rhythm-spacing-xl);
+      }
+
+      @include breakpoint($desk-plus) {
+        --fs-h4-size: 1.375rem;
+        //margin: var(--rhythm-spacing-xxxl);
+      }
     }
 
     h5,
     %h5 {
-      --fs-h5-size: 1.6rem;
+      --fs-h5-size: 1rem;
       font-size: var(--fs-h5-size);
+
+      @include breakpoint($lap) {
+        --fs-h5-size: 1.125rem;
+        //margin: var(--rhythm-spacing-xl);
+      }
+
+      @include breakpoint($desk-plus) {
+        --fs-h5-size: 1.25rem;
+        //margin: var(--rhythm-spacing-xxxl);
+      }
     }
 
     h6,
     %h6 {
-      --fs-h6-size: 1.6rem;
+      --fs-h6-size: 16px;
       font-size: var(--fs-h6-size);
+
+      @include breakpoint($lap) {
+        --fs-h6-size: 1.125rem;
+        //margin: var(--rhythm-spacing-xl);
+      }
+
+      @include breakpoint($desk-plus) {
+        --fs-h6-size: 1.25rem;
+        //margin: var(--rhythm-spacing-xxxl);
+      }
     }
 
 
@@ -159,7 +203,7 @@
     blockquote,
     address,
     li {
-      font-size: 1.125rem;
+      font-size: var(--fs-base-size);
     }
 
     // Tighten lists up closer to the preceding paragraph.
@@ -209,7 +253,7 @@
     sup {
       // Prevent `sub` and `sup` elements from affecting the line height in
       // all browsers.
-      --fs-sup-size: 1.4rem;
+      --fs-sup-size: 14px;
       font-size: var(--fs-sup-size);
     }
 
@@ -371,7 +415,7 @@
       }
 
       @include breakpoint($desk) {
-        --fs-btn-large: 2.5rem;
+        --fs-btn-large: 25px;
         font-size: var(--fs-btn-large);
       }
     }
@@ -385,7 +429,7 @@
       display: block;
 
       figcaption {
-        --fs-small-text: 1.5rem;
+        --fs-small-text: 15px;
         font-size: var(--fs-small-text);
       }
     }
@@ -413,6 +457,10 @@
       color: #fff;
       font-size: 14px;
     }
+  }
+
+  .shs-container .button.add-another {
+    line-height: 2.4rem;
   }
 
   a strong,
