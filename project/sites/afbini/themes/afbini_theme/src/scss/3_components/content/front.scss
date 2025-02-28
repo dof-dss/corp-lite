@@ -59,10 +59,6 @@ body {
 
     &--about-us {
       grid-column: 1 / -1;
-      background-color: #e4eef0;
-      padding: 0 9999px 1em;
-      margin: 0 -9999px;
-      overflow: hidden;
 
       @include breakpoint($tab) {
         display: grid;
