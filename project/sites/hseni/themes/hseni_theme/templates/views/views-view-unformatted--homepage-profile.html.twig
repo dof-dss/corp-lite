@@ -1,0 +1,51 @@
+{#
+/**
+ * @file
+ * Theme override to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ */
+#}
+<div class="profile-block">
+  <div class="profile-text">
+    <div class="profile-department">
+      {% if view.result %}
+        {% set row = view.result[0] %}
+        {% if row._entity.field_department %}
+          <div class="field-department">
+            {{ row._entity.field_department.0.value }}
+          </div>
+        {% endif %}
+      {% endif %}
+    </div>
+
+    <div class="profile-summary">
+      {% if view.result %}
+        {% set row = view.result[0] %}
+        {% if row._entity.field_summary %}
+          <div class="field-summary">
+            {{ row._entity.field_summary.0.value }}
+          </div>
+        {% endif %}
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="profile-photo">
+    {% if view.result %}
+      {% set row = view.result[0] %}
+      {% if row._entity.field_photo.entity %}
+        <img src="{{ row._entity.field_photo.entity.field_media_image.entity.uri.value | file_url }}" alt="Profile Photo" />
+      {% endif %}
+    {% endif %}
+  </div>
+</div>

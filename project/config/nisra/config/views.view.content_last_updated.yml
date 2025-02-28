@@ -116,7 +116,7 @@ display:
       access:
         type: perm
         options:
-          perm: 'view the administration theme'
+          perm: 'access content'
       cache:
         type: tag
         options: {  }
