@@ -7,7 +7,7 @@ dependencies:
 id: northsouthministerialcouncil_theme_primaryadminactions
 theme: northsouthministerialcouncil_theme
 region: top_banner
-weight: -3
+weight: -10
 provider: null
 plugin: local_actions_block
 settings:

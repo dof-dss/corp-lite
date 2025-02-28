@@ -1,0 +1,27 @@
+uuid: a1f30631-e941-4118-9863-630b6238ce5b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.featured_content_list.field_featured_content
+    - node.type.featured_content_list
+  module:
+    - user
+id: node.featured_content_list.default
+targetEntityType: node
+bundle: featured_content_list
+mode: default
+content:
+  field_featured_content:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: home_teaser
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true
+  links: true
+  search_api_excerpt: true

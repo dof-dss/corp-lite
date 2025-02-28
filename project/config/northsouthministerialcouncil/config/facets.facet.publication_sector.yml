@@ -1,24 +1,20 @@
-uuid: b7a89ab3-a6c7-4eb9-a30f-1c6566efea12
+uuid: 2d5da038-5258-4d8d-b529-aa512d85c69e
 langcode: en
 status: true
 dependencies:
   config:
     - search_api.index.publications_index
-    - views.view.publications_search
+    - views.view.publication_search
   module:
-    - facets_pretty_paths
     - search_api
-third_party_settings:
-  facets_pretty_paths:
-    coder: taxonomy_term_coder
 id: publication_sector
-name: 'Publication sector'
+name: 'Publication sectors'
 weight: 0
 min_count: 1
 missing: false
 missing_label: others
-url_alias: sector
-facet_source_id: 'search_api:views_page__publications_search__publications_search'
+url_alias: sectors
+facet_source_id: 'search_api:views_page__publication_search__publications_search'
 field_identifier: field_sectors
 query_operator: and
 hard_limit: 50
