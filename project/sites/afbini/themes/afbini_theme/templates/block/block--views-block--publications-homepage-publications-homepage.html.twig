@@ -25,16 +25,20 @@
  * @see template_preprocess_block()
  */
 #}
+{%
+  set classes = [
+  'section-front',
+  'section-front--publications'
+]
+%}
 
-<section class="section-front section--featured section-front--featured">
-  <div{{ attributes }}>
-    {{ title_prefix }}
-    {% if label %}
-      <h2{{ title_attributes }}>{{ label }}</h2>
-    {% endif %}
-    {{ title_suffix }}
-    {% block content %}
-      {{ content }}
-    {% endblock %}
-  </div>
+<section{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {% if label %}
+    <h2{{ title_attributes }}>{{ label }}</h2>
+  {% endif %}
+  {{ title_suffix }}
+  {% block content %}
+    {{ content }}
+  {% endblock %}
 </section>

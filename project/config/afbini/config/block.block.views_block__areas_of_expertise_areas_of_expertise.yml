@@ -12,7 +12,7 @@ dependencies:
 id: views_block__areas_of_expertise_areas_of_expertise
 theme: afbini_theme
 region: content
-weight: -6
+weight: -7
 provider: null
 plugin: 'views_block:areas_of_expertise-areas_of_expertise'
 settings:

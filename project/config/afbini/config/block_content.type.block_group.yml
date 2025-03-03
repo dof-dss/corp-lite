@@ -1,0 +1,8 @@
+uuid: fd22a038-7479-417e-82bd-78790c58bba4
+langcode: en
+status: true
+dependencies: {  }
+id: block_group
+label: 'Block group'
+revision: false
+description: null
