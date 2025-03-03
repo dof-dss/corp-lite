@@ -1,0 +1,113 @@
+@use '../../../../../../../../../web/themes/custom/nicsdru_corplite_theme/src/scss/init' as *;
+
+body {
+  overflow-x: hidden;
+}
+
+.layout--front {
+  .section-front {
+    padding: 0 0 1.5em;
+    margin: 0 0 1em;
+    box-shadow: 0 -8px 0 0 var(--clr-main-nav-brd-btm);
+
+    &:first-child {
+      box-shadow: none;
+    }
+
+    &--featured {
+      article {
+        box-shadow: 0 1px 0 0 #cdcdcd;
+        padding-bottom: var(--rhythm-spacing);
+
+        &:first-of-type {
+          a {
+            flex-wrap: wrap;
+
+            @include breakpoint($tab) {
+              flex-wrap: nowrap;
+            }
+          }
+
+          .card__image {
+            flex-basis: 100%;
+            max-width: 100%;
+
+            @include breakpoint($tab) {
+              flex-basis: 41%;
+              min-width: 16.5rem;
+            }
+          }
+
+          .card__body {
+            align-self: auto;
+            padding-left: 0;
+
+            @include breakpoint($tab) {
+              padding-left: var(--rhythm-spacing-lg);
+            }
+          }
+        }
+      }
+    }
+
+    &--featured,
+    &--quick-links {
+      @include breakpoint($tab) {
+        box-shadow: none;
+      }
+    }
+
+    &--about-us {
+      grid-column: 1 / -1;
+
+      @include breakpoint($tab) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 0 3em;
+
+        h3 {
+          margin-top: 0;
+        }
+
+        h2 {
+          grid-column: 1 / -1;
+          grid-row: 1;
+        }
+
+        .information {
+          grid-column: 1;
+          grid-row: 2;
+        }
+
+        .corporate-governance {
+          grid-column: 2;
+          grid-row: 2;
+        }
+      }
+    }
+
+    &--publications {
+      .card {
+        box-shadow: 0 1px 0 0 #cdcdcd;
+        padding: 0 0 1em;
+
+        &__title {
+          font-size: var(--fs-base-size);
+          line-height: 1.5;
+        }
+
+        .meta {
+          font-size: 1.5rem;
+          line-height: 2.2rem;
+          margin-top: var(--rhythm-spacing-xs);
+          color: var(--clr-grey-medium);
+
+          @include breakpoint($tab) {
+            font-size: 1.6rem;
+            line-height: 1.5;
+          }
+        }
+      }
+    }
+  }
+}
