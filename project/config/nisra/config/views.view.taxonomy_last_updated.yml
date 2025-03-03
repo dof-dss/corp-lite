@@ -21,6 +21,83 @@ display:
     display_options:
       title: 'Taxonomy: Last updated'
       fields:
+        revision_created:
+          id: revision_created
+          table: taxonomy_term_revision
+          field: revision_created
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: taxonomy_term
+          entity_field: revision_created
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: timestamp
+          settings:
+            date_format: corplite_format
+            custom_date_format: ''
+            timezone: ''
+            tooltip:
+              date_format: corplite_format
+              custom_date_format: ''
+            time_diff:
+              enabled: false
+              future_format: '@interval hence'
+              past_format: '@interval ago'
+              granularity: 2
+              refresh: 60
+              description: ''
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
         changed:
           id: changed
           table: taxonomy_term_field_revision
@@ -35,7 +112,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<p class=\"modified-date\">\r\n    <span>Last updated: </span>\r\n    {{ changed }}\r\n</p>"
+            text: "{% if changed %}\r\n<p class=\"modified-date\">\r\n    <span>Last updated: </span>\r\n    {{ changed }}\r\n</p>\r\n{% else %}\r\n<p class=\"modified-date\">\r\n    <span>Last updated: </span>\r\n    {{ revision_created }}\r\n</p>\r\n{% endif %}"
             make_link: false
             path: ''
             absolute: false
@@ -166,6 +243,10 @@ display:
       filters: {  }
       style:
         type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: false
       row:
         type: fields
       query:
