@@ -840,7 +840,7 @@ display:
         metatag_display_extender:
           metatags: {  }
           tokenize: false
-      path: admin/structure/taxonomy/research-support
+      path: admin/structure/taxonomy_navigator/research-support
       menu:
         type: normal
         title: 'Research and support order'
@@ -848,7 +848,7 @@ display:
         weight: 0
         expanded: false
         menu_name: admin
-        parent: entity.taxonomy_vocabulary.collection
+        parent: nisra_taxonomy_navigator.taxonomy_navigator
         context: '0'
     cache_metadata:
       max-age: 0
@@ -1334,7 +1334,7 @@ display:
         metatag_display_extender:
           metatags: {  }
           tokenize: false
-      path: admin/structure/taxonomy/site-topics
+      path: admin/structure/taxonomy_navigator/site-topics
       menu:
         type: normal
         title: 'Site topics order'
@@ -1342,7 +1342,7 @@ display:
         weight: 0
         expanded: false
         menu_name: admin
-        parent: entity.taxonomy_vocabulary.collection
+        parent: nisra_taxonomy_navigator.taxonomy_navigator
         context: '0'
     cache_metadata:
       max-age: 0

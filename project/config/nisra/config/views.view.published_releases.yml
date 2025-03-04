@@ -1,6 +1,6 @@
 uuid: f3641b3b-01a2-4e5d-961c-cd1cdd001572
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - corplite_published_releases_feed

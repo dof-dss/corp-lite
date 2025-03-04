@@ -12,7 +12,7 @@ dependencies:
 id: views_block__publications_homepage_publications_homepage
 theme: afbini_theme
 region: content
-weight: -5
+weight: -6
 provider: null
 plugin: 'views_block:publications_homepage-publications_homepage'
 settings:
