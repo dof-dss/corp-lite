@@ -1,0 +1,370 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for nisra Publications module.
+ */
+
+use Drupal\Core\Access\AccessResultForbidden;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\StringTranslation\ByteSizeMarkup;
+use Drupal\Core\Url;
+use Drupal\media\MediaInterface;
+use Drupal\node\NodeInterface;
+use Drupal\views\Plugin\views\query\QueryPluginBase;
+use Drupal\views\Render\ViewsRenderPipelineMarkup;
+use Drupal\views\ViewExecutable;
+use GuzzleHttp\Exception\RequestException as GuzzleRequestException;
+
+///**
+// * Implements hook_form_BASE_FORM_ID_alter().
+// */
+//function nisra_publications_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+//  /** @var \Drupal\Core\Entity\EntityFormInterface $form_object */
+//  $form_object = $form_state->getFormObject();
+//  /** @var \Drupal\node\NodeInterface $node */
+//  $node = $form_object->getEntity();
+//
+//  if ($node->bundle() === 'secure_market_statistics' || $node->bundle() === 'secure_statistics') {
+//    $form['#validate'][] = 'nisra_publications_validate_secure_attachment';
+//  }
+//
+//  if ($node->bundle() === 'publication') {
+//    $form['#validate'][] = 'nisra_publications_validate_attachment';
+//  }
+//}
+//
+///**
+// * Form validation callback.
+// */
+//function nisra_publications_validate_secure_attachment(&$form, FormStateInterface $form_state) {
+//  $values = $form_state->getValues();
+//
+//  // Validate file attachments and external links.
+//  if (empty($values['field_secure_attachment']["selection"][0]) && empty($values['field_external_publication'][0]['uri'])) {
+//    $form_state->setErrorByName('field_secure_attachment', t('You must provide an attachment or external link'));
+//    $form_state->setErrorByName('field_external_publication', t('You must provide an attachment or external link'));
+//  }
+//}
+//
+///**
+// * Form validation callback.
+// */
+//function nisra_publications_validate_attachment(&$form, FormStateInterface $form_state) {
+//  $values = $form_state->getValues();
+//
+//  // Validate file attachments and external links.
+//  if (empty($values['field_attachment']["selection"][0]) && empty($values['field_external_publication'][0]['uri'])) {
+//    $form_state->setErrorByName('field_attachment', t('You must provide an attachment or external link'));
+//    $form_state->setErrorByName('field_external_publication', t('You must provide an attachment or external link'));
+//  }
+//}
+
+
+/**
+ * Implements hook_entity_access().
+ */
+function nisra_publications_entity_access(EntityInterface $entity, $operation, AccountInterface $account) {
+  if ($account->isAnonymous() || $account->hasPermission('bypass node access')) {
+    return;
+  }
+
+  if ($entity instanceof NodeInterface && $entity->getType() === 'secure_statistics' || $entity instanceof NodeInterface && $entity->getType() === 'secure_market_statistics') {
+    // If there is a secure file field value assume this is a secure publication
+    // and continue to perform access checks.
+    if (empty($entity->get('field_secure_attachment')->referencedEntities())) {
+      return;
+    }
+
+    // This check is intended to override any broad/generic permissions
+    // eg: 'view any unpublished content'.
+    if ($entity->isPublished() === FALSE || $entity->isDefaultRevision() === FALSE) {
+      $is_own_publication = $entity->getOwnerId() === $account->id();
+
+      if (!$is_own_publication && !$account->hasPermission('view any unpublished secure publication')) {
+        return AccessResultForbidden::forbidden();
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_entity_operation_alter().
+ */
+function nisra_publications_entity_operation_alter(array &$operations, EntityInterface $entity) {
+  if ($entity instanceof NodeInterface && $entity->getType() === 'secure_statistics' || $entity instanceof NodeInterface && $entity->getType() && $entity->getType() === 'secure_market_statistics') {
+    // If there is a secure file field value assume this is a secure publication
+    // and continue to perform access checks.
+    if (empty($entity->get('field_secure_attachment')->referencedEntities())) {
+      return;
+    }
+
+    // This check is intended to override any broad/generic permissions
+    // as well as the general NICS editorial workflow options. Eg:
+    // prevents an non-admin and non-stats-* role from publishing
+    // embargoed/secure publication content as this must be done
+    // by a stats supervisor author or Administrator.
+    if ($entity->isPublished() === FALSE) {
+      if (!\Drupal::currentUser()->hasPermission('publish secure publication')) {
+        return $operations;
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_file_download().
+ */
+function nisra_publications_file_download($uri) {
+  // Return -1 which is then later converted to AccessDeniedHttpException response.
+  if (\Drupal::service('secure_publications_file_access')->canAccessSecureFileAttachment($uri) === FALSE) {
+    return -1;
+  }
+}
+
+/**
+ * Implements hook_views_pre_execute().
+ */
+function nisra_publications_views_pre_execute(ViewExecutable $view) {
+
+}
+
+/**
+ * Implements hook_views_query_alter().
+ */
+function nisra_publications_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
+  $current_user = \Drupal::currentUser();
+
+  if ($view->id() === 'content' && $view->current_display == 'page_1') {
+    // @phpstan-ignore-next-line
+    foreach ($query->where[1]['conditions'] as $index => $condition) {
+      if ($condition['field'] === 'node__field_secure_attachment.field_secure_attachment_target_id') {
+        // Unset this condition if stats supervisor/related permissions.
+        if ($current_user->hasPermission('view any unpublished secure publication') || $current_user->hasPermission('view own unpublished secure publication')) {
+          // @phpstan-ignore-next-line
+          unset($query->where[1]['conditions'][$index]);
+
+          // Set a notice message for top-level admins.
+          if ($current_user->hasPermission('bypass node access')) {
+            \Drupal::messenger()
+              ->addWarning('Secure publications are included in this content list due to appropriate permissions for the current user. This message only shows for top-level admins.');
+          }
+        }
+      }
+    }
+  }
+
+  if ($view->id() === 'workflow_moderation') {
+    // @phpstan-ignore-next-line
+    foreach ($query->where[1]['conditions'] as $index => $condition) {
+      if ($condition['field'] === 'node_field_data_node_field_revision__node__field_secure_attachment.field_secure_attachment_target_id') {
+        // Unset this condition if stats supervisor/related permissions.
+        if ($current_user->hasPermission('view any unpublished secure publication') || $current_user->hasPermission('view own unpublished secure publication')) {
+          // @phpstan-ignore-next-line
+          unset($query->where[1]['conditions'][$index]);
+
+          // Set a notice message for top-level admins.
+          if ($current_user->hasPermission('bypass node access')) {
+            \Drupal::messenger()
+              ->addWarning('Secure publications are included in this content list due to appropriate permissions for the current user. This message only shows for top-level admins.');
+          }
+        }
+      }
+    }
+  }
+
+  if ($view->id() === 'media_library') {
+    // @phpstan-ignore-next-line
+    foreach ($query->where[1]['conditions'] as $index => $condition) {
+      if ($condition['field'] === 'media_field_data.bundle' && $condition['value'][0] === 'secure_file') {
+        // Unset this condition if stats supervisor/related permissions.
+        if ($current_user->hasPermission('view any unpublished secure publication') || $current_user->hasPermission('view own unpublished secure publication')) {
+          // @phpstan-ignore-next-line
+          unset($query->where[1]['conditions'][$index]);
+
+          // Set a notice message for top-level admins.
+          if ($current_user->hasPermission('administer media')) {
+            \Drupal::messenger()
+              ->addWarning('Files for secure publications are included in this content list due to appropriate permissions for the current user. This message only shows for top-level admins.');
+          }
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function nisra_publications_form_views_exposed_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (str_starts_with($form['#id'], 'views-exposed-form-media-library') &&
+    \Drupal::currentUser()->hasPermission('view any unpublished secure publication')) {
+
+    // Permit secure files in exposed filter. Dovetails with
+    // nisra_publications_views_query_alter above.
+    $form['type']['#options']['secure_file'] = t('Secure file');
+    ksort($form['type']['#options']);
+  }
+}
+
+/**
+ * Implements hook_preprocess_views_view_field().)
+ */
+function nisra_publications_preprocess_views_view_field(&$variables) {
+  $view = $variables['view'];
+  $field_id = $variables['field']->field;
+
+//  // If the content type is publication with secure attachments, update the 'type' text if it is unpublished.
+//  if ($view->storage->id() === 'workflow_moderation' || $view->storage->id() === 'content') {
+//    if ($variables['field']->field === 'type' && $variables['output'] == 'Publication') {
+//      $entity = $variables["row"]->_entity;
+//      if ($entity->hasField('field_publication_secure_files') && !$entity->get('field_publication_secure_files')->isEmpty()) {
+//        if ($entity->get('moderation_state')->getString() !== 'published') {
+//          $variables['output'] = t('Publication (secure)');
+//        }
+//      }
+//    }
+//  }
+
+  // Fill in any remote-docs metadata if they're listed.
+  if ($view->id() === 'media_library' && in_array($view->current_display, ['default_page', 'widget_table'])) {
+    if ($field_id === 'filemime' && empty($variables['output'])) {
+      // If empty, try checking mime type for an image.
+      $media = $variables['row']->_entity;
+
+      if ($media instanceof MediaInterface && $media->bundle() === 'remote_document') {
+        $mime_type_key = '';
+        $pretty_mimes = \Drupal::service('origins_media.pretty_mime_types')->getMimeTypes();
+        $file_url = $media->get('field_media_media_remote')->getString();
+        $file_headers = nisra_publications_get_remote_file_metadata($file_url);
+
+        if ($file_headers) {
+          $file_mimetype = '';
+
+          // Get file mimetype if available.
+          if (!empty($file_headers['Content-Type'])) {
+            $file_mimetype = $file_headers['Content-Type'][0] ?? '';
+          }
+
+          // Map file mimetypes to user friendly document types.
+          if ($file_mimetype && !empty($pretty_mimes[$file_mimetype])) {
+            $mime_type_key = $pretty_mimes[$file_mimetype];
+
+            // Replace with prettier version.
+            $variables['output'] = ViewsRenderPipelineMarkup::create($mime_type_key);
+          }
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_media().
+ */
+function nisra_publications_preprocess_media(&$variables) {
+  if ($variables['media']->bundle() === 'remote_document' && $variables['view_mode'] === 'embed') {
+    /* @var \Drupal\Core\Url $url */
+    $url = $variables['content']['field_media_media_remote'][0]['#url'];
+
+    if ($url instanceof Url) {
+      $file_url = $url->getUri();
+    }
+    else {
+      // No URL to work with for whatever reason so return early.
+      return;
+    }
+
+    // Full URL string for use in later preprocessing.
+    $variables['file_url'] = $file_url;
+
+    $file_headers = nisra_publications_get_remote_file_metadata($file_url);
+
+    // Initialize metadata variables.
+    $file_size = 0;
+    $file_mimetype = '';
+    $file_extension = '';
+    $file_type = '';
+
+    if ($file_headers) {
+      // Get file size if available.
+      if (!empty($file_headers['Content-Length'])) {
+        $file_size = $file_headers['Content-Length'][0] ?? 0;
+      }
+
+      // Get file mimetype if available.
+      if (!empty($file_headers['content-type'])) {
+        $file_mimetype = $file_headers['content-type'][0] ?? '';
+      }
+
+      // Get file extension.
+      $path_info = pathinfo(parse_url($file_url, PHP_URL_PATH));
+      if (!empty($path_info['extension'])) {
+        $file_extension = $path_info['extension'] ?? '';
+      }
+    }
+
+    // Example: Add these values to the $variables array for later use in the template.
+    $variables['file_size_raw'] = $file_size;
+    $variables['file_size'] = ByteSizeMarkup::create($file_size);
+    $variables['file_mimetype'] = $file_mimetype;
+    $variables['file_extension'] = $file_extension;
+
+    // Map file mimetypes to user friendly document types.
+    $pretty_mimes = \Drupal::service('origins_media.pretty_mime_types')->getMimeTypes();
+    if ($file_mimetype && !empty($pretty_mimes[$file_mimetype])) {
+      $variables['pretty_mimetype'] = $pretty_mimes[$file_mimetype];
+    }
+
+    if (array_key_exists($file_mimetype, $pretty_mimes)) {
+      $variables['file_type'] = $pretty_mimes[$file_mimetype];
+    }
+    else {
+      $variables['file_type'] = strtoupper(preg_replace('/^application\/(\w+)$/', '\1', $file_mimetype));
+    }
+
+    // Add an extra 'is external' preprocess variable so we can distinguish it
+    // when rendering markup in the template.
+    $variables['file_is_external'] = (bool) preg_match('/^http/', $file_url);
+
+    $variables['media_langcode'] = $variables['media']->language()->getId();
+    // Do not output the langcode if is undefined.
+    if ($variables['media_langcode'] === 'und') {
+      unset($variables['media_langcode']);
+    }
+  }
+}
+
+/**
+ * Function to fetch HTTP headers from a remote file URL.
+ */
+function nisra_publications_get_remote_file_metadata(string $file_url) {
+  // Fetch metadata about the file.
+  $http_client = \Drupal::httpClient();
+
+  $file_headers = [];
+
+  try {
+    $file_headers = $http_client->request('HEAD', $file_url)->getHeaders();
+  }
+  catch (GuzzleRequestException $reqex) {
+    $message = t('Could not retrieve headers from :file_url', [':file_url' => $file_url]);
+    if (\Drupal::currentUser()->isAuthenticated()) {
+      \Drupal::messenger()->addWarning($message);
+    }
+
+    \Drupal::logger('warning')->warning($message);
+  }
+
+  return $file_headers;
+}
+
+/**
+ * Implements hook_preprocess_fieldset__media_library_widget().
+ */
+function nisra_publications_preprocess_fieldset__media_library_widget(&$variables) {
+  // Add custom style overrides to the media library field widget.
+  $variables['#attached']['library'][] = 'nisra_publications/media_widget_styles';
+}

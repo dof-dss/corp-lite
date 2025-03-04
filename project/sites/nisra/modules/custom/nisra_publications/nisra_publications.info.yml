@@ -1,0 +1,10 @@
+name: 'NISRA publications'
+type: module
+description: Provides features for Publications and secure publications
+package: 'custom'
+core_version_requirement: ^8 || ^9 || ^10
+dependencies:
+#  - dept_core
+#  - dept_node
+  - drupal:node
+#  - domain_access

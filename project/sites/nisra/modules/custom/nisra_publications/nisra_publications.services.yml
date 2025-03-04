@@ -1,0 +1,8 @@
+services:
+  secure_publications_file_access:
+    class: Drupal\nisra_publications\SecurePublicationsFileAccess
+    arguments: ['file_uri', '@current_user', '@database', '@entity_type.manager']
+  secure_publications.route_subscriber:
+    class: Drupal\nisra_publications\Routing\SecurePublicationsRouteSubscriber
+    tags:
+      - { name: event_subscriber }
