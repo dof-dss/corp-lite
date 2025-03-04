@@ -1,28 +1,28 @@
-uuid: 1bede907-4ae9-4df1-bff9-a1c065907f6b
+uuid: 95e45600-1283-4aa5-9c5f-e5ee28042ad3
 langcode: en
 status: true
 dependencies:
   config:
-    - facets.facet.now_future
+    - facets.facet.release_date_upcoming
   module:
     - block_visibility_groups
     - facets
     - system
   theme:
     - nisra_theme
-id: nisra_theme_nowfuture
+id: nisra_theme_releasedateupcoming_2
 theme: nisra_theme
 region: sidebar_first
-weight: -5
+weight: 0
 provider: null
-plugin: 'facet_block:now_future'
+plugin: 'facet_block:release_date_upcoming'
 settings:
-  id: 'facet_block:now_future'
-  label: 'Release type'
+  id: 'facet_block:release_date_upcoming'
+  label: 'Release date'
   label_display: visible
   provider: facets
   context_mapping: {  }
-  block_id: nisra_theme_nowfuture
+  block_id: nisra_theme_releasedateupcoming_2
 visibility:
   condition_group:
     id: condition_group
@@ -31,4 +31,4 @@ visibility:
   request_path:
     id: request_path
     negate: false
-    pages: "/published-releases\r\n/published-releases/date/*\r\n/published-releases/now_future/*"
+    pages: "/published-releases-upcoming\r\n/published-releases-upcoming/date/*\r\n/published-releases-upcoming/now_future/*"

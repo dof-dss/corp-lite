@@ -1,4 +1,4 @@
-uuid: 476fcf2f-dd7f-4451-ad4f-6618678677b1
+uuid: b095b1a2-bf1c-4df8-a242-2d997e2aad5e
 langcode: en
 status: true
 dependencies:
@@ -6,21 +6,17 @@ dependencies:
     - search_api.index.published_releases_index
     - views.view.published_releases_search
   module:
-    - facets_pretty_paths
     - search_api
-third_party_settings:
-  facets_pretty_paths:
-    coder: default_coder
-id: now_future
-name: 'Release type'
+id: release_date_upcoming
+name: 'Release date upcoming'
 weight: 0
 min_count: 1
 missing: false
 missing_label: others
-url_alias: now_future
-facet_source_id: 'search_api:views_page__published_releases_search__published_releases'
-field_identifier: now_future
-query_operator: or
+url_alias: date
+facet_source_id: 'search_api:views_page__published_releases_search__releases_upcoming'
+field_identifier: release_date
+query_operator: and
 hard_limit: 0
 exclude: false
 use_hierarchy: false
@@ -53,10 +49,20 @@ processor_configs:
       sort: 20
     settings:
       sort: ASC
-  example_processor:
-    processor_id: example_processor
-    weights: {  }
+  date_facet_drilldown:
+    processor_id: date_facet_drilldown
+    weights:
+      build: 1
     settings: {  }
+  date_item:
+    processor_id: date_item
+    weights:
+      build: 35
+    settings:
+      date_display: actual_date
+      granularity: 6
+      date_format: ''
+      hierarchy: false
   hierarchy_processor:
     processor_id: hierarchy_processor
     weights:

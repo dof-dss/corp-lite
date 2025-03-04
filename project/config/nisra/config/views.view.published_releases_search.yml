@@ -371,7 +371,52 @@ display:
             field_identifier: ''
           exposed: false
       arguments: {  }
-      filters: {  }
+      filters:
+        release_date:
+          id: release_date
+          table: search_api_index_published_releases_index
+          field: release_date
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_date
+          operator: '<'
+          value:
+            min: ''
+            max: ''
+            value: '+1 minute'
+            type: date
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
       style:
         type: default
         options:
@@ -427,19 +472,168 @@ display:
         - 'search_api_list:published_releases_index'
   published_releases:
     id: published_releases
-    display_title: Page
+    display_title: Current
     display_plugin: page
     position: 1
     display_options:
+      title: 'Published releases - Current'
       cache:
         type: none
+      filters:
+        release_date:
+          id: release_date
+          table: search_api_index_published_releases_index
+          field: release_date
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_date
+          operator: '<'
+          value:
+            min: ''
+            max: ''
+            value: '+1 minute'
+            type: offset
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
       defaults:
         cache: false
+        title: false
+        filters: false
+        filter_groups: false
+      display_description: ''
       display_extenders:
         metatag_display_extender:
           metatags: {  }
           tokenize: false
       path: published-releases
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url.query_args
+      tags:
+        - 'config:search_api.index.published_releases_index'
+        - 'search_api_list:published_releases_index'
+  releases_upcoming:
+    id: releases_upcoming
+    display_title: Upcoming
+    display_plugin: page
+    position: 2
+    display_options:
+      title: 'Published releases - Upcoming'
+      cache:
+        type: none
+      sorts:
+        release_date:
+          id: release_date
+          table: search_api_index_published_releases_index
+          field: release_date
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
+      filters:
+        release_date:
+          id: release_date
+          table: search_api_index_published_releases_index
+          field: release_date
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_date
+          operator: '>'
+          value:
+            min: ''
+            max: ''
+            value: '+1 minute'
+            type: offset
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      defaults:
+        cache: false
+        title: false
+        sorts: false
+        filters: false
+        filter_groups: false
+      display_description: ''
+      display_extenders:
+        metatag_display_extender:
+          metatags: {  }
+          tokenize: false
+      path: published-releases-upcoming
     cache_metadata:
       max-age: -1
       contexts:
