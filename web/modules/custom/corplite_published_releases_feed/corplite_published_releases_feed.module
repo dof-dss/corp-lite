@@ -15,6 +15,12 @@ function corplite_published_releases_feed_import() {
   $updated = 0;
   $imported = 0;
   foreach ($data as $feed_item) {
+    // If the id is longer than 120 chars then trim it before storing,
+    // this is because it will cause problems in the 'item_id' column of
+    // the search_api_item table.
+    if (strlen($feed_item['id']) > 120) {
+      $feed_item['id'] = substr($feed_item['id'], 0, 120);
+    }
     $release = PublishedReleases::Load($feed_item['id']);
     if (!empty($release)) {
       // Published release exists, see if we need to update it.

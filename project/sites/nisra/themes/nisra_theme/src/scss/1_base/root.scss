@@ -2,6 +2,10 @@
 
 :root {
   // Color custom properties
+  --clr-nisra-navy: #00205b;
+  --clr-nisra-blue: #3878c5;
+  --clr-nisra-green: #c0d732;
+
   --clr-black: #000;
   --clr-charcoal: #333;
   --clr-grey: #949494;
@@ -31,10 +35,12 @@
   --clr-brand-primary: #00aae5;
   --clr-brand-primary-light: #cee4f6;
   --clr-brand-secondary: #0b1647;
-  --clr-main-nav-bkgd: #3878c5;
+  --clr-main-nav-bkgd: var(--clr-nisra-navy);
   --clr-main-nav-brd-btm: #005ea3;
   --clr-main-nav-brd-top: transparent;
-  --clr-main-nav-active-bkgd: #00050F;
+  --clr-main-nav-active-bkgd: var(--clr-nisra-blue);
+  --clr-main-nav-active-line: var(--clr-nisra-green);
+
 
   // Typography and rhythm spacing custom properties
   --fs-base-size: 1.6rem;
