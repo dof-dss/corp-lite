@@ -17,12 +17,6 @@ processor_configs:
       build: '45'
     settings: {  }
 facets:
-  now_future:
-    checked: true
-    label: 'Release type'
-    separator: ', '
-    show_count: false
-    weight: 0
   release_date:
     checked: true
     label: 'Release date'
