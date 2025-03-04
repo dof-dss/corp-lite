@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.profile.body
     - field.field.node.profile.field_department
+    - field.field.node.profile.field_links
     - field.field.node.profile.field_meta_tags
     - field.field.node.profile.field_photo
     - field.field.node.profile.field_summary
@@ -12,6 +13,7 @@ dependencies:
     - workflows.workflow.nics_editorial_workflow
   module:
     - content_moderation
+    - link
     - media_library
     - metatag
     - path
@@ -25,7 +27,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 13
+    weight: 12
     region: content
     settings:
       rows: 9
@@ -41,15 +43,23 @@ content:
     third_party_settings: {  }
   field_department:
     type: string_textfield
-    weight: 11
+    weight: 10
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_links:
+    type: link_default
+    weight: 15
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
   field_meta_tags:
     type: metatag_firehose
-    weight: 15
+    weight: 14
     region: content
     settings:
       sidebar: true
@@ -57,14 +67,14 @@ content:
     third_party_settings: {  }
   field_photo:
     type: media_library_widget
-    weight: 14
+    weight: 13
     region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
   field_summary:
     type: string_textarea
-    weight: 12
+    weight: 11
     region: content
     settings:
       rows: 5
@@ -84,33 +94,33 @@ content:
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 9
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
   path:
     type: path
-    weight: 7
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 5
+    weight: 4
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 10
+    weight: 9
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 6
+    weight: 5
     region: content
     settings:
       display_label: true
@@ -134,7 +144,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 8
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
