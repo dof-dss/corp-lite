@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.taxonomy_term.teaser
+    - core.entity_view_mode.taxonomy_term.teaser_with_summary
     - field.field.taxonomy_term.site_topics.field_enable_toc
     - field.field.taxonomy_term.site_topics.field_photo
     - field.field.taxonomy_term.site_topics.field_site_services
