@@ -86,6 +86,12 @@ function nicsdru_corplite_theme_preprocess_page(array &$variables) {
   $variables['content_wrapper_attr'] = new Attribute($variables['content_wrapper_attr']);
   $variables['sidebar_second_attr'] = new Attribute($variables['sidebar_second_attr']);
 
+  if (isset($variables['is_front']) && $variables['is_front'] == TRUE) {
+    $front_classes = ['grid', 'layout--front'];
+    $variables['main_content_attr']->addClass($front_classes);
+    $variables['sidebar_second_attr']->addClass('section--popular');
+  }
+
   // Social links for footer.
   if (empty($variables['page']['footer'])) {
     // Set some key variables for correct template mapping if something else
