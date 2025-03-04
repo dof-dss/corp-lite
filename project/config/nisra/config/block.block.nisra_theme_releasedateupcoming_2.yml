@@ -31,4 +31,4 @@ visibility:
   request_path:
     id: request_path
     negate: false
-    pages: "/published-releases-upcoming\r\n/published-releases-upcoming/date/*\r\n/published-releases-upcoming/now_future/*"
+    pages: "/upcoming-releases\r\n/upcoming-releases/date/*\r\n/upcoming-releases/now_future/*"

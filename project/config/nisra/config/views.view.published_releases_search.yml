@@ -476,7 +476,7 @@ display:
     display_plugin: page
     position: 1
     display_options:
-      title: 'Published releases - Current'
+      title: 'Published releases'
       cache:
         type: none
       filters:
@@ -555,7 +555,7 @@ display:
     display_plugin: page
     position: 2
     display_options:
-      title: 'Published releases - Upcoming'
+      title: 'Upcoming releases'
       cache:
         type: none
       sorts:
@@ -633,7 +633,7 @@ display:
         metatag_display_extender:
           metatags: {  }
           tokenize: false
-      path: published-releases-upcoming
+      path: upcoming-releases
     cache_metadata:
       max-age: -1
       contexts:
