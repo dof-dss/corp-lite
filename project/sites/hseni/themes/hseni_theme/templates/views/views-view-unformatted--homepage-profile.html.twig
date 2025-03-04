@@ -22,7 +22,9 @@
         {% set row = view.result[0] %}
         {% if row._entity.field_department %}
           <div class="field-department">
-            {{ row._entity.field_department.0.value }}
+            <a href="/profiles/chief-executive" class="department-link">
+              {{ row._entity.field_department.0.value }}
+            </a>
           </div>
         {% endif %}
       {% endif %}
@@ -38,6 +40,26 @@
         {% endif %}
       {% endif %}
     </div>
+
+    <div class="profile-links">
+      {% if view.result %}
+        {% set row = view.result[0] %}
+        {% if row._entity.field_links %}
+          <div class="field-links">
+            <ul class="links-list">
+              {% for link in row._entity.field_links %}
+                <li>
+                  <a href="{{ link.url }}" class="link-item">
+                    {{ link.title }}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+      {% endif %}
+    </div>
+
   </div>
 
   <div class="profile-photo">
@@ -49,3 +71,5 @@
     {% endif %}
   </div>
 </div>
+
+
