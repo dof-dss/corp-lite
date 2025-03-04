@@ -29,7 +29,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   field_attachment:
     type: entity_reference_entity_view
@@ -38,7 +38,7 @@ content:
       view_mode: embed
       link: false
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   field_published_date:
     type: datetime_default
@@ -49,6 +49,13 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_summary:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
 hidden:
   content_moderation_control: true
   field_feature_home_page: true
@@ -56,7 +63,6 @@ hidden:
   field_photo: true
   field_publication_type: true
   field_site_topics: true
-  field_summary: true
   langcode: true
   links: true
   search_api_excerpt: true

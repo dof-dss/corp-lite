@@ -1,0 +1,24 @@
+uuid: 04624593-d52d-40c5-b8bd-b2b5d67a4073
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.block_group
+    - field.storage.block_content.field_blocks
+  module:
+    - block_field
+id: block_content.block_group.field_blocks
+field_name: field_blocks
+entity_type: block_content
+bundle: block_group
+label: blocks
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  selection: blocks
+  selection_settings:
+    plugin_ids: {  }
+field_type: block_field

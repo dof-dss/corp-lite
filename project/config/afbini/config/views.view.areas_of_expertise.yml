@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.taxonomy_term.teaser_with_summary
     - field.storage.taxonomy_term.field_summary
     - taxonomy.vocabulary.site_topics
   module:
@@ -203,12 +204,10 @@ display:
           default_row_class: true
           uses_fields: false
       row:
-        type: fields
+        type: 'entity:taxonomy_term'
         options:
-          default_field_elements: true
-          inline: {  }
-          separator: ''
-          hide_empty: false
+          relationship: none
+          view_mode: teaser_with_summary
       query:
         type: views_query
         options:

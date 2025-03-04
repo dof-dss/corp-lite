@@ -14,6 +14,7 @@ dependencies:
     - node.type.gallery
     - node.type.link
     - node.type.news
+    - node.type.page
     - node.type.publication
     - node.type.researcher_profiles
     - workflows.workflow.nics_editorial_workflow
@@ -57,6 +58,7 @@ permissions:
   - 'create image media'
   - 'create link content'
   - 'create news content'
+  - 'create page content'
   - 'create publication content'
   - 'create remote_video media'
   - 'create researcher_profiles content'
@@ -71,6 +73,7 @@ permissions:
   - 'delete any image media'
   - 'delete any link content'
   - 'delete any news content'
+  - 'delete any page content'
   - 'delete any publication content'
   - 'delete any remote_video media'
   - 'delete any researcher_profiles content'
@@ -89,9 +92,11 @@ permissions:
   - 'delete own image media'
   - 'delete own link content'
   - 'delete own news content'
+  - 'delete own page content'
   - 'delete own publication content'
   - 'delete own remote_video media'
   - 'delete own researcher_profiles content'
+  - 'delete page revisions'
   - 'delete publication revisions'
   - 'delete researcher_profiles revisions'
   - 'edit any article content'
@@ -103,6 +108,7 @@ permissions:
   - 'edit any image media'
   - 'edit any link content'
   - 'edit any news content'
+  - 'edit any page content'
   - 'edit any publication content'
   - 'edit any remote_video media'
   - 'edit any researcher_profiles content'
@@ -116,6 +122,7 @@ permissions:
   - 'edit own image media'
   - 'edit own link content'
   - 'edit own news content'
+  - 'edit own page content'
   - 'edit own publication content'
   - 'edit own remote_video media'
   - 'edit own researcher_profiles content'
@@ -126,6 +133,7 @@ permissions:
   - 'revert gallery revisions'
   - 'revert link revisions'
   - 'revert news revisions'
+  - 'revert page revisions'
   - 'revert publication revisions'
   - 'revert researcher_profiles revisions'
   - 'use moderation sidebar'
@@ -150,6 +158,7 @@ permissions:
   - 'view link revisions'
   - 'view news revisions'
   - 'view own unpublished media'
+  - 'view page revisions'
   - 'view publication revisions'
   - 'view researcher_profiles revisions'
   - 'view the administration theme'
