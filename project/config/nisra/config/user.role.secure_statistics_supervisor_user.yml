@@ -9,7 +9,6 @@ dependencies:
     - media.type.image
     - media.type.remote_video
     - media.type.secure_file
-    - node.type.secure_market_statistics
     - node.type.secure_statistics
     - workflows.workflow.nics_editorial_workflow
   module:
@@ -40,7 +39,6 @@ permissions:
   - 'create image media'
   - 'create remote_video media'
   - 'create secure_file media'
-  - 'create secure_market_statistics content'
   - 'create secure_statistics content'
   - 'delete any audio media'
   - 'delete any document media'
@@ -48,7 +46,6 @@ permissions:
   - 'delete any image media'
   - 'delete any remote_video media'
   - 'delete any secure_file media'
-  - 'delete any secure_market_statistics content'
   - 'delete any secure_statistics content'
   - 'delete own audio media'
   - 'delete own document media'
@@ -57,9 +54,7 @@ permissions:
   - 'delete own image media'
   - 'delete own remote_video media'
   - 'delete own secure_file media'
-  - 'delete own secure_market_statistics content'
   - 'delete own secure_statistics content'
-  - 'delete secure_market_statistics revisions'
   - 'delete secure_statistics revisions'
   - 'edit any audio media'
   - 'edit any document media'
@@ -67,7 +62,6 @@ permissions:
   - 'edit any image media'
   - 'edit any remote_video media'
   - 'edit any secure_file media'
-  - 'edit any secure_market_statistics content'
   - 'edit any secure_statistics content'
   - 'edit own audio media'
   - 'edit own document media'
@@ -75,10 +69,8 @@ permissions:
   - 'edit own image media'
   - 'edit own remote_video media'
   - 'edit own secure_file media'
-  - 'edit own secure_market_statistics content'
   - 'edit own secure_statistics content'
   - 'reschedule scheduled transitions node secure_statistics'
-  - 'revert secure_market_statistics revisions'
   - 'revert secure_statistics revisions'
   - 'use moderation sidebar'
   - 'use nics_editorial_workflow transition archive'
@@ -91,11 +83,9 @@ permissions:
   - 'use nics_editorial_workflow transition submit_for_review'
   - 'use nics_editorial_workflow transition unpublish'
   - 'view all revisions'
-  - 'view any unpublished content'
   - 'view content references'
   - 'view latest version'
   - 'view own unpublished media'
   - 'view scheduled transitions node secure_statistics'
-  - 'view secure_market_statistics revisions'
   - 'view secure_statistics revisions'
   - 'view the administration theme'
