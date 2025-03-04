@@ -1,0 +1,12 @@
+uuid: 13b57ae0-f6a2-46d5-8267-110da9394c6e
+langcode: en
+status: true
+dependencies: {  }
+id: search_api__views_page__published_releases_search__releases_upcoming
+name: 'search_api:views_page__published_releases_search__releases_upcoming'
+filter_key: ''
+url_processor: facets_pretty_paths
+breadcrumb:
+  active: true
+  before: false
+  group: false

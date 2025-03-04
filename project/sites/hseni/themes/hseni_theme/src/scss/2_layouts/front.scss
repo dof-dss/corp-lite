@@ -34,39 +34,36 @@ $link-dark-background: (
 .section {
   &--featured-highlights {
     margin-top: 2em;
-    margin-bottom: 2em;
   }
 }
 
 .about-us-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  background: #044c93;
-}
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #042f59 url("/sites/hseni/themes/hseni_theme/images/about-us.jpeg") no-repeat;
+  background-position: 115%;
+  background-size: 40%;
 
-  .about-us-container .text-content {
+  @media (max-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+    background: #042f59;
+  }
+
+  .text-content {
+    padding-left: 2rem;
+    width: 65%;
     color: #fff;
-    padding: 2%;
+    @media (max-width: 768px) {
+      width: 100%;
+      padding: 2%;
+    }
 
     h2 {
       color: #fff;
     }
-}
-
-.about-us-container .image-content {
-  padding: 2%;
-}
-
-@media (max-width: 768px) {
-    .about-us-container {
-      flex-direction: column;
-      align-items: flex-start;
-   }
-
-  .about-us-container .image-content {
-      margin-top: 15px;
-    }
+  }
 }
 
 .contact-us-container {
@@ -74,16 +71,25 @@ $link-dark-background: (
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  background: #042f59;
+  background: #042f59 url("/sites/hseni/themes/hseni_theme/images/contact-bg.png") no-repeat;
+  background-position: right center;
+  background-size: 44%;
+  background-position: 115% 50%;
 
-  @include breakpoint($tab) {
+  @media (max-width: 768px) {
     flex-direction: row;
     align-items: center;
+    background: #042f59;
   }
 
   .text-content {
     color: #fff;
-    padding: 2%;
+    padding-left: 2rem;
+    max-width: 65%;
+    @media (max-width: 768px) {
+      max-width: 100%;
+      padding: 2%;
+    }
 
     li {
       color: #fff;
@@ -91,51 +97,56 @@ $link-dark-background: (
 
     a {
       @include link-state-style($link-dark-background);
-    }
-  }
-
-  .image-content {
-    margin-top: 1.5rem;
-
-    @include breakpoint($tab) {
-      margin-top: 0;
     }
   }
 }
 
-.organisation-container {
+.profile-block {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
   justify-content: space-between;
-  background: #044c93;
+  align-items: flex-start;
+  background: #042f59;
+}
 
-  @include breakpoint($tab) {
-    flex-direction: row;
+.profile-text {
+  width: 60%;
+  padding: 2%;
+}
+
+.profile-photo {
+  width: 30%;
+  flex-shrink: 0;
+}
+
+.profile-photo img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.profile-department {
+  font-size: 2.4rem;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+.profile-summary {
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+@media screen and (max-width: 450px) {
+  .profile-block {
+    flex-direction: column-reverse;
     align-items: center;
   }
 
-  .text-content {
-    color: #fff;
-    padding: 2%;
-
-    h2,
-    li {
-      color: #fff;
-    }
-
-    a {
-      @include link-state-style($link-dark-background);
-    }
+  .profile-text {
+    width: 100%;
+    margin-bottom: 20px;
   }
 
-  .image-content {
-    padding: 2%;
-    margin-top: 1.5rem;
-
-    @include breakpoint($tab) {
-      margin-top: 0;
-    }
+  .profile-photo {
+    width: 100%;
   }
 }
 
@@ -161,6 +172,6 @@ $link-dark-background: (
 }
 
 #block-featuredcontent-documents,
-#block-ourorganisation {
+#block-homepage-profile {
     border-top: #044c93 solid 5px;
 }

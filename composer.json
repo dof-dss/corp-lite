@@ -139,6 +139,7 @@
         "drupal/shs": "^2.0@RC",
         "drupal/simple_gmap": "^3.1",
         "drupal/simplei": "^2.1",
+        "drupal/smart_trim": "^2.2",
         "drupal/structure_sync": "^2.0",
         "drupal/taxonomy_access_fix": "^4.0",
         "drupal/telephone_plus": "^9.1",
@@ -211,9 +212,6 @@
         "patches": {
             "drupal/auto_entityqueue": {
                 "Entityquery - add access control check": "https://www.drupal.org/files/issues/2023-10-25/3366202-7-accessCheck-auto-entity-queue.patch"
-            },
-            "drupal/ckeditor5_premium_features": {
-                "Avoid missing plugin TrackChangesEditing error": "https://git.drupalcode.org/project/ckeditor5_premium_features/-/merge_requests/6.diff"
             },
             "drupal/clientside_validation": {
                 "core/jquery.once is required": "https://www.drupal.org/files/issues/2021-02-23/3200022-01.patch"
