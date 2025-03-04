@@ -1,6 +1,37 @@
 @use '../../../../../../../../../web/themes/custom/nicsdru_corplite_theme/src/scss/init' as *;
 
+$link-footer: (
+  color: '#fff',
+  background-color: transparent,
+  text-decoration: (
+    hover: underline 2px
+  ),
+  text-underline-offset: (
+    focus: 4px,
+    hover: 4px,
+  ),
+  box-shadow: (
+    default: none,
+  ),
+  outline: (
+    focus: 3px solid var(--clr-white),
+  ),
+);
+
+
 .footer {
+  background-color: var(--clr-nisra-navy);
+  box-shadow: var(--clr-nisra-blue);
+  color: var(--clr-white);
+
+  * {
+    color: var(--clr-white);
+  }
+
+  a {
+    @include link-state-style($link-footer);
+  }
+
   @include breakpoint($tab) {
     .container {
       display: grid;
