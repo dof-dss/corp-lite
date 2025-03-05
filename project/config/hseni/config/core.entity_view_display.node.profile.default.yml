@@ -5,11 +5,13 @@ dependencies:
   config:
     - field.field.node.profile.body
     - field.field.node.profile.field_department
+    - field.field.node.profile.field_links
     - field.field.node.profile.field_meta_tags
     - field.field.node.profile.field_photo
     - field.field.node.profile.field_summary
     - node.type.profile
   module:
+    - link
     - text
     - user
 _core:
@@ -33,6 +35,18 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 2
+    region: content
+  field_links:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 4
     region: content
   field_photo:
     type: entity_reference_entity_view
