@@ -82,7 +82,6 @@ function nisra_common_file_download($uri) {
         $mids = array_keys($field['media']);
         foreach ($mids as $mid) {
           if (!check_media_access($database, $mid)) {
-            \Drupal::logger('nisra_common')->error(t("Denying access to mid " . $mid . " in nisra_common_file_download() function"));
             return -1;
           }
         }
@@ -115,6 +114,8 @@ function check_media_access($database, $mid) {
       if (!$node->isPublished()) {
         if (Drupal::currentUser()->isAnonymous()) {
           // If this is an anonymous user then deny access.
+          \Drupal::logger('nisra_common')->notice(t("Denying anonymous user access to mid " .
+            $mid . " in nisra_common_file_download() function"));
           return FALSE;
         } else {
           // This is a logged in user so we need to check permissions.
@@ -123,6 +124,9 @@ function check_media_access($database, $mid) {
           // 'view secure_statistics revision'
           if (!\Drupal::currentUser()->hasPermission('view ' . $entity->bundle . ' revisions')) {
             // User does not have permission, deny access.
+            \Drupal::logger('nisra_common')->notice(t("Denying user " .
+              \Drupal::currentUser()->id() . " access to mid " .
+              $mid . " due to insufficient permissions in nisra_common_file_download() function"));
             return FALSE;
           }
         }
