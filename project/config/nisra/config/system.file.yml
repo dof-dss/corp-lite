@@ -2,5 +2,5 @@ _core:
   default_config_hash: Apcl8NKzjbF3PZh9OzKxZwhXdKWWvlA-esNiobE9jqU
 langcode: en
 allow_insecure_uploads: false
-default_scheme: public
+default_scheme: private
 temporary_maximum_age: 21600
