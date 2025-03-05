@@ -5,7 +5,14 @@
  * Primary module hooks for Nisra common module.
  */
 
+use Drupal\Core\Access\AccessResultForbidden;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\StreamWrapper\StreamWrapperManager;
+use Drupal\node\Entity\Node;
+use Drupal\node\NodeInterface;
 
 /**
  * Implements hook_form_BASE_FORM_ID_alter().
@@ -50,3 +57,51 @@ function nisra_common_validate_attachment(&$form, FormStateInterface $form_state
     $form_state->setErrorByName('field_external_publication', t('You must provide an attachment or external link'));
   }
 }
+
+/**
+ * Implements hook_file_download().
+ */
+function nisra_common_file_download($uri) {
+  # Check if the file is coming from the private stream wrapper
+  if (StreamWrapperManager::getScheme($uri) == 'private') {
+
+    // Get the file record based on the URI. If not in the database just return.
+    $file_repository = \Drupal::service('file.repository');
+    $file = $file_repository->loadByUri($uri);
+    if (!$file) {
+      return;
+    }
+
+    // Identify the media that is being downloaded
+    $database = \Drupal::database();
+    $references = file_get_file_references($file, NULL, EntityStorageInterface::FIELD_LOAD_CURRENT, NULL);
+    foreach ($references as $field) {
+      if (isset($field['media'])) {
+        $mids = array_keys($field['media']);
+        foreach ($mids as $mid) {
+          \Drupal::logger('nisra_common')->notice(t("mid is " . $mid));
+          $query = $database->query("select entity_id from node__field_secure_attachment where field_secure_attachment_target_id = :mid", [':mid' => $mid]);
+          $result = $query->fetchAll();
+          foreach ($result as $entity) {
+            \Drupal::logger('nisra_common')->notice(t("entity id is " . $entity->entity_id));
+            // Check if the entity is published.
+          }
+        }
+      }
+    }
+
+
+    # 1: Block anonymous users.
+    if (Drupal::currentUser()->isAnonymous()) {
+      return -1;
+    }
+
+    # 2: The user does not have the permission "access private files".
+    //if (!\Drupal::currentUser()->hasPermission('access private files')) {
+    //  return -1;
+    //}
+  }
+
+  return NULL;
+}
+
