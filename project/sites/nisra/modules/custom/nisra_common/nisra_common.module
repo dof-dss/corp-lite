@@ -80,11 +80,36 @@ function nisra_common_file_download($uri) {
         $mids = array_keys($field['media']);
         foreach ($mids as $mid) {
           \Drupal::logger('nisra_common')->notice(t("mid is " . $mid));
-          $query = $database->query("select entity_id from node__field_secure_attachment where field_secure_attachment_target_id = :mid", [':mid' => $mid]);
+          $query = $database->query("select entity_id, bundle
+                        from node__field_secure_attachment
+                        where bundle in ('secure_statistics','secure_market_statistics' )
+                        and field_secure_attachment_target_id = :mid", [':mid' => $mid]);
           $result = $query->fetchAll();
           foreach ($result as $entity) {
             \Drupal::logger('nisra_common')->notice(t("entity id is " . $entity->entity_id));
             // Check if the entity is published.
+            $node = Node::load($entity->entity_id);
+            if (!empty($node)) {
+              if (!$node->isPublished()) {
+                \Drupal::logger('nisra_common')->notice(t("not published"));
+                # 1: Block anonymous users.
+                if (Drupal::currentUser()->isAnonymous()) {
+                  \Drupal::logger('nisra_common')->notice(t("blocking as anonymous"));
+                  return -1;
+                } else {
+                  \Drupal::logger('nisra_common')->notice(t("User is logged in, bundle is " . $entity->bundle));
+                  // Permissions that we are looking for are
+                  // view secure_market_statistics revisions
+                  // view secure_statistics revision
+                  if (!\Drupal::currentUser()->hasPermission('view ' . $entity->bundle . ' revisions')) {
+                    \Drupal::logger('nisra_common')->error(t("Access denied as user does not have permission 'view " . $entity->bundle . " revisions'"));
+                    return -1;
+                  }
+                }
+              } else {
+                \Drupal::logger('nisra_common')->notice(t("Node is published"));
+              }
+            }
           }
         }
       }
@@ -92,9 +117,9 @@ function nisra_common_file_download($uri) {
 
 
     # 1: Block anonymous users.
-    if (Drupal::currentUser()->isAnonymous()) {
+    /*if (Drupal::currentUser()->isAnonymous()) {
       return -1;
-    }
+    }*/
 
     # 2: The user does not have the permission "access private files".
     //if (!\Drupal::currentUser()->hasPermission('access private files')) {
