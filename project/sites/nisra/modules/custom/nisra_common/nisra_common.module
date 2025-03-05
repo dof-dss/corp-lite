@@ -82,7 +82,7 @@ function nisra_common_file_download($uri) {
         $mids = array_keys($field['media']);
         foreach ($mids as $mid) {
           if (!check_media_access($database, $mid)) {
-            \Drupal::logger('nisra_common')->notice(t("Calling check_media_access"));
+            \Drupal::logger('nisra_common')->error(t("Denying access to mid " . $mid . " in nisra_common_file_download() function"));
             return -1;
           }
         }
@@ -99,7 +99,6 @@ function nisra_common_file_download($uri) {
 function check_media_access($database, $mid) {
   // Find all nodes of type 'Secure Statistics' or
   // 'Secure - market sensitive statistics' that this media item is attached to.
-  \Drupal::logger('nisra_common')->notice(t("Called check_media_access"));
   $query = $database->query("select entity_id, bundle
                         from node__field_secure_attachment
                         where bundle in ('secure_statistics','secure_market_statistics' )
