@@ -10,20 +10,107 @@ body {
     margin: 0 0 1em;
     box-shadow: 0 -8px 0 0 var(--clr-main-nav-brd-btm);
 
+    h2 {
+      font-size: 2.4rem;
+      line-height: 3.2rem;
+      margin: 3.2rem 0 1.6rem;
+
+      @include breakpoint($tab) {
+        font-size: 2.6rem;
+        line-height: 3.6rem;
+      }
+
+      @include breakpoint($lap) {
+        font-size: 2.8rem;
+        line-height: 3.9rem;
+        margin: 3.6rem 0 1.8rem;
+      }
+
+      @include breakpoint($desk-plus) {
+        line-height: 4rem;
+        margin: 3.5rem 0 2rem;
+      }
+    }
+
+    .card__meta {
+      font-size: 1.5rem;
+      line-height: 2.2rem;
+      margin-top: var(--rhythm-spacing-xs);
+      color: var(--clr-grey-medium);
+
+      @include breakpoint($tab) {
+        font-size: 1.6rem;
+        line-height: 1.5;
+      }
+    }
+
+    .card__body {
+      >p,
+      >ul,
+      >ol {
+        @include breakpoint($lap) {
+          font-size: 1.7rem;
+          line-height: 2.7rem;
+        }
+      }
+    }
+
     &:first-child {
       box-shadow: none;
     }
 
     &--featured {
+      .card-deck {
+        margin-bottom: 0;
+      }
+
       article {
         box-shadow: 0 1px 0 0 #cdcdcd;
         padding-bottom: var(--rhythm-spacing);
+
+        .card__image {
+          flex: 0 0 13rem;
+          margin-bottom: var(--rhythm-spacing-sm);
+          padding-right: var(--rhythm-spacing);
+          max-width: 50%;
+
+          @include breakpoint($phab) {
+            flex-basis: 16.5rem;
+          }
+        }
+
+        .card__body {
+          padding: 0;
+
+          .card__title {
+            font-size: 1.8rem;
+            line-height: 2.4rem;
+            margin: 0 0 var(--rhythm-spacing-sm);
+
+            @include breakpoint($lap) {
+              font-size: 2rem;
+              line-height: 2.7rem;
+            }
+          }
+
+          .card__meta {
+            margin: var(--rhythm-spacing-xs) 0;
+          }
+
+          p {
+            margin: var(--rhythm-spacing-xs) 0 0;
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
 
         &:first-of-type {
           a {
             flex-wrap: wrap;
 
-            @include breakpoint($tab) {
+            @include breakpoint($phab) {
               flex-wrap: nowrap;
             }
           }
@@ -31,8 +118,9 @@ body {
           .card__image {
             flex-basis: 100%;
             max-width: 100%;
+            padding-right: 0;
 
-            @include breakpoint($tab) {
+            @include breakpoint($phab) {
               flex-basis: 41%;
               min-width: 16.5rem;
             }
@@ -45,7 +133,35 @@ body {
             @include breakpoint($tab) {
               padding-left: var(--rhythm-spacing-lg);
             }
+
+            .card__title {
+              font-size: 2.1rem;
+              line-height: 3rem;
+
+              @include breakpoint($lap) {
+                font-size: 2.2rem;
+                line-height: 3.3rem;
+              }
+
+              @include breakpoint($desk-plus) {
+                font-size: 2.4rem;
+                line-height: 3.5rem;
+              }
+            }
           }
+        }
+
+        &:last-of-type {
+          box-shadow: none;
+        }
+      }
+
+      footer {
+        a {
+          font-size: 2.1rem;
+          line-height: 3rem;
+          margin: 0;
+          font-weight: bold;
         }
       }
     }
