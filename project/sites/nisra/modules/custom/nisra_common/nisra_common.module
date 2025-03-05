@@ -62,7 +62,8 @@ function nisra_common_validate_attachment(&$form, FormStateInterface $form_state
  * Implements hook_file_download().
  */
 function nisra_common_file_download($uri) {
-  # Check if the file is coming from the private stream wrapper
+  // Check if the file is coming from the private stream wrapper, these are
+  // the only ones that we want to check.
   if (StreamWrapperManager::getScheme($uri) == 'private') {
 
     // Get the file record based on the URI. If not in the database just return.
@@ -77,56 +78,58 @@ function nisra_common_file_download($uri) {
     $references = file_get_file_references($file, NULL, EntityStorageInterface::FIELD_LOAD_CURRENT, NULL);
     foreach ($references as $field) {
       if (isset($field['media'])) {
+        // Retrieve the media ids (mids).
         $mids = array_keys($field['media']);
         foreach ($mids as $mid) {
-          \Drupal::logger('nisra_common')->notice(t("mid is " . $mid));
-          $query = $database->query("select entity_id, bundle
-                        from node__field_secure_attachment
-                        where bundle in ('secure_statistics','secure_market_statistics' )
-                        and field_secure_attachment_target_id = :mid", [':mid' => $mid]);
-          $result = $query->fetchAll();
-          foreach ($result as $entity) {
-            \Drupal::logger('nisra_common')->notice(t("entity id is " . $entity->entity_id));
-            // Check if the entity is published.
-            $node = Node::load($entity->entity_id);
-            if (!empty($node)) {
-              if (!$node->isPublished()) {
-                \Drupal::logger('nisra_common')->notice(t("not published"));
-                # 1: Block anonymous users.
-                if (Drupal::currentUser()->isAnonymous()) {
-                  \Drupal::logger('nisra_common')->notice(t("blocking as anonymous"));
-                  return -1;
-                } else {
-                  \Drupal::logger('nisra_common')->notice(t("User is logged in, bundle is " . $entity->bundle));
-                  // Permissions that we are looking for are
-                  // view secure_market_statistics revisions
-                  // view secure_statistics revision
-                  if (!\Drupal::currentUser()->hasPermission('view ' . $entity->bundle . ' revisions')) {
-                    \Drupal::logger('nisra_common')->error(t("Access denied as user does not have permission 'view " . $entity->bundle . " revisions'"));
-                    return -1;
-                  }
-                }
-              } else {
-                \Drupal::logger('nisra_common')->notice(t("Node is published"));
-              }
-            }
+          if (!check_media_access($database, $mid)) {
+            \Drupal::logger('nisra_common')->notice(t("Calling check_media_access"));
+            return -1;
           }
         }
       }
     }
-
-
-    # 1: Block anonymous users.
-    /*if (Drupal::currentUser()->isAnonymous()) {
-      return -1;
-    }*/
-
-    # 2: The user does not have the permission "access private files".
-    //if (!\Drupal::currentUser()->hasPermission('access private files')) {
-    //  return -1;
-    //}
   }
 
   return NULL;
+}
+
+/**
+ * Check access for this media id (mid).
+ */
+function check_media_access($database, $mid) {
+  // Find all nodes of type 'Secure Statistics' or
+  // 'Secure - market sensitive statistics' that this media item is attached to.
+  \Drupal::logger('nisra_common')->notice(t("Called check_media_access"));
+  $query = $database->query("select entity_id, bundle
+                        from node__field_secure_attachment
+                        where bundle in ('secure_statistics','secure_market_statistics' )
+                        and field_secure_attachment_target_id = :mid", [':mid' => $mid]);
+  $result = $query->fetchAll();
+  // Loop through all nodes, if the current user is denied access on one,
+  // then they are denied on all !
+  foreach ($result as $entity) {
+    // Load up the entity/node.
+    $node = Node::load($entity->entity_id);
+    if (!empty($node)) {
+      // If the entity is published then allow access and don't bother
+      // with any more checks.
+      if (!$node->isPublished()) {
+        if (Drupal::currentUser()->isAnonymous()) {
+          // If this is an anonymous user then deny access.
+          return FALSE;
+        } else {
+          // This is a logged in user so we need to check permissions.
+          // Permissions that we are looking for are
+          // 'view secure_market_statistics revisions' or
+          // 'view secure_statistics revision'
+          if (!\Drupal::currentUser()->hasPermission('view ' . $entity->bundle . ' revisions')) {
+            // User does not have permission, deny access.
+            return FALSE;
+          }
+        }
+      }
+    }
+  }
+  return TRUE;
 }
 
