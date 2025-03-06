@@ -188,6 +188,7 @@ permissions:
   - 'view all revisions'
   - 'view all scheduled transitions'
   - 'view all taxonomy revisions'
+  - 'view any unpublished content'
   - 'view application revisions'
   - 'view contact revisions'
   - 'view content references'
