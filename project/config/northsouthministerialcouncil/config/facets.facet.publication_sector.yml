@@ -6,7 +6,11 @@ dependencies:
     - search_api.index.publications_index
     - views.view.publication_search
   module:
+    - facets_pretty_paths
     - search_api
+third_party_settings:
+  facets_pretty_paths:
+    coder: taxonomy_term_coder
 id: publication_sector
 name: 'Publication sectors'
 weight: 0
