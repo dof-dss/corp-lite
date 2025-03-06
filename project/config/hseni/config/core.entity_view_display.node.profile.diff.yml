@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.diff
     - field.field.node.profile.body
     - field.field.node.profile.field_department
+    - field.field.node.profile.field_links
     - field.field.node.profile.field_meta_tags
     - field.field.node.profile.field_photo
     - field.field.node.profile.field_summary
@@ -85,6 +86,7 @@ content:
     region: content
 hidden:
   content_moderation_control: true
+  field_links: true
   langcode: true
   links: true
   search_api_excerpt: true

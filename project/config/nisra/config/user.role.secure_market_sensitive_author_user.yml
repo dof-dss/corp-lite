@@ -60,6 +60,7 @@ permissions:
   - 'use nics_editorial_workflow transition reject'
   - 'use nics_editorial_workflow transition submit_for_review'
   - 'view all revisions'
+  - 'view any unpublished content'
   - 'view latest version'
   - 'view own unpublished media'
   - 'view secure_market_statistics revisions'

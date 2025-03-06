@@ -114,7 +114,7 @@ $link-dark-background: (
 }
 
 .profile-photo {
-  width: 30%;
+  width: 33%;
   flex-shrink: 0;
 }
 
@@ -127,11 +127,39 @@ $link-dark-background: (
   font-size: 2.4rem;
   margin-bottom: 1.5rem;
   color: #fff;
+
+  a {
+    color: #fff;
+
+    &:hover {
+      text-decoration: underline;
+      text-decoration-color: #fff;
+    }
+  }
 }
 
 .profile-summary {
   margin-bottom: 1.5rem;
   color: #fff;
+}
+
+.profile-links .links-list {
+  list-style-type: disc;
+  margin-left: 20px;
+  padding-left: 0;
+
+  li {
+    color: #fff;
+  }
+}
+
+.profile-links .link-item {
+  text-decoration: none;
+  color: #fff;
+}
+
+.profile-links .link-item:hover {
+  text-decoration: underline;
 }
 
 @media screen and (max-width: 450px) {
