@@ -7,7 +7,10 @@ dependencies:
 id: disable_toc
 label: 'Disable Table of Contents'
 bundles:
+  - joint_communiques
   - page
+  - sectors
+  - site_topics
 entity_type: node
 global: true
 flag_short: 'Disable ToC'
