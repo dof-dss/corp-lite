@@ -145,7 +145,7 @@ function nisra_common_preprocess_views_view_table(&$variables) {
   $view = $variables['view'];
 
   //Only alter admin/content view
-  if ($view->id() !== 'content' || $view->id() !== 'workflow_moderation') {
+  if ($view->id() !== 'content' && $view->id() !== 'workflow_moderation') {
     return;
   }
   $rows = $variables['rows'];
