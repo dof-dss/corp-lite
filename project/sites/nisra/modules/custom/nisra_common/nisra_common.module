@@ -9,6 +9,7 @@ use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\StreamWrapper\StreamWrapperManager;
 use Drupal\node\Entity\Node;
+use Drupal\views\ViewExecutable;
 
 /**
  * Implements hook_form_BASE_FORM_ID_alter().
@@ -61,7 +62,6 @@ function nisra_common_file_download($uri) {
   // Check if the file is coming from the private stream wrapper, these are
   // the only ones that we want to check.
   if (StreamWrapperManager::getScheme($uri) == 'private') {
-
     // Get the file record based on the URI. If not in the database just return.
     $file_repository = \Drupal::service('file.repository');
     $file = $file_repository->loadByUri($uri);
@@ -110,15 +110,18 @@ function check_media_access($database, $mid) {
       if (!$node->isPublished()) {
         if (Drupal::currentUser()->isAnonymous()) {
           // If this is an anonymous user then deny access.
-          \Drupal::logger('nisra_common')->notice(t("Denying anonymous user access to mid " .
-            $mid . " in nisra_common_file_download() function"));
+          \Drupal::logger('nisra_common')
+            ->notice(t("Denying anonymous user access to mid " .
+              $mid . " in nisra_common_file_download() function"));
           return FALSE;
-        } else {
+        }
+        else {
           // This is a logged in user so we need to check permissions.
           // Permissions that we are looking for are
           // 'view secure_market_statistics revisions' or
           // 'view secure_statistics revision'
-          if (!\Drupal::currentUser()->hasPermission('view ' . $entity->bundle . ' revisions')) {
+          if (!\Drupal::currentUser()
+            ->hasPermission('view ' . $entity->bundle . ' revisions')) {
             // User does not have permission, deny access.
             \Drupal::logger('nisra_common')->notice(t("Denying user " .
               \Drupal::currentUser()->id() . " access to mid " .
@@ -132,3 +135,32 @@ function check_media_access($database, $mid) {
   return TRUE;
 }
 
+/**
+ * Implements template_preprocess_views_view_table()
+ *
+ * @param $variables
+ */
+function nisra_common_preprocess_views_view_table(&$variables) {
+  /** @var ViewExecutable $view */
+  $view = $variables['view'];
+
+  //Only alter admin/content view
+  if ($view->id() !== 'content' || $view->id() !== 'workflow_moderation') {
+    return;
+  }
+  $rows = $variables['rows'];
+  foreach ($rows as $key => $row) {
+    if (preg_match('/market sensitive/', $row['columns']['type']['content'][0]['field_output']['#markup']) && preg_match('/Unpublished/', $row['columns']['status']['content'][0]['field_output']['#markup'])) {
+      if (!\Drupal::currentUser()
+        ->hasPermission('edit any secure_market_statistics content')) {
+        unset($variables['rows'][$key]);
+      }
+    }
+    if (preg_match('/Secure statistics/', $row['columns']['type']['content'][0]['field_output']['#markup']) && preg_match('/Unpublished/', $row['columns']['status']['content'][0]['field_output']['#markup'])) {
+      if (!\Drupal::currentUser()
+        ->hasPermission('edit any secure_statistics content')) {
+        unset($variables['rows'][$key]);
+      }
+    }
+  }
+}
