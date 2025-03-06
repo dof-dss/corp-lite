@@ -132,3 +132,23 @@ function check_media_access($database, $mid) {
   return TRUE;
 }
 
+/**
+ * Implements template_preprocess_views_view_table()
+ * @param $variables
+ */
+function nisra_common_preprocess_views_view_table(&$variables){
+  /** @var ViewExecutable $view */
+  $view = $variables['view'];
+
+  //Only alter admin/content view
+  if ($view->id() !== 'content') return;
+
+  $rows = $variables['rows'];
+  foreach ($rows as $key => $row){
+    \Drupal::logger('nisra_common')->notice(t("Type is - " . $row['columns']['type']['content'][0]['field_output']['#markup']));
+    if (preg_match('/Secure/', $row['columns']['type']['content'][0]['field_output']['#markup'])) {
+      unset($variables['rows'][$key]);
+    }
+  }
+}
+
