@@ -1,28 +1,27 @@
-uuid: b664e69b-5a1b-4ae6-84ac-bb4d587cae20
+uuid: 1f1eb208-749b-415c-9360-5c4e62493a09
 langcode: en
 status: true
 dependencies:
   config:
-    - facets.facet.type
+    - views.view.search
   module:
     - block_visibility_groups
-    - facets
     - system
+    - views
   theme:
     - afbini_theme
-id: afbini_theme_contenttype
+id: afbini_theme_exposedformsearchsite_search
 theme: afbini_theme
 region: sidebar_first
-weight: -2
+weight: -8
 provider: null
-plugin: 'facet_block:type'
+plugin: 'views_exposed_filter_block:search-site_search'
 settings:
-  id: 'facet_block:type'
-  label: Type
+  id: 'views_exposed_filter_block:search-site_search'
+  label: ''
   label_display: visible
-  provider: facets
-  context_mapping: {  }
-  block_id: afbini_theme_contenttype
+  provider: views
+  views_label: ''
 visibility:
   condition_group:
     id: condition_group
@@ -31,4 +30,4 @@ visibility:
   request_path:
     id: request_path
     negate: false
-    pages: "/search\r\n/search/type/*"
+    pages: "/search\r\n/search/type"
