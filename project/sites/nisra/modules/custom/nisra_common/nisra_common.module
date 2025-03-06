@@ -150,8 +150,6 @@ function nisra_common_preprocess_views_view_table(&$variables) {
   }
   $rows = $variables['rows'];
   foreach ($rows as $key => $row) {
-    \Drupal::logger('nisra_common')
-      ->notice(t("Type is - " . $row['columns']['type']['content'][0]['field_output']['#markup']));
     if (preg_match('/market sensitive/', $row['columns']['type']['content'][0]['field_output']['#markup']) && preg_match('/Unpublished/', $row['columns']['status']['content'][0]['field_output']['#markup'])) {
       if (!\Drupal::currentUser()
         ->hasPermission('edit any secure_market_statistics content')) {
