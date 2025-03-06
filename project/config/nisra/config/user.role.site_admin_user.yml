@@ -73,6 +73,7 @@ permissions:
   - 'use nics_editorial_workflow transition submit_for_review'
   - 'use nics_editorial_workflow transition unpublish'
   - 'view all revisions'
+  - 'view any unpublished content'
   - 'view latest version'
   - 'view own unpublished media'
   - 'view the administration theme'
