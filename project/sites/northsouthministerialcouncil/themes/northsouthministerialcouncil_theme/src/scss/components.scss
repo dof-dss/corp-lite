@@ -4,40 +4,17 @@
  */
 
 .areas-of-cooperation {
-  display: flex;
-  flex-wrap: wrap;
-
-  .columnItem {
-    flex-basis: 48.75%;
-    box-sizing: border-box;
-    padding: 0.9rem 1.2rem 1.2rem;
-    margin: 0 11px 2rem 0;
-
-    h3 {
-      margin: 0 0 .3rem;
-    }
-
-    p {
-      margin: 0;
-    }
+  .card {
 
     &:hover,
     &:focus {
+
       h3 a {
         text-decoration-thickness: 2px;
         text-decoration-color: #0b1647;
       }
     }
 
-    @media screen and (max-width: 992px) {
-      flex-basis: 38%;
-    }
-
-    @media screen and (max-width: 576px) {
-      flex-basis: 100%;
-      padding: 0;
-      margin: 0;
-    }
   }
 }
 
