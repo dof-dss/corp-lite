@@ -1,0 +1,39 @@
+/*
+ * @file
+ * Provides the styling for menus other than the main menu on the site.
+ */
+@import '../../init';
+
+// Sub menus
+//
+// The sub menus component provides some base styling for lists of navigational links that may or may not be contained
+// in a `<nav>` tag. There are some modifiers commonly applied to these menus to meet specific design concepts, for
+// example a list of related content or a list of book contents.
+//
+// Style guide: components.navigation.sub-menus
+
+.sub-menu {
+  .menu-title {
+    --fs-submenu-title: 2.2rem;
+    --lh-submenu-title: 3.2rem;
+
+    margin-top: 0;
+    font-size: var(--fs-submenu-title);
+    line-height: var(--lh-submenu-title);
+
+    @include breakpoint($lap) {
+      --fs-submenu-title: 2.3rem;
+      --lh-submenu-title: 3.3rem;
+    }
+
+    @include breakpoint($desk) {
+      --fs-submenu-title: 2.5rem;
+      --lh-submenu-title: 3.6rem;
+    }
+
+    @include breakpoint($desk-plus) {
+      --fs-submenu-title: 2.7rem;
+      --lh-submenu-title: 4rem;
+    }
+  }
+}
