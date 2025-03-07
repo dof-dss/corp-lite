@@ -12,7 +12,7 @@ dependencies:
 id: afbini_theme_exposedformpublication_searchpublications_search
 theme: afbini_theme
 region: sidebar_first
-weight: -9
+weight: -10
 provider: null
 plugin: 'views_exposed_filter_block:publication_search-publications_search'
 settings:

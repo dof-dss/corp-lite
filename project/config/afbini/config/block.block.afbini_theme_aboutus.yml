@@ -1,9 +1,9 @@
-uuid: 671e9b1d-cd1a-4e8b-97a4-1f378eea2ebb
+uuid: e6b774a9-926c-4786-b0e7-9f2a916defa0
 langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:block_group:292bde1e-71ad-4fc5-808d-47cd17a8de15'
+    - 'block_content:block_group:4566912e-c361-47b6-8164-1e4bae9e3386'
   module:
     - block_content
     - block_visibility_groups
@@ -15,9 +15,9 @@ theme: afbini_theme
 region: content
 weight: 0
 provider: null
-plugin: 'block_content:292bde1e-71ad-4fc5-808d-47cd17a8de15'
+plugin: 'block_content:4566912e-c361-47b6-8164-1e4bae9e3386'
 settings:
-  id: 'block_content:292bde1e-71ad-4fc5-808d-47cd17a8de15'
+  id: 'block_content:4566912e-c361-47b6-8164-1e4bae9e3386'
   label: 'About us'
   label_display: visible
   provider: block_content

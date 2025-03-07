@@ -1,7 +1,20 @@
 uuid: 86e9748b-e264-4840-92f2-05e21aa84260
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - origins_toc
+third_party_settings:
+  origins_toc:
+    toc_enable: 1
+    toc_title: Contents
+    toc_location: .page-summary
+    toc_insert: after
+    toc_source_container: .article-content
+    toc_element: h2
+    toc_exclusions: ''
+    toc_screen_depth: '2'
+    toc_debug: 0
 _core:
   default_config_hash: hG-tjPaSYURfrMPerFi4XPP2P1SFIV1kWckqZn7STfs
 name: 'Areas of Expertise'

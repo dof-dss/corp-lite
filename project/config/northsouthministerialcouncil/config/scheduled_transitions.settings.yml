@@ -8,6 +8,27 @@ automation:
   cron_create_queue_items: true
 bundles:
   -
+    entity_type: node
+    bundle: contact
+  -
+    entity_type: node
+    bundle: department_management
+  -
+    entity_type: node
+    bundle: featured_content_list
+  -
+    entity_type: node
+    bundle: link
+  -
+    entity_type: node
+    bundle: news
+  -
+    entity_type: node
+    bundle: page
+  -
+    entity_type: node
+    bundle: publication
+  -
     entity_type: taxonomy_term
     bundle: site_topics
 message_transition_latest: 'Scheduled transition: transitioning latest revision from [scheduled-transitions:from-state] to [scheduled-transitions:to-state]'
