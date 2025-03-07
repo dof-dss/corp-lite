@@ -8,6 +8,7 @@ dependencies:
     - media.type.file
     - media.type.image
     - media.type.remote_video
+    - taxonomy.vocabulary.site_topics
     - workflows.workflow.nics_editorial_workflow
   module:
     - content_moderation
@@ -20,6 +21,7 @@ dependencies:
     - node
     - redirect
     - system
+    - taxonomy
     - toolbar
 id: site_admin_user
 label: 'site admin user'
@@ -39,6 +41,7 @@ permissions:
   - 'create file media'
   - 'create image media'
   - 'create remote_video media'
+  - 'create terms in site_topics'
   - 'delete any audio media'
   - 'delete any document media'
   - 'delete any file media'
@@ -50,6 +53,7 @@ permissions:
   - 'delete own files'
   - 'delete own image media'
   - 'delete own remote_video media'
+  - 'delete terms in site_topics'
   - 'edit any audio media'
   - 'edit any document media'
   - 'edit any file media'
@@ -60,8 +64,10 @@ permissions:
   - 'edit own file media'
   - 'edit own image media'
   - 'edit own remote_video media'
+  - 'edit terms in site_topics'
   - 'hide topic or feature on homepage'
   - 'reorder draggable views'
+  - 'revert term revisions in site_topics'
   - 'use moderation sidebar'
   - 'use nics_editorial_workflow transition archive'
   - 'use nics_editorial_workflow transition create_new_draft'
@@ -76,4 +82,5 @@ permissions:
   - 'view any unpublished content'
   - 'view latest version'
   - 'view own unpublished media'
+  - 'view term revisions in site_topics'
   - 'view the administration theme'
