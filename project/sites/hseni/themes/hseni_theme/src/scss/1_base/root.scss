@@ -2,6 +2,9 @@
 
 :root {
   // Color custom properties
+  --clr-hseni-navy: #004D96;
+  --clr-hseni-blue: #068fb8;
+
   --clr-black: #000;
   --clr-charcoal: #333;
   --clr-grey: #949494;
@@ -31,10 +34,11 @@
   --clr-brand-primary: #00aae5;
   --clr-brand-primary-light: #cee4f6;
   --clr-brand-secondary: #0b1647;
-  --clr-main-nav-bkgd: transparent;
+  --clr-main-nav-bkgd: var(--clr-hseni-navy);
   --clr-main-nav-brd-btm: #005ea3;
   --clr-main-nav-brd-top: transparent;
-  --clr-main-nav-active-bkgd: #005ea3;
+  --clr-main-nav-active-bkgd: var(--clr-hseni-blue);
+  --clr-main-nav-active-line: var(--clr-grey-dark);
 
   // Typography and rhythm spacing custom properties
   --fs-base-size: 1.6rem;
