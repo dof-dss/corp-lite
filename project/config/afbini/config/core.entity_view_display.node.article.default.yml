@@ -69,6 +69,7 @@ content:
 hidden:
   content_moderation_control: true
   field_meta_tags: true
+  field_next_audit_due: true
   field_site_services: true
   langcode: true
   links: true
