@@ -172,7 +172,6 @@ function nisra_common_preprocess_views_view_table(&$variables) {
 /**
  * Implements hook_system_breadcrumb_alter().
  *
- * Altering the search view page breadcrumbs, when facets are selected the breadcrumb trail is overwritten.
  */
 function nisra_common_system_breadcrumb_alter(Breadcrumb &$breadcrumb, RouteMatchInterface $route_match, array $context) {
   $route_name = $route_match->getRouteName();
