@@ -1,0 +1,7 @@
+@use '../../../../../../../../../web/themes/custom/nicsdru_corplite_theme/src/scss/init' as *;
+
+#block-nisra-theme-publishedreleasesintrotext {
+  @include breakpoint($tab) {
+    max-width: 76rem;
+  }
+}

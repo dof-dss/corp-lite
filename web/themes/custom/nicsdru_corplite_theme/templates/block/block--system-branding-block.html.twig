@@ -21,7 +21,7 @@
       {%- if not is_front -%}
         <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">
       {%- endif -%}
-      <img class="site-logo" src="{{ site_logo }}" alt="{{ 'Home'|t }}" />
+      <img class="site-logo" src="{{ site_logo }}" alt="{{ site_name|t }}" />
       {%- if not is_front -%}
         </a>
       {%- endif -%}
