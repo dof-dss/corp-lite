@@ -1,0 +1,11 @@
+uuid: a92499cf-979e-4b49-8d6f-f737f9205fe7
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.joint_communiques
+id: taxonomy_term.joint_communiques
+target_entity_type_id: taxonomy_term
+target_bundle: joint_communiques
+default_langcode: site_default
+language_alterable: false

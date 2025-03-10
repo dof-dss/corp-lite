@@ -4,7 +4,11 @@ status: true
 dependencies:
   config:
     - node.type.contact
+    - node.type.department_management
+    - node.type.featured_content_list
+    - node.type.link
     - node.type.news
+    - node.type.page
     - node.type.publication
     - taxonomy.vocabulary.site_topics
   module:
@@ -100,7 +104,11 @@ type_settings:
   entity_types:
     node:
       - contact
+      - department_management
+      - featured_content_list
+      - link
       - news
+      - page
       - publication
     taxonomy_term:
       - site_topics

@@ -1694,7 +1694,7 @@ display:
     display_plugin: page
     position: 5
     display_options:
-      title: Statistics
+      title: 'Statistics and research'
       sorts:
         weight:
           id: weight

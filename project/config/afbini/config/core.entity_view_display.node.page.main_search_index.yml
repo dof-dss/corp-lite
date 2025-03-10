@@ -1,0 +1,27 @@
+uuid: c359a85d-bc39-4f1e-9c14-3309e44571b0
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.main_search_index
+    - field.field.node.page.body
+    - field.field.node.page.field_enable_toc
+    - node.type.page
+  module:
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.page.main_search_index
+targetEntityType: node
+bundle: page
+mode: main_search_index
+content: {  }
+hidden:
+  body: true
+  field_enable_toc: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

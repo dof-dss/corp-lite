@@ -1,0 +1,48 @@
+uuid: 6d4b4f8f-149f-490d-9c59-ea7e9cf8b9d4
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.article.body
+    - field.field.node.article.field_enable_toc
+    - field.field.node.article.field_meta_tags
+    - field.field.node.article.field_next_audit_due
+    - field.field.node.article.field_site_services
+    - field.field.node.article.field_site_topics
+    - field.field.node.article.field_summary
+    - field.field.node.article.field_tags
+    - node.type.article
+  module:
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+_core:
+  default_config_hash: 1dMRr95ydVxTvrCj2OIJMmHNWEcHlCQWojqwyCCWsi8
+id: node.article.search_index
+targetEntityType: node
+bundle: article
+mode: search_index
+content:
+  field_summary:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true
+  content_moderation_control: true
+  field_enable_toc: true
+  field_meta_tags: true
+  field_next_audit_due: true
+  field_site_services: true
+  field_site_topics: true
+  field_tags: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

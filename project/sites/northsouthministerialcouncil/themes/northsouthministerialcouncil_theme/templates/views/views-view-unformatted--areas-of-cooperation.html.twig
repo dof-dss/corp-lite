@@ -16,18 +16,18 @@
  */
 #}
 
-<div class ="areas-of-cooperation">
-{% if title %}
-  <h3>{{ title }}</h3>
-{% endif %}
-{% for row in rows %}
-  {%
-    set row_classes = [
+<div class ="areas-of-cooperation card-deck card-deck--x2 card-deck--plain card-deck--topics">
+  {% if title %}
+    <h3>{{ title }}</h3>
+  {% endif %}
+  {% for row in rows %}
+    {%
+      set row_classes = [
       default_row_class ? 'views-row',
     ]
-  %}
-  <div class="columnItem"{{ row.attributes.addClass(row_classes) }}>
-    {{- row.content -}}
+    %}
+    <div class="card"{{ row.attributes.addClass(row_classes) }}>
+      {{- row.content -}}
     </div>
-    {% endfor %}
-  </div>
+  {% endfor %}
+</div>

@@ -15,6 +15,7 @@ dependencies:
     - field.field.node.department_management.field_youtube_url
     - node.type.department_management
   module:
+    - google_map_field
     - layout_builder
     - text
     - user
@@ -34,10 +35,16 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_departmental_map:
+    type: google_map_field_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
 hidden:
   body: true
   field_access_to_information: true
-  field_departmental_map: true
   field_facebook_url: true
   field_flickr_url: true
   field_linkedin_url: true

@@ -33,7 +33,7 @@ h1,
   color: var(--clr-heading-text);
   font-size: var(--fs);
   line-height: var(--lh);
-  margin: (math.div(16,$fspx) * 1em) 0 (math.div(21,$fspx) * 1em);
+  margin: (math.div(32,$fspx) * 1em) 0 (math.div(16,$fspx) * 1em);
 
   //@include breakpoint($phab, $no-query: true) {
   //  $fspx: 30;
@@ -47,21 +47,23 @@ h1,
 
   @include breakpoint($tab, $no-query: true) {
     $fspx: 28;
-    $lh: math.div(39, $fspx);
+    $lh: math.div(36, $fspx);
 
     --fs: 2.8rem;
     --lh: #{$lh};
 
     font-weight: 700;
-    margin: (math.div(27,$fspx) * 1em) 0 (math.div(27,$fspx) * 1em);
+    margin: (math.div(40,$fspx) * 1em) 0 (math.div(16,$fspx) * 1em);
   }
 
   @include breakpoint($lap, $no-query: true) {
     $fspx: 30;
+    $lh: math.div(39, $fspx);
 
     --fs: 3rem;
+    --lh: #{$lh};
 
-    margin: (math.div(30,$fspx) * 1em) 0 (math.div(30,$fspx) * 1em);
+    margin: (math.div(45,$fspx) * 1em) 0 (math.div(18,$fspx) * 1em);
   }
 }
 
@@ -80,12 +82,12 @@ h2,
 
   @include breakpoint($lap, $no-query: true) {
     $fspx: 25;
-    $lh: math.div(36, $fspx);
+    $lh: math.div(33, $fspx);
 
     --fs: 2.5rem;
     --lh: #{$lh};
 
-    margin: (math.div(36,$fspx) * 1em) 0 (math.div(18,$fspx) * 1em);
+    margin: (math.div(33,$fspx) * 1em) 0 (math.div(18,$fspx) * 1em);
   }
 }
 

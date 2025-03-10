@@ -5,15 +5,15 @@
  * Functions to support theming in the northsouthministerialcouncil_theme.
  */
 
-use Drupal\Core\Url;
-use Drupal\nicsdru_corplite_theme\Helpers;
+use Drupal\block\Entity\Block;
 use Drupal\nicsdru_corplite_theme\LayoutClasses;
+use Drupal\node\NodeInterface;
+use Drupal\Component\Utility\Html;
 
 /**
  * Implements hook_preprocess_page() for page.html.twig.
  */
-function northsouthministerialcouncil_theme_preprocess_page(array &$variables)
-{
+function northsouthministerialcouncil_theme_preprocess_page(array &$variables) {
   // Process node pages.
   if (!empty($variables['node'])) {
     $node = $variables['node'];
@@ -22,7 +22,6 @@ function northsouthministerialcouncil_theme_preprocess_page(array &$variables)
       switch ($node->bundle()) {
         // Specific node types have a main and aside.
         case "news":
-        case "page":
           $variables['main_content_attr']->addClass(LayoutClasses::MAIN_SIDE);
           $variables['sidebar_second_attr']->addClass('ga-aside');
           break;
@@ -32,10 +31,10 @@ function northsouthministerialcouncil_theme_preprocess_page(array &$variables)
           $variables['main_content_attr']->addClass(LayoutClasses::MAIN_LIMITED);
           break;
       }
-      // Add the main with a limited width to taxonomy terms also.
-    } else {
-      $variables['main_content_attr']->addClass(LayoutClasses::MAIN_LIMITED);
     }
+    // Add the main with a limited width to taxonomy terms also.
+  } else {
+    $variables['main_content_attr']->addClass(LayoutClasses::MAIN_LIMITED);
   }
 
   // Process search view pages.
@@ -56,23 +55,62 @@ function northsouthministerialcouncil_theme_preprocess_page(array &$variables)
 
       case "search":
         $variables['main_content_attr']->addClass(LayoutClasses::MAIN_LIMITED);
-        if ($variables['content_wrapper_attr'] instanceof Attribute) {
-          $variables['content_wrapper_attr']
-            ->addClass(['ga-main', 'search-content'])
-            ->setAttribute('role', 'presentation');
-        }
+        $variables['content_wrapper_attr']
+          ->addClass(['ga-main', 'search-content'])
+          ->setAttribute('role', 'presentation');
+        break;
+      case "contacts":
+        $variables['main_content_attr']->addClass(LayoutClasses::MAIN_LIMITED);
+        $variables['content_wrapper_attr']
+          ->addClass(['ga-main', 'contacts-content'])
+          ->setAttribute('role', 'presentation');
     }
-
-      if (isset($variables['is_front']) && $variables['is_front'] == TRUE) {
-        $front_classes = ['grid', 'layout--front'];
-        $variables['main_content_attr']->addClass($front_classes);
-        $variables['sidebar_second_attr']->addClass('section--popular');
-      }
   }
 
-    if (isset($variables['is_front']) && $variables['is_front'] == TRUE) {
-      $front_classes = ['grid', 'layout--front'];
-      $variables['main_content_attr']->addClass($front_classes);
-      $variables['sidebar_second_attr']->addClass('section--quicklinks');
-    }
+  if (isset($variables['is_front']) && $variables['is_front'] == TRUE) {
+    $front_classes = ['grid', 'layout--front'];
+    $variables['main_content_attr']->addClass($front_classes);
+    $variables['sidebar_second_attr']->addClass('section--popular');
+  }
 }
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function northsouthministerialcouncil_theme_preprocess_node(array &$variables) {
+  switch ($variables['node']->getType()) {
+    case "feature":
+      // Unset any fields which have a specific preprocess variable.
+      // See nicsdru_nidirect_theme_preprocess_field() for an example.
+      if (!empty($variables['elements']['#exclude_fields'])) {
+        foreach ($variables['elements']['#exclude_fields'] as $field_id) {
+          unset($variables['content'][$field_id]);
+        }
+      }
+
+      if (isset($variables['elements']['#photo_image_style'])) {
+        // Some features use a different image style, eg: top set
+        // of featured content on the homepage.
+        $variables['content']['field_photo'][0]['#view_mode'] = $variables['elements']['#photo_image_style'];
+      }
+      break;
+
+    case "featured_content_list":
+      // Only show the title on the canonical node route.
+      if (\Drupal::routeMatch()->getRouteName() !== 'entity.node.canonical') {
+        $variables['show_title'] = FALSE;
+      }
+
+      break;
+
+    case "contact":
+    case "publication":
+    case "department_management":
+      $variables['attributes']['class'][] = Html::cleanCssIdentifier('ga-main');
+      $variables['attributes']['class'][] = Html::cleanCssIdentifier('article-content');
+
+      break;
+  }
+}
+
+

@@ -88,6 +88,7 @@ permissions:
   - 'use nics_editorial_workflow transition submit_for_review'
   - 'view all revisions'
   - 'view all taxonomy revisions'
+  - 'view any unpublished content'
   - 'view application revisions'
   - 'view contact revisions'
   - 'view department_management revisions'

@@ -12,7 +12,7 @@ dependencies:
 id: afbini_theme_exposedformnews_searchnews_search
 theme: afbini_theme
 region: sidebar_first
-weight: -8
+weight: -9
 provider: null
 plugin: 'views_exposed_filter_block:news_search-news_search'
 settings:
