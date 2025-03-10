@@ -45,6 +45,10 @@ $link-dark-background: (
 
     .card-deck {
       margin-bottom: 0;
+
+      .card__body {
+        padding: 1rem 0;
+      }
     }
   }
 }
