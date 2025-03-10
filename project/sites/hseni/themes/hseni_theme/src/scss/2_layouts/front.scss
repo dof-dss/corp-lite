@@ -11,6 +11,14 @@
 //
 // Style guide: layouts.front
 
+#header_wrapper {
+  background: var(--clr-hseni-navy);
+}
+
+.main-menu .hamburger:not([hidden])~.nav-main {
+  padding: 0 var(--rhythm-spacing-xl);
+}
+
 $link-dark-background: (
   color: #fff,
   background-color: transparent,
@@ -34,6 +42,10 @@ $link-dark-background: (
 .section {
   &--featured-highlights {
     margin-top: 2em;
+
+    .card-deck {
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -45,7 +57,7 @@ $link-dark-background: (
   background-position: 115%;
   background-size: 40%;
 
-  @media (max-width: 768px) {
+  @media (max-width: 640px) {
     flex-direction: row;
     align-items: center;
     background: #042f59;
@@ -55,7 +67,7 @@ $link-dark-background: (
     padding-left: 2rem;
     width: 65%;
     color: #fff;
-    @media (max-width: 768px) {
+    @media (max-width: 640px) {
       width: 100%;
       padding: 2%;
     }
@@ -66,6 +78,13 @@ $link-dark-background: (
   }
 }
 
+.about-us-container {
+  .first-paragraph {
+    font-size: 2.1rem;
+    margin: 1rem 0;
+  }
+}
+
 .contact-us-container {
   display: flex;
   flex-direction: column;
@@ -73,10 +92,10 @@ $link-dark-background: (
   justify-content: space-between;
   background: #042f59 url("/sites/hseni/themes/hseni_theme/images/contact-bg.png") no-repeat;
   background-position: right center;
-  background-size: 44%;
-  background-position: 115% 50%;
+  background-size: 68%;
+  background-position: 167% 50%;
 
-  @media (max-width: 768px) {
+  @media (max-width: 640px) {
     flex-direction: row;
     align-items: center;
     background: #042f59;
@@ -85,18 +104,14 @@ $link-dark-background: (
   .text-content {
     color: #fff;
     padding-left: 2rem;
-    max-width: 65%;
-    @media (max-width: 768px) {
+    max-width: 60%;
+    @media (max-width: 640px) {
       max-width: 100%;
       padding: 2%;
     }
 
     li {
       color: #fff;
-    }
-
-    a {
-      @include link-state-style($link-dark-background);
     }
   }
 }
@@ -115,12 +130,13 @@ $link-dark-background: (
 
 .profile-photo {
   width: 33%;
-  flex-shrink: 0;
 }
 
 .profile-photo img {
   width: 100%;
   object-fit: cover;
+  display: block;
+  line-height: 0;
 }
 
 .profile-department {
@@ -202,4 +218,25 @@ $link-dark-background: (
 #block-featuredcontent-documents,
 #block-homepage-profile {
     border-top: #044c93 solid 5px;
+}
+
+.home-block-links {
+  a {
+    color: #fff;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-decoration-color: #fff;
+    text-underline-offset: 3px;
+
+    &:hover {
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-decoration-color: #fff;
+      text-underline-offset: 3px;
+    }
+  }
+
+  li {
+    color: #fff;
+  }
 }
