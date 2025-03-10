@@ -5,9 +5,13 @@
  * Primary module hooks for Nisra common module.
  */
 
+use Drupal\Core\Breadcrumb\Breadcrumb;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Link;
+use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\StreamWrapper\StreamWrapperManager;
+use Drupal\Core\Url;
 use Drupal\node\Entity\Node;
 use Drupal\views\ViewExecutable;
 
@@ -162,5 +166,26 @@ function nisra_common_preprocess_views_view_table(&$variables) {
         unset($variables['rows'][$key]);
       }
     }
+  }
+}
+
+/**
+ * Implements hook_system_breadcrumb_alter().
+ *
+ * Altering the search view page breadcrumbs, when facets are selected the breadcrumb trail is overwritten.
+ */
+function nisra_common_system_breadcrumb_alter(Breadcrumb &$breadcrumb, RouteMatchInterface $route_match, array $context) {
+  $route_name = $route_match->getRouteName();
+  $links = $breadcrumb->getLinks();
+  $breadcrumb = new Breadcrumb();
+  if ($route_name === 'entity.taxonomy_term.canonical') {
+
+    $new_links[] = Link::createFromRoute('Home', '<front>');
+    $new_links[] = Link::fromTextAndUrl('Statistics and Research', Url::fromUri('internal:/Statistics'));
+
+    array_shift($links);
+    $links = array_merge($new_links, $links);
+    $breadcrumb->setLinks($links);
+    $breadcrumb->addCacheContexts(['url.path']);
   }
 }
