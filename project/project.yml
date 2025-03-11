@@ -8,10 +8,11 @@ sites:
         name: nisra
         url: nisra.gov.uk
         solr: nisra
+        www: true
         cron_spec: '10 * * * *'
         cron_cmd: 'cd web/sites/nisra ; drush core-cron'
         database: nisra
-        status: development
+        status: production
         default: true
     afbini:
         name: afbini
