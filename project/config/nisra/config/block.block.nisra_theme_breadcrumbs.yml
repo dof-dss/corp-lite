@@ -1,0 +1,29 @@
+uuid: 3d8f5a0a-38a8-4173-971a-c3eb2273b9ee
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_visibility_groups
+    - system
+  theme:
+    - nisra_theme
+id: nisra_theme_breadcrumbs
+theme: nisra_theme
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/research-support/*\r\n/statistics/*"

@@ -1,7 +1,20 @@
 uuid: c8dffe1e-396e-4779-8d17-5bdd60b1388a
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - origins_toc
+third_party_settings:
+  origins_toc:
+    toc_enable: 1
+    toc_title: 'Table of contents'
+    toc_location: .page-summary
+    toc_insert: after
+    toc_source_container: .article-content
+    toc_element: h2
+    toc_exclusions: ''
+    toc_screen_depth: '2'
+    toc_debug: 0
 _core:
   default_config_hash: hG-tjPaSYURfrMPerFi4XPP2P1SFIV1kWckqZn7STfs
 name: 'Areas of Co-operation'

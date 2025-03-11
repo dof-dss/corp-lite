@@ -11,7 +11,7 @@ dependencies:
     - workflows.workflow.nics_editorial_workflow
   module:
     - content_moderation
-    - geolocation
+    - google_map_field
     - metatag
     - path
     - text
@@ -39,7 +39,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_map:
-    type: geolocation_latlng
+    type: google_map_field_default
     weight: 26
     region: content
     settings: {  }

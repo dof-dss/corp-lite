@@ -62,7 +62,7 @@ function afbini_theme_preprocess_page(array &$variables) {
         break;
 
       case "search":
-        $variables['main_content_attr']->addClass(LayoutClasses::MAIN_LIMITED);
+        $variables['main_content_attr']->addClass(LayoutClasses::SIDE_MAIN);
         if ($variables['content_wrapper_attr'] instanceof Attribute) {
           $variables['content_wrapper_attr']
             ->addClass(['ga-main', 'search-content'])

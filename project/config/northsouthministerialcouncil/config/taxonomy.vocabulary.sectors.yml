@@ -1,7 +1,20 @@
 uuid: 860790ac-acab-4835-b482-a1fa1620b807
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - origins_toc
+third_party_settings:
+  origins_toc:
+    toc_enable: 1
+    toc_title: 'Table of contents'
+    toc_location: .page-summary
+    toc_insert: after
+    toc_source_container: .article-content
+    toc_element: h2
+    toc_exclusions: ''
+    toc_screen_depth: '2'
+    toc_debug: 0
 name: Sectors
 vid: sectors
 description: 'NSMC sectors'
