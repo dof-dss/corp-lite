@@ -59,6 +59,12 @@ $link-main-menu-horizontal-active: (
   }
 
   .nav {
+    &-main {
+      @include breakpoint($tab) {
+        max-width: 1130px;
+      }
+    }
+
     &-link,
     &-item .active {
       @include link-state-style($link-main-menu);
