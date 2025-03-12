@@ -8,6 +8,7 @@
 use Drupal\block\Entity\Block;
 use Drupal\nicsdru_corplite_theme\LayoutClasses;
 use Drupal\node\NodeInterface;
+use Drupal\Component\Utility\Html;
 
 /**
  * Implements hook_preprocess_page() for page.html.twig.
@@ -69,5 +70,21 @@ function afbini_theme_preprocess_page(array &$variables) {
             ->setAttribute('role', 'presentation');
         }
     }
+  }
+}
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function afbini_theme_preprocess_node(array &$variables) {
+  switch ($variables['node']->getType()) {
+
+    case "contact":
+    case "publication":
+    case "gallery":
+      $variables['attributes']['class'][] = Html::cleanCssIdentifier('ga-main');
+      $variables['attributes']['class'][] = Html::cleanCssIdentifier('article-content');
+
+      break;
   }
 }
