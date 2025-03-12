@@ -20,7 +20,7 @@ third_party_settings:
     toc_exclusions: ''
     toc_screen_depth: '1'
     toc_debug: 0
-name: 'Researcher profiles'
+name: 'Researcher profile'
 type: researcher_profiles
 description: 'Use this content type for researcher profiles.'
 help: null
