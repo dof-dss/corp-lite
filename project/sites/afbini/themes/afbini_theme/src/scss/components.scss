@@ -13,6 +13,10 @@ nav#block-mainnavigation {
 }
 
 .page-node-type-article {
+  .field--name-field-site-topics {
+    padding-bottom: 0;
+  }
+
   .field-site-services {
     display: flex;
     column-gap: 10px;
