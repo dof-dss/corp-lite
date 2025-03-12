@@ -1,8 +1,8 @@
 project_type: corp-lite
 project_name: 'Corp Lite'
 project_id: 5wphupyrfaitk
-project_disk_size: 30720
-db_disk_size: 14000
+project_disk_size: 34816
+db_disk_size: 12288
 sites:
     nisra:
         name: nisra
