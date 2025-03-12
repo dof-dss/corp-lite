@@ -17,4 +17,5 @@ blacklist:
   - fastly.settings
 complete_list:
   - search_api.server.solr_default
-partial_list: {  }
+partial_list:
+  - hseni_theme.settings
