@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.article.body
     - field.field.node.article.field_enable_toc
     - field.field.node.article.field_meta_tags
+    - field.field.node.article.field_next_audit_due
     - field.field.node.article.field_site_services
     - field.field.node.article.field_site_topics
     - field.field.node.article.field_summary
@@ -61,6 +62,7 @@ hidden:
   content_moderation_control: true
   field_enable_toc: true
   field_meta_tags: true
+  field_next_audit_due: true
   field_tags: true
   langcode: true
   links: true

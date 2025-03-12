@@ -5,8 +5,13 @@ dependencies:
   config:
     - node.type.article
     - node.type.contact
+    - node.type.gallery
+    - node.type.link
     - node.type.news
+    - node.type.page
     - node.type.publication
+    - node.type.researcher_profiles
+    - taxonomy.vocabulary.services
     - taxonomy.vocabulary.site_topics
   module:
     - content_moderation
@@ -102,8 +107,13 @@ type_settings:
     node:
       - article
       - contact
+      - gallery
+      - link
       - news
+      - page
       - publication
+      - researcher_profiles
     taxonomy_term:
+      - services
       - site_topics
   default_moderation_state: draft
