@@ -77,11 +77,11 @@
       {{- page.sidebar_second -}}
     </aside>
   {%- endif -%}
-  {%- if page.related -%}
-    {{- page.related -}}
-  {% endif %}
   {%- if page.last_updated -%}
     {{- page.last_updated -}}
+  {% endif %}
+  {%- if page.related -%}
+    {{- page.related -}}
   {% endif %}
 </main>
 {%- if page.bottom_banner -%}
