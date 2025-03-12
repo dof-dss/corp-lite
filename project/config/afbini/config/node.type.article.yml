@@ -12,8 +12,8 @@ third_party_settings:
   origins_toc:
     toc_enable: 1
     toc_title: Contents
-    toc_location: '#main-article > h2:nth-child(5)'
-    toc_insert: before
+    toc_location: .field-summary
+    toc_insert: after
     toc_source_container: '#main-article'
     toc_element: h2
     toc_exclusions: ''
