@@ -52,6 +52,7 @@ $link-main-menu-horizontal-active: (
 
 .main-menu {
   background-color: var(--clr-main-nav-bkgd);
+  border-bottom-color: var(--clr-nisra-navy);
 
   @include breakpoint($tab) {
     background-color: var(--clr-main-nav-bkgd);
@@ -94,6 +95,16 @@ $link-main-menu-horizontal-active: (
       @include breakpoint($tab) {
         max-height: 9rem;
       }
+    }
+  }
+}
+
+header {
+  .search-form {
+    background-color: var(--clr-nisra-navy);
+
+    @include breakpoint($tab) {
+      background: inherit;
     }
   }
 }
