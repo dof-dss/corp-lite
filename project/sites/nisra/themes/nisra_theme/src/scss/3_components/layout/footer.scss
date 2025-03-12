@@ -43,4 +43,14 @@ $link-footer: (
       }
     }
   }
+
+  @include breakpoint($desk) {
+    .container {
+      grid-gap: 0 8rem;
+    }
+  }
+
+  &-links {
+    grid-column: 1 / span 2;
+  }
 }

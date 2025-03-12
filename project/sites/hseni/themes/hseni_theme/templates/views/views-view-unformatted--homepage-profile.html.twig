@@ -46,10 +46,10 @@
         {% set row = view.result[0] %}
         {% if row._entity.field_links %}
           <div class="field-links">
-            <ul class="links-list">
+            <ul class="home-block-links">
               {% for link in row._entity.field_links %}
                 <li>
-                  <a href="{{ link.url }}" class="link-item">
+                  <a href="{{ link.url }}">
                     {{ link.title }}
                   </a>
                 </li>
