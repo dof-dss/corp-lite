@@ -5,6 +5,7 @@ site-styling:
       css/1_base/root.css: { minified: true, weight: -100 }
     layout:
       css/2_layouts/front.css: { minified: true }
+      css/2_layouts/contact.css: { minified: true }
     theme:
       css/3_components/layout/footer.css: { minified: true }
       css/3_components/content/card.css: { minified: true }
