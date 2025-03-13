@@ -1,0 +1,9 @@
+@use '../../../../../../../../web/themes/custom/nicsdru_corplite_theme/src/scss/init' as *;
+
+.path-contact {
+  @include breakpoint($tab) {
+    .grid .views-element-container {
+      width: 76rem !important;
+    }
+  }
+}
