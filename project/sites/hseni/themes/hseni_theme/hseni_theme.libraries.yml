@@ -9,3 +9,8 @@ site-styling:
       css/3_components/layout/footer.css: { minified: true }
       css/3_components/layout/components.css: { minified: true }
       css/3_components/navigation/main-menu.css: { minified: true }
+fontawesome:
+  version: 5.x
+  css:
+    theme:
+      https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css: {}
