@@ -68,6 +68,9 @@ if (!empty($subsite_id)) {
   $config['geolocation_google_maps.settings']['google_map_api_server_key'] = getenv($site_id . '_' . 'GOOGLE_MAP_API_SERVER_KEY');
   // Geocoder module API key.
   $config['geocoder.settings']['plugins_options']['googlemaps']['apikey'] = getenv($site_id . '_' . 'GOOGLE_MAP_API_KEY');
+
+  // Google Map Field config settings.
+  $config['google_map_field.settings']['google_map_field_apikey'] = getenv($site_id . '_' . 'GOOGLE_MAP_API_KEY');
 }
 
 // Environment indicator defaults.
