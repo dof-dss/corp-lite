@@ -64,5 +64,18 @@
     {%- block content -%}
       {{- content -}}
     {% endblock %}
+
+    {# Social links, inline with the other main menu items #}
+    {% if social_links %}
+      <div class="nav-social-wrapper">
+        <ul class="nav-social list--no-bullet">
+          {% for link in social_links %}
+            <li class="social-item">
+              {{ link }}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
   </div>
 </nav>
