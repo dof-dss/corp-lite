@@ -176,7 +176,7 @@ function hseni_theme_preprocess_block(array &$variables) {
 
         switch ($id) {
           case 'twitter':
-            $icon_class = 'fab fa-twitter';
+            $icon_class = 'fab fa-x-twitter';
             break;
           case 'facebook':
             $icon_class = 'fab fa-facebook';
