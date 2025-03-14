@@ -10,7 +10,6 @@ dependencies:
     - media.type.remote_video
     - node.type.application
     - node.type.contact
-    - node.type.department_management
     - node.type.easychart
     - node.type.gallery
     - node.type.link
@@ -45,7 +44,6 @@ permissions:
   - 'create application content'
   - 'create audio media'
   - 'create contact content'
-  - 'create department_management content'
   - 'create document media'
   - 'create easychart content'
   - 'create file media'
@@ -64,7 +62,6 @@ permissions:
   - 'delete own remote_video media'
   - 'edit any application content'
   - 'edit any contact content'
-  - 'edit any department_management content'
   - 'edit any easychart content'
   - 'edit any gallery content'
   - 'edit any link content'
@@ -73,7 +70,6 @@ permissions:
   - 'edit any publication content'
   - 'edit own application content'
   - 'edit own contact content'
-  - 'edit own department_management content'
   - 'edit own easychart content'
   - 'edit own gallery content'
   - 'edit own link content'
@@ -86,12 +82,10 @@ permissions:
   - 'use nics_editorial_workflow transition draft_of_published'
   - 'use nics_editorial_workflow transition reject'
   - 'use nics_editorial_workflow transition submit_for_review'
-  - 'view all revisions'
   - 'view all taxonomy revisions'
   - 'view any unpublished content'
   - 'view application revisions'
   - 'view contact revisions'
-  - 'view department_management revisions'
   - 'view easychart revisions'
   - 'view gallery revisions'
   - 'view latest version'

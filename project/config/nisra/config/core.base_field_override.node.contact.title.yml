@@ -10,7 +10,7 @@ id: node.contact.title
 field_name: title
 entity_type: node
 bundle: contact
-label: 'Point of contact (Main heading)'
+label: 'Point of contact'
 description: ''
 required: true
 translatable: true
