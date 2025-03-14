@@ -463,7 +463,7 @@ a.card {
       &__content {
         font-size: 1.5rem;
         line-height: 2.4rem;
-        margin: var(--rhythm-spacing-xs) 0;
+        margin: var(--rhythm-spacing-xs) 0 0;
 
         @include breakpoint($lap) {
           font-size: 1.7rem;
