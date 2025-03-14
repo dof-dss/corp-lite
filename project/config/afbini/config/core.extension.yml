@@ -13,6 +13,7 @@ module:
   block_content: 0
   block_field: 0
   block_visibility_groups: 0
+  book: 0
   breakpoint: 0
   ckeditor5: 0
   ckeditor5_allowed_html: 0
