@@ -8,6 +8,8 @@
 use Drupal\block\Entity\Block;
 use Drupal\nicsdru_corplite_theme\LayoutClasses;
 use Drupal\node\NodeInterface;
+use Drupal\Core\Link;
+use Drupal\Core\Url;
 
 /**
  * Implements hook_preprocess_page() for page.html.twig.
@@ -155,4 +157,96 @@ function hseni_theme_preprocess_node(array &$variables) {
 
       break;
   }
+}
+
+/**
+ * Implements hook_preprocess_block().
+ */
+function hseni_theme_preprocess_block(array &$variables) {
+  // Include social links as part of the main menu block
+  if (preg_match('/^system_menu_block\:(main)$/', $variables['plugin_id'])) {
+    $social_links = corplite_social_links(); // Fetch social links from settings.
+
+    if (!empty($social_links)) {
+      foreach ($social_links as $id => $link) {
+        $link['#attributes']['class'][] = 'social-' . $id;
+
+        // creating a font awesome class and adding to each of the social links
+        $icon_class = '';
+
+        switch ($id) {
+          case 'twitter':
+            $icon_class = 'fab fa-x-twitter';
+            break;
+          case 'facebook':
+            $icon_class = 'fab fa-facebook';
+            break;
+          case 'youtube':
+            $icon_class = 'fab fa-youtube';
+            break;
+          case 'instagram':
+            $icon_class = 'fab fa-instagram';
+            break;
+          case 'linkedin':
+            $icon_class = 'fab fa-linkedin';
+            break;
+          case 'rss':
+            $icon_class = 'fas fa-rss';
+            break;
+        }
+
+        if ($icon_class) {
+          $link['#attributes']['class'][] = 'social-icon ' . $icon_class;
+        }
+
+        // Set the link title to an empty string, as we only want the icon to display
+        $social_links[$id] = Link::fromTextAndUrl('', $link['#url'])->toRenderable();
+
+        // Ensure the attributes with the class are included
+        $social_links[$id]['#attributes'] = $link['#attributes'];
+      }
+
+      // Add the modified social links to the block variables.
+      $variables['social_links'] = $social_links;
+    }
+  }
+}
+
+/**
+ * Utility function to return theme config as array of Link elements.
+ *
+ * @return array
+ *   List of social media provider links.
+ */
+function corplite_social_links() {
+  $platforms = [
+    'twitter' => t('Twitter'),
+    'facebook' => t('Facebook'),
+    'youtube' => t('YouTube'),
+    'instagram' => t('Instagram'),
+    'linkedin' => t('LinkedIn'),
+    'rss' => t('RSS'),
+  ];
+  $social_links = [];
+
+  // Fetch links from the theme settings and use as part of render elements.
+  foreach ($platforms as $id => $label) {
+    $platform_url = theme_get_setting("social_links_$id", 'hseni_theme');
+
+    if (empty($platform_url)) {
+      continue; // Skip any empty links.
+    }
+
+    // Check for any internal paths.
+    if (0 !== strpos($platform_url, "http")) {
+      // Make sure internal paths are handled correctly.
+      $platform_url = ltrim($platform_url, '/');
+      $platform_url = 'internal:/' . $platform_url;
+    }
+
+    // Prepare the links as renderable objects.
+    $social_links[$id] = Link::fromTextAndUrl($label, Url::fromUri($platform_url))->toRenderable();
+  }
+
+  return $social_links;
 }
