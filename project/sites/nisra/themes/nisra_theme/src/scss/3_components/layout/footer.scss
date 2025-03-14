@@ -53,4 +53,12 @@ $link-footer: (
   &-links {
     grid-column: 1 / span 2;
   }
+
+  &-menu {
+    margin-top: 6rem;
+
+    @include breakpoint($tab) {
+      margin: 0;
+    }
+  }
 }
