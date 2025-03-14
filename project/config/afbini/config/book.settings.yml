@@ -1,0 +1,15 @@
+_core:
+  default_config_hash: i-_2TVi6FUEAqBgNRJkt6aaYmiw1k_LTrXzJS6wlZ4U
+allowed_types:
+  - article
+  - contact
+  - gallery
+  - link
+  - news
+  - page
+  - publication
+  - researcher_profiles
+block:
+  navigation:
+    mode: 'all pages'
+child_type: article
