@@ -91,21 +91,40 @@ $link-heading-no-visited: (
       font-size: 1.5rem;
       line-height: 2.4rem;
       margin: var(--rhythm-spacing-sm) 0;
+
+      @include breakpoint($lap) {
+        font-size: 1.7rem;
+        line-height: 2.7rem;
+      }
+
+      @include breakpoint($desk-plus) {
+        font-size: 1.8rem;
+        line-height: 3rem;
+      }
     }
   }
 
   &__title {
     font-size: 2.4rem;
-    line-height: 3.3rem;
+    line-height: 3.2rem;
     margin: 0 0 var(--rhythm-spacing-sm);
-    color: var(--clr-link)
   }
 
   &__meta {
-    font-size: 1.6rem;
-    line-height: 2.4rem;
+    font-size: 1.5rem;
+    line-height: 2.2rem;
     color: var(--clr-grey-dark);
     margin: var(--rhythm-spacing-sm) 0 0;
+
+    @include breakpoint($lap) {
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+    }
+
+    @include breakpoint($desk-plus) {
+      font-size: 1.7rem;
+      line-height: 2.5rem;
+    }
 
     &:empty {
       margin: 0;
@@ -417,17 +436,44 @@ a.card {
       border: 0;
 
       &__title {
-        font-size: 2rem;
-        line-height: 3.3rem;
-        margin: 0;
+        font-size: 1.8rem;
+        line-height: 2.8rem;
+        margin: 0 0 var(--rhythm-spacing-sm);
         padding: 0;
+        color: var(--clr-link);
+
+        @include breakpoint($lap) {
+          font-size: 1.9rem;
+          line-height: 3rem;
+        }
+
+        @include breakpoint($desk) {
+          font-size: 2rem;
+          line-height: 3.3rem;
+        }
+
+        @include breakpoint($desk-plus) {
+          font-size: 2.1rem;
+          line-height: 3.5rem;
+        }
+
       }
 
       &__summary,
       &__content {
-        font-size: 1.7rem;
+        font-size: 1.5rem;
         line-height: 2.4rem;
-        margin: var(--rhythm-spacing-xs) 0 0;
+        margin: var(--rhythm-spacing-sm) 0;
+
+        @include breakpoint($lap) {
+          font-size: 1.7rem;
+          line-height: 2.7rem;
+        }
+
+        @include breakpoint($desk-plus) {
+          font-size: 1.8rem;
+          line-height: 3rem;
+        }
 
         * {
           font-size: inherit;
@@ -448,10 +494,20 @@ a.card {
 
       &__meta,
       .site-topics--item {
-        font-size: 1.6rem;
-        line-height: 2.4rem;
+        font-size: 1.5rem;
+        line-height: 2.2rem;
+        color: var(--clr-grey-dark);
         margin: var(--rhythm-spacing-sm) 0 0;
-        padding: 0;
+
+        @include breakpoint($lap) {
+          font-size: 1.6rem;
+          line-height: 2.4rem;
+        }
+
+        @include breakpoint($desk-plus) {
+          font-size: 1.7rem;
+          line-height: 2.5rem;
+        }
 
         &:empty {
           margin: 0;
@@ -539,8 +595,25 @@ a.card {
 
       &__title {
         font-size: 2rem;
-        line-height: 3.3rem;
-        margin: 0;
+        line-height: 2.8rem;
+        margin: 0 0 var(--rhythm-spacing-sm);
+        padding: 0;
+        color: var(--clr-link);
+
+        @include breakpoint($lap) {
+          font-size: 2.1rem;
+          line-height: 3rem;
+        }
+
+        @include breakpoint($desk) {
+          font-size: 2.2rem;
+          line-height: 3.3rem;
+        }
+
+        @include breakpoint($desk-plus) {
+          font-size: 2.2rem;
+          line-height: 3.5rem;
+        }
 
         a {
           @include link-state-style($link-heading-no-visited);
@@ -551,8 +624,19 @@ a.card {
         margin: .5em 0 0;
 
         *:not(ul) {
-          font-size: 1.7rem;
-          line-height: 2.7rem;
+          font-size: 1.5rem;
+          line-height: 2.4rem;
+          margin: var(--rhythm-spacing-sm) 0;
+
+          @include breakpoint($lap) {
+            font-size: 1.7rem;
+            line-height: 2.7rem;
+          }
+
+          @include breakpoint($desk-plus) {
+            font-size: 1.8rem;
+            line-height: 3rem;
+          }
         }
 
         p,
