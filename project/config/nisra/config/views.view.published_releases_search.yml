@@ -699,7 +699,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "{% if url|length > 0 %}\r\n<li><a class=\"card card--plain no-ext-icon\" href=\"{{ url }}\">\r\n{% else %}\r\n<li class=\"card card--plain no-ext-icon\">\r\n{% endif %}\r\n  <h3 class=\"card__title\">{{ title }}</h3>\r\n{% if summary %}\r\n<div class=\"card__summary\">\r\n<p>{{ summary }}</p>\r\n</div>\r\n{% endif %}\r\n<div class=\"card__meta\">\r\n{% if release_date|striptags|date(\"U\")  < \"01 January 1971\" %} \r\n<span class=\"card__meta-item field-published-date>Date of publication:</span>\r\n{% else %}\r\n<span class=\"card__meta-item field-published-date>Date of publication: {{ release_date }}</span>\r\n{% endif %}\r\n</div>\r\n{% if url|length > 0 %}\r\n</a></li>\r\n{% else %}\r\n</li>\r\n{% endif %}"
+            text: "{% if url|length > 0 %}\r\n<li><a class=\"card card--plain\" href=\"{{ url }}\">\r\n{% else %}\r\n<li class=\"card card--plain no-ext-icon\">\r\n{% endif %}\r\n  <h3 class=\"card__title\">{{ title }}</h3>\r\n{% if summary %}\r\n<div class=\"card__summary\">\r\n<p>{{ summary }}</p>\r\n</div>\r\n{% endif %}\r\n<div class=\"card__meta\">\r\n{% if release_date|striptags|date(\"U\")  < \"01 January 1971\" %} \r\n<span class=\"card__meta-item field-published-date>Date of publication:</span>\r\n{% else %}\r\n<span class=\"card__meta-item field-published-date>Date of publication: {{ release_date }}</span>\r\n{% endif %}\r\n</div>\r\n{% if url|length > 0 %}\r\n</a></li>\r\n{% else %}\r\n</li>\r\n{% endif %}"
             make_link: false
             path: ''
             absolute: false
@@ -1074,7 +1074,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "{% if url|length > 0 %}\r\n<li><a class=\"card card--plain no-ext-icon\" href=\"{{ url }}\">\r\n{% else %}\r\n<li class=\"card card--plain no-ext-icon\">\r\n{% endif %}\r\n  <h3 class=\"card__title\">{{ title }}</h3>\r\n{% if summary %}\r\n<div class=\"card__summary\">\r\n<p>{{ summary }}</p>\r\n</div>\r\n{% endif %}\r\n<div class=\"card__meta\">\r\n{% if release_date|striptags|date(\"U\")  < \"01 January 1971\" %}  \r\n<span class=\"card__meta-item field-published-date>Date to be published: null</span>\r\n{% else %}\r\n<span class=\"card__meta-item field-published-date>Date to be published: {{ release_date }}</span>\r\n{% endif %}\r\n</div>\r\n{% if url|length > 0 %}\r\n</a></li>\r\n{% else %}\r\n</li>\r\n{% endif %}"
+            text: "{% if url|length > 0 %}\r\n<li><a class=\"card card--plain\" href=\"{{ url }}\">\r\n{% else %}\r\n<li class=\"card card--plain no-ext-icon\">\r\n{% endif %}\r\n  <h3 class=\"card__title\">{{ title }}</h3>\r\n{% if summary %}\r\n<div class=\"card__summary\">\r\n<p>{{ summary }}</p>\r\n</div>\r\n{% endif %}\r\n<div class=\"card__meta\">\r\n{% if release_date|striptags|date(\"U\")  < \"01 January 1971\" %}  \r\n<span class=\"card__meta-item field-published-date>Date to be published: null</span>\r\n{% else %}\r\n<span class=\"card__meta-item field-published-date>Date to be published: {{ release_date }}</span>\r\n{% endif %}\r\n</div>\r\n{% if url|length > 0 %}\r\n</a></li>\r\n{% else %}\r\n</li>\r\n{% endif %}"
             make_link: false
             path: ''
             absolute: false
