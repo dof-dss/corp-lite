@@ -44,7 +44,7 @@ $link-main-menu-active: (
   outline: 2px solid,
 );
 $link-main-menu-horizontal-active: (
-  color: var(--clr-white),
+  color: var(--clr-black),
   background: var(--clr-main-nav-active-bkgd),
   box-shadow: inset 0 -7px 0 0 var(--clr-main-nav-active-line),
   outline: none,
@@ -123,4 +123,26 @@ $link-main-menu-horizontal-active: (
   }
 }
 
+.search-form input[type='submit'] {
+  width: 6rem;
+  min-width: auto;
+  height: 4.5rem;
+  min-height: 3.5rem;
+  padding: 0;
+  margin: 0;
+  border-color: var(--clr-button-primary);
+  background: #6fb9ff url(../../../images/black-search.svg) 3px center no-repeat;
+  background-size: 4.2rem auto;
+  text-indent: -9999px;
+
+  &:focus {
+    outline: 3px solid #FFFF00;
+  }
+}
+
+.search-form input[type='text'] {
+  &:focus {
+    outline: 3px solid #FFFF00;
+  }
+}
 
