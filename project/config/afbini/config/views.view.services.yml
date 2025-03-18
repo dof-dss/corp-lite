@@ -156,7 +156,7 @@ display:
       access:
         type: perm
         options:
-          perm: 'reorder draggable views'
+          perm: 'access content'
       cache:
         type: tag
         options: {  }
