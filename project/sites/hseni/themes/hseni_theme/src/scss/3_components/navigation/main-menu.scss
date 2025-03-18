@@ -134,6 +134,10 @@ $link-main-menu-horizontal-active: (
   background: #6fb9ff url(../../../images/black-search.svg) 3px center no-repeat;
   background-size: 4.2rem auto;
   text-indent: -9999px;
+
+  &:focus {
+    outline: 3px solid #FFFF00;
+  }
 }
 
 .search-form input[type='text'] {
@@ -142,8 +146,3 @@ $link-main-menu-horizontal-active: (
   }
 }
 
-.search-form input[type='submit'] {
-  &:focus {
-    outline: 3px solid #FFFF00;
-  }
-}
