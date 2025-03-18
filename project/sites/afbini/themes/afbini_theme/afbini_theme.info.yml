@@ -7,6 +7,7 @@ base theme: nicsdru_corplite_theme
 
 libraries:
   - afbini_theme/afbini-styling
+  - nicsdru_corplite_theme/book
 
 ckeditor5-stylesheets:
   - css/1_base/root.css
