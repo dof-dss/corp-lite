@@ -12,7 +12,9 @@ migration_group: migrate_drupal_7
 label: 'Public files'
 source:
   plugin: file_entity
-  type: document
+  type:
+    - document
+    - undefined
   constants:
     bundle: 'document'
 process:
@@ -24,10 +26,12 @@ process:
     default_value: "und"
   name: field_file_title
   uid:
-    - plugin: skip_on_empty
+    -
+      plugin: skip_on_empty
       method: process
       source: uid
-    - plugin: migration_lookup
+    -
+      plugin: migration_lookup
       migration: upgrade_d7_user
   status: status
   created: timestamp
@@ -40,4 +44,4 @@ destination:
 migration_dependencies:
   required:
     - upgrade_d7_file
-  optional: { }
+  optional: {  }
