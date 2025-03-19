@@ -16,63 +16,67 @@ source:
   bundle: site_topics
 process:
   tid:
-    -
-      plugin: get
+    - plugin: get
       source: tid
   vid:
-    -
-      plugin: migration_lookup
+    - plugin: migration_lookup
       migration: upgrade_d7_taxonomy_vocabulary
       source: vid
   name:
-    -
-      plugin: get
+    - plugin: get
       source: name
   description/value:
-    -
-      plugin: get
+    - plugin: get
       source: description
+    - plugin: media_chart_taxonomy_filter
+    - plugin: media_wysiwyg_taxonomy_filter
+    - plugin: filter_absolute_links
+
+      replace_urls:
+        http://www.nisra.gov.uk
+        http://nisra.gov.uk
+        https://www.nisra.gov.uk
+        https://nisra.gov.uk
   description/format:
-    -
-      plugin: get
+    - plugin: static_map
+      bypass: true
       source: format
+      map:
+        filtered_html: basic_html
+        filtered_html_with_no_images: basic_html
+        filtered_html_with_tokens: basic_html
+        restricted_html: basic_html
+        plain_text: plain_text
   weight:
-    -
-      plugin: get
+    - plugin: get
       source: weight
   parent_id:
-    -
-      plugin: skip_on_empty
+    - plugin: skip_on_empty
       method: process
       source: parent
-    -
-      plugin: migration_lookup
+    - plugin: migration_lookup
       migration:
         - upgrade_d7_taxonomy_term_site_topics
+        - upgrade_d7_taxonomy_term_research_support
   parent:
-    -
-      plugin: default_value
+    - plugin: default_value
       default_value: 0
       source: '@parent_id'
   forum_container:
-    -
-      plugin: get
+    - plugin: get
       source: is_container
   changed:
-    -
-      plugin: get
+    - plugin: get
       source: timestamp
   langcode:
-    -
-      plugin: get
+    - plugin: get
       source: language
-  field_enable_toc:
-    -
-      plugin: get
-      source: field_enable_toc
-  field_photo:
-    -
-      plugin: sub_process
+  field_summary:
+    - plugin: get
+      source: field_summary
+    - plugin: strip_html_filter
+  field_term_photo:
+    - plugin: sub_process
       source: field_photo
       process:
         target_id: fid
@@ -80,14 +84,27 @@ process:
         title: title
         width: width
         height: height
-  field_summary:
-    -
-      plugin: get
-      source: field_summary
+  field_term_image:
+    - plugin: sub_process
+      source: field_featured_image
+      process:
+        target_id: fid
+        alt: alt
+        title: title
+        width: width
+        height: height
+  field_enable_toc:
+    - plugin: get
+      source: field_enable_toc
+  field_hide_topic:
+    plugin: default_value
+    default_value: 0
   field_metatag:
-    -
-      plugin: d7_metatag_entities
+    - plugin: d7_metatag_entities
       source: pseudo_metatag_entities
+  moderation_state:
+    plugin: default_value
+    default_value: published
 destination:
   plugin: 'entity:taxonomy_term'
   default_bundle: site_topics
