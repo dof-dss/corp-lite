@@ -33,10 +33,10 @@ process:
     - plugin: filter_absolute_links
 
       replace_urls:
-        http://www.nisra.gov.uk
-        http://nisra.gov.uk
-        https://www.nisra.gov.uk
-        https://nisra.gov.uk
+        http://www.hseni.gov.uk
+        http://hseni.gov.uk
+        https://www.hseni.gov.uk
+        https://hseni.gov.uk
   description/format:
     - plugin: static_map
       bypass: true
