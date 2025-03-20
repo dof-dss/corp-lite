@@ -81,6 +81,7 @@ process:
       source: body
     - plugin: media_wysiwyg_filter
     - plugin: filter_absolute_links
+
       replace_urls:
         http://www.hseni.gov.uk
         http://hseni.gov.uk
@@ -96,7 +97,6 @@ process:
       map:
         filtered_html: basic_html
         filtered_html_with_no_images: basic_html
-        filtered_html_with_images: basic_html
         filtered_html_with_tokens: basic_html
         restricted_html: basic_html
         plain_text: plain_text
