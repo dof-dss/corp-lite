@@ -15,7 +15,11 @@
         $intLinkText = Drupal.t('opens in a new window / tab');
       var $extLinkMarkup = '<span class="visually-hidden">(' + $extLinkText + ')</span><svg aria-hidden="true" class="ico ico-elink"><title>' + $extLinkText + '</title><use xlink:href="#elink"></use></svg>';
 
-      $(once('elink', "#main-content a[href^='http'], #main-content a[href^='//'], #footer a[href*='http://'], #footer a[href*='https://'], #block-nisra-theme-publishedreleasesintrotext a[href*='https://'], #block-nisra-theme-publishedreleasesintrotext a[href*='http://']", context)).filter(function () {
+      $(once('elink', "#main-content a[href^='http'], #main-content a[href^='//'], " +
+        "#footer a[href*='http://'], " + "#footer a[href*='https://'], " +
+        "#block-nisra-theme-publishedreleasesintrotext a[href*='https://'], " + "#block-nisra-theme-publishedreleasesintrotext a[href*='http://'], " +
+        ".section--featured a[href*='http://'], " + ".section--featured a[href*='https://']"
+        , context)).filter(function () {
         return this.hostname && this.hostname !== location.hostname;
       }).not('a.no-ext-icon, .social-links a').each(function () {
         // Set attributes.

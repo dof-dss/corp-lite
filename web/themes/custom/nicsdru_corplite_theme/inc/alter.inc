@@ -44,7 +44,7 @@ function nicsdru_corplite_theme_form_system_theme_settings_alter(&$form, FormSta
   ];
   $form['social_links']['social_links_instagram'] = [
     '#type' => 'textfield',
-    '#title' => t('YouTube'),
+    '#title' => t('Instagram'),
     '#default_value' => theme_get_setting('social_links_instagram'),
     '#placeholder' => 'Enter a URL, such as https://www.instagram.com/yourorg',
   ];
