@@ -72,8 +72,7 @@
 #}
 <article{{ attributes.addClass('ga-main').setAttribute('id', 'main-article').removeAttribute('role') }}>
   {{ drupal_block('page_title_block', wrapper=false) }}
-  {{ content.field_summary }}
   <div{{ content_attributes.addClass(['article-content', 'max-body-text-width']) }}>
-    {{- content|without('field_summary') -}}
+    {{- content -}}
   </div>
 </article>
