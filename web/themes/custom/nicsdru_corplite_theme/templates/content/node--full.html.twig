@@ -70,7 +70,7 @@
  *   in different view modes.
  */
 #}
-<article{{ attributes.setAttribute('id', 'main-article').removeAttribute('role') }}>
+<article{{ attributes.addClass('ga-main').setAttribute('id', 'main-article').removeAttribute('role') }}>
   {{ drupal_block('page_title_block', wrapper=false) }}
  {{- content -}}
 
