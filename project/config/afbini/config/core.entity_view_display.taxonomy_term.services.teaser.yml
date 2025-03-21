@@ -1,9 +1,9 @@
-uuid: bdeb8180-c19e-4f99-9ca3-5af2d0cf43a4
+uuid: 49b86fb8-80df-43c1-9e13-97c113c6f9c7
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.taxonomy_term.teaser_with_summary
+    - core.entity_view_mode.taxonomy_term.teaser
     - field.field.taxonomy_term.services.field_summary
     - taxonomy.vocabulary.services
   module:
@@ -13,20 +13,26 @@ third_party_settings:
   layout_builder:
     enabled: false
     allow_custom: false
-id: taxonomy_term.services.teaser_with_summary
+id: taxonomy_term.services.teaser
 targetEntityType: taxonomy_term
 bundle: services
-mode: teaser_with_summary
+mode: teaser
 content:
-  field_summary:
+  description:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 0
     region: content
+  field_summary:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
 hidden:
   content_moderation_control: true
-  description: true
   langcode: true
   search_api_excerpt: true
