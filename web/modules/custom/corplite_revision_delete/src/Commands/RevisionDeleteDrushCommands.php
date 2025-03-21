@@ -33,7 +33,7 @@ class RevisionDeleteDrushCommands extends DrushCommands {
    *
    * @command revision-delete
    */
-  public function RevisionDelete(string $option) {
+  public function revisionDelete(string $option) {
     $n = 0;
     if (empty($option)) {
       $this->io()->write("Please specify a content type to delete revisions on", TRUE);
