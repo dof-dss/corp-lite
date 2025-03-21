@@ -76,7 +76,7 @@ function nicsdru_corplite_theme_preprocess_page(array &$variables) {
   ];
   $variables['content_wrapper_attr'] = [];
   $variables['sidebar_second_attr'] = [
-    'class' => ['layout-sidebar-second'],
+    'class' => ['layout-sidebar-second', 'ga-aside'],
     'id' => ['second_sidebar'],
   ];
 

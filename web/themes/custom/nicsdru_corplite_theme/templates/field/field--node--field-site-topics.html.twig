@@ -67,7 +67,7 @@
     {% endfor %}
   {% endif %}
 {% else %}
-  <p{{ attributes.addClass(classes) }}>
+  <div{{ attributes.addClass(classes) }}>
     <span{{ title_attributes.addClass(title_classes) }}>{{ label }}: </span>
     {% if multiple %}
     <span class="site-topics--list">
@@ -78,5 +78,5 @@
       {% if multiple %}
     </span>
     {% endif %}
-  </p>
+  </div>
 {% endif %}
