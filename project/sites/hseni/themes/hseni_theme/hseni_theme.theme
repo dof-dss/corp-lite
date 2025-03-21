@@ -35,9 +35,6 @@ function hseni_theme_preprocess_page(array &$variables) {
           $variables['main_content_attr']->addClass(LayoutClasses::MAIN_LIMITED);
           break;
       }
-      // Add the main with a limited width to taxonomy terms also.
-    } else {
-      $variables['main_content_attr']->addClass(LayoutClasses::MAIN_LIMITED);
     }
   }
 
@@ -48,6 +45,7 @@ function hseni_theme_preprocess_page(array &$variables) {
   $request = \Drupal::request();
 
   if (!empty($viewpage)) {
+
     switch ($viewpage) {
       case "publication_search":
         $variables['main_content_attr']->addClass(LayoutClasses::SIDE_MAIN);
@@ -88,6 +86,23 @@ function hseni_theme_preprocess_page(array &$variables) {
             ->addClass(['ga-main', 'search-content'])
             ->setAttribute('role', 'presentation');
         }
+    }
+  }
+
+  // Process taxonomy pages.
+  $taxonomy = \Drupal::routeMatch()->getParameter('taxonomy_term');
+
+  if (!empty($taxonomy)) {
+    switch ($taxonomy->bundle()) {
+      case "site_topics":
+        $variables['main_content_attr']->addClass(LayoutClasses::MAIN_SIDE);
+        $variables['sidebar_second_attr']->addClass('ga-aside');
+        break;
+
+      // All the rest have a main with a limited width.
+      default:
+        $variables['main_content_attr']->addClass(LayoutClasses::MAIN_LIMITED);
+        break;
     }
   }
 

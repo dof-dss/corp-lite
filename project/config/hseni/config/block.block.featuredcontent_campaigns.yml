@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   module:
+    - block_visibility_groups
     - hseni_homepage
     - system
   theme:
@@ -18,9 +19,13 @@ settings:
   label: 'HSENI Campaigns'
   label_display: visible
   provider: hseni_homepage
-  featured_items: '2015'
+  featured_items: '2138'
 visibility:
   request_path:
     id: request_path
     negate: false
     pages: '<front>'
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
