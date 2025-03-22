@@ -26,6 +26,7 @@ content:
     weight: 0
     region: content
 hidden:
+  content_moderation_control: true
   field_gallery_images: true
   field_site_topics: true
   field_summary: true
