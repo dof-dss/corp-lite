@@ -9,11 +9,15 @@
 .page-node-type-secure-statistics,
 .page-node-type-secure-market-statistics,
 .page-node-type-news,
-.page-node-type-consultation {
+.page-node-type-consultation,
+.page-node-type-article {
   .published-date,
   .field--type-entity-reference {
-    font-size: 1.6rem;
-    line-height: 2.4rem;
+    --fs-small-text: 1.5rem;
+    --lh-small-text: 2.2rem;
+
+    font-size: var(--fs-small-text);
+    line-height: var(--lh-small-text);
     margin: 1.8rem 0 0; // Tightens up to the h1.
     color: #4d4d4d;
 
@@ -21,7 +25,15 @@
       margin: 2.1rem 0 .7rem;
     };
 
+    @include breakpoint($lap) {
+      --fs-small-text: 1.6rem;
+      --lh-small-text: 2.4rem;
+    }
+
     @include breakpoint($desk-plus) {
+      --fs-small-text: 1.7rem;
+      --lh-small-text: 2.5rem;
+
       margin: 2.5rem 0 1rem;
     };
   }
