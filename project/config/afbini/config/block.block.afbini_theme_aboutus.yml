@@ -13,7 +13,7 @@ dependencies:
 id: afbini_theme_aboutus
 theme: afbini_theme
 region: content
-weight: 0
+weight: -5
 provider: null
 plugin: 'block_content:4566912e-c361-47b6-8164-1e4bae9e3386'
 settings:
