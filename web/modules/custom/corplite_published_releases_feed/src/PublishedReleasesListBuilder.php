@@ -16,7 +16,6 @@ final class PublishedReleasesListBuilder extends EntityListBuilder {
    * {@inheritdoc}
    */
   public function buildHeader(): array {
-    $header['id'] = $this->t('ID');
     $header['title'] = $this->t('Title');
     $header['created'] = $this->t('Created');
     $header['changed'] = $this->t('Updated');
@@ -28,7 +27,6 @@ final class PublishedReleasesListBuilder extends EntityListBuilder {
    */
   public function buildRow(EntityInterface $entity): array {
     /** @var \Drupal\corplite_published_releases_feed\PublishedReleasesInterface $entity */
-    $row['id'] = $entity->toLink();
     $row['title'] = $entity->get('title')->getString();
     $row['created']['data'] = $entity->get('created')->view(['label' => 'hidden']);
     $row['changed']['data'] = $entity->get('changed')->view(['label' => 'hidden']);
