@@ -20,7 +20,7 @@ use Drupal\corplite_published_releases_feed\PublishedReleasesInterface;
  *   label_singular = @Translation("published release"),
  *   label_plural = @Translation("published releases"),
  *   label_count = @PluralTranslation(
- *     singular = "@count published releasess",
+ *     singular = "@count published releases",
  *     plural = "@count published releasess",
  *   ),
  *   handlers = {
