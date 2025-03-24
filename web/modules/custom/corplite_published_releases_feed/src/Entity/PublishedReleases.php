@@ -17,8 +17,8 @@ use Drupal\corplite_published_releases_feed\PublishedReleasesInterface;
  *   id = "published_releases",
  *   label = @Translation("Published Releases"),
  *   label_collection = @Translation("Published Releasess"),
- *   label_singular = @Translation("published releases"),
- *   label_plural = @Translation("published releasess"),
+ *   label_singular = @Translation("published release"),
+ *   label_plural = @Translation("published releases"),
  *   label_count = @PluralTranslation(
  *     singular = "@count published releasess",
  *     plural = "@count published releasess",
@@ -28,8 +28,6 @@ use Drupal\corplite_published_releases_feed\PublishedReleasesInterface;
  *     "views_data" = "Drupal\views\EntityViewsData",
  *     "access" = "Drupal\corplite_published_releases_feed\PublishedReleasesAccessControlHandler",
  *     "form" = {
- *       "add" = "Drupal\corplite_published_releases_feed\Form\PublishedReleasesForm",
- *       "edit" = "Drupal\corplite_published_releases_feed\Form\PublishedReleasesForm",
  *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm",
  *       "delete-multiple-confirm" = "Drupal\Core\Entity\Form\DeleteMultipleForm",
  *     },
@@ -40,15 +38,11 @@ use Drupal\corplite_published_releases_feed\PublishedReleasesInterface;
  *   base_table = "published_releases",
  *   admin_permission = "administer published_releases",
  *   entity_keys = {
- *     "id" = "id",
- *     "label" = "id",
- *     "uuid" = "uuid",
+ *     "id" = "id"
  *   },
  *   links = {
  *     "collection" = "/admin/content/published-releases",
- *     "add-form" = "/published-releases/add",
  *     "canonical" = "/published-releases/{published_releases}",
- *     "edit-form" = "/published-releases/{published_releases}/edit",
  *     "delete-form" = "/published-releases/{published_releases}/delete",
  *     "delete-multiple-form" = "/admin/content/published-releases/delete-multiple",
  *   },
