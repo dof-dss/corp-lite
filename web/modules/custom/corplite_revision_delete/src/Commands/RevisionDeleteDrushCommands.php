@@ -36,7 +36,8 @@ class RevisionDeleteDrushCommands extends DrushCommands {
   public function revisionDelete(string $option) {
     $n = 0;
     if (empty($option)) {
-      $this->io()->write("Please specify a content type to delete revisions on", TRUE);
+      $this->io()
+        ->write("Please specify a content type to delete revisions on", TRUE);
       return;
     }
     // Get the content type of content revisions that need to be deleted.
@@ -44,11 +45,11 @@ class RevisionDeleteDrushCommands extends DrushCommands {
       ->getStorage('node')
       ->loadByProperties(['type' => $option]);
 
+    $node_storage = $this->entityTypeManager
+      ->getStorage('node');
+
     // Loop through all the nodes and get their revisions.
     foreach ($nodes as $nid) {
-      $node_storage = $this->entityTypeManager
-        ->getStorage('node');
-
       /** @var \Drupal\node\NodeInterface $nid */
       $revisions = $node_storage->revisionIds($nid);
 
