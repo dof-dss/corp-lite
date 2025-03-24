@@ -9,9 +9,9 @@ dependencies:
     - system.menu.admin
     - taxonomy.vocabulary.link_types
   content:
-    - 'taxonomy_term:publication_types:3a13c2b2-5f00-4bf7-be26-c0696b5f9cb1'
-    - 'taxonomy_term:publication_types:72ee42bd-04e7-426e-995a-052fc370c2f9'
-    - 'taxonomy_term:publication_types:ad712f59-7e10-4c6b-8956-39b02285bf10'
+    - 'taxonomy_term:link_types:1357d081-b131-4ec9-b9c5-e51e414c76a5'
+    - 'taxonomy_term:link_types:1e03670a-5aa5-4cfb-aa5a-af3ba9bf4209'
+    - 'taxonomy_term:link_types:f7840c73-c53c-496e-9750-7ca040a7c569'
   module:
     - draggableviews
     - link
@@ -526,6 +526,7 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
@@ -617,7 +618,7 @@ display:
         type: normal
         title: Links
         description: ''
-        weight: 5
+        weight: 0
         expanded: false
         menu_name: admin
         parent: system.admin_content
@@ -628,6 +629,7 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
+        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
@@ -945,6 +947,7 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
@@ -1257,6 +1260,7 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
@@ -1573,6 +1577,7 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
@@ -1968,6 +1973,7 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - user
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
@@ -2362,6 +2368,7 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - user
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
@@ -2756,6 +2763,7 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - user
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
