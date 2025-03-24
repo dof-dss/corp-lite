@@ -98,3 +98,33 @@ function corplite_published_releases_feed_fetch_feed() {
 function corplite_published_releases_feed_facets_search_api_query_type_mapping_alter($backend_plugin_id, array &$query_types) {
   $query_types['example'] = 'now_future_dates';
 }
+
+use Drupal\Core\Render\Element;
+
+/**
+ * Implements hook_theme().
+ */
+function corplite_published_releases_feed_theme(): array {
+  return [
+    'published_releases' => ['render element' => 'elements'],
+  ];
+}
+
+/**
+ * Prepares variables for published releases templates.
+ *
+ * Default template: published-releases.html.twig.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - elements: An associative array containing the published releases information and any
+ *     fields attached to the entity.
+ *   - attributes: HTML attributes for the containing element.
+ */
+function template_preprocess_published_releases(array &$variables): void {
+  $variables['view_mode'] = $variables['elements']['#view_mode'];
+  foreach (Element::children($variables['elements']) as $key) {
+    $variables['content'][$key] = $variables['elements'][$key];
+  }
+}
+

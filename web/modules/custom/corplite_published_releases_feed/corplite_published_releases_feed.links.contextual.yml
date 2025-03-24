@@ -1,0 +1,10 @@
+entity.published_releases.edit_form:
+  route_name: entity.published_releases.edit_form
+  group: published_releases
+  title: 'Edit'
+
+entity.published_releases.delete_form:
+  route_name: entity.published_releases.delete_form
+  group: published_releases
+  title: 'Delete'
+  weight: 10

@@ -1,0 +1,5 @@
+published_releases.add_form:
+  title: 'Add published releases'
+  route_name: entity.published_releases.add_form
+  appears_on:
+    - entity.published_releases.collection
