@@ -19,7 +19,7 @@ entity_type: taxonomy_term
 bundle: site_global_topics
 label: Summary
 description: 'Enter a summary for this topic to be displayed on listing pages.'
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
