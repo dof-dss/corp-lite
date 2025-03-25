@@ -22,6 +22,11 @@ dependencies:
     - node.type.profile
     - node.type.publication
     - node.type.webform
+    - taxonomy.vocabulary.link_types
+    - taxonomy.vocabulary.news_types
+    - taxonomy.vocabulary.publication_types
+    - taxonomy.vocabulary.site_topics
+    - taxonomy.vocabulary.tags
     - workflows.workflow.nics_editorial_workflow
   module:
     - content_moderation
@@ -36,6 +41,7 @@ dependencies:
     - redirect
     - scheduled_transitions
     - system
+    - taxonomy
     - toolbar
     - whatlinkshere
 _core:
@@ -48,6 +54,7 @@ permissions:
   - 'access administration pages'
   - 'access content overview'
   - 'access files overview'
+  - 'access taxonomy overview'
   - 'access toolbar'
   - 'add scheduled transitions node alert'
   - 'add scheduled transitions node application'
@@ -63,6 +70,7 @@ permissions:
   - 'administer main menu items'
   - 'administer media file delete'
   - 'administer redirects'
+  - 'administer taxonomy'
   - 'audit content'
   - 'create alert content'
   - 'create application content'
@@ -82,8 +90,14 @@ permissions:
   - 'create profile content'
   - 'create publication content'
   - 'create remote_video media'
+  - 'create terms in link_types'
+  - 'create terms in news_types'
+  - 'create terms in publication_types'
+  - 'create terms in site_topics'
+  - 'create terms in tags'
   - 'delete alert revisions'
   - 'delete all revisions'
+  - 'delete all taxonomy revisions'
   - 'delete any alert content'
   - 'delete any application content'
   - 'delete any article content'
@@ -134,6 +148,16 @@ permissions:
   - 'delete page revisions'
   - 'delete profile revisions'
   - 'delete publication revisions'
+  - 'delete term revisions in link_types'
+  - 'delete term revisions in news_types'
+  - 'delete term revisions in publication_types'
+  - 'delete term revisions in site_topics'
+  - 'delete term revisions in tags'
+  - 'delete terms in link_types'
+  - 'delete terms in news_types'
+  - 'delete terms in publication_types'
+  - 'delete terms in site_topics'
+  - 'delete terms in tags'
   - 'delete webform revisions'
   - 'edit any alert content'
   - 'edit any application content'
@@ -173,6 +197,11 @@ permissions:
   - 'edit own publication content'
   - 'edit own remote_video media'
   - 'edit own webform content'
+  - 'edit terms in link_types'
+  - 'edit terms in news_types'
+  - 'edit terms in publication_types'
+  - 'edit terms in site_topics'
+  - 'edit terms in tags'
   - 'hide topic or feature on homepage'
   - 'reschedule scheduled transitions node alert'
   - 'reschedule scheduled transitions node application'
@@ -187,6 +216,7 @@ permissions:
   - 'reschedule scheduled transitions node publication'
   - 'revert alert revisions'
   - 'revert all revisions'
+  - 'revert all taxonomy revisions'
   - 'revert application revisions'
   - 'revert article revisions'
   - 'revert consultation revisions'
@@ -199,6 +229,11 @@ permissions:
   - 'revert page revisions'
   - 'revert profile revisions'
   - 'revert publication revisions'
+  - 'revert term revisions in link_types'
+  - 'revert term revisions in news_types'
+  - 'revert term revisions in publication_types'
+  - 'revert term revisions in site_topics'
+  - 'revert term revisions in tags'
   - 'revert webform revisions'
   - 'use moderation sidebar'
   - 'use nics_editorial_workflow transition archive'
@@ -213,6 +248,7 @@ permissions:
   - 'view alert revisions'
   - 'view all revisions'
   - 'view all scheduled transitions'
+  - 'view all taxonomy revisions'
   - 'view any unpublished content'
   - 'view application revisions'
   - 'view article revisions'
@@ -240,5 +276,11 @@ permissions:
   - 'view scheduled transitions node page'
   - 'view scheduled transitions node profile'
   - 'view scheduled transitions node publication'
+  - 'view term revisions in link_types'
+  - 'view term revisions in news_types'
+  - 'view term revisions in publication_types'
+  - 'view term revisions in site_topics'
+  - 'view term revisions in tags'
   - 'view the administration theme'
+  - 'view vocabulary labels'
   - 'view webform revisions'
