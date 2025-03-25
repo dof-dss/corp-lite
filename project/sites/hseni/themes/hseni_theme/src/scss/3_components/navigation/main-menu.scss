@@ -1,6 +1,10 @@
 @use '../../../../../../../../../web/themes/custom/nicsdru_corplite_theme/src/scss/init' as *;
 @use '../../1_base/root' as *;
 
+.main-menu {
+  border-bottom: none;
+}
+
 $link-main-menu: (
   color: '#fff',
   background-color: (
