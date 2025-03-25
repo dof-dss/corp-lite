@@ -16,10 +16,13 @@ types:
   scheduled_transition: {  }
   search_api_task: {  }
   shortcut: {  }
-  taxonomy_term: {  }
+  taxonomy_term:
+    '*': '*'
   user: {  }
   webform_submission: {  }
   paragraph: {  }
+  inspector: {  }
+  School: {  }
 types_translation_lock: {  }
 types_js_lock: {  }
 form_op_lock:
@@ -72,5 +75,11 @@ form_op_lock:
     mode: 0
     values: {  }
   paragraph:
+    mode: 0
+    values: {  }
+  inspector:
+    mode: 0
+    values: {  }
+  School:
     mode: 0
     values: {  }

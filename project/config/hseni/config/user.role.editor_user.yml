@@ -37,6 +37,7 @@ dependencies:
     - redirect
     - scheduled_transitions
     - system
+    - taxonomy
     - toolbar
     - whatlinkshere
 _core:
@@ -49,6 +50,7 @@ permissions:
   - 'access administration pages'
   - 'access content overview'
   - 'access files overview'
+  - 'access taxonomy overview'
   - 'access toolbar'
   - 'add scheduled transitions node alert'
   - 'add scheduled transitions node application'
@@ -212,6 +214,7 @@ permissions:
   - 'view alert revisions'
   - 'view all revisions'
   - 'view all scheduled transitions'
+  - 'view all taxonomy revisions'
   - 'view any unpublished content'
   - 'view application revisions'
   - 'view article revisions'
@@ -240,4 +243,5 @@ permissions:
   - 'view scheduled transitions node profile'
   - 'view scheduled transitions node publication'
   - 'view the administration theme'
+  - 'view vocabulary labels'
   - 'view webform revisions'
