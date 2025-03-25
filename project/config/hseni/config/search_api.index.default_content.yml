@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.storage.node.body
     - field.storage.node.field_published_date
-    - field.storage.taxonomy_term.field_summary
   module:
     - node
     - search_api
@@ -102,14 +101,6 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_published_date
-  field_summary:
-    label: Summary
-    datasource_id: 'entity:taxonomy_term'
-    property_path: field_summary
-    type: text
-    dependencies:
-      config:
-        - field.storage.taxonomy_term.field_summary
   name:
     label: Name
     datasource_id: 'entity:taxonomy_term'
@@ -186,6 +177,8 @@ field_settings:
 
 
 
+
+
       fields: {  }
   status:
     label: Published
@@ -214,6 +207,8 @@ field_settings:
     configuration:
       type: concat
       separator: |+
+
+
 
 
 
@@ -349,4 +344,4 @@ options:
   cron_limit: 50
   index_directly: true
   track_changes_in_references: true
-server: solr_default
+server: null
