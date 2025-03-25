@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.storage.node.body
     - field.storage.node.field_published_date
-    - field.storage.node.field_summary
+    - field.storage.taxonomy_term.field_summary
   module:
     - node
     - search_api
@@ -104,13 +104,13 @@ field_settings:
         - field.storage.node.field_published_date
   field_summary:
     label: Summary
-    datasource_id: 'entity:node'
+    datasource_id: 'entity:taxonomy_term'
     property_path: field_summary
     type: text
     boost: 0.5
     dependencies:
       config:
-        - field.storage.node.field_summary
+        - field.storage.taxonomy_term.field_summary
   name:
     label: Name
     datasource_id: 'entity:taxonomy_term'
