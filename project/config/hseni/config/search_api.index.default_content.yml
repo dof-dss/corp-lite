@@ -107,6 +107,7 @@ field_settings:
     datasource_id: 'entity:taxonomy_term'
     property_path: field_summary
     type: text
+    boost: 0.5
     dependencies:
       config:
         - field.storage.taxonomy_term.field_summary
@@ -186,6 +187,8 @@ field_settings:
 
 
 
+
+
       fields: {  }
   status:
     label: Published
@@ -214,6 +217,8 @@ field_settings:
     configuration:
       type: concat
       separator: |+
+
+
 
 
 
