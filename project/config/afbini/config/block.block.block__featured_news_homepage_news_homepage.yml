@@ -12,7 +12,7 @@ dependencies:
 id: block__featured_news_homepage_news_homepage
 theme: afbini_theme
 region: content
-weight: -9
+weight: -10
 provider: null
 plugin: 'views_block:featured_news_homepage-news_homepage'
 settings:

@@ -21,6 +21,7 @@ mode: main_search_index
 content: {  }
 hidden:
   body: true
+  content_moderation_control: true
   field_enable_toc: true
   langcode: true
   links: true
