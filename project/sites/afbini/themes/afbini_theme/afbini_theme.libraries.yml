@@ -6,4 +6,5 @@ afbini-styling:
     theme:
       css/3_components/layout/footer.css: { minified: true }
       css/3_components/content/front.css: { minified: true }
+      css/3_components/navigation/main-menu.css: { minified: true }
       css/components.css: { minified: true }
