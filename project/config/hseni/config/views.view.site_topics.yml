@@ -11,7 +11,6 @@ dependencies:
   module:
     - draggableviews
     - taxonomy
-    - text
     - user
 id: site_topics
 label: 'Site topics'
@@ -473,11 +472,44 @@ display:
           id: vid
           table: taxonomy_term_field_data
           field: vid
+          relationship: none
+          group_type: group
+          admin_label: ''
           entity_type: taxonomy_term
           entity_field: vid
           plugin_id: bundle
+          operator: in
           value:
             site_topics: site_topics
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
         parent_target_id:
           id: parent_target_id
           table: taxonomy_term__parent
@@ -531,9 +563,9 @@ display:
       style:
         type: default
         options:
-          grouping: {  }
           row_class: ''
           default_row_class: true
+          uses_fields: false
       row:
         type: 'entity:taxonomy_term'
         options:
@@ -775,8 +807,9 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: text_default
-          settings: {  }
+          type: string
+          settings:
+            link_to_entity: false
           group_column: value
           group_columns: {  }
           group_rows: true

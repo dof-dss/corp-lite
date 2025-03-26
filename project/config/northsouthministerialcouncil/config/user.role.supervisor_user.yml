@@ -15,6 +15,9 @@ dependencies:
     - node.type.news
     - node.type.page
     - node.type.publication
+    - taxonomy.vocabulary.joint_communiques
+    - taxonomy.vocabulary.sectors
+    - taxonomy.vocabulary.site_topics
     - workflows.workflow.nics_editorial_workflow
   module:
     - content_moderation
@@ -31,6 +34,7 @@ dependencies:
     - redirect
     - scheduled_transitions
     - system
+    - taxonomy
     - toolbar
     - whatlinkshere
 _core:
@@ -44,9 +48,19 @@ permissions:
   - 'access content overview'
   - 'access files overview'
   - 'access media overview'
+  - 'access taxonomy overview'
   - 'access toolbar'
+  - 'add scheduled transitions node contact'
+  - 'add scheduled transitions node department_management'
+  - 'add scheduled transitions node featured_content_list'
+  - 'add scheduled transitions node link'
+  - 'add scheduled transitions node news'
+  - 'add scheduled transitions node page'
+  - 'add scheduled transitions node publication'
+  - 'add scheduled transitions taxonomy_term site_topics'
   - 'administer main menu items'
   - 'administer redirects'
+  - 'administer taxonomy'
   - 'audit content'
   - 'create audio media'
   - 'create contact content'
@@ -59,6 +73,9 @@ permissions:
   - 'create page content'
   - 'create publication content'
   - 'create remote_video media'
+  - 'create terms in joint_communiques'
+  - 'create terms in sectors'
+  - 'create terms in site_topics'
   - 'create url aliases'
   - 'delete all revisions'
   - 'delete any audio media'
@@ -90,6 +107,12 @@ permissions:
   - 'delete own remote_video media'
   - 'delete page revisions'
   - 'delete publication revisions'
+  - 'delete term revisions in joint_communiques'
+  - 'delete term revisions in sectors'
+  - 'delete term revisions in site_topics'
+  - 'delete terms in joint_communiques'
+  - 'delete terms in sectors'
+  - 'delete terms in site_topics'
   - 'edit any audio media'
   - 'edit any contact content'
   - 'edit any department_management content'
@@ -113,7 +136,18 @@ permissions:
   - 'edit own page content'
   - 'edit own publication content'
   - 'edit own remote_video media'
+  - 'edit terms in joint_communiques'
+  - 'edit terms in sectors'
+  - 'edit terms in site_topics'
   - 'hide topic or feature on homepage'
+  - 'reschedule scheduled transitions node contact'
+  - 'reschedule scheduled transitions node department_management'
+  - 'reschedule scheduled transitions node featured_content_list'
+  - 'reschedule scheduled transitions node link'
+  - 'reschedule scheduled transitions node news'
+  - 'reschedule scheduled transitions node page'
+  - 'reschedule scheduled transitions node publication'
+  - 'reschedule scheduled transitions taxonomy_term site_topics'
   - 'revert all revisions'
   - 'revert contact revisions'
   - 'revert department_management revisions'
@@ -121,6 +155,9 @@ permissions:
   - 'revert news revisions'
   - 'revert page revisions'
   - 'revert publication revisions'
+  - 'revert term revisions in joint_communiques'
+  - 'revert term revisions in sectors'
+  - 'revert term revisions in site_topics'
   - 'use moderation sidebar'
   - 'use nics_editorial_workflow transition archive'
   - 'use nics_editorial_workflow transition create_new_draft'
@@ -134,6 +171,7 @@ permissions:
   - 'use text format basic_html'
   - 'view all revisions'
   - 'view all scheduled transitions'
+  - 'view all taxonomy revisions'
   - 'view any unpublished content'
   - 'view contact revisions'
   - 'view content references'
@@ -144,4 +182,15 @@ permissions:
   - 'view own unpublished media'
   - 'view page revisions'
   - 'view publication revisions'
+  - 'view scheduled transitions node contact'
+  - 'view scheduled transitions node department_management'
+  - 'view scheduled transitions node featured_content_list'
+  - 'view scheduled transitions node link'
+  - 'view scheduled transitions node news'
+  - 'view scheduled transitions node page'
+  - 'view scheduled transitions node publication'
+  - 'view scheduled transitions taxonomy_term site_topics'
+  - 'view term revisions in joint_communiques'
+  - 'view term revisions in sectors'
+  - 'view term revisions in site_topics'
   - 'view the administration theme'

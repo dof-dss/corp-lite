@@ -1,0 +1,39 @@
+uuid: 9c9d0e2d-64ca-4e50-9ab0-535c5c068663
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.related_links
+  module:
+    - block_visibility_groups
+    - taxonomy
+    - views
+  theme:
+    - hseni_theme
+id: hseni_theme_views_block__related_links_related_taxonomy
+theme: hseni_theme
+region: sidebar_second
+weight: 0
+provider: null
+plugin: 'views_block:related_links-related_taxonomy'
+settings:
+  id: 'views_block:related_links-related_taxonomy'
+  label: ''
+  label_display: visible
+  provider: views
+  context_mapping:
+    field_site_topics_target_id: '@taxonomy_term.taxonomy_term_route_context:taxonomy_term'
+  views_label: ''
+  items_per_page: none
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+  'entity_bundle:taxonomy_term':
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    context_mapping:
+      taxonomy_term: '@taxonomy_term.taxonomy_term_route_context:taxonomy_term'
+    bundles:
+      site_topics: site_topics

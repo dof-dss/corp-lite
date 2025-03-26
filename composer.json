@@ -242,6 +242,9 @@
             "drupal/entityqueue": {
                 "Allow unique records only": "https://www.drupal.org/files/issues/2021-02-07/entity_queue_unique_records-1240856-3197148.patch"
             },
+            "drupal/eu_cookie_compliance": {
+                "Elements with role=\"dialog\" or role=\"alertdialog\" do not have accessible names": "https://www.drupal.org/files/issues/2024-10-11/eu_cookie_compliance.3379830.1.25.0.patch"
+            },
             "drupal/facets": {
                 "Pass facet object onto child items": "https://www.drupal.org/files/issues/2019-11-13/child_item-3094143-2.patch",
                 "SupportsFeature() on null": "https://www.drupal.org/files/issues/2024-12-10/supportsfeature_error_3492866_1.patch"

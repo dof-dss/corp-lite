@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   module:
+    - block_visibility_groups
     - corplite_search
     - system
   theme:
@@ -22,4 +23,8 @@ visibility:
   request_path:
     id: request_path
     negate: true
-    pages: "/search\r\n"
+    pages: "/search\r\n/search/type/*\r\n"
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''

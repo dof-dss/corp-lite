@@ -17,6 +17,8 @@ dependencies:
     - node.type.page
     - node.type.publication
     - node.type.researcher_profiles
+    - taxonomy.vocabulary.services
+    - taxonomy.vocabulary.site_topics
     - workflows.workflow.nics_editorial_workflow
   module:
     - content_moderation
@@ -33,6 +35,7 @@ dependencies:
     - redirect
     - scheduled_transitions
     - system
+    - taxonomy
     - toolbar
     - whatlinkshere
 _core:
@@ -44,10 +47,22 @@ is_admin: false
 permissions:
   - 'access administration pages'
   - 'access content overview'
+  - 'access taxonomy overview'
   - 'access toolbar'
+  - 'add scheduled transitions node article'
+  - 'add scheduled transitions node contact'
+  - 'add scheduled transitions node gallery'
+  - 'add scheduled transitions node link'
+  - 'add scheduled transitions node news'
+  - 'add scheduled transitions node page'
+  - 'add scheduled transitions node publication'
+  - 'add scheduled transitions node researcher_profiles'
+  - 'add scheduled transitions taxonomy_term services'
+  - 'add scheduled transitions taxonomy_term site_topics'
   - 'administer main menu items'
   - 'administer media file delete'
   - 'administer redirects'
+  - 'administer taxonomy'
   - 'audit content'
   - 'create article content'
   - 'create audio media'
@@ -62,6 +77,8 @@ permissions:
   - 'create publication content'
   - 'create remote_video media'
   - 'create researcher_profiles content'
+  - 'create terms in services'
+  - 'create terms in site_topics'
   - 'delete all revisions'
   - 'delete any article content'
   - 'delete any audio media'
@@ -99,6 +116,10 @@ permissions:
   - 'delete page revisions'
   - 'delete publication revisions'
   - 'delete researcher_profiles revisions'
+  - 'delete term revisions in services'
+  - 'delete term revisions in site_topics'
+  - 'delete terms in services'
+  - 'delete terms in site_topics'
   - 'edit any article content'
   - 'edit any audio media'
   - 'edit any contact content'
@@ -126,7 +147,19 @@ permissions:
   - 'edit own publication content'
   - 'edit own remote_video media'
   - 'edit own researcher_profiles content'
+  - 'edit terms in services'
+  - 'edit terms in site_topics'
   - 'hide topic or feature on homepage'
+  - 'reschedule scheduled transitions node article'
+  - 'reschedule scheduled transitions node contact'
+  - 'reschedule scheduled transitions node gallery'
+  - 'reschedule scheduled transitions node link'
+  - 'reschedule scheduled transitions node news'
+  - 'reschedule scheduled transitions node page'
+  - 'reschedule scheduled transitions node publication'
+  - 'reschedule scheduled transitions node researcher_profiles'
+  - 'reschedule scheduled transitions taxonomy_term services'
+  - 'reschedule scheduled transitions taxonomy_term site_topics'
   - 'revert all revisions'
   - 'revert article revisions'
   - 'revert contact revisions'
@@ -136,6 +169,8 @@ permissions:
   - 'revert page revisions'
   - 'revert publication revisions'
   - 'revert researcher_profiles revisions'
+  - 'revert term revisions in services'
+  - 'revert term revisions in site_topics'
   - 'use moderation sidebar'
   - 'use nics_editorial_workflow transition archive'
   - 'use nics_editorial_workflow transition create_new_draft'
@@ -149,6 +184,7 @@ permissions:
   - 'use text format basic_html'
   - 'view all revisions'
   - 'view all scheduled transitions'
+  - 'view all taxonomy revisions'
   - 'view any unpublished content'
   - 'view article revisions'
   - 'view contact revisions'
@@ -161,4 +197,16 @@ permissions:
   - 'view page revisions'
   - 'view publication revisions'
   - 'view researcher_profiles revisions'
+  - 'view scheduled transitions node article'
+  - 'view scheduled transitions node contact'
+  - 'view scheduled transitions node gallery'
+  - 'view scheduled transitions node link'
+  - 'view scheduled transitions node news'
+  - 'view scheduled transitions node page'
+  - 'view scheduled transitions node publication'
+  - 'view scheduled transitions node researcher_profiles'
+  - 'view scheduled transitions taxonomy_term services'
+  - 'view scheduled transitions taxonomy_term site_topics'
+  - 'view term revisions in services'
+  - 'view term revisions in site_topics'
   - 'view the administration theme'

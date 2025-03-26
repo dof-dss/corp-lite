@@ -16,7 +16,8 @@ types:
   scheduled_transition: {  }
   search_api_task: {  }
   shortcut: {  }
-  taxonomy_term: {  }
+  taxonomy_term:
+    '*': '*'
   user: {  }
   webform_submission: {  }
   paragraph: {  }

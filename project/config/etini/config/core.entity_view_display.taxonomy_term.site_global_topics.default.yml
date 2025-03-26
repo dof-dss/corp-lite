@@ -13,17 +13,12 @@ targetEntityType: taxonomy_term
 bundle: site_global_topics
 mode: default
 content:
-  content_moderation_control:
-    settings: {  }
-    third_party_settings: {  }
-    weight: -20
-    region: content
   description:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
   field_photo:
     type: entity_reference_entity_view
@@ -39,8 +34,9 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
 hidden:
+  content_moderation_control: true
   langcode: true
   search_api_excerpt: true
