@@ -6,17 +6,13 @@ entity.published_releases.view:
   title: 'View'
   route_name: entity.published_releases.canonical
   base_route: entity.published_releases.canonical
-entity.published_releases.edit_form:
-  title: 'Edit'
-  route_name: entity.published_releases.edit_form
-  base_route: entity.published_releases.canonical
 entity.published_releases.delete_form:
   title: 'Delete'
   route_name: entity.published_releases.delete_form
   base_route: entity.published_releases.canonical
   weight: 10
 entity.published_releases.collection:
-  title: 'Published Releasess'
+  title: 'Published Releases'
   route_name: entity.published_releases.collection
   base_route: system.admin_content
   weight: 10

@@ -16,12 +16,12 @@ use Drupal\corplite_published_releases_feed\PublishedReleasesInterface;
  * @ContentEntityType(
  *   id = "published_releases",
  *   label = @Translation("Published Releases"),
- *   label_collection = @Translation("Published Releasess"),
+ *   label_collection = @Translation("Published Releases"),
  *   label_singular = @Translation("published release"),
  *   label_plural = @Translation("published releases"),
  *   label_count = @PluralTranslation(
  *     singular = "@count published releases",
- *     plural = "@count published releasess",
+ *     plural = "@count published releases",
  *   ),
  *   handlers = {
  *     "list_builder" = "Drupal\corplite_published_releases_feed\PublishedReleasesListBuilder",
