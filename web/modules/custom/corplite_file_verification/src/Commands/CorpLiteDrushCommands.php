@@ -45,11 +45,12 @@ class CorpLiteDrushCommands extends DrushCommands {
           $new_extension = '';
           if ($original_extension == strtoupper($original_extension)) {
             $new_extension = strtolower($original_extension);
-          } else {
+          }
+          else {
             $new_extension = strtoupper($original_extension);
           }
           $newfilename = str_replace('.' . $original_extension, '.' . $new_extension, $oldfilename);
-          //$this->io()->write("New filename is " . $newfilename, TRUE);
+          // $this->io()->write("New filename is " . $newfilename, TRUE);
           if (file_exists($newfilename)) {
             $this->io()->write($newfilename, TRUE);
           }
@@ -57,4 +58,5 @@ class CorpLiteDrushCommands extends DrushCommands {
       }
     }
   }
+
 }
