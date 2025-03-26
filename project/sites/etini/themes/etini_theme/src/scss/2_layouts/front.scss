@@ -27,10 +27,6 @@
         grid-gap: 0 3em;
         border-top: 4px solid #17819b;
 
-        h3 {
-          margin: 2%;
-        }
-
         li {
           padding: 0;
           margin: 0;
@@ -44,17 +40,25 @@
       .publications-inspections {
         grid-column: 1;
         grid-row: 2;
-        padding: 2%;
       }
 
       .publications-surveys {
         grid-column: 2;
         grid-row: 2;
-        padding: 2%;
       }
 
       .publications-item {
         border-bottom: 1px solid #555;
+        padding-bottom: 1rem;
+
+        h4 {
+          font-size: 18px;
+        }
+
+        .field-content {
+          color: #666;
+          font-size: 16px;
+        }
       }
     }
 
@@ -67,10 +71,6 @@
         grid-gap: 0 3em;
         border-top: 4px solid #17819b;
         margin-top: 5rem;
-
-        h3 {
-          margin: 2%;
-        }
 
         li {
           padding: 0;
@@ -106,10 +106,6 @@
         border-top: 4px solid #17819b;
         margin-top: 5rem;
 
-        h3 {
-          margin: 2%;
-        }
-
         li {
           padding: 0;
           margin: 0;
@@ -123,14 +119,12 @@
       .corporate-links {
         grid-column: 1;
         grid-row: 2;
-        padding: 2%;
         line-height: 4rem;
       }
 
       .home-contact {
         grid-column: 2;
         grid-row: 2;
-        padding: 2%;
         line-height: 4rem;
       }
     }
@@ -155,8 +149,6 @@
 #quicklinks {
   grid-column: 9 / span 4;
   padding: 1em 15px 1.5em;
-  background-color: var(--clr-grey-light);
-  border-top: 5px solid var(--clr-brand-primary);
 
   @media screen and (max-width: 768px) {
     grid-column: 1 / span 12;
@@ -171,10 +163,14 @@
   a {
     display: flex;
     flex-direction: row;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #cdcdcd;
     padding-bottom: 1rem;
     padding: 0rem 2rem;
     text-decoration: none;
+
+    &:last-child {
+      border-bottom: none;
+    }
 
     &:focus,
     &:hover {
@@ -186,7 +182,7 @@
 
   p.published-date {
     margin: 0;
-    color: #000;
+    color: #666;
   }
 
   .featured__image {
@@ -303,6 +299,10 @@
 .site-topics-home {
   border-top: 4px solid #17819b;
 
+  .card {
+    box-shadow: none;
+  }
+
   .subtopics {
     padding: 0 2rem 2rem 0;
   }
@@ -321,12 +321,8 @@
   .subtopics__item {
     flex: 1 1 calc(50% - 10px);
     box-sizing: border-box;
-    padding: 10px;
     min-width: 300px;
 
-    a {
-      padding: 1rem;
-    }
   }
 
   @media (max-width: 768px) {
