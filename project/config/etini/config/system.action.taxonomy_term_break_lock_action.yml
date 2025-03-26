@@ -1,0 +1,11 @@
+uuid: 909e8ae8-7bb4-4aba-8046-5dd7ad8f8cd9
+langcode: en
+status: true
+dependencies:
+  module:
+    - content_lock
+id: taxonomy_term_break_lock_action
+label: 'Break lock taxonomy_term'
+type: taxonomy_term
+plugin: 'entity:break_lock:taxonomy_term'
+configuration: {  }
