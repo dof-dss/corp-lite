@@ -35,15 +35,11 @@ class CorpLiteDrushCommands extends DrushCommands {
       ->accessCheck(FALSE)
       ->execute();
     $files = $file_storage->loadMultiple($fids);
-    //$this->io()->write("Going in to foreach loop", TRUE);
     foreach ($files as $file) {
-      //$this->io()->write("In foreach loop", TRUE);
       if (!file_exists($file->getFileUri())) {
-        //$this->io()->write($file->getFileUri(), TRUE);
         $oldfilename = $file->getFileUri();
         $matches = [];
         if (preg_match('/(.*)\.(.*)/', $oldfilename, $matches)) {
-          //$this->io()->write(print_r($matches, true), TRUE);
           $original_extension = $matches[2];
           // Switch the case of the extension.
           $new_extension = '';
