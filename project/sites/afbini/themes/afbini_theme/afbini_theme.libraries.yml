@@ -4,5 +4,6 @@ afbini-styling:
     base:
       css/1_base/root.css: { minified: true, weight: -100 }
     theme:
+      css/3_components/layout/footer.css: { minified: true }
       css/3_components/content/front.css: { minified: true }
       css/components.css: { minified: true }
