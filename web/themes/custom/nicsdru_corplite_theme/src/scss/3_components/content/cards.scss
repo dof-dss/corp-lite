@@ -114,7 +114,7 @@ $link-heading-no-visited: (
   &__meta {
     font-size: 1.5rem;
     line-height: 2.2rem;
-    color: var(--clr-grey-dark);
+    color: var(--clr-grey-medium);
     margin: var(--rhythm-spacing-sm) 0 0;
 
     @include breakpoint($lap) {

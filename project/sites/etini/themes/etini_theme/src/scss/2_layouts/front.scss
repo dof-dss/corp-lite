@@ -235,6 +235,36 @@ $link-body-no-visited: (
 
 
   &--promoting-improvement {
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+
+      li {
+        a[href] {
+          background-repeat: no-repeat;
+          background-position: left;
+          padding: .7rem 0 1.7rem 4.5rem;
+          display: block;
+          line-height: 3rem;
+        }
+
+        a[href*='https://www.education-ni.gov.uk/'],
+        a[href*='https://www.economy-ni.gov.uk/'],
+        a[href*='https://www.daera-ni.gov.uk/'] {
+          background-image: url("/sites/etini/themes/etini_theme/images/corporate-icon.png");
+        }
+
+        a[href*='https://www.cjini.org/'] {
+          background-image: url("/sites/etini/themes/etini_theme/images/cji-icon.png");
+        }
+
+        a[href*='https://www.gov.uk/government/organisations/home-office'] {
+          background-image: url("/sites/etini/themes/etini_theme/images/home-office-icon.png");
+        }
+      }
+    }
+
     @include breakpoint($tab) {
       grid-column: 1 / span 12;
       display: grid;
@@ -256,15 +286,11 @@ $link-body-no-visited: (
     .improvement-services {
       grid-column: 1;
       grid-row: 2;
-      padding: 2%;
-      line-height: 4rem;
     }
 
     .inspection-services {
       grid-column: 2;
       grid-row: 2;
-      padding: 2%;
-      line-height: 4rem;
     }
   }
 
