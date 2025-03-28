@@ -11,7 +11,7 @@ dependencies:
 id: pagetitle
 theme: etini_theme
 region: top_banner
-weight: -13
+weight: -12
 provider: null
 plugin: page_title_block
 settings:
