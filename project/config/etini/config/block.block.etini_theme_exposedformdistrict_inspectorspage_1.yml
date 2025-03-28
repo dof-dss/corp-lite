@@ -13,7 +13,7 @@ dependencies:
 id: etini_theme_exposedformdistrict_inspectorspage_1
 theme: etini_theme
 region: content
-weight: -7
+weight: -8
 provider: null
 plugin: 'views_exposed_filter_block:district_inspectors-page_1'
 settings:
