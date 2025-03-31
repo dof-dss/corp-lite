@@ -21,6 +21,7 @@ dependencies:
     - taxonomy.vocabulary.site_topics
     - workflows.workflow.nics_editorial_workflow
   module:
+    - book
     - content_moderation
     - corplite_common
     - file
@@ -59,6 +60,7 @@ permissions:
   - 'add scheduled transitions node researcher_profiles'
   - 'add scheduled transitions taxonomy_term services'
   - 'add scheduled transitions taxonomy_term site_topics'
+  - 'administer book outlines'
   - 'administer main menu items'
   - 'administer media file delete'
   - 'administer redirects'
