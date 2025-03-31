@@ -107,7 +107,7 @@ content:
     third_party_settings: {  }
   field_agencies_carryout:
     type: link_default
-    weight: 2
+    weight: 127
     region: content
     settings:
       placeholder_url: ''
@@ -115,7 +115,7 @@ content:
     third_party_settings: {  }
   field_agencies_provide:
     type: link_default
-    weight: 1
+    weight: 128
     region: content
     settings:
       placeholder_url: ''
