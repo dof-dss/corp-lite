@@ -13,7 +13,7 @@ dependencies:
 id: block_our_organisation
 theme: etini_theme
 region: content
-weight: -8
+weight: -9
 provider: null
 plugin: 'block_content:374c93d4-e414-499c-8b2f-c92c2b858282'
 settings:

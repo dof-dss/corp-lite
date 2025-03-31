@@ -21,8 +21,8 @@ types:
   user: {  }
   webform_submission: {  }
   paragraph: {  }
-  inspector: {  }
   School: {  }
+  inspector: {  }
 types_translation_lock: {  }
 types_js_lock: {  }
 form_op_lock:
@@ -77,9 +77,9 @@ form_op_lock:
   paragraph:
     mode: 0
     values: {  }
-  inspector:
+  School:
     mode: 0
     values: {  }
-  School:
+  inspector:
     mode: 0
     values: {  }
