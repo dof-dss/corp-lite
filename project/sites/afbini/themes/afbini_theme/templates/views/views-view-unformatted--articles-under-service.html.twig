@@ -15,6 +15,9 @@
  * @see template_preprocess_views_view_unformatted()
  */
 #}
+
+{% set aoe = null %}
+{% set services = null %}
 <div class="card">
 {% if title %}
   <h3 class="card__title">{{ title }}</h3>
@@ -26,9 +29,16 @@
       default_row_class ? 'views-row',
     ]
   %}
+
+  {% set aoe = row.content["#row"].taxonomy_term_field_data_node__field_site_topics_tid %}
+  {% set services = row.content["#row"].taxonomy_term_field_data_node__field_site_services_tid %}
+
   <li{{ row.attributes.addClass(row_classes) }}>
     {{- row.content -}}
   </li>
 {% endfor %}
 </ul>
+<div class="more-link">
+  <a href="/articles/{{ aoe }}/{{ services }}">more ...</a>
+</div>
 </div>

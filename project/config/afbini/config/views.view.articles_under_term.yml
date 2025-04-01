@@ -72,69 +72,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_site_topics:
-          id: field_site_topics
-          table: node__field_site_topics
-          field: field_site_topics
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: ''
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: false
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: true
-          group_column: target_id
-          group_columns: {  }
-          group_rows: false
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
       pager:
         type: none
         options:
@@ -240,7 +177,7 @@ display:
             -
               field: field_site_topics
               rendered: true
-              rendered_strip: false
+              rendered_strip: true
           row_class: ''
           default_row_class: true
       row:
@@ -284,8 +221,7 @@ display:
         - url
         - 'user.node_grants:view'
         - user.permissions
-      tags:
-        - 'config:field.storage.node.field_site_topics'
+      tags: {  }
   articles_under_service:
     id: articles_under_service
     display_title: 'Articles under service grouped by area of expertise'
@@ -508,7 +444,16 @@ display:
           admin_label: 'field_site_services: Taxonomy term'
           plugin_id: standard
           required: true
-      css_class: 'card-deck card-deck--x2 card-deck--plain card-deck--topics'
+        field_site_topics:
+          id: field_site_topics
+          table: node__field_site_topics
+          field: field_site_topics
+          relationship: none
+          group_type: group
+          admin_label: 'field_site_topics: Taxonomy term'
+          plugin_id: standard
+          required: true
+      css_class: 'card-deck card-deck--x2 card-deck--plain card-deck--topics card-deck--services'
       display_description: 'Lists all articles under a given service, grouping them by area of expertise'
       display_extenders:
         metatag_display_extender:
