@@ -62,3 +62,12 @@
   border-top: 5px solid #008290;
 }
 
+.card-deck--services {
+  .card__title {
+    color: var(--clr-body-text);
+  }
+
+  .more-link {
+    margin-top: 1em;
+  }
+}
