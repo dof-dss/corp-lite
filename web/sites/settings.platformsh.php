@@ -55,8 +55,9 @@ if ($platformsh->hasRelationship($relationship_name)) {
 
 // Configure file paths.
 if (empty($settings['file_private_path'])) {
-  $settings['file_private_path'] = $platformsh->appDir . '/private/' . $subsite_id;
+  $settings['file_private_path'] = $platformsh->appDir . '/private/files/' . $subsite_id;
 }
+
 if (!isset($config['file_temp_path'])) {
   $config['file_temp_path'] = $platformsh->appDir . '/tmp/' . $subsite_id;
 }
