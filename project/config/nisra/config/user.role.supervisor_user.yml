@@ -86,6 +86,7 @@ permissions:
   - 'delete any contact content'
   - 'delete any document media'
   - 'delete any easychart content'
+  - 'delete any file'
   - 'delete any file media'
   - 'delete any gallery content'
   - 'delete any image media'
