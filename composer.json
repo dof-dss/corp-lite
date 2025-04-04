@@ -120,7 +120,7 @@
         "drupal/migrate_absolute_links": "^6.0@dev",
         "drupal/migrate_conditions": "^2.2",
         "drupal/migrate_upgrade": "^4.0",
-        "drupal/moderation_sidebar": "^1.7",
+        "drupal/moderation_sidebar": "^1.8",
         "drupal/node_edit_protection": "^1.1",
         "drupal/noreferrer": "^1.16",
         "drupal/oembed_providers": "^2.1",
