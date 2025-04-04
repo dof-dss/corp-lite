@@ -14,6 +14,7 @@ dependencies:
     - content_moderation
     - metatag
     - path
+    - shs
     - text
 _core:
   default_config_hash: 0at9oLX80A8Q5joiOEXaNXsg3Ff2J-gzBVBQQKfhu64
@@ -47,16 +48,24 @@ content:
       use_details: true
     third_party_settings: {  }
   field_site_global_topics:
-    type: options_select
+    type: options_shs
     weight: 10
     region: content
-    settings: {  }
+    settings:
+      display_node_count: false
+      create_new_items: false
+      create_new_levels: false
+      force_deepest: false
     third_party_settings: {  }
   field_site_topics:
-    type: options_select
+    type: options_shs
     weight: 11
     region: content
-    settings: {  }
+    settings:
+      display_node_count: false
+      create_new_items: false
+      create_new_levels: false
+      force_deepest: false
     third_party_settings: {  }
   field_summary:
     type: string_textarea
