@@ -44,6 +44,7 @@ permissions:
   - 'create terms in site_topics'
   - 'delete any audio media'
   - 'delete any document media'
+  - 'delete any file'
   - 'delete any file media'
   - 'delete any image media'
   - 'delete any remote_video media'

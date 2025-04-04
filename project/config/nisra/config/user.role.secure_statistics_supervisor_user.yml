@@ -42,6 +42,7 @@ permissions:
   - 'create secure_statistics content'
   - 'delete any audio media'
   - 'delete any document media'
+  - 'delete any file'
   - 'delete any file media'
   - 'delete any image media'
   - 'delete any remote_video media'
