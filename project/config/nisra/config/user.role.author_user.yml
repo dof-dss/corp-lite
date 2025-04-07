@@ -25,10 +25,12 @@ dependencies:
     - menu_admin_per_menu
     - moderation_sidebar
     - node
+    - scheduled_transitions
     - system
     - taxonomy
     - taxonomy_access_fix
     - toolbar
+    - whatlinkshere
 _core:
   default_config_hash: 6EFyTrN3IKFGwa8I8F7VroTSjoGfF2NihP20G86sf5s
 id: author_user
@@ -40,6 +42,14 @@ permissions:
   - 'access content overview'
   - 'access taxonomy overview'
   - 'access toolbar'
+  - 'add scheduled transitions node application'
+  - 'add scheduled transitions node contact'
+  - 'add scheduled transitions node easychart'
+  - 'add scheduled transitions node gallery'
+  - 'add scheduled transitions node link'
+  - 'add scheduled transitions node news'
+  - 'add scheduled transitions node profile'
+  - 'add scheduled transitions node publication'
   - 'administer main menu items'
   - 'create application content'
   - 'create audio media'
@@ -54,12 +64,28 @@ permissions:
   - 'create profile content'
   - 'create publication content'
   - 'create remote_video media'
+  - 'delete application revisions'
+  - 'delete contact revisions'
+  - 'delete easychart revisions'
+  - 'delete gallery revisions'
+  - 'delete link revisions'
+  - 'delete news revisions'
+  - 'delete own application content'
   - 'delete own audio media'
+  - 'delete own contact content'
   - 'delete own document media'
+  - 'delete own easychart content'
   - 'delete own file media'
   - 'delete own files'
+  - 'delete own gallery content'
   - 'delete own image media'
+  - 'delete own link content'
+  - 'delete own news content'
+  - 'delete own profile content'
+  - 'delete own publication content'
   - 'delete own remote_video media'
+  - 'delete profile revisions'
+  - 'delete publication revisions'
   - 'edit any application content'
   - 'edit any contact content'
   - 'edit any easychart content'
@@ -76,6 +102,14 @@ permissions:
   - 'edit own news content'
   - 'edit own profile content'
   - 'edit own publication content'
+  - 'reschedule scheduled transitions node application'
+  - 'reschedule scheduled transitions node contact'
+  - 'reschedule scheduled transitions node easychart'
+  - 'reschedule scheduled transitions node gallery'
+  - 'reschedule scheduled transitions node link'
+  - 'reschedule scheduled transitions node news'
+  - 'reschedule scheduled transitions node profile'
+  - 'reschedule scheduled transitions node publication'
   - 'select terms in news_types'
   - 'use moderation sidebar'
   - 'use nics_editorial_workflow transition create_new_draft'
@@ -86,6 +120,7 @@ permissions:
   - 'view any unpublished content'
   - 'view application revisions'
   - 'view contact revisions'
+  - 'view content references'
   - 'view easychart revisions'
   - 'view gallery revisions'
   - 'view latest version'
@@ -94,4 +129,12 @@ permissions:
   - 'view own unpublished media'
   - 'view profile revisions'
   - 'view publication revisions'
+  - 'view scheduled transitions node application'
+  - 'view scheduled transitions node contact'
+  - 'view scheduled transitions node easychart'
+  - 'view scheduled transitions node gallery'
+  - 'view scheduled transitions node link'
+  - 'view scheduled transitions node news'
+  - 'view scheduled transitions node profile'
+  - 'view scheduled transitions node publication'
   - 'view the administration theme'

@@ -1,30 +1,57 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Drupal\corplite_published_releases_feed\Entity;
 
 use Drupal\Core\Entity\ContentEntityBase;
-use Drupal\Core\Entity\ContentEntityInterface;
+use Drupal\Core\Entity\EntityChangedTrait;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\corplite_published_releases_feed\PublishedReleasesInterface;
 
 /**
- * Defines the published releases entity.
- *
- * @ingroup published_releases
+ * Defines the published releases entity class.
  *
  * @ContentEntityType(
  *   id = "published_releases",
  *   label = @Translation("Published Releases"),
+ *   label_collection = @Translation("Published Releases"),
+ *   label_singular = @Translation("published release"),
+ *   label_plural = @Translation("published releases"),
+ *   label_count = @PluralTranslation(
+ *     singular = "@count published releases",
+ *     plural = "@count published releases",
+ *   ),
+ *   handlers = {
+ *     "list_builder" = "Drupal\corplite_published_releases_feed\PublishedReleasesListBuilder",
+ *     "views_data" = "Drupal\views\EntityViewsData",
+ *     "access" = "Drupal\corplite_published_releases_feed\PublishedReleasesAccessControlHandler",
+ *     "form" = {
+ *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm",
+ *       "delete-multiple-confirm" = "Drupal\Core\Entity\Form\DeleteMultipleForm",
+ *     },
+ *     "route_provider" = {
+ *       "html" = "Drupal\Core\Entity\Routing\AdminHtmlRouteProvider",
+ *     },
+ *   },
  *   base_table = "published_releases",
+ *   admin_permission = "administer published_releases",
  *   entity_keys = {
  *     "id" = "id"
  *   },
- *   handlers = {
- *      "views_data" = "Drupal\views\EntityViewsData"
- *   }
+ *   links = {
+ *     "collection" = "/admin/content/published-releases",
+ *     "canonical" = "/published-releases/{published_releases}",
+ *     "delete-form" = "/published-releases/{published_releases}/delete",
+ *     "delete-multiple-form" = "/admin/content/published-releases/delete-multiple",
+ *   },
+ *   field_ui_base_route = "entity.published_releases.settings",
  * )
  */
-class PublishedReleases extends ContentEntityBase implements ContentEntityInterface {
+final class PublishedReleases extends ContentEntityBase implements PublishedReleasesInterface {
+
+  use EntityChangedTrait;
 
   /**
    * Base field definitions.
@@ -69,15 +96,38 @@ class PublishedReleases extends ContentEntityBase implements ContentEntityInterf
       ])
       ->setRequired(FALSE);
 
+    // This field holds the release date that appears in the feed.
     $fields['release_date'] = BaseFieldDefinition::create('created')
       ->setLabel(t('Release date'))
       ->setDescription(t('Release date'))
       ->setRequired(TRUE);
 
+    // This field is a Drupal internal field.
+    $fields['created'] = BaseFieldDefinition::create('created')
+      ->setLabel(t('Authored on'))
+      ->setDescription(t('The time that the published releases was created.'))
+      ->setDisplayOptions('view', [
+        'label' => 'above',
+        'type' => 'timestamp',
+        'weight' => 20,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayOptions('form', [
+        'type' => 'datetime_timestamp',
+        'weight' => 20,
+      ])
+      ->setDisplayConfigurable('view', TRUE);
+
+    // This field holds the updated date taht appears in the feed.
     $fields['updated'] = BaseFieldDefinition::create('created')
       ->setLabel(t('Updated'))
       ->setDescription(t('Updated date'))
       ->setRequired(TRUE);
+
+    // This field is a Drupal internal field.
+    $fields['changed'] = BaseFieldDefinition::create('changed')
+      ->setLabel(t('Changed'))
+      ->setDescription(t('The time that the published releases was last edited.'));
 
     return $fields;
   }

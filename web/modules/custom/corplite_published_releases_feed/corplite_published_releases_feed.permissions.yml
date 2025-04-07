@@ -1,0 +1,7 @@
+administer published_releases:
+  title: 'Administer published releases'
+  restrict access: true
+view published_releases:
+  title: 'View published releases'
+delete published_releases:
+  title: 'Delete published releases'

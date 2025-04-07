@@ -8,6 +8,16 @@ dependencies:
     - media.type.file
     - media.type.image
     - media.type.remote_video
+    - node.type.application
+    - node.type.contact
+    - node.type.department_management
+    - node.type.easychart
+    - node.type.gallery
+    - node.type.link
+    - node.type.news
+    - node.type.page
+    - node.type.profile
+    - node.type.publication
     - taxonomy.vocabulary.site_topics
     - workflows.workflow.nics_editorial_workflow
   module:
@@ -20,9 +30,11 @@ dependencies:
     - moderation_sidebar
     - node
     - redirect
+    - scheduled_transitions
     - system
     - taxonomy
     - toolbar
+    - whatlinkshere
 id: site_admin_user
 label: 'site admin user'
 weight: 0
@@ -32,6 +44,16 @@ permissions:
   - 'access content overview'
   - 'access files overview'
   - 'access toolbar'
+  - 'add scheduled transitions node application'
+  - 'add scheduled transitions node contact'
+  - 'add scheduled transitions node department_management'
+  - 'add scheduled transitions node easychart'
+  - 'add scheduled transitions node gallery'
+  - 'add scheduled transitions node link'
+  - 'add scheduled transitions node news'
+  - 'add scheduled transitions node page'
+  - 'add scheduled transitions node profile'
+  - 'add scheduled transitions node publication'
   - 'administer main menu items'
   - 'administer media file delete'
   - 'administer nodes'
@@ -44,15 +66,36 @@ permissions:
   - 'create terms in site_topics'
   - 'delete any audio media'
   - 'delete any document media'
+  - 'delete any file'
   - 'delete any file media'
   - 'delete any image media'
   - 'delete any remote_video media'
+  - 'delete application revisions'
+  - 'delete contact revisions'
+  - 'delete department_management revisions'
+  - 'delete easychart revisions'
+  - 'delete gallery revisions'
+  - 'delete link revisions'
+  - 'delete news revisions'
+  - 'delete own application content'
   - 'delete own audio media'
+  - 'delete own contact content'
+  - 'delete own department_management content'
   - 'delete own document media'
+  - 'delete own easychart content'
   - 'delete own file media'
   - 'delete own files'
+  - 'delete own gallery content'
   - 'delete own image media'
+  - 'delete own link content'
+  - 'delete own news content'
+  - 'delete own page content'
+  - 'delete own profile content'
+  - 'delete own publication content'
   - 'delete own remote_video media'
+  - 'delete page revisions'
+  - 'delete profile revisions'
+  - 'delete publication revisions'
   - 'delete terms in site_topics'
   - 'edit any audio media'
   - 'edit any document media'
@@ -67,6 +110,16 @@ permissions:
   - 'edit terms in site_topics'
   - 'hide topic or feature on homepage'
   - 'reorder draggable views'
+  - 'reschedule scheduled transitions node application'
+  - 'reschedule scheduled transitions node contact'
+  - 'reschedule scheduled transitions node department_management'
+  - 'reschedule scheduled transitions node easychart'
+  - 'reschedule scheduled transitions node gallery'
+  - 'reschedule scheduled transitions node link'
+  - 'reschedule scheduled transitions node news'
+  - 'reschedule scheduled transitions node page'
+  - 'reschedule scheduled transitions node profile'
+  - 'reschedule scheduled transitions node publication'
   - 'revert term revisions in site_topics'
   - 'use moderation sidebar'
   - 'use nics_editorial_workflow transition archive'
@@ -79,7 +132,17 @@ permissions:
   - 'use nics_editorial_workflow transition submit_for_review'
   - 'view all revisions'
   - 'view any unpublished content'
+  - 'view content references'
   - 'view latest version'
   - 'view own unpublished media'
+  - 'view scheduled transitions node application'
+  - 'view scheduled transitions node contact'
+  - 'view scheduled transitions node department_management'
+  - 'view scheduled transitions node easychart'
+  - 'view scheduled transitions node gallery'
+  - 'view scheduled transitions node link'
+  - 'view scheduled transitions node news'
+  - 'view scheduled transitions node page'
+  - 'view scheduled transitions node publication'
   - 'view term revisions in site_topics'
   - 'view the administration theme'

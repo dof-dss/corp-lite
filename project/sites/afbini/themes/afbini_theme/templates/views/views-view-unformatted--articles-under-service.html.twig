@@ -16,11 +16,18 @@
  */
 #}
 
-{% set aoe = null %}
-{% set services = null %}
+{% set firstRow = rows|first %}
+
+{% if firstRow %}
+  {% set aoe = firstRow.content["#row"].taxonomy_term_field_data_node__field_site_topics_tid %}
+  {% set services = firstRow.content["#row"].taxonomy_term_field_data_node__field_site_services_tid %}
+{% endif %}
+
 <div class="card">
 {% if title %}
-  <h3 class="card__title">{{ title }}</h3>
+  <h3 class="card__title">
+    <a href="/articles/{{ aoe }}/{{ services }}">{{ title }}</a>
+  </h3>
 {% endif %}
 <ul class="list--hyphen-bullet card__content">
   {% for row in rows|slice(0, 3) %}
@@ -30,15 +37,9 @@
     ]
   %}
 
-  {% set aoe = row.content["#row"].taxonomy_term_field_data_node__field_site_topics_tid %}
-  {% set services = row.content["#row"].taxonomy_term_field_data_node__field_site_services_tid %}
-
   <li{{ row.attributes.addClass(row_classes) }}>
     {{- row.content -}}
   </li>
 {% endfor %}
 </ul>
-<div class="more-link">
-  <a href="/articles/{{ aoe }}/{{ services }}">more ...</a>
-</div>
 </div>

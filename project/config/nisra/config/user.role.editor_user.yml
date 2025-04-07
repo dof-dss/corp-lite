@@ -36,6 +36,7 @@ dependencies:
     - system
     - taxonomy_access_fix
     - toolbar
+    - whatlinkshere
 id: editor_user
 label: 'editor user'
 weight: -1
@@ -80,6 +81,7 @@ permissions:
   - 'delete any department_management content'
   - 'delete any document media'
   - 'delete any easychart content'
+  - 'delete any file'
   - 'delete any file media'
   - 'delete any gallery content'
   - 'delete any image media'
@@ -182,6 +184,7 @@ permissions:
   - 'view any unpublished content'
   - 'view application revisions'
   - 'view contact revisions'
+  - 'view content references'
   - 'view department_management revisions'
   - 'view easychart revisions'
   - 'view gallery revisions'
@@ -200,4 +203,5 @@ permissions:
   - 'view scheduled transitions node link'
   - 'view scheduled transitions node news'
   - 'view scheduled transitions node page'
+  - 'view scheduled transitions node publication'
   - 'view the administration theme'
