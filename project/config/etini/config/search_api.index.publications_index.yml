@@ -112,7 +112,7 @@ field_settings:
     label: Statistics
     datasource_id: 'entity:node'
     property_path: field_site_topics
-    type: text
+    type: string
     dependencies:
       config:
         - field.storage.node.field_site_topics
@@ -146,7 +146,7 @@ field_settings:
     label: 'Statistics » Taxonomy term » Name'
     datasource_id: 'entity:node'
     property_path: 'field_site_topics:entity:name'
-    type: text
+    type: string
     dependencies:
       config:
         - field.storage.node.field_site_topics
@@ -232,4 +232,4 @@ options:
   cron_limit: 50
   index_directly: true
   track_changes_in_references: true
-server: solr_default
+server: null
