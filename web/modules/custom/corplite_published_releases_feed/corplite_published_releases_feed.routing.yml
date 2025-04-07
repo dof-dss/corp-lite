@@ -1,0 +1,7 @@
+entity.published_releases.settings:
+  path: 'admin/structure/published-releases'
+  defaults:
+    _form: '\Drupal\corplite_published_releases_feed\Form\PublishedReleasesSettingsForm'
+    _title: 'Published Releases'
+  requirements:
+    _permission: 'administer published_releases'
