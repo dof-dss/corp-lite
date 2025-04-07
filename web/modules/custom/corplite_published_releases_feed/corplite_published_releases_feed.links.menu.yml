@@ -1,0 +1,11 @@
+entity.published_releases.settings:
+  title: 'Published Releases'
+  description: 'Configure a Published Releases entity type.'
+  route_name:  entity.published_releases.settings
+  parent: system.admin_structure
+
+entity.published_releases.collection:
+  title: 'Published Releases'
+  description: 'List of published releases.'
+  route_name: entity.published_releases.collection
+  parent: system.admin_content
