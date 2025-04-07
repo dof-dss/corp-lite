@@ -129,7 +129,7 @@ field_settings:
     label: 'News type » Taxonomy term » Name'
     datasource_id: 'entity:node'
     property_path: 'field_news_type:entity:name'
-    type: string
+    type: text
     dependencies:
       config:
         - field.storage.node.field_news_type
@@ -242,4 +242,4 @@ options:
   cron_limit: 50
   index_directly: true
   track_changes_in_references: true
-server: solr_default
+server: null
