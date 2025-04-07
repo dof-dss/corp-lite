@@ -35,3 +35,9 @@ facets:
     separator: ', '
     show_count: false
     weight: 0
+  audience:
+    checked: true
+    label: Audience
+    separator: ', '
+    show_count: false
+    weight: 0
