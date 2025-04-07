@@ -52,7 +52,7 @@ processor_configs:
     weights:
       sort: 20
     settings:
-      sort: DESC
+      sort: ASC
   date_facet_drilldown:
     processor_id: date_facet_drilldown
     weights:
