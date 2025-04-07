@@ -146,7 +146,7 @@ field_settings:
     label: 'Statistics » Taxonomy term » Name'
     datasource_id: 'entity:node'
     property_path: 'field_site_topics:entity:name'
-    type: string
+    type: text
     dependencies:
       config:
         - field.storage.node.field_site_topics
