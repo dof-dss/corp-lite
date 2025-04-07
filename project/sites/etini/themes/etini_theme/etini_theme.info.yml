@@ -8,6 +8,7 @@ base theme: nicsdru_corplite_theme
 libraries:
   - etini_theme/site-styling
   - nicsdru_corplite_theme/book
+  - etini_theme/fontawesome
 
 ckeditor5-stylesheets:
   - css/1_base/root.css
