@@ -141,11 +141,14 @@ display:
           value:
             department_management: department_management
       style:
-        type: default
+        type: html_list
         options:
           grouping: {  }
           row_class: ''
           default_row_class: false
+          type: ul
+          wrapper_class: ''
+          class: ''
       row:
         type: fields
         options:

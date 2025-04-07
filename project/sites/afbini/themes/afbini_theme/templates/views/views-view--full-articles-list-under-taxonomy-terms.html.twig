@@ -30,16 +30,40 @@
  * @see template_preprocess_views_view()
  */
 #}
+{%
+  set classes = [
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
+  ]
+%}
+<div{{ attributes.addClass(classes) }}>
+  <h1>
+    {{ view.element['#title'] }}
+  </h1>
 
-<div>
-  {% for row in rows %}
-    {%
-      set row_classes = [
-      default_row_class ? 'views-row',
-    ]
-    %}
-    <div{{ row.attributes.addClass(row_classes) }}>
-      {{- row.content -}}
-    </div>
-  {% endfor %}
+  {% if header %}
+    <header>
+      {{ header }}
+    </header>
+  {% endif %}
+
+  {{ exposed }}
+  {{ attachment_before }}
+
+  {% if rows -%}
+    {{ rows }}
+  {% elseif empty -%}
+    {{ empty }}
+  {% endif %}
+  {{ pager }}
+
+  {{ attachment_after }}
+  {{ more }}
+
+  {% if footer %}
+    <footer>
+      {{ footer }}
+    </footer>
+  {% endif %}
+
+  {{ feed_icons }}
 </div>

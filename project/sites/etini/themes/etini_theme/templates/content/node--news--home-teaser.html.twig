@@ -70,18 +70,19 @@
  *   in different view modes.
  */
 #}
-<div class="featured_main">
-  <a href="{{ url }}">
-    <div class="featured__image" role="presentation">
+<article>
+  <a href="{{ url }}" class="card card--plain card--no-border card--no-shadow">
+    <div class="card__image">
       {{ content.field_photo }}
     </div>
-    <div class="featured__body">
-      <h3 class="featured-title">{{ node.label }}</h3>
-      <p class="featured-date">{{ content.field_published_date }}</p>
-      <div class="featured-summary-wrapper">
-        {% set summary_text = content.field_summary|render|striptags|trim %}
-        <p>{{ summary_text|slice(0, 150) }}{{ summary_text|length > 150 ? '... more' : '' }}</p>
+    <div class="card__body">
+      <h3{{ title_attributes.addClass('card__title') }}>
+        {{ label }}
+      </h3>
+      <div class="card__meta meta">
+        {{ content.field_published_date }}
       </div>
+      {{ content.field_teaser }}
     </div>
   </a>
-</div>
+</article>

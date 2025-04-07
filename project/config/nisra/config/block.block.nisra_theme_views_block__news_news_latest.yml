@@ -6,7 +6,7 @@ dependencies:
     - views.view.news
   module:
     - block_visibility_groups
-    - system
+    - node
     - views
   theme:
     - nisra_theme
@@ -28,7 +28,10 @@ visibility:
     id: condition_group
     negate: false
     block_visibility_group: ''
-  request_path:
-    id: request_path
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
     negate: false
-    pages: '/news/*'
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      news: news

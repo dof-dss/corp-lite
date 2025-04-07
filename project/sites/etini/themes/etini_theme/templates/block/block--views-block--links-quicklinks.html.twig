@@ -25,12 +25,7 @@
  * @see template_preprocess_block()
  */
 #}
-{% set attributes = attributes.addClass(['sub-menu', 'sub-menu--quicklinks']).removeClass('views-element-container') %}
-{% set attributes = attributes.removeClass('views-element-container') %}
-{% set attributes = attributes.setAttribute('id', 'quicklinks') %}
-{% set attributes = attributes.setAttribute('role', 'presentation') %}
-{% set title_attributes = title_attributes.addClass(['menu-title', 'menu-title--large']).setAttribute('id', 'quicklinks') %}
-<div{{ attributes.setAttribute('role', 'presentation') }}>
+<section{{ attributes.addClass(['section-front', 'section-front--quick-links']).removeClass('views-element-container').removeAttribute('id') }}>
   {{ title_prefix }}
   {% if label %}
     <h2{{ title_attributes }}>{{ label }}</h2>
@@ -39,4 +34,4 @@
   {% block content %}
     {{ content }}
   {% endblock %}
-</div>
+</section>
