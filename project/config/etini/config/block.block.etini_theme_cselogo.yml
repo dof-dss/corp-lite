@@ -12,7 +12,7 @@ dependencies:
 id: etini_theme_cselogo
 theme: etini_theme
 region: footer
-weight: -9
+weight: -14
 provider: null
 plugin: 'block_content:bdb1b929-8f9c-490b-8cd7-980f5edb09a3'
 settings:
