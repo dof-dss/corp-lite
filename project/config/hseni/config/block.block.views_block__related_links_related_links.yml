@@ -7,6 +7,7 @@ dependencies:
   module:
     - block_visibility_groups
     - node
+    - taxonomy
     - views
   theme:
     - hseni_theme
@@ -37,3 +38,10 @@ visibility:
       node: '@node.node_route_context:node'
     bundles:
       article: article
+  'entity_bundle:taxonomy_term':
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    context_mapping:
+      taxonomy_term: '@taxonomy_term.taxonomy_term_route_context:taxonomy_term'
+    bundles:
+      site_topics: site_topics

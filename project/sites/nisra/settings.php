@@ -20,7 +20,7 @@ include $app_root . '/sites/site.settings.php';
  * See https://www.drupal.org/documentation/modules/file for more information
  * about securing private files.
  */
-$settings['file_private_path'] = '../private/files';
+$settings['file_private_path'] = '/app/private/files';
 
 if (getenv('IS_DDEV_PROJECT')) {
   $databases['default']['default']['database'] = $subsite_id;

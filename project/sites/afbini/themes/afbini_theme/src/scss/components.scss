@@ -4,14 +4,6 @@
 // */
 //
 
-nav#block-mainnavigation {
-  border-bottom: 2px solid var(--clr-main-nav-brd-btm);
-}
-
-#block-views-block-news-news-latest  ul.list--hyphen-bullet li p.published-date {
-  font-size: 1.5rem;
-}
-
 .page-node-type-article {
   .field--name-field-site-topics {
     padding-bottom: 0;
@@ -68,12 +60,4 @@ nav#block-mainnavigation {
 
 .footer {
   border-top: 5px solid #008290;
-  margin-top: 0;
-
-  .footer-links {
-    p, li {
-      display: inline-block;
-    }
-  }
 }
-

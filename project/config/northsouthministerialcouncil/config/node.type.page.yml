@@ -7,15 +7,14 @@ dependencies:
     - origins_toc
 third_party_settings:
   menu_ui:
-    available_menus:
-      - main
-    parent: 'main-menu:0:'
+    available_menus: {  }
+    parent: ''
   origins_toc:
     toc_enable: 1
     toc_title: Contents
-    toc_location: '#post-content .page-content'
+    toc_location: .article-content
     toc_insert: before
-    toc_source_container: '#post-content .page-content'
+    toc_source_container: .article-content
     toc_element: h2
     toc_exclusions: ''
     toc_screen_depth: '2'

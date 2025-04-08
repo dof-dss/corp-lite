@@ -33,38 +33,50 @@
  * - field_type: The type of the field.
  * - label_display: The display settings for the label.
  *
+ *
  * @see template_preprocess_field()
  */
 #}
 {%
+  set classes = [
+  'field',
+  'field--name-' ~ field_name|clean_class,
+  'field--type-' ~ field_type|clean_class,
+  'field--label-' ~ label_display,
+  'site-topics',
+]
+%}
+{%
   set title_classes = [
-    label_display == 'visually_hidden' ? 'visually-hidden',
-  ]
+  'site-topics--label',
+  'field__label',
+  label_display == 'visually_hidden' ? 'visually-hidden',
+]
 %}
 
 {% if label_hidden %}
   {% if multiple %}
-    <div{{ attributes }}>
+    <p{{ attributes.addClass(classes, 'site-topics--list') }}>
       {% for item in items %}
-        <div{{ item.attributes }}>{{ item.content }}</div>
+        <span{{ item.attributes.addClass('site-topics--item') }}>{{ item.content }}</span>
       {% endfor %}
-    </div>
+    </p>
   {% else %}
     {% for item in items %}
-      <div{{ attributes }}>{{ item.content }}</div>
+      <span{{ attributes.addClass(classes, 'site-topics--item') }}>{{ item.content }}</span>
     {% endfor %}
   {% endif %}
 {% else %}
-  <div class="field-site-services" {{ attributes }}>
-    <span {{ title_attributes.addClass(title_classes) }}>{{ label }}: </span>
+  <div{{ attributes.addClass(classes) }}>
+    <span{{ title_attributes.addClass(title_classes) }}>{{ label }}: </span>
     {% if multiple %}
-      <div>
-    {% endif %}
-    {% for item in items %}
-      <div class="service-label-inline" {{ item.attributes }}>{{ item.content }}</div>
-    {% endfor %}
-    {% if multiple %}
-      </div>
+    <span class="site-topics--list">
+      {% endif %}
+      {% for item in items %}
+        <span{{ item.attributes.addClass('site-topics--item') }}>{{ item.content }}{% if not loop.last %}{{ ',&ensp;' }}{% endif %}</span>
+      {% endfor %}
+      {% if multiple %}
+    </span>
     {% endif %}
   </div>
 {% endif %}

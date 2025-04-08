@@ -1,0 +1,18 @@
+entity.published_releases.settings:
+  title: 'Settings'
+  route_name: entity.published_releases.settings
+  base_route: entity.published_releases.settings
+entity.published_releases.view:
+  title: 'View'
+  route_name: entity.published_releases.canonical
+  base_route: entity.published_releases.canonical
+entity.published_releases.delete_form:
+  title: 'Delete'
+  route_name: entity.published_releases.delete_form
+  base_route: entity.published_releases.canonical
+  weight: 10
+entity.published_releases.collection:
+  title: 'Published Releases'
+  route_name: entity.published_releases.collection
+  base_route: system.admin_content
+  weight: 10

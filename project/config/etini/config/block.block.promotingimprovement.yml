@@ -13,7 +13,7 @@ dependencies:
 id: promotingimprovement
 theme: etini_theme
 region: content
-weight: -9
+weight: -10
 provider: null
 plugin: 'block_content:cf83e276-c4e1-43c1-a2ba-cf4a603a8adc'
 settings:

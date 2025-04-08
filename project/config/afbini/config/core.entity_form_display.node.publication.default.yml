@@ -22,6 +22,7 @@ dependencies:
     - media_library_edit
     - metatag
     - path
+    - shs
     - text
 third_party_settings:
   field_group:
@@ -106,10 +107,14 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_site_topics:
-    type: options_select
+    type: options_shs
     weight: 4
     region: content
-    settings: {  }
+    settings:
+      display_node_count: false
+      create_new_items: false
+      create_new_levels: false
+      force_deepest: false
     third_party_settings: {  }
   field_summary:
     type: string_textarea

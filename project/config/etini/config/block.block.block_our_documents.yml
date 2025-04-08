@@ -13,7 +13,7 @@ dependencies:
 id: block_our_documents
 theme: etini_theme
 region: content
-weight: -10
+weight: -11
 provider: null
 plugin: 'block_content:a3867cd3-ebf7-41c5-ab06-161006e6bf95'
 settings:

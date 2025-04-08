@@ -10,6 +10,7 @@ dependencies:
     - media.type.remote_video
     - media.type.secure_file
     - node.type.secure_market_statistics
+    - node.type.secure_statistics
     - workflows.workflow.nics_editorial_workflow
   module:
     - content_moderation
@@ -18,8 +19,10 @@ dependencies:
     - menu_admin_per_menu
     - moderation_sidebar
     - node
+    - scheduled_transitions
     - system
     - toolbar
+    - whatlinkshere
 id: secure_market_sensitive_author_user
 label: 'secure market sensitive author user'
 weight: -4
@@ -28,6 +31,7 @@ permissions:
   - 'access administration pages'
   - 'access content overview'
   - 'access toolbar'
+  - 'add scheduled transitions node secure_market_statistics'
   - 'administer main menu items'
   - 'create audio media'
   - 'create document media'
@@ -43,7 +47,9 @@ permissions:
   - 'delete own remote_video media'
   - 'delete own secure_file media'
   - 'delete own secure_market_statistics content'
+  - 'delete own secure_statistics content'
   - 'delete secure_market_statistics revisions'
+  - 'delete secure_statistics revisions'
   - 'edit any secure_file media'
   - 'edit any secure_market_statistics content'
   - 'edit own audio media'
@@ -53,15 +59,17 @@ permissions:
   - 'edit own remote_video media'
   - 'edit own secure_file media'
   - 'edit own secure_market_statistics content'
+  - 'reschedule scheduled transitions node secure_market_statistics'
   - 'revert secure_market_statistics revisions'
   - 'use moderation sidebar'
   - 'use nics_editorial_workflow transition create_new_draft'
   - 'use nics_editorial_workflow transition draft_of_published'
   - 'use nics_editorial_workflow transition reject'
   - 'use nics_editorial_workflow transition submit_for_review'
-  - 'view all revisions'
   - 'view any unpublished content'
+  - 'view content references'
   - 'view latest version'
   - 'view own unpublished media'
+  - 'view scheduled transitions node secure_market_statistics'
   - 'view secure_market_statistics revisions'
   - 'view the administration theme'

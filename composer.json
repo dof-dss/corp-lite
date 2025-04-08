@@ -55,7 +55,7 @@
         "composer/installers": "^2.0",
         "cweagans/composer-patches": "^1.7",
         "deaemth/easychart": "^3.1",
-        "dof-dss/nicsdru_origins_modules": "^10.4",
+        "dof-dss/nicsdru_origins_modules": "^10.5",
         "drupal/address": "^1.12",
         "drupal/admin_toolbar": "^3.4",
         "drupal/allowed_formats": "^2.0",
@@ -120,7 +120,7 @@
         "drupal/migrate_absolute_links": "^6.0@dev",
         "drupal/migrate_conditions": "^2.2",
         "drupal/migrate_upgrade": "^4.0",
-        "drupal/moderation_sidebar": "^1.7",
+        "drupal/moderation_sidebar": "^1.8",
         "drupal/node_edit_protection": "^1.1",
         "drupal/noreferrer": "^1.16",
         "drupal/oembed_providers": "^2.1",
@@ -241,6 +241,9 @@
             },
             "drupal/entityqueue": {
                 "Allow unique records only": "https://www.drupal.org/files/issues/2021-02-07/entity_queue_unique_records-1240856-3197148.patch"
+            },
+            "drupal/eu_cookie_compliance": {
+                "Elements with role=\"dialog\" or role=\"alertdialog\" do not have accessible names": "https://www.drupal.org/files/issues/2024-10-11/eu_cookie_compliance.3379830.1.25.0.patch"
             },
             "drupal/facets": {
                 "Pass facet object onto child items": "https://www.drupal.org/files/issues/2019-11-13/child_item-3094143-2.patch",
