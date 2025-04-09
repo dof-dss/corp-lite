@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\corp-lite_taxonomy_navigator\Plugin\Menu\LocalAction;
+namespace Drupal\corplite_taxonomy_navigator\Plugin\Menu\LocalAction;
 
 use Drupal\Core\Menu\LocalActionDefault;
 use Drupal\Core\Routing\CurrentRouteMatch;
