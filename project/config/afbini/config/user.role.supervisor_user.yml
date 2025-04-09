@@ -37,6 +37,7 @@ dependencies:
     - scheduled_transitions
     - system
     - taxonomy
+    - taxonomy_access_fix
     - toolbar
     - whatlinkshere
 _core:
@@ -118,10 +119,6 @@ permissions:
   - 'delete page revisions'
   - 'delete publication revisions'
   - 'delete researcher_profiles revisions'
-  - 'delete term revisions in services'
-  - 'delete term revisions in site_topics'
-  - 'delete terms in services'
-  - 'delete terms in site_topics'
   - 'edit any article content'
   - 'edit any audio media'
   - 'edit any contact content'
@@ -152,6 +149,8 @@ permissions:
   - 'edit terms in services'
   - 'edit terms in site_topics'
   - 'hide topic or feature on homepage'
+  - 'reorder terms in services'
+  - 'reorder terms in site_topics'
   - 'reschedule scheduled transitions node article'
   - 'reschedule scheduled transitions node contact'
   - 'reschedule scheduled transitions node gallery'
@@ -162,6 +161,8 @@ permissions:
   - 'reschedule scheduled transitions node researcher_profiles'
   - 'reschedule scheduled transitions taxonomy_term services'
   - 'reschedule scheduled transitions taxonomy_term site_topics'
+  - 'reset services'
+  - 'reset site_topics'
   - 'revert all revisions'
   - 'revert article revisions'
   - 'revert contact revisions'
@@ -173,6 +174,10 @@ permissions:
   - 'revert researcher_profiles revisions'
   - 'revert term revisions in services'
   - 'revert term revisions in site_topics'
+  - 'select terms in services'
+  - 'select terms in site_topics'
+  - 'select unpublished terms in services'
+  - 'select unpublished terms in site_topics'
   - 'use moderation sidebar'
   - 'use nics_editorial_workflow transition archive'
   - 'use nics_editorial_workflow transition create_new_draft'
@@ -185,7 +190,6 @@ permissions:
   - 'use text format basic_html'
   - 'view all revisions'
   - 'view all scheduled transitions'
-  - 'view all taxonomy revisions'
   - 'view any unpublished content'
   - 'view article revisions'
   - 'view contact revisions'
@@ -208,6 +212,16 @@ permissions:
   - 'view scheduled transitions node researcher_profiles'
   - 'view scheduled transitions taxonomy_term services'
   - 'view scheduled transitions taxonomy_term site_topics'
+  - 'view term names in services'
+  - 'view term names in site_topics'
   - 'view term revisions in services'
   - 'view term revisions in site_topics'
+  - 'view terms in services'
+  - 'view terms in site_topics'
   - 'view the administration theme'
+  - 'view unpublished term names in services'
+  - 'view unpublished term names in site_topics'
+  - 'view unpublished terms in services'
+  - 'view unpublished terms in site_topics'
+  - 'view vocabulary name of services'
+  - 'view vocabulary name of site_topics'

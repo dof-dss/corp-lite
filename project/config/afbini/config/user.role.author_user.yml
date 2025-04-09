@@ -89,7 +89,6 @@ permissions:
   - 'use nics_editorial_workflow transition reject'
   - 'use nics_editorial_workflow transition submit_for_review'
   - 'use text format basic_html'
-  - 'view all taxonomy revisions'
   - 'view any unpublished content'
   - 'view article revisions'
   - 'view contact revisions'
