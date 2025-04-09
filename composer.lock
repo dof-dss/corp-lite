@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f5fb971a298d5d0a7a6f17a11ebf3740",
+    "content-hash": "494dfdc3d74757e2e165d446fdda0905",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -7595,20 +7595,20 @@
         },
         {
             "name": "drupal/shs",
-            "version": "2.0.0-rc12",
+            "version": "2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/shs.git",
-                "reference": "2.0.0-rc12"
+                "reference": "2.0.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/shs-2.0.0-rc12.zip",
-                "reference": "2.0.0-rc12",
-                "shasum": "341ffbc1d9daa2fdc6f8d8c986c87973b1a3cc3b"
+                "url": "https://ftp.drupal.org/files/projects/shs-2.0.2.zip",
+                "reference": "2.0.2",
+                "shasum": "43651ef23908fd83a33081ac4edbccdbb4d7ee79"
             },
             "require": {
-                "drupal/core": "^9 || ^10"
+                "drupal/core": "^10.2 || ^11"
             },
             "require-dev": {
                 "drupal/chosen": "*"
@@ -7616,11 +7616,11 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.0-rc12",
-                    "datestamp": "1712249467",
+                    "version": "2.0.2",
+                    "datestamp": "1738879209",
                     "security-coverage": {
-                        "status": "not-covered",
-                        "message": "RC releases are not covered by Drupal security advisories."
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
                     }
                 }
             },
@@ -7638,7 +7638,7 @@
                     "homepage": "https://www.drupal.org/user/1321830"
                 },
                 {
-                    "name": "stBorchert",
+                    "name": "stborchert",
                     "homepage": "https://www.drupal.org/user/36942"
                 }
             ],
@@ -21793,7 +21793,6 @@
         "drupal/menu_breadcrumb": 15,
         "drupal/migrate_absolute_links": 20,
         "drupal/search_api_location": 15,
-        "drupal/shs": 5,
         "drupal/stage_file_proxy": 20,
         "drupal/ultimate_cron": 15,
         "drupal/views_field_view": 10,
