@@ -11,7 +11,6 @@ dependencies:
     - node.type.application
     - node.type.article
     - node.type.contact
-    - node.type.department_management
     - node.type.gallery
     - node.type.link
     - node.type.news
@@ -54,7 +53,6 @@ permissions:
   - 'add scheduled transitions node application'
   - 'add scheduled transitions node article'
   - 'add scheduled transitions node contact'
-  - 'add scheduled transitions node department_management'
   - 'add scheduled transitions node gallery'
   - 'add scheduled transitions node link'
   - 'add scheduled transitions node news'
@@ -72,7 +70,6 @@ permissions:
   - 'create article content'
   - 'create audio media'
   - 'create contact content'
-  - 'create department_management content'
   - 'create document media'
   - 'create file media'
   - 'create gallery content'
@@ -91,7 +88,6 @@ permissions:
   - 'delete any article content'
   - 'delete any audio media'
   - 'delete any contact content'
-  - 'delete any department_management content'
   - 'delete any document media'
   - 'delete any file media'
   - 'delete any gallery content'
@@ -105,7 +101,6 @@ permissions:
   - 'delete application revisions'
   - 'delete article revisions'
   - 'delete contact revisions'
-  - 'delete department_management revisions'
   - 'delete gallery revisions'
   - 'delete link revisions'
   - 'delete news revisions'
@@ -113,7 +108,6 @@ permissions:
   - 'delete own article content'
   - 'delete own audio media'
   - 'delete own contact content'
-  - 'delete own department_management content'
   - 'delete own document media'
   - 'delete own file media'
   - 'delete own files'
@@ -132,7 +126,6 @@ permissions:
   - 'edit any article content'
   - 'edit any audio media'
   - 'edit any contact content'
-  - 'edit any department_management content'
   - 'edit any document media'
   - 'edit any file media'
   - 'edit any gallery content'
@@ -148,7 +141,6 @@ permissions:
   - 'edit own article content'
   - 'edit own audio media'
   - 'edit own contact content'
-  - 'edit own department_management content'
   - 'edit own document media'
   - 'edit own file media'
   - 'edit own gallery content'
@@ -166,7 +158,6 @@ permissions:
   - 'reschedule scheduled transitions node application'
   - 'reschedule scheduled transitions node article'
   - 'reschedule scheduled transitions node contact'
-  - 'reschedule scheduled transitions node department_management'
   - 'reschedule scheduled transitions node gallery'
   - 'reschedule scheduled transitions node link'
   - 'reschedule scheduled transitions node news'
@@ -179,7 +170,6 @@ permissions:
   - 'revert application revisions'
   - 'revert article revisions'
   - 'revert contact revisions'
-  - 'revert department_management revisions'
   - 'revert gallery revisions'
   - 'revert link revisions'
   - 'revert news revisions'
@@ -202,7 +192,6 @@ permissions:
   - 'view article revisions'
   - 'view contact revisions'
   - 'view content references'
-  - 'view department_management revisions'
   - 'view gallery revisions'
   - 'view latest version'
   - 'view link revisions'
@@ -214,7 +203,6 @@ permissions:
   - 'view scheduled transitions node application'
   - 'view scheduled transitions node article'
   - 'view scheduled transitions node contact'
-  - 'view scheduled transitions node department_management'
   - 'view scheduled transitions node gallery'
   - 'view scheduled transitions node link'
   - 'view scheduled transitions node news'
