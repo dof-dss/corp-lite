@@ -4,12 +4,18 @@ status: true
 dependencies:
   config:
     - filter.format.basic_html
+    - taxonomy.vocabulary.link_types
+    - taxonomy.vocabulary.news_types
+    - taxonomy.vocabulary.publication_types
+    - taxonomy.vocabulary.services
+    - taxonomy.vocabulary.site_topics
   module:
     - filter
     - media
     - node
     - path
     - system
+    - taxonomy_access_fix
 _core:
   default_config_hash: 5VGJw7pgPFTBuJrCG9pBukHNqdclr8NPzvsAwTZXVwY
 id: authenticated
@@ -19,6 +25,13 @@ is_admin: false
 permissions:
   - 'access content'
   - 'create url aliases'
+  - 'select terms in link_types'
+  - 'select terms in news_types'
+  - 'select terms in publication_types'
+  - 'select terms in services'
+  - 'select terms in site_topics'
   - 'use text format basic_html'
+  - 'view any term'
+  - 'view any term name'
   - 'view media'
   - 'view own unpublished content'
