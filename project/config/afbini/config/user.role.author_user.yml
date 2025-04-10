@@ -27,7 +27,6 @@ dependencies:
     - moderation_sidebar
     - node
     - system
-    - taxonomy
     - toolbar
 _core:
   default_config_hash: vNEkQI-Oi5HpFydAyizLa6qCCV8SkpSWLiyMrYoGO94
@@ -38,7 +37,6 @@ is_admin: false
 permissions:
   - 'access administration pages'
   - 'access content overview'
-  - 'access taxonomy overview'
   - 'access toolbar'
   - 'administer main menu items'
   - 'create article content'

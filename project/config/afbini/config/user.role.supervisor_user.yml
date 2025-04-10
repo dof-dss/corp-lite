@@ -65,7 +65,6 @@ permissions:
   - 'administer main menu items'
   - 'administer media file delete'
   - 'administer redirects'
-  - 'administer taxonomy'
   - 'audit content'
   - 'create article content'
   - 'create audio media'
