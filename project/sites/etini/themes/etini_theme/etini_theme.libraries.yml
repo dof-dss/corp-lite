@@ -7,6 +7,8 @@ site-styling:
       css/2_layouts/front.css: { minified: true }
     theme:
       css/3_components/layout/footer.css: { minified: true }
+      css/3_components/navigation/main-menu.css: { minified: true }
+
 fontawesome:
   version: 6.4.2
   css:

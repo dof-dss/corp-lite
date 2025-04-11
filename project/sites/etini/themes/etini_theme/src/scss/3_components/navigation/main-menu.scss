@@ -1,0 +1,60 @@
+@use '../../../../../../../../../web/themes/custom/nicsdru_corplite_theme/src/scss/init' as *;
+@use '../../1_base/root' as *;
+
+$link-main-menu: (
+  background-color: var(--clr-main-nav-active-bkgd),
+);
+$link-main-menu-horizontal: (
+  background-color: var(--clr-main-nav-bkgd),
+  color: var(--clr-link),
+  outline: none,
+  text-decoration: (
+    default: none,
+    focus: underline 3px,
+    hover: underline 3px,
+  ),
+  text-underline-offset: (
+    default: auto,
+    focus: 5px,
+    hover: 5px,
+  )
+);
+$link-main-menu-horizontal-active: (
+  background-color: var(--clr-main-nav-active-bkgd),
+  color: var(--clr-main-nav-active-text),
+);
+
+.main-menu {
+  border-bottom: 2px solid var(--clr-main-nav-brd-btm);
+  background-color: var(--clr-main-nav-active-bkgd);
+
+  @include breakpoint($tab) {
+    background-color: var(--clr-main-nav-bkgd);
+  }
+
+  .nav {
+    &-link,
+    &-item .active {
+      --main-nav-fs: 1.4rem;
+      @include link-state-style($link-main-menu);
+
+      @include breakpoint($tab) {
+        @include link-state-style($link-main-menu-horizontal);
+      }
+
+      @include breakpoint($lap) {
+        --main-nav-fs: 1.6rem;
+      }
+    }
+
+    &-item .active {
+      @include breakpoint($tab) {
+        @include link-state-style($link-main-menu-horizontal-active);
+      }
+    }
+  }
+}
+
+header .search-form {
+  background-color: var(--clr-main-nav-active-bkgd);
+}

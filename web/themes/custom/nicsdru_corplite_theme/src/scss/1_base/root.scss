@@ -52,7 +52,10 @@
   --clr-brand-primary: #00aae5;
   --clr-brand-primary-light: #cee4f6;
   --clr-brand-secondary: #0b1647;
-  --clr-main-nav-active-bkgd: #0f3286;
+  --clr-main-nav-bkgd: #0f3286;
+  --clr-main-nav-active-bkgd: var(--clr-brand-primary);
+  --clr-main-nav-active-text: #fff;
+  --clr-main-nav-active-line: var(--clr-brand-secondary);
 
   // Typography and rhythm spacing custom properties
   --fs-base-size: 1.6rem;
