@@ -49,6 +49,7 @@ is_admin: false
 permissions:
   - 'access administration pages'
   - 'access content overview'
+  - 'access files overview'
   - 'access taxonomy overview'
   - 'access toolbar'
   - 'add scheduled transitions node article'
