@@ -13,7 +13,6 @@ dependencies:
     - node.type.article
     - node.type.consultation
     - node.type.contact
-    - node.type.department_management
     - node.type.feature
     - node.type.featured_content_list
     - node.type.link
@@ -57,7 +56,6 @@ permissions:
   - 'add scheduled transitions node article'
   - 'add scheduled transitions node consultation'
   - 'add scheduled transitions node contact'
-  - 'add scheduled transitions node department_management'
   - 'add scheduled transitions node link'
   - 'add scheduled transitions node news'
   - 'add scheduled transitions node page'
@@ -73,7 +71,6 @@ permissions:
   - 'create audio media'
   - 'create consultation content'
   - 'create contact content'
-  - 'create department_management content'
   - 'create document media'
   - 'create feature content'
   - 'create featured_content_list content'
@@ -94,7 +91,6 @@ permissions:
   - 'delete any audio media'
   - 'delete any consultation content'
   - 'delete any contact content'
-  - 'delete any department_management content'
   - 'delete any document media'
   - 'delete any feature content'
   - 'delete any featured_content_list content'
@@ -110,7 +106,6 @@ permissions:
   - 'delete article revisions'
   - 'delete consultation revisions'
   - 'delete contact revisions'
-  - 'delete department_management revisions'
   - 'delete feature revisions'
   - 'delete featured_content_list revisions'
   - 'delete link revisions'
@@ -121,7 +116,6 @@ permissions:
   - 'delete own audio media'
   - 'delete own consultation content'
   - 'delete own contact content'
-  - 'delete own department_management content'
   - 'delete own document media'
   - 'delete own feature content'
   - 'delete own featured_content_list content'
@@ -147,7 +141,6 @@ permissions:
   - 'edit any audio media'
   - 'edit any consultation content'
   - 'edit any contact content'
-  - 'edit any department_management content'
   - 'edit any document media'
   - 'edit any feature content'
   - 'edit any featured_content_list content'
@@ -166,7 +159,6 @@ permissions:
   - 'edit own audio media'
   - 'edit own consultation content'
   - 'edit own contact content'
-  - 'edit own department_management content'
   - 'edit own document media'
   - 'edit own feature content'
   - 'edit own featured_content_list content'
@@ -186,7 +178,6 @@ permissions:
   - 'reschedule scheduled transitions node article'
   - 'reschedule scheduled transitions node consultation'
   - 'reschedule scheduled transitions node contact'
-  - 'reschedule scheduled transitions node department_management'
   - 'reschedule scheduled transitions node link'
   - 'reschedule scheduled transitions node news'
   - 'reschedule scheduled transitions node page'
@@ -198,7 +189,6 @@ permissions:
   - 'revert article revisions'
   - 'revert consultation revisions'
   - 'revert contact revisions'
-  - 'revert department_management revisions'
   - 'revert feature revisions'
   - 'revert featured_content_list revisions'
   - 'revert link revisions'
@@ -227,7 +217,6 @@ permissions:
   - 'view consultation revisions'
   - 'view contact revisions'
   - 'view content references'
-  - 'view department_management revisions'
   - 'view feature revisions'
   - 'view featured_content_list revisions'
   - 'view latest version'
@@ -242,7 +231,6 @@ permissions:
   - 'view scheduled transitions node article'
   - 'view scheduled transitions node consultation'
   - 'view scheduled transitions node contact'
-  - 'view scheduled transitions node department_management'
   - 'view scheduled transitions node link'
   - 'view scheduled transitions node news'
   - 'view scheduled transitions node page'
