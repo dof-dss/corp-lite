@@ -2,97 +2,10 @@
 @use '../../1_base/root' as *;
 
 .main-menu {
-  border-bottom: none;
-}
-
-$link-main-menu: (
-  color: '#fff',
-  background-color: (
-    default: var(--clr-main-nav-bkgd),
-  ),
-  text-decoration: (
-    default: none,
-    focus: underline 2px,
-    hover: underline 2px
-  ),
-  text-underline-offset: (
-    default: none,
-    focus: 4px,
-    hover: 4px,
-  ),
-  box-shadow: (
-    default: none,
-  ),
-  outline: (
-    default: 0,
-    visited: 0,
-  ),
-  outline-offset: -.5em,
-);
-$link-main-menu-horizontal: (
-  color: (
-    default: var(--clr-white),
-  ),
-  background: (
-    default: var(--clr-main-nav-bkgd),
-  ),
-  outline: (
-    default: none,
-    hover: 3px solid var(--clr-white),
-    focus: 3px solid var(--clr-white),
-  ),
-  text-decoration: none,
-  text-underline-offset: 0,
-);
-$link-main-menu-active: (
-  outline: 2px solid,
-);
-$link-main-menu-horizontal-active: (
-  color: var(--clr-black),
-  background: var(--clr-main-nav-active-bkgd),
-  box-shadow: inset 0 -7px 0 0 var(--clr-main-nav-active-line),
-  outline: none,
-);
-
-.main-menu {
-  background-color: var(--clr-main-nav-bkgd);
-  border-top: solid #fff 1px;
+  border: 0;
 
   @include breakpoint($tab) {
-    background-color: var(--clr-main-nav-bkgd);
-  }
-
-  .nav {
-    &-link,
-    &-item .active {
-      @include link-state-style($link-main-menu);
-      line-height: 2.7rem;
-      padding: 1em 1.6rem;
-
-      @include breakpoint($tab) {
-        @include link-state-style($link-main-menu-horizontal);
-
-        padding: var(--rhythm-spacing-md) var(--rhythm-spacing-lg);
-        margin-right: 3px;
-        height: 100%;
-      }
-    }
-
-    &-item .active {
-      @include link-state-style($link-main-menu-active);
-
-      @include breakpoint($tab) {
-        @include link-state-style($link-main-menu-horizontal-active)
-      }
-    }
-  }
-
-  .hamburger {
-    &:not([hidden]) ~ .nav-main {
-      @include breakpoint($tab) {
-        max-height: 9rem;
-      }
-    }
+    border-top: 1px solid var(--clr-main-nav-brd-top);
   }
 }
 
@@ -109,44 +22,46 @@ $link-main-menu-horizontal-active: (
   li {
     display: inline-block;
     margin-right: 15px;
+
+    a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 1.5em;
+      margin-top: 1rem;
+
+      &:hover {
+        outline: 3px solid var(--clr-white);
+      }
+
+      &:focus {
+        outline: 3px solid var(--clr-white);
+      }
+    }
   }
 }
 
-.nav-social li a {
-  text-decoration: none;
-  color: #fff;
-  font-size: 1.5em;
-  margin-top: 1rem;
+.search-form {
+  input[type='submit'] {
+    width: 6rem;
+    min-width: auto;
+    height: 4.5rem;
+    min-height: 3.5rem;
+    padding: 0;
+    margin: 0;
+    border-color: var(--clr-button-primary);
+    background: #6fb9ff url(../../../images/black-search.svg) 3px center no-repeat;
+    background-size: 4.2rem auto;
+    text-indent: -9999px;
 
-  &:hover {
-    outline: 3px solid var(--clr-white);
+    &:focus {
+      outline: 3px solid #FFFF00;
+    }
   }
 
-  &:focus {
-    outline: 3px solid var(--clr-white);
-  }
-}
-
-.search-form input[type='submit'] {
-  width: 6rem;
-  min-width: auto;
-  height: 4.5rem;
-  min-height: 3.5rem;
-  padding: 0;
-  margin: 0;
-  border-color: var(--clr-button-primary);
-  background: #6fb9ff url(../../../images/black-search.svg) 3px center no-repeat;
-  background-size: 4.2rem auto;
-  text-indent: -9999px;
-
-  &:focus {
-    outline: 3px solid #FFFF00;
-  }
-}
-
-.search-form input[type='text'] {
-  &:focus {
-    outline: 3px solid #FFFF00;
+  input[type='text'] {
+    &:focus {
+      outline: 3px solid #FFFF00;
+    }
   }
 }
 

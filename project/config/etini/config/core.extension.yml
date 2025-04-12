@@ -31,6 +31,7 @@ module:
   contextual: 0
   cookie_content_blocker: 0
   corplite_common: 0
+  corplite_district_inspectors: 0
   corplite_eu_cookie_compliance: 0
   corplite_image_styles: 0
   corplite_search: 0
@@ -50,7 +51,6 @@ module:
   entity_browser_entity_form: 0
   entity_embed: 0
   entity_reference_revisions: 0
-  etini_district_inspectors: 0
   etini_homepage: 0
   facets: 0
   facets_pretty_paths: 0
