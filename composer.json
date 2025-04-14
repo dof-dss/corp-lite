@@ -136,7 +136,7 @@
         "drupal/search_api_location": "^1.0@alpha",
         "drupal/search_api_solr": "4.3.0",
         "drupal/search_api_spellcheck": "^4.0",
-        "drupal/shs": "^2.0@RC",
+        "drupal/shs": "^2.0",
         "drupal/simple_gmap": "^3.1",
         "drupal/simplei": "^2.1",
         "drupal/smart_trim": "^2.2",
@@ -271,6 +271,9 @@
             },
             "drupal/readonlymode": {
                 "Fatal typerror fix": "https://www.drupal.org/files/issues/2020-12-23/readonlymode-string_not_array-3115119-9.patch"
+            },
+            "drupal/shs": {
+            "Select list values incorrectly truncated" : "https://www.drupal.org/files/issues/2023-04-07/3277510-shs-truncated-selected-value-9_0.patch"
             },
             "drupal/structure_sync": {
                 "Avoid typeerror when no blocks to import" : "https://www.drupal.org/files/issues/2025-01-06/typerror_no_blocks_3497649.patch"

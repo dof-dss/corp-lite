@@ -1,0 +1,39 @@
+uuid: 0c7fa7b5-37a4-4730-bea9-54c6d58f1773
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.link.field_link_type
+    - field.field.node.link.field_link_url
+    - field.field.node.link.field_meta_tags
+    - field.field.node.link.field_site_topics
+    - node.type.link
+  module:
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.link.search_index
+targetEntityType: node
+bundle: link
+mode: search_index
+content:
+  field_site_topics:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  content_moderation_control: true
+  field_link_type: true
+  field_link_url: true
+  field_meta_tags: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

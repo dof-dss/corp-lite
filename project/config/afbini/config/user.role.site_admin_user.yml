@@ -28,6 +28,7 @@ is_admin: null
 permissions:
   - 'access administration pages'
   - 'access content overview'
+  - 'access files overview'
   - 'access toolbar'
   - 'administer main menu items'
   - 'administer media file delete'
