@@ -626,7 +626,27 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: false
+      row:
+        type: search_api
+        options:
+          view_modes:
+            'entity:node':
+              application: search_index
+              article: search_index
+              contact: search_index
+              news: search_index
+              page: search_index
+              profile: search_index
+              publication: search_index
       defaults:
+        style: false
+        row: false
         fields: false
       display_description: ''
       display_extenders:
