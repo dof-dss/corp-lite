@@ -36,9 +36,10 @@
   --clr-brand-secondary: #0b1647;
   --clr-main-nav-bkgd: var(--clr-hseni-navy);
   --clr-main-nav-brd-btm: #005ea3;
-  --clr-main-nav-brd-top: transparent;
+  --clr-main-nav-brd-top: var(--clr-white);
   --clr-main-nav-active-bkgd: #6FB9FF;
   --clr-main-nav-active-line: #E7E7E7;
+  --clr-main-nav-active-text: var(--clr-black);
 
   // Typography and rhythm spacing custom properties
   --fs-base-size: 1.6rem;

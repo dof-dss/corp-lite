@@ -11,7 +11,6 @@ dependencies:
     - node.type.application
     - node.type.article
     - node.type.contact
-    - node.type.department_management
     - node.type.gallery
     - node.type.link
     - node.type.news
@@ -41,7 +40,6 @@ permissions:
   - 'create article content'
   - 'create audio media'
   - 'create contact content'
-  - 'create department_management content'
   - 'create document media'
   - 'create file media'
   - 'create gallery content'
@@ -61,7 +59,6 @@ permissions:
   - 'edit any application content'
   - 'edit any article content'
   - 'edit any contact content'
-  - 'edit any department_management content'
   - 'edit any gallery content'
   - 'edit any link content'
   - 'edit any news content'
@@ -72,7 +69,6 @@ permissions:
   - 'edit own article content'
   - 'edit own audio media'
   - 'edit own contact content'
-  - 'edit own department_management content'
   - 'edit own document media'
   - 'edit own file media'
   - 'edit own gallery content'
@@ -94,7 +90,6 @@ permissions:
   - 'view application revisions'
   - 'view article revisions'
   - 'view contact revisions'
-  - 'view department_management revisions'
   - 'view gallery revisions'
   - 'view latest version'
   - 'view link revisions'
