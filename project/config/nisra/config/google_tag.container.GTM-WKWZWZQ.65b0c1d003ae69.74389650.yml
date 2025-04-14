@@ -3,13 +3,25 @@ langcode: en
 status: true
 dependencies:
   module:
+    - block_visibility_groups
     - system
+    - user
 id: GTM-WKWZWZQ.65b0c1d003ae69.74389650
 label: GTM-WKWZWZQ
 weight: 0
 tag_container_ids:
   - GTM-WKWZWZQ
-advanced_settings: {  }
+advanced_settings:
+  consent_mode: false
+  gtm:
+    GTM-WKWZWZQ:
+      data_layer: dataLayer
+      include_classes: false
+      allowlist_classes: ''
+      blocklist_classes: ''
+      include_environment: false
+      environment_id: ''
+      environment_token: ''
 dimensions_metrics: {  }
 conditions:
   response_code:
@@ -22,14 +34,25 @@ conditions:
     id: request_path
     negate: false
     pages: "/admin*\r\n/batch*\r\n/node/add*\r\n/node/*/edit\r\n/node/*/delete\r\n/user/*/edit*\r\n/user/*/cancel*"
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      anonymous: anonymous
 events:
   custom: {  }
-  generate_lead:
-    value: ''
-    currency: ''
+  search: {  }
   login:
     method: CMS
-  search: {  }
   sign_up:
     method: CMS
   webform_purchase: {  }
+  generate_lead:
+    value: ''
+    currency: ''
