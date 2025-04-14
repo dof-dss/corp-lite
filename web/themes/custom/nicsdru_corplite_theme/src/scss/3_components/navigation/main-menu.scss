@@ -3,11 +3,12 @@
  * Provides the layout styles for the main nav.
  */
 @use '../../init' as *;
+@use 'sass:color';
 
 $link-main-menu: (
   color: '#fff',
   background-color: (
-    default: transparent,
+    default: var(--clr-main-nav-bkgd),
   ),
   text-decoration: (
     default: none,
@@ -30,22 +31,18 @@ $link-main-menu: (
 ) !default;
 $link-main-menu-horizontal: (
   color: (
-    default: var(--clr-link),
+    default: var(--clr-white),
   ),
   background: (
-    default: transparent,
+    default: var(--clr-main-nav-bkgd),
   ),
-  outline: none,
-  text-decoration: (
+  outline: (
     default: none,
-    focus: underline 3px,
-    hover: underline 3px,
+    hover: 3px solid var(--clr-white),
+    focus: 3px solid var(--clr-white),
   ),
-  text-underline-offset: (
-    default: auto,
-    focus: 5px,
-    hover: 5px,
-  )
+  text-decoration: none,
+  text-underline-offset: 0,
 ) !default;
 $link-main-menu-social: (
   outline: (
@@ -61,19 +58,25 @@ $link-main-menu-active: (
   outline: 2px solid,
 ) !default;
 $link-main-menu-horizontal-active: (
-  color: '#fff',
+  color: var(--clr-main-nav-active-text),
   background: var(--clr-main-nav-active-bkgd),
+  box-shadow: inset 0 -7px 0 0 var(--clr-main-nav-active-line),
   outline: none,
+) !default;
+$link-sub-menu: (
+  color: var(--clr-main-nav-active-text),
+  background-color: color-mix(in srgb, var(--clr-main-nav-active-bkgd), white 20%),
 ) !default;
 
 .main-menu {
-  background-color: var(--clr-main-nav-active-bkgd);
+  background-color: var(--clr-main-nav-bkgd);
   border-bottom: 2px solid var(--clr-main-nav-brd-btm);
   border-top: 2px solid var(--clr-main-nav-brd-top);
   position: relative;
 
   @include breakpoint($tab) {
     background-color: var(--clr-main-nav-bkgd);
+    border: 0;
   }
 
   .nav {
@@ -86,7 +89,7 @@ $link-main-menu-horizontal-active: (
         flex-flow: row wrap;
         justify-content: space-between;
         align-items: center;
-        max-width: $max-grid-width;
+        max-width: 1130px;
         margin: 0 auto;
         padding: 0;
       }
@@ -100,6 +103,26 @@ $link-main-menu-horizontal-active: (
       @include breakpoint($tab) {
         display: flex;
         width: auto;
+      }
+    }
+
+    &-item {
+      &.open {
+        > ul {
+          display: block;
+        }
+
+        .menu-toggle-btn {
+          background: color-mix(in srgb, var(--clr-main-nav-active-bkgd), white 10%);
+          color: var(--clr-main-nav-active-text);
+
+          @include breakpoint($tab) {
+            background: var(--clr-main-nav-bkgd);
+            color: var(--clr-link);
+            text-decoration: underline 3px;
+            text-underline-offset: 5px;
+          }
+        }
       }
     }
 
@@ -117,8 +140,9 @@ $link-main-menu-horizontal-active: (
       @include breakpoint($tab) {
         @include link-state-style($link-main-menu-horizontal);
 
-        padding: 0.9rem var(--rhythm-spacing-xl);
+        padding: var(--rhythm-spacing-md) var(--rhythm-spacing-lg);
         margin-right: 3px;
+        height: 100%;
 
         // IE fix.
         // IE does not support outline-offset. So just remove the outline.
@@ -153,6 +177,55 @@ $link-main-menu-horizontal-active: (
 
       @include breakpoint($tab) {
         @include link-state-style($link-main-menu-horizontal-active)
+      }
+    }
+  }
+
+  .nav-main_sub {
+    display: none;
+    list-style: none;
+    position: static;
+    z-index: 9999;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    overflow: visible !important;
+
+    @include breakpoint($tab) {
+      position: absolute;
+    }
+
+    ul {
+      margin: 0;
+      border: 0;
+      left: 100%;
+      top: 0;
+
+      @include breakpoint($tab) {
+        margin-left: 1px;
+      }
+    }
+
+    .nav-item {
+      float: none;
+      min-width: 150px;
+      padding: 0;
+      margin: 0;
+      position: relative;
+      width: 100%;
+      text-align: left;
+      border-right: 0;
+
+      &.open {
+        background: var(--clr-main-nav-bkgd);
+      }
+    }
+
+    .nav-link {
+      @include link-state-style($link-sub-menu);
+
+      @include breakpoint($tab) {
+        border-top: 1px solid var(--clr-white);
       }
     }
   }
@@ -256,7 +329,7 @@ $link-main-menu-horizontal-active: (
       // Except on larger screens - the main nav must be shown.
       @include breakpoint($tab) {
         display: flex;
-        max-height: 6rem;
+        max-height: 9rem;
       }
     }
 
@@ -264,7 +337,39 @@ $link-main-menu-horizontal-active: (
     &[aria-expanded='true'] ~ .nav-main,
     .main-nav:focus-within {
       display: flex;
-      max-height: 60rem;
+      max-height: 100%;
+    }
+  }
+
+  .ico {
+    width: 1rem;
+    height: 1rem;
+    margin: 0 0 0 5px;
+  }
+
+  .nav-item {
+    &.open {
+      .ico {
+        transform: rotate(270deg);
+      }
+    }
+
+    .nav-main_sub {
+      .ico {
+        transform: rotate(90deg);
+
+        @include breakpoint($tab) {
+          transform: none;
+        }
+      }
+
+      .open .ico {
+        transform: rotate(270deg);
+
+        @include breakpoint($tab) {
+          transform: rotate(180deg);
+        }
+      }
     }
   }
 }

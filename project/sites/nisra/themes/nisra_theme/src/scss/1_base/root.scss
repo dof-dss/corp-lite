@@ -36,10 +36,11 @@
   --clr-brand-primary-light: #cee4f6;
   --clr-brand-secondary: #0b1647;
   --clr-main-nav-bkgd: var(--clr-nisra-navy);
-  --clr-main-nav-brd-btm: #005ea3;
+  --clr-main-nav-brd-btm: var(--clr-nisra-navy);
   --clr-main-nav-brd-top: transparent;
   --clr-main-nav-active-bkgd: var(--clr-nisra-blue);
   --clr-main-nav-active-line: var(--clr-nisra-green);
+  --clr-main-nav-active-text: #fff;
 
 
   // Typography and rhythm spacing custom properties

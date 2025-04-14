@@ -52,6 +52,7 @@ corplite-styling:
       css/5_theme/entities.css: { minified: true }
       '//fonts.googleapis.com/css2?family=Roboto': { type: external }
   js:
+    js/menu-script.js: { minified: true }
     js/ext-win-script.js: { minified: true }
     js/link-manager.js: { minified: true }
     js/empty-tags-script.js: { minified: true }
