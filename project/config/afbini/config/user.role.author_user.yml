@@ -27,7 +27,6 @@ dependencies:
     - moderation_sidebar
     - node
     - system
-    - taxonomy
     - toolbar
 _core:
   default_config_hash: vNEkQI-Oi5HpFydAyizLa6qCCV8SkpSWLiyMrYoGO94
@@ -38,7 +37,6 @@ is_admin: false
 permissions:
   - 'access administration pages'
   - 'access content overview'
-  - 'access taxonomy overview'
   - 'access toolbar'
   - 'administer main menu items'
   - 'create article content'
@@ -54,11 +52,18 @@ permissions:
   - 'create publication content'
   - 'create remote_video media'
   - 'create researcher_profiles content'
+  - 'delete own article content'
   - 'delete own audio media'
+  - 'delete own contact content'
   - 'delete own document media'
   - 'delete own file media'
   - 'delete own files'
+  - 'delete own gallery content'
   - 'delete own image media'
+  - 'delete own link content'
+  - 'delete own news content'
+  - 'delete own page content'
+  - 'delete own publication content'
   - 'delete own remote_video media'
   - 'edit any article content'
   - 'edit any contact content'
@@ -82,7 +87,6 @@ permissions:
   - 'use nics_editorial_workflow transition reject'
   - 'use nics_editorial_workflow transition submit_for_review'
   - 'use text format basic_html'
-  - 'view all taxonomy revisions'
   - 'view any unpublished content'
   - 'view article revisions'
   - 'view contact revisions'

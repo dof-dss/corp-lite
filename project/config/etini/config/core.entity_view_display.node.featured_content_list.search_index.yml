@@ -1,0 +1,25 @@
+uuid: 61a96a36-ad16-45f2-bf6e-84e732bd6fbe
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.featured_content_list.field_featured_content
+    - node.type.featured_content_list
+  module:
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.featured_content_list.search_index
+targetEntityType: node
+bundle: featured_content_list
+mode: search_index
+content: {  }
+hidden:
+  field_featured_content: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

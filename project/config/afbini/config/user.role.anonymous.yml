@@ -6,6 +6,7 @@ dependencies:
     - eu_cookie_compliance
     - media
     - system
+    - taxonomy_access_fix
 _core:
   default_config_hash: P5H-ZbvA8txEPNYisWPYiorfSqVXrHsa9-CttKUf6GQ
 id: anonymous
@@ -15,4 +16,6 @@ is_admin: false
 permissions:
   - 'access content'
   - 'display eu cookie compliance popup'
+  - 'view any term'
+  - 'view any term name'
   - 'view media'

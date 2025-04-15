@@ -4,8 +4,11 @@ allowed_types:
   - application
   - article
   - contact
+  - gallery
+  - link
   - news
   - page
+  - profile
   - publication
 block:
   navigation:

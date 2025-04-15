@@ -112,7 +112,7 @@ field_settings:
     label: Statistics
     datasource_id: 'entity:node'
     property_path: field_site_topics
-    type: integer
+    type: string
     dependencies:
       config:
         - field.storage.node.field_site_topics
@@ -204,6 +204,7 @@ processor_settings:
     fields:
       - audience_name
       - body
+      - field_site_topics
       - field_summary
       - title
       - topics_name
