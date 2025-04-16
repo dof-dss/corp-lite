@@ -3,6 +3,8 @@
 namespace Drupal\corplite_file_verification\Commands;
 
 use Drush\Commands\DrushCommands;
+use Drupal\file\Entity\File;
+use Drupal\Core\File\FileUrlGeneratorInterface;
 
 /**
  * Drush custom commands.
@@ -52,7 +54,16 @@ class CorpLiteDrushCommands extends DrushCommands {
           $newfilename = str_replace('.' . $original_extension, '.' . $new_extension, $oldfilename);
           // $this->io()->write("New filename is " . $newfilename, TRUE);
           if (file_exists($newfilename)) {
-            $this->io()->write($newfilename, TRUE);
+            $this->io()->write($oldfilename, TRUE);
+            //$url = \Drupal::service('file_url_generator')->generateString($oldfilename);
+            $pure_filename = str_replace('public://publications/', '', $newfilename);
+            exec("rm /var/www/html/web/files/etini/publications/" . $pure_filename);
+            //$file_list = $file_storage->loadByProperties(['uri' => $newfilename]);
+            //foreach ($file_list as $f) {
+              //$this->io()->write("Deleting " . $f->id());
+              //$f->delete();
+            //}
+            break;
           }
         }
       }
