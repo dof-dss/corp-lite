@@ -55,14 +55,8 @@ class CorpLiteDrushCommands extends DrushCommands {
           // $this->io()->write("New filename is " . $newfilename, TRUE);
           if (file_exists($newfilename)) {
             $this->io()->write($oldfilename, TRUE);
-            //$url = \Drupal::service('file_url_generator')->generateString($oldfilename);
             $pure_filename = str_replace('public://publications/', '', $newfilename);
             exec("rm /var/www/html/web/files/etini/publications/" . $pure_filename);
-            //$file_list = $file_storage->loadByProperties(['uri' => $newfilename]);
-            //foreach ($file_list as $f) {
-              //$this->io()->write("Deleting " . $f->id());
-              //$f->delete();
-            //}
             break;
           }
         }
