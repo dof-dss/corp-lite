@@ -54,15 +54,13 @@ class CorpLiteDrushCommands extends DrushCommands {
           $newfilename = str_replace('.' . $original_extension, '.' . $new_extension, $oldfilename);
           // $this->io()->write("New filename is " . $newfilename, TRUE);
           if (file_exists($newfilename)) {
-            $this->io()->write("Deleting $newfilename", TRUE);
+            //$this->io()->write("Deleting $newfilename", TRUE);
             $pure_new_filename = str_replace('public://publications/', '', $newfilename);
-            exec("rm /var/www/html/web/files/etini/publications/" . $pure_filename);
+            $this->io()->write("rm -f /Users/martindutton/apps/corp-lite/web/files/etini/publications/" . $pure_new_filename, TRUE);
             $pure_old_filename = str_replace('public://publications/', '', $oldfilename);
-            $this->io()->write("Copying down $pure_old_filename", TRUE);
-            $rsync_string = 'rsync -azP "$(platform ssh -p xahfhpwqwliq6 -e file-grab-jan25 --pipe)":public_html/sites/etini.gov.uk/files/publications/' . $pure_old_filename . ' /var/www/html/web/files/etini/publications';
+            //$this->io()->write("Copying down $pure_old_filename", TRUE);
+            $rsync_string = 'rsync -azP "$(platform ssh -p xahfhpwqwliq6 -e file-grab-jan25 --pipe)":public_html/sites/etini.gov.uk/files/publications/' . $pure_old_filename . ' /Users/martindutton/apps/corp-lite/web/files/etini/publications/';
             $this->io()->write($rsync_string, TRUE);
-            exec($rsync_string);
-            break;
           }
         }
       }
