@@ -1,12 +1,11 @@
-uuid: eeacf459-1c5a-44c9-a0a2-d3ca5cc6e12c
+uuid: c58b5d15-e4ce-4e62-b8a4-b22dd7f1c0c9
 langcode: en
 status: true
 dependencies:
   module:
     - block_visibility_groups
-    - system
     - user
-id: GTM-WKWZWZQ.65b0c1d003ae69.74389650
+id: GTM-WKWZWZQ.67fe3c50707f34.38946659
 label: GTM-WKWZWZQ
 weight: 0
 tag_container_ids:
@@ -24,16 +23,6 @@ advanced_settings:
       environment_token: ''
 dimensions_metrics: {  }
 conditions:
-  response_code:
-    id: response_code
-    negate: true
-    response_codes: |-
-      403
-      404
-  request_path:
-    id: request_path
-    negate: false
-    pages: "/admin*\r\n/batch*\r\n/node/add*\r\n/node/*/edit\r\n/node/*/delete\r\n/user/*/edit*\r\n/user/*/cancel*"
   condition_group:
     id: condition_group
     negate: false

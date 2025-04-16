@@ -1,6 +1,9 @@
 _core:
   default_config_hash: zmkyvoZ03LGqfVeB0mtslC-pkWMOrGIU9lJl9_jqUkc
 langcode: en
+dependencies:
+  config:
+    - filter.format.basic_html
 uuid: 5e82fa3c-cffa-4916-8fe6-1756acf1d375
 popup_enabled: true
 popup_clicking_confirmation: false
@@ -55,7 +58,7 @@ cookie_name: ''
 exclude_uid_1: true
 better_support_for_screen_readers: true
 method: opt_in
-disabled_javascripts: 'public://google_tag/etini/google_tag.script.js'
+disabled_javascripts: ''
 automatic_cookies_removal: true
 allowed_cookies: ''
 consent_storage_method: do_not_store
@@ -81,6 +84,3 @@ close_button_action: close_banner
 reject_button_label: ''
 reject_button_enabled: false
 close_button_enabled: false
-dependencies:
-  config:
-    - filter.format.basic_html

@@ -1,0 +1,47 @@
+uuid: 6bb6e8c4-c650-4c21-894a-2030a1bdf227
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_visibility_groups
+    - user
+id: GTM-M42C9PD.67fe7b64cdab09.99047984
+label: GTM-M42C9PD
+weight: 0
+tag_container_ids:
+  - GTM-M42C9PD
+advanced_settings:
+  consent_mode: false
+  gtm:
+    GTM-M42C9PD:
+      data_layer: dataLayer
+      include_classes: false
+      allowlist_classes: ''
+      blocklist_classes: ''
+      include_environment: false
+      environment_id: ''
+      environment_token: ''
+dimensions_metrics: {  }
+conditions:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      anonymous: anonymous
+events:
+  custom: {  }
+  search: {  }
+  login:
+    method: CMS
+  sign_up:
+    method: CMS
+  webform_purchase: {  }
+  generate_lead:
+    value: ''
+    currency: ''
