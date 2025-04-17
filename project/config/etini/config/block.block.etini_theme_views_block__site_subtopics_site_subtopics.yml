@@ -6,6 +6,7 @@ dependencies:
     - views.view.site_subtopics
   module:
     - block_visibility_groups
+    - taxonomy
     - views
   theme:
     - etini_theme
@@ -28,3 +29,10 @@ visibility:
     id: condition_group
     negate: false
     block_visibility_group: ''
+  'entity_bundle:taxonomy_term':
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    context_mapping:
+      taxonomy_term: '@taxonomy_term.taxonomy_term_route_context:taxonomy_term'
+    bundles:
+      site_global_topics: site_global_topics
