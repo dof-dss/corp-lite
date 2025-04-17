@@ -1,5 +1,4 @@
 corplite-styling:
-  version: 1.0
   css:
     # The SMACSS category, "base", is loaded before other categories.
     # D10 and newer loads stylesheets based on the SMACSS ordering of:
@@ -69,7 +68,6 @@ corplite-styling:
 
 # Extend the core functionality for auto-complete
 autocomplete:
-  version: VERSION
   js:
     js/autocomplete.js: { minified: true }
 
@@ -85,7 +83,6 @@ throbber:
     - core/drupal
 
 corplite-search:
-  version: VERSION
   css:
     component:
       css/3_components/form/search-form.css: { minified: true }
@@ -98,13 +95,11 @@ corplite-search:
     - core/once
 
 corplite-breadcrumb:
-  version: 1.0
   css:
     component:
       css/3_components/navigation/breadcrumb.css: { minified: true }
 
 corplite-togglelist:
-  version: 1.0
   css:
     component:
       css/3_components/navigation/toggle-list.css: { minified: true }
@@ -116,7 +111,6 @@ corplite-togglelist:
     - core/once
 
 moderation-sidebar:
-  version: VERSION
   js:
     js/moderation-sidebar.js: { minified: true }
   dependencies:
@@ -132,7 +126,6 @@ media_library_styles:
 # This library provides styling for common admin interface components - the library is only loaded for
 # authenticated users and on the user login form - @see nicsdru_corplite_theme.theme for processing functions
 authenticated-styles:
-  version: 1.0
   css:
     theme:
       css/3_components/form/layout-builder-form.css: { minified: true, weight: -6 }
@@ -141,7 +134,6 @@ authenticated-styles:
       css/drupal/drupal-diff.css: { minified: true, weight: -5 }
 
 book:
-  version: 1.0
   css:
     theme:
       css/3_components/navigation/book.css: { minified: true }
