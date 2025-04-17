@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.taxonomy_term.teaser
+    - core.entity_view_mode.taxonomy_term.teaser_with_summary
     - field.storage.taxonomy_term.field_summary
     - system.menu.admin
     - taxonomy.vocabulary.site_global_topics
@@ -960,7 +960,7 @@ display:
           entity_type: taxonomy_term
           entity_field: name
           plugin_id: standard
-          order: DESC
+          order: ASC
           expose:
             label: ''
             field_identifier: ''
@@ -975,7 +975,7 @@ display:
         type: 'entity:taxonomy_term'
         options:
           relationship: none
-          view_mode: teaser
+          view_mode: teaser_with_summary
       defaults:
         pager: false
         style: false
