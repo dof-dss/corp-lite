@@ -31,4 +31,4 @@ visibility:
   request_path:
     id: request_path
     negate: false
-    pages: "/area-of-expertise/animal-health-and-welfare\r\n/area-of-expertise/sustainable-livestock\r\n/area-of-expertise/grassland-and-plant-science\r\n/area-of-expertise/environmental-protection\r\n/area-of-expertise/food-safety\r\n/area-of-expertise/fisheries-and-aquatic-ecosystems\r\n/area-of-expertise/economics"
+    pages: '/area-of-expertise/*'

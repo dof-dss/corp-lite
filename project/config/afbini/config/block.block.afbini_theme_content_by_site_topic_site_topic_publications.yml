@@ -6,6 +6,7 @@ dependencies:
     - views.view.content_by_site_topic
   module:
     - block_visibility_groups
+    - system
     - views
   theme:
     - afbini_theme
@@ -27,3 +28,7 @@ visibility:
     id: condition_group
     negate: false
     block_visibility_group: ''
+  request_path:
+    id: request_path
+    negate: false
+    pages: '/area-of-expertise/*'
