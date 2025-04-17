@@ -31,11 +31,11 @@
   --clr-brand-primary: #008290;
   --clr-brand-primary-light: #e4eef0;
   --clr-brand-secondary: #006f7a;
-  --clr-main-nav-bkgd: #2E2E38;
+  --clr-main-nav-bkgd: #30373b;
   --clr-main-nav-brd-btm: #008290;
   --clr-main-nav-brd-top: transparent;
-  --clr-main-nav-active-bkgd: #00545C;
-  --clr-main-nav-active-line: #0098A5;
+  --clr-main-nav-active-bkgd: var(--clr-brand-primary);
+  --clr-main-nav-active-line: #0a9ca6;
 
   // Typography and rhythm spacing custom properties
   --fs-base-size: 1.6rem;
