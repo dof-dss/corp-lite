@@ -844,7 +844,7 @@ display:
             label: ''
             field_identifier: ''
           exposed: false
-          draggable_views_reference: this
+          draggable_views_reference: 'links:draggable_agencylink'
           draggable_views_null_order: after
           draggable_views_pass_arguments: false
         title:
@@ -1131,7 +1131,7 @@ display:
             label: ''
             field_identifier: ''
           exposed: false
-          draggable_views_reference: this
+          draggable_views_reference: 'links:draggable_corporatelink'
           draggable_views_null_order: after
           draggable_views_pass_arguments: false
         title:
@@ -1433,7 +1433,7 @@ display:
             label: ''
             field_identifier: ''
           exposed: false
-          draggable_views_reference: this
+          draggable_views_reference: 'links:draggable_infolink'
           draggable_views_null_order: after
           draggable_views_pass_arguments: false
         title:
@@ -1826,7 +1826,7 @@ display:
             label: ''
             field_identifier: ''
           exposed: false
-          draggable_views_reference: this
+          draggable_views_reference: 'links:draggable_agencylink'
           draggable_views_null_order: after
           draggable_views_pass_arguments: false
         title:
@@ -2234,7 +2234,7 @@ display:
             label: ''
             field_identifier: ''
           exposed: false
-          draggable_views_reference: this
+          draggable_views_reference: 'links:draggable_corporatelink'
           draggable_views_null_order: after
           draggable_views_pass_arguments: false
         title:
@@ -2657,7 +2657,7 @@ display:
             label: ''
             field_identifier: ''
           exposed: false
-          draggable_views_reference: this
+          draggable_views_reference: 'links:draggable_infolink'
           draggable_views_null_order: after
           draggable_views_pass_arguments: false
         title:
@@ -3080,7 +3080,7 @@ display:
             label: ''
             field_identifier: ''
           exposed: false
-          draggable_views_reference: this
+          draggable_views_reference: 'links:draggable_quicklink'
           draggable_views_null_order: after
           draggable_views_pass_arguments: false
         title:
@@ -3382,7 +3382,7 @@ display:
             label: ''
             field_identifier: ''
           exposed: false
-          draggable_views_reference: this
+          draggable_views_reference: 'links:draggable_quicklink'
           draggable_views_null_order: after
           draggable_views_pass_arguments: false
         title:
