@@ -25,7 +25,8 @@
  * @see template_preprocess_block()
  */
 #}
-<section class="section-front section-front--quick-links">
+<section class="section-front section--featured section-front--featured">
+<div{{ attributes }}>
   {{ title_prefix }}
   {% if label %}
     <h2{{ title_attributes }}>{{ label }}</h2>
@@ -34,4 +35,5 @@
   {% block content %}
     {{ content }}
   {% endblock %}
+</div>
 </section>

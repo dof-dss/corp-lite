@@ -8,7 +8,7 @@ dependencies:
     - taxonomy.vocabulary.publication_types
   content:
     - 'taxonomy_term:publication_types:521bdcb4-c47f-447c-9d0b-f4870e5e4205'
-    - 'taxonomy_term:publication_types:9a3ddfac-8fa3-40c0-b5ac-9d7d49cb9d4a'
+    - 'taxonomy_term:publication_types:c3b0ed98-f1bc-41a1-b995-c31e369139f4'
   module:
     - datetime
     - node
@@ -388,7 +388,7 @@ display:
           plugin_id: taxonomy_index_tid
           operator: or
           value:
-            - 83
+            - 84
           group: 1
           exposed: false
           expose:
