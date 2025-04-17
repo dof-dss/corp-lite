@@ -11,6 +11,7 @@ dependencies:
     - node.type.application
     - node.type.article
     - node.type.contact
+    - node.type.featured_content_list
     - node.type.gallery
     - node.type.link
     - node.type.news
@@ -127,6 +128,7 @@ permissions:
   - 'edit any audio media'
   - 'edit any contact content'
   - 'edit any document media'
+  - 'edit any featured_content_list content'
   - 'edit any file media'
   - 'edit any gallery content'
   - 'edit any image media'
@@ -142,6 +144,7 @@ permissions:
   - 'edit own audio media'
   - 'edit own contact content'
   - 'edit own document media'
+  - 'edit own featured_content_list content'
   - 'edit own file media'
   - 'edit own gallery content'
   - 'edit own image media'
@@ -170,6 +173,7 @@ permissions:
   - 'revert application revisions'
   - 'revert article revisions'
   - 'revert contact revisions'
+  - 'revert featured_content_list revisions'
   - 'revert gallery revisions'
   - 'revert link revisions'
   - 'revert news revisions'
@@ -192,6 +196,7 @@ permissions:
   - 'view article revisions'
   - 'view contact revisions'
   - 'view content references'
+  - 'view featured_content_list revisions'
   - 'view gallery revisions'
   - 'view latest version'
   - 'view link revisions'
