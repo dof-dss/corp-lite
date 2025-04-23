@@ -38,7 +38,6 @@ module:
   date_facet_drilldown: 0
   datetime: 0
   datetime_range: 0
-  devel: 0
   diff: 0
   draggableviews: 0
   dynamic_entity_reference: 0
