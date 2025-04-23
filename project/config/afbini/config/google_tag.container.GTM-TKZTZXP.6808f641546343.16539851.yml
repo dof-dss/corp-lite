@@ -1,0 +1,47 @@
+uuid: 0456af0f-b0d1-4d46-99b3-037cf1a337b7
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_visibility_groups
+    - user
+id: GTM-TKZTZXP.6808f641546343.16539851
+label: GTM-TKZTZXP
+weight: 0
+tag_container_ids:
+  - GTM-TKZTZXP
+advanced_settings:
+  consent_mode: false
+  gtm:
+    GTM-TKZTZXP:
+      data_layer: dataLayer
+      include_classes: false
+      allowlist_classes: ''
+      blocklist_classes: ''
+      include_environment: false
+      environment_id: ''
+      environment_token: ''
+dimensions_metrics: {  }
+conditions:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      anonymous: anonymous
+events:
+  custom: {  }
+  search: {  }
+  login:
+    method: CMS
+  sign_up:
+    method: CMS
+  webform_purchase: {  }
+  generate_lead:
+    value: ''
+    currency: ''
