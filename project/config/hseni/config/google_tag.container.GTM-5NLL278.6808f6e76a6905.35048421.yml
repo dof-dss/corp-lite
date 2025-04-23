@@ -1,0 +1,47 @@
+uuid: bfc71cac-dd42-40bc-b22e-fa03566210f0
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_visibility_groups
+    - user
+id: GTM-5NLL278.6808f6e76a6905.35048421
+label: GTM-5NLL278
+weight: 0
+tag_container_ids:
+  - GTM-5NLL278
+advanced_settings:
+  consent_mode: false
+  gtm:
+    GTM-5NLL278:
+      data_layer: dataLayer
+      include_classes: false
+      allowlist_classes: ''
+      blocklist_classes: ''
+      include_environment: false
+      environment_id: ''
+      environment_token: ''
+dimensions_metrics: {  }
+conditions:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      anonymous: anonymous
+events:
+  custom: {  }
+  search: {  }
+  login:
+    method: CMS
+  sign_up:
+    method: CMS
+  webform_purchase: {  }
+  generate_lead:
+    value: ''
+    currency: ''
