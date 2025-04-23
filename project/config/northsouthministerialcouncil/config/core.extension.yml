@@ -31,6 +31,7 @@ module:
   corplite_eu_cookie_compliance: 0
   corplite_image_styles: 0
   corplite_search: 0
+  corplite_taxonomy_navigator: 0
   csp: 0
   ctools: 0
   date_facet_drilldown: 0
@@ -122,11 +123,13 @@ module:
   search_api_location_views: 0
   search_api_solr: 0
   shortcut: 0
+  shs: 0
   simple_gmap: 0
   simplei: 0
   structure_sync: 0
   system: 0
   taxonomy: 0
+  taxonomy_access_fix: 0
   telephone: 0
   telephone_plus: 0
   text: 0
