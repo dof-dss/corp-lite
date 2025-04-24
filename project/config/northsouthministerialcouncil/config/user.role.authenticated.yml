@@ -5,12 +5,18 @@ dependencies:
   config:
     - filter.format.basic_html
     - filter.format.webform_default
+    - taxonomy.vocabulary.joint_communiques
+    - taxonomy.vocabulary.link_types
+    - taxonomy.vocabulary.publication_type
+    - taxonomy.vocabulary.sectors
+    - taxonomy.vocabulary.site_topics
   module:
     - file
     - filter
     - media
     - node
     - system
+    - taxonomy_access_fix
 _core:
   default_config_hash: 5VGJw7pgPFTBuJrCG9pBukHNqdclr8NPzvsAwTZXVwY
 id: authenticated
@@ -20,8 +26,15 @@ is_admin: false
 permissions:
   - 'access content'
   - 'delete own files'
+  - 'select terms in joint_communiques'
+  - 'select terms in link_types'
+  - 'select terms in publication_type'
+  - 'select terms in sectors'
+  - 'select terms in site_topics'
   - 'use text format basic_html'
   - 'use text format webform_default'
   - 'view all revisions'
+  - 'view any term'
+  - 'view any term name'
   - 'view media'
   - 'view own unpublished content'
