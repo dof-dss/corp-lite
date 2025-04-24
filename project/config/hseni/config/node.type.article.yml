@@ -12,9 +12,9 @@ third_party_settings:
   origins_toc:
     toc_enable: 1
     toc_title: Contents
-    toc_location: .article-content
+    toc_location: .field-summary
     toc_insert: before
-    toc_source_container: .article-content
+    toc_source_container: '#main-article'
     toc_element: h2
     toc_exclusions: ''
     toc_screen_depth: '2'
