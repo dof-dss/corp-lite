@@ -33,8 +33,21 @@
  * http://www.w3.org/TR/WCAG-TECHS/H42.html for more information.
  */
 #}
+
 {% set heading_id = attributes.id ~ '-heading'|clean_id %}
-{% set footer_classes = ['footer-nav-menu', 'clearfix'] %}
+{% set footer_classes = ['footer-nav', 'clearfix'] %}
+{% if social_links %}
+  <div class="footer-social-wrapper">
+    {#        <p class="follow-us-text">Follow ETINI</p>#}
+    <ul class="nav-social social-links list--no-bullet">
+      {% for link in social_links %}
+        <li class="social-item">
+          {{ link }}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}
 <nav aria-labelledby="{{ heading_id }}" {{ attributes.setAttribute('id', 'block-footer').addClass(footer_classes)|without('role') }}>
   {%- if not configuration.label_display -%}
     {%- set title_attributes = title_attributes.addClass('visually-hidden') -%}
@@ -47,19 +60,6 @@
     {%- block content -%}
       {{- content -}}
     {% endblock %}
-
-    {% if social_links %}
-      <div class="footer-social-wrapper">
-        <p class="follow-us-text">Follow ETINI</p>
-        <ul class="nav-social list--no-bullet">
-          {% for link in social_links %}
-            <li class="social-item">
-              {{ link }}
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
-    {% endif %}
   </div>
 </nav>
 
