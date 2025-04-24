@@ -5,7 +5,6 @@ dependencies:
   config:
     - core.entity_view_mode.node.diff
     - field.field.node.article.body
-    - field.field.node.article.field_enable_toc
     - field.field.node.article.field_meta_tags
     - field.field.node.article.field_site_topics
     - field.field.node.article.field_summary
@@ -75,7 +74,6 @@ content:
     region: content
 hidden:
   content_moderation_control: true
-  field_enable_toc: true
   langcode: true
   links: true
   search_api_excerpt: true
