@@ -6,8 +6,14 @@
   @include breakpoint($tab) {
     .container {
       display: grid;
-      grid-template-columns: 8fr 1fr;
-      grid-gap: 8rem;
+      grid-template-columns: 1fr 8fr;
+      grid-column-gap: 2rem;
+    }
+  }
+
+  &-nav-menu {
+    @include breakpoint($tab) {
+      padding: 0;
     }
   }
 
@@ -18,7 +24,7 @@
 
 #nav-footer {
   display: flex;
-  gap: 4rem;
+  
   @media (max-width: 420px) {
     flex-direction: column;
   }
@@ -42,16 +48,19 @@
 
 .nav-social li a {
   text-decoration: none;
-  color: #fff;
+  color: var(--clr-body-text);
   font-size: 1.5em;
   margin-top: 1rem;
 
-  &:hover {
-    outline: 3px solid var(--clr-link);
+  &:hover,
+  &:focus {
+    outline: 3px solid var(--clr-body-text);
+    text-decoration: none;
   }
 
   &:focus {
-    outline: 3px solid var(--clr-link);
+    background-color: var(--clr-body-text);
+    color: var(--clr-white);
   }
 }
 
@@ -71,8 +80,13 @@
   .nav-social {
     list-style: none;
     display: flex;
+    flex-direction: column;
     margin: 0;
     padding: 0;
   }
+}
+
+.footer-nav {
+  grid-column: 1/-1;
 }
 
