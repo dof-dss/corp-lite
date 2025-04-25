@@ -29,7 +29,9 @@
  * @see template_preprocess_views_view_fields()
  */
 #}
-<article class="card">
+{% set link = fields.name.content | striptags | replace({' ' : '-'}) | spaceless %}
+<a href="/{{ link }}" class="card">
+<article>
   <h4 class="card__title">
     {{ fields.name.content }}
   </h4>
@@ -37,3 +39,4 @@
     {{ fields.description__value.content }}
   </div>
 </article>
+</a>
