@@ -112,3 +112,14 @@ Disallow: /*.ods
 Disallow: /*.odp
 Disallow: /*.dot
 Disallow: /*.zip
+# Search facets
+Disallow: /publications/*type
+Disallow: /publications/*date
+Disallow: /publications/*topic
+Disallow: /consultations/*type
+Disallow: /consultations/*date
+Disallow: /consultations/*topic
+Disallow: /news/*date
+Disallow: /news/*category
+Disallow: /alerts/*date
+Disallow: /published-releases/*date
