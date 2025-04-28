@@ -1,0 +1,10 @@
+_core:
+  default_config_hash: IgOVnECx6lbVt6JVFnadoEEugneDf3UblPZnOzov43Q
+mode: simple
+ignored_config_entities:
+  - 'hseni_theme.settings:social_links_facebook'
+  - 'hseni_theme.settings:social_links_instagram'
+  - 'hseni_theme.settings:social_links_linkedin'
+  - 'hseni_theme.settings:social_links_rss'
+  - 'hseni_theme.settings:social_links_twitter'
+  - 'hseni_theme.settings:social_links_youtube'
