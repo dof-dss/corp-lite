@@ -81,7 +81,7 @@
         "drupal/core-recommended": "^10.3",
         "drupal/csp": "^1.20",
         "drupal/ctools": "^4.1",
-        "drupal/date_facet_drilldown": "^5.0@dev",
+        "drupal/date_facet_drilldown": "7.x-dev@dev",
         "drupal/diff": "^1.1",
         "drupal/draggableviews": "^2.1",
         "drupal/easychart": "^4.0",
@@ -91,7 +91,7 @@
         "drupal/entityqueue": "^1.6",
         "drupal/eu_cookie_compliance": "^1.24",
         "drupal/facets": "^2.0",
-        "drupal/facets_pretty_paths": "^1.4",
+        "drupal/facets_pretty_paths": "1.4.0",
         "drupal/fastly": "^4.0",
         "drupal/field_group": "^3.4",
         "drupal/file_delete_ui": "^1.0@beta",
@@ -250,6 +250,9 @@
                 "Pass facet object onto child items": "https://www.drupal.org/files/issues/2019-11-13/child_item-3094143-2.patch",
                 "SupportsFeature() on null": "https://www.drupal.org/files/issues/2024-12-10/supportsfeature_error_3492866_1.patch"
             },
+            "drupal/facets_pretty_paths": {
+                "facet pretty paths doubling up": "https://www.drupal.org/files/issues/2023-01-12/url_duplication-3254600-45.patch"
+            },
             "drupal/fastly": {
                 "Allow disabling of logging": "https://git.drupalcode.org/project/fastly/-/merge_requests/6.patch"
             },
@@ -274,7 +277,7 @@
                 "Fatal typerror fix": "https://www.drupal.org/files/issues/2020-12-23/readonlymode-string_not_array-3115119-9.patch"
             },
             "drupal/shs": {
-            "Select list values incorrectly truncated" : "https://www.drupal.org/files/issues/2023-04-07/3277510-shs-truncated-selected-value-9_0.patch"
+                "Select list values incorrectly truncated" : "https://www.drupal.org/files/issues/2023-04-07/3277510-shs-truncated-selected-value-9_0.patch"
             },
             "drupal/structure_sync": {
                 "Avoid typeerror when no blocks to import" : "https://www.drupal.org/files/issues/2025-01-06/typerror_no_blocks_3497649.patch"
