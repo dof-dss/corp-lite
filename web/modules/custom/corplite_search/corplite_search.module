@@ -35,10 +35,14 @@ function corplite_search_preprocess_facets_summary_item_list(&$variables) {
     $facets = $summary_facet->getFacets();
     $summaries = [];
     foreach ($variables['items'] as $index => $item) {
-      $label = $facets[$item['#title']['#facet']->id()]['label'];
-      $variables['items'][$index]['#title']['#facet']->set('description', $label);
-
-      $summaries[$label][] = $variables['items'][$index];
+      $id = $item['value']['#title']['#facet']->id();
+      $label = $facets[$id]['label'];
+      $variables['items'][$index]['value']['#title']['#facet']->set('description', $label);
+      $summary_array = $variables['items'][$index]['value'];
+      if (is_array($variables['items'][$index]['attributes'])) {
+        $summary_array['attributes'] = $variables['items'][$index]['attributes'];
+      }
+      $summaries[$label][] = $summary_array;
     }
     $variables['summaries'] = $summaries;
   }
