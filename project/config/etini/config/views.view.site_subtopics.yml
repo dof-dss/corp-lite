@@ -632,7 +632,7 @@ display:
           alter:
             alter_text: false
             text: "<article class=\"card\">\r\n{{ name }}\r\n{{ view }}\r\n</article>"
-            make_link: true
+            make_link: false
             path: '/{{ name }}'
             absolute: false
             external: false
