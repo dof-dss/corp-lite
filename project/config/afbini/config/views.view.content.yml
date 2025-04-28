@@ -252,7 +252,7 @@ display:
           entity_type: node
           entity_field: revision_uid
           plugin_id: field
-          label: 'Revision user'
+          label: 'Revised by'
           exclude: false
           alter:
             alter_text: false
