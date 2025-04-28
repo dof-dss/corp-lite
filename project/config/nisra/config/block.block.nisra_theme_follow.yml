@@ -5,6 +5,7 @@ dependencies:
   config:
     - system.menu.menu-follow
   module:
+    - block_visibility_groups
     - system
   theme:
     - nisra_theme
@@ -16,10 +17,14 @@ provider: null
 plugin: 'system_menu_block:menu-follow'
 settings:
   id: 'system_menu_block:menu-follow'
-  label: 'Follow Nisra'
+  label: 'Follow NISRA'
   label_display: visible
   provider: system
   level: 1
   depth: 0
   expand_all_items: false
-visibility: {  }
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
