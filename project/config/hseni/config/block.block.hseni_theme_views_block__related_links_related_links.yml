@@ -1,4 +1,4 @@
-uuid: da92d334-5981-4c3a-a0f1-d6c88d078920
+uuid: 8b3b5c9a-7de4-4bbe-9e33-cbb91bbfa373
 langcode: en
 status: true
 dependencies:
@@ -7,11 +7,10 @@ dependencies:
   module:
     - block_visibility_groups
     - node
-    - taxonomy
     - views
   theme:
     - hseni_theme
-id: views_block__related_links_related_links
+id: hseni_theme_views_block__related_links_related_links
 theme: hseni_theme
 region: sidebar_second
 weight: 0
@@ -19,12 +18,11 @@ provider: null
 plugin: 'views_block:related_links-related_links'
 settings:
   id: 'views_block:related_links-related_links'
-  label: 'Related Content'
+  label: ''
   label_display: visible
   provider: views
-  context_mapping:
-    field_site_topics_target_id: '@taxonomy_term.taxonomy_term_route_context:taxonomy_term'
-  views_label: 'Related Content'
+  context_mapping: {  }
+  views_label: ''
   items_per_page: none
 visibility:
   condition_group:
@@ -38,10 +36,3 @@ visibility:
       node: '@node.node_route_context:node'
     bundles:
       article: article
-  'entity_bundle:taxonomy_term':
-    id: 'entity_bundle:taxonomy_term'
-    negate: false
-    context_mapping:
-      taxonomy_term: '@taxonomy_term.taxonomy_term_route_context:taxonomy_term'
-    bundles:
-      site_topics: site_topics
