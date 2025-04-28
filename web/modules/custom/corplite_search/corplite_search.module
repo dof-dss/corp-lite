@@ -66,7 +66,7 @@ function corplite_search_preprocess_facets_item_list(array &$variables) {
   foreach ($variables['items'] as $index => &$item) {
 
     /** @var \Drupal\Core\Url $url */
-    $url = $variables['items'][$index]['#url'];
+    $url = $variables['items'][$index]['value']['#url'];
     $options = $url->getOptions();
 
     // Get the original href (URL) from the Url object.
@@ -87,6 +87,6 @@ function corplite_search_preprocess_facets_item_list(array &$variables) {
     $new_url = Url::fromUserInput('#main-content', $options);
 
     // Replace the facet link URL with the new one.
-    $variables['items'][$index]['#url'] = $new_url;
+    $variables['items'][$index]['value']['#url'] = $new_url;
   }
 }
