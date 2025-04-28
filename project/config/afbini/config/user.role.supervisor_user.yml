@@ -121,6 +121,8 @@ permissions:
   - 'delete page revisions'
   - 'delete publication revisions'
   - 'delete researcher_profiles revisions'
+  - 'delete terms in services'
+  - 'delete terms in site_topics'
   - 'edit any article content'
   - 'edit any audio media'
   - 'edit any contact content'
