@@ -190,7 +190,6 @@ permissions:
   - 'revert page revisions'
   - 'revert profile revisions'
   - 'revert publication revisions'
-  - 'revert webform revisions'
   - 'use moderation sidebar'
   - 'use nics_editorial_workflow transition archive'
   - 'use nics_editorial_workflow transition create_new_draft'
