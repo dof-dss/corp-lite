@@ -10,7 +10,6 @@ dependencies:
     - media.type.image
     - media.type.remote_video
     - node.type.contact
-    - node.type.department_management
     - node.type.link
     - node.type.news
     - node.type.page
@@ -62,7 +61,6 @@ permissions:
   - 'audit content'
   - 'create audio media'
   - 'create contact content'
-  - 'create department_management content'
   - 'create document media'
   - 'create file media'
   - 'create image media'
@@ -76,7 +74,6 @@ permissions:
   - 'delete all revisions'
   - 'delete any audio media'
   - 'delete any contact content'
-  - 'delete any department_management content'
   - 'delete any document media'
   - 'delete any file media'
   - 'delete any image media'
@@ -86,12 +83,10 @@ permissions:
   - 'delete any publication content'
   - 'delete any remote_video media'
   - 'delete contact revisions'
-  - 'delete department_management revisions'
   - 'delete link revisions'
   - 'delete news revisions'
   - 'delete own audio media'
   - 'delete own contact content'
-  - 'delete own department_management content'
   - 'delete own document media'
   - 'delete own file media'
   - 'delete own files'
@@ -107,7 +102,6 @@ permissions:
   - 'delete terms in site_topics'
   - 'edit any audio media'
   - 'edit any contact content'
-  - 'edit any department_management content'
   - 'edit any document media'
   - 'edit any file media'
   - 'edit any image media'
@@ -119,7 +113,6 @@ permissions:
   - 'edit basic meta tags'
   - 'edit own audio media'
   - 'edit own contact content'
-  - 'edit own department_management content'
   - 'edit own document media'
   - 'edit own file media'
   - 'edit own image media'
@@ -142,7 +135,6 @@ permissions:
   - 'reset site_topics'
   - 'revert all revisions'
   - 'revert contact revisions'
-  - 'revert department_management revisions'
   - 'revert link revisions'
   - 'revert news revisions'
   - 'revert page revisions'
@@ -164,7 +156,6 @@ permissions:
   - 'view any unpublished content'
   - 'view contact revisions'
   - 'view content references'
-  - 'view department_management revisions'
   - 'view latest version'
   - 'view link revisions'
   - 'view news revisions'
