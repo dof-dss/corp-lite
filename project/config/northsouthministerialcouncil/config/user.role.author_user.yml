@@ -25,6 +25,7 @@ dependencies:
     - moderation_sidebar
     - node
     - path
+    - scheduled_transitions
     - system
     - toolbar
 _core:
@@ -37,6 +38,10 @@ permissions:
   - 'access administration pages'
   - 'access content overview'
   - 'access toolbar'
+  - 'add scheduled transitions node contact'
+  - 'add scheduled transitions node link'
+  - 'add scheduled transitions node news'
+  - 'add scheduled transitions node publication'
   - 'administer main menu items'
   - 'create audio media'
   - 'create contact content'
@@ -78,6 +83,10 @@ permissions:
   - 'edit own news content'
   - 'edit own publication content'
   - 'edit own remote_video media'
+  - 'reschedule scheduled transitions node contact'
+  - 'reschedule scheduled transitions node link'
+  - 'reschedule scheduled transitions node news'
+  - 'reschedule scheduled transitions node publication'
   - 'revert contact revisions'
   - 'revert department_management revisions'
   - 'revert link revisions'
@@ -99,4 +108,8 @@ permissions:
   - 'view own unpublished media'
   - 'view page revisions'
   - 'view publication revisions'
+  - 'view scheduled transitions node contact'
+  - 'view scheduled transitions node link'
+  - 'view scheduled transitions node news'
+  - 'view scheduled transitions node publication'
   - 'view the administration theme'
