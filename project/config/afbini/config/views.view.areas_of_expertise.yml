@@ -294,3 +294,22 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.taxonomy_term.field_summary'
+  areas_of_expertise_page:
+    id: areas_of_expertise_page
+    display_title: Page
+    display_plugin: page
+    position: 1
+    display_options:
+      display_extenders:
+        metatag_display_extender:
+          metatags: {  }
+          tokenize: false
+      path: area-of-expertise
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - user.permissions
+      tags:
+        - 'config:field.storage.taxonomy_term.field_summary'
