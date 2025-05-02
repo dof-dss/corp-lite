@@ -6,14 +6,15 @@ dependencies:
     - scheduled_transitions
 title: 'Default cron handler'
 id: scheduled_transitions_cron
-weight: -7
+weight: -5
 module: scheduled_transitions
 callback: scheduled_transitions_cron
 scheduler:
-  id: simple
+  id: crontab
   configuration:
     rules:
-      - '* * * * *'
+      - '*/5 * * * *'
+    catch_up: 0
 launcher:
   id: serial
   configuration:
