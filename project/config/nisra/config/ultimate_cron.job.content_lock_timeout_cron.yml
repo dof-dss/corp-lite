@@ -6,14 +6,15 @@ dependencies:
     - content_lock_timeout
 title: 'Default cron handler'
 id: content_lock_timeout_cron
-weight: 1
+weight: -9
 module: content_lock_timeout
 callback: content_lock_timeout_cron
 scheduler:
-  id: simple
+  id: crontab
   configuration:
     rules:
-      - '0+@ * * * *'
+      - '58 * * * *'
+    catch_up: 0
 launcher:
   id: serial
   configuration:
