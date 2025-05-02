@@ -8,7 +8,7 @@ _core:
   default_config_hash: MKRy0J7hLLOhHrmBW6QtfDMQ3XTUk8Y364Y3JCcgGog
 title: 'Import Nisra published releases.'
 id: published_releases_feed
-weight: 0
+weight: -1
 module: corplite_published_releases_feed
 callback: corplite_published_releases_feed_import
 scheduler:
