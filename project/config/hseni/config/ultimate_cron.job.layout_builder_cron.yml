@@ -6,7 +6,7 @@ dependencies:
     - layout_builder
 title: 'Default cron handler'
 id: layout_builder_cron
-weight: -9
+weight: -7
 module: layout_builder
 callback: layout_builder_cron
 scheduler:
