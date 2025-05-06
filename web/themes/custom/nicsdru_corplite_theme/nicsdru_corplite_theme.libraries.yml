@@ -27,7 +27,6 @@ corplite-styling:
       css/3_components/layout/footer.css: { minified: true }
       css/3_components/navigation/main-menu.css: { minified: true }
       css/3_components/navigation/nav-menu.css: { minified: true }
-      css/3_components/navigation/footer-menu.css: { minified: true }
       css/3_components/navigation/breadcrumb.css: { minified: true }
       css/3_components/block/site-logo.css: { minified: true }
       css/3_components/form/buttons.css: { minified: true }
@@ -128,8 +127,6 @@ media_library_styles:
 authenticated-styles:
   css:
     theme:
-      css/3_components/form/layout-builder-form.css: { minified: true, weight: -6 }
-      css/3_components/layout/layout-builder.css: { minified: true, weight: -5 }
       css/drupal/drupal-admin.css: { minified: true, weight: -5 }
       css/drupal/drupal-diff.css: { minified: true, weight: -5 }
 

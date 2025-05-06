@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.node.article.body
-    - field.field.node.article.field_enable_toc
     - field.field.node.article.field_meta_tags
     - field.field.node.article.field_site_topics
     - field.field.node.article.field_summary
@@ -133,5 +132,4 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden:
-  field_enable_toc: true
+hidden: {  }

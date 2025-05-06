@@ -10,7 +10,6 @@ dependencies:
     - media.type.image
     - media.type.remote_video
     - node.type.contact
-    - node.type.department_management
     - node.type.link
     - node.type.news
     - node.type.page
@@ -25,6 +24,7 @@ dependencies:
     - moderation_sidebar
     - node
     - path
+    - scheduled_transitions
     - system
     - toolbar
 _core:
@@ -37,10 +37,13 @@ permissions:
   - 'access administration pages'
   - 'access content overview'
   - 'access toolbar'
+  - 'add scheduled transitions node contact'
+  - 'add scheduled transitions node link'
+  - 'add scheduled transitions node news'
+  - 'add scheduled transitions node publication'
   - 'administer main menu items'
   - 'create audio media'
   - 'create contact content'
-  - 'create department_management content'
   - 'create document media'
   - 'create file media'
   - 'create image media'
@@ -52,7 +55,6 @@ permissions:
   - 'create url aliases'
   - 'delete own audio media'
   - 'delete own contact content'
-  - 'delete own department_management content'
   - 'delete own document media'
   - 'delete own file media'
   - 'delete own files'
@@ -63,14 +65,12 @@ permissions:
   - 'delete own publication content'
   - 'delete own remote_video media'
   - 'edit any contact content'
-  - 'edit any department_management content'
   - 'edit any link content'
   - 'edit any news content'
   - 'edit any page content'
   - 'edit any publication content'
   - 'edit own audio media'
   - 'edit own contact content'
-  - 'edit own department_management content'
   - 'edit own document media'
   - 'edit own file media'
   - 'edit own image media'
@@ -78,8 +78,11 @@ permissions:
   - 'edit own news content'
   - 'edit own publication content'
   - 'edit own remote_video media'
+  - 'reschedule scheduled transitions node contact'
+  - 'reschedule scheduled transitions node link'
+  - 'reschedule scheduled transitions node news'
+  - 'reschedule scheduled transitions node publication'
   - 'revert contact revisions'
-  - 'revert department_management revisions'
   - 'revert link revisions'
   - 'revert news revisions'
   - 'revert page revisions'
@@ -92,11 +95,14 @@ permissions:
   - 'use text format basic_html'
   - 'view any unpublished content'
   - 'view contact revisions'
-  - 'view department_management revisions'
   - 'view latest version'
   - 'view link revisions'
   - 'view news revisions'
   - 'view own unpublished media'
   - 'view page revisions'
   - 'view publication revisions'
+  - 'view scheduled transitions node contact'
+  - 'view scheduled transitions node link'
+  - 'view scheduled transitions node news'
+  - 'view scheduled transitions node publication'
   - 'view the administration theme'
