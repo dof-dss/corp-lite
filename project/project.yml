@@ -31,7 +31,7 @@ sites:
         cron_spec: '10 * * * *'
         cron_cmd: 'cd web/sites/hseni ; drush core-cron'
         database: hseni
-        status: development
+        status: production
         default: false
     etini:
         name: 'Education Training Inspectorate NI'
@@ -41,7 +41,7 @@ sites:
         cron_spec: '10 * * * *'
         cron_cmd: 'cd web/sites/etini ; drush core-cron'
         database: etini
-        status: development
+        status: production
         default: false
     northsouthministerialcouncil:
         name: 'North South Ministerial Council'
