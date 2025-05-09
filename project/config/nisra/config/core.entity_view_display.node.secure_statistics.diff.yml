@@ -44,7 +44,9 @@ third_party_settings:
         effect: none
         speed: fast
     group_documents:
-      children: {  }
+      children:
+        - field_external_publication
+        - field_secure_attachment
       label: Documents
       parent_name: ''
       region: content
@@ -124,7 +126,7 @@ content:
       view_mode: embed
       link: false
     third_party_settings: {  }
-    weight: 6
+    weight: 8
     region: content
   field_site_topics:
     type: entity_reference_label

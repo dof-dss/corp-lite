@@ -1,0 +1,33 @@
+uuid: 9a6dccca-4666-4674-a9ba-525ea46da270
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_visibility_groups
+    - node
+    - origins_social_sharing
+  theme:
+    - northsouthministerialcouncil_theme
+id: origins_social_sharing
+theme: northsouthministerialcouncil_theme
+region: bottom_banner
+weight: 0
+provider: null
+plugin: origins_social_sharing
+settings:
+  id: origins_social_sharing
+  label: 'Social sharing'
+  label_display: '0'
+  provider: origins_social_sharing
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      news: news
