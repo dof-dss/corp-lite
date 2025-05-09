@@ -13,14 +13,6 @@
 'https://nisra.gov.uk.{default}/':
     type: redirect
     to: 'https://www.nisra.gov.uk.{default}/'
-'https://www.afbini.gov.uk/':
-    type: upstream
-    upstream: 'corp_lite:http'
-    cache:
-        enabled: 'false'
-'https://afbini.gov.uk/':
-    type: redirect
-    to: 'https://www.afbini.gov.uk/'
 'https://www.northsouthministerialcouncil.org/':
     type: upstream
     upstream: 'corp_lite:http'
