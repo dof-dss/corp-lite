@@ -18,10 +18,11 @@ sites:
         name: afbini
         url: afbini.gov.uk
         solr: afbini
+        www: true
         cron_spec: '10 * * * *'
         cron_cmd: 'cd web/sites/afbini ; drush core-cron'
         database: afbini
-        status: development
+        status: production
         default: false
     hseni:
         name: hseni
