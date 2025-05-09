@@ -4,9 +4,7 @@ status: true
 dependencies:
   module:
     - corplite_published_releases_feed
-_core:
-  default_config_hash: MKRy0J7hLLOhHrmBW6QtfDMQ3XTUk8Y364Y3JCcgGog
-title: 'Import Nisra published releases.'
+title: 'Import Nisra published releases 7am.'
 id: published_releases_feed
 weight: 0
 module: corplite_published_releases_feed
@@ -15,15 +13,15 @@ scheduler:
   id: crontab
   configuration:
     rules:
-      - '7,30 9 * * *'
-    catch_up: 0
+      - '0 7 * * *'
 launcher:
   id: serial
   configuration:
     timeouts:
       lock_timeout: 3600
+      max_execution_time: 3600
     launcher:
-      thread: 0
+      max_threads: 1
 logger:
   id: database
   configuration:
