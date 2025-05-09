@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @file
+ * Contains functions for Corp Lite Search.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function corplite_search_install() {
+  // This module must have a higher weight than date_facet_drilldown as
+  // it uses the output from that module to display facets in the
+  // summary block.
+  module_set_weight('corplite_search', 1);
+}
