@@ -12,7 +12,7 @@ id: node.article.field_site_topics
 field_name: field_site_topics
 entity_type: node
 bundle: article
-label: 'Site topics'
+label: Topics
 description: 'Choose relevant site topic(s) for this article. Hold down Ctrl to choose multiple site topics.'
 required: true
 translatable: false

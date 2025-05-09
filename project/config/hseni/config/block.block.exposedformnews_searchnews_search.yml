@@ -5,6 +5,7 @@ dependencies:
   config:
     - views.view.news_search
   module:
+    - block_visibility_groups
     - system
     - views
   theme:
@@ -25,4 +26,8 @@ visibility:
   request_path:
     id: request_path
     negate: false
-    pages: "/news\r\n/news/date/*"
+    pages: "/news\r\n/news/date/*\r\n/news/topic/*"
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''

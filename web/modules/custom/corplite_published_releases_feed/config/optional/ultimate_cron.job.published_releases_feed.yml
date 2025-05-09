@@ -3,7 +3,7 @@ status: true
 dependencies:
   module:
     - corplite_published_releases_feed
-title: 'Import Nisra published releases.'
+title: 'Import Nisra published releases 7am.'
 id: published_releases_feed
 module: corplite_published_releases_feed
 callback: corplite_published_releases_feed_import
@@ -11,7 +11,7 @@ scheduler:
   id: crontab
   configuration:
     rules:
-      - '5 09,16 * * *'
+      - '0 7 * * *'
 launcher:
   id: serial
   configuration:

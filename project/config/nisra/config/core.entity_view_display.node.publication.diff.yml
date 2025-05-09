@@ -47,8 +47,8 @@ third_party_settings:
         speed: fast
     group_documents:
       children:
-        - field_attachment
         - field_external_publication
+        - field_attachment
       label: Documents
       parent_name: ''
       region: content
@@ -86,7 +86,7 @@ content:
       view_mode: default
       link: false
     third_party_settings: {  }
-    weight: 4
+    weight: 6
     region: content
   field_external_publication:
     type: link

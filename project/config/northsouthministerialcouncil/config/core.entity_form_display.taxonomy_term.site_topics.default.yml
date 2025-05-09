@@ -7,7 +7,9 @@ dependencies:
     - field.field.taxonomy_term.site_topics.field_photo
     - field.field.taxonomy_term.site_topics.field_summary
     - taxonomy.vocabulary.site_topics
+    - workflows.workflow.nics_editorial_workflow
   module:
+    - content_moderation
     - entity_browser
     - path
     - text
@@ -23,13 +25,6 @@ content:
     settings:
       rows: 5
       placeholder: ''
-    third_party_settings: {  }
-  field_enable_toc:
-    type: boolean_checkbox
-    weight: 5
-    region: content
-    settings:
-      display_label: true
     third_party_settings: {  }
   field_photo:
     type: entity_browser_file
@@ -60,6 +55,12 @@ content:
     settings:
       include_locked: true
     third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   name:
     type: string_textfield
     weight: 0
@@ -70,15 +71,16 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 6
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 7
+    weight: 6
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_enable_toc: true

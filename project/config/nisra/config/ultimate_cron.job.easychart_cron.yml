@@ -6,7 +6,7 @@ dependencies:
     - easychart
 title: 'Default cron handler'
 id: easychart_cron
-weight: 0
+weight: 5
 module: easychart
 callback: easychart_cron
 scheduler:
