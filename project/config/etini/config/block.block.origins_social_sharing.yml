@@ -1,0 +1,33 @@
+uuid: 950d6e4e-3699-4112-a5a8-9b487eb09c68
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_visibility_groups
+    - node
+    - origins_social_sharing
+  theme:
+    - etini_theme
+id: origins_social_sharing
+theme: etini_theme
+region: bottom_banner
+weight: 0
+provider: null
+plugin: origins_social_sharing
+settings:
+  id: origins_social_sharing
+  label: 'Social sharing'
+  label_display: '0'
+  provider: origins_social_sharing
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      news: news
