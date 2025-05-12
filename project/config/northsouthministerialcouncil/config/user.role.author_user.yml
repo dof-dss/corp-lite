@@ -104,5 +104,6 @@ permissions:
   - 'view scheduled transitions node contact'
   - 'view scheduled transitions node link'
   - 'view scheduled transitions node news'
+  - 'view scheduled transitions node page'
   - 'view scheduled transitions node publication'
   - 'view the administration theme'
