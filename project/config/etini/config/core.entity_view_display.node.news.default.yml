@@ -29,7 +29,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
   field_photo:
     type: entity_reference_entity_view
@@ -38,7 +38,7 @@ content:
       view_mode: article_float
       link: false
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   field_published_date:
     type: datetime_default
@@ -49,19 +49,26 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_site_topics:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
   field_summary:
     type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
 hidden:
   content_moderation_control: true
   field_meta_tags: true
   field_news_type: true
   field_notes_to_editors: true
-  field_site_topics: true
   field_teaser: true
   langcode: true
   links: true

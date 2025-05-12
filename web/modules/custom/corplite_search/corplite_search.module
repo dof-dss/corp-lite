@@ -35,10 +35,27 @@ function corplite_search_preprocess_facets_summary_item_list(&$variables) {
     $facets = $summary_facet->getFacets();
     $summaries = [];
     foreach ($variables['items'] as $index => $item) {
-      $label = $facets[$item['#title']['#facet']->id()]['label'];
-      $variables['items'][$index]['#title']['#facet']->set('description', $label);
-
-      $summaries[$label][] = $variables['items'][$index];
+      $id = NULL;
+      if (isset($item['value']) && is_array($item['value'])) {
+        $id = $item['value']['#title']['#facet']->id();
+        $label = $facets[$id]['label'];
+        $variables['items'][$index]['value']['#title']['#facet']->set('description', $label);
+      }
+      else {
+        $id = $item['#title']['#facet']->id();
+        $label = $facets[$id]['label'];
+        $variables['items'][$index]['#title']['#facet']->set('description', $label);
+      }
+      if (isset($variables['items'][$index]['value']) && is_array($variables['items'][$index]['value'])) {
+        $summary_array = $variables['items'][$index]['value'];
+        if (is_array($variables['items'][$index]['attributes'])) {
+          $summary_array['attributes'] = $variables['items'][$index]['attributes'];
+        }
+      }
+      else {
+        $summary_array = $variables['items'][$index];
+      }
+      $summaries[$label][] = $summary_array;
     }
     $variables['summaries'] = $summaries;
   }
@@ -62,7 +79,13 @@ function corplite_search_preprocess_facets_item_list(array &$variables) {
   foreach ($variables['items'] as $index => &$item) {
 
     /** @var \Drupal\Core\Url $url */
-    $url = $variables['items'][$index]['#url'];
+    $url = NULL;
+    if (isset($variables['items'][$index]['value']) && is_array($variables['items'][$index]['value'])) {
+      $url = $variables['items'][$index]['value']['#url'];
+    }
+    else {
+      $url = $variables['items'][$index]['#url'];
+    }
     $options = $url->getOptions();
 
     // Get the original href (URL) from the Url object.
@@ -83,6 +106,8 @@ function corplite_search_preprocess_facets_item_list(array &$variables) {
     $new_url = Url::fromUserInput('#main-content', $options);
 
     // Replace the facet link URL with the new one.
-    $variables['items'][$index]['#url'] = $new_url;
+    if (isset($variables['items'][$index]['value']) && is_array($variables['items'][$index]['value'])) {
+      $variables['items'][$index]['value']['#url'] = $new_url;
+    }
   }
 }

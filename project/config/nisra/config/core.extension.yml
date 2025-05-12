@@ -37,7 +37,7 @@ module:
   corplite_eu_cookie_compliance: 0
   corplite_image_styles: 0
   corplite_published_releases_feed: 0
-  corplite_search: 0
+  corplite_search: 1
   csp: 0
   ctools: 0
   ctools_entity_mask: 0
@@ -118,6 +118,7 @@ module:
   origins_media: 0
   origins_metatag: 0
   origins_qa: 0
+  origins_social_sharing: 0
   origins_toc: 0
   origins_translations: 0
   page_cache: 0
