@@ -40,7 +40,8 @@ function corplite_search_preprocess_facets_summary_item_list(&$variables) {
         $id = $item['value']['#title']['#facet']->id();
         $label = $facets[$id]['label'];
         $variables['items'][$index]['value']['#title']['#facet']->set('description', $label);
-      } else {
+      }
+      else {
         $id = $item['#title']['#facet']->id();
         $label = $facets[$id]['label'];
         $variables['items'][$index]['#title']['#facet']->set('description', $label);
@@ -50,7 +51,8 @@ function corplite_search_preprocess_facets_summary_item_list(&$variables) {
         if (is_array($variables['items'][$index]['attributes'])) {
           $summary_array['attributes'] = $variables['items'][$index]['attributes'];
         }
-      } else {
+      }
+      else {
         $summary_array = $variables['items'][$index];
       }
       $summaries[$label][] = $summary_array;
@@ -80,7 +82,8 @@ function corplite_search_preprocess_facets_item_list(array &$variables) {
     $url = NULL;
     if (isset($variables['items'][$index]['value']) && is_array($variables['items'][$index]['value'])) {
       $url = $variables['items'][$index]['value']['#url'];
-    } else {
+    }
+    else {
       $url = $variables['items'][$index]['#url'];
     }
     $options = $url->getOptions();
