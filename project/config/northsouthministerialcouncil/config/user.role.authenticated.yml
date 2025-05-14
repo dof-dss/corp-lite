@@ -17,6 +17,7 @@ dependencies:
     - node
     - system
     - taxonomy_access_fix
+    - whatlinkshere
 _core:
   default_config_hash: 5VGJw7pgPFTBuJrCG9pBukHNqdclr8NPzvsAwTZXVwY
 id: authenticated
@@ -36,5 +37,6 @@ permissions:
   - 'view all revisions'
   - 'view any term'
   - 'view any term name'
+  - 'view content references'
   - 'view media'
   - 'view own unpublished content'

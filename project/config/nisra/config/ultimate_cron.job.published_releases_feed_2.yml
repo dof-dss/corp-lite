@@ -1,17 +1,19 @@
+uuid: 910b6d8d-2536-4abb-b92e-3dd5d8ae8fc8
 langcode: en
 status: true
 dependencies:
   module:
     - corplite_published_releases_feed
-title: 'Import Nisra published releases 7am.'
-id: published_releases_feed
+title: 'Import Nisra published releases 9.30.'
+id: published_releases_feed_2
+weight: 0
 module: corplite_published_releases_feed
 callback: corplite_published_releases_feed_import
 scheduler:
   id: crontab
   configuration:
     rules:
-      - '0 7 * * *'
+      - '30 9 * * *'
 launcher:
   id: serial
   configuration:

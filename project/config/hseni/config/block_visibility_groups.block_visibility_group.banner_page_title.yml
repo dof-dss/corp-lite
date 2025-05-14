@@ -24,5 +24,5 @@ conditions:
     negate: false
     uuid: 3c4eeeb4-fdce-4e9d-8eb9-91fba4c8b9b4
     context_mapping: {  }
-    pages: "/publications\r\n/publications/date/*\r\n/publications/topic/*\r\n/publications/type/*\r\n/news\r\n/news/date/*\r\n/consultations\r\n/consultations/topic/*\r\n/consultations/date/*\r\n/advice_and_guidance\r\n/alerts\r\n/alerts/date/*\r\n/search\r\n\r\n"
+    pages: "/publications\r\n/publications/date/*\r\n/publications/topic/*\r\n/publications/type/*\r\n/news\r\n/news/date/*\r\n/news/topic/*\r\n/consultations\r\n/consultations/topic/*\r\n/consultations/date/*\r\n/advice_and_guidance\r\n/alerts\r\n/alerts/date/*\r\n/search\r\n\r\n"
 allow_other_conditions: false
