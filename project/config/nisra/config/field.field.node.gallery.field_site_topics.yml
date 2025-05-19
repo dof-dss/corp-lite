@@ -10,7 +10,7 @@ id: node.gallery.field_site_topics
 field_name: field_site_topics
 entity_type: node
 bundle: gallery
-label: 'Site topics'
+label: Topics
 description: 'Choose relevant site topic(s) for this gallery.'
 required: false
 translatable: false
