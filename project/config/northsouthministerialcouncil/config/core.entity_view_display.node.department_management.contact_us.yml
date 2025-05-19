@@ -44,6 +44,7 @@ content:
     region: content
 hidden:
   body: true
+  content_moderation_control: true
   field_access_to_information: true
   field_facebook_url: true
   field_flickr_url: true

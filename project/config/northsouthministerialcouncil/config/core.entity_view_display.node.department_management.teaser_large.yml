@@ -36,6 +36,7 @@ content:
     weight: 0
     region: content
 hidden:
+  content_moderation_control: true
   field_access_to_information: true
   field_contact_information: true
   field_departmental_map: true
