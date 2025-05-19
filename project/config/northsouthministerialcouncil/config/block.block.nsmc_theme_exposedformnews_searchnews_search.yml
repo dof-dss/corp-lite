@@ -1,23 +1,23 @@
-uuid: 63a2efa1-7f28-4ff6-b106-adbcbee7572b
+uuid: a828a518-1347-426e-bbc3-2084272cdc3d
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.publication_search
+    - views.view.news_search
   module:
     - block_visibility_groups
     - system
     - views
   theme:
     - northsouthministerialcouncil_theme
-id: exposedformpublication_searchpublications_search
+id: nsmc_theme_exposedformnews_searchnews_search
 theme: northsouthministerialcouncil_theme
 region: sidebar_first
-weight: -11
+weight: -10
 provider: null
-plugin: 'views_exposed_filter_block:publication_search-publications_search'
+plugin: 'views_exposed_filter_block:news_search-news_search'
 settings:
-  id: 'views_exposed_filter_block:publication_search-publications_search'
+  id: 'views_exposed_filter_block:news_search-news_search'
   label: ''
   label_display: '0'
   provider: views
@@ -30,4 +30,4 @@ visibility:
   request_path:
     id: request_path
     negate: false
-    pages: "/publications\r\n/publications/date/*\r\n/publications/sectors/*\r\n/publications/type/*"
+    pages: "/news\r\n/news/date/*"
