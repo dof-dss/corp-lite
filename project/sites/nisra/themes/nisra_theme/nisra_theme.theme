@@ -161,3 +161,17 @@ function nisra_theme_preprocess_node(array &$variables) {
       break;
   }
 }
+
+/**
+ * Implements hook_preprocess_block().
+ */
+function nisra_theme_preprocess_block(&$variables) {
+
+  // Social media variables to be used in the theme-settings.php.
+  $variables['social_links_twitter'] = theme_get_setting('social_links_twitter');
+  $variables['social_links_facebook'] = theme_get_setting('social_links_facebook');
+  $variables['social_links_linkedin'] = theme_get_setting('social_links_linkedin');
+  $variables['social_links_pinterest'] = theme_get_setting('social_links_pinterest');
+  $variables['social_links_instagram'] = theme_get_setting('social_links_instagram');
+  $variables['social_links_youtube'] = theme_get_setting('social_links_youtube');
+}
