@@ -1,0 +1,45 @@
+@use '../../init' as *;
+
+#footer {
+  .social-links {
+    margin: 2.4rem 0 0 .2rem;
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    li {
+      padding-right: .5rem;
+      border-bottom: none;
+
+      a {
+        border-bottom: none;
+        color: var(--clr-white);
+        height: 3.7rem;
+        width: 3.7rem;
+        margin: 0 0 2rem 0;
+        padding: .3rem 0 0 .3rem;
+        display: block;
+
+        &:hover {
+          box-shadow: 0 0 0 3px var(--clr-white);
+          outline: 0;
+        }
+
+        &:focus {
+          outline: 3px solid #fff;
+          outline-offset: -3px;
+          -webkit-box-shadow: 0 0 0 3px #ff4da4;
+          box-shadow: 0 0 0 3px #ff4da4;
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    i {
+      font-size: 3rem;
+    }
+  }
+}
+
