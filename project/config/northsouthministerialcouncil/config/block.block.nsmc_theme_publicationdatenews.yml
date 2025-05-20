@@ -1,28 +1,28 @@
-uuid: f311feac-4488-4043-9419-167257133c3f
+uuid: 3321ca8f-91db-4a8f-a15a-33ff9639cb5a
 langcode: en
 status: true
 dependencies:
   config:
-    - facets.facet.publication_published_date
+    - facets.facet.news_publication_date
   module:
     - block_visibility_groups
     - facets
     - system
   theme:
     - northsouthministerialcouncil_theme
-id: northsouthministerialcouncil_theme_publisheddate
+id: nsmc_theme_publicationdatenews
 theme: northsouthministerialcouncil_theme
 region: sidebar_first
-weight: -7
+weight: 0
 provider: null
-plugin: 'facet_block:publication_published_date'
+plugin: 'facet_block:news_publication_date'
 settings:
-  id: 'facet_block:publication_published_date'
-  label: 'Publication date'
+  id: 'facet_block:news_publication_date'
+  label: 'News date'
   label_display: visible
   provider: facets
   context_mapping: {  }
-  block_id: northsouthministerialcouncil_theme_publisheddate
+  block_id: nsmc_theme_publicationdatenews
 visibility:
   condition_group:
     id: condition_group
@@ -31,4 +31,4 @@ visibility:
   request_path:
     id: request_path
     negate: false
-    pages: "/publications\r\n/publications/date/*\r\n/publications/sectors/*\r\n/publications/type/*"
+    pages: "/news\r\n/news/date/*"
