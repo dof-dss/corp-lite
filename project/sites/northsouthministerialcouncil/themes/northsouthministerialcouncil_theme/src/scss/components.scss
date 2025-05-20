@@ -3,6 +3,8 @@
  * Defines the components for the theme.
  */
 
+@use '../../../../../../../web/themes/custom/nicsdru_corplite_theme/src/scss/init' as *;
+
 h1 {
   font-weight: normal;
 }
@@ -36,5 +38,11 @@ h1 {
     > li:last-child {
       box-shadow: none;
     }
+  }
+}
+
+.article-content {
+  &.max-body-text-width {
+    max-width: $max-body-text-width;
   }
 }
