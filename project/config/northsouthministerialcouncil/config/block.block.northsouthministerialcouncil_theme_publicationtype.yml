@@ -13,7 +13,7 @@ dependencies:
 id: northsouthministerialcouncil_theme_publicationtype
 theme: northsouthministerialcouncil_theme
 region: sidebar_first
-weight: -8
+weight: -9
 provider: null
 plugin: 'facet_block:publication_type'
 settings:
