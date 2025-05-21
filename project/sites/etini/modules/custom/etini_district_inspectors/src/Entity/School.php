@@ -142,18 +142,8 @@ final class School extends RevisionableContentEntityBase implements ContentEntit
 
     $fields['inspector_id'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Referenced Inspector'))
-      ->setSetting('target_type', 'inspector')
-      ->setDisplayOptions('form', [
-        'type' => 'string_textfield',
-        'weight' => -5,
-      ])
-      ->setDisplayConfigurable('form', TRUE)
-      ->setDisplayOptions('view', [
-        'label' => 'hidden',
-        'type' => 'string',
-        'weight' => -5,
-      ])
-      ->setDisplayConfigurable('view', TRUE);
+      ->setRevisionable(TRUE)
+      ->setSetting('target_type', 'inspector');
 
     return $fields;
   }
