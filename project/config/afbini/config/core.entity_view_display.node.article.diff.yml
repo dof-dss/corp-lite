@@ -1,12 +1,13 @@
 uuid: b7933cae-4722-4eb9-9dd7-1e09155042fa
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - core.entity_view_mode.node.diff
     - field.field.node.article.body
     - field.field.node.article.field_enable_toc
     - field.field.node.article.field_meta_tags
+    - field.field.node.article.field_next_audit_due
     - field.field.node.article.field_site_services
     - field.field.node.article.field_site_topics
     - field.field.node.article.field_summary
@@ -21,6 +22,8 @@ third_party_settings:
   field_group:
     group_additional_content_details:
       children:
+        - field_site_topics
+        - field_site_services
         - field_meta_tags
       label: 'Additional content details'
       parent_name: ''
@@ -50,18 +53,26 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
   field_meta_tags:
     type: metatag_empty_formatter
     label: inline
     settings: {  }
     third_party_settings: {  }
-    weight: 5
+    weight: 4
+    region: content
+  field_site_services:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
     region: content
   field_site_topics:
     type: entity_reference_label
-    label: above
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
@@ -69,15 +80,15 @@ content:
     region: content
   field_summary:
     type: basic_string
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
 hidden:
   content_moderation_control: true
   field_enable_toc: true
-  field_site_services: true
+  field_next_audit_due: true
   field_tags: true
   langcode: true
   links: true
