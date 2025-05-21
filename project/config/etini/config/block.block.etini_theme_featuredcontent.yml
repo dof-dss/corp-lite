@@ -11,7 +11,7 @@ dependencies:
 id: etini_theme_featuredcontent
 theme: etini_theme
 region: content
-weight: -13
+weight: -14
 provider: null
 plugin: featured_content
 settings:
