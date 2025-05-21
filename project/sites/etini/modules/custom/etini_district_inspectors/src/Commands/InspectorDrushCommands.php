@@ -37,7 +37,7 @@ class InspectorDrushCommands extends DrushCommands {
    * @command index-schools
    */
   public function indexSchools() {
-    $results = $this->entityTypeManager->getStorage('School')->loadMultiple();
+    $results = $this->entityTypeManager->getStorage('school')->loadMultiple();
     foreach ($results as $school_row) {
       $school = School::load($school_row->id());
       $school->save();
