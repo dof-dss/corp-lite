@@ -14,3 +14,11 @@ entity.inspector.settings:
   requirements:
     _permission: 'administer inspector'
 
+inspector.autocomplete:
+  path: '/autocomplete'
+  defaults:
+    _title: 'Autocomplete Controller'
+    _controller: 'Drupal\etini_district_inspectors\Controller\AutoCompleteController::handleAutoComplete'
+  requirements:
+    _permission: 'access content'
+
