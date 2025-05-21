@@ -24,6 +24,9 @@ bundles:
     bundle: gallery
   -
     entity_type: node
+    bundle: html_document
+  -
+    entity_type: node
     bundle: link
   -
     entity_type: node
