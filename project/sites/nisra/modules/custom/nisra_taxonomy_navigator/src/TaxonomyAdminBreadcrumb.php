@@ -92,11 +92,11 @@ class TaxonomyAdminBreadcrumb extends PathBasedBreadcrumbBuilder implements Brea
   /**
    * {@inheritdoc}
    * @param \Drupal\Core\Routing\RouteMatchInterface $route_match
-   *  The current route match.
+   *   The current route match.
    * @param \Drupal\Core\Cache\CacheableMetadata|null $cacheable_metadata
-   *  The cacheable metadata to add to if your check varies by or depends
-   *  on something. Anything you specify here does not have to be repeated in
-   *  the build() method as it will be merged in automatically.
+   *   The cacheable metadata to add to if your check varies by or depends
+   *   on something. Anything you specify here does not have to be repeated in
+   *   the build() method as it will be merged in automatically.
    */
   public function applies(RouteMatchInterface $route_match, CacheableMetadata|null $cacheable_metadata = NULL) {
     $match = FALSE;
