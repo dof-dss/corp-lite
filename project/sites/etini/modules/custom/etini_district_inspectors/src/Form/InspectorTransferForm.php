@@ -48,10 +48,18 @@ class InspectorTransferForm extends ConfigFormBase {
     ];
 
     $form['site_url_list_exclude'] = [
-      '#type' => 'textfield',
+      '#type' => 'entity_autocomplete',
       '#title' => $this->t('District Inspector (new)'),
-      '#description' => $this->t($to_message),
-      '#default_value' => 'test2',
+      '#target_type' => 'inspector',
+      '#selection_handler' => 'views',
+      '#selection_settings' => [
+        'view' => [
+          'view_name' => 'district_inspector_typeahead',
+          'display_name' => 'inspector_reference',
+          'arguments' => []
+        ]
+      ],
+      '#description' => $this->t($to_message)
     ];
 
     return parent::buildForm($form, $form_state);
