@@ -5,6 +5,7 @@ dependencies:
   config:
     - views.view.site_topics
   module:
+    - block_visibility_groups
     - system
     - views
   theme:
@@ -17,13 +18,17 @@ provider: null
 plugin: 'views_block:site_topics-topics_home'
 settings:
   id: 'views_block:site_topics-topics_home'
-  label: 'Select a topic to explore statistics'
+  label: 'Select a topic to explore statistics and research'
   label_display: visible
   provider: views
-  views_label: 'Select a topic to explore statistics'
+  views_label: 'Select a topic to explore statistics and research'
   items_per_page: none
 visibility:
   request_path:
     id: request_path
     negate: false
     pages: '<front>'
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
