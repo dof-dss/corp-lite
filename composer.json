@@ -263,6 +263,9 @@
             "drupal/media_browser_responsive_images": {
                 "Form alter applies for any media browser, not just image related ones": "https://www.drupal.org/files/issues/2019-12-17/media-browser-hook-checks-for-image-types.patch"
             },
+            "drupal/moderation_sidebar": {
+                "Fix Clicking \"Tasks | Published\" to close the sidebar tray redirects to AJAX page": "https://git.drupalcode.org/project/moderation_sidebar/-/merge_requests/25.patch"
+            },
             "drupal/redirect": {
                 "Add URL Redirects tab to taxonomy term edit form": "https://www.drupal.org/files/issues/2021-03-26/redirect_provide_redirect_tab_on_taxonomy_terms_3205896.patch",
                 "URL redirects listing only displays operations": "https://www.drupal.org/files/issues/2019-04-05/redirects_list_builder-3031125-9-d8.patch",
