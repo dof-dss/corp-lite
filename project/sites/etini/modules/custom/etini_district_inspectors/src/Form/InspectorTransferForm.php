@@ -28,20 +28,28 @@ class InspectorTransferForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    $from_message = "Select the District Inspector taht you would like to transfer schools <b>from</b>.";
+    $from_message = "Select the District Inspector that you would like to transfer schools <b>from</b>.";
 
     $to_message = "Select the District Inspector taht you would like to transfer schools <b>to</b>.";
 
     $form['site_url_list'] = [
-      '#type' => 'textfield',
-      '#title' => $this->t('Site URLs'),
-      '#description' => $this->t($from_message),
-      '#default_value' => 'test1',
+      '#type' => 'entity_autocomplete',
+      '#title' => $this->t('District Inspector (old)'),
+      '#target_type' => 'inspector',
+      '#selection_handler' => 'views',
+      '#selection_settings' => [
+        'view' => [
+          'view_name' => 'district_inspector_typeahead',
+          'display_name' => 'inspector_reference',
+          'arguments' => []
+        ]
+      ],
+      '#description' => $this->t($from_message)
     ];
 
     $form['site_url_list_exclude'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('Site URLs to exclude'),
+      '#title' => $this->t('District Inspector (new)'),
       '#description' => $this->t($to_message),
       '#default_value' => 'test2',
     ];
