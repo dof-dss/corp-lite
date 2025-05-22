@@ -2,13 +2,26 @@
 
 namespace Drupal\etini_district_inspectors\Form;
 
+use Drupal\Core\Config\ConfigFactoryInterface;
+use Drupal\Core\Config\TypedConfigManagerInterface;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\etini_district_inspectors\Entity\School;
+use Drupal\media\IFrameUrlHelper;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Implements admin form to allow transfer of schools to new inspector.
  */
 class InspectorTransferForm extends ConfigFormBase {
+
+  /**
+   * The entity type manager.
+   *
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
+   */
+  protected $entityTypeManager;
 
   /**
    * {@inheritdoc}
@@ -22,6 +35,32 @@ class InspectorTransferForm extends ConfigFormBase {
    */
   public function getFormId() {
     return 'inspector_transfer_form';
+  }
+
+  /**
+   * MediaSettingsForm constructor.
+   *
+   * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
+   *   The config factory service.
+   * @param \Drupal\Core\Config\TypedConfigManagerInterface $typedConfigManager
+   *   The typed config manager.
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
+   *   The entity type manager.
+   */
+  public function __construct(ConfigFactoryInterface $config_factory, TypedConfigManagerInterface $typedConfigManager, EntityTypeManagerInterface $entity_type_manager) {
+    parent::__construct($config_factory, $typedConfigManager);
+    $this->entityTypeManager = $entity_type_manager;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container) {
+    return new static(
+      $container->get('config.factory'),
+      $container->get('config.typed'),
+      $container->get('entity_type.manager')
+    );
   }
 
   /**
@@ -76,6 +115,16 @@ class InspectorTransferForm extends ConfigFormBase {
 
     $message = "From is $from_id , to is $to_id";
     \Drupal::logger('etini_district_inspectors')->notice(t($message));
+
+    $results = $this->entityTypeManager->getStorage('school')->loadMultiple();
+    foreach ($results as $school_row) {
+      $school = School::load($school_row->id());
+      $message = print_r($school->get('inspector_id'), true);
+      \Drupal::logger('etini_district_inspectors')->notice(t($message));
+      break;
+      //if ($school->get('inspector_id') )
+      //$school->save();
+    }
 
     /*$this->config('unity_internal_link_checker.linksettings')
       ->set('site_url_list', $form_state->getValue('site_url_list'))
