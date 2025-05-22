@@ -22,3 +22,13 @@ inspector.autocomplete:
   requirements:
     _permission: 'access content'
 
+etini_district_inspectors.inspector_transfer_form:
+  path: '/admin/config/etini_district_inspectors/inspector_transfer_form'
+  defaults:
+    _form: '\Drupal\etini_district_inspectors\Form\InspectorTransferForm'
+    _title: 'District Inspector Transfer Schools'
+  requirements:
+    _role: 'administrator'
+  options:
+    _admin_route: TRUE
+

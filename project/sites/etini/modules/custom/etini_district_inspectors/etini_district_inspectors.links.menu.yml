@@ -22,3 +22,11 @@ entity.inspector.collection:
   route_name: entity.inspector.collection
   parent: system.admin_content
 
+inspector_transfer.inspector_transfer_form:
+  title: 'District Inspector Transfer Schools'
+  route_name: etini_district_inspectors.inspector_transfer_form
+  description: 'District Inspector Transfer Schools'
+  parent: system.admin_config
+  weight: 99
+
+
