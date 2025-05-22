@@ -1,4 +1,4 @@
-uuid: 3321ca8f-91db-4a8f-a15a-33ff9639cb5a
+uuid: fd16abd9-ff74-4de7-a619-63d54c959de0
 langcode: en
 status: true
 dependencies:
@@ -10,7 +10,7 @@ dependencies:
     - system
   theme:
     - northsouthministerialcouncil_theme
-id: nsmc_theme_publicationdatenews
+id: nsmc_theme_publicationdate
 theme: northsouthministerialcouncil_theme
 region: sidebar_first
 weight: 0
@@ -22,7 +22,7 @@ settings:
   label_display: visible
   provider: facets
   context_mapping: {  }
-  block_id: nsmc_theme_publicationdatenews
+  block_id: nsmc_theme_publicationdate
 visibility:
   condition_group:
     id: condition_group
