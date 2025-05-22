@@ -28,26 +28,21 @@ class InspectorTransferForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    $message = "All environment domains (Local, Edge, UAT, Main) are already being stripped of absolute links and changed to relative for this site.";
-    $message .= "<br/>List any extra domain names here that must be stripped out of absolute links and changed to relative as they are saved.";
-    $message .= "<br/>For example adding 'http://uregni.gov.uk' here will cause any links starting with that domain name to be saved as relative links instead.";
-    $message .= "<br/>You may add as many domain names as you like, along with the appropriate 'http' or 'https' protocol.";
+    $from_message = "Select the District Inspector taht you would like to transfer schools <b>from</b>.";
 
-    $message_exclude = "If there are any specific URL's that are not to be made a relative URL then add the full URL in this field.";
-    $message_exclude .= "<br/>For example adding https://employmenttribunalsni.co.uk/OITFET_IWS/Login.aspx will keep this link as it is.";
-    $message_exclude .= "<br/>You may add as many domain names as you like, along with the appropriate 'http' or 'https' protocol.";
+    $to_message = "Select the District Inspector taht you would like to transfer schools <b>to</b>.";
 
     $form['site_url_list'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Site URLs'),
-      '#description' => $this->t($message),
+      '#description' => $this->t($from_message),
       '#default_value' => 'test1',
     ];
 
     $form['site_url_list_exclude'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Site URLs to exclude'),
-      '#description' => $this->t($message_exclude),
+      '#description' => $this->t($to_message),
       '#default_value' => 'test2',
     ];
 
