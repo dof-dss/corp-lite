@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b46e5535c4ac45d2effd45cfc8ce566a",
+    "content-hash": "f6a49cbf99333b42a42d3890d410344a",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1805,7 +1805,7 @@
             "extra": {
                 "drupal": {
                     "version": "3.6.0",
-                    "datestamp": "1747871747",
+                    "datestamp": "1747981575",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -16861,17 +16861,11 @@
         },
         {
             "name": "drupal/stage_file_proxy",
-            "version": "3.1.5",
+            "version": "dev-3.1.x",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/stage_file_proxy.git",
-                "reference": "3.1.5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/stage_file_proxy-3.1.5.zip",
-                "reference": "3.1.5",
-                "shasum": "b4bf35dceea7cfd2fc6808d041d903d7cbde2ed2"
+                "reference": "ae6bd9418cedb221393cacd792d4918c8fa9f807"
             },
             "require": {
                 "drupal/core": "^10.3 || ^11",
@@ -16886,12 +16880,15 @@
             },
             "type": "drupal-module",
             "extra": {
+                "branch-alias": {
+                    "dev-3.1.x": "3.1.x-dev"
+                },
                 "drupal": {
-                    "version": "3.1.5",
-                    "datestamp": "1744819754",
+                    "version": "3.1.5+1-dev",
+                    "datestamp": "1746022434",
                     "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
                     }
                 }
             },
