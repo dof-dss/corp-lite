@@ -214,6 +214,9 @@
             "drupal/auto_entityqueue": {
                 "Entityquery - add access control check": "https://www.drupal.org/files/issues/2023-10-25/3366202-7-accessCheck-auto-entity-queue.patch"
             },
+            "drupal/block_visibility_groups": {
+                "Visibility incorrectly returns false on OR logic when context missing from a different condition #3503194": "https://www.drupal.org/files/issues/2025-02-07/or-logic-when-context-missing--3503194-5.patch"
+            },
             "drupal/clientside_validation": {
                 "core/jquery.once is required": "https://www.drupal.org/files/issues/2021-02-23/3200022-01.patch"
             },
