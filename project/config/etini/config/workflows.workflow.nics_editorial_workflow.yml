@@ -8,6 +8,7 @@ dependencies:
     - node.type.contact
     - node.type.department_management
     - node.type.gallery
+    - node.type.html_document
     - node.type.link
     - node.type.news
     - node.type.page
@@ -106,6 +107,7 @@ type_settings:
       - contact
       - department_management
       - gallery
+      - html_document
       - link
       - news
       - page
