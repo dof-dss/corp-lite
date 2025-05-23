@@ -75,7 +75,7 @@
 }
 
 .article-content {
-  *:not(.thwooped-modal, .thwooped) {
+  *:not(.thwooped-modal, .thwooped, .highcharts-container, .highcharts-root) {
     max-width: $max-body-text-width;
   }
 }
