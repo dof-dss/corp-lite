@@ -1,0 +1,22 @@
+uuid: 4e133624-e76f-4cb5-b6ca-13c8eefadbaa
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_areas_of_cooperation
+label: 'Taxonomy - Areas of Cooperation'
+type: 'canonical_entities:taxonomy_term'
+pattern: 'areas-of-co-operation/[term:parent:name]/[term:name]'
+selection_criteria:
+  a52a4cfc-0001-49c5-a230-e9a59a30babe:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: a52a4cfc-0001-49c5-a230-e9a59a30babe
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      site_topics: site_topics
+selection_logic: and
+weight: -5
+relationships: {  }
