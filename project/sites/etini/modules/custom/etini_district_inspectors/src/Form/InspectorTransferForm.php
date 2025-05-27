@@ -7,6 +7,7 @@ use Drupal\Core\Config\TypedConfigManagerInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\etini_district_inspectors\Entity\Inspector;
 use Drupal\etini_district_inspectors\Entity\School;
 use Drupal\media\IFrameUrlHelper;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -113,7 +114,17 @@ class InspectorTransferForm extends ConfigFormBase {
     parent::submitForm($form, $form_state);
 
     $from_id = $form_state->getValue('old_inspector_id');
+    $from_inspector = Inspector::Load($from_id);
+    $from_inspector_name = '';
+    if (!empty($from_inspector)) {
+      $from_inspector_name = $from_inspector->get("name")->getString();
+    }
     $to_id = $form_state->getValue('new_inspector_id');
+    $to_inspector = Inspector::Load($to_id);
+    $to_inspector_name = '';
+    if (!empty($to_inspector)) {
+      $to_inspector_name = $to_inspector->get("name")->getString();
+    }
 
     // Get a list of schools attached to the old inspector.
     $storage = $this->entityTypeManager->getStorage('school');
@@ -131,8 +142,9 @@ class InspectorTransferForm extends ConfigFormBase {
         $n++;
       }
     }
-    $message = "Moved $n schools from inspector id $from_id , to inspector id $to_id";
+    $message = "Moved $n schools from inspector '$from_inspector_name' ($from_id), to inspector '$to_inspector_name' ($to_id)";
     \Drupal::logger('etini_district_inspectors')->notice(t($message));
+    $this->messenger()->deleteByType('status');
     $this->messenger()->addStatus($message);
   }
 }
