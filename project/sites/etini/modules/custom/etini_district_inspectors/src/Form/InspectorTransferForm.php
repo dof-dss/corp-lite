@@ -115,10 +115,6 @@ class InspectorTransferForm extends ConfigFormBase {
     $from_id = $form_state->getValue('old_inspector_id');
     $to_id = $form_state->getValue('new_inspector_id');
 
-    if (empty($from_id) || empty($to_id)) {
-
-    }
-
     $message = "From is $from_id , to is $to_id";
     \Drupal::logger('etini_district_inspectors')->notice(t($message));
 
