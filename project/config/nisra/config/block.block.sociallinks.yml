@@ -1,0 +1,30 @@
+uuid: 6d7b3334-b610-42a6-8028-3fd3f105543c
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:17145d52-1a97-419a-86b1-f9ff0c1a8dce'
+  module:
+    - block_content
+    - block_visibility_groups
+  theme:
+    - nisra_theme
+id: sociallinks
+theme: nisra_theme
+region: footer
+weight: 0
+provider: null
+plugin: 'block_content:17145d52-1a97-419a-86b1-f9ff0c1a8dce'
+settings:
+  id: 'block_content:17145d52-1a97-419a-86b1-f9ff0c1a8dce'
+  label: 'Follow Nisra'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''

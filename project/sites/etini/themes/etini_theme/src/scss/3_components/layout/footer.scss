@@ -22,71 +22,72 @@
   }
 }
 
-#nav-footer {
-  display: flex;
-  
-  @media (max-width: 420px) {
-    flex-direction: column;
+#footer {
+  #nav-footer {
+    display: flex;
+
+    @media (max-width: 420px) {
+      flex-direction: column;
+    }
   }
-}
 
-.nav-social-wrapper {
-  display: inline-block;
-  margin-left: 20px;
-}
-
-.nav-social {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-
-  li {
+  .nav-social-wrapper {
     display: inline-block;
-    margin-right: 15px;
-  }
-}
-
-.nav-social li a {
-  text-decoration: none;
-  color: var(--clr-body-text);
-  font-size: 1.5em;
-  margin-top: 1rem;
-
-  &:hover,
-  &:focus {
-    outline: 3px solid var(--clr-body-text);
-    text-decoration: none;
-  }
-
-  &:focus {
-    background-color: var(--clr-body-text);
-    color: var(--clr-white);
-  }
-}
-
-.footer-social-wrapper {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  flex-direction: column;
-  margin-bottom: 2rem;
-
-  .follow-us-text {
-    font-size: 18px;
-    font-weight: bold;
-    margin: 0;
+    margin-left: 20px;
   }
 
   .nav-social {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    margin: 0;
+    list-style-type: none;
     padding: 0;
+    margin: 0;
+
+    li {
+      display: inline-block;
+      margin-right: 15px;
+    }
+  }
+
+  .nav-social li a {
+    text-decoration: none;
+    color: var(--clr-body-text);
+    font-size: 1.5em;
+    margin-top: 1rem;
+
+    &:hover,
+    &:focus {
+      outline: 3px solid var(--clr-body-text);
+      text-decoration: none;
+    }
+
+    &:focus {
+      background-color: var(--clr-body-text);
+      color: var(--clr-white);
+    }
+  }
+
+  .footer-social-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 2rem;
+
+    .follow-us-text {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    .nav-social {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .footer-nav {
+    grid-column: 1/-1;
   }
 }
-
-.footer-nav {
-  grid-column: 1/-1;
-}
-

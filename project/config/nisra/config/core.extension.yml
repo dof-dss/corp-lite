@@ -4,7 +4,6 @@ module:
   webform_clientside_validation: -1
   address: 0
   admin_toolbar: 0
-  admin_toolbar_links_access_filter: 0
   admin_toolbar_tools: 0
   allowed_formats: 0
   automated_cron: 0
@@ -37,7 +36,6 @@ module:
   corplite_eu_cookie_compliance: 0
   corplite_image_styles: 0
   corplite_published_releases_feed: 0
-  corplite_search: 1
   csp: 0
   ctools: 0
   ctools_entity_mask: 0
@@ -161,6 +159,7 @@ module:
   webform_ui: 0
   whatlinkshere: 0
   workflows: 0
+  corplite_search: 1
   menu_admin_per_menu: 1
   pathauto: 1
   origins_workflow: 2

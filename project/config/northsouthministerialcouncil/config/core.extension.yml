@@ -3,7 +3,6 @@ _core:
 module:
   address: 0
   admin_toolbar: 0
-  admin_toolbar_links_access_filter: 0
   admin_toolbar_tools: 0
   allowed_formats: 0
   automated_cron: 0
@@ -84,6 +83,7 @@ module:
   link_fix_absolute_urls: 0
   linkit: 0
   locale: 0
+  maxlength: 0
   media: 0
   media_file_delete: 0
   media_library: 0
