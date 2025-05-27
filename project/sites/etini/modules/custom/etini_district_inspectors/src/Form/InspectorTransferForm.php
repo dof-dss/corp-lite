@@ -69,7 +69,7 @@ class InspectorTransferForm extends ConfigFormBase {
   public function buildForm(array $form, FormStateInterface $form_state) {
     $from_message = "Select the District Inspector that you would like to transfer schools <b>from</b>.";
 
-    $to_message = "Select the District Inspector taht you would like to transfer schools <b>to</b>.";
+    $to_message = "Select the District Inspector that you would like to transfer schools <b>to</b>.";
 
     $form['old_inspector_id'] = [
       '#type' => 'entity_autocomplete',
@@ -116,20 +116,19 @@ class InspectorTransferForm extends ConfigFormBase {
     $message = "From is $from_id , to is $to_id";
     \Drupal::logger('etini_district_inspectors')->notice(t($message));
 
-    $results = $this->entityTypeManager->getStorage('school')->loadMultiple();
-    foreach ($results as $school_row) {
-      $school = School::load($school_row->id());
-      $message = print_r($school->get('inspector_id'), true);
+    //$results = $this->entityTypeManager->getStorage('school')->loadMultiple();
+    $storage = \Drupal::entityTypeManager()->getStorage('school');
+    $ids = $storage->getQuery()
+      ->accessCheck(FALSE)
+      ->condition('inspector_id', $from_id)
+      ->execute();
+    foreach ($ids as $id) {
+      \Drupal::logger('etini_district_inspectors')->notice(t("ID is $id"));
+      $school = School::load($id);
+      $message = "Inspector is " . $school->get('inspector_id')->getString();
       \Drupal::logger('etini_district_inspectors')->notice(t($message));
-      break;
-      //if ($school->get('inspector_id') )
-      //$school->save();
     }
 
-    /*$this->config('unity_internal_link_checker.linksettings')
-      ->set('site_url_list', $form_state->getValue('site_url_list'))
-      ->set('site_url_list_exclude', $form_state->getValue('site_url_list_exclude'))
-      ->save();*/
   }
 
 }
