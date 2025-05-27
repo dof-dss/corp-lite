@@ -6,6 +6,7 @@ dependencies:
     - views.view.district_inspectors
   module:
     - block_visibility_groups
+    - system
     - views
   theme:
     - etini_theme
@@ -26,3 +27,7 @@ visibility:
     id: condition_group
     negate: false
     block_visibility_group: ''
+  request_path:
+    id: request_path
+    negate: false
+    pages: /district-inspectors
