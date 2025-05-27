@@ -113,6 +113,7 @@ class InspectorTransferForm extends ConfigFormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     parent::submitForm($form, $form_state);
 
+    // Get inspector details
     $from_id = $form_state->getValue('old_inspector_id');
     $from_inspector = Inspector::Load($from_id);
     $from_inspector_name = '';
