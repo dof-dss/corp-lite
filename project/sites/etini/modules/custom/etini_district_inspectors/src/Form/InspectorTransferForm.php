@@ -116,8 +116,7 @@ class InspectorTransferForm extends ConfigFormBase {
     $message = "From is $from_id , to is $to_id";
     \Drupal::logger('etini_district_inspectors')->notice(t($message));
 
-    //$results = $this->entityTypeManager->getStorage('school')->loadMultiple();
-    $storage = \Drupal::entityTypeManager()->getStorage('school');
+    $storage = $this->entityTypeManager->getStorage('school');
     $ids = $storage->getQuery()
       ->accessCheck(FALSE)
       ->condition('inspector_id', $from_id)
