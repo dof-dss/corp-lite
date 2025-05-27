@@ -115,7 +115,7 @@ class InspectorTransferForm extends ConfigFormBase {
     $from_id = $form_state->getValue('old_inspector_id');
     $to_id = $form_state->getValue('new_inspector_id');
 
-    $message = "From is $from_id , to is $to_id";
+    $message = "Move schools from inspector id $from_id , to inspector id $to_id";
     \Drupal::logger('etini_district_inspectors')->notice(t($message));
 
     $storage = $this->entityTypeManager->getStorage('school');
@@ -123,15 +123,19 @@ class InspectorTransferForm extends ConfigFormBase {
       ->accessCheck(FALSE)
       ->condition('inspector_id', $from_id)
       ->execute();
+    $n = 0;
     foreach ($ids as $id) {
-      \Drupal::logger('etini_district_inspectors')->notice(t("ID is $id"));
       $school = School::load($id);
-      $message = "Inspector is " . $school->get('inspector_id')->getString();
-      \Drupal::logger('etini_district_inspectors')->notice(t($message));
-      $school->set('inspector_id', $to_id);
-      $school->save();
+      if ($school->get('inspector_id')->getString() == $from_id) {
+        $school->set('inspector_id', $to_id);
+        $school->save();
+        $n++;
+      }
     }
-
+    if ($n > 0) {
+      \Drupal::logger('etini_district_inspectors')->notice("$n schools updated");
+    } else {
+      \Drupal::logger('etini_district_inspectors')->notice("No schools updated");
+    }
   }
-
 }
