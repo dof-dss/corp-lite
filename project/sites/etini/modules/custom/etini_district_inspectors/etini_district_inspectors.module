@@ -61,12 +61,12 @@ function template_preprocess_inspector(array &$variables): void {
  * Implements hook_form_alter().
  */
 function etini_district_inspectors_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  // Add autocomplete processing to the exposed filter on the District Inspectors view.
   if (($form_id == 'views_exposed_form') && ($form['#action'] == '/district-inspectors')) {
+    // Add autocomplete processing to the exposed filter on the District Inspectors view.
     $form['search_api_fulltext']['#autocomplete_route_name'] = 'inspector.autocomplete';
     $form['#attached']['library'][] = 'etini_district_inspectors/auto_submit';
   } else if ($form_id == 'school_edit_form') {
-    \Drupal::logger('etini_district_inspectors')->notice("caught in hook_form_alter");
+    // Add inspector select list to the school edit form.
     $inspectors = \Drupal::entityTypeManager()->getStorage('inspector')->loadMultiple();
     $options = [];
     foreach ($inspectors as $inspector) {
@@ -81,8 +81,6 @@ function etini_district_inspectors_form_alter(&$form, FormStateInterface $form_s
       '#options' => $options
     );
   }
-  //kint($form);
-  \Drupal::logger('etini_district_inspectors')->notice("here we are - " . $form_id . ", and action " . $form['#action']);
 }
 
 /**
