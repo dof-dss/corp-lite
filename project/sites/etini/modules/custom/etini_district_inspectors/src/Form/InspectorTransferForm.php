@@ -106,7 +106,6 @@ class InspectorTransferForm extends ConfigFormBase {
       '#description' => $this->t($to_message)
     ];
     $form['actions']['submit']['#value'] = $this->t("Transfer Schools");
-    //kint($form);
 
     return $form;
   }
