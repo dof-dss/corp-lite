@@ -106,6 +106,9 @@ class InspectorTransferForm extends ConfigFormBase {
       '#description' => $this->t($to_message)
     ];
     $form['actions']['submit']['#value'] = $this->t("Transfer Schools");
+    $msg = t("Are you sure that you want to transfer ?");
+    $form['#attributes'] = array('onsubmit' => 'if(confirm("Are you sure that you want to transfer schools ?")) return true; return false;');
+    //kint($form);
 
     return $form;
   }
