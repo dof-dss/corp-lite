@@ -106,9 +106,8 @@ class InspectorTransferForm extends ConfigFormBase {
       '#description' => $this->t($to_message)
     ];
     $form['actions']['submit']['#value'] = $this->t("Transfer Schools");
-    $msg = t("Are you sure that you want to transfer ?");
-    $form['#attributes'] = array('onsubmit' => 'if(confirm("Are you sure that you want to transfer schools ?")) return true; return false;');
-    //kint($form);
+    $msg = t("Are you sure that you want to transfer these schools ?");
+    $form['#attributes'] = array('onsubmit' => 'if(confirm("' . $msg . '")) return true; return false;');
 
     return $form;
   }
@@ -149,7 +148,7 @@ class InspectorTransferForm extends ConfigFormBase {
         $school->set('inspector_id', $to_id);
         $revision = $storage->createRevision($school);
         $revision->setRevisionCreationTime(\Drupal::time()->getCurrentTime());
-        $revision->setRevisionUserId(\Drupal::currentuser());
+        $revision->setRevisionUserId(\Drupal::currentuser()->id());
         $revision->save();
         $n++;
       }
