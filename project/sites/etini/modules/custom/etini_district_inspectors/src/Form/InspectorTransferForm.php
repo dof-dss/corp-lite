@@ -143,8 +143,6 @@ class InspectorTransferForm extends ConfigFormBase {
       $school = School::load($id);
       if ($school->get('inspector_id')->getString() == $from_id) {
         // Move school to new inspector.
-        //$school->setNewRevision(TRUE);
-        \Drupal::logger('etini_district_inspectors')->notice("setting new revision for school $id");
         $school->set('inspector_id', $to_id);
         $revision = $storage->createRevision($school);
         $revision->setRevisionCreationTime(\Drupal::time()->getCurrentTime());
