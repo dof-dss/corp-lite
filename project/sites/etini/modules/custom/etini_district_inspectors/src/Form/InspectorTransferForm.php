@@ -68,6 +68,8 @@ class InspectorTransferForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
+    $form = parent::buildForm($form, $form_state);
+
     $from_message = "Select the District Inspector that you would like to transfer schools <b>from</b>.";
 
     $to_message = "Select the District Inspector that you would like to transfer schools <b>to</b>.";
@@ -103,8 +105,10 @@ class InspectorTransferForm extends ConfigFormBase {
       '#required' => TRUE,
       '#description' => $this->t($to_message)
     ];
+    $form['actions']['submit']['#value'] = $this->t("Transfer Schools");
+    //kint($form);
 
-    return parent::buildForm($form, $form_state);
+    return $form;
   }
 
   /**
@@ -138,8 +142,13 @@ class InspectorTransferForm extends ConfigFormBase {
       $school = School::load($id);
       if ($school->get('inspector_id')->getString() == $from_id) {
         // Move school to new inspector.
+        //$school->setNewRevision(TRUE);
+        \Drupal::logger('etini_district_inspectors')->notice("setting new revision for school $id");
         $school->set('inspector_id', $to_id);
-        $school->save();
+        $revision = $storage->createRevision($school);
+        $revision->setRevisionCreationTime(\Drupal::time()->getCurrentTime());
+        $revision->setRevisionUserId(\Drupal::currentuser());
+        $revision->save();
         $n++;
       }
     }
