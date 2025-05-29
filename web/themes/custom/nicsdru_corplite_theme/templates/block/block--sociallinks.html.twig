@@ -1,0 +1,43 @@
+<div class="social-links">
+  {% if label %}
+    <h2>{{ label }}</h2>
+  {% endif %}
+  <ul>
+    {% if social_links_twitter is not empty %}
+    <li><a href="{{ social_links_twitter }}" rel="noopener noreferrer">
+        <i class="fab fa-x-twitter"><span class="visually-hidden">Follow us on Twitter</span></i>
+      </a>
+    </li>
+    {% endif %}
+    {% if social_links_facebook is not empty %}
+      <li><a href="{{ social_links_facebook }}" rel="noopener noreferrer">
+          <i class="fab fa-facebook"><span class="visually-hidden">Follow us on Facebook</span></i>
+        </a>
+      </li>
+    {% endif %}
+    {% if social_links_linkedin is not empty %}
+    <li><a href="{{ social_links_linkedin }}" rel="noopener noreferrer">
+        <i class="fab fa-linkedin"><span class="visually-hidden">Follow us on Linkedin</span></i>
+      </a>
+    </li>
+    {% endif %}
+    {% if social_links_pinterest is not empty %}
+      <li><a href="{{ social_links_pinterest }}" rel="noopener noreferrer">
+          <i class="fab fa-pinterest"><span class="visually-hidden">Follow us on Pinterest</span></i>
+        </a>
+      </li>
+    {% endif %}
+    {% if social_links_youtube is not empty %}
+    <li><a href="{{ social_links_youtube }}" rel="noopener noreferrer">
+        <i class="fab fa-youtube"><span class="visually-hidden">Follow us on Youtube</span></i>
+      </a>
+    </li>
+    {% endif %}
+    {% if social_links_instagram is not empty %}
+      <li><a href="{{ social_links_instagram }}" rel="noopener noreferrer">
+          <i class="fab fa-instagram"><span class="visually-hidden">Follow us on Instagram</span></i>
+        </a>
+      </li>
+    {% endif %}
+  </ul>
+</div>
