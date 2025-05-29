@@ -773,7 +773,8 @@ display:
             multi_type: separator
             multi_separator: ', '
       cache:
-        type: none
+        type: search_api_tag
+        options: {  }
       filters:
         release_date:
           id: release_date
@@ -837,12 +838,13 @@ display:
           tokenize: false
       path: published-releases
     cache_metadata:
-      max-age: -1
+      max-age: 0
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url.query_args
       tags:
+        - 'config:facets.facet.release_date'
         - 'config:search_api.index.published_releases_index'
         - 'search_api_list:published_releases_index'
   releases_upcoming:
@@ -1148,7 +1150,8 @@ display:
             multi_type: separator
             multi_separator: ', '
       cache:
-        type: none
+        type: search_api_tag
+        options: {  }
       sorts:
         release_date:
           id: release_date
@@ -1227,11 +1230,12 @@ display:
           tokenize: false
       path: upcoming-releases
     cache_metadata:
-      max-age: -1
+      max-age: 0
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url.query_args
       tags:
+        - 'config:facets.facet.release_date_upcoming'
         - 'config:search_api.index.published_releases_index'
         - 'search_api_list:published_releases_index'
