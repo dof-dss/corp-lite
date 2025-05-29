@@ -7,6 +7,7 @@
 
 use Drupal\block\Entity\Block;
 use Drupal\nicsdru_corplite_theme\LayoutClasses;
+use Drupal\node\Entity\Node;
 use Drupal\node\NodeInterface;
 use Drupal\Component\Utility\Html;
 
@@ -33,7 +34,8 @@ function nisra_theme_preprocess_page(array &$variables) {
       }
     }
     // Add the main with a limited width to taxonomy terms also.
-  } else {
+  }
+  else {
     $variables['main_content_attr']->addClass(LayoutClasses::MAIN_LIMITED);
   }
 
@@ -119,6 +121,27 @@ function nisra_theme_preprocess_field(&$variables) {
       $item['content']['#url']->setOption('attributes', ['class' => $classes]);
     }
   }
+
+  if ($variables['element']['#field_name'] == 'description' || $variables['element']['#field_name'] == 'body') {
+    $body_text = &$variables['items'][0]['content']['#text'];
+    // Set a regex pattern to look for body links. We don't want to target body links nested in text.
+    // A pattern we want to match is:
+    // <a href="/files/uregni/media-files/24%20May%20board%20minutes%20%28signed%29.pdf"></a>.
+    $embed_regex = '/href="(\/node\/(\d*))"/';
+    $matches = [];
+    // Search the body text for the regex pattern and split the result in matches to be used.
+    preg_match_all($embed_regex, $body_text, $matches, PREG_SET_ORDER);
+    if (!empty($matches)) {
+      foreach ($matches as $match) {
+        // Strip HTML tags and entities from the matched string.
+        $node = Node::load($match[2]);
+        if ($node instanceof NodeInterface) {
+          $body_link = $node->toUrl()->toString();
+          $body_text = str_replace($match[1], $body_link, $body_text);
+        }
+      }
+    }
+  }
 }
 
 /**
@@ -166,7 +189,6 @@ function nisra_theme_preprocess_node(array &$variables) {
  * Implements hook_preprocess_block().
  */
 function nisra_theme_preprocess_block(&$variables) {
-
   // Social media variables to be used in the theme-settings.php.
   $variables['social_links_twitter'] = theme_get_setting('social_links_twitter');
   $variables['social_links_facebook'] = theme_get_setting('social_links_facebook');
