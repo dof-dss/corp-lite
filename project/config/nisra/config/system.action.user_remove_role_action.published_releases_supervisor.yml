@@ -1,0 +1,14 @@
+uuid: 1796ccc6-ba5e-4780-8652-9dd83a5dbe2c
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.published_releases_supervisor
+  module:
+    - user
+id: user_remove_role_action.published_releases_supervisor
+label: 'Remove the Published releases supervisor role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: published_releases_supervisor
