@@ -124,16 +124,15 @@ function nisra_theme_preprocess_field(&$variables) {
 
   if ($variables['element']['#field_name'] == 'description' || $variables['element']['#field_name'] == 'body') {
     $body_text = &$variables['items'][0]['content']['#text'];
-    // Set a regex pattern to look for body links. We don't want to target body links nested in text.
-    // A pattern we want to match is:
-    // <a href="/files/uregni/media-files/24%20May%20board%20minutes%20%28signed%29.pdf"></a>.
+    // Set a regex pattern to look for body links.
+    // <a href="/node/98"></a>.
     $embed_regex = '/href="(\/node\/(\d*))"/';
     $matches = [];
     // Search the body text for the regex pattern and split the result in matches to be used.
     preg_match_all($embed_regex, $body_text, $matches, PREG_SET_ORDER);
     if (!empty($matches)) {
       foreach ($matches as $match) {
-        // Strip HTML tags and entities from the matched string.
+        // Load the node and convert it to url alias.
         $node = Node::load($match[2]);
         if ($node instanceof NodeInterface) {
           $body_link = $node->toUrl()->toString();
