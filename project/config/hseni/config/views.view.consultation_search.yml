@@ -313,8 +313,7 @@ display:
     position: 1
     display_options:
       cache:
-        type: search_api_tag
-        options: {  }
+        type: search_api_none
       defaults:
         cache: false
       exposed_block: true

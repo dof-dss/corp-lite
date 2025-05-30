@@ -353,7 +353,7 @@ display:
         type: none
         options: {  }
       cache:
-        type: none
+        type: search_api_none
         options: {  }
       empty: {  }
       sorts:
@@ -773,8 +773,7 @@ display:
             multi_type: separator
             multi_separator: ', '
       cache:
-        type: search_api_tag
-        options: {  }
+        type: search_api_none
       filters:
         release_date:
           id: release_date
@@ -1150,8 +1149,7 @@ display:
             multi_type: separator
             multi_separator: ', '
       cache:
-        type: search_api_tag
-        options: {  }
+        type: search_api_none
       sorts:
         release_date:
           id: release_date
