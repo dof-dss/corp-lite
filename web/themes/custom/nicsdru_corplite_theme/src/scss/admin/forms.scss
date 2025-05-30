@@ -1,0 +1,110 @@
+@import '../init';
+
+$base-font-size: 16px;
+
+body {
+  font-family: $base-font-family;
+
+  p {
+    font-size: var(--font-size-base);
+  }
+}
+
+.node-form .layout-form {
+  display: block;
+
+  @include breakpoint($desk) {
+    display: grid;
+    grid-template-columns: minmax(45rem, 55rem) minmax(22.5rem, 1fr);
+
+    .layout-region--secondary {
+      max-width: 30rem;
+    }
+  }
+
+  .layout-region--node-main {
+    margin-inline: unset;
+  }
+}
+
+.block-system-main-block {
+  .layout-node-form .layout-region__content,
+  .layout-form .layout-region__content,
+  .department-form {
+    .field--type-entity-reference,
+    .field--type-link {
+      table {
+        th,
+        td {
+          background-color: var(--clr-grey-lightest);
+          border-color: var(--clr-grey-medium);
+          height: unset;
+        }
+
+        td:first-child ~ td,
+        th:first-child ~ th {
+          padding-left: var(--space-m);
+        }
+
+        th,
+        h4 {
+          font-size: var(--font-size-base);
+        }
+      }
+    }
+
+    .button {
+      min-height: 3rem;
+    }
+
+    .shs-container {
+      .button {
+        &.add-another {
+          line-height: 1rem;
+        }
+      }
+    }
+
+    .field-group-fieldset {
+      &.group-publications {
+        > .fieldset__wrapper {
+          > .fieldset__description {
+            font-size: var(--font-size-m);
+          }
+        }
+
+      }
+    }
+  }
+
+  .layout-region--secondary {
+    table {
+      th,
+      td {
+        font-size: var(--font-size-base);
+      }
+    }
+
+    .redirect-table__path {
+      width: 60%;
+    }
+
+    .redirect-table__operations {
+      width: 40%;
+    }
+  }
+}
+
+.messages-list {
+  .messages__title {
+    color: var(--clr-white);
+  }
+}
+
+/*
+ * Bump down the font size and adjust the position of the labels when using the core entity reference list form.
+ */
+.moderation-state {
+  font-size: .8rem;
+  float: left;
+}

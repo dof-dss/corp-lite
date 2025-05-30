@@ -15,6 +15,9 @@ use Drupal\Core\Form\FormStateInterface;
  *
  */
 function corplite_common_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Attach admin theme fixes.
+  $form['#attached']['library'][] = 'nicsdru_corplite_theme/admin-forms';
+
   // If the current user has the permission, do not hide the listed fields.
   if (\Drupal::currentUser()->hasPermission('hide topic or feature on homepage')) {
     return;
@@ -23,5 +26,33 @@ function corplite_common_form_node_form_alter(&$form, FormStateInterface $form_s
     $form['field_feature_home_page']['#access'] = FALSE;
     $form['field_main_feature']['#access'] = FALSE;
     $form['field_hide_topic']['#access'] = FALSE;
+  }
+}
+
+/**
+ * Implements hook_theme_registry_alter().
+ */
+function corplite_common_theme_registry_alter(&$theme_registry) {
+  $theme_registry['fieldset']['theme path'] = 'themes/custom/nicsdru_corplite_theme';
+  $theme_registry['fieldset']['path'] = 'themes/custom/nicsdru_corplite_theme/templates/form';
+  $fieldset_suggestions = drupal_find_theme_templates($theme_registry, '.html.twig', 'themes/custom/nicsdru_corplite_theme/templates/form');
+  foreach ($fieldset_suggestions as $key => $suggestion) {
+    if (!empty($suggestion['base hook']) && $suggestion['base hook'] === 'theme path') {
+      $suggestion = array_merge($theme_registry['fieldset'], $suggestion);
+      $theme_registry[$key] = $suggestion;
+    }
+  }
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function corplite_common_page_attachments(array &$attachments)
+{
+  $route_name = \Drupal::routeMatch()->getRouteName();
+  // Check if it is an admin page.
+  if (\Drupal::service('router.admin_context')->isAdminRoute()) {
+    // Attach extra custom css for admin menu.
+    $attachments['#attached']['library'][] = 'nicsdru_corplite_theme/admin-content';
   }
 }
