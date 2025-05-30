@@ -377,7 +377,7 @@ display:
               profile: search_index
               publication: search_index
             'entity:taxonomy_term':
-              site_topics: full
+              site_topics: search_index
       query:
         type: search_api_query
         options:
