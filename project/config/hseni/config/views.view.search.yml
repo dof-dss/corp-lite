@@ -359,7 +359,25 @@ display:
       style:
         type: default
       row:
-        type: fields
+        type: search_api
+        options:
+          view_modes:
+            'entity:node':
+              alert: search_index
+              application: search_index
+              article: search_index
+              consultation: search_index
+              contact: search_index
+              department_management: search_index
+              feature: search_index
+              featured_content_list: search_index
+              link: search_index
+              news: search_index
+              page: search_index
+              profile: search_index
+              publication: search_index
+            'entity:taxonomy_term':
+              site_topics: search_index
       query:
         type: search_api_query
         options:
