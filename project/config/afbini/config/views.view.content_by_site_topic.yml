@@ -11,7 +11,6 @@ dependencies:
     - node
     - taxonomy
     - user
-    - views_custom_cache_tag
 id: content_by_site_topic
 label: 'Content by site topic'
 module: views
@@ -95,9 +94,8 @@ display:
         options:
           perm: 'access content'
       cache:
-        type: custom_tag
-        options:
-          custom_tag: 'handy_cache_tags:node:contact'
+        type: tag
+        options: {  }
       empty: {  }
       sorts:
         field_published_date_value:
