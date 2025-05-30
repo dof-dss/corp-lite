@@ -1,33 +1,28 @@
-uuid: f7cf76e1-5937-420f-b6e1-c3dc0dd973f2
+uuid: bfc13f54-6d77-4ef5-ad16-46add9782526
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.search_index
     - field.field.node.page.body
     - field.field.node.page.field_enable_toc
     - field.field.node.page.field_meta_tags
     - node.type.page
   module:
-    - text
+    - layout_builder
     - user
-id: node.page.default
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.page.search_index
 targetEntityType: node
 bundle: page
-mode: default
-content:
-  body:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 0
-    region: content
-  content_moderation_control:
-    settings: {  }
-    third_party_settings: {  }
-    weight: -20
-    region: content
+mode: search_index
+content: {  }
 hidden:
+  body: true
+  content_moderation_control: true
   field_enable_toc: true
   field_meta_tags: true
   langcode: true
