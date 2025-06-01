@@ -1,11 +1,3 @@
 _core:
   default_config_hash: UVH1aJ4b44UM-VdPVN7hNNuuVqfReJxwfVeDQH1Hvsk
-mode: simple
-ignored_config_entities:
-  - block.block.sociallinks
-  - 'nisra_theme.settings:social_links_facebook'
-  - 'nisra_theme.settings:social_links_instagram'
-  - 'nisra_theme.settings:social_links_linkedin'
-  - 'nisra_theme.settings:social_links_rss'
-  - 'nisra_theme.settings:social_links_twitter'
-  - 'nisra_theme.settings:social_links_youtube'
+ignored_config_entities: {  }

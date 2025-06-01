@@ -239,10 +239,6 @@ display:
         type: none
         options:
           offset: 0
-      cache:
-        type: custom_tag
-        options:
-          custom_tag: 'handy_cache_tags:node:contact'
       sorts:
         title:
           id: title
@@ -334,7 +330,6 @@ display:
           separator: ''
           hide_empty: false
       defaults:
-        cache: false
         title: false
         style: false
         row: false
@@ -657,10 +652,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-      cache:
-        type: custom_tag
-        options:
-          custom_tag: 'handy_cache_tags:node:contact'
       sorts:
         title:
           id: title
@@ -752,7 +743,6 @@ display:
           separator: ''
           hide_empty: false
       defaults:
-        cache: false
         title: false
         style: false
         row: false

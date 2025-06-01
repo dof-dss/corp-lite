@@ -77,7 +77,6 @@ module:
   help: 0
   history: 0
   honeypot: 0
-  http_cache_control: 0
   image: 0
   inline_entity_form: 0
   inline_form_errors: 0
@@ -160,6 +159,7 @@ module:
   whatlinkshere: 0
   workflows: 0
   corplite_search: 1
+  http_cache_control: 1
   menu_admin_per_menu: 1
   pathauto: 1
   origins_workflow: 2

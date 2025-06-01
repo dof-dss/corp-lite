@@ -36,6 +36,7 @@ dependencies:
     - path
     - pathauto
     - redirect
+    - redis
     - scheduled_transitions
     - system
     - taxonomy
@@ -49,6 +50,7 @@ permissions:
   - 'access administration pages'
   - 'access content overview'
   - 'access files overview'
+  - 'access redis report'
   - 'access site in maintenance mode'
   - 'access site reports'
   - 'access toolbar'

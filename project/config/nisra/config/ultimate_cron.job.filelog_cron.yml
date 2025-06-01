@@ -8,7 +8,7 @@ title: 'Default cron handler'
 id: filelog_cron
 weight: -8
 module: filelog
-callback: filelog_cron
+callback: 'filelog#cron'
 scheduler:
   id: simple
   configuration:
