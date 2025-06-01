@@ -17,6 +17,7 @@
 #}
 {% set title_classes = [
   'page-title',
+  title_visible == false ? 'visually-hidden'
 ] %}
 <h1{{ title_attributes.addClass(title_classes) }}>
   {{ title }}
