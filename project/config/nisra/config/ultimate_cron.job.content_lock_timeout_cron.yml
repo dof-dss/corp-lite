@@ -8,7 +8,7 @@ title: 'Default cron handler'
 id: content_lock_timeout_cron
 weight: -9
 module: content_lock_timeout
-callback: 'content_lock_timeout#cron'
+callback: content_lock_timeout_cron
 scheduler:
   id: crontab
   configuration:

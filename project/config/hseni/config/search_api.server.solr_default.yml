@@ -1,4 +1,4 @@
-uuid: e5f7bb80-a5c5-4313-a095-f0f068b68e16
+uuid: 01e76886-8ec1-40b0-9645-37606a931f90
 langcode: en
 status: true
 dependencies:
@@ -41,10 +41,10 @@ backend_config:
   connector: standard
   connector_config:
     scheme: http
-    host: northsouthministerialcouncil_solr
+    host: solr
     port: 8983
     path: /
-    core: default
+    core: hseni
     timeout: 5
     index_timeout: 5
     optimize_timeout: 10

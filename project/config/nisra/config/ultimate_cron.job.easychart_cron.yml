@@ -8,7 +8,7 @@ title: 'Default cron handler'
 id: easychart_cron
 weight: 5
 module: easychart
-callback: 'easychart#cron'
+callback: easychart_cron
 scheduler:
   id: simple
 launcher:

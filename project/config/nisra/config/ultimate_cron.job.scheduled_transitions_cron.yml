@@ -8,7 +8,7 @@ title: 'Default cron handler'
 id: scheduled_transitions_cron
 weight: -6
 module: scheduled_transitions
-callback: 'scheduled_transitions#cron'
+callback: scheduled_transitions_cron
 scheduler:
   id: crontab
   configuration:
