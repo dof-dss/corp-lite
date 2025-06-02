@@ -47,8 +47,7 @@ function corplite_common_theme_registry_alter(&$theme_registry) {
 /**
  * Implements hook_page_attachments().
  */
-function corplite_common_page_attachments(array &$attachments)
-{
+function corplite_common_page_attachments(array &$attachments) {
   $route_name = \Drupal::routeMatch()->getRouteName();
   // Check if it is an admin page.
   if (\Drupal::service('router.admin_context')->isAdminRoute()) {
