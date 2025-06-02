@@ -197,7 +197,7 @@ display:
           exposed: false
           draggable_views_reference: 'site_topics:draggable_site_topics'
           draggable_views_null_order: after
-          draggable_views_pass_arguments: 0
+          draggable_views_pass_arguments: false
       arguments: {  }
       filters:
         vid:
@@ -629,7 +629,7 @@ display:
           exposed: false
           draggable_views_reference: this
           draggable_views_null_order: after
-          draggable_views_pass_arguments: 0
+          draggable_views_pass_arguments: false
         name:
           id: name
           table: taxonomy_term_field_data
@@ -1123,7 +1123,7 @@ display:
           exposed: false
           draggable_views_reference: this
           draggable_views_null_order: after
-          draggable_views_pass_arguments: 0
+          draggable_views_pass_arguments: false
         name:
           id: name
           table: taxonomy_term_field_data
@@ -1694,7 +1694,7 @@ display:
     display_plugin: page
     position: 5
     display_options:
-      title: 'Statistics and research'
+      title: 'Statistics and Research'
       sorts:
         weight:
           id: weight
@@ -1711,7 +1711,7 @@ display:
           exposed: false
           draggable_views_reference: 'site_topics:draggable_site_topics'
           draggable_views_null_order: after
-          draggable_views_pass_arguments: 0
+          draggable_views_pass_arguments: false
       filters:
         vid:
           id: vid
