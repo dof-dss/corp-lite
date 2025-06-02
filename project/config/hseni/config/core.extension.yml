@@ -31,7 +31,6 @@ module:
   corplite_common: 0
   corplite_eu_cookie_compliance: 0
   corplite_image_styles: 0
-  corplite_search: 1
   csp: 0
   ctools: 0
   ctools_entity_mask: 0
@@ -154,6 +153,7 @@ module:
   webform_ui: 0
   whatlinkshere: 0
   workflows: 0
+  corplite_search: 1
   menu_admin_per_menu: 1
   pathauto: 1
   origins_workflow: 2

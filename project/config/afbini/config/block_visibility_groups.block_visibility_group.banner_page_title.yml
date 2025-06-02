@@ -13,5 +13,5 @@ conditions:
     negate: false
     uuid: 1d5ddbb6-49c9-41be-b5cf-dcc10043c4d0
     context_mapping: {  }
-    pages: "/publications\r\n/publications/date/*\r\n/publications/topic/*\r\n/publications/type/*\r\n/news\r\n/news/date/*\r\n/news/type/*\r\n/search\r\n/services\r\n/area-of-expertise"
+    pages: "/publications\r\n/publications/date/*\r\n/publications/topic/*\r\n/publications/type/*\r\n/news\r\n/news/date/*\r\n/news/type/*\r\n/search\r\n/services\r\n/area-of-expertise\r\n<front>"
 allow_other_conditions: false

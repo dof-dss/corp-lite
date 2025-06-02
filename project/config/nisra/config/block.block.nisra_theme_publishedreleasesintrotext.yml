@@ -13,7 +13,7 @@ dependencies:
 id: nisra_theme_publishedreleasesintrotext
 theme: nisra_theme
 region: top_banner
-weight: 0
+weight: -13
 provider: null
 plugin: 'block_content:a9b4ea56-b1d8-4d90-9f67-a7a42737888f'
 settings:
