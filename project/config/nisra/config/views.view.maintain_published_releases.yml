@@ -2,8 +2,11 @@ uuid: 081fed00-4fc0-422a-b43c-58788786ed9b
 langcode: en
 status: true
 dependencies:
+  config:
+    - user.role.published_releases_supervisor
   module:
     - corplite_published_releases_feed
+    - user
 id: maintain_published_releases
 label: 'maintain published releases'
 module: views
@@ -170,8 +173,10 @@ display:
           sort_asc_label: Asc
           sort_desc_label: Desc
       access:
-        type: none
-        options: {  }
+        type: role
+        options:
+          role:
+            published_releases_supervisor: published_releases_supervisor
       cache:
         type: tag
         options: {  }
@@ -297,6 +302,7 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - user.roles
       tags: {  }
   maintain_published_releases:
     id: maintain_published_releases
@@ -331,4 +337,5 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - user.roles
       tags: {  }
