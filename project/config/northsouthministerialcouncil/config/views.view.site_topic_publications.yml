@@ -10,7 +10,6 @@ dependencies:
     - node
     - taxonomy
     - user
-    - views_custom_cache_tag
 id: site_topic_publications
 label: 'Content by Areas of Co-operation'
 module: views
@@ -94,9 +93,8 @@ display:
         options:
           perm: 'access content'
       cache:
-        type: custom_tag
-        options:
-          custom_tag: 'handy_cache_tags:node:contact'
+        type: tag
+        options: {  }
       empty: {  }
       sorts:
         field_published_date_value:

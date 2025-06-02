@@ -1,0 +1,32 @@
+uuid: 37cabb60-621f-4eaa-b311-5f04c0e29cda
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.link.field_link_type
+    - field.field.node.link.field_link_url
+    - field.field.node.link.field_meta_tags
+    - field.field.node.link.field_site_topics
+    - node.type.link
+  module:
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.link.search_index
+targetEntityType: node
+bundle: link
+mode: search_index
+content: {  }
+hidden:
+  content_moderation_control: true
+  field_link_type: true
+  field_link_url: true
+  field_meta_tags: true
+  field_site_topics: true
+  langcode: true
+  links: true
+  search_api_excerpt: true
