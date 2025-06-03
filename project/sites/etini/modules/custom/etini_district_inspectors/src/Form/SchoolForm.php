@@ -91,6 +91,26 @@ final class SchoolForm extends ContentEntityForm {
         $this->t('Phase should be "Primary", "Nursery", "Post-primary", "EOTAS", "Prep" or "Special".'),
       );
     }
+    $de_reference = $form_state->getValue('de_reference')[0]['value'];
+    if (!is_numeric($de_reference)) {
+      $form_state->setErrorByName(
+        'de_reference',
+        $this->t('DE Reference should be numeric.'),
+      );
+    }
+    if (strlen($de_reference) != 7) {
+      $form_state->setErrorByName(
+        'de_reference',
+        $this->t('DE Reference must be 7 digits.'),
+      );
+    }
+    $name = $form_state->getValue('Name')[0]['value'];
+    if (!preg_match("/^[a-zA-Z' ]+$/", $name)) {
+      $form_state->setErrorByName(
+        'Name',
+        $this->t('School name must only contain letters, spaces and a single quote.'),
+      );
+    }
     parent::validateForm($form, $form_state);
   }
 
