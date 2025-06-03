@@ -80,4 +80,18 @@ final class SchoolForm extends ContentEntityForm {
     return $result;
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  public function validateForm(array &$form, FormStateInterface $form_state): void {
+    $phases = ["Primary", "Nursery", "Post-primary", "EOTAS", "Prep", "Special"];
+    if (!in_array($form_state->getValue('phases')[0]['value'], $phases)) {
+      $form_state->setErrorByName(
+        'phases',
+        $this->t('Phase should be "Primary", "Nursery", "Post-primary", "EOTAS", "Prep" or "Special".'),
+      );
+    }
+    parent::validateForm($form, $form_state);
+  }
+
 }
