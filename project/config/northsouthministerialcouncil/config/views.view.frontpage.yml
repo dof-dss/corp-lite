@@ -239,7 +239,7 @@ display:
           offset: 0
           items_per_page: 0
       cache:
-        type: search_api_none
+        type: none
         options: {  }
       sorts: {  }
       filters:

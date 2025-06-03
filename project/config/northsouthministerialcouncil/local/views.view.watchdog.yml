@@ -470,7 +470,7 @@ display:
         options:
           perm: 'access site reports'
       cache:
-        type: search_api_none
+        type: none
         options: {  }
       empty:
         area:
