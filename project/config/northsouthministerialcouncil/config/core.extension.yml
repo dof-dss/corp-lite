@@ -1,6 +1,7 @@
 _core:
   default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc
 module:
+  a11y_form_helpers: 0
   address: 0
   admin_toolbar: 0
   admin_toolbar_tools: 0
@@ -103,6 +104,7 @@ module:
   northsouthministerialcouncil_homepage: 0
   options: 0
   origins_common: 0
+  origins_forms: 0
   origins_internal_link_checker: 0
   origins_media: 0
   origins_metatag: 0

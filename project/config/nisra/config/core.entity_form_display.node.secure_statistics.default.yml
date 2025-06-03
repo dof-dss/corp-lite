@@ -37,9 +37,10 @@ third_party_settings:
       weight: 18
       format_type: fieldset
       format_settings:
-        classes: ''
+        classes: group-publications
         show_empty_fields: false
         id: ''
+        label_as_html: false
         description: 'You must provide an attachment or external link'
         required_fields: true
 id: node.secure_statistics.default
