@@ -66,13 +66,15 @@ function etini_district_inspectors_form_alter(&$form, FormStateInterface $form_s
     // Add autocomplete processing to the exposed filter on the District Inspectors view.
     $form['search_api_fulltext']['#autocomplete_route_name'] = 'inspector.autocomplete';
     $form['#attached']['library'][] = 'etini_district_inspectors/auto_submit';
-  } else if ($form_id == 'school_edit_form') {
-    // Get the current inspector for the school that we are viewing.
-    $school_id = $form_state->getformObject()->getEntity()->id();
-    $school = School::load($school_id);
+  } else if (($form_id == 'school_edit_form') || ($form_id == 'school_add_form')) {
     $current_inspector_id = '';
-    if (!empty($school)) {
-      $current_inspector_id = $school->get('inspector_id')->getString();
+    if ($form_id == 'school_edit_form') {
+      // Get the current inspector for the school that we are viewing.
+      $school_id = $form_state->getformObject()->getEntity()->id();
+      $school = School::load($school_id);
+      if (!empty($school)) {
+        $current_inspector_id = $school->get('inspector_id')->getString();
+      }
     }
     // Add inspector select list to the school edit form.
     $inspectors = \Drupal::entityTypeManager()->getStorage('inspector')->loadMultiple();
