@@ -90,7 +90,7 @@
         "drupal/entity_embed": "^1.4",
         "drupal/entity_reference_revisions": "^1.10",
         "drupal/entityqueue": "^1.6",
-        "drupal/eu_cookie_compliance": "^1.24",
+        "drupal/eu_cookie_compliance": "^1.26",
         "drupal/facets": "^2.0",
         "drupal/facets_pretty_paths": "1.7.0",
         "drupal/fastly": "^4.0",
@@ -249,9 +249,6 @@
             },
             "drupal/entityqueue": {
                 "Allow unique records only": "https://www.drupal.org/files/issues/2021-02-07/entity_queue_unique_records-1240856-3197148.patch"
-            },
-            "drupal/eu_cookie_compliance": {
-                "Elements with role=\"dialog\" or role=\"alertdialog\" do not have accessible names": "https://www.drupal.org/files/issues/2024-10-11/eu_cookie_compliance.3379830.1.25.0.patch"
             },
             "drupal/facets": {
                 "Pass facet object onto child items": "https://www.drupal.org/files/issues/2019-11-13/child_item-3094143-2.patch",
