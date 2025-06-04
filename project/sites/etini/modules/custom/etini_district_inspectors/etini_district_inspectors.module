@@ -115,11 +115,13 @@ function etini_district_inspectors_preprocess_field(&$variables, $hook) {
  * Implements hook_page_attachments().
  */
 function etini_district_inspectors_page_attachments(array &$attachments) {
+  // Hide revision info on school and inspector forms.
   if (\Drupal::service('router.admin_context')->isAdminRoute()) {
     $this_route = \Drupal::routeMatch()->getRouteName();
-    \Drupal::logger('etini_district_inspectors')->notice("Route is $this_route");
     if (($this_route == 'entity.school.edit_form') ||
-      ($this_route == 'entity.school.add_form')) {
+      ($this_route == 'entity.school.add_form') ||
+      ($this_route == 'entity.inspector.edit_form') ||
+      ($this_route == 'entity.inspector.add_form')) {
       $attachments['#attached']['library'][] = 'etini_district_inspectors/extra.admin';
     }
   }
