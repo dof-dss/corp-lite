@@ -18,9 +18,9 @@ final class InspectorForm extends ContentEntityForm {
   public function save(array $form, FormStateInterface $form_state): int {
     $result = parent::save($form, $form_state);
 
-    $message_args = ['%label' => $this->entity->toLink()->toString()];
+    $message_args = ['%label' => $this->entity->get('name')->getString()];
     $logger_args = [
-      '%label' => $this->entity->label()
+      '%label' => $this->entity->get('name')->getString()
     ];
 
     switch ($result) {
