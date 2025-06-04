@@ -6,6 +6,7 @@ namespace Drupal\etini_district_inspectors\Form;
 
 use Drupal\Core\Entity\ContentEntityForm;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
 
 /**
  * Form controller for the inspector entity edit forms.
@@ -38,7 +39,7 @@ final class InspectorForm extends ContentEntityForm {
         throw new \LogicException('Could not save the entity.');
     }
 
-    $form_state->setRedirectUrl($this->entity->toUrl());
+    $form_state->setRedirectUrl(Url::fromUri('internal:/admin/content/inspector'));
 
     return $result;
   }
