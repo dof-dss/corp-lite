@@ -20,8 +20,7 @@ final class InspectorForm extends ContentEntityForm {
 
     $message_args = ['%label' => $this->entity->toLink()->toString()];
     $logger_args = [
-      '%label' => $this->entity->label(),
-      'link' => $this->entity->toLink($this->t('View'))->toString(),
+      '%label' => $this->entity->label()
     ];
 
     switch ($result) {
