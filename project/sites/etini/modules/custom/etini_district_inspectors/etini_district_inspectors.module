@@ -91,6 +91,9 @@ function etini_district_inspectors_form_alter(&$form, FormStateInterface $form_s
       '#description' => 'Select inspector for this school.',
       '#options' => $options
     );
+  } else if ($form_id == 'inspector_edit_form') {
+    //kint ($form);
+    $form['revision']['#default_value'] = True;
   }
 }
 
