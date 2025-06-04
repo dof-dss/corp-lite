@@ -108,7 +108,7 @@ final class SchoolForm extends ContentEntityForm {
     if (!preg_match("/^[a-zA-Z' ]+$/", $name)) {
       $form_state->setErrorByName(
         'Name',
-        $this->t('School name must only contain letters, spaces and a single quote.'),
+        $this->t('School name must only contain letters, spaces or a single quote.'),
       );
     }
     parent::validateForm($form, $form_state);
