@@ -48,7 +48,6 @@ final class InspectorForm extends ContentEntityForm {
    * {@inheritdoc}
    */
   public function validateForm(array &$form, FormStateInterface $form_state): void {
-    kint($form_state);
     $name = $form_state->getValue('name')[0]['value'];
     if (!preg_match("/^[a-zA-Z' ]+$/", $name)) {
       $form_state->setErrorByName(
