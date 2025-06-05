@@ -56,6 +56,7 @@
         "cweagans/composer-patches": "^1.7",
         "deaemth/easychart": "^3.1",
         "dof-dss/nicsdru_origins_modules": "^10.5",
+        "drupal/a11y_form_helpers": "^2.1",
         "drupal/address": "^1.12",
         "drupal/admin_toolbar": "^3.6",
         "drupal/allowed_formats": "^2.0",
@@ -89,7 +90,7 @@
         "drupal/entity_embed": "^1.4",
         "drupal/entity_reference_revisions": "^1.10",
         "drupal/entityqueue": "^1.6",
-        "drupal/eu_cookie_compliance": "^1.24",
+        "drupal/eu_cookie_compliance": "^1.26",
         "drupal/facets": "^2.0",
         "drupal/facets_pretty_paths": "1.7.0",
         "drupal/fastly": "^4.0",
@@ -132,7 +133,7 @@
         "drupal/redirect": "^1.8",
         "drupal/redis": "^1.7",
         "drupal/scheduled_transitions": "^2.5",
-        "drupal/search_api": "1.30.0",
+        "drupal/search_api": "^1.38",
         "drupal/search_api_autocomplete": "^1.4",
         "drupal/search_api_location": "^1.0@alpha",
         "drupal/search_api_solr": "^4.3",
@@ -218,7 +219,8 @@
                 "Visibility incorrectly returns false on OR logic when context missing from a different condition #3503194": "https://www.drupal.org/files/issues/2025-02-07/or-logic-when-context-missing--3503194-5.patch"
             },
             "drupal/clientside_validation": {
-                "core/jquery.once is required": "https://www.drupal.org/files/issues/2021-02-23/3200022-01.patch"
+                "core/jquery.once is required": "https://www.drupal.org/files/issues/2021-02-23/3200022-01.patch",
+                "Allow specific form ids for clientside validation": "https://www.drupal.org/files/issues/2025-01-15/2949540-42.patch"
             },
             "drupal/core": {
                 "Render blocks in preview page": "https://www.drupal.org/files/issues/2019-10-03/3085364_2.patch",
@@ -232,7 +234,8 @@
                 "Fix for reference error on unpublished nodes on Entity Queue": "https://www.drupal.org/files/issues/2024-04-16/2845144-95.patch",
                 "Menu revision langcode bug fix": "https://www.drupal.org/files/issues/2024-05-13/menu_revision_langcode-3446877.patch",
                 "Fix to $form.ajaxSubmit is not a function": "https://git.drupalcode.org/project/drupal/-/merge_requests/6052.diff",
-                "Allow view title overrides to show in page title": "https://www.drupal.org/files/issues/2023-02-08/2787051-74.patch"
+                "Allow view title overrides to show in page title": "https://www.drupal.org/files/issues/2023-02-08/2787051-74.patch",
+                "Increase claro xs font size": "patches/claro-font-size.patch"
             },
             "drupal/ckeditor5_dev": {
                 "Report that lists enabled plugins": "https://git.drupalcode.org/project/ckeditor5_dev/-/merge_requests/6.diff"
@@ -246,9 +249,6 @@
             },
             "drupal/entityqueue": {
                 "Allow unique records only": "https://www.drupal.org/files/issues/2021-02-07/entity_queue_unique_records-1240856-3197148.patch"
-            },
-            "drupal/eu_cookie_compliance": {
-                "Elements with role=\"dialog\" or role=\"alertdialog\" do not have accessible names": "https://www.drupal.org/files/issues/2024-10-11/eu_cookie_compliance.3379830.1.25.0.patch"
             },
             "drupal/facets": {
                 "Pass facet object onto child items": "https://www.drupal.org/files/issues/2019-11-13/child_item-3094143-2.patch",
