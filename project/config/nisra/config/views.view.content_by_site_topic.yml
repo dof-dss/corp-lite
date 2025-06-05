@@ -15,8 +15,8 @@ dependencies:
     - node.type.secure_statistics
     - taxonomy.vocabulary.link
   content:
-    - 'taxonomy_term:publication_types:29b13456-f5ac-452d-8d7e-d3896fe6e79c'
-    - 'taxonomy_term:publication_types:ff6b7ddd-1075-467c-a022-fe7e0f92e50d'
+    - 'taxonomy_term:site_topics:29b13456-f5ac-452d-8d7e-d3896fe6e79c'
+    - 'taxonomy_term:site_topics:ff6b7ddd-1075-467c-a022-fe7e0f92e50d'
   module:
     - datetime
     - node
@@ -646,7 +646,12 @@ display:
         options:
           offset: 0
           items_per_page: 2
+      cache:
+        type: custom_tag
+        options:
+          custom_tag: 'handy_cache_tags:node:news'
       defaults:
+        cache: false
         pager: false
         link_display: false
         link_url: false
@@ -675,6 +680,10 @@ display:
     position: 2
     display_options:
       title: Publications
+      cache:
+        type: custom_tag
+        options:
+          custom_tag: 'handy_cache_tags:node:publication'
       filters:
         status:
           id: status
@@ -747,6 +756,7 @@ display:
           relationship: none
           view_mode: most_recent
       defaults:
+        cache: false
         title: false
         use_more: false
         use_more_always: false
@@ -793,6 +803,10 @@ display:
         options:
           offset: 0
           items_per_page: 5
+      cache:
+        type: custom_tag
+        options:
+          custom_tag: 'handy_cache_tags:node:link'
       filters:
         status:
           id: status
@@ -898,6 +912,7 @@ display:
         groups:
           1: AND
       defaults:
+        cache: false
         title: false
         pager: false
         use_more: false
@@ -940,6 +955,10 @@ display:
         options:
           offset: 0
           items_per_page: 5
+      cache:
+        type: custom_tag
+        options:
+          custom_tag: 'handy_cache_tags:node:link'
       filters:
         status:
           id: status
@@ -1045,6 +1064,7 @@ display:
         groups:
           1: AND
       defaults:
+        cache: false
         title: false
         pager: false
         use_more: false
