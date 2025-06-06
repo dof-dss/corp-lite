@@ -1,0 +1,16 @@
+{#
+/**
+ * @file
+ * html document node, displayed in embed view mode.
+ *
+ * @see template_preprocess_node()
+ */
+#}
+{% for item in items %}
+  <a href="{{ item.content['#url'].toString() }}"
+     class="file-link file--ico file--ico__html" lang="{{ langcode }}">
+    {{ item.content['#title'] }}
+    <span class="meta">HTML document</span>
+  </a>
+{% endfor %}
+{{ title_suffix.contextual_links }}
