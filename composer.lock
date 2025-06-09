@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e8aad555c957568efb3abfc070365a8b",
+    "content-hash": "2f3b975cf2e5f676a2195ce183b899a9",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1715,6 +1715,54 @@
                 "source": "https://github.com/dof-dss/nicsdru_origins_modules/tree/10.5.0"
             },
             "time": "2025-03-18T13:59:35+00:00"
+        },
+        {
+            "name": "drupal/a11y_form_helpers",
+            "version": "2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/a11y_form_helpers.git",
+                "reference": "2.1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/a11y_form_helpers-2.1.0.zip",
+                "reference": "2.1.0",
+                "shasum": "95267bd4a881912cb2d630dc84b331d9ebc433a7"
+            },
+            "require": {
+                "drupal/core": "^10 || ^11"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.1.0",
+                    "datestamp": "1737371454",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "marloes_bosch",
+                    "homepage": "https://www.drupal.org/user/3424313"
+                },
+                {
+                    "name": "tess bakker",
+                    "homepage": "https://www.drupal.org/user/592104"
+                }
+            ],
+            "description": "Make forms more accessible.",
+            "homepage": "https://www.drupal.org/project/a11y_form_helpers",
+            "support": {
+                "source": "https://git.drupalcode.org/project/a11y_form_helpers"
+            }
         },
         {
             "name": "drupal/address",
@@ -4265,17 +4313,17 @@
         },
         {
             "name": "drupal/eu_cookie_compliance",
-            "version": "1.25.0",
+            "version": "1.26.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/eu-cookie-compliance.git",
-                "reference": "8.x-1.25"
+                "reference": "8.x-1.26"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/eu_cookie_compliance-8.x-1.25.zip",
-                "reference": "8.x-1.25",
-                "shasum": "13797a009ba899db0d9bd9a5c5ad0eb4b2bedfb1"
+                "url": "https://ftp.drupal.org/files/projects/eu_cookie_compliance-8.x-1.26.zip",
+                "reference": "8.x-1.26",
+                "shasum": "4f251814019a14ae09e69d7436fec2cf0ae1b673"
             },
             "require": {
                 "drupal/core": "^8.9 || ^9 || ^10 || ^11"
@@ -4283,8 +4331,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.25",
-                    "datestamp": "1728547905",
+                    "version": "8.x-1.26",
+                    "datestamp": "1748453829",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
