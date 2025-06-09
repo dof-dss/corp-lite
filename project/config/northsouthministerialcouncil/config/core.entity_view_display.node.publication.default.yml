@@ -14,8 +14,31 @@ dependencies:
     - node.type.publication
   module:
     - datetime
+    - field_group
     - text
     - user
+third_party_settings:
+  field_group:
+    group_documents:
+      children:
+        - field_attachment
+      label: Documents
+      parent_name: ''
+      region: content
+      weight: 4
+      format_type: html_element
+      format_settings:
+        classes: list--no-bullet
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        element: ul
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
 _core:
   default_config_hash: OWVRh-1ALySR1cKEW_LnhmV0Q8R9baLGQi8mBY6UlzY
 id: node.publication.default
@@ -34,10 +57,10 @@ content:
     type: entity_reference_entity_view
     label: above
     settings:
-      view_mode: default
+      view_mode: embed
       link: false
     third_party_settings: {  }
-    weight: 4
+    weight: 5
     region: content
   field_published_date:
     type: datetime_default
