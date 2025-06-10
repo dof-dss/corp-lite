@@ -1,0 +1,22 @@
+uuid: 30c2abc3-53a4-461a-9273-8aec6f182326
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: html_document_pattern
+label: 'HTML Document Pattern'
+type: 'canonical_entities:node'
+pattern: 'publications/html-document/[node:title]'
+selection_criteria:
+  38ec949c-1fab-472e-bbc8-e86075126b42:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 38ec949c-1fab-472e-bbc8-e86075126b42
+    context_mapping:
+      node: node
+    bundles:
+      html_document: html_document
+selection_logic: and
+weight: -5
+relationships: {  }
