@@ -33,6 +33,8 @@ h1 {
       margin: .5em .5em .5em 0;
       padding: 0 .5em 0 0;
       box-shadow: 5px 0 0 -4px;
+      text-decoration: underline 1px;
+      text-underline-offset: 3px;
     }
 
     > li:last-child {

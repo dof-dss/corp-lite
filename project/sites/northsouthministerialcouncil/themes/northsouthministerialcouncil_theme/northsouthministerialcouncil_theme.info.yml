@@ -8,6 +8,7 @@ base theme: nicsdru_corplite_theme
 libraries:
   - northsouthministerialcouncil_theme/site-styling
   - nicsdru_corplite_theme/corplite-togglelist
+  - nicsdru_corplite_theme/book
 
 ckeditor5-stylesheets:
   - css/1_base/root.css
