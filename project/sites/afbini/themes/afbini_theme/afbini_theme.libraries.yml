@@ -2,9 +2,9 @@ afbini-styling:
   version: 1.x
   css:
     base:
-      css/1_base/root.css: { minified: true, weight: -100 }
+      css/1_base/root.css: { minified: true, weight: 1 }
     theme:
-      css/3_components/layout/footer.css: { minified: true }
-      css/3_components/content/front.css: { minified: true }
-      css/3_components/navigation/main-menu.css: { minified: true }
-      css/components.css: { minified: true }
+      css/3_components/layout/footer.css: { minified: true, weight: 2 }
+      css/3_components/content/front.css: { minified: true, weight: 3 }
+      css/3_components/navigation/main-menu.css: { minified: true, weight: 4 }
+      css/components.css: { minified: true, weight: 5 }
