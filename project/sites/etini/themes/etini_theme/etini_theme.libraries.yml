@@ -4,9 +4,9 @@ site-styling:
     base:
       css/1_base/root.css: { minified: true, weight: 1 }
     layout:
-      css/2_layouts/front.css: { minified: true, weight: 2}
+      css/2_layouts/front.css: { minified: true, weight: 2 }
     theme:
-      css/3_components/layout/footer.css: { minified: true, weight: 3}
+      css/3_components/layout/footer.css: { minified: true, weight: 3 }
       css/3_components/navigation/main-menu.css: { minified: true, weight: 4 }
 
 fontawesome:
