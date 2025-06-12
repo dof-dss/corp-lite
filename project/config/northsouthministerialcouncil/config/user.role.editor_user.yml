@@ -16,6 +16,7 @@ dependencies:
     - node.type.publication
     - workflows.workflow.nics_editorial_workflow
   module:
+    - book
     - content_moderation
     - corplite_common
     - file
@@ -37,6 +38,7 @@ permissions:
   - 'access content overview'
   - 'access files overview'
   - 'access toolbar'
+  - 'add content to books'
   - 'add scheduled transitions node contact'
   - 'add scheduled transitions node department_management'
   - 'add scheduled transitions node featured_content_list'
@@ -44,6 +46,7 @@ permissions:
   - 'add scheduled transitions node news'
   - 'add scheduled transitions node page'
   - 'add scheduled transitions node publication'
+  - 'administer book outlines'
   - 'administer main menu items'
   - 'create audio media'
   - 'create contact content'
@@ -52,6 +55,7 @@ permissions:
   - 'create file media'
   - 'create image media'
   - 'create link content'
+  - 'create new books'
   - 'create news content'
   - 'create page content'
   - 'create publication content'
