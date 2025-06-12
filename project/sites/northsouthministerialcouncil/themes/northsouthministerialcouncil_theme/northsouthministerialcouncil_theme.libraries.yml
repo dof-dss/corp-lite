@@ -2,8 +2,8 @@ site-styling:
   version: 1.x
   css:
     base:
-      css/1_base/root.css: { minified: true, weight: -100 }
+      css/1_base/root.css: { minified: true, weight: 1 }
     layout:
-      css/2_layouts/front.css: { minified: true }
+      css/2_layouts/front.css: { minified: true, weight: 2 }
     theme:
-      css/components.css: { minified: true }
+      css/components.css: { minified: true, weight: 3 }
