@@ -480,3 +480,20 @@ function nicsdru_corplite_theme_preprocess_form(array &$variables) {
       break;
   }
 }
+
+/**
+ * Implements hook_preprocess_page_title().
+ */
+function nicsdru_corplite_theme_preprocess_page_title(&$variables) {
+  $variables['title_text_visible'] = TRUE;
+
+  // Set the home page title and visually hide it.
+  if (\Drupal::service('path.matcher')->isFrontPage()) {
+    // Load the site name out of configuration.
+    $config = \Drupal::config('system.site');
+    $site_name = $config->get('name');
+
+    $variables['title'] = t('Welcome to ') . $site_name;
+    $variables['title_text_visible'] = FALSE;
+  }
+}

@@ -11,7 +11,7 @@ dependencies:
 id: pagetitle_banner_top
 theme: nisra_theme
 region: top_banner
-weight: -13
+weight: -15
 provider: null
 plugin: page_title_block
 settings:

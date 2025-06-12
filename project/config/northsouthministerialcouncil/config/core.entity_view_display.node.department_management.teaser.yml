@@ -31,6 +31,7 @@ content:
     region: content
 hidden:
   body: true
+  content_moderation_control: true
   field_contact_information: true
   field_departmental_map: true
   field_facebook_url: true

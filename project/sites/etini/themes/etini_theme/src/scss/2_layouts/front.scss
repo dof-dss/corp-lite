@@ -204,10 +204,9 @@ $link-body-no-visited: (
       }
 
       > * {
-        grid-column: 1 / span 2;
+        grid-column: unset !important;
       }
     }
-
     .publications-inspections {
       grid-column: 1;
       grid-row: 2;

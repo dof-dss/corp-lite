@@ -1,0 +1,11 @@
+uuid: 5fdfeb09-482d-4957-a224-9019cd71b014
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.search_index
+label: 'Search index'
+description: ''
+targetEntityType: taxonomy_term
+cache: true

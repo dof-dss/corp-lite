@@ -7,6 +7,7 @@ base theme: stable9
 
 libraries:
   - nicsdru_corplite_theme/corplite-styling
+  - nicsdru_corplite_theme/fontawesome
 
 ckeditor5-stylesheets:
   #  - css/1_base/root.css

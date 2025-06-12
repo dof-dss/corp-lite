@@ -182,8 +182,18 @@ form > .form-wrapper > section {
   > h2 {
     font-size: 2.1rem;
     line-height: 2.8rem;
-    color: #333;
+    color: #076cba;
     font-weight: normal;
+
+    @include breakpoint($lap) {
+      font-size: 2.4rem;
+      line-height: 3.3rem;
+    }
+
+    @include breakpoint($desk-plus) {
+      font-size: 2.6rem;
+      line-height: 3.5rem;
+    }
   }
 
   // Plain and nested fieldset legends / section titles.
@@ -203,12 +213,21 @@ form > .form-wrapper > section {
 label,
 .label {
   font-size: 1.6rem;
-  line-height: 2.4rem;
+  line-height: 1.5rem;
   display: block;
   margin: 0;
   padding: 0;
   color: var(--clr-body-text);
   font-weight: normal;
+
+  @include breakpoint($lap) {
+    font-size: 1.8rem;
+  }
+
+  @include breakpoint($desk-plus) {
+    font-size: 2rem;
+    line-height: 3rem;
+  }
 
   &--small {
     font-size: 1.6rem;
@@ -484,4 +503,39 @@ input[type='checkbox'],
   &:checked {
     border-style: inset;
   }
+}
+
+.text-count-wrapper {
+  font-size: 1.6rem;
+  line-height: 1.5rem;
+  color: #fff;
+  background-color: $charcoal;
+  padding: .3334em .6rem;
+  margin: 0;
+
+  @include breakpoint($lap) {
+    font-size: 1.8rem;
+  }
+
+  @include breakpoint($desk-plus) {
+    font-size: 2rem;
+    line-height: 3rem;
+  }
+
+  &.webform-counter-warning .text-count {
+    color: lighten(orange, 10%);
+    font-weight: bold;
+  }
+
+  input + & {
+    max-width: 560px;
+  }
+}
+
+.webform-counter {
+  margin-bottom: 0;
+}
+
+.textarea-wrapper {
+  line-height: 0;
 }

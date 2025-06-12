@@ -43,6 +43,7 @@ corplite-styling:
       css/3_components/block/search-facets.css: { minified: true }
       css/3_components/content/responsive-images.css: { minified: true }
       css/3_components/content/video.css: { minified: true }
+      css/3_components/block/social-links.css: { minified: true }
     theme:
       css/3_components/navigation/pager.css: { minified: true }
       css/3_components/content/tables.css: { minified: true }
@@ -134,3 +135,18 @@ book:
   css:
     theme:
       css/3_components/navigation/book.css: { minified: true }
+fontawesome:
+  version: 6.4.2
+  css:
+    theme:
+      https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css: {}
+
+admin-forms:
+  css:
+    component:
+      css/admin/forms.css: { minified: true }
+
+admin-content:
+  css:
+    component:
+      css/admin/content.css: { minified: true }

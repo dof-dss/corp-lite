@@ -138,6 +138,7 @@ content:
     weight: 10
     region: content
 hidden:
+  content_moderation_control: true
   field_departmental_map: true
   langcode: true
   links: true

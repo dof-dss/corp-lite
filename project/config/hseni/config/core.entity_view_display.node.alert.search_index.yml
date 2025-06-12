@@ -1,0 +1,48 @@
+uuid: caed9123-f60b-4501-aa49-b0a790c24345
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.alert.body
+    - field.field.node.alert.field_photo
+    - field.field.node.alert.field_published_date
+    - field.field.node.alert.field_teaser
+    - node.type.alert
+  module:
+    - datetime
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.alert.search_index
+targetEntityType: node
+bundle: alert
+mode: search_index
+content:
+  field_published_date:
+    type: datetime_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: corplite_medium
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_teaser:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  body: true
+  content_moderation_control: true
+  field_photo: true
+  langcode: true
+  links: true
+  search_api_excerpt: true
