@@ -204,7 +204,7 @@ $link-body-no-visited: (
       }
 
       > * {
-        grid-column: unset;
+        grid-column: unset !important;
       }
     }
     .publications-inspections {

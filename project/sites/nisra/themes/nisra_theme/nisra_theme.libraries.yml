@@ -2,13 +2,13 @@ site-styling:
   version: 1.0
   css:
     base:
-      css/1_base/root.css: { minified: true, weight: -100 }
+      css/1_base/root.css: { minified: true, weight: 1 }
     layout:
-      css/2_layouts/front.css: { minified: true }
-      css/2_layouts/contact.css: { minified: true }
+      css/2_layouts/front.css: { minified: true, weight: 2 }
+      css/2_layouts/contact.css: { minified: true, weight: 3 }
     theme:
-      css/3_components/layout/footer.css: { minified: true }
-      css/3_components/content/card.css: { minified: true }
-      css/3_components/content/last-updated.css: { minified: true }
-      css/3_components/content/published-releases.css: { minified: true }
-      css/3_components/navigation/main-menu.css: { minified: true }
+      css/3_components/layout/footer.css: { minified: true, weight: 4 }
+      css/3_components/content/card.css: { minified: true, weight: 5 }
+      css/3_components/content/last-updated.css: { minified: true, weight: 6 }
+      css/3_components/content/published-releases.css: { minified: true, weight: 7 }
+      css/3_components/navigation/main-menu.css: { minified: true, weight: 8 }

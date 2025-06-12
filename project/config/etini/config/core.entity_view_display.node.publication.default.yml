@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.publication.body
     - field.field.node.publication.field_attachment
     - field.field.node.publication.field_audience
+    - field.field.node.publication.field_html_document
     - field.field.node.publication.field_meta_tags
     - field.field.node.publication.field_publication_type
     - field.field.node.publication.field_published_date
@@ -15,8 +16,32 @@ dependencies:
     - node.type.publication
   module:
     - datetime
+    - field_group
     - text
     - user
+third_party_settings:
+  field_group:
+    group_documents:
+      children:
+        - field_attachment
+        - field_html_document
+      label: Documents
+      parent_name: ''
+      region: content
+      weight: 6
+      format_type: html_element
+      format_settings:
+        classes: list--no-bullet
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        element: ul
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
 _core:
   default_config_hash: QfGYPWOh9KP3TIFrvpeCzgESHvyquGW0HFe-b8Sg7X0
 id: node.publication.default
@@ -33,12 +58,21 @@ content:
     region: content
   field_attachment:
     type: entity_reference_entity_view
-    label: above
+    label: hidden
     settings:
       view_mode: embed
       link: false
     third_party_settings: {  }
-    weight: 6
+    weight: 7
+    region: content
+  field_html_document:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: embed
+      link: false
+    third_party_settings: {  }
+    weight: 8
     region: content
   field_publication_type:
     type: entity_reference_label
