@@ -4,7 +4,7 @@ dependencies:
   module:
     - corplite_published_releases_feed
 title: 'Import Nisra published releases 2pm.'
-id: published_releases_feed
+id: published_releases_feed_3
 module: corplite_published_releases_feed
 callback: corplite_published_releases_feed_import
 scheduler:
