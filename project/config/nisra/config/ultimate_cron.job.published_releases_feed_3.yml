@@ -4,7 +4,7 @@ status: true
 dependencies:
   module:
     - corplite_published_releases_feed
-title: 'Import Nisra published releases 14.00.'
+title: 'Import Nisra published releases 2pm.'
 id: published_releases_feed_3
 weight: 0
 module: corplite_published_releases_feed
