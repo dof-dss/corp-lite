@@ -305,7 +305,7 @@ display:
           exposed: false
           draggable_views_reference: this
           draggable_views_null_order: after
-          draggable_views_pass_arguments: false
+          draggable_views_pass_arguments: 0
         name:
           id: name
           table: taxonomy_term_field_data
@@ -418,7 +418,7 @@ display:
     display_plugin: page
     position: 3
     display_options:
-      title: 'Advice and Guidance'
+      title: 'Industries and Topics'
       pager:
         type: some
         options:
@@ -440,7 +440,7 @@ display:
           exposed: false
           draggable_views_reference: 'site_topics:page_1'
           draggable_views_null_order: after
-          draggable_views_pass_arguments: false
+          draggable_views_pass_arguments: 0
         name:
           id: name
           table: taxonomy_term_field_data
@@ -841,7 +841,7 @@ display:
           exposed: false
           draggable_views_reference: 'site_topics:draggable_site_topics'
           draggable_views_null_order: before
-          draggable_views_pass_arguments: false
+          draggable_views_pass_arguments: 0
       style:
         type: default
         options:
