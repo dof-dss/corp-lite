@@ -20,6 +20,7 @@ dependencies:
     - node.type.publication
     - workflows.workflow.nics_editorial_workflow
   module:
+    - book
     - content_moderation
     - file
     - media
@@ -36,6 +37,7 @@ weight: -7
 is_admin: false
 permissions:
   - 'access administration pages'
+  - 'add content to books'
   - 'administer main menu items'
   - 'create application content'
   - 'create article content'
