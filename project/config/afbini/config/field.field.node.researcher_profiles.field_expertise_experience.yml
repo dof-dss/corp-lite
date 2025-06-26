@@ -10,7 +10,7 @@ field_name: field_expertise_experience
 entity_type: node
 bundle: researcher_profiles
 label: Expertise/Experience
-description: ''
+description: 'Enter any expertise or experience the researcher has.'
 required: false
 translatable: false
 default_value: {  }

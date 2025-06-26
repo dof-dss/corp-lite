@@ -10,7 +10,7 @@ field_name: field_research_interests
 entity_type: node
 bundle: researcher_profiles
 label: 'Research interests'
-description: ''
+description: 'Enter any research interests.'
 required: false
 translatable: false
 default_value: {  }
