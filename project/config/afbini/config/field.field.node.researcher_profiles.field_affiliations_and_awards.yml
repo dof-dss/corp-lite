@@ -1,4 +1,4 @@
-uuid: e4912119-c35c-47ce-adf8-c078d61bc7a8
+uuid: bbaac449-8efa-4058-9d07-3e40ec5c3daa
 langcode: en
 status: true
 dependencies:
@@ -10,7 +10,7 @@ field_name: field_affiliations_and_awards
 entity_type: node
 bundle: researcher_profiles
 label: 'Affiliations and awards'
-description: 'Enter any professional body memberships / representation on committiees or prizes awarded to the researcher.'
+description: ''
 required: false
 translatable: false
 default_value: {  }

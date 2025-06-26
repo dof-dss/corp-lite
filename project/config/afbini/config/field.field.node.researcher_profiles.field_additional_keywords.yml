@@ -1,4 +1,4 @@
-uuid: a8ef0421-9584-4689-b7fb-b02d1d3ac49a
+uuid: a4056205-35bf-463a-9cea-984f7d410215
 langcode: en
 status: true
 dependencies:
@@ -10,7 +10,7 @@ field_name: field_additional_keywords
 entity_type: node
 bundle: researcher_profiles
 label: 'Additional keywords'
-description: 'Enter 5 additional keywords.'
+description: ''
 required: false
 translatable: false
 default_value: {  }

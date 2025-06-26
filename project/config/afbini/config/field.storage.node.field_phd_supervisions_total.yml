@@ -1,4 +1,4 @@
-uuid: b3ca3568-c25c-42b2-8899-f340e07be693
+uuid: cd540e0a-4207-4193-834d-97401ff514c6
 langcode: en
 status: true
 dependencies:
@@ -7,10 +7,11 @@ dependencies:
 id: node.field_phd_supervisions_total
 field_name: field_phd_supervisions_total
 entity_type: node
-type: integer
+type: string
 settings:
-  unsigned: false
-  size: normal
+  max_length: 5
+  case_sensitive: false
+  is_ascii: false
 module: core
 locked: false
 cardinality: 1

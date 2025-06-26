@@ -25,9 +25,9 @@ dependencies:
     - field.field.node.researcher_profiles.field_pronouns
     - field.field.node.researcher_profiles.field_recent_projects
     - field.field.node.researcher_profiles.field_research_interests
+    - field.field.node.researcher_profiles.field_researcher_title
     - field.field.node.researcher_profiles.field_researchgate
-    - field.field.node.researcher_profiles.field_second_name
-    - field.field.node.researcher_profiles.field_x_formerly_twitter
+    - field.field.node.researcher_profiles.field_x
     - node.type.researcher_profiles
   module:
     - layout_builder
@@ -43,21 +43,10 @@ targetEntityType: node
 bundle: researcher_profiles
 mode: full
 content:
-  field_additional_keywords:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
+  content_moderation_control:
+    settings: {  }
     third_party_settings: {  }
-    weight: 112
-    region: content
-  field_affiliations_and_awards:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 111
+    weight: -20
     region: content
   field_email:
     type: string
@@ -66,14 +55,6 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 117
-    region: content
-  field_expertise_experience:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 109
     region: content
   field_facebook:
     type: string
@@ -161,24 +142,6 @@ content:
     third_party_settings: {  }
     weight: 122
     region: content
-  field_phd_supervisions_current:
-    type: number_integer
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    weight: 114
-    region: content
-  field_phd_supervisions_total:
-    type: number_integer
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    weight: 113
-    region: content
   field_phone:
     type: string
     label: above
@@ -207,14 +170,6 @@ content:
     third_party_settings: {  }
     weight: 110
     region: content
-  field_research_interests:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 108
-    region: content
   field_researchgate:
     type: string
     label: above
@@ -223,27 +178,19 @@ content:
     third_party_settings: {  }
     weight: 123
     region: content
-  field_second_name:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 102
-    region: content
-  field_x_formerly_twitter:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 119
-    region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 100
     region: content
 hidden:
+  field_additional_keywords: true
+  field_affiliations_and_awards: true
+  field_expertise_experience: true
+  field_phd_supervisions_current: true
+  field_phd_supervisions_total: true
+  field_research_interests: true
+  field_researcher_title: true
+  field_x: true
   langcode: true
   search_api_excerpt: true

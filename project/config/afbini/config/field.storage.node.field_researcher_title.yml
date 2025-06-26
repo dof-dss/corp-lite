@@ -1,15 +1,15 @@
-uuid: 162b8b4c-4415-4d70-a114-0045efdf34bf
+uuid: 4f95f494-2bce-4d62-81da-ae25cf015347
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_second_name
-field_name: field_second_name
+id: node.field_researcher_title
+field_name: field_researcher_title
 entity_type: node
 type: string
 settings:
-  max_length: 255
+  max_length: 20
   case_sensitive: false
   is_ascii: false
 module: core

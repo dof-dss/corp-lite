@@ -1,4 +1,4 @@
-uuid: e9eeef58-73c2-4aa0-9050-47782890c856
+uuid: 3cab1375-2016-44db-849e-11d5b6772884
 langcode: en
 status: true
 dependencies:
@@ -10,14 +10,10 @@ field_name: field_phd_supervisions_current
 entity_type: node
 bundle: researcher_profiles
 label: 'PhD supervisions (Current)'
-description: 'Enter the current number of PhD supervisions the researcher has.'
+description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings:
-  min: null
-  max: null
-  prefix: ''
-  suffix: ''
-field_type: integer
+settings: {  }
+field_type: string

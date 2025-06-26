@@ -1,19 +1,19 @@
-uuid: 98102868-296a-4202-b21a-1553a74e08d4
+uuid: 4740c4d9-a102-4023-a880-1e4413009643
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_expertise_experience
+    - field.storage.node.field_researcher_title
     - node.type.researcher_profiles
-id: node.researcher_profiles.field_expertise_experience
-field_name: field_expertise_experience
+id: node.researcher_profiles.field_researcher_title
+field_name: field_researcher_title
 entity_type: node
 bundle: researcher_profiles
-label: Expertise/Experience
+label: 'Title (Mr, Mrs, Miss, Ms, other)'
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: string_long
+field_type: string

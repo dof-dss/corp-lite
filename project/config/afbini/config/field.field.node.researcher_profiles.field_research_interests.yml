@@ -1,4 +1,4 @@
-uuid: ae0aea56-b027-4006-b1fb-724e26dbcc3d
+uuid: f6594a89-4d25-4088-8ae6-fae5bc07f97d
 langcode: en
 status: true
 dependencies:
@@ -10,10 +10,10 @@ field_name: field_research_interests
 entity_type: node
 bundle: researcher_profiles
 label: 'Research interests'
-description: 'Enter any research interests.'
+description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: string
+field_type: string_long

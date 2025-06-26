@@ -1,4 +1,4 @@
-uuid: 79d487b2-ff59-4360-93d9-2beed861b2be
+uuid: 4106635e-7f85-4961-b7c1-9851dd264b76
 langcode: en
 status: true
 dependencies:
@@ -9,7 +9,7 @@ field_name: field_affiliations_and_awards
 entity_type: node
 type: string
 settings:
-  max_length: 35
+  max_length: 255
   case_sensitive: false
   is_ascii: false
 module: core
