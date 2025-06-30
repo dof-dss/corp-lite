@@ -24,10 +24,11 @@ dependencies:
     - field.field.node.researcher_profiles.field_pronouns
     - field.field.node.researcher_profiles.field_recent_projects
     - field.field.node.researcher_profiles.field_research_interests
+    - field.field.node.researcher_profiles.field_researcher_title
     - field.field.node.researcher_profiles.field_researchgate
-    - field.field.node.researcher_profiles.field_second_name
-    - field.field.node.researcher_profiles.field_x_formerly_twitter
+    - field.field.node.researcher_profiles.field_x
     - node.type.researcher_profiles
+    - workflows.workflow.nics_editorial_workflow
   module:
     - content_moderation
     - link
@@ -39,13 +40,13 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 3
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
   field_additional_keywords:
     type: string_textfield
-    weight: 17
+    weight: 19
     region: content
     settings:
       size: 60
@@ -53,7 +54,7 @@ content:
     third_party_settings: {  }
   field_affiliations_and_awards:
     type: string_textfield
-    weight: 21
+    weight: 22
     region: content
     settings:
       size: 60
@@ -68,16 +69,16 @@ content:
       placeholder: researcher@example.com
     third_party_settings: {  }
   field_expertise_experience:
-    type: string_textfield
-    weight: 19
+    type: string_textarea
+    weight: 16
     region: content
     settings:
-      size: 60
+      rows: 5
       placeholder: ''
     third_party_settings: {  }
   field_facebook:
     type: string_textfield
-    weight: 29
+    weight: 28
     region: content
     settings:
       size: 60
@@ -85,7 +86,7 @@ content:
     third_party_settings: {  }
   field_first_name:
     type: string_textfield
-    weight: 10
+    weight: 1
     region: content
     settings:
       size: 60
@@ -101,7 +102,7 @@ content:
     third_party_settings: {  }
   field_instagram:
     type: string_textfield
-    weight: 30
+    weight: 29
     region: content
     settings:
       size: 60
@@ -125,7 +126,7 @@ content:
     third_party_settings: {  }
   field_keywords:
     type: options_select
-    weight: 16
+    weight: 18
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -160,18 +161,20 @@ content:
       placeholder: '5555555555555555'
     third_party_settings: {  }
   field_phd_supervisions_current:
-    type: number
-    weight: 23
+    type: string_textfield
+    weight: 20
     region: content
     settings:
-      placeholder: 'Current number'
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_phd_supervisions_total:
-    type: number
-    weight: 22
+    type: string_textfield
+    weight: 21
     region: content
     settings:
-      placeholder: 'Total number'
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_phone:
     type: string_textfield
@@ -191,15 +194,23 @@ content:
     third_party_settings: {  }
   field_recent_projects:
     type: link_default
-    weight: 20
+    weight: 23
     region: content
     settings:
       placeholder_url: 'https://www.example.com'
       placeholder_title: 'Link name'
     third_party_settings: {  }
   field_research_interests:
+    type: string_textarea
+    weight: 17
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_researcher_title:
     type: string_textfield
-    weight: 18
+    weight: 0
     region: content
     settings:
       size: 60
@@ -213,65 +224,57 @@ content:
       size: 60
       placeholder: 'https://www.researchgate.net/profile/example'
     third_party_settings: {  }
-  field_second_name:
+  field_x:
     type: string_textfield
-    weight: 11
+    weight: 30
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_x_formerly_twitter:
-    type: string_textfield
-    weight: 28
-    region: content
-    settings:
-      size: 60
-      placeholder: 'https://x.com/example'
-    third_party_settings: {  }
   langcode:
     type: language_select
-    weight: 1
+    weight: 3
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 8
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
   path:
     type: path
-    weight: 6
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 4
+    weight: 6
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 9
+    weight: 11
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 5
+    weight: 7
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: 0
+    weight: 2
     region: content
     settings:
       size: 60
@@ -279,7 +282,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 2
+    weight: 4
     region: content
     settings:
       match_operator: CONTAINS
@@ -288,7 +291,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 7
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }

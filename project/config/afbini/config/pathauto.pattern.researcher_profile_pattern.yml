@@ -1,0 +1,22 @@
+uuid: fa14fd49-3942-4ee5-9f0a-5ff8f15cd08a
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: researcher_profile_pattern
+label: 'Researcher profile Pattern'
+type: 'canonical_entities:node'
+pattern: 'researcher/[node:title]'
+selection_criteria:
+  be421d79-b32a-4a57-86b6-a2d59ed4fa29:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: be421d79-b32a-4a57-86b6-a2d59ed4fa29
+    context_mapping:
+      node: node
+    bundles:
+      researcher_profiles: researcher_profiles
+selection_logic: and
+weight: -5
+relationships: {  }

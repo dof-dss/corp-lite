@@ -1,15 +1,15 @@
-uuid: fb671429-3ec2-4084-a102-3b4ae9cbfdd8
+uuid: 1a73e7a3-8ac4-437b-87fa-d9db073d46bf
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_x_formerly_twitter
-field_name: field_x_formerly_twitter
+id: node.field_x
+field_name: field_x
 entity_type: node
 type: string
 settings:
-  max_length: 80
+  max_length: 255
   case_sensitive: false
   is_ascii: false
 module: core

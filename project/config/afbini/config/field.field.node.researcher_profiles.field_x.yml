@@ -1,17 +1,17 @@
-uuid: d4d34167-7d8b-452a-b8b9-4a4b61e7117a
+uuid: 0680c456-cd62-43fa-8230-bd0c4f4e38d5
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_first_name
+    - field.storage.node.field_x
     - node.type.researcher_profiles
-id: node.researcher_profiles.field_first_name
-field_name: field_first_name
+id: node.researcher_profiles.field_x
+field_name: field_x
 entity_type: node
 bundle: researcher_profiles
-label: 'First name'
-description: ''
-required: true
+label: 'X (formerly twitter)'
+description: 'Enter the X address of the researcher.'
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''

@@ -43,3 +43,93 @@
 .footer {
   border-top: 5px solid #008290;
 }
+
+.researcher-profile {
+  padding: 1rem;
+
+  h1 {
+    display: flex;
+    margin-bottom: 1rem;
+
+    .researcher-title,
+    .researcher-name {
+      display: inline;
+    }
+  }
+
+  h2 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+
+  .field-line {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 0.5rem;
+
+    .field-label {
+      font-weight: bold;
+      margin-right: 0.5rem;
+    }
+
+    .field-value {
+      flex: 1 1 auto;
+    }
+  }
+
+  section.profile-section {
+    margin-bottom: 2rem;
+  }
+
+  section.contact-info {
+    margin-bottom: 2rem;
+
+    .field-group {
+      .field-line {
+        display: flex;
+        margin-bottom: 0.5rem;
+
+        .field-label {
+          font-weight: bold;
+          margin-right: 1rem;
+        }
+
+        .field-value {
+          flex: 1 1 auto;
+        }
+      }
+    }
+  }
+
+  section.social-links {
+    h2 {
+      margin-bottom: 0.5rem;
+    }
+
+    ul.social-icons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding-left: 0;
+      list-style: none;
+
+      li {
+        a {
+          font-size: 3rem;
+          padding: 1rem;
+          color: #000;
+
+          &:hover {
+            border: 2px solid #000;
+            text-decoration: none;
+          }
+
+          i {
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+}

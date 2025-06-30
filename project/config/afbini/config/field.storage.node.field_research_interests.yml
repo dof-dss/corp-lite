@@ -1,4 +1,4 @@
-uuid: 80286f32-2ebc-4611-ae80-af46bb846a0e
+uuid: cb7323e0-19fd-4431-a5e0-2781bfe4147b
 langcode: en
 status: true
 dependencies:
@@ -7,11 +7,9 @@ dependencies:
 id: node.field_research_interests
 field_name: field_research_interests
 entity_type: node
-type: string
+type: string_long
 settings:
-  max_length: 35
   case_sensitive: false
-  is_ascii: false
 module: core
 locked: false
 cardinality: 1
