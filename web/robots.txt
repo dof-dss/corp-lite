@@ -123,3 +123,6 @@ Disallow: /news/*date
 Disallow: /news/*category
 Disallow: /alerts/*date
 Disallow: /published-releases/*date
+
+# Recent bots
+Disallow: *?*=*
