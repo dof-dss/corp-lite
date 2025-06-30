@@ -19,24 +19,6 @@
   }
 }
 
-.page-node-type-gallery .field--name-field-gallery-images {
-  display: flex;
-  flex-wrap: wrap;
-
-  .field__item {
-    flex-grow: 1;
-    max-width: 28%;
-    flex: 0 0 33%;
-    text-align: center;
-    padding: 10px;
-
-    img {
-      height: 190px;
-      width: 190px;
-    }
-  }
-}
-
 .services {
   display: flex;
   flex-wrap: wrap;
