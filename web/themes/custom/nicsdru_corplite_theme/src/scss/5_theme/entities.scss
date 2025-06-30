@@ -75,7 +75,7 @@
 }
 
 .article-content {
-  *:not(.thwooped-modal, .thwooped, .highcharts-container, .highcharts-root) {
+  *:not(.thwooped-modal, .thwooped, .highcharts-container, .highcharts-root, .photoswipe-gallery *) {
     max-width: $max-body-text-width;
   }
 }

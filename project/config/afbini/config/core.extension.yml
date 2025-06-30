@@ -120,6 +120,8 @@ module:
   page_cache: 0
   path: 0
   path_alias: 0
+  photoswipe: 0
+  photoswipe_dynamic_caption: 0
   phpass: 0
   rdf: 0
   redirect: 0
@@ -153,9 +155,6 @@ module:
   ultimate_cron: 0
   user: 0
   views_custom_cache_tag: 0
-  views_rss: 0
-  views_rss_core: 0
-  views_rss_media: 0
   webform: 0
   webform_access: 0
   webform_node: 0
