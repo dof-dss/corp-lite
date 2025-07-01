@@ -8,8 +8,11 @@ dependencies:
     - field.field.node.gallery.field_meta_tags
     - field.field.node.gallery.field_site_topics
     - field.field.node.gallery.field_summary
+    - image.style.nigov_landscape_xxl_1920x1280_x2
     - node.type.gallery
+    - responsive_image.styles.article_full
   module:
+    - photoswipe
     - text
     - user
 id: node.gallery.default
@@ -25,11 +28,16 @@ content:
     weight: 1
     region: content
   field_gallery_images:
-    type: entity_reference_entity_view
+    type: photoswipe_responsive_field_formatter
     label: hidden
     settings:
-      view_mode: article_float
-      link: false
+      photoswipe_thumbnail_style_first: ''
+      photoswipe_thumbnail_style: article_full
+      photoswipe_image_style: nigov_landscape_xxl_1920x1280_x2
+      photoswipe_reference_image_field: field_media_image
+      photoswipe_view_mode: default
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
     weight: 2
     region: content

@@ -1,17 +1,17 @@
-uuid: d4d34167-7d8b-452a-b8b9-4a4b61e7117a
+uuid: 4740c4d9-a102-4023-a880-1e4413009643
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_first_name
+    - field.storage.node.field_researcher_title
     - node.type.researcher_profiles
-id: node.researcher_profiles.field_first_name
-field_name: field_first_name
+id: node.researcher_profiles.field_researcher_title
+field_name: field_researcher_title
 entity_type: node
 bundle: researcher_profiles
-label: 'First name'
+label: 'Title (Mr, Mrs, Miss, Ms, other)'
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
