@@ -343,12 +343,12 @@ display:
         type: default
         options:
           grouping: {  }
-          row_class: search-result
+          row_class: card
           default_row_class: false
       row:
         type: fields
         options:
-          default_field_elements: false
+          default_field_elements: true
           inline: {  }
           separator: ''
           hide_empty: false
@@ -382,16 +382,41 @@ display:
         - 'search_api_list:default_content'
   site_search:
     id: site_search
-    display_title: Page
+    display_title: 'Site search'
     display_plugin: page
     position: 1
     display_options:
       cache:
         type: search_api_tag
         options: {  }
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: false
+      row:
+        type: search_api
+        options:
+          view_modes:
+            'entity:node':
+              ':default': default
+              contact: main_search_index
+              department_management: main_search_index
+              featured_content_list: main_search_index
+              link: main_search_index
+              news: main_search_index
+              page: main_search_index
+              publication: main_search_index
+            'entity:taxonomy_term':
+              ':default': default
+              site_topics: ':default'
       defaults:
         cache: false
+        style: false
+        row: false
         header: false
+      display_description: ''
       header:
         result:
           id: result

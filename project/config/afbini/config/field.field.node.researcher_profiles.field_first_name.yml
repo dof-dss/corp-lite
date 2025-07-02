@@ -10,7 +10,7 @@ field_name: field_first_name
 entity_type: node
 bundle: researcher_profiles
 label: 'First name'
-description: 'Enter the first name of the researcher.'
+description: ''
 required: true
 translatable: false
 default_value: {  }

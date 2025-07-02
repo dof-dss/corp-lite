@@ -19,6 +19,7 @@ dependencies:
     - node.type.researcher_profiles
     - workflows.workflow.nics_editorial_workflow
   module:
+    - book
     - content_moderation
     - file
     - filter
@@ -39,6 +40,7 @@ permissions:
   - 'access administration pages'
   - 'access content overview'
   - 'access toolbar'
+  - 'add content to books'
   - 'add scheduled transitions node article'
   - 'add scheduled transitions node contact'
   - 'add scheduled transitions node gallery'

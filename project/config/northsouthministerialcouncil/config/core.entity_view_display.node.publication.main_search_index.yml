@@ -1,0 +1,78 @@
+uuid: 8f120a67-a65f-4a61-9a74-6f45cc8fceec
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.main_search_index
+    - field.field.node.publication.body
+    - field.field.node.publication.field_attachment
+    - field.field.node.publication.field_meta_tags
+    - field.field.node.publication.field_publication_type
+    - field.field.node.publication.field_published_date
+    - field.field.node.publication.field_sectors
+    - field.field.node.publication.field_site_topics
+    - field.field.node.publication.field_summary
+    - node.type.publication
+  module:
+    - datetime
+    - field_group
+    - layout_builder
+    - user
+third_party_settings:
+  field_group:
+    group_documents:
+      children: {  }
+      label: Documents
+      parent_name: ''
+      region: content
+      weight: 12
+      format_type: html_element
+      format_settings:
+        classes: list--no-bullet
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        element: ul
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+  layout_builder:
+    enabled: false
+    allow_custom: false
+_core:
+  default_config_hash: OWVRh-1ALySR1cKEW_LnhmV0Q8R9baLGQi8mBY6UlzY
+id: node.publication.main_search_index
+targetEntityType: node
+bundle: publication
+mode: main_search_index
+content:
+  field_published_date:
+    type: datetime_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: corplite_medium
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_summary:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true
+  content_moderation_control: true
+  field_attachment: true
+  field_meta_tags: true
+  field_publication_type: true
+  field_sectors: true
+  field_site_topics: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

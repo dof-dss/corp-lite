@@ -1,4 +1,4 @@
-uuid: 86cbdb80-d60c-4af8-8be5-2ce6d35fbeff
+uuid: 2ed46c6f-c0e5-42ab-a37b-07e8f7e5d2f5
 langcode: en
 status: true
 dependencies:
@@ -7,11 +7,9 @@ dependencies:
 id: node.field_expertise_experience
 field_name: field_expertise_experience
 entity_type: node
-type: string
+type: string_long
 settings:
-  max_length: 35
   case_sensitive: false
-  is_ascii: false
 module: core
 locked: false
 cardinality: 1

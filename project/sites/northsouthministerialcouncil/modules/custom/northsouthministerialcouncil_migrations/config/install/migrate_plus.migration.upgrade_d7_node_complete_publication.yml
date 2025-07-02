@@ -1,5 +1,5 @@
 uuid: 7b386973-16ae-479b-8142-182dc5f903b5
-langcode: en-gb
+langcode: en
 status: true
 dependencies: { }
 id: upgrade_d7_node_complete_publication
@@ -24,7 +24,7 @@ process:
   langcode:
     - plugin: default_value
       source: language
-      default_value: und
+      default_value: en
   title:
     - plugin: get
       source: title

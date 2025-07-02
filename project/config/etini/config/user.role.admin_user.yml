@@ -13,6 +13,7 @@ dependencies:
     - node.type.contact
     - node.type.department_management
     - node.type.gallery
+    - node.type.html_document
     - node.type.link
     - node.type.news
     - node.type.page
@@ -63,6 +64,7 @@ permissions:
   - 'add scheduled transitions node contact'
   - 'add scheduled transitions node department_management'
   - 'add scheduled transitions node gallery'
+  - 'add scheduled transitions node html_document'
   - 'add scheduled transitions node link'
   - 'add scheduled transitions node news'
   - 'add scheduled transitions node page'
@@ -97,6 +99,7 @@ permissions:
   - 'create document media'
   - 'create file media'
   - 'create gallery content'
+  - 'create html_document content'
   - 'create image media'
   - 'create link content'
   - 'create new books'
@@ -115,6 +118,7 @@ permissions:
   - 'delete any document media'
   - 'delete any file media'
   - 'delete any gallery content'
+  - 'delete any html_document content'
   - 'delete any image media'
   - 'delete any link content'
   - 'delete any news content'
@@ -128,6 +132,7 @@ permissions:
   - 'delete contact revisions'
   - 'delete department_management revisions'
   - 'delete gallery revisions'
+  - 'delete html_document revisions'
   - 'delete link revisions'
   - 'delete news revisions'
   - 'delete own application content'
@@ -139,6 +144,7 @@ permissions:
   - 'delete own file media'
   - 'delete own files'
   - 'delete own gallery content'
+  - 'delete own html_document content'
   - 'delete own image media'
   - 'delete own link content'
   - 'delete own news content'
@@ -158,6 +164,7 @@ permissions:
   - 'edit any document media'
   - 'edit any file media'
   - 'edit any gallery content'
+  - 'edit any html_document content'
   - 'edit any image media'
   - 'edit any link content'
   - 'edit any news content'
@@ -175,6 +182,7 @@ permissions:
   - 'edit own document media'
   - 'edit own file media'
   - 'edit own gallery content'
+  - 'edit own html_document content'
   - 'edit own image media'
   - 'edit own link content'
   - 'edit own news content'
@@ -191,6 +199,7 @@ permissions:
   - 'reschedule scheduled transitions node contact'
   - 'reschedule scheduled transitions node department_management'
   - 'reschedule scheduled transitions node gallery'
+  - 'reschedule scheduled transitions node html_document'
   - 'reschedule scheduled transitions node link'
   - 'reschedule scheduled transitions node news'
   - 'reschedule scheduled transitions node page'
@@ -204,6 +213,7 @@ permissions:
   - 'revert contact revisions'
   - 'revert department_management revisions'
   - 'revert gallery revisions'
+  - 'revert html_document revisions'
   - 'revert link revisions'
   - 'revert news revisions'
   - 'revert page revisions'
@@ -225,6 +235,7 @@ permissions:
   - 'view contact revisions'
   - 'view department_management revisions'
   - 'view gallery revisions'
+  - 'view html_document revisions'
   - 'view latest version'
   - 'view link revisions'
   - 'view news revisions'
@@ -237,6 +248,7 @@ permissions:
   - 'view scheduled transitions node contact'
   - 'view scheduled transitions node department_management'
   - 'view scheduled transitions node gallery'
+  - 'view scheduled transitions node html_document'
   - 'view scheduled transitions node link'
   - 'view scheduled transitions node news'
   - 'view scheduled transitions node page'

@@ -13,5 +13,5 @@ conditions:
     negate: false
     uuid: 6d02b594-ac30-4f65-833b-56c949eb338c
     context_mapping: {  }
-    pages: "/areas-of-cooperation\r\n/contact\r\n/publications\r\n/publications/date/*\r\n/publications/sectors/*\r\n/publications/type/*\r\n/news\r\n/news/date/*\r\n/news/topic/*\r\n/contact\r\n/search\r\n/search*"
+    pages: "/areas-of-cooperation\r\n/contact\r\n/publications\r\n/publications/date/*\r\n/publications/sectors/*\r\n/publications/type/*\r\n/news\r\n/news/date/*\r\n/news/topic/*\r\n/contact\r\n/search\r\n/search*\r\n<front>"
 allow_other_conditions: false
