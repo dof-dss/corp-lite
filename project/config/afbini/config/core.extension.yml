@@ -155,6 +155,9 @@ module:
   ultimate_cron: 0
   user: 0
   views_custom_cache_tag: 0
+  views_rss: 0
+  views_rss_core: 0
+  views_rss_media: 0
   webform: 0
   webform_access: 0
   webform_node: 0
@@ -166,7 +169,6 @@ module:
   pathauto: 1
   origins_workflow: 2
   views: 10
-  views_rss: 0
   paragraphs: 11
   nicsdru_corplite_profile: 1000
   readonlymode: 9999
