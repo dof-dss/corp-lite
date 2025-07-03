@@ -3,3 +3,7 @@ auto_submit:
     js/auto_submit.js: {}
   dependencies:
     - 'core/jquery'
+extra.admin:
+  css:
+    theme:
+      css/extra.admin.css: {}

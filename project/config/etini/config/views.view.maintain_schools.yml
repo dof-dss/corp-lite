@@ -1,19 +1,16 @@
-uuid: 19315e5d-cfc8-41e8-af12-cee071d1b5cc
+uuid: 4a52dbda-9877-446b-9780-c77e182dd7b2
 langcode: en
 status: true
 dependencies:
-  config:
-    - search_api.index.school_index
   module:
     - etini_district_inspectors
-    - search_api
-id: district_inspectors
-label: 'District Inspectors'
+id: maintain_schools
+label: 'Maintain Schools'
 module: views
 description: ''
 tag: ''
-base_table: search_api_index_school_index
-base_field: search_api_id
+base_table: school
+base_field: id
 display:
   default:
     id: default
@@ -21,89 +18,18 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'Find a District Inspector'
+      title: 'Maintain Schools'
       fields:
-        name:
-          id: name
-          table: search_api_entity_inspector
-          field: name
-          relationship: inspector_id
-          group_type: group
-          admin_label: ''
-          entity_type: inspector
-          plugin_id: search_api_field
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          field_rendering: true
-          fallback_handler: search_api
-          fallback_options:
-            link_to_item: false
-            use_highlighting: false
-            multi_type: separator
-            multi_separator: ', '
-        de_reference:
-          id: de_reference
-          table: search_api_index_school_index
-          field: de_reference
+        Name:
+          id: Name
+          table: school
+          field: Name
           relationship: none
           group_type: group
           admin_label: ''
-          entity_type: null
-          entity_field: null
-          plugin_id: search_api_field
+          entity_type: school
+          entity_field: Name
+          plugin_id: field
           label: ''
           exclude: false
           alter:
@@ -159,21 +85,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          field_rendering: true
-          fallback_handler: search_api
-          fallback_options:
-            link_to_item: false
-            use_highlighting: false
-            multi_type: separator
-            multi_separator: ', '
-        name_1:
-          id: name_1
-          table: search_api_index_school_index
-          field: name
+        operations:
+          id: operations
+          table: school
+          field: operations
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: search_api_field
+          entity_type: school
+          plugin_id: entity_operations
           label: ''
           exclude: false
           alter:
@@ -215,32 +135,29 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          field_rendering: true
-          fallback_handler: search_api
-          fallback_options:
-            link_to_item: false
-            use_highlighting: false
-            multi_type: separator
-            multi_separator: ', '
+          destination: false
       pager:
-        type: some
+        type: full
         options:
           offset: 0
-          items_per_page: 1
+          pagination_heading_level: h4
+          items_per_page: 30
+          total_pages: null
+          id: 0
+          tags:
+            next: ››
+            previous: ‹‹
+            first: '« First'
+            last: 'Last »'
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+          quantity: 9
       exposed_form:
         type: basic
         options:
@@ -255,34 +172,36 @@ display:
         type: none
         options: {  }
       cache:
-        type: search_api_none
+        type: tag
         options: {  }
       empty: {  }
       sorts: {  }
       arguments: {  }
       filters:
-        search_api_fulltext:
-          id: search_api_fulltext
-          table: search_api_index_school_index
-          field: search_api_fulltext
+        Name:
+          id: Name
+          table: school
+          field: Name
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: search_api_fulltext
-          operator: and
+          entity_type: school
+          entity_field: Name
+          plugin_id: string
+          operator: word
           value: ''
           group: 1
           exposed: true
           expose:
-            operator_id: search_api_fulltext_op
-            label: 'DE Reference'
-            description: ''
+            operator_id: Name_op
+            label: 'Search by words in the title.'
+            description: 'Use this search to search any full word in the school title that you wish to edit or delete.'
             use_operator: false
-            operator: search_api_fulltext_op
+            operator: Name_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: search_api_fulltext
-            required: true
+            identifier: Name
+            required: false
             remember: false
             multiple: false
             remember_roles:
@@ -295,9 +214,7 @@ display:
               site_admin_user: '0'
               admin_user: '0'
               qa: '0'
-            expose_fields: false
             placeholder: ''
-            searched_fields_id: search_api_fulltext_searched_fields
           is_grouped: false
           group_info:
             label: ''
@@ -310,34 +227,19 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          parse_mode: terms
-          min_length: 1
-          fields:
-            - de_reference
-            - name
       style:
-        type: default
+        type: table
       row:
         type: fields
       query:
-        type: search_api_query
+        type: views_query
         options:
-          bypass_access: false
-          skip_access: false
-          preserve_facet_query_args: false
+          query_comment: ''
+          disable_sql_rewrite: false
+          distinct: false
+          replica: false
           query_tags: {  }
-      relationships:
-        inspector_id:
-          id: inspector_id
-          table: search_api_datasource_school_index_entity_school
-          field: inspector_id
-          relationship: none
-          group_type: group
-          admin_label: 'Referenced Inspector: District Inspector'
-          entity_type: school
-          plugin_id: search_api
-          required: false
-          skip_access: true
+      relationships: {  }
       header: {  }
       footer: {  }
       display_extenders: {  }
@@ -347,27 +249,25 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
-      tags:
-        - 'config:search_api.index.school_index'
-        - 'search_api_list:school_index'
+        - url.query_args
+      tags: {  }
   page_1:
     id: page_1
     display_title: Page
     display_plugin: page
     position: 1
     display_options:
-      exposed_block: true
       display_extenders:
         metatag_display_extender:
           metatags: {  }
           tokenize: false
-      path: district-inspectors
+      path: maintain-schools
+      use_admin_theme: true
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
-      tags:
-        - 'config:search_api.index.school_index'
-        - 'search_api_list:school_index'
+        - url.query_args
+      tags: {  }

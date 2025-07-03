@@ -27,7 +27,7 @@ class AutoCompleteController extends ControllerBase {
    * Retrieve matches from Search API.
    */
   private function getMatches($string) {
-    $index = Index::load('school');
+    $index = Index::load('school_index');
     $query = $index->query();
     $query->keys($string);
     $query->setFulltextFields(['name', 'de_reference']);
