@@ -393,6 +393,7 @@ display:
         options:
           view_modes:
             'entity:node':
+              ':default': default
               article: main_search_index
               contact: main_search_index
               gallery: main_search_index
@@ -424,7 +425,7 @@ display:
           tokenize: false
       path: search
     cache_metadata:
-      max-age: 0
+      max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
@@ -432,7 +433,6 @@ display:
         - url.query_args
         - 'user.node_grants:view'
       tags:
-        - 'config:facets.facet.type'
         - 'config:field.storage.node.field_published_date'
         - 'config:search_api.index.default_content'
         - 'search_api_list:default_content'

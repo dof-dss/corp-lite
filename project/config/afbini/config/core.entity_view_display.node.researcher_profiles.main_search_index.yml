@@ -1,9 +1,9 @@
-uuid: f704af23-e32d-446d-8a32-5ef2bf5491b6
+uuid: 91a08010-3c0d-4cf7-81c1-98f59d84ab33
 langcode: en
-status: false
+status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.main_search_index
     - field.field.node.researcher_profiles.field_additional_keywords
     - field.field.node.researcher_profiles.field_affiliations_and_awards
     - field.field.node.researcher_profiles.field_email
@@ -30,11 +30,16 @@ dependencies:
     - field.field.node.researcher_profiles.field_x
     - node.type.researcher_profiles
   module:
+    - layout_builder
     - user
-id: node.researcher_profiles.teaser
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.researcher_profiles.main_search_index
 targetEntityType: node
 bundle: researcher_profiles
-mode: teaser
+mode: main_search_index
 content:
   field_job_title:
     type: string
