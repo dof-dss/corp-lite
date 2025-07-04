@@ -511,7 +511,7 @@ input[type='checkbox'],
   color: #fff;
   background-color: $charcoal;
   padding: .3334em .6rem;
-  margin: 0;
+  margin: -3px 0 0;
 
   @include breakpoint($lap) {
     font-size: 1.8rem;
