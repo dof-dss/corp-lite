@@ -1,9 +1,9 @@
-uuid: f704af23-e32d-446d-8a32-5ef2bf5491b6
+uuid: 4dedbf30-8daa-4d66-9905-6689bd469d0c
 langcode: en
 status: false
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.search_index
     - field.field.node.researcher_profiles.field_additional_keywords
     - field.field.node.researcher_profiles.field_affiliations_and_awards
     - field.field.node.researcher_profiles.field_email
@@ -30,20 +30,17 @@ dependencies:
     - field.field.node.researcher_profiles.field_x
     - node.type.researcher_profiles
   module:
+    - layout_builder
     - user
-id: node.researcher_profiles.teaser
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.researcher_profiles.search_index
 targetEntityType: node
 bundle: researcher_profiles
-mode: teaser
-content:
-  field_job_title:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 0
-    region: content
+mode: search_index
+content: {  }
 hidden:
   content_moderation_control: true
   field_additional_keywords: true
@@ -55,6 +52,7 @@ hidden:
   field_google_scholar: true
   field_instagram: true
   field_job_position: true
+  field_job_title: true
   field_keywords: true
   field_linkedin: true
   field_location: true
