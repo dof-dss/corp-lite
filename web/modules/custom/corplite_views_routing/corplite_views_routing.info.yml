@@ -1,0 +1,5 @@
+name: 'Corplite views Routing'
+type: module
+description: 'Additional routes for Corplite Views'
+package: 'Custom'
+core_version_requirement: ^8 || ^9 || ^10 || ^11
