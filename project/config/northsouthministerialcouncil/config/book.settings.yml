@@ -1,0 +1,15 @@
+_core:
+  default_config_hash: eHWEB52823uddbYDUBGIKsgOsGm9rrzvIP_e8593hZo
+allowed_types:
+  - contact
+  - department_management
+  - featured_content_list
+  - link
+  - news
+  - page
+  - publication
+block:
+  navigation:
+    mode: 'all pages'
+child_type: department_management
+book_sort: title

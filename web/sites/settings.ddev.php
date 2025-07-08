@@ -46,6 +46,10 @@ if (empty($settings['config_sync_directory'])) {
   $settings['config_sync_directory'] = 'sites/default/files/sync';
 }
 
+// Assume all Lando sites should use 'local' config for devlopment.
+$config['config_split.config_split.local']['status'] = TRUE;
+$config['config_split.config_split.hosted']['status'] = FALSE;
+
 // Override drupal/symfony_mailer default config to use Mailpit.
 $config['symfony_mailer.settings']['default_transport'] = 'sendmail';
 $config['symfony_mailer.mailer_transport.sendmail']['plugin'] = 'smtp';

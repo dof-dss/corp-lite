@@ -25,9 +25,9 @@ dependencies:
     - field.field.node.researcher_profiles.field_pronouns
     - field.field.node.researcher_profiles.field_recent_projects
     - field.field.node.researcher_profiles.field_research_interests
+    - field.field.node.researcher_profiles.field_researcher_title
     - field.field.node.researcher_profiles.field_researchgate
-    - field.field.node.researcher_profiles.field_second_name
-    - field.field.node.researcher_profiles.field_x_formerly_twitter
+    - field.field.node.researcher_profiles.field_x
     - node.type.researcher_profiles
   module:
     - user
@@ -36,12 +36,16 @@ targetEntityType: node
 bundle: researcher_profiles
 mode: teaser
 content:
-  links:
-    settings: {  }
+  field_job_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
     third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
 hidden:
+  content_moderation_control: true
   field_additional_keywords: true
   field_affiliations_and_awards: true
   field_email: true
@@ -51,7 +55,6 @@ hidden:
   field_google_scholar: true
   field_instagram: true
   field_job_position: true
-  field_job_title: true
   field_keywords: true
   field_linkedin: true
   field_location: true
@@ -63,8 +66,9 @@ hidden:
   field_pronouns: true
   field_recent_projects: true
   field_research_interests: true
+  field_researcher_title: true
   field_researchgate: true
-  field_second_name: true
-  field_x_formerly_twitter: true
+  field_x: true
   langcode: true
+  links: true
   search_api_excerpt: true

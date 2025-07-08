@@ -12,9 +12,9 @@ shared_configuration:
     key: drupal_7
     database:
       driver: mysql
-      username: drupal9
-      password: drupal9
-      host: database
+      username: db
+      password: db
+      host: db
       port: ''
       database: northsouthministerialcouncil_legacy
       prefix: null

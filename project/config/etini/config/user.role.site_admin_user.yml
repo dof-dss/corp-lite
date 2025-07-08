@@ -12,6 +12,7 @@ dependencies:
     - node.type.article
     - node.type.contact
     - node.type.gallery
+    - node.type.html_document
     - node.type.link
     - node.type.news
     - node.type.page
@@ -43,6 +44,7 @@ permissions:
   - 'add scheduled transitions node article'
   - 'add scheduled transitions node contact'
   - 'add scheduled transitions node gallery'
+  - 'add scheduled transitions node html_document'
   - 'add scheduled transitions node link'
   - 'add scheduled transitions node news'
   - 'add scheduled transitions node page'
@@ -69,6 +71,7 @@ permissions:
   - 'delete article revisions'
   - 'delete contact revisions'
   - 'delete gallery revisions'
+  - 'delete html_document revisions'
   - 'delete link revisions'
   - 'delete news revisions'
   - 'delete own audio media'
@@ -97,6 +100,7 @@ permissions:
   - 'reschedule scheduled transitions node article'
   - 'reschedule scheduled transitions node contact'
   - 'reschedule scheduled transitions node gallery'
+  - 'reschedule scheduled transitions node html_document'
   - 'reschedule scheduled transitions node link'
   - 'reschedule scheduled transitions node news'
   - 'reschedule scheduled transitions node page'
@@ -109,6 +113,7 @@ permissions:
   - 'revert article revisions'
   - 'revert contact revisions'
   - 'revert gallery revisions'
+  - 'revert html_document revisions'
   - 'revert link revisions'
   - 'revert news revisions'
   - 'revert page revisions'
@@ -129,6 +134,7 @@ permissions:
   - 'view article revisions'
   - 'view contact revisions'
   - 'view gallery revisions'
+  - 'view html_document revisions'
   - 'view latest version'
   - 'view link revisions'
   - 'view news revisions'
@@ -140,6 +146,7 @@ permissions:
   - 'view scheduled transitions node article'
   - 'view scheduled transitions node contact'
   - 'view scheduled transitions node gallery'
+  - 'view scheduled transitions node html_document'
   - 'view scheduled transitions node link'
   - 'view scheduled transitions node news'
   - 'view scheduled transitions node page'

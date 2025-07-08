@@ -24,9 +24,9 @@ dependencies:
     - field.field.node.researcher_profiles.field_pronouns
     - field.field.node.researcher_profiles.field_recent_projects
     - field.field.node.researcher_profiles.field_research_interests
+    - field.field.node.researcher_profiles.field_researcher_title
     - field.field.node.researcher_profiles.field_researchgate
-    - field.field.node.researcher_profiles.field_second_name
-    - field.field.node.researcher_profiles.field_x_formerly_twitter
+    - field.field.node.researcher_profiles.field_x
     - node.type.researcher_profiles
   module:
     - link
@@ -37,73 +37,64 @@ targetEntityType: node
 bundle: researcher_profiles
 mode: default
 content:
-  field_additional_keywords:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 7
-    region: content
   field_affiliations_and_awards:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 11
+    weight: 12
     region: content
   field_email:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 16
+    weight: 8
     region: content
   field_expertise_experience:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
+    type: basic_string
+    label: hidden
+    settings: {  }
     third_party_settings: {  }
     weight: 9
     region: content
   field_facebook:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 19
+    weight: 16
     region: content
   field_first_name:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
   field_google_scholar:
     type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 23
-    region: content
-  field_instagram:
-    type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     weight: 20
     region: content
+  field_instagram:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 17
+    region: content
   field_job_position:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -111,79 +102,70 @@ content:
     region: content
   field_job_title:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     weight: 4
     region: content
-  field_keywords:
-    type: list_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 6
-    region: content
   field_linkedin:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 17
+    weight: 15
     region: content
   field_location:
     type: list_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 5
     region: content
   field_mobile:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 15
+    weight: 7
     region: content
   field_orcid:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 21
+    weight: 18
     region: content
   field_phd_supervisions_current:
-    type: number_integer
-    label: above
+    type: string
+    label: hidden
     settings:
-      thousand_separator: ''
-      prefix_suffix: true
+      link_to_entity: false
     third_party_settings: {  }
     weight: 13
     region: content
   field_phd_supervisions_total:
-    type: number_integer
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    weight: 12
-    region: content
-  field_phone:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     weight: 14
     region: content
+  field_phone:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
   field_pronouns:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -191,7 +173,7 @@ content:
     region: content
   field_recent_projects:
     type: link
-    label: above
+    label: hidden
     settings:
       trim_length: 80
       url_only: false
@@ -199,42 +181,43 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 10
+    weight: 11
     region: content
   field_research_interests:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_researcher_title:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 8
+    weight: 0
     region: content
   field_researchgate:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 22
+    weight: 19
     region: content
-  field_second_name:
+  field_x:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 1
-    region: content
-  field_x_formerly_twitter:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 18
+    weight: 21
     region: content
 hidden:
   content_moderation_control: true
+  field_additional_keywords: true
+  field_keywords: true
   langcode: true
   links: true
   search_api_excerpt: true

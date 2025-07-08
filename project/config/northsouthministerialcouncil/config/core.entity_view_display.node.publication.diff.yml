@@ -23,18 +23,37 @@ third_party_settings:
   field_group:
     group_additional_content_details:
       children:
-        - field_feature_home_page
         - field_meta_tags
       label: 'Additional content details'
       parent_name: ''
       region: content
-      weight: 5
+      weight: 6
       format_type: html_element
       format_settings:
         classes: field-collection
         show_empty_fields: false
         id: ''
         element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_documents:
+      children:
+        - field_attachment
+      label: Documents
+      parent_name: ''
+      region: content
+      weight: 2
+      format_type: html_element
+      format_settings:
+        classes: list--no-bullet
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        element: ul
         show_label: false
         label_element: h3
         label_element_classes: ''
@@ -62,7 +81,7 @@ content:
       view_mode: default
       link: true
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   field_meta_tags:
     type: metatag_empty_formatter
@@ -76,9 +95,9 @@ content:
     label: inline
     settings:
       timezone_override: ''
-      format_type: medium
+      format_type: corplite_medium
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
   field_site_topics:
     type: entity_reference_label
@@ -86,7 +105,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 4
+    weight: 5
     region: content
   field_summary:
     type: basic_string
