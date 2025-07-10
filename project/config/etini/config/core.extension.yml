@@ -34,6 +34,7 @@ module:
   corplite_district_inspectors: 0
   corplite_eu_cookie_compliance: 0
   corplite_image_styles: 0
+  corplite_views_routing: 0
   csp: 0
   ctools: 0
   date_facet_drilldown: 0
