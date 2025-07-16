@@ -16,27 +16,35 @@ elements: |-
   name_of_school_organisation:
     '#type': textfield
     '#title': 'Name of school/organisation'
+    '#required': true
   de_reference_no:
     '#type': textfield
     '#title': 'DE Reference No.'
+    '#required': true
   district_inspector:
     '#type': textfield
     '#title': 'District Inspector'
+    '#required': true
   reason_for_request:
     '#type': textarea
     '#title': 'Reason for request'
+    '#required': true
   name:
     '#type': textfield
     '#title': Name
+    '#required': true
   position_role_in_organisation:
     '#type': textfield
     '#title': 'Position/Role in organisation'
+    '#required': true
   contact_number:
     '#type': textfield
     '#title': 'Contact number'
+    '#required': true
   email_address:
     '#type': email
     '#title': 'Email address'
+    '#required': true
   markup:
     '#type': webform_markup
     '#markup': '<ul><li>This service is <strong>for use by school/organisation leaders only</strong></li><li>We aim to respond to your request within <strong>5 working days</strong></li><li>Based on the nature of the request, an inspector with an appropriate specialism will be asked to contact you to arrange a visit at a mutually convenient time.</li></ul>'
@@ -144,16 +152,16 @@ settings:
   draft_loaded_message: ''
   draft_pending_single_message: ''
   draft_pending_multiple_message: ''
-  confirmation_type: page
-  confirmation_url: ''
+  confirmation_type: url_message
+  confirmation_url: /district-inspectors
   confirmation_title: ''
-  confirmation_message: ''
+  confirmation_message: '<p>Your request has been received, we aim to respond within 5 working days</p>'
   confirmation_attributes: {  }
   confirmation_back: true
   confirmation_back_label: ''
   confirmation_back_attributes: {  }
-  confirmation_exclude_query: false
-  confirmation_exclude_token: false
+  confirmation_exclude_query: true
+  confirmation_exclude_token: true
   confirmation_update: false
   limit_total: null
   limit_total_interval: null
