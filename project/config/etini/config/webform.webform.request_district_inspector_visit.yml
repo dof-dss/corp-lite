@@ -13,6 +13,9 @@ title: 'Request District Inspector Visit'
 description: ''
 categories: {  }
 elements: |-
+  title:
+    '#type': webform_markup
+    '#markup': '<h2>Request a visit from a District Inspector</h2>'
   name_of_school_organisation:
     '#type': textfield
     '#title': 'Name of school/organisation'
