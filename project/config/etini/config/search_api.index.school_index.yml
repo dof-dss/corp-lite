@@ -1,9 +1,9 @@
-uuid: fdba36eb-b433-4d30-8bd1-3d46651e216d
+uuid: 157a809c-a611-4086-812e-63990faae8fa
 langcode: en
 status: true
 dependencies:
   module:
-    - corplite_district_inspectors
+    - etini_district_inspectors
     - search_api
     - search_api_solr
 third_party_settings:
@@ -46,35 +46,35 @@ third_party_settings:
       collection: ''
       timezone: ''
     multilingual:
-      limit_to_content_language: true
+      limit_to_content_language: false
       include_language_independent: true
       use_language_undefined_as_fallback_language: false
       specific_languages:
         en: '0'
       use_universal_collation: false
-id: school
-name: 'School Index'
+id: school_index
+name: 'School index'
 description: ''
 read_only: false
 field_settings:
   de_reference:
     label: 'DE Reference'
-    datasource_id: 'entity:School'
+    datasource_id: 'entity:school'
     property_path: de_reference
-    type: 'solr_text_custom:ngram'
+    type: 'solr_text_custom_omit_norms:ngram'
     dependencies:
       module:
-        - corplite_district_inspectors
+        - etini_district_inspectors
   name:
     label: Name
-    datasource_id: 'entity:School'
+    datasource_id: 'entity:school'
     property_path: Name
     type: 'solr_text_custom:ngram'
     dependencies:
       module:
-        - corplite_district_inspectors
+        - etini_district_inspectors
 datasource_settings:
-  'entity:School': {  }
+  'entity:school': {  }
 processor_settings:
   add_url: {  }
   aggregated_field: {  }
