@@ -1,5 +1,25 @@
-corplite.views.routing:
+corplite.views.publications.routing:
   path: '/publications/{searchstring}'
+  defaults:
+    _controller: '\Drupal\node\Controller\NodeViewController::view'
+    _title_callback: '\Drupal\node\Controller\NodeViewController::title'
+  requirements:
+    node: \d+
+    _entity_access: node.view
+    searchstring: '[^\?\/]+$'
+
+corplite.views.news.routing:
+  path: '/news/{searchstring}'
+  defaults:
+    _controller: '\Drupal\node\Controller\NodeViewController::view'
+    _title_callback: '\Drupal\node\Controller\NodeViewController::title'
+  requirements:
+    node: \d+
+    _entity_access: node.view
+    searchstring: '[^\?\/]+$'
+
+orplite.views.consultations.routing:
+  path: '/consultations/{searchstring}'
   defaults:
     _controller: '\Drupal\node\Controller\NodeViewController::view'
     _title_callback: '\Drupal\node\Controller\NodeViewController::title'
