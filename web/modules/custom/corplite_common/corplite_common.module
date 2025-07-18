@@ -55,3 +55,13 @@ function corplite_common_page_attachments(array &$attachments) {
     $attachments['#attached']['library'][] = 'nicsdru_corplite_theme/admin-content';
   }
 }
+
+/**
+ * Implements hook_entity_presave().
+ */
+function unity_common_entity_presave(EntityInterface $entity) {
+  // Ensure that moderation sidebar is always shown after
+  // creating or editing a node (to fix problem described in
+  // D8UN-2676).
+  \Drupal::service('cache.render')->invalidateAll();
+}
