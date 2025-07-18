@@ -359,6 +359,19 @@ display:
             format: basic_html
           tokenize: false
       sorts:
+        field_published_date:
+          id: field_published_date
+          table: search_api_index_default_content
+          field: field_published_date
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api
+          order: DESC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
         search_api_relevance:
           id: search_api_relevance
           table: search_api_index_default_content
