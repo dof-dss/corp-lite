@@ -18,7 +18,7 @@ corplite.views.news.routing:
     _entity_access: node.view
     searchstring: '[^\?\/]+$'
 
-orplite.views.consultations.routing:
+corplite.views.consultations.routing:
   path: '/consultations/{searchstring}'
   defaults:
     _controller: '\Drupal\node\Controller\NodeViewController::view'
