@@ -7,10 +7,12 @@ dependencies:
     - field.field.node.link.field_link_url
     - field.field.node.link.field_site_topics
     - node.type.link
+    - workflows.workflow.nics_editorial_workflow
   module:
     - content_moderation
     - link
     - path
+    - shs
 id: node.link.default
 targetEntityType: node
 bundle: link
@@ -37,10 +39,14 @@ content:
       placeholder_title: ''
     third_party_settings: {  }
   field_site_topics:
-    type: options_select
+    type: options_shs
     weight: 12
     region: content
-    settings: {  }
+    settings:
+      display_node_count: false
+      create_new_items: false
+      create_new_levels: false
+      force_deepest: false
     third_party_settings: {  }
   flag:
     weight: 10
