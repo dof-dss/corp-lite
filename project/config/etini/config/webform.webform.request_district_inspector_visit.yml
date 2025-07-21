@@ -50,7 +50,7 @@ elements: |-
     '#required': true
   markup:
     '#type': webform_markup
-    '#markup': "<ul><li>We aim to respond to your request within <strong>5 working days</strong></li><li>Based on the nature of the request, an inspector with an appropriate specialism will be asked to contact you to arrange a visit at a mutually convenient time.</li><li>The ETI's ability to meet this request will be dependent on inspector availability and scheduling demands.</li></ul>"
+    '#markup': '<ul><li>We aim to respond to your request within <strong>5 working days</strong></li><li>Based on the nature of the request, an inspector with an appropriate specialism will be asked to contact you to arrange a visit at a mutually convenient time.</li><li>The ETI''s ability to meet this request will be dependent on inspector availability and scheduling demands.</li></ul><p><span style="font-size:11.0pt;mso-fareast-language:EN-US;">We look forward to working in collaboration with you, in line with our mission of ‘empowering improvement for all learners’. Thank you.</span></p>'
 css: ''
 javascript: ''
 settings:
