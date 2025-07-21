@@ -21,7 +21,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'Find a District Inspector'
+      title: 'Find my District Inspector'
       fields:
         name:
           id: name
@@ -324,7 +324,7 @@ display:
           exposed: true
           expose:
             operator_id: search_api_fulltext_op
-            label: 'DE Reference'
+            label: 'DE Reference or School/Organisation name'
             description: ''
             use_operator: false
             operator: search_api_fulltext_op
@@ -347,6 +347,7 @@ display:
             expose_fields: false
             placeholder: ''
             searched_fields_id: search_api_fulltext_searched_fields
+            value_maxlength: 128
           is_grouped: false
           group_info:
             label: ''
@@ -388,7 +389,20 @@ display:
           required: false
           skip_access: true
       header: {  }
-      footer: {  }
+      footer:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: "<ul>\r\n<li>This service is <b>for use by school/organisation leaders only</b></li>\r\n</ul>"
+            format: full_html
+          tokenize: false
       display_extenders: {  }
     cache_metadata:
       max-age: -1

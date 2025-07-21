@@ -50,7 +50,7 @@ elements: |-
     '#required': true
   markup:
     '#type': webform_markup
-    '#markup': '<ul><li>This service is <strong>for use by school/organisation leaders only</strong></li><li>We aim to respond to your request within <strong>5 working days</strong></li><li>Based on the nature of the request, an inspector with an appropriate specialism will be asked to contact you to arrange a visit at a mutually convenient time.</li></ul>'
+    '#markup': "<ul><li>We aim to respond to your request within <strong>5 working days</strong></li><li>Based on the nature of the request, an inspector with an appropriate specialism will be asked to contact you to arrange a visit at a mutually convenient time.</li><li>The ETI's ability to meet this request will be dependent on inspector availability and scheduling demands.</li></ul>"
 css: ''
 javascript: ''
 settings:
