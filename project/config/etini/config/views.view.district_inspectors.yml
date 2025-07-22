@@ -400,7 +400,7 @@ display:
           plugin_id: text
           empty: true
           content:
-            value: 'This service is <b>for use by school/organisation leaders only</b>'
+            value: '<br/>This service is <b>for use by school/organisation leaders only</b>'
             format: full_html
           tokenize: false
       display_extenders: {  }
