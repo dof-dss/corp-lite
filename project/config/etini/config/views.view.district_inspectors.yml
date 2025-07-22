@@ -1,18 +1,18 @@
-uuid: ba258d84-5f63-4727-9951-5675752a14a4
+uuid: 19315e5d-cfc8-41e8-af12-cee071d1b5cc
 langcode: en
 status: true
 dependencies:
   config:
-    - search_api.index.school
+    - search_api.index.school_index
   module:
-    - corplite_district_inspectors
+    - etini_district_inspectors
     - search_api
 id: district_inspectors
 label: 'District Inspectors'
 module: views
 description: ''
 tag: ''
-base_table: search_api_index_school
+base_table: search_api_index_school_index
 base_field: search_api_id
 display:
   default:
@@ -21,7 +21,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'Find a District Inspector'
+      title: 'Find my District Inspector'
       fields:
         name:
           id: name
@@ -75,7 +75,8 @@ display:
           hide_alter_empty: true
           click_sort_column: value
           type: string
-          settings: {  }
+          settings:
+            link_to_entity: false
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -95,11 +96,13 @@ display:
             multi_separator: ', '
         de_reference:
           id: de_reference
-          table: search_api_index_school
+          table: search_api_index_school_index
           field: de_reference
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: null
+          entity_field: null
           plugin_id: search_api_field
           label: ''
           exclude: false
@@ -144,7 +147,8 @@ display:
           hide_alter_empty: true
           click_sort_column: value
           type: string
-          settings: {  }
+          settings:
+            link_to_entity: false
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -164,7 +168,7 @@ display:
             multi_separator: ', '
         name_1:
           id: name_1
-          table: search_api_index_school
+          table: search_api_index_school_index
           field: name
           relationship: none
           group_type: group
@@ -213,7 +217,8 @@ display:
           hide_alter_empty: true
           click_sort_column: value
           type: string
-          settings: {  }
+          settings:
+            link_to_entity: false
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -231,6 +236,55 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
+        nothing:
+          id: nothing
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: custom
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: "<a href='form/request-district-inspector-visit?district_inspector={{ name }}&de_reference_no={{ de_reference }}&name_of_school_organisation={{ name_1 }}'>Request a visit from this inspector</a>"
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
       pager:
         type: some
         options:
@@ -243,7 +297,7 @@ display:
           reset_button: false
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
-          expose_sort_order: false
+          expose_sort_order: true
           sort_asc_label: Asc
           sort_desc_label: Desc
       access:
@@ -258,7 +312,7 @@ display:
       filters:
         search_api_fulltext:
           id: search_api_fulltext
-          table: search_api_index_school
+          table: search_api_index_school_index
           field: search_api_fulltext
           relationship: none
           group_type: group
@@ -270,7 +324,7 @@ display:
           exposed: true
           expose:
             operator_id: search_api_fulltext_op
-            label: 'DE Reference'
+            label: 'DE Reference or School/Organisation name'
             description: ''
             use_operator: false
             operator: search_api_fulltext_op
@@ -282,32 +336,30 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              administrator: '0'
-              qa: '0'
               anonymous: '0'
+              administrator: '0'
               author_user: '0'
               supervisor_user: '0'
               editor_user: '0'
               site_admin_user: '0'
               admin_user: '0'
+              qa: '0'
             expose_fields: false
             placeholder: ''
             searched_fields_id: search_api_fulltext_searched_fields
+            value_maxlength: 128
           is_grouped: false
           group_info:
-            label: 'Fulltext search'
-            description: null
-            identifier: search_api_fulltext
+            label: ''
+            description: ''
+            identifier: ''
             optional: true
             widget: select
             multiple: false
             remember: false
             default_group: All
             default_group_multiple: {  }
-            group_items:
-              1: {  }
-              2: {  }
-              3: {  }
+            group_items: {  }
           parse_mode: terms
           min_length: 1
           fields:
@@ -321,24 +373,36 @@ display:
         type: search_api_query
         options:
           bypass_access: false
-          skip_access: true
+          skip_access: false
           preserve_facet_query_args: false
           query_tags: {  }
       relationships:
         inspector_id:
           id: inspector_id
-          table: search_api_datasource_school_entity_School
+          table: search_api_datasource_school_index_entity_school
           field: inspector_id
           relationship: none
           group_type: group
           admin_label: 'Referenced Inspector: District Inspector'
-          entity_type: School
+          entity_type: school
           plugin_id: search_api
           required: false
           skip_access: true
-      use_ajax: false
       header: {  }
-      footer: {  }
+      footer:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: '<br/>This service is <b>for use by school/organisation leaders only</b>'
+            format: full_html
+          tokenize: false
       display_extenders: {  }
     cache_metadata:
       max-age: -1
@@ -347,8 +411,8 @@ display:
         - 'languages:language_interface'
         - url
       tags:
-        - 'config:search_api.index.school'
-        - 'search_api_list:school'
+        - 'config:search_api.index.school_index'
+        - 'search_api_list:school_index'
   page_1:
     id: page_1
     display_title: Page
@@ -368,5 +432,5 @@ display:
         - 'languages:language_interface'
         - url
       tags:
-        - 'config:search_api.index.school'
-        - 'search_api_list:school'
+        - 'config:search_api.index.school_index'
+        - 'search_api_list:school_index'
