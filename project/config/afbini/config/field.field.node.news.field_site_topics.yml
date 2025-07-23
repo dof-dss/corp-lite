@@ -13,7 +13,7 @@ field_name: field_site_topics
 entity_type: node
 bundle: news
 label: 'Areas of Expertise'
-description: 'Choose relevant area(s) of expertise for this news item. Hold down Ctrl to choose multiple topics. '
+description: 'Choose relevant area(s) of expertise for this news item.'
 required: false
 translatable: false
 default_value: {  }
@@ -25,4 +25,7 @@ settings:
       site_topics: site_topics
     sort:
       field: _none
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
 field_type: entity_reference
