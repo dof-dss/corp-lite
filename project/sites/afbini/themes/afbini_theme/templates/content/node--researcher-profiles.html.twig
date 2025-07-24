@@ -212,7 +212,9 @@
       </ul>
     </section>
   {% endif %}
+  {% if content.book_navigation %}
+    <nav class="sub-menu--book">
+      {{ content.book_navigation }}
+    </nav>
+  {% endif %}
 </article>
-
-
-
