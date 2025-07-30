@@ -49,10 +49,10 @@ final class InspectorForm extends ContentEntityForm {
    */
   public function validateForm(array &$form, FormStateInterface $form_state): void {
     $name = $form_state->getValue('name')[0]['value'];
-    if (!preg_match("/^[a-zA-Z' ]+$/", $name)) {
+    if (!preg_match("/^[a-zA-Z' \-]+$/", $name)) {
       $form_state->setErrorByName(
         'name',
-        $this->t('Inspector name must only contain letters, spaces or a single quote.'),
+        $this->t('Inspector name must only contain letters, spaces, a hyphen or a single quote.'),
       );
     }
     parent::validateForm($form, $form_state);
