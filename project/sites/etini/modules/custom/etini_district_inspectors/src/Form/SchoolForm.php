@@ -92,16 +92,10 @@ final class SchoolForm extends ContentEntityForm {
       );
     }
     $de_reference = $form_state->getValue('de_reference')[0]['value'];
-    if (!is_numeric($de_reference)) {
+    if ((strlen($de_reference) != 7) && ($de_reference != 'N/A')) {
       $form_state->setErrorByName(
         'de_reference',
-        $this->t('DE Reference should be numeric.'),
-      );
-    }
-    if (strlen($de_reference) != 7) {
-      $form_state->setErrorByName(
-        'de_reference',
-        $this->t('DE Reference must be 7 digits.'),
+        $this->t('DE Reference must be 7 digits or N/A.'),
       );
     }
     $name = $form_state->getValue('Name')[0]['value'];
