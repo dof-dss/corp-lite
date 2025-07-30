@@ -27,6 +27,12 @@ bundles:
     bundle: department_management
   -
     entity_type: node
+    bundle: feature
+  -
+    entity_type: node
+    bundle: featured_content_list
+  -
+    entity_type: node
     bundle: link
   -
     entity_type: node
