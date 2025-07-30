@@ -9,6 +9,8 @@ dependencies:
     - node.type.consultation
     - node.type.contact
     - node.type.department_management
+    - node.type.feature
+    - node.type.featured_content_list
     - node.type.link
     - node.type.news
     - node.type.page
@@ -108,6 +110,8 @@ type_settings:
       - consultation
       - contact
       - department_management
+      - feature
+      - featured_content_list
       - link
       - news
       - page
