@@ -8,6 +8,7 @@ use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Entity\RevisionableContentEntityBase;
 use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\etini_district_inspectors\Entity\Inspector;
 use Drupal\etini_district_inspectors\SchoolInterface;
 
 /**
@@ -143,6 +144,7 @@ final class School extends RevisionableContentEntityBase implements ContentEntit
     $fields['inspector_id'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Referenced Inspector'))
       ->setRevisionable(TRUE)
+      ->setCardinality(1)
       ->setSetting('target_type', 'inspector')
       ->setDisplayOptions('view', [
         'label' => 'hidden',
