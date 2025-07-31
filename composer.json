@@ -305,7 +305,6 @@
                 "Fatal typerror fix": "https://www.drupal.org/files/issues/2020-12-23/readonlymode-string_not_array-3115119-9.patch"
             },
             "drupal/shs": {
-            "Select list values incorrectly truncated" : "https://www.drupal.org/files/issues/2023-04-07/3277510-shs-truncated-selected-value-9_0.patch",
             "Don't allow duplicates": "https://www.drupal.org/files/issues/2022-08-04/3301687-2-shs-remove-duplicate.patch"
             },
             "drupal/structure_sync": {
