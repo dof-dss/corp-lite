@@ -1,0 +1,13 @@
+uuid: 6da42135-772a-40c1-ae52-78dc82ccb6ba
+langcode: en
+status: true
+dependencies:
+  module:
+    - etini_district_inspectors
+_core:
+  default_config_hash: vETLIEq7K0WpJuvyF6Um_uxmwug534G1tUDOKZRL2Go
+id: inspector_delete_action
+label: 'Delete inspectors'
+type: inspector
+plugin: 'entity:delete_action:inspector'
+configuration: {  }
