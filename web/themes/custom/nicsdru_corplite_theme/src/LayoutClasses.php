@@ -5,8 +5,7 @@ namespace Drupal\nicsdru_corplite_theme;
 /**
  * Common CSS class groups for layouts.
  */
-class LayoutClasses
-{
+class LayoutClasses {
   // Layout classes for pages with a main and no aside.
   const MAIN = ['grid', 'layout--main'];
 
