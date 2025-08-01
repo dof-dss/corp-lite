@@ -55,3 +55,10 @@ function corplite_common_page_attachments(array &$attachments) {
     $attachments['#attached']['library'][] = 'nicsdru_corplite_theme/admin-content';
   }
 }
+
+/**
+ * Implements hook_preprocess_book_navigation().
+ */
+function corplite_common_preprocess_book_navigation(&$variables) {
+  $variables['#cache']['max-age'] = 0;
+}
