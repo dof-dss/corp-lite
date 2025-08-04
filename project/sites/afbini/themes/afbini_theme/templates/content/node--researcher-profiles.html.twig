@@ -123,16 +123,6 @@
       {{ content.field_expertise_experience }}
     {% endif %}
 
-    {% if content.field_keywords %}
-      <h2>Keywords</h2>
-      {{ content.field_keywords }}
-    {% endif %}
-
-    {% if content.field_additional_keywords %}
-      <h2>Additional Keywords</h2>
-      {{ content.field_additional_keywords }}
-    {% endif %}
-
     {% if content.field_affiliations_and_awards %}
       <h2>Affiliations & Awards</h2>
       {{ content.field_affiliations_and_awards }}
@@ -142,10 +132,11 @@
   <section class="contact-info">
     <h2>Contact Information</h2>
     <div class="field-group">
-      {% if content.field_email %}
+      {% if node.field_email %}
         <div class="field-line">
           <span class="field-label">Email:</span>
-          <span class="field-value">{{ content.field_email }}</span>
+          <span class="field-value"><a href="mailto:{{ node.field_email.value }}">{{ node.field_email.value }}</a>
+    </span>
         </div>
       {% endif %}
       {% if content.field_phone %}
@@ -160,10 +151,13 @@
           <span class="field-value">{{ content.field_mobile }}</span>
         </div>
       {% endif %}
-      {% if content.field_orcid %}
+      {% if node.field_orcid %}
         <div class="field-line">
           <span class="field-label">ORCID:</span>
-          <span class="field-value">{{ content.field_orcid }}</span>
+          <span class="field-value"><a href="https://orcid.org/{{ node.field_orcid.value }}" target="_blank" rel="noopener">
+        {{ node.field_orcid.value }}
+      </a>
+    </span>
         </div>
       {% endif %}
     </div>
@@ -218,7 +212,9 @@
       </ul>
     </section>
   {% endif %}
+  {% if content.book_navigation %}
+    <nav class="sub-menu--book">
+      {{ content.book_navigation }}
+    </nav>
+  {% endif %}
 </article>
-
-
-

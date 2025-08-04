@@ -13,7 +13,7 @@ field_name: field_site_topics
 entity_type: node
 bundle: publication
 label: 'Area of co-operation'
-description: 'Choose relevant area of co-operation(s) for this publication. Hold down Ctrl to choose multiple site topic'
+description: 'Choose relevant area of co-operation(s) for this publication.'
 required: false
 translatable: false
 default_value: {  }
