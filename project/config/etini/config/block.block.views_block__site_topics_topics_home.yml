@@ -13,7 +13,7 @@ dependencies:
 id: views_block__site_topics_topics_home
 theme: etini_theme
 region: content
-weight: -12
+weight: -11
 provider: null
 plugin: 'views_block:site_topics-topics_home'
 settings:

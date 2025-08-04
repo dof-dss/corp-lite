@@ -1,6 +1,6 @@
 services:
   etini_district_inspectors.commands:
     class: \Drupal\etini_district_inspectors\Commands\InspectorDrushCommands
-    arguments: ['@entity_type.manager']
+    arguments: ['@entity_type.manager','@database']
     tags:
       - { name: drush.command }

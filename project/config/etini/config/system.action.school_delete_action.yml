@@ -1,0 +1,13 @@
+uuid: f9e1b8ec-93bf-4fff-a726-5797f2a189d9
+langcode: en
+status: true
+dependencies:
+  module:
+    - etini_district_inspectors
+_core:
+  default_config_hash: 7XshrTvwTX2-WeIK_1zh5qqVjHS3ogCATrhTTsIXcFw
+id: school_delete_action
+label: 'Delete schools'
+type: school
+plugin: 'entity:delete_action:school'
+configuration: {  }
