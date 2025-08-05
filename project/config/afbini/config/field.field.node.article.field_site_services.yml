@@ -11,7 +11,7 @@ field_name: field_site_services
 entity_type: node
 bundle: article
 label: Service
-description: 'Choose relevant services for this article. Hold down Ctrl to choose multiple tags.'
+description: 'Choose relevant services for this article.'
 required: true
 translatable: false
 default_value: {  }

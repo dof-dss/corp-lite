@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - etini_district_inspectors
+id: school_delete_action
+label: 'Delete schools'
+type: school
+plugin: entity:delete_action:school
+configuration: {  }

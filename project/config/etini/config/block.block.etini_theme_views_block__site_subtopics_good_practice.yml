@@ -13,7 +13,7 @@ dependencies:
 id: etini_theme_views_block__site_subtopics_good_practice
 theme: etini_theme
 region: content
-weight: 0
+weight: -3
 provider: null
 plugin: 'views_block:site_subtopics-site_subtopics_good_practice'
 settings:

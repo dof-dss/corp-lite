@@ -1,0 +1,44 @@
+entity.inspector.settings:
+  title: 'Settings'
+  route_name: entity.inspector.settings
+  base_route: entity.inspector.settings
+entity.inspector.view:
+  title: 'View'
+  route_name: entity.inspector.canonical
+  base_route: entity.inspector.canonical
+entity.inspector.edit_form:
+  title: 'Edit'
+  route_name: entity.inspector.edit_form
+  base_route: entity.inspector.canonical
+entity.inspector.delete_form:
+  title: 'Delete'
+  route_name: entity.inspector.delete_form
+  base_route: entity.inspector.canonical
+  weight: 10
+entity.inspector.collection:
+  title: 'Inspectors'
+  route_name: entity.inspector.collection
+  base_route: system.admin_content
+  weight: 10
+entity.school.settings:
+  title: 'Settings'
+  route_name: entity.school.settings
+  base_route: entity.school.settings
+entity.school.view:
+  title: 'View'
+  route_name: entity.school.canonical
+  base_route: entity.school.canonical
+entity.school.edit_form:
+  title: 'Edit'
+  route_name: entity.school.edit_form
+  base_route: entity.school.canonical
+entity.school.delete_form:
+  title: 'Delete'
+  route_name: entity.school.delete_form
+  base_route: entity.school.canonical
+  weight: 10
+entity.school.collection:
+  title: 'Schools'
+  route_name: entity.school.collection
+  base_route: system.admin_content
+  weight: 10

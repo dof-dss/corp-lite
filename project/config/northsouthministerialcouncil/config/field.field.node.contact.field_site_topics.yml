@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_site_topics
     - node.type.contact
+    - taxonomy.vocabulary.site_topics
 _core:
   default_config_hash: TNO3jTbjcjcujgdNOn-PlEaN1Kxrg7bjk_H_hdmpt_s
 id: node.contact.field_site_topics
@@ -12,7 +13,7 @@ field_name: field_site_topics
 entity_type: node
 bundle: contact
 label: 'Site topics'
-description: 'Choose relevant site topic(s) for this point of contact. Hold down Ctrl to choose multiple site topics.'
+description: 'Choose relevant site topic(s) for this point of contact.'
 required: false
 translatable: false
 default_value: {  }
@@ -20,6 +21,11 @@ default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'
   handler_settings:
+    target_bundles:
+      site_topics: site_topics
     sort:
       field: _none
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
 field_type: entity_reference
