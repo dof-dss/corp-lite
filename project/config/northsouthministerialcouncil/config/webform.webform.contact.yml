@@ -42,9 +42,6 @@ elements: |-
       '#counter_type': character
       '#counter_minimum': 1
       '#counter_maximum': 750
-      '#wrapper_attributes':
-        class:
-          - textarea-wrapper
       '#test': 'Please ignore this email.'
   actions:
     '#type': webform_actions

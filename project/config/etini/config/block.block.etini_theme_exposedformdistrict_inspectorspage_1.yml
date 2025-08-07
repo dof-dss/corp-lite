@@ -1,4 +1,4 @@
-uuid: cb1bfcb9-39e7-43da-af9b-490b7538e588
+uuid: ea3071be-f83b-4897-8743-e81f201e8e2e
 langcode: en
 status: true
 dependencies:
@@ -13,7 +13,7 @@ dependencies:
 id: etini_theme_exposedformdistrict_inspectorspage_1
 theme: etini_theme
 region: content
-weight: -8
+weight: -15
 provider: null
 plugin: 'views_exposed_filter_block:district_inspectors-page_1'
 settings:

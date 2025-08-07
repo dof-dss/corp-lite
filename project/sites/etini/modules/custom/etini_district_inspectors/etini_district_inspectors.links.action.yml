@@ -1,0 +1,11 @@
+school.add_form:
+  title: 'Add school'
+  route_name: entity.school.add_form
+  appears_on:
+    - entity.school.collection
+
+inspector.add_form:
+  title: 'Add inspector'
+  route_name: entity.inspector.add_form
+  appears_on:
+    - entity.inspector.collection

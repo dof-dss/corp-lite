@@ -1,0 +1,32 @@
+entity.school.settings:
+  title: 'School'
+  description: 'Configure a School entity type.'
+  route_name:  entity.school.settings
+  parent: system.admin_structure
+
+entity.school.collection:
+  title: 'Schools'
+  description: 'List of schools.'
+  route_name: entity.school.collection
+  parent: system.admin_content
+
+entity.inspector.settings:
+  title: 'Inspector'
+  description: 'Configure an Inspector entity type.'
+  route_name:  entity.inspector.settings
+  parent: system.admin_structure
+
+entity.inspector.collection:
+  title: 'Inspectors'
+  description: 'List of inspectors.'
+  route_name: entity.inspector.collection
+  parent: system.admin_content
+
+inspector_transfer.inspector_transfer_form:
+  title: 'District Inspector Transfer Schools'
+  route_name: etini_district_inspectors.inspector_transfer_form
+  description: 'District Inspector Transfer Schools'
+  parent: system.admin_config
+  weight: 99
+
+

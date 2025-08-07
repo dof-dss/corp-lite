@@ -1,19 +1,128 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * @file
  * Code to provide District Inspectors search facility.
  */
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Render\Element;
+use Drupal\etini_district_inspectors\Entity\Inspector;
+use Drupal\etini_district_inspectors\Entity\School;
+
+/**
+ * Implements hook_theme().
+ */
+function etini_district_inspectors_theme(): array {
+  return [
+    'school' => ['render element' => 'elements'],
+  ];
+}
+
+/**
+ * Prepares variables for school templates.
+ *
+ * Default template: school.html.twig.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - elements: An associative array containing the school information and any
+ *     fields attached to the entity.
+ *   - attributes: HTML attributes for the containing element.
+ */
+function template_preprocess_school(array &$variables): void {
+  $variables['view_mode'] = $variables['elements']['#view_mode'];
+  foreach (Element::children($variables['elements']) as $key) {
+    $variables['content'][$key] = $variables['elements'][$key];
+  }
+}
+
+/**
+ * Prepares variables for inspector templates.
+ *
+ * Default template: inspector.html.twig.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - elements: An associative array containing the inspector information and any
+ *     fields attached to the entity.
+ *   - attributes: HTML attributes for the containing element.
+ */
+function template_preprocess_inspector(array &$variables): void {
+  $variables['view_mode'] = $variables['elements']['#view_mode'];
+  foreach (Element::children($variables['elements']) as $key) {
+    $variables['content'][$key] = $variables['elements'][$key];
+  }
+}
+
 
 /**
  * Implements hook_form_alter().
  */
 function etini_district_inspectors_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  // Add autocomplete processing to the exposed filter on the District Inspectors view.
   if (($form_id == 'views_exposed_form') && ($form['#action'] == '/district-inspectors')) {
+    // Add autocomplete processing to the exposed filter on the District Inspectors view.
     $form['search_api_fulltext']['#autocomplete_route_name'] = 'inspector.autocomplete';
     $form['#attached']['library'][] = 'etini_district_inspectors/auto_submit';
+  } else if (($form_id == 'school_edit_form') || ($form_id == 'school_add_form')) {
+    $current_inspector_id = '';
+    if ($form_id == 'school_edit_form') {
+      // Get the current inspector for the school that we are viewing.
+      $school_id = $form_state->getformObject()->getEntity()->id();
+      $school = School::load($school_id);
+      if (!empty($school)) {
+        $current_inspector_id = $school->get('inspector_id')->getString();
+      }
+    }
+    // Add inspector select list to the school edit form.
+    $inspectors = \Drupal::entityTypeManager()->getStorage('inspector')->loadMultiple();
+    $options = [];
+    foreach ($inspectors as $inspector) {
+      if (!empty($inspector)) {
+        $options[$inspector->id()] = $inspector->get('name')->getString();
+      }
+    }
+    $form['inspector_id'] = array(
+      '#title' => t('Inspector'),
+      '#type' => 'select',
+      '#default_value' => $current_inspector_id,
+      '#description' => 'Select inspector for this school.',
+      '#options' => $options
+    );
+  } else if ($form_id == 'inspector_edit_form') {
+    //kint ($form);
+    $form['revision']['#default_value'] = True;
+  }
+}
+
+/**
+ * Implements hook_preprocess_field().
+ */
+function etini_district_inspectors_preprocess_field(&$variables, $hook) {
+  // Display inspector name on School view page.
+  if (($variables['entity_type'] == "school") && ($variables['field_name'] == 'inspector_id')) {
+    $inspector_id = $variables['items'][0]['content']['#context']['value'];
+    $inspector = Inspector::load($inspector_id);
+    if (!empty($inspector)) {
+      $variables['inspector_name'] = $inspector->get('name')->getString(0);
+    }
+  }
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function etini_district_inspectors_page_attachments(array &$attachments) {
+  // Hide revision info on school and inspector forms.
+  if (\Drupal::service('router.admin_context')->isAdminRoute()) {
+    $this_route = \Drupal::routeMatch()->getRouteName();
+    if (($this_route == 'entity.school.edit_form') ||
+      ($this_route == 'entity.school.add_form') ||
+      ($this_route == 'entity.inspector.edit_form') ||
+      ($this_route == 'entity.inspector.add_form')) {
+      $attachments['#attached']['library'][] = 'etini_district_inspectors/extra.admin';
+    }
   }
 }

@@ -11,7 +11,7 @@ field_name: field_audience
 entity_type: node
 bundle: publication
 label: Audience
-description: 'Select and appropriate audience type for this publication. Hold down Ctrl to choose multiple options.'
+description: 'Select and appropriate audience type for this publication.'
 required: false
 translatable: false
 default_value: {  }

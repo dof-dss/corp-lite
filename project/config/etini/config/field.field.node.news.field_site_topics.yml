@@ -13,7 +13,7 @@ field_name: field_site_topics
 entity_type: node
 bundle: news
 label: Topics
-description: 'Choose optional site topic(s) for this news item. Hold down Ctrl to choose multiple site topics.'
+description: 'Choose optional site topic(s) for this news item.'
 required: false
 translatable: false
 default_value: {  }
