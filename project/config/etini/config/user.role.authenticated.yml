@@ -11,6 +11,7 @@ dependencies:
     - path
     - system
     - toolbar
+    - whatlinkshere
 _core:
   default_config_hash: 5VGJw7pgPFTBuJrCG9pBukHNqdclr8NPzvsAwTZXVwY
 id: authenticated
@@ -25,6 +26,7 @@ permissions:
   - 'create url aliases'
   - 'use text format basic_html'
   - 'view all revisions'
+  - 'view content references'
   - 'view media'
   - 'view own unpublished content'
   - 'view the administration theme'

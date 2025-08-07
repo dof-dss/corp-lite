@@ -132,6 +132,7 @@ permissions:
   - 'delete profile revisions'
   - 'delete publication revisions'
   - 'delete webform revisions'
+  - 'edit any alert content'
   - 'edit any application content'
   - 'edit any article content'
   - 'edit any audio media'

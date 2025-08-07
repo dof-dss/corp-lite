@@ -36,6 +36,7 @@ dependencies:
     - redirect
     - scheduled_transitions
     - system
+    - whatlinkshere
 _core:
   default_config_hash: sm9myrHyT75sIlDforph0s_evEe8km_JbT7K1UTnmBY
 id: editor_user
@@ -192,6 +193,7 @@ permissions:
   - 'view application revisions'
   - 'view article revisions'
   - 'view contact revisions'
+  - 'view content references'
   - 'view gallery revisions'
   - 'view html_document revisions'
   - 'view latest version'
