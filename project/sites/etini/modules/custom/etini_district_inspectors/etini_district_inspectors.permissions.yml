@@ -1,0 +1,34 @@
+administer school:
+  title: 'Administer schools'
+  restrict access: true
+view school:
+  title: 'View school'
+edit school:
+  title: 'Edit school'
+delete school:
+  title: 'Delete school'
+create school:
+  title: 'Create school'
+view school revision:
+  title: 'View school revision'
+revert school revision:
+  title: 'Revert school revision'
+delete school revision:
+  title: 'Delete school revision'
+administer inspector:
+  title: 'Administer inspectors'
+  restrict access: true
+view inspector:
+  title: 'View inspector'
+edit inspector:
+  title: 'Edit inspector'
+delete inspector:
+  title: 'Delete inspector'
+create inspector:
+  title: 'Create inspector'
+view inspector revision:
+  title: 'View inspector revision'
+revert inspector revision:
+  title: 'Revert inspector revision'
+delete inspector revision:
+  title: 'Delete inspector revision'
