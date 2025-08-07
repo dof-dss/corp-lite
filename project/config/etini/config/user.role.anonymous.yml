@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   module:
-    - etini_district_inspectors
     - eu_cookie_compliance
     - media
     - system
@@ -16,6 +15,4 @@ is_admin: false
 permissions:
   - 'access content'
   - 'display eu cookie compliance popup'
-  - 'view inspector'
   - 'view media'
-  - 'view school'
