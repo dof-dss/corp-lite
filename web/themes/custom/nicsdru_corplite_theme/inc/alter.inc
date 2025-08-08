@@ -10,14 +10,13 @@ use Drupal\Core\Form\FormStateInterface;
 /**
  * Implements hook_form_system_theme_settings_alter().
  */
-function nicsdru_corplite_theme_form_system_theme_settings_alter(&$form, FormStateInterface $form_state, $form_id = NULL)
-{
-// Work-around for a core bug affecting admin themes. See issue #943212.
+function nicsdru_corplite_theme_form_system_theme_settings_alter(&$form, FormStateInterface $form_state, $form_id = NULL) {
+  // Work-around for a core bug affecting admin themes. See issue #943212.
   if (isset($form_id)) {
     return;
   }
 
-// Add a theme settings group to gather social media link URLs.
+  // Add a theme settings group to gather social media link URLs.
   $form['social_links'] = [
     '#type' => 'details',
     '#title' => t('Social media links'),

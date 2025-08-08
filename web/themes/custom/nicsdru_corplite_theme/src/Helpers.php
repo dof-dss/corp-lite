@@ -9,8 +9,7 @@ use Drupal\block\Entity\Block;
  *
  * @package Drupal\nicsdru_corplite_theme
  */
-class Helpers
-{
+class Helpers {
 
   /**
    * Loads and returns block content.
@@ -21,12 +20,12 @@ class Helpers
    * @return array|null
    *   Block render array or null if block not found.
    */
-  public static function blockContent($block_id)
-  {
+  public static function blockContent($block_id) {
     $block = Block::load($block_id);
     if ($block !== NULL) {
       return \Drupal::entityTypeManager()->getViewBuilder('block')->view($block);
     }
     return NULL;
   }
+
 }
