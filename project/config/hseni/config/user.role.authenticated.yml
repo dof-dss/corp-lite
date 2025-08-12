@@ -10,6 +10,7 @@ dependencies:
     - node
     - path
     - system
+    - whatlinkshere
 _core:
   default_config_hash: 5VGJw7pgPFTBuJrCG9pBukHNqdclr8NPzvsAwTZXVwY
 id: authenticated
@@ -21,6 +22,7 @@ permissions:
   - 'access content'
   - 'create url aliases'
   - 'use text format basic_html'
+  - 'view content references'
   - 'view media'
   - 'view own unpublished content'
   - 'view the administration theme'
