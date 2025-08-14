@@ -288,6 +288,9 @@ datasource_settings:
       default: true
       selected:
         - webform
+        - feature
+        - featured_content_list
+        - link
     languages:
       default: true
       selected: {  }
