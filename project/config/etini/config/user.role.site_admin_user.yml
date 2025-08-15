@@ -33,6 +33,7 @@ dependencies:
     - origins_workflow
     - redirect
     - scheduled_transitions
+    - whatlinkshere
 id: site_admin_user
 label: 'site admin user'
 weight: -4
@@ -133,6 +134,7 @@ permissions:
   - 'view application revisions'
   - 'view article revisions'
   - 'view contact revisions'
+  - 'view content references'
   - 'view gallery revisions'
   - 'view html_document revisions'
   - 'view latest version'

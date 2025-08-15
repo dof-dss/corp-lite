@@ -44,6 +44,7 @@ dependencies:
     - scheduled_transitions
     - system
     - taxonomy
+    - whatlinkshere
 id: admin_user
 label: 'admin user'
 weight: -3
@@ -233,6 +234,7 @@ permissions:
   - 'view application revisions'
   - 'view article revisions'
   - 'view contact revisions'
+  - 'view content references'
   - 'view department_management revisions'
   - 'view gallery revisions'
   - 'view html_document revisions'
