@@ -27,6 +27,14 @@ targetEntityType: node
 bundle: publication
 mode: search_index
 content:
+  field_publication_type:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
   field_published_date:
     type: datetime_default
     label: hidden
@@ -41,7 +49,6 @@ hidden:
   content_moderation_control: true
   field_attachment: true
   field_meta_tags: true
-  field_publication_type: true
   field_site_topics: true
   field_summary: true
   langcode: true
