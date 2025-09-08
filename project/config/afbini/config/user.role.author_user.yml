@@ -76,6 +76,7 @@ permissions:
   - 'delete own page content'
   - 'delete own publication content'
   - 'delete own remote_video media'
+  - 'delete own researcher_profiles content'
   - 'edit any article content'
   - 'edit any contact content'
   - 'edit any gallery content'
