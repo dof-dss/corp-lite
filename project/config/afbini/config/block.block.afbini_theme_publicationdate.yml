@@ -12,7 +12,7 @@ dependencies:
 id: afbini_theme_publicationdate
 theme: afbini_theme
 region: sidebar_first
-weight: -3
+weight: -4
 provider: null
 plugin: 'facet_block:news_publication_date'
 settings:
