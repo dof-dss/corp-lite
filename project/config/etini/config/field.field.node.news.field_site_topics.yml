@@ -12,7 +12,7 @@ id: node.news.field_site_topics
 field_name: field_site_topics
 entity_type: node
 bundle: news
-label: Topics
+label: 'Organisational phase'
 description: 'Choose optional site topic(s) for this news item.'
 required: false
 translatable: false
