@@ -1,0 +1,19 @@
+uuid: 79e15291-61b2-4fd8-8b61-152b0dac73ac
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.researcher_profiles
+    - views.view.researcher_search
+  module:
+    - search_api
+id: researcher_summary
+name: 'researcher summary'
+facet_source_id: 'search_api:views_page__researcher_search__researcher_search'
+processor_configs:
+  hide_when_not_rendered:
+    processor_id: hide_when_not_rendered
+    weights:
+      build: '45'
+    settings: {  }
+facets: {  }

@@ -1,23 +1,23 @@
-uuid: 1f1eb208-749b-415c-9360-5c4e62493a09
+uuid: 0195c011-009c-4108-a049-198457fd001f
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.search
+    - views.view.researcher_search
   module:
     - block_visibility_groups
     - system
     - views
   theme:
     - afbini_theme
-id: afbini_theme_exposedformsearchsite_search
+id: afbini_theme_exposedformresearcher_searchresearcher_search
 theme: afbini_theme
 region: sidebar_first
-weight: -10
+weight: -9
 provider: null
-plugin: 'views_exposed_filter_block:search-site_search'
+plugin: 'views_exposed_filter_block:researcher_search-researcher_search'
 settings:
-  id: 'views_exposed_filter_block:search-site_search'
+  id: 'views_exposed_filter_block:researcher_search-researcher_search'
   label: ''
   label_display: '0'
   provider: views
@@ -30,4 +30,4 @@ visibility:
   request_path:
     id: request_path
     negate: false
-    pages: "/search\r\n"
+    pages: /researcher-profiles

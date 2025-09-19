@@ -63,6 +63,14 @@ function afbini_theme_preprocess_page(array &$variables)
           ->setAttribute('aria-roledescription', t('search news'));
         break;
 
+      case "researcher_search":
+        $variables['main_content_attr']->addClass(LayoutClasses::SIDE_MAIN);
+        $variables['sidebar_first_attr']
+          ->addClass('ga-aside')
+          ->setAttribute('role', 'search')
+          ->setAttribute('aria-roledescription', t('search researcher'));
+        break;
+
       case "search":
         $variables['main_content_attr']->addClass(LayoutClasses::SIDE_MAIN);
         if ($variables['content_wrapper_attr'] instanceof Attribute) {
