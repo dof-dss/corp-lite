@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c6af34cb399c88d4f32aac20b1bb47f5",
+    "content-hash": "6a02b7afce654757078db33d3c0da2ff",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3398,23 +3398,23 @@
         },
         {
             "name": "drupal/date_facet_drilldown",
-            "version": "dev-11.x",
+            "version": "dev-12.x",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/date_facet_drilldown.git",
-                "reference": "86f56b0028b70811e3df87e37bb9f0bf1b679066"
+                "reference": "1662b414a8f8fc6464f2457f158eb935b8e2d1fc"
             },
             "require": {
-                "drupal/core": "^8 || ^9 || ^10"
+                "drupal/core": "^8 || ^9 || ^10 || ^11"
             },
             "type": "drupal-module",
             "extra": {
                 "branch-alias": {
-                    "dev-11.x": "11.x-dev"
+                    "dev-12.x": "12.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-11.x-dev",
-                    "datestamp": "1746628391",
+                    "version": "8.x-12.x-dev",
+                    "datestamp": "1758709789",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
