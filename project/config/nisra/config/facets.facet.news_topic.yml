@@ -64,25 +64,6 @@ processor_configs:
     weights:
       build: -3
     settings: {  }
-  term_dependent:
-    processor_id: term_dependent
-    weights:
-      build: -7
-    settings:
-      news_publication_date:
-        dependee: 0
-      news_type:
-        dependee: 0
-      publication_published_date:
-        dependee: 0
-      publication_topic:
-        dependee: 1
-      publication_type:
-        dependee: 0
-      release_date:
-        dependee: 0
-      release_date_upcoming:
-        dependee: 0
   term_depth:
     processor_id: term_depth
     weights:
