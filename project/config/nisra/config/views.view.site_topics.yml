@@ -197,7 +197,7 @@ display:
           exposed: false
           draggable_views_reference: 'site_topics:draggable_site_topics'
           draggable_views_null_order: after
-          draggable_views_pass_arguments: false
+          draggable_views_pass_arguments: 0
       arguments: {  }
       filters:
         vid:
@@ -629,7 +629,7 @@ display:
           exposed: false
           draggable_views_reference: this
           draggable_views_null_order: after
-          draggable_views_pass_arguments: false
+          draggable_views_pass_arguments: 0
         name:
           id: name
           table: taxonomy_term_field_data
@@ -1123,7 +1123,7 @@ display:
           exposed: false
           draggable_views_reference: this
           draggable_views_null_order: after
-          draggable_views_pass_arguments: false
+          draggable_views_pass_arguments: 0
         name:
           id: name
           table: taxonomy_term_field_data
@@ -1711,7 +1711,7 @@ display:
           exposed: false
           draggable_views_reference: 'site_topics:draggable_site_topics'
           draggable_views_null_order: after
-          draggable_views_pass_arguments: false
+          draggable_views_pass_arguments: 0
       filters:
         vid:
           id: vid

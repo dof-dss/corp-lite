@@ -23,13 +23,13 @@ field_identifier: field_site_topics
 query_operator: and
 hard_limit: 50
 exclude: false
-use_hierarchy: false
-keep_hierarchy_parents_active: false
+use_hierarchy: true
+keep_hierarchy_parents_active: true
 hierarchy:
   type: taxonomy
   config: {  }
 expand_hierarchy: false
-enable_parent_when_child_gets_disabled: true
+enable_parent_when_child_gets_disabled: false
 widget:
   type: links
   config:
@@ -62,16 +62,29 @@ processor_configs:
   hierarchy_processor:
     processor_id: hierarchy_processor
     weights:
-      build: 100
+      build: -3
     settings: {  }
+  term_depth:
+    processor_id: term_depth
+    weights:
+      build: -8
+    settings:
+      level: '2'
+      bundle: site_topics
+  term_weight_widget_order:
+    processor_id: term_weight_widget_order
+    weights:
+      sort: 60
+    settings:
+      sort: ASC
   translate_entity:
     processor_id: translate_entity
     weights:
-      build: 5
+      build: -9
     settings: {  }
   url_processor_handler:
     processor_id: url_processor_handler
     weights:
       pre_query: 50
-      build: 15
+      build: -8
     settings: {  }
