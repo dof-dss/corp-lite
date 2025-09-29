@@ -12,7 +12,7 @@ dependencies:
 id: afbini_theme_newstype
 theme: afbini_theme
 region: sidebar_first
-weight: -4
+weight: -5
 provider: null
 plugin: 'facet_block:news_type'
 settings:
