@@ -196,3 +196,19 @@ function nisra_theme_preprocess_block(&$variables) {
   $variables['social_links_instagram'] = theme_get_setting('social_links_instagram');
   $variables['social_links_youtube'] = theme_get_setting('social_links_youtube');
 }
+
+/**
+ * Implements hook_preprocess_facets_item_list().
+ */
+function nisra_theme_preprocess_facets_item_list(array &$variables) {
+  $facet = $variables['facet'];
+
+  if ($facet->id() === 'news_topic' && $facet->getEnableParentWhenChildGetsDisabled()) {
+    foreach ($variables["items"] as $key => $item) {
+      if (in_array('facet-item--expanded', $item["value"]["#wrapper_attributes"]['class'])) {
+        $variables["items"][$key]["value"]["#attributes"]["class"][] = 'is-active';
+        $variables["items"][$key]['value']["#title"]['#is_active'] = TRUE;
+      }
+    }
+  }
+}
