@@ -51,7 +51,14 @@ function corplite_published_releases_feed_update_release_object($release, $feed_
   $release->set('summary', $feed_item['summary']);
   $release->set('url', $feed_item['url']);
   $release->set('release_date', strtotime($feed_item['release_date']));
+  $release->set('display_date', $feed_item['display_date']);
   $release->set('updated', strtotime($feed_item['updated']));
+  // Fallback code as 'type' was initially appearing incorrectly in the feed as 'release_type'.
+  if (!empty($feed_item['type'])) {
+    $release->set('type', $feed_item['type']);
+  } elseif (!empty($feed_item['release_type'])) {
+    $release->set('type', $feed_item['release_type']);
+  }
   $release->save();
 }
 
@@ -80,7 +87,9 @@ function corplite_published_releases_feed_fetch_feed() {
             'summary' => (string) !empty($row['summary']) ? $row['summary'] : '',
             'url' => (string) !empty($row['url']) ? $row['url'] : '',
             'release_date' => (string) !empty($row['release_date']) ? $row['release_date'] : '',
+            'display_date' => (string) !empty($row['display_date']) ? $row['display_date'] : '',
             'updated' => (string) !empty($row['updated']) ? $row['updated'] : '',
+            'type' => (string) !empty($row['type']) ? $row['type'] : ''
           ];
         }
       }
