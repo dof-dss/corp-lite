@@ -29,6 +29,9 @@ process:
   phases:
     - plugin: get
       source: phases
+  inspector_id:
+    - plugin: inspector_id
+      source: district_inspector
 destination:
   plugin: 'entity:school'
 
