@@ -4,7 +4,6 @@ status: true
 dependencies:
   module:
     - corplite_published_releases_feed
-    - search_api
     - search_api_solr
 third_party_settings:
   search_api_solr:
@@ -57,6 +56,14 @@ name: 'Published releases index'
 description: ''
 read_only: false
 field_settings:
+  display_date:
+    label: 'Display date'
+    datasource_id: 'entity:published_releases'
+    property_path: display_date
+    type: string
+    dependencies:
+      module:
+        - corplite_published_releases_feed
   id:
     label: ID
     datasource_id: 'entity:published_releases'
@@ -70,6 +77,14 @@ field_settings:
     datasource_id: 'entity:published_releases'
     property_path: release_date
     type: date
+    dependencies:
+      module:
+        - corplite_published_releases_feed
+  org:
+    label: Organisation
+    datasource_id: 'entity:published_releases'
+    property_path: org
+    type: string
     dependencies:
       module:
         - corplite_published_releases_feed
@@ -95,6 +110,14 @@ field_settings:
     property_path: title
     type: text
     boost: 13.0
+    dependencies:
+      module:
+        - corplite_published_releases_feed
+  type:
+    label: Type
+    datasource_id: 'entity:published_releases'
+    property_path: type
+    type: string
     dependencies:
       module:
         - corplite_published_releases_feed
@@ -136,6 +159,7 @@ tracker_settings:
     indexing_order: fifo
 options:
   cron_limit: 50
+  delete_on_fail: true
   index_directly: true
   track_changes_in_references: true
-server: solr_default
+server: null
