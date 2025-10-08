@@ -133,7 +133,8 @@ final class PublishedReleases extends ContentEntityBase implements PublishedRele
     // This field represents a display type in taxonomy.
     $fields['type'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Type'))
-      ->setDescription(t('Code representing the release type (see taxonomy).'));
+      ->setDescription(t('Code representing the release type (see taxonomy).'))
+      ->setRequired(FALSE);
 
     // This field is a Drupal internal field.
     $fields['changed'] = BaseFieldDefinition::create('changed')
