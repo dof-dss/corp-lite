@@ -6,12 +6,16 @@
  */
 
 use Drupal\corplite_published_releases_feed\Entity\PublishedReleases;
+use Drupal\Core\Render\Element;
+use Drupal\taxonomy\Entity\Vocabulary;
 
 /**
  * Cron callback function to run feed.
  */
 function corplite_published_releases_feed_import() {
   $data = corplite_published_releases_feed_fetch_feed();
+  $organisations = corplite_published_releases_retrieve_organisations();
+  $document_types = corplite_published_releases_retrieve_document_types();
   $updated = 0;
   $imported = 0;
   foreach ($data as $feed_item) {
@@ -36,7 +40,7 @@ function corplite_published_releases_feed_import() {
     else {
       // Published release does not exist in the database, so store it.
       $release = PublishedReleases::create(['id' => $feed_item['id']]);
-      corplite_published_releases_feed_update_release_object($release, $feed_item);
+      corplite_published_releases_feed_update_release_object($release, $feed_item, $organisations, $document_types);
       $imported++;
     }
   }
@@ -44,17 +48,57 @@ function corplite_published_releases_feed_import() {
 }
 
 /**
+ * Retrieve the 'organisations' vocabulary.
+ */
+function corplite_published_releases_retrieve_organisations() {
+  $organisations = [];
+  $organisations_vocabulary = Vocabulary::load('organisations');
+  if (!empty($organisations_vocabulary)) {
+    $tree = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($organisations_vocabulary->id());
+    foreach ($tree as $item) {
+      $organisations[$item->name] = strip_tags($item->description__value);
+    }
+  }
+  return $organisations;
+}
+
+/**
+ * Retrieve the 'document types' vocabulary.
+ */
+function corplite_published_releases_retrieve_document_types() {
+  $types = [];
+  $doc_type_vocabulary = Vocabulary::load('document_types');
+  if (!empty($doc_type_vocabulary)) {
+    $tree = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($doc_type_vocabulary->id());
+    foreach ($tree as $item) {
+      $types[$item->name] = strip_tags($item->description__value);
+    }
+  }
+  return $types;
+}
+
+/**
  * Update the release object.
  */
-function corplite_published_releases_feed_update_release_object($release, $feed_item) {
+function corplite_published_releases_feed_update_release_object($release, $feed_item, $organisations, $document_types) {
   $release->set('title', $feed_item['title']);
   $release->set('summary', $feed_item['summary']);
   $release->set('url', $feed_item['url']);
   $release->set('release_date', strtotime($feed_item['release_date']));
   $release->set('display_date', $feed_item['display_date']);
   $release->set('updated', strtotime($feed_item['updated']));
-  $release->set('type', $feed_item['type']);
-  $release->set('org', $feed_item['org']);
+  // Lookup 'type' against taxonomy.
+  $type = '';
+  if (!empty($feed_item['type'])) {
+    $type = $document_types[$feed_item['type']];
+  }
+  $release->set('type', $type);
+  // Lookup 'organisation' in taxonomy.
+  $org = '';
+  if (!empty($feed_item['org'])) {
+    $type = $organisations[$feed_item['org']];
+  }
+  $release->set('org', $org);
   $release->save();
 }
 
@@ -167,8 +211,6 @@ function corplite_published_releases_feed_fetch_feed() {
 function corplite_published_releases_feed_facets_search_api_query_type_mapping_alter($backend_plugin_id, array &$query_types) {
   $query_types['example'] = 'now_future_dates';
 }
-
-use Drupal\Core\Render\Element;
 
 /**
  * Implements hook_theme().
