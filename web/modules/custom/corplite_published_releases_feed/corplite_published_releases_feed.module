@@ -30,7 +30,7 @@ function corplite_published_releases_feed_import() {
       // Published release exists, see if we need to update it.
       if (strtotime($feed_item['updated']) > $release->updated->getString()) {
         // Update the published release.
-        corplite_published_releases_feed_update_release_object($release, $feed_item);
+        corplite_published_releases_feed_update_release_object($release, $feed_item, $organisations, $document_types);
         $updated++;
       }
       else {
@@ -129,9 +129,9 @@ function corplite_published_releases_feed_fetch_feed() {
             "url": "https://www.health-ni.gov.uk/articles/investment-general-practice",
             "release_date": "2025-10-03T09:30:00Z",
             "display_date": "3 October 2025",
-            "updated": "2025-10-03T09:30:01Z",
+            "updated": "2025-10-03T16:30:01Z",
             "type": "OS",
-            "org": "DfC"
+            "org": "DfI"
         },
         {
             "id": "deaths-registered-in-northern-ireland-week-ending-26-sept-2025",
