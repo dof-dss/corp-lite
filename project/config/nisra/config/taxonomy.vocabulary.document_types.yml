@@ -1,9 +1,9 @@
-uuid: 3257cedd-08d3-4120-bff0-9769bc4d3095
+uuid: d02c72ac-65bd-4150-b91e-a578a268f501
 langcode: en
 status: true
 dependencies: {  }
-name: 'Document types'
+name: 'Document Types'
 vid: document_types
-description: 'As supplied in the Published Releases feed'
+description: 'Type abbreviations supplied in the Published Releases feed'
 weight: 0
 new_revision: false
