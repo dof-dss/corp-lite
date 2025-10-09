@@ -96,7 +96,7 @@ function corplite_published_releases_feed_update_release_object($release, $feed_
   // Lookup 'organisation' in taxonomy.
   $org = '';
   if (!empty($feed_item['org'])) {
-    $type = $organisations[$feed_item['org']];
+    $org = $organisations[$feed_item['org']];
   }
   $release->set('org', $org);
   $release->save();
