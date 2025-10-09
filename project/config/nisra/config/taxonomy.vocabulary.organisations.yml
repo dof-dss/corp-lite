@@ -1,9 +1,9 @@
-uuid: 2d8ca243-f87a-4607-b5e0-53916525a4f9
+uuid: f1ce459f-4d6d-4d13-a76c-6ea2bc9de944
 langcode: en
 status: true
 dependencies: {  }
 name: Organisations
 vid: organisations
-description: 'Abbreviations for Organisations supplied in the Published Releases feed'
+description: 'Organisation codes that appear in the Published Releases feed'
 weight: 0
 new_revision: false
