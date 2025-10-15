@@ -27,7 +27,7 @@ h1,
   $fspx: 26;
   $lh: math.div(32, $fspx);
 
-  --fs: 2.6rem;
+  --fs: #{to-rem($fspx)};;
   --lh: #{$lh};
 
   color: var(--clr-heading-text);
@@ -49,7 +49,7 @@ h1,
     $fspx: 28;
     $lh: math.div(36, $fspx);
 
-    --fs: 2.8rem;
+    --fs: #{to-rem($fspx)};;
     --lh: #{$lh};
 
     font-weight: 700;
@@ -60,7 +60,7 @@ h1,
     $fspx: 30;
     $lh: math.div(39, $fspx);
 
-    --fs: 3rem;
+    --fs: #{to-rem($fspx)};;
     --lh: #{$lh};
 
     margin: (math.div(45,$fspx) * 1em) 0 (math.div(18,$fspx) * 1em);
@@ -72,7 +72,8 @@ h2,
   $fspx: 24;
   $lh: math.div(32, $fspx);
 
-  --fs: 2.4rem;
+  //--fs: 2.4rem;
+  --fs: #{to-rem($fspx)};;
   --lh: #{$lh};
 
   color: var(--clr-heading-text);
@@ -84,7 +85,7 @@ h2,
     $fspx: 25;
     $lh: math.div(33, $fspx);
 
-    --fs: 2.5rem;
+    --fs: #{to-rem($fspx)};;
     --lh: #{$lh};
 
     margin: (math.div(33,$fspx) * 1em) 0 (math.div(18,$fspx) * 1em);
@@ -96,7 +97,8 @@ h3,
   $fspx: 21;
   $lh: math.div(24, $fspx);
 
-  --fs: 2.1rem;
+  //--fs: 2.1rem;
+  --fs: #{to-rem($fspx)};
   --lh: #{$lh};
 
   font-size: var(--fs);
@@ -107,7 +109,7 @@ h3,
     $fspx: 24;
     $lh: math.div(30, $fspx);
 
-    --fs: 2.4rem;
+    --fs: #{to-rem($fspx)};
     --lh: #{$lh};
 
     margin: (math.div(36,$fspx) * 1em) 0 (math.div(18,$fspx) * 1em);
@@ -119,7 +121,7 @@ h4,
   $fspx: 18;
   $lh: math.div(24, $fspx);
 
-  --fs: 1.8rem;
+  --fs: #{to-rem($fspx)};;
   --lh: #{$lh};
 
   color: var(--clr-grey-dark);
@@ -131,7 +133,7 @@ h4,
     $fspx: 21;
     $lh: math.div(27, $fspx);
 
-    --fs: 2.1rem;
+    --fs: #{to-rem($fspx)};;
     --lh: #{$lh};
 
     margin: (math.div(36,$fspx) * 1em) 0 (math.div(18,$fspx) * 1em);
@@ -143,7 +145,7 @@ h5,
   $fspx: 16;
   $lh: math.div(24, $fspx);
 
-  --fs: 1.6rem;
+  --fs: #{to-rem($fspx)};;
   --lh: #{$lh};
 
   font-size: var(--fs);
@@ -155,7 +157,7 @@ h5,
     $fspx: 18;
     $lh: math.div(27, $fspx);
 
-    --fs: 1.8rem;
+    --fs: #{to-rem($fspx)};;
     --lh: #{$lh};
 
     margin: (math.div(36,$fspx) * 1em) 0 (math.div(18,$fspx) * 1em);
@@ -168,7 +170,7 @@ h6,
   $fspx: 16;
   $lh: math.div(24, $fspx);
 
-  --fs: 1.6rem;
+  --fs: #{to-rem($fspx)};;
   --lh: #{$lh};
 
   font-size: var(--fs);
@@ -180,7 +182,7 @@ h6,
     $fspx: 18;
     $lh: math.div(27, $fspx);
 
-    --fs: 1.8rem;
+    --fs: #{to-rem($fspx)};;
     --lh: #{$lh};
 
     margin: (math.div(36,$fspx) * 1em) 0 (math.div(18,$fspx) * 1em);

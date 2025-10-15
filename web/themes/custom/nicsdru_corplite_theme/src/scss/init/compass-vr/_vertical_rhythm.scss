@@ -96,7 +96,6 @@ $relative-font-sizing: if($rhythm-unit == px, false, true);
   @else {
     $output: ();
     @each $value in $values {
-      @debug "value: #{$value}";
       @if unit($value) == px {
         // Ensure all pixel values are rounded to the nearest pixel.
         $output: join($output, round($value));

@@ -164,7 +164,7 @@
   @include btn(large);
   @include btn-color(var(--clr-button-action));
   position: relative;
-  padding-right: 3.9rem !important;
+  padding-right: to-rem(39) !important; // 3.9rem
 
   @at-root a#{&} {
     text-align: left;
@@ -172,12 +172,12 @@
   }
 
   .ico-arrow-right {
-    height: 2.5rem;
-    margin-right: 1.2rem;
+    height: to-rem(25); // 2.5rem
+    margin-right: to-rem(12); // 1.2rem
     position: absolute;
     right: 0;
-    top: calc(50% - 1.25rem);
-    width: 1.5rem;
+    top: calc(50% - #{to-rem(12.5)});
+    width: to-rem(15); // 1.5rem
   }
 }
 
