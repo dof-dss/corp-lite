@@ -10,21 +10,8 @@ libraries:
   - nicsdru_corplite_theme/fontawesome
 
 ckeditor5-stylesheets:
-  #  - css/1_base/root.css
-  - css/1_base/html5.css
-  - css/1_base/headings.css
-  - css/1_base/grouping.css
-  - css/1_base/links.css
-  - css/1_base/tables.css
-  - css/1_base/text.css
-  - css/3_components/form/buttons.css
-  - css/3_components/content/lists.css
-  - css/3_components/ckeditor.css
-  - css/3_components/content/responsive-images-ckeditor.css
-  - css/3_components/content/icons-messages.css
-  - css/3_components/content/video.css
-  - css/3_components/content/tables.css
-  - css/3_components/field/file-link.css
+  - css/admin/ckeditor-theme.css
+  - css/admin/ckeditor-theme-layout.css
 
 libraries-override:
   system/base:
