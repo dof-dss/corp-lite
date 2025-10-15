@@ -1,0 +1,9 @@
+uuid: f1ce459f-4d6d-4d13-a76c-6ea2bc9de944
+langcode: en
+status: true
+dependencies: {  }
+name: Organisations
+vid: organisations
+description: 'Organisation codes that appear in the Published Releases feed'
+weight: 0
+new_revision: false
