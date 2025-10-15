@@ -1,14 +1,6 @@
-@import '../init';
+@use '../init' as *;
 
 $base-font-size: 16px;
-
-body {
-  font-family: $base-font-family;
-
-  p {
-    font-size: var(--font-size-base);
-  }
-}
 
 .node-form .layout-form {
   display: block;
@@ -31,40 +23,6 @@ body {
   .layout-node-form .layout-region__content,
   .layout-form .layout-region__content,
   .department-form {
-    .field--type-entity-reference,
-    .field--type-link {
-      table {
-        th,
-        td {
-          background-color: var(--clr-grey-lightest);
-          border-color: var(--clr-grey-medium);
-          height: unset;
-        }
-
-        td:first-child ~ td,
-        th:first-child ~ th {
-          padding-left: var(--space-m);
-        }
-
-        th,
-        h4 {
-          font-size: var(--font-size-base);
-        }
-      }
-    }
-
-    .button {
-      min-height: unset;
-    }
-
-    .shs-container {
-      .button {
-        &.add-another {
-          line-height: 1rem;
-        }
-      }
-    }
-
     .field-group-fieldset {
       &.group-publications {
         > .fieldset__wrapper {
@@ -78,13 +36,6 @@ body {
   }
 
   .layout-region--secondary {
-    table {
-      th,
-      td {
-        font-size: var(--font-size-base);
-      }
-    }
-
     .redirect-table__path {
       width: 60%;
     }
@@ -95,16 +46,20 @@ body {
   }
 }
 
-.messages-list {
-  .messages__title {
-    color: var(--clr-white);
-  }
-}
-
 /*
  * Bump down the font size and adjust the position of the labels when using the core entity reference list form.
  */
 .moderation-state {
   font-size: .8rem;
   float: left;
+}
+
+.google-map-field-widget {
+  &.right {
+    float: unset;
+
+    @include breakpoint($tab) {
+      float: right;
+    }
+  }
 }
