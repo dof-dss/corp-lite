@@ -31,7 +31,7 @@ pre {
 // Tighten lists up closer to the preceding paragraph.
 p + ul,
 p + ol {
-  margin-top: -1.2rem;
+  margin-top: to-rem(-12); // -1.2rem
 }
 
 // Abbreviation / Acronym
@@ -100,7 +100,7 @@ samp,
 var {
   // Correct the inheritance and scaling of font size in all browsers.
   // The font-family value ends with ", serif".
-  font-size: $base-font-size;
+  font-size: var(--fs-base-size);
   font-family: $font-monospace; // The value of $font-monospace ends with ', serif'.
 }
 
@@ -223,7 +223,7 @@ sub,
 sup {
   // Prevent `sub` and `sup` elements from affecting the line height in
   // all browsers.
-  font-size: 1.4rem;
+  font-size: to-rem(14); // 1.4rem
 }
 
 sub {
@@ -232,6 +232,7 @@ sub {
 
 sup {
   vertical-align: super;
+  top: unset;
 }
 
 // Underlined text

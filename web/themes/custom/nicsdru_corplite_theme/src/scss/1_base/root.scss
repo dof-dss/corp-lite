@@ -58,7 +58,8 @@
   --clr-main-nav-active-line: var(--clr-brand-secondary);
 
   // Typography and rhythm spacing custom properties
-  --fs-base-size: 1.6rem;
+  --rem-px: #{$rem-px};
+  --fs-base-size: #{to-rem(16)};
   --base-rhythm: .8rem;
   --base-rhythm-frag: .2rem;
 
@@ -72,13 +73,13 @@
   --rhythm-spacing-xxxl: calc(var(--base-rhythm) * 5); // 40, 45, 50
 
   @include breakpoint($lap) {
-    --fs-base-size: 1.8rem;
+    --fs-base-size: #{to-rem(18)};
     --base-rhythm: .9rem;
     --base-rhythm-frag: .3rem;
   }
 
   @include breakpoint($desk-plus) {
-    --fs-base-size: 2rem;
+    --fs-base-size: #{to-rem(20)};
     --base-rhythm: 1rem;
     --base-rhythm-frag: .5rem;
   }
