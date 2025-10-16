@@ -59,6 +59,20 @@ module.exports = (ctx) => {
     );
   }
 
+  if (env === 'ckeditor' || env === 'ckeditor-menu') {
+    basePlugins.push(
+      prefixSelector({
+        prefix: '.ck .ck-editor__top',
+        transform: (prefix, selector, prefixedSelector) => {
+          if (selector.startsWith('@')) return selector;
+          if (selector === 'html' || selector === 'body' || selector === ':root') return prefix;
+          if (selector.startsWith('.ck .ck-editor__top')) return selector;
+          return prefixedSelector;
+        }
+      })
+    );
+  }
+
   return {
     map: ctx.file.dirname.includes('examples')
       ? false

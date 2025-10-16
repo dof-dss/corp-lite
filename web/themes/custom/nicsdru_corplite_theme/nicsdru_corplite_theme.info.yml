@@ -12,6 +12,7 @@ libraries:
 ckeditor5-stylesheets:
   - css/admin/ckeditor-theme.css
   - css/admin/ckeditor-theme-layout.css
+  - css/admin/ckeditor-theme-menu.css
 
 libraries-override:
   system/base:
