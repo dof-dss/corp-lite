@@ -23,7 +23,7 @@ into the file css/admin/ckeditor-theme-layout.css.
 @use '../1_base/links' as *;
 @use '../1_base/tables' as *;
 @use '../1_base/text' as *;
-@use '../3_components/form/buttons' as *;
+@use  '../3_components/form/button/button-defs' as *;
 @use '../3_components/content/lists' as *;
 @use '../3_components/content/responsive-images-ckeditor' as *;
 @use '../3_components/content/icons-messages' as *;
