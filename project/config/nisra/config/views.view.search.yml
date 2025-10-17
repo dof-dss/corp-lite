@@ -484,9 +484,11 @@ display:
               admin_user: '0'
               qa: '0'
               homepage_supervisor: '0'
+              published_releases_supervisor: '0'
             expose_fields: false
             placeholder: 'Search this site...'
             searched_fields_id: search_api_fulltext_searched_fields
+            value_maxlength: 128
           is_grouped: false
           group_info:
             label: ''
@@ -499,12 +501,11 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          parse_mode: sloppy_terms
+          parse_mode: fuzzy_terms
           min_length: 2
           fields:
             - body
             - field_summary
-            - field_summary_1
             - field_teaser
             - name
             - title_fulltext
