@@ -13,3 +13,21 @@
 @use '../init' as * with ($rem-px: 0.0625rem, $base-font-size: 16px);
 @use '../1_base/root' as *;
 @use 'ckeditor-base' as *;
+@use '../3_components/form/button/button-defs' as *;
+
+// Replacement for .call-to-action suitable for use in CKEditor.
+a.call-to-action {
+  @include btn(large, right);
+  @include btn-color(var(--clr-button-action));
+  font-size: var(--fs-h3-size);
+  text-align: left;
+
+  @include breakpoint($lap) {
+    font-size: var(--fs-h2-size);
+  }
+
+  @include breakpoint($desk) {
+    --fs-btn-large: 25px;
+    font-size: var(--fs-btn-large);
+  }
+}
