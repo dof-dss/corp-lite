@@ -336,7 +336,7 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          parse_mode: terms
+          parse_mode: fuzzy_terms
           min_length: null
           fields: {  }
       style:
@@ -580,7 +580,7 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          parse_mode: terms
+          parse_mode: fuzzy_terms
           min_length: null
           fields: {  }
       filter_groups:
