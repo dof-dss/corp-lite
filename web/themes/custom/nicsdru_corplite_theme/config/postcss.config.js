@@ -59,7 +59,7 @@ module.exports = (ctx) => {
     );
   }
 
-  if (env === 'ckeditor' || env === 'ckeditor-menu') {
+  if (env === 'ckeditor-menu') {
     basePlugins.push(
       prefixSelector({
         prefix: '.ck .ck-editor__top',
