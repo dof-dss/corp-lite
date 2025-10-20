@@ -1,0 +1,74 @@
+@use '../init' as *;
+@use '../3_components/form/button/button-defs' as *;
+
+.ck-button .ck-content {
+  %notice-builder {
+    padding: 1.2rem 1em 1em 5rem;
+    border: 2px solid;
+    margin: 1.5em 0;
+    background: #fff url('../../images/i.svg') no-repeat 1.1rem 1.1rem / 28px 28px;
+
+    @include breakpoint($phab, $no-query: true) {
+      padding: 1.4rem 1em 1em 6rem;
+      background-position: 1.4rem 1.4rem;
+      background-size: 30px 30px;
+    }
+
+    & > *:first-child {
+      margin-top: 0;
+    }
+
+    & > *:last-child {
+      margin-bottom: 0;
+    }
+
+    & > h2:first-child,
+    & > h3:first-child {
+      font-size: var(--fs-h3-size);
+
+      @include breakpoint($phab) {
+        font-size: var(--fs-h2-size);
+      }
+    }
+  }
+
+  // Replacement for .call-to-action suitable for use in CKEditor.
+  a.call-to-action {
+    @include btn(large, right);
+    @include btn-color(var(--clr-button-action));
+    font-size: var(--fs-h3-size);
+    text-align: left;
+
+    @include breakpoint($lap) {
+      font-size: var(--fs-h2-size);
+    }
+
+    @include breakpoint($desk) {
+      --fs-btn-large: 25px;
+      font-size: var(--fs-btn-large);
+    }
+  }
+
+  p.info-notice {
+    @extend %notice-builder;
+    border-color: #cee4f6;
+    background: #fff url('../../images/i.svg') no-repeat .9rem .9rem / 24px 24px;
+    overflow: hidden;
+
+    @include breakpoint($phab, $no-query: true) {
+      background: #fff url('../../images/i.svg') no-repeat 1.4rem 1.4rem / 30px 30px;
+    }
+
+    .no-svg & {
+      background-image: url('../../images/i.svg');
+    }
+  }
+
+  ul.info-notice {
+    padding: 1rem 1rem 1rem 4rem;
+
+    @include breakpoint($phab) {
+      padding: 1.4rem 1.4rem 1.4rem 7rem;
+    }
+  }
+}

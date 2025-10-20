@@ -1,0 +1,47 @@
+///* =====================================================
+// * Styling unique to CKEditor
+// * =====================================================*/
+
+/*
+This file compiles all required stylesheets into one CSS file
+for use in CKEditor. It acts as a base to be compiled with a
+different $base-font-size for use in CKEditor where the admin
+theme is used, and as the main stylesheet for CKEditor in
+layout builder (which uses the same $base-font-size as the
+nicsdru_corplite_theme).
+
+It will be autoprefixed with
+'.layout-builder-configure-block .ck .ck-content' using postcss
+into the file css/admin/ckeditor-theme-layout.css.
+ */
+
+@use '../init' as *;
+@use '../1_base/root' as *;
+@use '../1_base/html5' as *;
+@use '../1_base/headings' as *;
+@use '../1_base/grouping' as *;
+@use '../1_base/links' as *;
+@use '../1_base/tables' as *;
+@use '../1_base/text' as *;
+@use  '../3_components/form/button/button-defs' as *;
+@use '../3_components/content/lists' as *;
+@use '../3_components/content/responsive-images-ckeditor' as *;
+@use '../3_components/content/icons-messages' as *;
+@use '../3_components/content/video' as *;
+@use '../3_components/content/tables' as *;
+@use '../3_components/field/file-link' as *;
+@use 'ckeditor-margin' as *;
+
+figure {
+  &.table {
+    width: 100%;
+    margin: 1em 0 2em;
+    display: table;
+
+    figcaption {
+      font-size: var(--fs-base-size);
+      background: unset;
+      color: var(--clr-body-text);
+    }
+  }
+}
