@@ -2,6 +2,7 @@
 
 namespace Drupal\etini_district_inspectors\EventSubscriber;
 
+use Drupal\Core\Database\Connection;
 use Drupal\migrate\Event\MigrateEvents;
 use Drupal\migrate\Event\MigrateRollbackEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
