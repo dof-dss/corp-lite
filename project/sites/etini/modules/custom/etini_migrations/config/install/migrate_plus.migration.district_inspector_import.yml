@@ -12,7 +12,7 @@ label: 'ETI District Inspectors'
 source:
   plugin: csv
   path: ../web/sites/etini/modules/custom/etini_district_inspectors/inspector_import.csv
-  ids: [de_reference]
+  ids: [de_reference, school_name]
   fields:
     - name: de_reference
     - name: school_name
