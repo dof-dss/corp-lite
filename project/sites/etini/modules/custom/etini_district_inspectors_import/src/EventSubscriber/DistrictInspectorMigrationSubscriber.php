@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\etini_district_inspectors\EventSubscriber;
+namespace Drupal\etini_district_inspectors_import\EventSubscriber;
 
 use Drupal\Core\Database\Connection;
 use Drupal\migrate\Event\MigrateEvents;
