@@ -1,0 +1,10 @@
+name: 'ETINI district inspectors - import data from csv file'
+type: module
+description: 'Refresh school and inspector data from a new csv file'
+package: 'Custom'
+core_version_requirement: ^8 || ^9 || ^10 || ^11
+dependencies:
+  - drupal:migrate
+  - drupal:migrate_plus
+  - drupal:migrate_tools
+  - drupal:migrate_drupal
