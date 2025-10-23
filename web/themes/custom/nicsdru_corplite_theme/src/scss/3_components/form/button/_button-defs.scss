@@ -67,77 +67,77 @@
   // the amount of side padding the button it is given - bigger left or right padding = bigger arrow.
   @if $size == 'small' {
     @include _btn(36px, 36px, (4px 4px), $arrow-direction);
-    font-size: 1.4rem;
-    line-height: 2.2rem;
+    font-size: to-rem(14); // 1.4rem
+    line-height: to-rem(22); // 2.2rem;
     @include breakpoint($tab) {
       @include _btn(39px, 39px, (5px 6px), $arrow-direction);
-      font-size: 1.6rem;
-      line-height: 2.4rem;
+      font-size: to-rem(16); // 1.6rem;
+      line-height: to-rem(24); // 2.4rem;
     }
     @include breakpoint($desk-plus) {
       @include _btn(40px, 40px, (6px 7px), $arrow-direction);
-      font-size: 1.7rem;
-      line-height: 2.5rem;
+      font-size: to-rem(17); // 1.7rem;
+      line-height: to-rem(25); // 2.5rem;
     }
   }
   @else if $size == 'standard' {
     @include _btn(44px, 44px, (8px 12px), $arrow-direction);
-    font-size: 1.6rem;
-    line-height: 2.4rem;
+    font-size: to-rem(16); // 1.6rem;
+    line-height: to-rem(24); // 2.4rem;
     @include breakpoint($tab) {
       @include _btn(45px, 45px, (8px 13px), $arrow-direction);
-      font-size: 1.8rem;
-      line-height: 2.7rem;
+      font-size: to-rem(18); // 1.8rem;
+      line-height: to-rem(27); // 2.7rem;
     }
     @include breakpoint($desk-plus) {
       @include _btn(50px, 50px, (9px 15px), $arrow-direction);
-      font-size: 2rem;
-      line-height: 3rem;
+      font-size: to-rem(20); // 2rem;
+      line-height: to-rem(30); // 3rem;
     }
   }
   @else if $size == 'medium' {
     @include _btn(60px, 48px, (7px 14px), $arrow-direction);
-    font-size: 1.8rem;
-    line-height: 2.4rem;
+    font-size: to-rem(18); // 1.8rem;
+    line-height: to-rem(24); // 2.4rem;
     @include breakpoint($tab) {
       @include _btn(90px, 51px, (6px 17px), $arrow-direction);
-      font-size: 2.1rem;
-      line-height: 3rem;
+      font-size: to-rem(21); // 2.1rem;
+      line-height: to-rem(30); // 3rem;
     }
     @include breakpoint($desk-plus) {
       @include _btn(100px, 55px, (5px 20px), $arrow-direction);
-      font-size: 2.2rem;
-      line-height: 3.5rem;
+      font-size: to-rem(22); // 2.2rem;
+      line-height: to-rem(35); // 3.5rem;
     }
   }
   @else if $size == 'large' {
     @include _btn(80px, 52px, (7px 16px), $arrow-direction);
-    font-size: 2.1rem;
-    line-height: 3.2rem;
+    font-size: to-rem(21); // 2.1rem;
+    line-height: to-rem(32); // 3.2rem;
     @include breakpoint($tab) {
       @include _btn(150px, 54px, (8px 19px), $arrow-direction);
-      font-size: 2.4rem;
-      line-height: 3.6rem;
+      font-size: to-rem(24); // 2.4rem;
+      line-height: to-rem(36); // 3.6rem;
     }
     @include breakpoint($desk-plus) {
       @include _btn(170px, 60px, (9px 20px), $arrow-direction);
-      font-size: 2.5rem;
-      line-height: 4rem;
+      font-size: to-rem(25); // 2.5rem;
+      line-height: to-rem(40); // 4rem;
     }
   }
   @else {
     @include _btn(44px, 44px, (8px 12px), $arrow-direction);
-    font-size: 1.6rem;
-    line-height: 2.4rem;
+    font-size: to-rem(16); // 1.6rem;
+    line-height: to-rem(24); // 2.4rem;
     @include breakpoint($tab) {
       @include _btn(45px, 45px, (8px 13px), $arrow-direction);
-      font-size: 1.8rem;
-      line-height: 2.7rem;
+      font-size: to-rem(18); // 1.8rem;
+      line-height: to-rem(27); // 2.7rem;
     }
     @include breakpoint($desk-plus) {
       @include _btn(50px, 50px, (9px 15px), $arrow-direction);
-      font-size: 2rem;
-      line-height: 3rem;
+      font-size: to-rem(20); // 2rem;
+      line-height: to-rem(30); // 3rem;
     }
   }
 }

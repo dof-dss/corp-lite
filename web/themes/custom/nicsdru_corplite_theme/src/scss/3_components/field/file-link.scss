@@ -17,7 +17,7 @@
   &-link {
     $lh: math.div(28, 18);
 
-    --fs-label: 1.8rem;
+    --fs-label: #{to-rem(18)}; // 1.8rem;
     --lh: #{$lh};
 
     font-size: var(--fs-label);
@@ -26,20 +26,20 @@
     @include breakpoint($tab, $no-query: true) {
       $lh: math.div(30, 19);
 
-      --fs-label: 1.9rem;
+      --fs-label: #{to-rem(19)}; // 1.9rem;
       --lh: #{$lh};
     }
 
     @include breakpoint($lap, $no-query: true) {
       $lh: math.div(33, 20);
 
-      --fs-label: 2rem;
+      --fs-label: #{to-rem(20)}; // 2rem;
       --lh: #{$lh};
     }
 
     @include breakpoint($desk, $no-query: true) {
       $lh: math.div(35, 21);
-      --fs-label: 2.1rem;
+      --fs-label: #{to-rem(21)}; // 2.1rem;
       --lh: #{$lh};
     }
 
@@ -51,8 +51,8 @@
 
     &.file--ico {
       display: block;
-      min-height: 5rem;
-      padding-left: 5rem;
+      min-height: to-rem(50); // 5rem;
+      padding-left: to-rem(50); // 5rem;
       position: relative;
 
       &::before {
@@ -65,25 +65,25 @@
     .meta {
       $lh: math.div(22, 15);
 
-      --fs-label: 1.5rem;
+      --fs-label: #{to-rem(15)}; // 1.5rem;
       --lh: #{$lh};
 
       display: block;
-      font-size: 1.6rem;
-      line-height: 2.4rem;
+      font-size: to-rem(16); // 1.6rem;
+      line-height: to-rem(24); // 2.4rem;
       color: #4d4d4d;
       margin: var(--rhythm-spacing-xs) 0;
 
       @include breakpoint($lap, $no-query: true) {
         $lh: math.div(24, 16);
 
-        --fs-label: 1.6rem;
+        --fs-label: #{to-rem(16)}; // 1.6rem;
         --lh: #{$lh};
       }
 
       @include breakpoint($desk, $no-query: true) {
         $lh: math.div(25, 17);
-        --fs-label: 1.7rem;
+        --fs-label: #{to-rem(17)}; // 1.7rem;
         --lh: #{$lh};
       }
     }
@@ -257,6 +257,6 @@
 }
 
 .icon-link.button {
-  min-width: 1.5rem;
-  min-height: 1.5rem;
+  min-width: to-rem(15); // 1.5rem;
+  min-height: to-rem(15); // 1.5rem;
 }
