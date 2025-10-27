@@ -482,7 +482,7 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Apply
+          submit_button: Search
           reset_button: false
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
@@ -1100,6 +1100,65 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
+        search_api_fulltext:
+          id: search_api_fulltext
+          table: search_api_index_published_releases_index
+          field: search_api_fulltext
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_fulltext
+          operator: or
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: search_api_fulltext_op
+            label: 'Search publications and choose filters to show only the results you want'
+            description: ''
+            use_operator: false
+            operator: search_api_fulltext_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: search_releases
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              author_user: '0'
+              supervisor_user: '0'
+              secure_statistics_author_user: '0'
+              secure_market_sensitive_author_user: '0'
+              secure_statistics_supervisor_user: '0'
+              secure_market_sensitive_supervisor_user: '0'
+              editor_user: '0'
+              site_admin_user: '0'
+              admin_user: '0'
+              qa: '0'
+              homepage_supervisor: '0'
+              published_releases_supervisor: '0'
+            expose_fields: false
+            placeholder: Keywords
+            searched_fields_id: search_api_fulltext_searched_fields
+            value_maxlength: 128
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          parse_mode: terms
+          min_length: null
+          fields: {  }
       filter_groups:
         operator: AND
         groups:
@@ -1111,6 +1170,7 @@ display:
         filters: false
         filter_groups: false
       display_description: ''
+      exposed_block: true
       display_extenders:
         metatag_display_extender:
           metatags: {  }
@@ -1121,6 +1181,7 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
       tags:
         - 'config:search_api.index.published_releases_index'
@@ -1629,6 +1690,65 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
+        search_api_fulltext:
+          id: search_api_fulltext
+          table: search_api_index_published_releases_index
+          field: search_api_fulltext
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_fulltext
+          operator: or
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: search_api_fulltext_op
+            label: 'Search publications and choose filters to show only the results you want'
+            description: ''
+            use_operator: false
+            operator: search_api_fulltext_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: search__upcoming_releases
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              author_user: '0'
+              supervisor_user: '0'
+              secure_statistics_author_user: '0'
+              secure_market_sensitive_author_user: '0'
+              secure_statistics_supervisor_user: '0'
+              secure_market_sensitive_supervisor_user: '0'
+              editor_user: '0'
+              site_admin_user: '0'
+              admin_user: '0'
+              qa: '0'
+              homepage_supervisor: '0'
+              published_releases_supervisor: '0'
+            expose_fields: false
+            placeholder: Keywords
+            searched_fields_id: search_api_fulltext_searched_fields
+            value_maxlength: 128
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          parse_mode: terms
+          min_length: null
+          fields: {  }
       filter_groups:
         operator: AND
         groups:
@@ -1641,6 +1761,7 @@ display:
         filters: false
         filter_groups: false
       display_description: ''
+      exposed_block: true
       display_extenders:
         metatag_display_extender:
           metatags: {  }
@@ -1651,6 +1772,7 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
       tags:
         - 'config:search_api.index.published_releases_index'

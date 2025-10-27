@@ -13,7 +13,7 @@ dependencies:
 id: originatingorganisation
 theme: nisra_theme
 region: sidebar_first
-weight: -8
+weight: -7
 provider: null
 plugin: 'facet_block:originating_organisation'
 settings:
