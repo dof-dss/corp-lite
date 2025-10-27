@@ -1,28 +1,28 @@
-uuid: 95e45600-1283-4aa5-9c5f-e5ee28042ad3
+uuid: 757d2cee-4849-49d2-9f0e-da2d89b4175b
 langcode: en
 status: true
 dependencies:
   config:
-    - facets.facet.release_date_upcoming
+    - facets.facet.originating_organisation_upcoming
   module:
     - block_visibility_groups
     - facets
     - system
   theme:
     - nisra_theme
-id: nisra_theme_releasedateupcoming_2
+id: originatingorganisation_upcoming
 theme: nisra_theme
 region: sidebar_first
-weight: -7
+weight: -5
 provider: null
-plugin: 'facet_block:release_date_upcoming'
+plugin: 'facet_block:originating_organisation_upcoming'
 settings:
-  id: 'facet_block:release_date_upcoming'
-  label: 'Release date'
+  id: 'facet_block:originating_organisation_upcoming'
+  label: 'Originating Organisation'
   label_display: visible
   provider: facets
   context_mapping: {  }
-  block_id: nisra_theme_releasedateupcoming_2
+  block_id: originatingorganisation_upcoming
 visibility:
   condition_group:
     id: condition_group

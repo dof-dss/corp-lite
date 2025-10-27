@@ -1,28 +1,28 @@
-uuid: 95e45600-1283-4aa5-9c5f-e5ee28042ad3
+uuid: cec568d4-6bbf-4383-9c34-f523c2dae1b9
 langcode: en
 status: true
 dependencies:
   config:
-    - facets.facet.release_date_upcoming
+    - facets.facet.release_type_upcoming
   module:
     - block_visibility_groups
     - facets
     - system
   theme:
     - nisra_theme
-id: nisra_theme_releasedateupcoming_2
+id: releasetype_upcoming
 theme: nisra_theme
 region: sidebar_first
-weight: -7
+weight: -6
 provider: null
-plugin: 'facet_block:release_date_upcoming'
+plugin: 'facet_block:release_type_upcoming'
 settings:
-  id: 'facet_block:release_date_upcoming'
-  label: 'Release date'
+  id: 'facet_block:release_type_upcoming'
+  label: 'Release type'
   label_display: visible
   provider: facets
   context_mapping: {  }
-  block_id: nisra_theme_releasedateupcoming_2
+  block_id: releasetype_upcoming
 visibility:
   condition_group:
     id: condition_group
