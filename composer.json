@@ -265,7 +265,8 @@
                 "Fix to $form.ajaxSubmit is not a function": "https://git.drupalcode.org/project/drupal/-/merge_requests/6052.diff",
                 "Allow view title overrides to show in page title": "https://www.drupal.org/files/issues/2023-02-08/2787051-74.patch",
                 "Increase claro xs font size": "patches/claro-font-size.patch",
-                "Force expiration of node cache tag when book outline changes": "https://gist.githubusercontent.com/johangant/8b97bf93525475ee89d8be246a418777/raw/145c727d1df7403ce38819437bc46989e1a85a2b/expire-book-node-cache-key-on-change.patch"
+                "Force expiration of node cache tag when book outline changes": "https://gist.githubusercontent.com/johangant/8b97bf93525475ee89d8be246a418777/raw/145c727d1df7403ce38819437bc46989e1a85a2b/expire-book-node-cache-key-on-change.patch",
+                "The link on the Image tag is redirecting to an undefined page from the node preview screen #3308432": "https://www.drupal.org/files/issues/2025-06-09/3308432-42.patch"
             },
             "drupal/ckeditor5_dev": {
                 "Report that lists enabled plugins": "https://git.drupalcode.org/project/ckeditor5_dev/-/merge_requests/6.diff"
