@@ -118,8 +118,15 @@ function corplite_published_releases_feed_fetch_feed() {
     $response = $client->get($url);
 
     if ($response->getStatusCode() == 200) {
-      $feed_contents = $response->getBody()->getContents();
-      $feed_contents = json_decode($feed_contents, TRUE);
+      //$feed_contents = $response->getBody()->getContents();
+      //$feed_contents = json_decode($feed_contents, TRUE);
+      $json_feed = file_get_contents('public://nisra_release_historic.json');
+      if (strlen($json_feed) > 0) {
+        \Drupal::logger('published_releases')->notice("Got some data");
+      } else {
+        \Drupal::logger('published_releases')->notice("Got NO data");
+      }
+      $feed_contents = json_decode($json_feed, TRUE);
       $data = [];
       foreach ($feed_contents['entries'] as $row) {
         if (!empty($row['id'])) {
