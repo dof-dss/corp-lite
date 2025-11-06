@@ -12,7 +12,7 @@ id: node.contact.field_site_topics
 field_name: field_site_topics
 entity_type: node
 bundle: contact
-label: 'Site topics'
+label: 'Area of expertise'
 description: 'Choose relevant site topic(s) for this point of contact.'
 required: false
 translatable: false
