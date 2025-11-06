@@ -1,0 +1,27 @@
+uuid: fbba8617-c919-4563-8971-0ae5be5107c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.nisra_corporate
+  module:
+    - taxonomy
+    - taxonomy_access_fix
+id: nisra_corporate_user
+label: 'NISRA Corporate user'
+weight: 5
+is_admin: null
+permissions:
+  - 'create terms in nisra_corporate'
+  - 'delete term revisions in nisra_corporate'
+  - 'delete terms in nisra_corporate'
+  - 'edit terms in nisra_corporate'
+  - 'reorder terms in nisra_corporate'
+  - 'reset nisra_corporate'
+  - 'revert term revisions in nisra_corporate'
+  - 'view term names in nisra_corporate'
+  - 'view term revisions in nisra_corporate'
+  - 'view terms in nisra_corporate'
+  - 'view unpublished term names in nisra_corporate'
+  - 'view unpublished terms in nisra_corporate'
+  - 'view vocabulary name of nisra_corporate'
