@@ -1,0 +1,6 @@
+services:
+  migration_subscriber:
+    class: Drupal\etini_district_inspectors_import\EventSubscriber\DistrictInspectorMigrationSubscriber
+    arguments: ['@database']
+    tags:
+      - { name: 'event_subscriber' }

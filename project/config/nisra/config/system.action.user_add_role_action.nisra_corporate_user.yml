@@ -1,0 +1,14 @@
+uuid: f9f7f6fb-4ff4-4d08-aeb6-5bcd623575ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.nisra_corporate_user
+  module:
+    - user
+id: user_add_role_action.nisra_corporate_user
+label: 'Add the NISRA Corporate user role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: nisra_corporate_user
