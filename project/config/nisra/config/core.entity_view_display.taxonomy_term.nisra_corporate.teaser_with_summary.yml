@@ -7,13 +7,17 @@ dependencies:
     - field.field.taxonomy_term.nisra_corporate.field_hide_topic
     - field.field.taxonomy_term.nisra_corporate.field_summary
     - field.field.taxonomy_term.nisra_corporate.field_term_image
-    - field.field.taxonomy_term.nisra_corporate.field_term_photo
     - taxonomy.vocabulary.nisra_corporate
 id: taxonomy_term.nisra_corporate.teaser_with_summary
 targetEntityType: taxonomy_term
 bundle: nisra_corporate
 mode: teaser_with_summary
 content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
   field_summary:
     type: string
     label: hidden
@@ -26,6 +30,5 @@ hidden:
   description: true
   field_hide_topic: true
   field_term_image: true
-  field_term_photo: true
   langcode: true
   search_api_excerpt: true

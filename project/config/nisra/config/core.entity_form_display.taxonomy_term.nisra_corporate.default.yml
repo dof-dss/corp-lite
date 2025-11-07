@@ -6,7 +6,6 @@ dependencies:
     - field.field.taxonomy_term.nisra_corporate.field_hide_topic
     - field.field.taxonomy_term.nisra_corporate.field_summary
     - field.field.taxonomy_term.nisra_corporate.field_term_image
-    - field.field.taxonomy_term.nisra_corporate.field_term_photo
     - taxonomy.vocabulary.nisra_corporate
     - workflows.workflow.nics_editorial_workflow
   module:
@@ -50,15 +49,6 @@ content:
   field_term_image:
     type: media_library_widget
     weight: 4
-    region: content
-    settings:
-      media_types: {  }
-    third_party_settings:
-      media_library_edit:
-        show_edit: '1'
-  field_term_photo:
-    type: media_library_widget
-    weight: 5
     region: content
     settings:
       media_types: {  }
