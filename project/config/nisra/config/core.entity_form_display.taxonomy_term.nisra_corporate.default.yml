@@ -6,8 +6,8 @@ dependencies:
     - field.field.taxonomy_term.nisra_corporate.field_hide_topic
     - field.field.taxonomy_term.nisra_corporate.field_summary
     - field.field.taxonomy_term.nisra_corporate.field_term_image
-    - field.field.taxonomy_term.nisra_corporate.field_term_photo
     - taxonomy.vocabulary.nisra_corporate
+    - workflows.workflow.nics_editorial_workflow
   module:
     - content_moderation
     - media_library
@@ -20,23 +20,23 @@ bundle: nisra_corporate
 mode: default
 content:
   description:
-    type: text_textfield
-    weight: 0
+    type: text_textarea
+    weight: 2
     region: content
     settings:
-      size: 60
+      rows: 5
       placeholder: ''
     third_party_settings: {  }
   field_hide_topic:
     type: boolean_checkbox
-    weight: 9
+    weight: 6
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   field_summary:
     type: string_textfield
-    weight: 2
+    weight: 1
     region: content
     settings:
       size: 60
@@ -55,31 +55,22 @@ content:
     third_party_settings:
       media_library_edit:
         show_edit: '1'
-  field_term_photo:
-    type: media_library_widget
-    weight: 7
-    region: content
-    settings:
-      media_types: {  }
-    third_party_settings:
-      media_library_edit:
-        show_edit: '1'
   langcode:
     type: language_select
-    weight: 2
+    weight: 3
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 100
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
   name:
     type: string_textfield
-    weight: -5
+    weight: 0
     region: content
     settings:
       size: 60
@@ -87,13 +78,13 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 30
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 100
+    weight: 8
     region: content
     settings:
       display_label: true
