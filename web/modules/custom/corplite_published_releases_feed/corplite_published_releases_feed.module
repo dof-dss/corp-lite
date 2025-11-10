@@ -87,21 +87,8 @@ function corplite_published_releases_feed_update_release_object($release, $feed_
   $release->set('release_date', strtotime($feed_item['release_date']));
   $release->set('display_date', $feed_item['display_date']);
   $release->set('updated', strtotime($feed_item['updated']));
-  // Lookup 'type' against taxonomy.
-  // Note that we do this here in the feed rather than in the view or during
-  // display so that the full result can be stored in the solr index and the
-  // published releases view can be based on the solr index.
-  $type = '';
-  if (!empty($feed_item['type'])) {
-    $type = $document_types[$feed_item['type']];
-  }
-  $release->set('type', $type);
-  // Lookup 'organisation' in taxonomy. (Same reason as above.)
-  $org = '';
-  if (!empty($feed_item['org'])) {
-    $org = $organisations[$feed_item['org']];
-  }
-  $release->set('org', $org);
+  $release->set('type', $feed_item['type']);
+  $release->set('org', $feed_item['org']);
   $release->save();
 }
 
@@ -120,7 +107,8 @@ function corplite_published_releases_feed_fetch_feed() {
     if ($response->getStatusCode() == 200) {
       //$feed_contents = $response->getBody()->getContents();
       //$feed_contents = json_decode($feed_contents, TRUE);
-      $json_feed = file_get_contents('public://nisra_release_historic.json');
+      //$json_feed = file_get_contents('public://nisra_release_historic.json');
+      $json_feed = file_get_contents('public://nisra_release_calendar.json');
       if (strlen($json_feed) > 0) {
         \Drupal::logger('published_releases')->notice("Got some data");
       } else {

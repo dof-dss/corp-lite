@@ -48,17 +48,27 @@ class OrganisationDescription extends ProcessorPluginBase {
   public function addFieldValues(ItemInterface $item)
   {
     $datasourceId = $item->getDatasourceId();
-    if ($datasourceId == 'entity:node') {
+    if ($datasourceId == 'entity:published_releases') {
       // Retrieve the node in question.
-      $release = PublishedReleases::Load($item->getOriginalObject()->getValue());
+      $obj = $item->getOriginalObject()->get('id')->getValue();
+      $id = $obj[0]['value'];
+      $release = PublishedReleases::Load($id);
       // Extract the organisation code that was sent in the feed.
-      $org_code = $release->get('org');
+      $org_code = $release->get('org')->getValue()[0]['value'];
       // Lookup the description for this code.
       $organisation_text = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties([
         'name' => $org_code
       ]);
-      $fields = $item->getFields(FALSE);
-      $fields->addValue('Organisation desc');
+
+      $fields = $this->getFieldsHelper()
+        ->filterForPropertyPath($item->getFields(), $item->getDatasourceId(), 'organisation_description');
+      foreach ($fields as $field) {
+        $configuration = $field->getConfiguration();
+        $field->addValue($configuration['dummy_value']);
+      }
+
+      //$fields = $item->getFields(FALSE);
+      //$fields->addValue('Organisation desc');
     }
   }
 }
