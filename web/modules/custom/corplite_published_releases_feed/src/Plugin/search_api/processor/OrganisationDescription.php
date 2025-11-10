@@ -52,24 +52,38 @@ class OrganisationDescription extends ProcessorPluginBase {
     if ($datasourceId == 'entity:published_releases') {
       // Retrieve the node in question.
       $obj = $item->getOriginalObject()->get('id')->getValue();
-      $id = $obj[0]['value'];
+      if (is_array($obj) && isset($obj[0]) && isset($obj[0]['value'])) {
+        $id = $obj[0]['value'];
+      } else {
+        return;
+      }
       $release = PublishedReleases::Load($id);
+      if (empty($release)) {
+        return;
+      }
       // Extract the organisation code that was sent in the feed.
       $org_code = $release->get('org')->getValue()[0]['value'];
+      if (empty($org_code)) {
+        return;
+      }
       // Lookup the description for this code.
       $organisations_vocabulary = Vocabulary::load('organisations');
       $organisation_term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties([
         'name' => $org_code,
         'vid' => $organisations_vocabulary->id()
       ]);
+      if (empty($organisation_term)) {
+        return;
+      }
       $organisation_term = reset($organisation_term);
       $desc = strip_tags($organisation_term->get('description')->getValue()[0]['value']);
-
-      $fields = $this->getFieldsHelper()
-        ->filterForPropertyPath($item->getFields(), $item->getDatasourceId(), 'organisation_description');
-      foreach ($fields as $field) {
-        $configuration = $field->getConfiguration();
-        $field->addValue($desc);
+      if (!empty($desc)) {
+        $fields = $this->getFieldsHelper()
+          ->filterForPropertyPath($item->getFields(), $item->getDatasourceId(), 'organisation_description');
+        foreach ($fields as $field) {
+          $configuration = $field->getConfiguration();
+          $field->addValue($desc);
+        }
       }
     }
   }
