@@ -7,6 +7,7 @@ use Drupal\search_api\Datasource\DatasourceInterface;
 use Drupal\search_api\Item\ItemInterface;
 use Drupal\search_api\Processor\ProcessorPluginBase;
 use Drupal\search_api\Processor\ProcessorProperty;
+use Drupal\taxonomy\Entity\Vocabulary;
 
 /**
  * Stores the organisation's description in the Solr index.
@@ -56,19 +57,20 @@ class OrganisationDescription extends ProcessorPluginBase {
       // Extract the organisation code that was sent in the feed.
       $org_code = $release->get('org')->getValue()[0]['value'];
       // Lookup the description for this code.
-      $organisation_text = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties([
-        'name' => $org_code
+      $organisations_vocabulary = Vocabulary::load('organisations');
+      $organisation_term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties([
+        'name' => $org_code,
+        'vid' => $organisations_vocabulary->id()
       ]);
+      $organisation_term = reset($organisation_term);
+      $desc = strip_tags($organisation_term->get('description')->getValue()[0]['value']);
 
       $fields = $this->getFieldsHelper()
         ->filterForPropertyPath($item->getFields(), $item->getDatasourceId(), 'organisation_description');
       foreach ($fields as $field) {
         $configuration = $field->getConfiguration();
-        $field->addValue($configuration['dummy_value']);
+        $field->addValue($desc);
       }
-
-      //$fields = $item->getFields(FALSE);
-      //$fields->addValue('Organisation desc');
     }
   }
 }
