@@ -88,6 +88,11 @@ field_settings:
     dependencies:
       module:
         - corplite_published_releases_feed
+  organisation_description:
+    label: 'Organisation Description'
+    datasource_id: 'entity:published_releases'
+    property_path: organisation_description
+    type: string
   release_date:
     label: 'Release date'
     datasource_id: 'entity:published_releases'
@@ -146,6 +151,7 @@ processor_settings:
   custom_value: {  }
   entity_type: {  }
   language_with_fallback: {  }
+  org_description: {  }
   rendered_item: {  }
   solr_boost_more_recent:
     weights:
@@ -162,4 +168,4 @@ options:
   delete_on_fail: true
   index_directly: true
   track_changes_in_references: true
-server: solr_default
+server: null
