@@ -12,7 +12,7 @@ third_party_settings:
   facets_pretty_paths:
     coder: taxonomy_term_coder
 id: originating_organisation_upcoming
-name: 'Originating Organisation'
+name: Organisation
 weight: 0
 min_count: 1
 missing: false

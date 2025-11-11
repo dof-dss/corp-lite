@@ -25,7 +25,7 @@ facets:
     weight: 0
   originating_organisation:
     checked: true
-    label: 'Originating Organisation'
+    label: Organisation
     separator: ', '
     show_count: false
     weight: 0

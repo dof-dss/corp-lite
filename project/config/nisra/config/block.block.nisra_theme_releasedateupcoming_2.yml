@@ -13,7 +13,7 @@ dependencies:
 id: nisra_theme_releasedateupcoming_2
 theme: nisra_theme
 region: sidebar_first
-weight: -6
+weight: -4
 provider: null
 plugin: 'facet_block:release_date_upcoming'
 settings:

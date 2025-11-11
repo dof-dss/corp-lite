@@ -13,12 +13,12 @@ dependencies:
 id: originatingorganisation
 theme: nisra_theme
 region: sidebar_first
-weight: -7
+weight: -8
 provider: null
 plugin: 'facet_block:originating_organisation'
 settings:
   id: 'facet_block:originating_organisation'
-  label: 'Originating Organisation'
+  label: Organisation
   label_display: visible
   provider: facets
   context_mapping: {  }
