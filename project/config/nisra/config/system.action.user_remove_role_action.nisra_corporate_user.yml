@@ -1,0 +1,14 @@
+uuid: bedf60ec-34c3-441c-84a3-aa240c35cbbb
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.nisra_corporate_user
+  module:
+    - user
+id: user_remove_role_action.nisra_corporate_user
+label: 'Remove the NISRA Corporate user role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: nisra_corporate_user

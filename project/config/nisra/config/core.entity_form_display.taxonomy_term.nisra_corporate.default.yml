@@ -1,0 +1,92 @@
+uuid: 758b7202-0188-44ca-8572-0a2a4cac5d7b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.nisra_corporate.field_hide_topic
+    - field.field.taxonomy_term.nisra_corporate.field_summary
+    - field.field.taxonomy_term.nisra_corporate.field_term_image
+    - taxonomy.vocabulary.nisra_corporate
+    - workflows.workflow.nics_editorial_workflow
+  module:
+    - content_moderation
+    - media_library
+    - media_library_edit
+    - path
+    - text
+id: taxonomy_term.nisra_corporate.default
+targetEntityType: taxonomy_term
+bundle: nisra_corporate
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_hide_topic:
+    type: boolean_checkbox
+    weight: 6
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_summary:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      maxlength:
+        maxlength_js: 150
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+        maxlength_js_enforce: false
+  field_term_image:
+    type: media_library_widget
+    weight: 4
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings:
+      media_library_edit:
+        show_edit: '1'
+  langcode:
+    type: language_select
+    weight: 3
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 8
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden: {  }
