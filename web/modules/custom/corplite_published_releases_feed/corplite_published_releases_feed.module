@@ -87,7 +87,11 @@ function corplite_published_releases_feed_update_release_object($release, $feed_
   $release->set('release_date', strtotime($feed_item['release_date']));
   $release->set('display_date', $feed_item['display_date']);
   $release->set('updated', strtotime($feed_item['updated']));
-  $release->set('type', $feed_item['type']);
+  $type = '';
+  if (!empty($feed_item['type'])) {
+    $type = $document_types[$feed_item['type']];
+  }
+  $release->set('type', $type);
   $release->set('org', $feed_item['org']);
   $release->save();
 }
