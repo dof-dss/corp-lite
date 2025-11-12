@@ -69,9 +69,15 @@
     {% if social_links %}
       <div class="nav-social-wrapper">
         <ul class="nav-social list--no-bullet">
-          {% for link in social_links %}
+          {% for platform, link in social_links %}
+            {% set platform_name = platform|capitalize %}
             <li class="social-item">
-              {{ link }}
+              <a href="{{ link['#url'] }}" class="{{ link['#attributes']['class']|join(' ') }}" rel="noreferrer">
+                {% if link['#title'] is not empty %}
+                  {{ link['#title'] }}
+                {% endif %}
+                <span class="visually-hidden">Follow us on {{ platform_name }}</span>
+              </a>
             </li>
           {% endfor %}
         </ul>
