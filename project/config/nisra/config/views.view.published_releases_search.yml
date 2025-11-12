@@ -773,7 +773,12 @@ display:
             multi_type: separator
             multi_separator: ', '
       cache:
-        type: search_api_none
+        type: search_api_time
+        options:
+          results_lifespan: 0
+          results_lifespan_custom: 0
+          output_lifespan: 0
+          output_lifespan_custom: 0
       filters:
         release_date:
           id: release_date
@@ -1149,7 +1154,12 @@ display:
             multi_type: separator
             multi_separator: ', '
       cache:
-        type: search_api_none
+        type: search_api_time
+        options:
+          results_lifespan: 0
+          results_lifespan_custom: 0
+          output_lifespan: 0
+          output_lifespan_custom: 0
       sorts:
         release_date:
           id: release_date
