@@ -13,6 +13,7 @@ use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\StreamWrapper\StreamWrapperManager;
 use Drupal\Core\Url;
 use Drupal\node\Entity\Node;
+use Drupal\views\Plugin\views\cache\CachePluginBase;
 use Drupal\views\ViewExecutable;
 
 /**
@@ -188,3 +189,4 @@ function nisra_common_system_breadcrumb_alter(Breadcrumb &$breadcrumb, RouteMatc
     $breadcrumb->addCacheContexts(['url.path']);
   }
 }
+

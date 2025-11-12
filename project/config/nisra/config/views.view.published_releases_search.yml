@@ -1106,7 +1106,12 @@ display:
             multi_type: separator
             multi_separator: ', '
       cache:
-        type: search_api_none
+        type: search_api_time
+        options:
+          results_lifespan: 0
+          results_lifespan_custom: 0
+          output_lifespan: 0
+          output_lifespan_custom: 0
       filters:
         release_date:
           id: release_date
@@ -1230,13 +1235,16 @@ display:
           tokenize: false
       path: published-releases
     cache_metadata:
-      max-age: -1
+      max-age: 0
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - url.query_args
       tags:
+        - 'config:facets.facet.originating_organisation'
+        - 'config:facets.facet.release_date'
+        - 'config:facets.facet.release_type'
         - 'config:search_api.index.published_releases_index'
         - 'search_api_list:published_releases_index'
   releases_upcoming:
@@ -1733,7 +1741,12 @@ display:
             multi_type: separator
             multi_separator: ', '
       cache:
-        type: search_api_none
+        type: search_api_time
+        options:
+          results_lifespan: 0
+          results_lifespan_custom: 0
+          output_lifespan: 0
+          output_lifespan_custom: 0
       sorts:
         release_date:
           id: release_date
@@ -1872,12 +1885,15 @@ display:
           tokenize: false
       path: upcoming-releases
     cache_metadata:
-      max-age: -1
+      max-age: 0
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - url.query_args
       tags:
+        - 'config:facets.facet.originating_organisation_upcoming'
+        - 'config:facets.facet.release_date_upcoming'
+        - 'config:facets.facet.release_type_upcoming'
         - 'config:search_api.index.published_releases_index'
         - 'search_api_list:published_releases_index'

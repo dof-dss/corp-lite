@@ -152,6 +152,7 @@
         "drupal/node_edit_protection": "^1.1",
         "drupal/noreferrer": "^1.16",
         "drupal/oembed_providers": "^2.1",
+        "drupal/page_cache_exclusion": "^1.0",
         "drupal/paragraphs": "^1.15",
         "drupal/pathauto": "^1.11",
         "drupal/photoswipe": "^5.0",
