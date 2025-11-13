@@ -3,7 +3,7 @@ _core:
 langcode: en
 cache:
   page:
-    max_age: 900
+    max_age: 180
 css:
   preprocess: true
   gzip: true
