@@ -7,12 +7,12 @@ dependencies:
 id: nisra_corporate
 label: 'NISRA Corporate'
 type: 'canonical_entities:taxonomy_term'
-pattern: 'corporate/[term:parent]/[term:name]'
+pattern: '[term:parent]/[term:name]'
 selection_criteria:
-  ef3664c6-b57c-4a5e-a2e3-c45ae1ca58f4:
+  9db7aeef-bf0f-4878-aa17-5f217958e092:
     id: 'entity_bundle:taxonomy_term'
     negate: false
-    uuid: ef3664c6-b57c-4a5e-a2e3-c45ae1ca58f4
+    uuid: 9db7aeef-bf0f-4878-aa17-5f217958e092
     context_mapping:
       taxonomy_term: taxonomy_term
     bundles:

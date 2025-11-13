@@ -125,6 +125,7 @@ module:
   origins_translations: 0
   origins_unique_title: 0
   page_cache: 0
+  page_cache_exclusion: 0
   path: 0
   path_alias: 0
   photoswipe: 0
