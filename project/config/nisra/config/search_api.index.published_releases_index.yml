@@ -127,6 +127,11 @@ field_settings:
     dependencies:
       module:
         - corplite_published_releases_feed
+  type_description:
+    label: 'Type Description'
+    datasource_id: 'entity:published_releases'
+    property_path: type_description
+    type: string
   updated:
     label: Updated
     datasource_id: 'entity:published_releases'
@@ -161,6 +166,7 @@ processor_settings:
   solr_date_range:
     weights:
       preprocess_index: 0
+  type_description: {  }
 tracker_settings:
   default:
     indexing_order: fifo

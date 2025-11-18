@@ -13,9 +13,9 @@ use Drupal\taxonomy\Entity\Vocabulary;
  * Stores the organisation's description in the Solr index.
  *
  * @SearchApiProcessor(
- *   id = "org_description",
- *   label = @Translation("Organisation Description"),
- *   description = @Translation("Looks up the Organisation Description in the 'Organisations' vocabulary and stores it in the Solr index"),
+ *   id = "type_description",
+ *   label = @Translation("Type Description"),
+ *   description = @Translation("Looks up the Type Description in the 'Document Types' vocabulary and stores it in the Solr index"),
  *   stages = {
  *     "add_properties" = 0,
  *   },
@@ -23,7 +23,7 @@ use Drupal\taxonomy\Entity\Vocabulary;
  *   hidden = true,
  * )
  */
-class OrganisationDescription extends ProcessorPluginBase {
+class TypeDescription extends ProcessorPluginBase {
   /**
    * {@inheritdoc}
    */
@@ -32,12 +32,12 @@ class OrganisationDescription extends ProcessorPluginBase {
 
     if ($datasource) {
       $definition = [
-        'label' => $this->t('Organisation Description'),
-        'description' => $this->t('The description for the organisation'),
+        'label' => $this->t('Type Description'),
+        'description' => $this->t('The description for the document type'),
         'type' => 'string',
         'processor_id' => $this->getPluginId(),
       ];
-      $properties['organisation_description'] = new ProcessorProperty($definition);
+      $properties['type_description'] = new ProcessorProperty($definition);
     }
 
     return $properties;
@@ -61,25 +61,25 @@ class OrganisationDescription extends ProcessorPluginBase {
       if (empty($release)) {
         return;
       }
-      // Extract the organisation code that was sent in the feed.
-      $org_code = $release->get('org')->getValue()[0]['value'];
-      if (empty($org_code)) {
+      // Extract the document type code that was sent in the feed.
+      $type_code = $release->get('type')->getValue()[0]['value'];
+      if (empty($type_code)) {
         return;
       }
       // Lookup the description for this code.
-      $organisations_vocabulary = Vocabulary::load('organisations');
-      $organisation_term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties([
-        'name' => $org_code,
-        'vid' => $organisations_vocabulary->id()
+      $document_type_vocabulary = Vocabulary::load('document_types');
+      $type_term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties([
+        'name' => $type_code,
+        'vid' => $document_type_vocabulary->id()
       ]);
-      if (empty($organisation_term)) {
+      if (empty($type_term)) {
         return;
       }
-      $organisation_term = reset($organisation_term);
-      $desc = strip_tags($organisation_term->get('description')->getValue()[0]['value']);
+      $type_term = reset($type_term);
+      $desc = strip_tags($type_term->get('description')->getValue()[0]['value']);
       if (!empty($desc)) {
         $fields = $this->getFieldsHelper()
-          ->filterForPropertyPath($item->getFields(), $item->getDatasourceId(), 'organisation_description');
+          ->filterForPropertyPath($item->getFields(), $item->getDatasourceId(), 'type_description');
         foreach ($fields as $field) {
           $configuration = $field->getConfiguration();
           $field->addValue($desc);

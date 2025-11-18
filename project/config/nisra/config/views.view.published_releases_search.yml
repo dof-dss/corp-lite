@@ -825,14 +825,14 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-        org:
-          id: org
+        type_description:
+          id: type_description
           table: search_api_index_published_releases_index
-          field: org
+          field: type_description
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: search_api_field
+          plugin_id: search_api
           label: ''
           exclude: true
           alter:
@@ -874,97 +874,10 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
+          link_to_item: false
+          use_highlighting: false
           multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          field_rendering: true
-          fallback_handler: search_api
-          fallback_options:
-            link_to_item: false
-            use_highlighting: false
-            multi_type: separator
-            multi_separator: ', '
-        type:
-          id: type
-          table: search_api_index_published_releases_index
-          field: type
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: search_api_field
-          label: ''
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          field_rendering: true
-          fallback_handler: search_api
-          fallback_options:
-            link_to_item: false
-            use_highlighting: false
-            multi_type: separator
-            multi_separator: ', '
+          multi_separator: ', '
         organisation_description:
           id: organisation_description
           table: search_api_index_published_releases_index
@@ -1032,7 +945,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "{% if url|length > 0 %}\r\n<li><a class=\"card card--plain no-ext-icon\" href=\"{{ url }}\">\r\n{% else %}\r\n<li class=\"card card--plain no-ext-icon\">\r\n{% endif %}\r\n\r\n  <h3 class=\"card__title\">{{ title }}</h3>\r\n\r\n  {% if summary %}\r\n  <div class=\"card__summary\">\r\n    <p>{{ summary }}</p>\r\n  </div>\r\n  {% endif %}\r\n\r\n  <div class=\"card__meta\">\r\n    {% if type %}\r\n      <div class=\"card__meta-item card__meta-type\">\r\n        Release type: {{ type }}\r\n      </div>\r\n    {% endif %}\r\n    \r\n    {% if organisation_description %}\r\n      <div class=\"card__meta-item card__meta-org\">\r\n        Organisation: {{ organisation_description }}\r\n      </div>\r\n    {% endif %}\r\n    \r\n    {% if release_date %}\r\n      <div class=\"card__meta-item field-published-date\">\r\n        Release date: {{ release_date }}\r\n      </div>\r\n    {% endif %}\r\n  </div>\r\n\r\n{% if url|length > 0 %}\r\n</a></li>\r\n{% else %}\r\n</li>\r\n{% endif %}\r\n"
+            text: "{% if url|length > 0 %}\r\n<li><a class=\"card card--plain no-ext-icon\" href=\"{{ url }}\">\r\n{% else %}\r\n<li class=\"card card--plain no-ext-icon\">\r\n{% endif %}\r\n\r\n  <h3 class=\"card__title\">{{ title }}</h3>\r\n\r\n  {% if summary %}\r\n  <div class=\"card__summary\">\r\n    <p>{{ summary }}</p>\r\n  </div>\r\n  {% endif %}\r\n\r\n  <div class=\"card__meta\">\r\n    {% if type_description %}\r\n      <div class=\"card__meta-item card__meta-type\">\r\n        Release type: {{ type_description }}\r\n      </div>\r\n    {% endif %}\r\n    \r\n    {% if organisation_description %}\r\n      <div class=\"card__meta-item card__meta-org\">\r\n        Organisation: {{ organisation_description }}\r\n      </div>\r\n    {% endif %}\r\n    \r\n    {% if release_date %}\r\n      <div class=\"card__meta-item field-published-date\">\r\n        Release date: {{ release_date }}\r\n      </div>\r\n    {% endif %}\r\n  </div>\r\n\r\n{% if url|length > 0 %}\r\n</a></li>\r\n{% else %}\r\n</li>\r\n{% endif %}\r\n"
             make_link: false
             path: ''
             absolute: false
@@ -1462,14 +1375,14 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-        type:
-          id: type
+        type_description:
+          id: type_description
           table: search_api_index_published_releases_index
-          field: type
+          field: type_description
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: search_api_field
+          plugin_id: search_api
           label: ''
           exclude: true
           alter:
@@ -1511,27 +1424,10 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
+          link_to_item: false
+          use_highlighting: false
           multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          field_rendering: true
-          fallback_handler: search_api
-          fallback_options:
-            link_to_item: false
-            use_highlighting: false
-            multi_type: separator
-            multi_separator: ', '
+          multi_separator: ', '
         organisation_description:
           id: organisation_description
           table: search_api_index_published_releases_index
@@ -1585,76 +1481,6 @@ display:
           use_highlighting: false
           multi_type: separator
           multi_separator: ', '
-        display_date:
-          id: display_date
-          table: search_api_index_published_releases_index
-          field: display_date
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: search_api_field
-          label: ''
-          exclude: false
-          alter:
-            alter_text: true
-            text: "{% if url|length > 0 %}\r\n<li><a class=\"card card--plain no-ext-icon\" href=\"{{ url }}\">\r\n{% else %}\r\n<li class=\"card card--plain no-ext-icon\">\r\n{% endif %}\r\n\r\n  <h3 class=\"card__title\">{{ title }}</h3>\r\n\r\n  {% if summary %}\r\n  <div class=\"card__summary\">\r\n    <p>{{ summary }}</p>\r\n  </div>\r\n  {% endif %}\r\n\r\n  <div class=\"card__meta\">\r\n    {% if type %}\r\n      <div class=\"card__meta-item card__meta-type\">\r\n        Release type: {{ type }}\r\n      </div>\r\n    {% endif %}\r\n    \r\n    {% if organisation_description %}\r\n      <div class=\"card__meta-item card__meta-org\">\r\n        Organisation: {{ organisation_description }}\r\n      </div>\r\n    {% endif %}\r\n\r\n    {% if display_date %}\r\n      <div class=\"card__meta-item field-published-date\">\r\n        Release date: {{ display_date }}\r\n      </div>\r\n    {% endif %}\r\n  </div>\r\n\r\n{% if url|length > 0 %}\r\n</a></li>\r\n{% else %}\r\n</li>\r\n{% endif %}\r\n"
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          field_rendering: true
-          fallback_handler: search_api
-          fallback_options:
-            link_to_item: false
-            use_highlighting: false
-            multi_type: separator
-            multi_separator: ', '
         release_date:
           id: release_date
           table: search_api_index_published_releases_index
@@ -1740,6 +1566,76 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
+        display_date:
+          id: display_date
+          table: search_api_index_published_releases_index
+          field: display_date
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: "{% if url|length > 0 %}\r\n<li><a class=\"card card--plain no-ext-icon\" href=\"{{ url }}\">\r\n{% else %}\r\n<li class=\"card card--plain no-ext-icon\">\r\n{% endif %}\r\n\r\n  <h3 class=\"card__title\">{{ title }}</h3>\r\n\r\n  {% if summary %}\r\n  <div class=\"card__summary\">\r\n    <p>{{ summary }}</p>\r\n  </div>\r\n  {% endif %}\r\n\r\n  <div class=\"card__meta\">\r\n    {% if type_description %}\r\n      <div class=\"card__meta-item card__meta-type\">\r\n        Release type: {{ type_description }}\r\n      </div>\r\n    {% endif %}\r\n    \r\n    {% if organisation_description %}\r\n      <div class=\"card__meta-item card__meta-org\">\r\n        Organisation: {{ organisation_description }}\r\n      </div>\r\n    {% endif %}\r\n\r\n    {% if display_date %}\r\n      <div class=\"card__meta-item field-published-date\">\r\n        Release date: {{ display_date }}\r\n      </div>\r\n    {% endif %}\r\n  </div>\r\n\r\n{% if url|length > 0 %}\r\n</a></li>\r\n{% else %}\r\n</li>\r\n{% endif %}\r\n"
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          field_rendering: true
+          fallback_handler: search_api
+          fallback_options:
+            link_to_item: false
+            use_highlighting: false
+            multi_type: separator
+            multi_separator: ', '
       cache:
         type: search_api_time
         options:
@@ -1818,7 +1714,7 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          parse_mode: terms
+          parse_mode: fuzzy_terms
           min_length: null
           fields: {  }
         release_date:
