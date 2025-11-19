@@ -112,6 +112,9 @@ function corplite_published_releases_feed_fetch_feed() {
       //$feed_contents = $response->getBody()->getContents();
       //$feed_contents = json_decode($feed_contents, TRUE);
       //$json_feed = file_get_contents('public://nisra_release_historic.json');
+      // Test feeds
+      // http://raw.githubusercontent.com/NISRA-Tech-Lab/latest-publications/refs/heads/b-org/nisra_release_calendar.json
+      // http://raw.githubusercontent.com/NISRA-Tech-Lab/latest-publications/refs/heads/b-org/nisra_release_historic.json
       $json_feed = file_get_contents('public://nisra_release_calendar.json');
       $feed_contents = json_decode($json_feed, TRUE);
       $data = [];
