@@ -39,7 +39,7 @@ popup_delay: 300
 show_more_info: false
 popup_bg_hex: ''
 popup_text_hex: ''
-domain: ''
+domain: .nisra.gov.uk
 domains_option: 1
 domains_list: .translate.goog
 exclude_paths: "/admin\r\n/admin/*\r\n/batch\r\n/node/add*\r\n/node/*/*\r\n/user/*/*"
@@ -75,7 +75,7 @@ enable_save_preferences_button: true
 domain_all_sites: false
 settings_tab_enabled: true
 containing_element: body
-cookie_policy_version: 1.0.0
+cookie_policy_version: 1.0.1
 cookie_value_disagreed: '0'
 cookie_value_agreed_show_thank_you: '1'
 cookie_value_agreed: '2'
