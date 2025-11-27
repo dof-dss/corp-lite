@@ -12,8 +12,8 @@ use Drupal\taxonomy\Entity\Vocabulary;
 /**
  * Cron callback function to run feed.
  */
-function corplite_published_releases_feed_import() {
-  $data = corplite_published_releases_feed_fetch_feed();
+function corplite_published_releases_feed_import($type = 'standard') {
+  $data = corplite_published_releases_feed_fetch_feed($type);
   $updated = 0;
   $imported = 0;
   foreach ($data as $feed_item) {
@@ -46,6 +46,13 @@ function corplite_published_releases_feed_import() {
 }
 
 /**
+ * Cron callback function to run historic feed.
+ */
+function corplite_published_releases_feed_import_historic() {
+  corplite_published_releases_feed_import('historic');
+}
+
+/**
  * Update the release object.
  */
 function corplite_published_releases_feed_update_release_object($release, $feed_item) {
@@ -63,24 +70,21 @@ function corplite_published_releases_feed_update_release_object($release, $feed_
 /**
  * Retrieve the JSON feed.
  */
-function corplite_published_releases_feed_fetch_feed() {
+function corplite_published_releases_feed_fetch_feed($type) {
   $data = NULL;
   $client = \Drupal::service('http_client');
   $config = \Drupal::config('corplite_published_releases_feed.settings');
   $url = $config->get('data_source_url');
+  if ($type == 'historic') {
+    $url = $config->get('data_source_url_historic');
+  }
 
   try {
     $response = $client->get($url);
 
     if ($response->getStatusCode() == 200) {
-      //$feed_contents = $response->getBody()->getContents();
-      //$feed_contents = json_decode($feed_contents, TRUE);
-      //$json_feed = file_get_contents('public://nisra_release_historic.json');
-      // Test feeds
-      // http://raw.githubusercontent.com/NISRA-Tech-Lab/latest-publications/refs/heads/b-org/nisra_release_calendar.json
-      // http://raw.githubusercontent.com/NISRA-Tech-Lab/latest-publications/refs/heads/b-org/nisra_release_historic.json
-      $json_feed = file_get_contents('public://nisra_release_calendar.json');
-      $feed_contents = json_decode($json_feed, TRUE);
+      $feed_contents = $response->getBody()->getContents();
+      $feed_contents = json_decode($feed_contents, TRUE);
       $data = [];
       foreach ($feed_contents['entries'] as $row) {
         if (!empty($row['id'])) {
