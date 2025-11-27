@@ -1,0 +1,10 @@
+uuid: a940bed3-0407-41f4-a2f0-8a5e9adeb7ba
+langcode: en
+status: true
+dependencies: {  }
+id: import_eti_district_inspectors
+label: 'Import ETI District Inspectors'
+description: 'Import ETI District Inspectors'
+source_type: CSV
+module: null
+shared_configuration: null

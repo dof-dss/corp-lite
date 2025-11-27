@@ -24,7 +24,6 @@ regions:
   content: 'Content'
   sidebar_first: 'Search'
   sidebar_second: 'Aside'
-  last_updated: 'Last updated'
   related: 'Related page footer'
   bottom_banner: 'Page bottom'
   footer: 'Footer'

@@ -1,0 +1,34 @@
+uuid: 515c95f4-9ca3-4f4f-a10f-3a01c3f34cd9
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.search_index
+    - field.field.taxonomy_term.nisra_corporate.field_hide_topic
+    - field.field.taxonomy_term.nisra_corporate.field_summary
+    - field.field.taxonomy_term.nisra_corporate.field_term_image
+    - taxonomy.vocabulary.nisra_corporate
+id: taxonomy_term.nisra_corporate.search_index
+targetEntityType: taxonomy_term
+bundle: nisra_corporate
+mode: search_index
+content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
+  field_summary:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  description: true
+  field_hide_topic: true
+  field_term_image: true
+  langcode: true
+  search_api_excerpt: true

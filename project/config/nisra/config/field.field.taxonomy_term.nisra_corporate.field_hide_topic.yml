@@ -1,0 +1,21 @@
+uuid: eb766086-6e35-4889-ad69-6bc73f8a2c5a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_hide_topic
+    - taxonomy.vocabulary.nisra_corporate
+id: taxonomy_term.nisra_corporate.field_hide_topic
+field_name: field_hide_topic
+entity_type: taxonomy_term
+bundle: nisra_corporate
+label: 'Hide this topic'
+description: 'Check to indicate that this content should be hidden on the home page and topic listings.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

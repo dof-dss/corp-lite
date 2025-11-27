@@ -1,0 +1,37 @@
+langcode: en
+status: true
+dependencies: { }
+id: district_inspector_import
+class: Drupal\node\Plugin\migrate\D7NodeTranslation
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - Content
+migration_group: import_eti_district_inspectors
+label: 'ETI District Inspectors'
+source:
+  plugin: csv
+  path: ../web/sites/etini/modules/custom/etini_district_inspectors_import/inspector_import.csv
+  ids: [de_reference, school_name]
+  fields:
+    - name: de_reference
+    - name: school_name
+    - name: phases
+    - name: district
+    - name: district_inspector
+process:
+  de_reference:
+    - plugin: get
+      source: de_reference
+  Name:
+    - plugin: get
+      source: school_name
+  phases:
+    - plugin: get
+      source: phases
+  inspector_id:
+    - plugin: inspector_id
+      source: district_inspector
+destination:
+  plugin: 'entity:school'
+

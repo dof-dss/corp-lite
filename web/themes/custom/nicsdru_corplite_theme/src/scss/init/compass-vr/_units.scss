@@ -78,7 +78,7 @@ $rem-with-px-fallback: false !default;
 	@if $to-unit != 'px' {
 		// Relative units
 		@if      $to-unit == 'em'  { $output-length: calc($px-length * 1em / $to-context); }
-		@else if $to-unit == 'rem' { $output-length: calc($px-length * 1rem / $base-font-size); }
+    @else if $to-unit == 'rem' { $output-length: calc($px-length * 1rem / $from-context); }
 		@else if $to-unit == '%'   { $output-length: calc($px-length * 100% / $to-context); }
 		@else if $to-unit == 'ex'  { $output-length: calc($px-length * 2ex / $to-context); }
 		// Absolute units

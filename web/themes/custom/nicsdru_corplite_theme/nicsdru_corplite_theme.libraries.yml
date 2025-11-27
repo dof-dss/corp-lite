@@ -146,6 +146,7 @@ admin-forms:
   css:
     component:
       css/admin/forms.css: { minified: true }
+      css/3_components/field/file-link.css: { minified: true }
 
 admin-content:
   css:
