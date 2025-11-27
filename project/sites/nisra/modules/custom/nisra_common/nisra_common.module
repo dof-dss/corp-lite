@@ -198,3 +198,25 @@ function nisra_common_system_breadcrumb_alter(Breadcrumb &$breadcrumb, RouteMatc
     $breadcrumb->addCacheContexts(['url.path']);
   }
 }
+
+/**
+ * Implements hook_page_attachments().
+ */
+function nisra_common_page_attachments(array &$attachments) {
+  // Load EUCC config.
+  $eucc_config = \Drupal::config('eu_cookie_compliance.settings');
+  $eucc_domain = $eucc_config->get('domain') ?: '';
+
+  // Legacy domain for cleanup.
+  $legacy_domain = 'www.nisra.gov.uk';
+
+  // Pass both to JS via Drupal settings.
+  $attachments['#attached']['drupalSettings']['nisra_common']['eucc_cleanup'] = [
+    'legacyDomain' => $legacy_domain,
+    'euccDomain' => $eucc_domain,
+  ];
+
+  // Attach the JS library.
+  $attachments['#attached']['library'][] = 'nisra_common/eucc_cookie_cleanup';
+}
+
