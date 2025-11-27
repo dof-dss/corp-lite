@@ -97,7 +97,7 @@ function corplite_published_releases_feed_fetch_feed($type) {
             'display_date' => (string) !empty($row['display_date']) ? $row['display_date'] : '',
             'updated' => (string) !empty($row['updated']) ? $row['updated'] : '',
             /* Fallback code as 'type' was initially appearing incorrectly in the feed as 'release_type'. */
-            'type' => (string) !empty($row['type']) ? $row['type'] : (!empty($row['release_type']) ?$row['release_type'] : ''),
+            'type' => (string) !empty($row['type']) ? $row['type'] : (!empty($row['release_type']) ? $row['release_type'] : ''),
             'org' => (string) !empty($row['org']) ? $row['org'] : ''
           ];
         }
