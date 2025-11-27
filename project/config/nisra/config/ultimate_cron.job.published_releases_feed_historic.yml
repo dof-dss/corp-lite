@@ -1,0 +1,32 @@
+uuid: be6a7004-f923-46d1-a554-968f5c74524c
+langcode: en
+status: false
+dependencies:
+  module:
+    - corplite_published_releases_feed
+_core:
+  default_config_hash: XR987aqGo_St_cYgK_zF6fWZ6fzOPEeCzS17eZxOBpA
+title: 'Import Nisra published releases historic feed'
+id: published_releases_feed_historic
+weight: 0
+module: corplite_published_releases_feed
+callback: corplite_published_releases_feed_import_historic
+scheduler:
+  id: crontab
+  configuration:
+    rules:
+      - '* * * * *'
+launcher:
+  id: serial
+  configuration:
+    timeouts:
+      lock_timeout: 3600
+      max_execution_time: 3600
+    launcher:
+      max_threads: 1
+logger:
+  id: database
+  configuration:
+    method: '3'
+    expire: 1209600
+    retain: 1000
