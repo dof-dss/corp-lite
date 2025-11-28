@@ -8,34 +8,25 @@
 
 (function (Drupal, once, drupalSettings) {
 
-  Drupal.behaviors.euccCleanupLegacyDomainCookies = {
+  Drupal.behaviors.euccCleanupWwwDomainCookies = {
     attach: function (context, settings) {
 
-      once('euccCleanupLegacyDomainCookies', 'html', context).forEach(function () {
+      once('euccCleanupWwwDomainCookies', 'html', context).forEach(function () {
 
-        const currentHost = window.location.hostname;
-        const legacyDomain = drupalSettings.nisra_common.eucc_cleanup.legacyDomain;
-        const euccDomain = drupalSettings.nisra_common.eucc_cleanup.euccDomain;
-
+        const cleanupDomain = "www.nisra.gov.uk";
         const cleanupFlag = "eucc-cleanup-done";
 
-        // Skip if cleanup already ran for this user.
+        // Skip if current hostname does not match cleanupDomain.
+        if (window.location.hostname !== cleanupDomain) {
+          return;
+        }
+
+        // Skip if cleanup already ran.
         if (document.cookie.includes(cleanupFlag)) {
           return;
         }
 
-        // Skip if we are not on the legacy domain.
-        if (currentHost !== legacyDomain) {
-          return;
-        }
-
-        // Skip if EUCC domain equals legacy domain.
-        if (euccDomain && euccDomain === legacyDomain) {
-          console.log('EUCC cleanup: current domain equals legacy domain, skipping.');
-          return;
-        }
-
-        // Skip if EUCC cookies are not set.
+        // Skip if EUCC cookies do not exist.
         const hasEuccCookies =
           document.cookie.includes("cookie-agreed=") ||
           document.cookie.includes("cookie-agreed-version=");
@@ -44,14 +35,14 @@
           return;
         }
 
-        // Expire legacy domain cookies.
+        // Expire cookies.
         ["cookie-agreed", "cookie-agreed-version"].forEach((name) => {
-          document.cookie =
-            `${name}=; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=${legacyDomain}`;
-          console.log(`EUCC cleanup: expired legacy cookie '${name}' on ${legacyDomain}`);
+          document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/`;
+          document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=${cleanupDomain}`;
+          console.log(`Expired ${name} for domain ${cleanupDomain}`);
         });
 
-        // Set flag so cleanup only runs once per user.
+        // Set flag so it runs once
         document.cookie = `${cleanupFlag}=1; path=/; max-age=31536000`;
       });
     }
