@@ -216,7 +216,7 @@ display:
           exposed: true
           expose:
             operator_id: search_api_fulltext_op
-            label: 'Search news and choose filters to show only the results you want'
+            label: 'Search news and apply filters to refine your results'
             description: ''
             use_operator: false
             operator: search_api_fulltext_op
@@ -240,9 +240,12 @@ display:
               site_admin_user: '0'
               admin_user: '0'
               qa: '0'
+              homepage_supervisor: '0'
+              published_releases_supervisor: '0'
             expose_fields: false
             placeholder: Keywords
             searched_fields_id: search_api_fulltext_searched_fields
+            value_maxlength: 128
           is_grouped: false
           group_info:
             label: ''
@@ -343,3 +346,4 @@ display:
         - 'config:field.storage.node.body'
         - 'config:search_api.index.news_index'
         - 'search_api_list:news_index'
+        - taxonomy_term_list
