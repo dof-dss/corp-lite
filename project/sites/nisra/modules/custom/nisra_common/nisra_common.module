@@ -13,6 +13,7 @@ use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\StreamWrapper\StreamWrapperManager;
 use Drupal\Core\Url;
 use Drupal\node\Entity\Node;
+use Drupal\views\Plugin\views\cache\CachePluginBase;
 use Drupal\views\ViewExecutable;
 
 /**
@@ -208,4 +209,3 @@ function nisra_common_page_attachments(array &$attachments) {
   // to .nisra.gov.uk (to make EUCC cookies available to subdomains).
   $attachments['#attached']['library'][] = 'nisra_common/eucc_cookie_cleanup';
 }
-

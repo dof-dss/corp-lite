@@ -1,0 +1,13 @@
+uuid: c089d528-402f-4432-9871-70eaff5d8719
+langcode: en
+status: true
+dependencies:
+  module:
+    - corplite_published_releases_feed
+_core:
+  default_config_hash: 1eYUPu3CnYfOjydRo0eHjbc9uaccLpl_vUiKxGTj6c0
+id: published_releases_delete_action
+label: 'Delete published releases'
+type: published_releases
+plugin: 'entity:delete_action:published_releases'
+configuration: {  }

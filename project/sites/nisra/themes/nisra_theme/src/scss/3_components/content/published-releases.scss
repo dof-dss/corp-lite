@@ -5,3 +5,9 @@
     max-width: 76rem;
   }
 }
+
+.card-deck--search-results .card__meta > .card__meta-item {
+  display: block !important;
+  margin-right: 0;
+  margin-bottom: 0.25em;
+}
