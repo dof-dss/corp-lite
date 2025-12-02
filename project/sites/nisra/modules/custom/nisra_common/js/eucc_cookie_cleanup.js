@@ -39,7 +39,6 @@
         ["cookie-agreed", "cookie-agreed-version"].forEach((name) => {
           document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/`;
           document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=${cleanupDomain}`;
-          console.log(`Expired ${name} for domain ${cleanupDomain}`);
         });
 
         // Set flag so it runs once
