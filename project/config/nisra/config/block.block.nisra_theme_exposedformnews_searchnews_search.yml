@@ -12,7 +12,7 @@ dependencies:
 id: nisra_theme_exposedformnews_searchnews_search
 theme: nisra_theme
 region: sidebar_first
-weight: -12
+weight: -18
 provider: null
 plugin: 'views_exposed_filter_block:news_search-news_search'
 settings:

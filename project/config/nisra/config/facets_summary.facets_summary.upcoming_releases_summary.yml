@@ -23,3 +23,15 @@ facets:
     separator: ', '
     show_count: false
     weight: 0
+  originating_organisation_upcoming:
+    checked: true
+    label: Organisation
+    separator: ', '
+    show_count: false
+    weight: 0
+  release_type_upcoming:
+    checked: true
+    label: 'Release type'
+    separator: ', '
+    show_count: false
+    weight: 0

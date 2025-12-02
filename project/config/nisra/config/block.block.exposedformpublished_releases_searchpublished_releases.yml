@@ -1,0 +1,33 @@
+uuid: f2fd3eaf-95cf-48e6-bdcd-c6b10693ebc9
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.published_releases_search
+  module:
+    - block_visibility_groups
+    - system
+    - views
+  theme:
+    - nisra_theme
+id: exposedformpublished_releases_searchpublished_releases
+theme: nisra_theme
+region: sidebar_first
+weight: -17
+provider: null
+plugin: 'views_exposed_filter_block:published_releases_search-published_releases'
+settings:
+  id: 'views_exposed_filter_block:published_releases_search-published_releases'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/published-releases\r\n/published-releases/date/*\r\n/published-releases/organisation/*\r\n/published-releases/type/*"

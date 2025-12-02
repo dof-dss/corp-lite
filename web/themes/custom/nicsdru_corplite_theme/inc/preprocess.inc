@@ -476,6 +476,8 @@ function nicsdru_corplite_theme_preprocess_form(array &$variables) {
     case "views-exposed-form-news-search-news-search":
     case "views-exposed-form-researcher-search-researcher-search":
     case "views-exposed-form-alerts-search-alerts-search":
+    case "views-exposed-form-published-releases-search-published-releases":
+    case "views-exposed-form-published-releases-search-releases-upcoming":
       $variables['attributes']['class'][] = Html::cleanCssIdentifier('search-form');
       $variables['attributes']['class'][] = Html::cleanCssIdentifier('search-form--page');
       break;
