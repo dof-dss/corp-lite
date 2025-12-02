@@ -25,5 +25,5 @@ conditions:
     negate: false
     uuid: 7c075146-8aba-45a5-82e7-77bab2e949ce
     context_mapping: {  }
-    pages: "/publications\r\n/publications/date/*\r\n/publications/topic/*\r\n/publications/type/*\r\n/news\r\n/news/date/*\r\n/news/topic/*\r\n/news/type/*\r\n/statistics\r\n/contact\r\n/search\r\n/search*\r\n/published-releases\r\n/published-releases/date/*\r\n/published-releases/now_future/*\r\n/upcoming-releases\r\n/upcoming-releases/date/*\r\n/upcoming-releases/now_future/*\r\n/sitemap\r\n<front>"
+    pages: "/publications\r\n/publications/date/*\r\n/publications/topic/*\r\n/publications/type/*\r\n/news\r\n/news/date/*\r\n/news/topic/*\r\n/news/type/*\r\n/statistics\r\n/contact\r\n/search\r\n/search*\r\n/published-releases\r\n/published-releases/date/*\r\n/published-releases/now_future/*\r\n/published-releases/type*\r\n/published-releases/organisation/*\r\n/upcoming-releases\r\n/upcoming-releases/date/*\r\n/upcoming-releases/now_future/*\r\n/upcoming-releases/type/*\r\n/upcoming-releases/organisation/*\r\n/sitemap\r\n<front>"
 allow_other_conditions: false

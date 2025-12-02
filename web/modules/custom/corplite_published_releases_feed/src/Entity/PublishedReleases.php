@@ -102,6 +102,12 @@ final class PublishedReleases extends ContentEntityBase implements PublishedRele
       ->setDescription(t('Release date'))
       ->setRequired(TRUE);
 
+    // This field is a text representation of the release date, only useful for upcoming releases.
+    $fields['display_date'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Display date'))
+      ->setDescription(t('Display date'))
+      ->setRequired(FALSE);
+
     // This field is a Drupal internal field.
     $fields['created'] = BaseFieldDefinition::create('created')
       ->setLabel(t('Authored on'))
@@ -123,6 +129,18 @@ final class PublishedReleases extends ContentEntityBase implements PublishedRele
       ->setLabel(t('Updated'))
       ->setDescription(t('Updated date'))
       ->setRequired(TRUE);
+
+    // This field represents a display type in taxonomy.
+    $fields['type'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Type'))
+      ->setDescription(t('Code representing the release type (see taxonomy).'))
+      ->setRequired(FALSE);
+
+    // This field represents an organisation in taxonomy.
+    $fields['org'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Organisation'))
+      ->setDescription(t('Code representing the organisation (see taxonomy).'))
+      ->setRequired(FALSE);
 
     // This field is a Drupal internal field.
     $fields['changed'] = BaseFieldDefinition::create('changed')
