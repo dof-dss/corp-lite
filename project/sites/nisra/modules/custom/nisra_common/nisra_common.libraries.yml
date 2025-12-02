@@ -1,0 +1,6 @@
+eucc_cookie_cleanup:
+  js:
+    js/eucc_cookie_cleanup.js: {}
+  dependencies:
+    - core/drupal
+    - core/once
