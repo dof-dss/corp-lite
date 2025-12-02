@@ -6,12 +6,14 @@
  */
 
 use Drupal\corplite_published_releases_feed\Entity\PublishedReleases;
+use Drupal\Core\Render\Element;
+use Drupal\taxonomy\Entity\Vocabulary;
 
 /**
  * Cron callback function to run feed.
  */
-function corplite_published_releases_feed_import() {
-  $data = corplite_published_releases_feed_fetch_feed();
+function corplite_published_releases_feed_import($type = 'standard') {
+  $data = corplite_published_releases_feed_fetch_feed($type);
   $updated = 0;
   $imported = 0;
   foreach ($data as $feed_item) {
@@ -44,6 +46,13 @@ function corplite_published_releases_feed_import() {
 }
 
 /**
+ * Cron callback function to run historic feed.
+ */
+function corplite_published_releases_feed_import_historic() {
+  corplite_published_releases_feed_import('historic');
+}
+
+/**
  * Update the release object.
  */
 function corplite_published_releases_feed_update_release_object($release, $feed_item) {
@@ -51,18 +60,24 @@ function corplite_published_releases_feed_update_release_object($release, $feed_
   $release->set('summary', $feed_item['summary']);
   $release->set('url', $feed_item['url']);
   $release->set('release_date', strtotime($feed_item['release_date']));
+  $release->set('display_date', $feed_item['display_date']);
   $release->set('updated', strtotime($feed_item['updated']));
+  $release->set('type', $feed_item['type']);
+  $release->set('org', $feed_item['org']);
   $release->save();
 }
 
 /**
  * Retrieve the JSON feed.
  */
-function corplite_published_releases_feed_fetch_feed() {
+function corplite_published_releases_feed_fetch_feed($type) {
   $data = NULL;
   $client = \Drupal::service('http_client');
   $config = \Drupal::config('corplite_published_releases_feed.settings');
   $url = $config->get('data_source_url');
+  if ($type == 'historic') {
+    $url = $config->get('data_source_url_historic');
+  }
 
   try {
     $response = $client->get($url);
@@ -70,7 +85,6 @@ function corplite_published_releases_feed_fetch_feed() {
     if ($response->getStatusCode() == 200) {
       $feed_contents = $response->getBody()->getContents();
       $feed_contents = json_decode($feed_contents, TRUE);
-
       $data = [];
       foreach ($feed_contents['entries'] as $row) {
         if (!empty($row['id'])) {
@@ -80,7 +94,11 @@ function corplite_published_releases_feed_fetch_feed() {
             'summary' => (string) !empty($row['summary']) ? $row['summary'] : '',
             'url' => (string) !empty($row['url']) ? $row['url'] : '',
             'release_date' => (string) !empty($row['release_date']) ? $row['release_date'] : '',
+            'display_date' => (string) !empty($row['display_date']) ? $row['display_date'] : '',
             'updated' => (string) !empty($row['updated']) ? $row['updated'] : '',
+            /* Fallback code as 'type' was initially appearing incorrectly in the feed as 'release_type'. */
+            'type' => (string) !empty($row['type']) ? $row['type'] : (!empty($row['release_type']) ? $row['release_type'] : ''),
+            'org' => (string) !empty($row['org']) ? $row['org'] : ''
           ];
         }
       }
@@ -98,8 +116,6 @@ function corplite_published_releases_feed_fetch_feed() {
 function corplite_published_releases_feed_facets_search_api_query_type_mapping_alter($backend_plugin_id, array &$query_types) {
   $query_types['example'] = 'now_future_dates';
 }
-
-use Drupal\Core\Render\Element;
 
 /**
  * Implements hook_theme().

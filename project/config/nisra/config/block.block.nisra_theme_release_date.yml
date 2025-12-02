@@ -13,7 +13,7 @@ dependencies:
 id: nisra_theme_release_date
 theme: nisra_theme
 region: sidebar_first
-weight: -4
+weight: -7
 provider: null
 plugin: 'facet_block:release_date'
 settings:
@@ -31,4 +31,4 @@ visibility:
   request_path:
     id: request_path
     negate: false
-    pages: "/published-releases\r\n/published-releases/date/*\r\n/published-releases/now_future/*\r\n/published-releases-upcoming\r\n/published-releases-upcoming/date/*\r\n/published-releases-upcoming/now_future/*"
+    pages: "/published-releases\r\n/published-releases/date/*\r\n/published-releases/organisation/*\r\n/published-releases/type/*\r\n/published-releases/now_future/*\r\n/published-releases-upcoming\r\n/published-releases-upcoming/date/*\r\n/published-releases-upcoming/now_future/*"

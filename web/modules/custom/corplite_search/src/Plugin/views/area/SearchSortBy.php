@@ -121,6 +121,15 @@ class SearchSortBy extends AreaPluginBase {
       ],
     ];
 
+    $route = \Drupal::routeMatch()->getRouteName();
+
+    if (
+      $route === 'view.published_releases_search.published_releases' ||
+      $route === 'view.published_releases_search.releases_upcoming'
+    ) {
+      $sort_options['sort_label']['#value'] = t('sorted by date released');
+    }
+
     // Determine which criteria is currently active.
     $active_sort = self::RELEVANCE_PARAM;
 
