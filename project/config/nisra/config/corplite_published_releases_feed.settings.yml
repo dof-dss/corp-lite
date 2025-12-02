@@ -1,4 +1,4 @@
 _core:
-  default_config_hash: gtwzO2VwZJpMr2idLTwcgyVi_k1vrDcb989pvSiRmNw
-data_source_url: raw.githubusercontent.com/NISRA-Tech-Lab/latest-publications/refs/heads/b-org/nisra_release_calendar.json
-data_source_url_historic: raw.githubusercontent.com/NISRA-Tech-Lab/latest-publications/refs/heads/b-org/nisra_release_historic.json
+  default_config_hash: LcC8V80ozYD62aCxkODOw1dBN9x7g4AXqMOrQYYvBt0
+data_source_url: 'https://raw.githubusercontent.com/NISRA-Tech-Lab/latest-publications/refs/heads/main/nisra_release_calendar.json'
+data_source_url_historic: 'https://raw.githubusercontent.com/NISRA-Tech-Lab/latest-publications/refs/heads/main/nisra_release_historic.json'
