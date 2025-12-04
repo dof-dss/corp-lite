@@ -1085,7 +1085,7 @@ display:
           exposed: true
           expose:
             operator_id: search_api_fulltext_op
-            label: 'Search publications and choose filters to show only the results you want'
+            label: 'Search publications and apply filters to refine your results'
             description: ''
             use_operator: false
             operator: search_api_fulltext_op
@@ -1673,7 +1673,7 @@ display:
           exposed: true
           expose:
             operator_id: search_api_fulltext_op
-            label: 'Search publications and choose filters to show only the results you want'
+            label: 'Search publications and apply filters to refine your results'
             description: ''
             use_operator: false
             operator: search_api_fulltext_op
