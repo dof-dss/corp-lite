@@ -1,0 +1,11 @@
+uuid: 080ad5f2-bc43-4f6a-b1ab-8f27d42cd265
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.nisra_corporate
+id: taxonomy_term.nisra_corporate
+target_entity_type_id: taxonomy_term
+target_bundle: nisra_corporate
+default_langcode: site_default
+language_alterable: false

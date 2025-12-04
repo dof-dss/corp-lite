@@ -10,6 +10,7 @@ dependencies:
     - media.type.image
     - media.type.remote_video
     - node.type.contact
+    - node.type.featured_content_list
     - node.type.link
     - node.type.news
     - node.type.page
@@ -87,6 +88,7 @@ permissions:
   - 'delete any publication content'
   - 'delete any remote_video media'
   - 'delete contact revisions'
+  - 'delete featured_content_list revisions'
   - 'delete link revisions'
   - 'delete news revisions'
   - 'delete own audio media'
@@ -107,6 +109,7 @@ permissions:
   - 'edit any audio media'
   - 'edit any contact content'
   - 'edit any document media'
+  - 'edit any featured_content_list content'
   - 'edit any file media'
   - 'edit any image media'
   - 'edit any link content'
@@ -118,6 +121,7 @@ permissions:
   - 'edit own audio media'
   - 'edit own contact content'
   - 'edit own document media'
+  - 'edit own featured_content_list content'
   - 'edit own file media'
   - 'edit own image media'
   - 'edit own link content'
@@ -139,6 +143,7 @@ permissions:
   - 'reset site_topics'
   - 'revert all revisions'
   - 'revert contact revisions'
+  - 'revert featured_content_list revisions'
   - 'revert link revisions'
   - 'revert news revisions'
   - 'revert page revisions'
@@ -160,6 +165,7 @@ permissions:
   - 'view any unpublished content'
   - 'view contact revisions'
   - 'view content references'
+  - 'view featured_content_list revisions'
   - 'view latest version'
   - 'view link revisions'
   - 'view news revisions'

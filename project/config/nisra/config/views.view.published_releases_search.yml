@@ -1127,9 +1127,10 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          parse_mode: fuzzy_terms
+          parse_mode: direct
           min_length: null
-          fields: {  }
+          fields:
+            - title
       filter_groups:
         operator: AND
         groups:
@@ -1714,7 +1715,7 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          parse_mode: fuzzy_terms
+          parse_mode: direct
           min_length: null
           fields: {  }
         release_date:

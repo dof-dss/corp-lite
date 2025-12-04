@@ -20,6 +20,7 @@ module:
   migrate_absolute_links: 0
   migrate_drupal: 0
   migrate_plus: 0
+  migrate_source_csv: 0
   migrate_tools: 0
   migrate_upgrade: 0
   stage_file_proxy: 0

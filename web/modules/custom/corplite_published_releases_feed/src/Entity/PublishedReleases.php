@@ -102,7 +102,7 @@ final class PublishedReleases extends ContentEntityBase implements PublishedRele
       ->setDescription(t('Release date'))
       ->setRequired(TRUE);
 
-    // This field is a text representation of the release date, only useful for upcoming releases
+    // This field is a text representation of the release date, only useful for upcoming releases.
     $fields['display_date'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Display date'))
       ->setDescription(t('Display date'))

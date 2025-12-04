@@ -24,10 +24,11 @@ use Drupal\taxonomy\Entity\Vocabulary;
  * )
  */
 class OrganisationDescription extends ProcessorPluginBase {
+
   /**
    * {@inheritdoc}
    */
-  public function getPropertyDefinitions(DatasourceInterface $datasource = NULL) {
+  public function getPropertyDefinitions(?DatasourceInterface $datasource = NULL) {
     $properties = [];
 
     if ($datasource) {
@@ -46,15 +47,15 @@ class OrganisationDescription extends ProcessorPluginBase {
   /**
    * {@inheritdoc}
    */
-  public function addFieldValues(ItemInterface $item)
-  {
+  public function addFieldValues(ItemInterface $item) {
     $datasourceId = $item->getDatasourceId();
     if ($datasourceId == 'entity:published_releases') {
       // Retrieve the node in question.
       $obj = $item->getOriginalObject()->get('id')->getValue();
       if (is_array($obj) && isset($obj[0]) && isset($obj[0]['value'])) {
         $id = $obj[0]['value'];
-      } else {
+      }
+      else {
         return;
       }
       $release = PublishedReleases::Load($id);
@@ -87,4 +88,5 @@ class OrganisationDescription extends ProcessorPluginBase {
       }
     }
   }
+
 }

@@ -114,7 +114,7 @@ field_settings:
     label: Title
     datasource_id: 'entity:published_releases'
     property_path: title
-    type: text
+    type: 'solr_text_custom:ngram'
     boost: 13.0
     dependencies:
       module:
