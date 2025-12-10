@@ -13,5 +13,6 @@ folder: ../project/config/afbini/production
 module:
   fastly: 0
 theme: {  }
-complete_list: {  }
+complete_list:
+  - search_api.server.solr_default
 partial_list: {  }
