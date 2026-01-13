@@ -1,0 +1,23 @@
+uuid: a7635535-f513-4d11-a0d7-f96e28ca23ca
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_related_statistics
+    - taxonomy.vocabulary.publication_series
+  module:
+    - link
+id: taxonomy_term.publication_series.field_related_statistics
+field_name: field_related_statistics
+entity_type: taxonomy_term
+bundle: publication_series
+label: 'Related Statistics'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

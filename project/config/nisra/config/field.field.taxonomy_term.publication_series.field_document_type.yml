@@ -1,0 +1,29 @@
+uuid: 48a33c1e-b983-48f5-8a7b-24529906c600
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_document_type
+    - taxonomy.vocabulary.document_types
+    - taxonomy.vocabulary.publication_series
+id: taxonomy_term.publication_series.field_document_type
+field_name: field_document_type
+entity_type: taxonomy_term
+bundle: publication_series
+label: 'Document type'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      document_types: document_types
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

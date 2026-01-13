@@ -1,0 +1,26 @@
+uuid: b2570310-ef3d-49fc-9a2d-331ec9d9d81d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_future_updates
+    - taxonomy.vocabulary.publication_series
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats: {  }
+id: taxonomy_term.publication_series.field_future_updates
+field_name: field_future_updates
+entity_type: taxonomy_term
+bundle: publication_series
+label: 'Future updates'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

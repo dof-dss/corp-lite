@@ -51,6 +51,9 @@ bundles:
     bundle: nisra_corporate
   -
     entity_type: taxonomy_term
+    bundle: publication_series
+  -
+    entity_type: taxonomy_term
     bundle: research_support
   -
     entity_type: taxonomy_term
