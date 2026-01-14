@@ -158,42 +158,7 @@ field_settings:
     configuration:
       type: union
       separator: |+
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      fields: {  }
+  fields: {  }
   status:
     label: Published
     datasource_id: 'entity:node'
@@ -221,42 +186,7 @@ field_settings:
     configuration:
       type: concat
       separator: |+
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      fields:
+    fields:
         - 'entity:node/title'
   type:
     label: 'Content type'
