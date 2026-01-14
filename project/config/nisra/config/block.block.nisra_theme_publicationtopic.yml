@@ -5,6 +5,7 @@ dependencies:
   config:
     - facets.facet.publication_topic
   module:
+    - block_visibility_groups
     - facets
     - system
   theme:
@@ -12,7 +13,7 @@ dependencies:
 id: nisra_theme_publicationtopic
 theme: nisra_theme
 region: sidebar_first
-weight: -14
+weight: -13
 provider: null
 plugin: 'facet_block:publication_topic'
 settings:
@@ -26,4 +27,8 @@ visibility:
   request_path:
     id: request_path
     negate: false
-    pages: "/publications\r\n/publications/date/*\r\n/publications/topic/*\r\n/publications/type/*"
+    pages: "/publications\r\n/publications/date/*\r\n/publications/topic/*\r\n/publications/type/*\r\n/publications/series/*"
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''

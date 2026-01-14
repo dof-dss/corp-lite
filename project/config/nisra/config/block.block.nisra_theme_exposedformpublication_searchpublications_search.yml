@@ -5,6 +5,7 @@ dependencies:
   config:
     - views.view.publication_search
   module:
+    - block_visibility_groups
     - system
     - views
   theme:
@@ -12,7 +13,7 @@ dependencies:
 id: nisra_theme_exposedformpublication_searchpublications_search
 theme: nisra_theme
 region: sidebar_first
-weight: -19
+weight: -18
 provider: null
 plugin: 'views_exposed_filter_block:publication_search-publications_search'
 settings:
@@ -25,4 +26,8 @@ visibility:
   request_path:
     id: request_path
     negate: false
-    pages: "/publications\r\n/publications/date/*\r\n/publications/topic/*\r\n/publications/type/*"
+    pages: "/publications\r\n/publications/date/*\r\n/publications/topic/*\r\n/publications/type/*\r\n/publications/series/*"
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''

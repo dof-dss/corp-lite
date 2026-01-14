@@ -1,0 +1,92 @@
+{#
+/**
+ * @file
+ * Theme override for full taxonomy term page for publication series.
+ */
+#}
+
+<article class="contextual-region publication-series" about="{{ url }}" id="main-article">
+
+  <h1 class="page-title">{{ name }}</h1>
+
+  <div class="article-content max-body-text-width">
+
+    {% if content.field_document_type['#items'] is not empty %}
+      {% set document_type_map = {
+        'AOS': 'Accredited Official Statistics',
+        'OS': 'Official Statistics',
+        'R': 'Research'
+      } %}
+
+      <div class="site-topics term-section term-section--document-type">
+    <span class="site-topics--label field__label">
+      {{ content.field_document_type['#title'] }}:
+    </span>
+
+        <span class="site-topics--list">
+      {% for item in content.field_document_type['#items'] %}
+        {% set code = item.entity.label %}
+        <span class="site-topics--item">
+          {{ document_type_map[code] ?? code }}
+        </span>
+      {% endfor %}
+    </span>
+      </div>
+    {% endif %}
+
+
+    {% if content.description %}
+      <section class="term-section">
+        <div class="term-section__content">
+          {{ content.description }}
+        </div>
+      </section>
+    {% endif %}
+
+    {% if content.field_latest_statistics %}
+      <section class="term-section">
+        <h2 class="term-section__title">Latest Statistics</h2>
+        <div class="term-section__content">
+          {{ content.field_latest_statistics }}
+        </div>
+      </section>
+    {% endif %}
+
+    {% if content.field_future_updates %}
+      <section class="term-section">
+        <h2 class="term-section__title">Future updates</h2>
+        <div class="term-section__content">
+          {{ content.field_future_updates }}
+        </div>
+      </section>
+    {% endif %}
+
+    {% if content.field_historical_reports %}
+      <section class="term-section">
+        <h2 class="term-section__title">Historical Reports</h2>
+        <div class="term-section__content">
+          {{ content.field_historical_reports }}
+        </div>
+      </section>
+    {% endif %}
+
+    {% if content.field_further_information %}
+      <section class="term-section">
+        <h2 class="term-section__title">Further Information</h2>
+        <div class="term-section__content">
+          {{ content.field_further_information }}
+        </div>
+      </section>
+    {% endif %}
+
+    {% if content.field_related_statistics %}
+      <section class="term-section">
+        <h2 class="term-section__title">Related Statistics</h2>
+        <div class="term-section__content">
+          {{ content.field_related_statistics }}
+        </div>
+      </section>
+    {% endif %}
+
+  </div>
+</article>

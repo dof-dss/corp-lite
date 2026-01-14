@@ -6,6 +6,7 @@ dependencies:
     - field.field.taxonomy_term.publication_series.field_document_type
     - field.field.taxonomy_term.publication_series.field_further_information
     - field.field.taxonomy_term.publication_series.field_future_updates
+    - field.field.taxonomy_term.publication_series.field_historical_reports
     - field.field.taxonomy_term.publication_series.field_latest_statistics
     - field.field.taxonomy_term.publication_series.field_related_statistics
     - taxonomy.vocabulary.publication_series
@@ -17,24 +18,29 @@ targetEntityType: taxonomy_term
 bundle: publication_series
 mode: default
 content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
   description:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   field_document_type:
     type: entity_reference_label
-    label: inline
+    label: hidden
     settings:
       link: false
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
   field_further_information:
     type: link
-    label: above
+    label: hidden
     settings:
       trim_length: 80
       url_only: false
@@ -42,25 +48,18 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 4
+    weight: 6
     region: content
   field_future_updates:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
-  field_latest_statistics:
-    type: text_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 2
-    region: content
-  field_related_statistics:
+  field_historical_reports:
     type: link
-    label: above
+    label: hidden
     settings:
       trim_length: 80
       url_only: false
@@ -69,6 +68,25 @@ content:
       target: ''
     third_party_settings: {  }
     weight: 5
+    region: content
+  field_latest_statistics:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_related_statistics:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 7
     region: content
 hidden:
   langcode: true

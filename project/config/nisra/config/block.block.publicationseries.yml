@@ -1,28 +1,28 @@
-uuid: cec568d4-6bbf-4383-9c34-f523c2dae1b9
+uuid: 16f941b0-77cb-4a23-9c83-a86484897f42
 langcode: en
 status: true
 dependencies:
   config:
-    - facets.facet.release_type_upcoming
+    - facets.facet.publication_series
   module:
     - block_visibility_groups
     - facets
     - system
   theme:
     - nisra_theme
-id: releasetype_upcoming
+id: publicationseries
 theme: nisra_theme
 region: sidebar_first
-weight: -4
+weight: -11
 provider: null
-plugin: 'facet_block:release_type_upcoming'
+plugin: 'facet_block:publication_series'
 settings:
-  id: 'facet_block:release_type_upcoming'
-  label: 'Release type'
+  id: 'facet_block:publication_series'
+  label: 'Publication Series'
   label_display: visible
   provider: facets
   context_mapping: {  }
-  block_id: releasetype_upcoming
+  block_id: publicationseries
 visibility:
   condition_group:
     id: condition_group
@@ -31,4 +31,4 @@ visibility:
   request_path:
     id: request_path
     negate: false
-    pages: "/upcoming-releases\r\n/upcoming-releases/date/*\r\n/upcoming-releases/now_future/*\r\n/upcoming-releases/organisation/*\r\n/upcoming-releases/type/*"
+    pages: "/publications\r\n/publications/date/*\r\n/publications/topic/*\r\n/publications/type/*\r\n/publications/series/*"

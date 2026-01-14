@@ -12,7 +12,7 @@ dependencies:
 id: nisra_theme_newstype
 theme: nisra_theme
 region: sidebar_first
-weight: -12
+weight: -10
 provider: null
 plugin: 'facet_block:news_type'
 settings:

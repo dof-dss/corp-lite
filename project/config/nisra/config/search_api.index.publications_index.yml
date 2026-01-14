@@ -4,14 +4,15 @@ status: true
 dependencies:
   config:
     - field.storage.node.body
+    - field.storage.node.field_publication_series
     - field.storage.node.field_publication_type
     - field.storage.node.field_published_date
     - field.storage.node.field_research_support
     - field.storage.node.field_site_topics
     - field.storage.node.field_summary
   module:
+    - corplite_published_releases_feed
     - node
-    - search_api
     - search_api_solr
     - taxonomy
 third_party_settings:
@@ -73,6 +74,14 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.body
+  field_publication_series:
+    label: 'Publication Series'
+    datasource_id: 'entity:node'
+    property_path: field_publication_series
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_publication_series
   field_publication_type:
     label: Type
     datasource_id: 'entity:node'
@@ -219,15 +228,18 @@ processor_settings:
       strong: 2
       u: 1
   language_with_fallback: {  }
+  org_description: {  }
   rendered_item: {  }
   solr_date_range:
     weights:
       preprocess_index: 0
+  type_description: {  }
 tracker_settings:
   default:
     indexing_order: fifo
 options:
   cron_limit: 50
+  delete_on_fail: true
   index_directly: true
   track_changes_in_references: true
-server: solr_default
+server: null

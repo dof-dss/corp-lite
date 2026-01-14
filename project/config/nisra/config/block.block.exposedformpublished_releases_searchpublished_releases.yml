@@ -13,7 +13,7 @@ dependencies:
 id: exposedformpublished_releases_searchpublished_releases
 theme: nisra_theme
 region: sidebar_first
-weight: -17
+weight: -16
 provider: null
 plugin: 'views_exposed_filter_block:published_releases_search-published_releases'
 settings:

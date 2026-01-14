@@ -35,3 +35,9 @@ facets:
     separator: ', '
     show_count: false
     weight: 0
+  publication_series:
+    checked: true
+    label: 'Publication series'
+    separator: ', '
+    show_count: false
+    weight: 0
