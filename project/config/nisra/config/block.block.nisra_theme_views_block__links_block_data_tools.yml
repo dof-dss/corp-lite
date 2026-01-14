@@ -12,7 +12,7 @@ dependencies:
 id: nisra_theme_views_block__links_block_data_tools
 theme: nisra_theme
 region: sidebar_second
-weight: -9
+weight: -18
 provider: null
 plugin: 'views_block:links-block_data_tools'
 settings:

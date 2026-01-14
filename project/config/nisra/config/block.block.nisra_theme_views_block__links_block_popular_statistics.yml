@@ -12,7 +12,7 @@ dependencies:
 id: nisra_theme_views_block__links_block_popular_statistics
 theme: nisra_theme
 region: sidebar_second
-weight: -10
+weight: -19
 provider: null
 plugin: 'views_block:links-block_popular_statistics'
 settings:

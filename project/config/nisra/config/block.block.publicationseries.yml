@@ -13,7 +13,7 @@ dependencies:
 id: publicationseries
 theme: nisra_theme
 region: sidebar_first
-weight: -11
+weight: -12
 provider: null
 plugin: 'facet_block:publication_series'
 settings:

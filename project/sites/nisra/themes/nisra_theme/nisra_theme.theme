@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Functions to support theming in the northsouthministerialcouncil_theme.
+ * Functions to support theming in the nisra_theme.
  */
 
 use Drupal\block\Entity\Block;
@@ -24,6 +24,7 @@ function nisra_theme_preprocess_page(array &$variables) {
       switch ($node->bundle()) {
         // Specific node types have a main and aside.
         case "news":
+        case "publication":
           $variables['main_content_attr']->addClass(LayoutClasses::MAIN_SIDE);
           $variables['sidebar_second_attr']->addClass('ga-aside');
           break;

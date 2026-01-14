@@ -13,7 +13,7 @@ dependencies:
 id: releasetype
 theme: nisra_theme
 region: sidebar_first
-weight: -7
+weight: -8
 provider: null
 plugin: 'facet_block:release_type'
 settings:
