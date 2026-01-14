@@ -199,13 +199,3 @@ function nisra_common_system_breadcrumb_alter(Breadcrumb &$breadcrumb, RouteMatc
     $breadcrumb->addCacheContexts(['url.path']);
   }
 }
-
-/**
- * Implements hook_page_attachments().
- */
-function nisra_common_page_attachments(array &$attachments) {
-  // Attach JS to clean up cookies left by the EUCC module after
-  // domain setting for EUCC cookies was changed from www.nisra.gov.uk
-  // to .nisra.gov.uk (to make EUCC cookies available to subdomains).
-  $attachments['#attached']['library'][] = 'nisra_common/eucc_cookie_cleanup';
-}

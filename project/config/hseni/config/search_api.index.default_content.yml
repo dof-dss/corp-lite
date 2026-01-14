@@ -192,6 +192,7 @@ field_settings:
 
 
 
+
       fields: {  }
   status:
     label: Published
@@ -220,6 +221,7 @@ field_settings:
     configuration:
       type: concat
       separator: |+
+
 
 
 
@@ -287,10 +289,10 @@ datasource_settings:
     bundles:
       default: true
       selected:
-        - webform
         - feature
         - featured_content_list
         - link
+        - webform
     languages:
       default: true
       selected: {  }
