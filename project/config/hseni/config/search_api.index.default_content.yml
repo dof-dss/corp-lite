@@ -158,40 +158,6 @@ field_settings:
     configuration:
       type: union
       separator: |+
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       fields: {  }
   status:
     label: Published
@@ -220,40 +186,6 @@ field_settings:
     configuration:
       type: concat
       separator: |+
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       fields:
         - 'entity:node/title'
   type:
@@ -287,10 +219,10 @@ datasource_settings:
     bundles:
       default: true
       selected:
-        - webform
         - feature
         - featured_content_list
         - link
+        - webform
     languages:
       default: true
       selected: {  }
