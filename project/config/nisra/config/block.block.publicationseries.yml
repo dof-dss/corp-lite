@@ -18,7 +18,7 @@ provider: null
 plugin: 'facet_block:publication_series'
 settings:
   id: 'facet_block:publication_series'
-  label: 'Publication Series'
+  label: 'Publication series'
   label_display: visible
   provider: facets
   context_mapping: {  }

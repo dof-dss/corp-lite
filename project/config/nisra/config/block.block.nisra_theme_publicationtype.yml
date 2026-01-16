@@ -5,6 +5,7 @@ dependencies:
   config:
     - facets.facet.publication_type
   module:
+    - block_visibility_groups
     - facets
     - system
   theme:
@@ -26,4 +27,8 @@ visibility:
   request_path:
     id: request_path
     negate: false
-    pages: "/publications\r\n/publications/date/*\r\n/publications/topic/*\r\n/publications/type/*"
+    pages: "/publications\r\n/publications/date/*\r\n/publications/topic/*\r\n/publications/type/*\r\n/publications/series/*"
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
