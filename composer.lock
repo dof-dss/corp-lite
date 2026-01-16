@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "50e6447b3971fa090b65b8ba22e2a8ae",
+    "content-hash": "87fe8e5aebfc57fa377e745c8bb0c496",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1552,22 +1552,23 @@
         },
         {
             "name": "dof-dss/nicsdru_origins_modules",
-            "version": "10.5.3",
+            "version": "dev-10.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dof-dss/nicsdru_origins_modules.git",
-                "reference": "44a745044ea21ac3ba0cee16856cb32ccae5dce7"
+                "reference": "5d0582cb4634d42576d0c759c1de2b5d6f5a0d4d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dof-dss/nicsdru_origins_modules/zipball/44a745044ea21ac3ba0cee16856cb32ccae5dce7",
-                "reference": "44a745044ea21ac3ba0cee16856cb32ccae5dce7",
+                "url": "https://api.github.com/repos/dof-dss/nicsdru_origins_modules/zipball/5d0582cb4634d42576d0c759c1de2b5d6f5a0d4d",
+                "reference": "5d0582cb4634d42576d0c759c1de2b5d6f5a0d4d",
                 "shasum": ""
             },
             "require": {
                 "composer/installers": "^2.0",
                 "drupal/core": "^10"
             },
+            "default-branch": true,
             "type": "drupal-module",
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -1576,9 +1577,9 @@
             "description": "Generic modules for DOF-DSS Drupal sites",
             "support": {
                 "issues": "https://github.com/dof-dss/nicsdru_origins_modules/issues",
-                "source": "https://github.com/dof-dss/nicsdru_origins_modules/tree/10.5.3"
+                "source": "https://github.com/dof-dss/nicsdru_origins_modules/tree/10.x-dev"
             },
-            "time": "2025-08-08T14:43:09+00:00"
+            "time": "2026-01-13T15:25:16+00:00"
         },
         {
             "name": "drupal/a11y_form_helpers",
@@ -22259,6 +22260,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "dof-dss/nicsdru_origins_modules": 20,
         "drupal/block_field": 5,
         "drupal/ckeditor5_allowed_html": 20,
         "drupal/clone_nodes": 20,
@@ -22286,5 +22288,5 @@
         "composer-runtime-api": "*"
     },
     "platform-dev": {},
-    "plugin-api-version": "2.9.0"
+    "plugin-api-version": "2.6.0"
 }
