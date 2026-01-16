@@ -19,9 +19,6 @@
       } %}
 
       <div class="site-topics term-section term-section--document-type">
-    <span class="site-topics--label field__label">
-      {{ content.field_document_type['#title'] }}:
-    </span>
 
         <span class="site-topics--list">
       {% for item in content.field_document_type['#items'] %}
@@ -61,11 +58,17 @@
       </section>
     {% endif %}
 
-    {% if content.field_historical_reports %}
-      <section class="term-section">
+    {% set related_view = drupal_view(
+      'content_by_site_topic',
+      'publication_series_related',
+      taxonomy_term.id()
+    ) %}
+
+    {% if related_view %}
+      <section class="term-section term-section--related-publications">
         <h2 class="term-section__title">Historical Reports</h2>
         <div class="term-section__content">
-          {{ content.field_historical_reports }}
+          {{ related_view }}
         </div>
       </section>
     {% endif %}

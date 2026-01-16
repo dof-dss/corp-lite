@@ -32,4 +32,4 @@ visibility:
   request_path:
     id: request_path
     negate: true
-    pages: '/publication-series/*'
+    pages: '/publications/publication-series/*'
