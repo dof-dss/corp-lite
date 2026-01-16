@@ -4,58 +4,38 @@
  * Theme override for full taxonomy term page for publication series.
  */
 #}
-
-<article class="contextual-region publication-series" about="{{ url }}" id="main-article">
-
+<header>
   <h1 class="page-title">{{ name }}</h1>
+  {% if content.field_document_type['#items'] is not empty %}
+    {% set document_type_map = {
+      'AOS': 'Accredited Official Statistics',
+      'OS': 'Official Statistics',
+      'R': 'Research'
+    } %}
 
-  <div class="article-content max-body-text-width">
-
-    {% if content.field_document_type['#items'] is not empty %}
-      {% set document_type_map = {
-        'AOS': 'Accredited Official Statistics',
-        'OS': 'Official Statistics',
-        'R': 'Research'
-      } %}
-
-      <div class="site-topics term-section term-section--document-type">
-
-        <span class="site-topics--list">
+    <p class="publication-series__type">
       {% for item in content.field_document_type['#items'] %}
         {% set code = item.entity.label %}
-        <span class="site-topics--item">
           {{ document_type_map[code] ?? code }}
-        </span>
       {% endfor %}
-    </span>
-      </div>
-    {% endif %}
+    </p>
+  {% endif %}
+</header>
 
 
+  <div class="article-content max-body-text-width" role="presentation">
     {% if content.description %}
-      <section class="term-section">
-        <div class="term-section__content">
-          {{ content.description }}
-        </div>
-      </section>
+        <div> {{ content.description }}</div>
     {% endif %}
 
     {% if content.field_latest_statistics %}
-      <section class="term-section">
-        <h2 class="term-section__title">Latest Statistics</h2>
-        <div class="term-section__content">
-          {{ content.field_latest_statistics }}
-        </div>
-      </section>
+        <h2>Latest Statistics</h2>
+        <div> {{ content.field_latest_statistics }} </div>
     {% endif %}
 
     {% if content.field_future_updates %}
-      <section class="term-section">
-        <h2 class="term-section__title">Future updates</h2>
-        <div class="term-section__content">
-          {{ content.field_future_updates }}
-        </div>
-      </section>
+        <h2>Future updates</h2>
+        <div> {{ content.field_future_updates }} </div>
     {% endif %}
 
     {% set related_view = drupal_view(
@@ -65,31 +45,18 @@
     ) %}
 
     {% if related_view %}
-      <section class="term-section term-section--related-publications">
-        <h2 class="term-section__title">Historical Reports</h2>
-        <div class="term-section__content">
-          {{ related_view }}
-        </div>
-      </section>
+        <h2>Historical Reports</h2>
+        <div> {{ related_view }} </div>
     {% endif %}
 
     {% if content.field_further_information %}
-      <section class="term-section">
-        <h2 class="term-section__title">Further Information</h2>
-        <div class="term-section__content">
-          {{ content.field_further_information }}
-        </div>
-      </section>
+        <h2>Further Information</h2>
+        <div> {{ content.field_further_information }} </div>
     {% endif %}
 
     {% if content.field_related_statistics %}
-      <section class="term-section">
-        <h2 class="term-section__title">Related Statistics</h2>
-        <div class="term-section__content">
-          {{ content.field_related_statistics }}
-        </div>
-      </section>
+        <h2>Related Statistics</h2>
+        <div> {{ content.field_related_statistics }} </div>
     {% endif %}
 
   </div>
-</article>

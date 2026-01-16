@@ -15,9 +15,9 @@
 .publication-series .term-section__content a:last-child {
   margin-right: 0;
 }
-.publication-series {
-  .site-topics--item {
-    background-color: var(--clr-grey-light);
-    padding: 1rem;
-  }
+.publication-series__type {
+  margin: 0;
+  padding: 0;
+  color: #4d4d4d;
+  font-size: var(--fs-small-text);
 }
