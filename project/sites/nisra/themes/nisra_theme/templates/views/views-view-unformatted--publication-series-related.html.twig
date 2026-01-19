@@ -16,10 +16,18 @@
  * @see template_preprocess_views_view_list()
  */
 #}
-<ul class="list--hyphen-bullet">
+<div class ="historical-reports">
+  {% if title %}
+    <h3>{{ title }}</h3>
+  {% endif %}
   {% for row in rows %}
-    <li{{ row.attributes }}>
+    {%
+      set row_classes = [
+      default_row_class ? 'views-row',
+    ]
+    %}
+    <div class="columnItem"{{ row.attributes.addClass(row_classes) }}>
       {{- row.content -}}
-    </li>
+    </div>
   {% endfor %}
-</ul>
+</div>

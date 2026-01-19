@@ -3,21 +3,29 @@
  * Defines the components for the theme.
  */
 
-.section-related {
-  margin-top: 4rem;
-}
+@use '../../../../../../../../../web/themes/custom/nicsdru_corplite_theme/src/scss/init' as *;
 
-.publication-series .term-section__content a {
-  display: inline-block;
-  margin-bottom: 0.5rem;
-}
-
-.publication-series .term-section__content a:last-child {
-  margin-right: 0;
-}
 .publication-series__type {
+  font-size: 1.5rem;
+  line-height: 2.2rem;
   margin: 0;
   padding: 0;
   color: #4d4d4d;
-  font-size: var(--fs-small-text);
+
+  @include breakpoint($lap) {
+    font-size: 1.6rem;
+  }
+
+  @include breakpoint($desk-plus) {
+    font-size: 1.7rem;
+  }
+}
+
+.historical-reports {
+  h3.card__title {
+    margin: 0
+  }
+  .card__meta {
+    margin-bottom: 2rem;
+  }
 }
