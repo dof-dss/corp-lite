@@ -37,6 +37,10 @@
  */
 #}
 
-{% for item in items %}
-  <li{{ item.attributes.addClass('list-item') }}>{{ item.content }}</li>
-{% endfor %}
+<ul class="publication-series-links">
+  {% for item in items %}
+    <li{{ item.attributes.addClass('list-item') }}>
+      {{ item.content }}
+    </li>
+  {% endfor %}
+</ul>
