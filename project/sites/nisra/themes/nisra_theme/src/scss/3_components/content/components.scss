@@ -34,3 +34,16 @@
   padding-left: 0;
   margin-left: 0;
 }
+
+.publication-related {
+  h3.card__title {
+    margin: 0
+  }
+  .card__meta {
+    margin-bottom: 2rem;
+  }
+
+  p.published-date {
+    margin: 0.5rem 0 2rem !important;
+  }
+}

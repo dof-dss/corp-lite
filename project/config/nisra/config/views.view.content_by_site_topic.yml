@@ -477,7 +477,7 @@ display:
       display_description: ''
       use_more: true
       use_more_always: true
-      use_more_text: 'See all publications in this topic'
+      use_more_text: 'See all publications in this series'
       link_display: custom_url
       link_url: 'publications/series/{{ raw_arguments.tid }}'
       footer: {  }
