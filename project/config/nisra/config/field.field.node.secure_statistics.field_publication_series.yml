@@ -1,0 +1,29 @@
+uuid: 9d9848b8-a14f-469a-b90d-2f3cae8b776a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_publication_series
+    - node.type.secure_statistics
+    - taxonomy.vocabulary.publication_series
+id: node.secure_statistics.field_publication_series
+field_name: field_publication_series
+entity_type: node
+bundle: secure_statistics
+label: 'Publication Series'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      publication_series: publication_series
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

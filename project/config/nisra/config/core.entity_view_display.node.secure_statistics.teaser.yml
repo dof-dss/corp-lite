@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.secure_statistics.body
     - field.field.node.secure_statistics.field_external_publication
     - field.field.node.secure_statistics.field_meta_tags
+    - field.field.node.secure_statistics.field_publication_series
     - field.field.node.secure_statistics.field_publication_type
     - field.field.node.secure_statistics.field_published_date
     - field.field.node.secure_statistics.field_research_support
@@ -34,6 +35,7 @@ hidden:
   content_moderation_control: true
   field_external_publication: true
   field_meta_tags: true
+  field_publication_series: true
   field_publication_type: true
   field_published_date: true
   field_research_support: true

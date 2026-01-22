@@ -38,15 +38,21 @@
         <div> {{ content.field_future_updates }} </div>
     {% endif %}
 
-    {% set related_view = drupal_view(
+    {% set related_results = drupal_view_result(
       'content_by_site_topic',
       'publication_series_related',
       taxonomy_term.id()
     ) %}
 
-    {% if related_view %}
-        <h2>Historical Reports</h2>
-        <div> {{ related_view }} </div>
+    {% if related_results|length > 0 %}
+      <h2>Historical Reports</h2>
+      <div>
+        {{ drupal_view(
+          'content_by_site_topic',
+          'publication_series_related',
+          taxonomy_term.id()
+        ) }}
+      </div>
     {% endif %}
 
     {% if content.field_further_information %}

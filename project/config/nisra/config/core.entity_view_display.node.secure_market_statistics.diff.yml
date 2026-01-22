@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.secure_market_statistics.body
     - field.field.node.secure_market_statistics.field_external_publication
     - field.field.node.secure_market_statistics.field_meta_tags
+    - field.field.node.secure_market_statistics.field_publication_series
     - field.field.node.secure_market_statistics.field_publication_type
     - field.field.node.secure_market_statistics.field_published_date
     - field.field.node.secure_market_statistics.field_research_support
@@ -30,7 +31,7 @@ third_party_settings:
       label: 'Additional content details'
       parent_name: ''
       region: content
-      weight: 8
+      weight: 7
       format_type: html_element
       format_settings:
         classes: field-collection
@@ -50,7 +51,7 @@ third_party_settings:
       label: Documents
       parent_name: ''
       region: content
-      weight: 5
+      weight: 6
       format_type: html_element
       format_settings:
         classes: list--no-bullet
@@ -73,7 +74,7 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 4
+    weight: 5
     region: content
   field_external_publication:
     type: link
@@ -85,7 +86,7 @@ content:
       rel: '0'
       target: '0'
     third_party_settings: {  }
-    weight: 7
+    weight: 10
     region: content
   field_meta_tags:
     type: metatag_empty_formatter
@@ -93,6 +94,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 13
+    region: content
+  field_publication_series:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 1
     region: content
   field_publication_type:
     type: entity_reference_label
@@ -117,7 +126,7 @@ content:
     settings:
       link: false
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   field_secure_attachment:
     type: entity_reference_entity_view
@@ -126,7 +135,7 @@ content:
       view_mode: embed
       link: false
     third_party_settings: {  }
-    weight: 8
+    weight: 11
     region: content
   field_site_topics:
     type: entity_reference_label
@@ -134,14 +143,14 @@ content:
     settings:
       link: false
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   field_summary:
     type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
 hidden:
   content_moderation_control: true
