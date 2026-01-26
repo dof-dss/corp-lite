@@ -1,0 +1,14 @@
+uuid: d725fd1a-af74-4167-b879-43813d087c93
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.administer_publication_series
+  module:
+    - user
+id: user_add_role_action.administer_publication_series
+label: 'Add the Administer publication series role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: administer_publication_series

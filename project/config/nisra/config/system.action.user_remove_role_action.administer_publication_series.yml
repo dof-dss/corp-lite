@@ -1,0 +1,14 @@
+uuid: 2ec96644-47a9-468d-8330-6b8fb0d12325
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.administer_publication_series
+  module:
+    - user
+id: user_remove_role_action.administer_publication_series
+label: 'Remove the Administer publication series role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: administer_publication_series
