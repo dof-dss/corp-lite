@@ -13,7 +13,7 @@ field_name: field_site_topics
 entity_type: node
 bundle: publication
 label: 'Areas of Expertise'
-description: 'Choose relevant areas of expertise for this article.'
+description: 'Choose relevant areas of expertise for this publication.'
 required: false
 translatable: false
 default_value: {  }
