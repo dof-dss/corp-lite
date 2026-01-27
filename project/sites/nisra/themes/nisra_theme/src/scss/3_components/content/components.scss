@@ -6,10 +6,10 @@
 @use '../../../../../../../../../web/themes/custom/nicsdru_corplite_theme/src/scss/init' as *;
 
 .publication-series__type {
-  font-size: 1.5rem;
   margin: 0;
   padding: 0;
   color: #4d4d4d;
+  font-size: 1.5rem;
 
   @include breakpoint($lap) {
     font-size: 1.6rem;
@@ -20,19 +20,29 @@
   }
 }
 
-.historical-reports {
-  h3.card__title {
-    margin: 0
-  }
-  .card__meta {
-    margin-bottom: 2rem;
+.publication-series-links {
+  margin-left: 0;
+  padding-left: 0;
+
+  li {
+    list-style-position: inside;
   }
 }
 
-.publication-series-links {
-  list-style: none;
-  padding-left: 0;
-  margin-left: 0;
+.historical-reports {
+  margin: 0;
+
+  h3.card__title {
+    margin: 0;
+  }
+
+  .columnItem {
+    margin-bottom: 0;
+  }
+
+  .card__meta {
+    margin-bottom: 0.6rem;
+  }
 }
 
 .publication-related {
@@ -40,6 +50,7 @@
     margin: 0;
     font-size: 1.8rem;
   }
+
   .card__meta {
     margin-bottom: 2rem;
   }
@@ -47,4 +58,10 @@
   p.published-date {
     margin: 0.5rem 0 2rem !important;
   }
+}
+
+.card__title {
+  margin: 0;
+  font-size: 1.8rem;
+  line-height: 1.5;
 }

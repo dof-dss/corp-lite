@@ -450,11 +450,14 @@ display:
         groups:
           1: AND
       style:
-        type: default
+        type: html_list
         options:
-          row_class: ''
+          row_class: columnItem
           default_row_class: true
           uses_fields: false
+          type: ul
+          wrapper_class: item-list
+          class: historical-reports
       row:
         type: 'entity:node'
         options:
