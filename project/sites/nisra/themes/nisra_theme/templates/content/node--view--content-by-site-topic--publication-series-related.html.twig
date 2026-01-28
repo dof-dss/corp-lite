@@ -73,10 +73,7 @@
 
   <span class="card__meta">
     <span>
-      {{ 'Published'|t }}
-      <time datetime="{{ node.field_published_date.value }}">
-        {{ content.field_published_date }}
-      </time>
+      {{ 'Published'|t }}{{ content.field_published_date }}
     </span>
   </span>
 </a>
