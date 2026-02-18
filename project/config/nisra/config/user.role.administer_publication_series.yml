@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - taxonomy.vocabulary.publication_series
+    - taxonomy.vocabulary.publication_types
   module:
     - taxonomy
     - taxonomy_access_fix
@@ -19,6 +20,8 @@ permissions:
   - 'reorder terms in publication_series'
   - 'reset publication_series'
   - 'revert term revisions in publication_series'
+  - 'select unpublished terms in publication_series'
+  - 'select unpublished terms in publication_types'
   - 'view term names in publication_series'
   - 'view term revisions in publication_series'
   - 'view terms in publication_series'

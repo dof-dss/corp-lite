@@ -130,6 +130,7 @@ permissions:
   - 'use nics_editorial_workflow transition restore'
   - 'use nics_editorial_workflow transition restore_to_draft'
   - 'use nics_editorial_workflow transition submit_for_review'
+  - 'view all media revisions'
   - 'view all revisions'
   - 'view any unpublished content'
   - 'view content references'

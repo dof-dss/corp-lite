@@ -37,3 +37,4 @@ permissions:
   - 'view content references'
   - 'view media'
   - 'view own unpublished content'
+  - 'view own unpublished media'
