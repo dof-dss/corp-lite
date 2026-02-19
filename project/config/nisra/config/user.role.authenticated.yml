@@ -7,6 +7,7 @@ dependencies:
     - taxonomy.vocabulary.document_types
     - taxonomy.vocabulary.link
     - taxonomy.vocabulary.news_types
+    - taxonomy.vocabulary.publication_series
     - taxonomy.vocabulary.publication_types
     - taxonomy.vocabulary.research_support
     - taxonomy.vocabulary.site_topics
@@ -30,6 +31,7 @@ permissions:
   - 'select terms in document_types'
   - 'select terms in link'
   - 'select terms in news_types'
+  - 'select terms in publication_series'
   - 'select terms in publication_types'
   - 'select terms in research_support'
   - 'select terms in site_topics'
