@@ -13,7 +13,7 @@ field_name: field_site_topics
 entity_type: node
 bundle: contact
 label: 'Area of expertise'
-description: 'Choose relevant site topic(s) for this point of contact.'
+description: 'Choose relevant area(s) of expertise for this point of contact.'
 required: false
 translatable: false
 default_value: {  }
