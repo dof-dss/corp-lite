@@ -563,6 +563,79 @@ display:
     display_plugin: page
     position: 1
     display_options:
+      cache:
+        type: search_api_none
+      filters:
+        search_api_fulltext:
+          id: search_api_fulltext
+          table: search_api_index_default_content
+          field: search_api_fulltext
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_fulltext
+          operator: or
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: search_api_fulltext_op
+            label: 'Search this site and choose filters to show only the results you want'
+            description: ''
+            use_operator: false
+            operator: search_api_fulltext_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: query
+            required: true
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              author_user: '0'
+              supervisor_user: '0'
+              secure_statistics_author_user: '0'
+              secure_market_sensitive_author_user: '0'
+              secure_statistics_supervisor_user: '0'
+              secure_market_sensitive_supervisor_user: '0'
+              editor_user: '0'
+              site_admin_user: '0'
+              admin_user: '0'
+              qa: '0'
+              homepage_supervisor: '0'
+              published_releases_supervisor: '0'
+              nisra_corporate_user: '0'
+              administer_publication_series: '0'
+            expose_fields: false
+            placeholder: 'Search this site...'
+            searched_fields_id: search_api_fulltext_searched_fields
+            value_maxlength: 128
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          parse_mode: fuzzy_terms
+          min_length: 2
+          fields:
+            - body
+            - field_summary
+            - field_teaser
+            - name
+            - title_fulltext
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
       style:
         type: default
         options:
@@ -586,10 +659,34 @@ display:
             'entity:taxonomy_term':
               research_support: search_index
               site_topics: search_index
+      query:
+        type: search_api_query
+        options:
+          bypass_access: false
+          skip_access: false
+          preserve_facet_query_args: false
+          query_tags: {  }
       defaults:
+        cache: false
+        query: false
         style: false
         row: false
+        filters: false
+        filter_groups: false
+        header: false
       display_description: ''
+      header:
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: result
+          empty: false
+          content: '@total items'
+      exposed_block: true
       display_extenders:
         metatag_display_extender:
           metatags: {  }

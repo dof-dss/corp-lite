@@ -1,28 +1,28 @@
-uuid: cc7263c8-5d15-42e1-a2e6-384c40620df8
+uuid: 1560db5d-5775-47c6-a575-62e228525d8f
 langcode: en
 status: true
 dependencies:
   config:
-    - facets.facet.originating_organisation
+    - facets.facet.topics
   module:
     - block_visibility_groups
     - facets
     - system
   theme:
     - nisra_theme
-id: originatingorganisation
+id: search_topics
 theme: nisra_theme
 region: sidebar_first
-weight: -5
+weight: -15
 provider: null
-plugin: 'facet_block:originating_organisation'
+plugin: 'facet_block:topics'
 settings:
-  id: 'facet_block:originating_organisation'
-  label: Organisation
+  id: 'facet_block:topics'
+  label: 'Statistics and research'
   label_display: visible
   provider: facets
   context_mapping: {  }
-  block_id: originatingorganisation
+  block_id: search_topics
 visibility:
   condition_group:
     id: condition_group
@@ -31,4 +31,4 @@ visibility:
   request_path:
     id: request_path
     negate: false
-    pages: "/published-releases\r\n/published-releases/date/*\r\n/published-releases/organisation/*\r\n/published-releases/type/*\r\n"
+    pages: "/search\r\n/search/topics/*\r\n/search/date/*"
