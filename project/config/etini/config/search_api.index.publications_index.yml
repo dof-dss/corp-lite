@@ -12,6 +12,7 @@ dependencies:
     - field.storage.node.field_summary
   module:
     - node
+    - search_api
     - search_api_solr
     - taxonomy
 third_party_settings:
@@ -242,4 +243,4 @@ options:
   delete_on_fail: true
   index_directly: true
   track_changes_in_references: true
-server: null
+server: solr_default
