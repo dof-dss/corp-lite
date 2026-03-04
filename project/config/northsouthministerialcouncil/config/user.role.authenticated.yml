@@ -15,6 +15,7 @@ dependencies:
     - filter
     - media
     - node
+    - readonlymode
     - system
     - taxonomy_access_fix
     - whatlinkshere
@@ -27,6 +28,7 @@ is_admin: false
 permissions:
   - 'access content'
   - 'delete own files'
+  - 'readonlymode access messages'
   - 'select terms in joint_communiques'
   - 'select terms in link_types'
   - 'select terms in publication_type'

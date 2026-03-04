@@ -9,6 +9,7 @@ dependencies:
     - media
     - node
     - path
+    - readonlymode
     - system
     - whatlinkshere
 _core:
@@ -21,6 +22,7 @@ permissions:
   - 'access administration pages'
   - 'access content'
   - 'create url aliases'
+  - 'readonlymode access messages'
   - 'use text format basic_html'
   - 'view content references'
   - 'view media'

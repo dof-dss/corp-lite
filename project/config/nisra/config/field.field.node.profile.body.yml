@@ -7,12 +7,7 @@ dependencies:
     - filter.format.basic_html
     - node.type.profile
   module:
-    - allowed_formats
     - text
-third_party_settings:
-  allowed_formats:
-    allowed_formats:
-      - basic_html
 _core:
   default_config_hash: 39itnZwwNAWkYk_dU058Q22B0IpchvmZlbeHBMa-4a0
 id: node.profile.body

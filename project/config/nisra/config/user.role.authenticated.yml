@@ -14,6 +14,7 @@ dependencies:
     - media
     - node
     - path
+    - readonlymode
     - system
     - taxonomy_access_fix
     - whatlinkshere
@@ -26,6 +27,7 @@ is_admin: false
 permissions:
   - 'access content'
   - 'create url aliases'
+  - 'readonlymode access messages'
   - 'select terms in link'
   - 'select terms in news_types'
   - 'select terms in publication_types'

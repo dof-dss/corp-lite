@@ -9,6 +9,7 @@ dependencies:
     - media
     - node
     - path
+    - readonlymode
     - system
     - toolbar
     - whatlinkshere
@@ -24,6 +25,7 @@ permissions:
   - 'access content overview'
   - 'access toolbar'
   - 'create url aliases'
+  - 'readonlymode access messages'
   - 'use text format basic_html'
   - 'view all revisions'
   - 'view content references'
