@@ -1,108 +1,109 @@
 /* *
  *
- *  (c) 2010-2026 Highsoft AS
- *  Author: Christer Vasseng, Torstein Honsi
+ *  (c) 2010-2021 Christer Vasseng, Torstein Honsi
  *
- *  A commercial license may be required depending on use.
- *  See www.highcharts.com/license
+ *  License: www.highcharts.com/license
  *
+ *  !!!!!!! SOURCE GETS TRANSPILED BY TYPESCRIPT. EDIT TS FILE ONLY. !!!!!!!
  *
  * */
 'use strict';
 import G from '../Core/Globals.js';
-const { win } = G;
+var doc = G.doc;
 import U from '../Core/Utilities.js';
-const { discardElement, objectEach } = U;
-/* *
- *
- *  Functions
- *
- * */
+var createElement = U.createElement, discardElement = U.discardElement, merge = U.merge, objectEach = U.objectEach;
 /**
  * Perform an Ajax call.
  *
  * @function Highcharts.ajax
  *
- * @param {Highcharts.AjaxSettingsObject} settings
- * The Ajax settings to use.
+ * @param {Partial<Highcharts.AjaxSettingsObject>} attr
+ *        The Ajax settings to use.
  *
- * @return {false | undefined}
- * Returns false, if error occurred.
+ * @return {false|undefined}
+ *         Returns false, if error occured.
  */
-function ajax(settings) {
-    const headers = {
+function ajax(attr) {
+    var options = merge(true, {
+        url: false,
+        type: 'get',
+        dataType: 'json',
+        success: false,
+        error: false,
+        data: false,
+        headers: {}
+    }, attr), headers = {
         json: 'application/json',
         xml: 'application/xml',
         text: 'text/plain',
         octet: 'application/octet-stream'
     }, r = new XMLHttpRequest();
     /**
-     * Private error handler.
-     * @internal
+     * @private
      * @param {XMLHttpRequest} xhr
      * Internal request object.
-     * @param {string | Error} err
-     * Occurred error.
+     * @param {string|Error} err
+     * Occured error.
      */
     function handleError(xhr, err) {
-        if (settings.error) {
-            settings.error(xhr, err);
+        if (options.error) {
+            options.error(xhr, err);
         }
         else {
             // @todo Maybe emit a highcharts error event here
         }
     }
-    if (!settings.url) {
+    if (!options.url) {
         return false;
     }
-    r.open((settings.type || 'get').toUpperCase(), settings.url, true);
-    if (!settings.headers?.['Content-Type']) {
-        r.setRequestHeader('Content-Type', headers[settings.dataType || 'json'] || headers.text);
+    r.open(options.type.toUpperCase(), options.url, true);
+    if (!options.headers['Content-Type']) {
+        r.setRequestHeader('Content-Type', headers[options.dataType] || headers.text);
     }
-    objectEach(settings.headers, function (val, key) {
+    objectEach(options.headers, function (val, key) {
         r.setRequestHeader(key, val);
     });
-    if (settings.responseType) {
-        r.responseType = settings.responseType;
+    if (options.responseType) {
+        r.responseType = options.responseType;
     }
     // @todo lacking timeout handling
     r.onreadystatechange = function () {
-        let res;
+        var res;
         if (r.readyState === 4) {
             if (r.status === 200) {
-                if (settings.responseType !== 'blob') {
+                if (options.responseType !== 'blob') {
                     res = r.responseText;
-                    if (settings.dataType === 'json') {
+                    if (options.dataType === 'json') {
                         try {
                             res = JSON.parse(res);
                         }
                         catch (e) {
-                            if (e instanceof Error) {
-                                return handleError(r, e);
-                            }
+                            return handleError(r, e);
                         }
                     }
                 }
-                return settings.success?.(res, r);
+                return options.success && options.success(res, r);
             }
             handleError(r, r.responseText);
         }
     };
-    if (settings.data && typeof settings.data !== 'string') {
-        settings.data = JSON.stringify(settings.data);
+    try {
+        options.data = JSON.stringify(options.data);
     }
-    r.send(settings.data);
+    catch (e) {
+        // empty
+    }
+    r.send(options.data || true);
 }
 /**
  * Get a JSON resource over XHR, also supporting CORS without preflight.
  *
  * @function Highcharts.getJSON
- *
  * @param {string} url
- * The URL to load.
+ *        The URL to load.
  * @param {Function} success
- * The success callback. For error handling, use the `Highcharts.ajax` function
- * instead.
+ *        The success callback. For error handling, use the `Highcharts.ajax`
+ *        function instead.
  */
 function getJSON(url, success) {
     HttpUtilities.ajax({
@@ -117,99 +118,83 @@ function getJSON(url, success) {
     });
 }
 /**
- * The post utility.
+ * The post utility
  *
- * @internal
+ * @private
  * @function Highcharts.post
  *
  * @param {string} url
- * Post URL.
+ * Post URL
  *
  * @param {Object} data
- * Post data.
+ * Post data
  *
- * @param {RequestInit} [fetchOptions]
- * Additional attributes for the post request.
+ * @param {Highcharts.Dictionary<string>} [formAttributes]
+ * Additional attributes for the post request
  */
-async function post(url, data, fetchOptions) {
-    // Prepare a form to send the data
-    const formData = new win.FormData();
-    // Add the data to the form
-    objectEach(data, function (value, name) {
-        formData.append(name, value);
+function post(url, data, formAttributes) {
+    // create the form
+    var form = createElement('form', merge({
+        method: 'post',
+        action: url,
+        enctype: 'multipart/form-data'
+    }, formAttributes), {
+        display: 'none'
+    }, doc.body);
+    // add the data
+    objectEach(data, function (val, name) {
+        createElement('input', {
+            type: 'hidden',
+            name: name,
+            value: val
+        }, null, form);
     });
-    formData.append('b64', 'true');
-    // Send the POST
-    const response = await win.fetch(url, {
-        method: 'POST',
-        body: formData,
-        ...fetchOptions
-    });
-    // Check the response
-    if (response.ok) {
-        // Get the text from the response
-        const text = await response.text();
-        // Prepare self-click link with the Base64 representation
-        const link = document.createElement('a');
-        link.href = `data:${data.type};base64,${text}`;
-        link.download = data.filename;
-        link.click();
-        // Remove the link
-        discardElement(link);
-    }
+    // submit
+    form.submit();
+    // clean up
+    discardElement(form);
 }
-/**
- * Utility functions for Ajax.
- * @class
- * @name Highcharts.HttpUtilities
- */
-const HttpUtilities = {
-    ajax,
-    getJSON
-};
-HttpUtilities.post = post;
-export default HttpUtilities;
 /* *
  *
- *  API Declarations
+ *  Default Export
  *
  * */
+var HttpUtilities = {
+    ajax: ajax,
+    getJSON: getJSON,
+    post: post
+};
+export default HttpUtilities;
 /**
  * @interface Highcharts.AjaxSettingsObject
  */ /**
 * The payload to send.
 *
 * @name Highcharts.AjaxSettingsObject#data
-* @type {string | Highcharts.Dictionary<any> | undefined}
+* @type {string|Highcharts.Dictionary<any>}
 */ /**
 * The data type expected.
-*
 * @name Highcharts.AjaxSettingsObject#dataType
-* @type {"json" | "xml" | "text" | "octet" | undefined}
+* @type {"json"|"xml"|"text"|"octet"}
 */ /**
 * Function to call on error.
-*
 * @name Highcharts.AjaxSettingsObject#error
-* @type {Function | undefined}
+* @type {Function}
 */ /**
 * The headers; keyed on header name.
-*
 * @name Highcharts.AjaxSettingsObject#headers
-* @type {Highcharts.Dictionary<string> | undefined}
+* @type {Highcharts.Dictionary<string>}
 */ /**
 * Function to call on success.
-*
 * @name Highcharts.AjaxSettingsObject#success
-* @type {Function | undefined}
+* @type {Function}
 */ /**
 * The HTTP method to use. For example GET or POST.
-*
 * @name Highcharts.AjaxSettingsObject#type
-* @type {string | undefined}
+* @type {string}
 */ /**
 * The URL to call.
-*
 * @name Highcharts.AjaxSettingsObject#url
 * @type {string}
 */
-(''); // Keeps doclets above in JS file
+(''); // keeps doclets above in JS file

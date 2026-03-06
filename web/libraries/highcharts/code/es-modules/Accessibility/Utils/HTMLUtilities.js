@@ -1,26 +1,19 @@
 /* *
  *
- *  (c) 2009-2026 Highsoft AS
- *  Author: Øystein Moseng
+ *  (c) 2009-2021 Øystein Moseng
  *
  *  Utility functions for accessibility module.
  *
- *  A commercial license may be required depending on use.
- *  See www.highcharts.com/license
+ *  License: www.highcharts.com/license
  *
+ *  !!!!!!! SOURCE GETS TRANSPILED BY TYPESCRIPT. EDIT TS FILE ONLY. !!!!!!!
  *
  * */
 'use strict';
 import H from '../../Core/Globals.js';
-const { doc, win } = H;
+var doc = H.doc, win = H.win;
 import U from '../../Core/Utilities.js';
-const { css } = U;
-/* *
- *
- *  Constants
- *
- * */
-const simulatedEventTarget = win.EventTarget && new win.EventTarget() || 'none';
+var css = U.css;
 /* *
  *
  *  Functions
@@ -69,8 +62,8 @@ function cloneMouseEvent(e) {
         return new win.MouseEvent(e.type, e);
     }
     // No MouseEvent support, try using initMouseEvent
-    if (doc?.createEvent) {
-        const evt = doc.createEvent('MouseEvent');
+    if (doc.createEvent) {
+        var evt = doc.createEvent('MouseEvent');
         if (evt.initMouseEvent) {
             evt.initMouseEvent(e.type, e.bubbles, // #10561, #12161
             e.cancelable, e.view || win, e.detail, e.screenX, e.screenY, e.clientX, e.clientY, e.ctrlKey, e.altKey, e.shiftKey, e.metaKey, e.button, e.relatedTarget);
@@ -84,10 +77,10 @@ function cloneMouseEvent(e) {
  * @private
  */
 function cloneTouchEvent(e) {
-    const touchListToTouchArray = (l) => {
-        const touchArray = [];
-        for (let i = 0; i < l.length; ++i) {
-            const item = l.item(i);
+    var touchListToTouchArray = function (l) {
+        var touchArray = [];
+        for (var i = 0; i < l.length; ++i) {
+            var item = l.item(i);
             if (item) {
                 touchArray.push(item);
             }
@@ -95,7 +88,7 @@ function cloneTouchEvent(e) {
         return touchArray;
     };
     if (typeof win.TouchEvent === 'function') {
-        const newEvent = new win.TouchEvent(e.type, {
+        var newEvent = new win.TouchEvent(e.type, {
             touches: touchListToTouchArray(e.touches),
             targetTouches: touchListToTouchArray(e.targetTouches),
             changedTouches: touchListToTouchArray(e.changedTouches),
@@ -114,7 +107,7 @@ function cloneTouchEvent(e) {
         }
         return newEvent;
     }
-    const fakeEvt = cloneMouseEvent(e);
+    var fakeEvt = cloneMouseEvent(e);
     fakeEvt.touches = e.touches;
     fakeEvt.changedTouches = e.changedTouches;
     fakeEvt.targetTouches = e.targetTouches;
@@ -140,13 +133,11 @@ function getElement(id) {
     return doc.getElementById(id);
 }
 /**
- * Get a fake mouse event of a given type. If relatedTarget is not given,
- * it will point to simulatedEventTarget, as an indicator that the event
- * is fake.
+ * Get a fake mouse event of a given type
  * @private
  */
-function getFakeMouseEvent(type, position, relatedTarget) {
-    const pos = position || {
+function getFakeMouseEvent(type, position) {
+    var pos = position || {
         x: 0,
         y: 0
     };
@@ -155,9 +146,6 @@ function getFakeMouseEvent(type, position, relatedTarget) {
             bubbles: true,
             cancelable: true,
             composed: true,
-            button: 0,
-            buttons: 1,
-            relatedTarget: relatedTarget || simulatedEventTarget,
             view: win,
             detail: type === 'click' ? 1 : 0,
             screenX: pos.x,
@@ -167,8 +155,8 @@ function getFakeMouseEvent(type, position, relatedTarget) {
         });
     }
     // No MouseEvent support, try using initMouseEvent
-    if (doc?.createEvent) {
-        const evt = doc.createEvent('MouseEvent');
+    if (doc.createEvent) {
+        var evt = doc.createEvent('MouseEvent');
         if (evt.initMouseEvent) {
             evt.initMouseEvent(type, true, // Bubble
             true, // Cancel
@@ -177,8 +165,8 @@ function getFakeMouseEvent(type, position, relatedTarget) {
             // Coords
             pos.x, pos.y, pos.x, pos.y, 
             // Pressed keys
-            false, false, false, false, 0, // Button
-            null // Related target
+            false, false, false, false, 0, // button
+            null // related target
             );
             return evt;
         }
@@ -201,32 +189,32 @@ function getFakeMouseEvent(type, position, relatedTarget) {
  * If no nearest heading is found, "p" is returned.
  */
 function getHeadingTagNameForElement(element) {
-    const getIncreasedHeadingLevel = (tagName) => {
-        const headingLevel = parseInt(tagName.slice(1), 10), newLevel = Math.min(6, headingLevel + 1);
+    var getIncreasedHeadingLevel = function (tagName) {
+        var headingLevel = parseInt(tagName.slice(1), 10), newLevel = Math.min(6, headingLevel + 1);
         return 'h' + newLevel;
     };
-    const isHeading = (tagName) => /^H[1-6]$/i.test(tagName);
-    const getPreviousSiblingsHeading = (el) => {
-        let sibling = el;
+    var isHeading = function (tagName) { return /H[1-6]/.test(tagName); };
+    var getPreviousSiblingsHeading = function (el) {
+        var sibling = el;
         while (sibling = sibling.previousSibling) { // eslint-disable-line
-            const tagName = sibling.tagName || '';
+            var tagName = sibling.tagName || '';
             if (isHeading(tagName)) {
                 return tagName;
             }
         }
         return '';
     };
-    const getHeadingRecursive = (el) => {
-        const prevSiblingsHeading = getPreviousSiblingsHeading(el);
+    var getHeadingRecursive = function (el) {
+        var prevSiblingsHeading = getPreviousSiblingsHeading(el);
         if (prevSiblingsHeading) {
             return getIncreasedHeadingLevel(prevSiblingsHeading);
         }
         // No previous siblings are headings, try parent node
-        const parent = el.parentElement;
+        var parent = el.parentElement;
         if (!parent) {
-            return 'h6';
+            return 'p';
         }
-        const parentTagName = parent.tagName;
+        var parentTagName = parent.tagName;
         if (isHeading(parentTagName)) {
             return getIncreasedHeadingLevel(parentTagName);
         }
@@ -261,7 +249,7 @@ function removeChildNodes(element) {
  * @private
  */
 function reverseChildNodes(node) {
-    let i = node.childNodes.length;
+    var i = node.childNodes.length;
     while (i--) {
         node.appendChild(node.childNodes[i]);
     }
@@ -271,11 +259,9 @@ function reverseChildNodes(node) {
  * text contains tags.
  * @private
  */
-function stripHTMLTagsFromString(str, isForExport = false) {
-    return (typeof str === 'string') ?
-        (isForExport ?
-            str.replace(/<\/?[^>]+(>|$)/g, '') :
-            str.replace(/<\/?(?!\s)[^>]+(>|$)/g, '')) : str;
+function stripHTMLTagsFromString(str) {
+    return typeof str === 'string' ?
+        str.replace(/<\/?[^>]+(>|$)/g, '') : str;
 }
 /**
  * Utility function for hiding an element visually, but still keeping it
@@ -301,20 +287,19 @@ function visuallyHideElement(element) {
  *  Default Export
  *
  * */
-const HTMLUtilities = {
-    addClass,
-    cloneMouseEvent,
-    cloneTouchEvent,
-    escapeStringForHTML,
-    getElement,
-    getFakeMouseEvent,
-    getHeadingTagNameForElement,
-    removeChildNodes,
-    removeClass,
-    removeElement,
-    reverseChildNodes,
-    simulatedEventTarget,
-    stripHTMLTagsFromString,
-    visuallyHideElement
+var HTMLUtilities = {
+    addClass: addClass,
+    cloneMouseEvent: cloneMouseEvent,
+    cloneTouchEvent: cloneTouchEvent,
+    escapeStringForHTML: escapeStringForHTML,
+    getElement: getElement,
+    getFakeMouseEvent: getFakeMouseEvent,
+    getHeadingTagNameForElement: getHeadingTagNameForElement,
+    removeChildNodes: removeChildNodes,
+    removeClass: removeClass,
+    removeElement: removeElement,
+    reverseChildNodes: reverseChildNodes,
+    stripHTMLTagsFromString: stripHTMLTagsFromString,
+    visuallyHideElement: visuallyHideElement
 };
 export default HTMLUtilities;

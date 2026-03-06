@@ -1,36 +1,28 @@
-// SPDX-License-Identifier: LicenseRef-Highcharts
 /**
- * @license Highcharts JS v12.5.0 (2026-01-12)
+ * @license Highcharts JS v10.0.0 (2022-03-07)
  * @module highcharts/highcharts-more
  * @requires highcharts
  *
- * (c) 2009-2026 Highsoft AS
+ * (c) 2009-2021 Torstein Honsi
  *
- * A commercial license may be required depending on use.
- * See www.highcharts.com/license
+ * License: www.highcharts.com/license
  */
 'use strict';
 import Highcharts from '../Core/Globals.js';
-import SeriesRegistry from '../Core/Series/SeriesRegistry.js';
-import Pane from '../Extensions/Pane/Pane.js';
+var G = Highcharts;
+import '../Extensions/Pane.js';
+import RadialAxis from '../Core/Axis/RadialAxis.js';
+RadialAxis.compose(G.Axis, G.Tick);
 import '../Series/AreaRange/AreaRangeSeries.js';
 import '../Series/AreaSplineRange/AreaSplineRangeSeries.js';
 import '../Series/BoxPlot/BoxPlotSeries.js';
 import BubbleSeries from '../Series/Bubble/BubbleSeries.js';
+BubbleSeries.compose(G.Chart, G.Legend, G.Series);
 import '../Series/ColumnRange/ColumnRangeSeries.js';
 import '../Series/ColumnPyramid/ColumnPyramidSeries.js';
 import '../Series/ErrorBar/ErrorBarSeries.js';
 import '../Series/Gauge/GaugeSeries.js';
-import PackedBubbleSeries from '../Series/PackedBubble/PackedBubbleSeries.js';
+import '../Series/PackedBubble/PackedBubbleSeries.js';
 import '../Series/Polygon/PolygonSeries.js';
-import PolarAdditions from '../Series/PolarComposition.js';
-import RadialAxis from '../Core/Axis/RadialAxis.js';
-import WaterfallSeries from '../Series/Waterfall/WaterfallSeries.js';
-const G = Highcharts;
-G.RadialAxis = RadialAxis;
-BubbleSeries.compose(G.Axis, G.Chart, G.Legend);
-PackedBubbleSeries.compose(G.Axis, G.Chart, G.Legend);
-Pane.compose(G.Chart, G.Pointer, G.Series);
-PolarAdditions.compose(G.Axis, G.Chart, G.Pointer, G.Series, G.Tick, G.Point, SeriesRegistry.seriesTypes.areasplinerange, SeriesRegistry.seriesTypes.column, SeriesRegistry.seriesTypes.line, SeriesRegistry.seriesTypes.spline);
-WaterfallSeries.compose(G.Axis, G.Chart);
-export default G;
+import '../Series/Waterfall/WaterfallSeries.js';
+import '../Extensions/Polar.js';

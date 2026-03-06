@@ -6,22 +6,6 @@
 		<title>Highcharts Example</title>
 
 		<style type="text/css">
-body {
-    font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Roboto,
-        Helvetica,
-        Arial,
-        "Apple Color Emoji",
-        "Segoe UI Emoji",
-        "Segoe UI Symbol",
-        sans-serif;
-    background: var(--highcharts-background-color, #fff);
-    color: var(--highcharts-neutral-color-100, #000);
-}
-
 #container {
     height: 420px;
 }
@@ -36,7 +20,7 @@ body {
 .highcharts-data-table table {
     font-family: Verdana, sans-serif;
     border-collapse: collapse;
-    border: 1px solid var(--highcharts-neutral-color-10, #e6e6e6);
+    border: 1px solid #ebebeb;
     margin: 10px auto;
     text-align: center;
     width: 100%;
@@ -46,7 +30,7 @@ body {
 .highcharts-data-table caption {
     padding: 1em 0;
     font-size: 1.2em;
-    color: var(--highcharts-neutral-color-60, #666);
+    color: #555;
 }
 
 .highcharts-data-table th {
@@ -61,23 +45,14 @@ body {
 }
 
 .highcharts-data-table thead tr,
-.highcharts-data-table tbody tr:nth-child(even) {
-    background: var(--highcharts-neutral-color-3, #f7f7f7);
+.highcharts-data-table tr:nth-child(even) {
+    background: #f8f8f8;
 }
 
-.highcharts-description {
-    margin: 0.3rem 10px;
+.highcharts-data-table tr:hover {
+    background: #f1f7ff;
 }
 
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: #141414;
-        color: #ddd;
-    }
-    a {
-        color: #2caffe;
-    }
-}
 		</style>
 	</head>
 	<body>
@@ -96,7 +71,7 @@ body {
 
 
 		<script type="text/javascript">
-const colors = Highcharts.getOptions().colors;
+var colors = Highcharts.getOptions().colors;
 
 Highcharts.chart('container', {
     chart: {
@@ -108,14 +83,11 @@ Highcharts.chart('container', {
     },
 
     title: {
-        text: 'Most common desktop screen readers',
-        align: 'left'
+        text: 'Most common desktop screen readers'
     },
 
     subtitle: {
-        text: 'Source: WebAIM. Click on points to visit official screen ' +
-            'reader website',
-        align: 'left'
+        text: 'Source: WebAIM. Click on points to visit official screen reader website'
     },
 
     yAxis: {
@@ -134,15 +106,11 @@ Highcharts.chart('container', {
         accessibility: {
             description: 'Time from December 2010 to September 2019'
         },
-        categories: [
-            'December 2010', 'May 2012', 'January 2014', 'July 2015',
-            'October 2017', 'September 2019'
-        ]
+        categories: ['December 2010', 'May 2012', 'January 2014', 'July 2015', 'October 2017', 'September 2019']
     },
 
     tooltip: {
-        valueSuffix: '%',
-        stickOnContact: true
+        valueSuffix: '%'
     },
 
     plotOptions: {
@@ -154,8 +122,7 @@ Highcharts.chart('container', {
                     }
                 }
             },
-            cursor: 'pointer',
-            lineWidth: 2
+            cursor: 'pointer'
         }
     },
 
@@ -166,7 +133,7 @@ Highcharts.chart('container', {
             website: 'https://www.nvaccess.org',
             color: colors[2],
             accessibility: {
-                description: 'This is the most used screen reader in 2019.'
+                description: 'This is the most used screen reader in 2019'
             }
         }, {
             name: 'JAWS',
@@ -215,10 +182,7 @@ Highcharts.chart('container', {
                     itemWidth: 150
                 },
                 xAxis: {
-                    categories: [
-                        'Dec. 2010', 'May 2012', 'Jan. 2014', 'July 2015',
-                        'Oct. 2017', 'Sep. 2019'
-                    ],
+                    categories: ['Dec. 2010', 'May 2012', 'Jan. 2014', 'July 2015', 'Oct. 2017', 'Sep. 2019'],
                     title: ''
                 },
                 yAxis: {

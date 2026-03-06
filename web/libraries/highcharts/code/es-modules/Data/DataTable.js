@@ -1,59 +1,158 @@
 /* *
  *
- *  (c) 2009-2026 Highsoft AS
+ *  (c) 2020-2021 Highsoft AS
  *
- *  A commercial license may be required depending on use.
- *  See www.highcharts.com/license
+ *  License: www.highcharts.com/license
  *
+ *  !!!!!!! SOURCE GETS TRANSPILED BY TYPESCRIPT. EDIT TS FILE ONLY. !!!!!!!
  *
  *  Authors:
  *  - Sophie Bremer
  *  - Gøran Slettemark
- *  - Jomar Hønsi
- *  - Dawid Dragula
  *
  * */
 'use strict';
-import DataTableCore from './DataTableCore.js';
-import ColumnUtils from './ColumnUtils.js';
-const { splice, setLength } = ColumnUtils;
+var __spreadArrays = (this && this.__spreadArrays) || function () {
+    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+            r[k] = a[j];
+    return r;
+};
+import DataPromise from './DataPromise.js';
 import U from '../Core/Utilities.js';
-const { addEvent, defined, extend, fireEvent, isNumber, uniqueKey } = U;
+var addEvent = U.addEvent, fireEvent = U.fireEvent, uniqueKey = U.uniqueKey;
 /* *
  *
  *  Class
  *
  * */
 /**
- * Class to manage columns and rows in a table structure. It provides methods
- * to add, remove, and manipulate columns and rows, as well as to retrieve data
- * from specific cells.
+ * Class to manage columns and rows in a table structure.
  *
+ * @private
  * @class
  * @name Highcharts.DataTable
  *
- * @param {Highcharts.DataTableOptions} [options]
- * Options to initialize the new DataTable instance.
+ * @param {Highcharts.DataTableColumnCollection} [columns]
+ * Collection of columns.
+ *
+ * @param {string} [id]
+ * DataTable identifier.
  */
-class DataTable extends DataTableCore {
+var DataTable = /** @class */ (function () {
     /* *
      *
-     *  Constructor
+     *  Constructors
      *
      * */
-    constructor(options = {}) {
-        super(options);
-        this.metadata = options.metadata;
+    /**
+     * Constructs an instance of the DataTable class.
+     *
+     * @param {Highcharts.DataTableColumnCollection} [columns]
+     * Collection of columns.
+     *
+     * @param {string} [id]
+     * DataTable identifier.
+     */
+    function DataTable(columns, id) {
+        if (columns === void 0) { columns = {}; }
+        /* *
+         *
+         *  Properties
+         *
+         * */
+        /**
+         * Mapping aliases to column names.
+         * @private
+         */
+        this.aliasMap = {};
+        /**
+         * Whether the ID was automatic generated or given.
+         *
+         * @name Highcharts.DataTable#autoId
+         * @type {boolean}
+         */
+        this.autoId = !id;
+        this.columns = {};
+        /**
+         * ID of the table.
+         *
+         * @name Highcharts.DataTable#id
+         * @type {string}
+         */
+        this.id = (id || uniqueKey());
+        this.modified = this;
+        this.rowCount = 0;
+        this.versionTag = uniqueKey();
+        var columnNames = Object.keys(columns), thisColumns = this.columns;
+        var rowCount = 0;
+        for (var i = 0, iEnd = columnNames.length, column = void 0, columnName = void 0; i < iEnd; ++i) {
+            columnName = columnNames[i];
+            column = columns[columnName].slice();
+            thisColumns[columnName] = column;
+            rowCount = Math.max(rowCount, column.length);
+        }
+        for (var i = 0, iEnd = columnNames.length; i < iEnd; ++i) {
+            thisColumns[columnNames[i]].length = rowCount;
+        }
+        this.rowCount = rowCount;
     }
+    /* *
+     *
+     *  Static Functions
+     *
+     * */
+    /**
+     * Tests whether a row contains only null values.
+     *
+     * @function Highcharts.DataTable.isNull
+     *
+     * @param {Highcharts.DataTableRow|Highcharts.DataTableRowObject} row
+     * Row to test.
+     *
+     * @return {boolean}
+     * Returns `true`, if the row contains only null, otherwise `false`.
+     *
+     * @example
+     * if (DataTable.isNull(row)) {
+     *   // handle null
+     * }
+     */
+    DataTable.isNull = function (row) {
+        if (row === DataTable.NULL) {
+            return true;
+        }
+        if (row instanceof Array) {
+            if (!row.length) {
+                return false;
+            }
+            for (var i = 0, iEnd = row.length; i < iEnd; ++i) {
+                if (row[i] !== null) {
+                    return false;
+                }
+            }
+        }
+        else {
+            var columnNames = Object.keys(row);
+            if (!columnNames.length) {
+                return false;
+            }
+            for (var i = 0, iEnd = columnNames.length; i < iEnd; ++i) {
+                if (row[columnNames[i]] !== null) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    };
     /* *
      *
      *  Functions
      *
      * */
     /**
-     * Returns a clone of this table. The cloned table is completely independent
-     * of the original, and any changes made to the clone will not affect
-     * the original table.
+     * Returns a clone of this data table.
      *
      * @function Highcharts.DataTable#clone
      *
@@ -69,36 +168,56 @@ class DataTable extends DataTableCore {
      * @emits #cloneTable
      * @emits #afterCloneTable
      */
-    clone(skipColumns, eventDetail) {
-        const table = this, tableOptions = {};
+    DataTable.prototype.clone = function (skipColumns, eventDetail) {
+        var table = this, aliasMap = table.aliasMap, aliases = Object.keys(table.aliasMap);
         table.emit({ type: 'cloneTable', detail: eventDetail });
-        if (!skipColumns) {
-            tableOptions.columns = table.columns;
-        }
-        if (!table.autoId) {
-            tableOptions.id = table.id;
-        }
-        const tableClone = new DataTable(tableOptions);
+        var tableClone = new DataTable((skipColumns ? {} : table.columns), (table.autoId ? void 0 : table.id));
         if (!skipColumns) {
             tableClone.versionTag = table.versionTag;
-            tableClone.originalRowIndexes = table.originalRowIndexes;
-            tableClone.localRowIndexes = table.localRowIndexes;
+            if (aliases.length) {
+                var cloneAliasMap = tableClone.aliasMap;
+                for (var i = 0, iEnd = aliases.length, alias = void 0; i < iEnd; ++i) {
+                    alias = aliases[i];
+                    cloneAliasMap[alias] = aliasMap[alias];
+                }
+            }
         }
-        tableClone.metadata = { ...table.metadata };
         table.emit({
             type: 'afterCloneTable',
             detail: eventDetail,
-            tableClone
+            tableClone: tableClone
         });
         return tableClone;
-    }
+    };
+    /**
+     * Deletes a column alias and returns the original column name.
+     *
+     * @function Highcharts.DataTable#deleteColumnAlias
+     *
+     * @param {string} alias
+     * The alias to delete.
+     *
+     * @return {string|undefined}
+     * Returns the original column name, if found.
+     */
+    DataTable.prototype.deleteColumnAlias = function (alias) {
+        var _a;
+        var table = this, aliasMap = table.aliasMap, deletedAlias = aliasMap[alias], modifier = table.modifier;
+        if (deletedAlias) {
+            delete table.aliasMap[alias];
+            if (modifier) {
+                modifier.modifyColumns(table, (_a = {}, _a[deletedAlias] = new Array(table.rowCount), _a), 0);
+            }
+        }
+        return deletedAlias;
+    };
     /**
      * Deletes columns from the table.
      *
      * @function Highcharts.DataTable#deleteColumns
      *
-     * @param {Array<string>} [columnIds]
-     * Names of columns to delete. If no array is provided, all
+     * @param {Array<string>} [columnNames]
+     * Names (no alias) of columns to delete. If no array is provided, all
      * columns will be deleted.
      *
      * @param {Highcharts.DataTableEventDetail} [eventDetail]
@@ -110,60 +229,49 @@ class DataTable extends DataTableCore {
      * @emits #deleteColumns
      * @emits #afterDeleteColumns
      */
-    deleteColumns(columnIds, eventDetail) {
-        const table = this, columns = table.columns, deletedColumns = {}, modifiedColumns = {}, modifier = table.modifier, rowCount = table.rowCount;
-        columnIds = (columnIds || Object.keys(columns));
-        if (columnIds.length) {
+    DataTable.prototype.deleteColumns = function (columnNames, eventDetail) {
+        var table = this, columns = table.columns, deletedColumns = {}, modifiedColumns = {}, modifier = table.modifier, rowCount = table.rowCount;
+        columnNames = (columnNames || Object.keys(columns));
+        if (columnNames.length) {
             table.emit({
                 type: 'deleteColumns',
-                columnIds,
+                columnNames: columnNames,
                 detail: eventDetail
             });
-            for (let i = 0, iEnd = columnIds.length, column, columnId; i < iEnd; ++i) {
-                columnId = columnIds[i];
-                column = columns[columnId];
+            for (var i = 0, iEnd = columnNames.length, column = void 0, columnName = void 0; i < iEnd; ++i) {
+                columnName = columnNames[i];
+                column = columns[columnName];
                 if (column) {
-                    deletedColumns[columnId] = column;
-                    modifiedColumns[columnId] = new Array(rowCount);
+                    deletedColumns[columnName] = column;
+                    modifiedColumns[columnName] = new Array(rowCount);
                 }
-                delete columns[columnId];
+                delete columns[columnName];
             }
             if (!Object.keys(columns).length) {
                 table.rowCount = 0;
-                this.deleteRowIndexReferences();
             }
             if (modifier) {
-                modifier.modifyTable(table);
+                modifier.modifyColumns(table, modifiedColumns, 0, eventDetail);
             }
             table.emit({
                 type: 'afterDeleteColumns',
                 columns: deletedColumns,
-                columnIds,
+                columnNames: columnNames,
                 detail: eventDetail
             });
             return deletedColumns;
         }
-    }
-    /**
-     * Deletes the row index references. This is useful when the original table
-     * is deleted, and the references are no longer needed. This table is
-     * then considered an original table or a table that has the same rows
-     * order as the original table.
-     */
-    deleteRowIndexReferences() {
-        delete this.originalRowIndexes;
-        delete this.localRowIndexes;
-    }
+    };
     /**
      * Deletes rows in this table.
      *
      * @function Highcharts.DataTable#deleteRows
      *
-     * @param {number | number[]} [rowIndex]
-     * Index of the row where deletion should start, or an array of indices for
-     * deleting multiple rows. If not specified, all rows will be deleted.
+     * @param {number} [rowIndex]
+     * Index to start delete of rows. If not specified, all rows will be
+     * deleted.
      *
-     * @param {number} [rowCount]
+     * @param {number} [rowCount=1]
      * Number of rows to delete.
      *
      * @param {Highcharts.DataTableEventDetail} [eventDetail]
@@ -175,82 +283,46 @@ class DataTable extends DataTableCore {
      * @emits #deleteRows
      * @emits #afterDeleteRows
      */
-    deleteRows(rowIndex, rowCount = 1, eventDetail) {
-        const { columns, modifier } = this;
-        const deletedRows = [];
-        let indices;
-        let actualRowCount;
-        if (!defined(rowIndex)) {
-            // No index provided - delete all rows.
-            indices = [0];
-            actualRowCount = this.rowCount;
-        }
-        else if (Array.isArray(rowIndex)) {
-            // Array of indices provided - delete the specified rows.
-            indices = rowIndex
-                // Remove negative indices, and indices beyond the row count,
-                // and remove duplicates.
-                .filter((index, i, arr) => (index >= 0 &&
-                index < this.rowCount &&
-                arr.indexOf(index) === i))
-                // Sort indices in descending order.
-                .sort((a, b) => b - a);
-            actualRowCount = indices.length;
-        }
-        else {
-            // Single index provided - delete the specified range of rows.
-            indices = [rowIndex];
-            actualRowCount = rowCount;
-        }
-        this.emit({
+    DataTable.prototype.deleteRows = function (rowIndex, rowCount, eventDetail) {
+        if (rowCount === void 0) { rowCount = 1; }
+        var table = this, deletedRows = [], modifiedRows = [], modifier = table.modifier;
+        table.emit({
             type: 'deleteRows',
             detail: eventDetail,
-            rowCount: actualRowCount,
-            rowIndex: rowIndex ?? 0
+            rowCount: rowCount,
+            rowIndex: (rowIndex || 0)
         });
-        if (actualRowCount > 0) {
-            const columnIds = Object.keys(columns);
-            for (let i = 0; i < columnIds.length; ++i) {
-                const columnId = columnIds[i];
-                const column = columns[columnId];
-                let deletedCells;
-                // Perform a range splice.
-                if (indices.length === 1 && actualRowCount > 1) {
-                    const result = splice(column, indices[0], actualRowCount);
-                    deletedCells = result.removed;
-                    columns[columnId] = result.array;
-                }
-                else {
-                    // Perform a index splice for each index in the array.
-                    deletedCells = [];
-                    for (const index of indices) {
-                        deletedCells.push(column[index]);
-                        splice(column, index, 1);
-                    }
-                    // Reverse the deleted cells to maintain the correct order.
-                    deletedCells.reverse();
-                }
+        if (typeof rowIndex === 'undefined') {
+            rowIndex = 0;
+            rowCount = table.rowCount;
+        }
+        if (rowCount > 0 && rowIndex < table.rowCount) {
+            var columns = table.columns, columnNames = Object.keys(columns);
+            for (var i = 0, iEnd = columnNames.length, column = void 0, deletedCells = void 0; i < iEnd; ++i) {
+                column = columns[columnNames[i]];
+                deletedCells = column.splice(rowIndex, rowCount);
                 if (!i) {
-                    this.rowCount = column.length;
+                    table.rowCount = column.length;
                 }
-                for (let j = 0, jEnd = deletedCells.length; j < jEnd; ++j) {
-                    deletedRows[j] = deletedRows[j] || [];
+                for (var j = 0, jEnd = deletedCells.length; j < jEnd; ++j) {
+                    deletedRows[j] = (deletedRows[j] || []);
                     deletedRows[j][i] = deletedCells[j];
                 }
+                modifiedRows.push(new Array(iEnd));
             }
         }
         if (modifier) {
-            modifier.modifyTable(this);
+            modifier.modifyRows(table, modifiedRows, (rowIndex || 0), eventDetail);
         }
-        this.emit({
+        table.emit({
             type: 'afterDeleteRows',
             detail: eventDetail,
-            rowCount: actualRowCount,
-            rowIndex: rowIndex ?? 0,
+            rowCount: rowCount,
+            rowIndex: (rowIndex || 0),
             rows: deletedRows
         });
         return deletedRows;
-    }
+    };
     /**
      * Emits an event on this table to all registered callbacks of the given
      * event.
@@ -259,25 +331,27 @@ class DataTable extends DataTableCore {
      * @param {DataTable.Event} e
      * Event object with event information.
      */
-    emit(e) {
-        if ([
-            'afterDeleteColumns',
-            'afterDeleteRows',
-            'afterSetCell',
-            'afterSetColumns',
-            'afterSetRows'
-        ].includes(e.type)) {
-            this.versionTag = uniqueKey();
+    DataTable.prototype.emit = function (e) {
+        var frame = this;
+        switch (e.type) {
+            case 'afterDeleteColumns':
+            case 'afterDeleteRows':
+            case 'afterSetCell':
+            case 'afterSetColumns':
+            case 'afterSetRows':
+                frame.versionTag = uniqueKey();
+                break;
+            default:
         }
-        fireEvent(this, e.type, e);
-    }
+        fireEvent(frame, e.type, e);
+    };
     /**
      * Fetches a single cell value.
      *
      * @function Highcharts.DataTable#getCell
      *
-     * @param {string} columnId
-     * Column name of the cell to retrieve.
+     * @param {string} columnNameOrAlias
+     * Column name or alias of the cell to retrieve.
      *
      * @param {number} rowIndex
      * Row index of the cell to retrieve.
@@ -285,21 +359,97 @@ class DataTable extends DataTableCore {
      * @return {Highcharts.DataTableCellType|undefined}
      * Returns the cell value or `undefined`.
      */
-    getCell(columnId, rowIndex) {
-        const table = this;
-        const column = table.columns[columnId];
+    DataTable.prototype.getCell = function (columnNameOrAlias, rowIndex) {
+        var table = this;
+        columnNameOrAlias = (table.aliasMap[columnNameOrAlias] ||
+            columnNameOrAlias);
+        var column = table.columns[columnNameOrAlias];
         if (column) {
             return column[rowIndex];
         }
-    }
+    };
     /**
-     * Fetches the given column by the canonical column name.
+     * Fetches a cell value for the given row as a boolean.
+     *
+     * @function Highcharts.DataTable#getCellAsBoolean
+     *
+     * @param {string} columnNameOrAlias
+     * Column name or alias to fetch.
+     *
+     * @param {number} rowIndex
+     * Row index to fetch.
+     *
+     * @return {boolean}
+     * Returns the cell value of the row as a boolean.
+     */
+    DataTable.prototype.getCellAsBoolean = function (columnNameOrAlias, rowIndex) {
+        var table = this;
+        columnNameOrAlias = (table.aliasMap[columnNameOrAlias] ||
+            columnNameOrAlias);
+        var column = table.columns[columnNameOrAlias];
+        return !!(column && column[rowIndex]);
+    };
+    /**
+     * Fetches a cell value for the given row as a number.
+     *
+     * @function Highcharts.DataTable#getCellAsNumber
+     *
+     * @param {string} columnNameOrAlias
+     * Column name or alias to fetch.
+     *
+     * @param {number} rowIndex
+     * Row index to fetch.
+     *
+     * @param {boolean} [useNaN]
+     * Whether to return NaN instead of `null` and `undefined`.
+     *
+     * @return {number|null}
+     * Returns the cell value of the row as a number.
+     */
+    DataTable.prototype.getCellAsNumber = function (columnNameOrAlias, rowIndex, useNaN) {
+        var table = this;
+        columnNameOrAlias = (table.aliasMap[columnNameOrAlias] ||
+            columnNameOrAlias);
+        var column = table.columns[columnNameOrAlias];
+        var cellValue = (column && column[rowIndex]);
+        switch (typeof cellValue) {
+            case 'boolean':
+                return (cellValue ? 1 : 0);
+            case 'number':
+                return (isNaN(cellValue) && !useNaN ? null : cellValue);
+        }
+        cellValue = parseFloat("" + cellValue);
+        return (isNaN(cellValue) && !useNaN ? null : cellValue);
+    };
+    /**
+     * Fetches a cell value for the given row as a string.
+     *
+     * @function Highcharts.DataTable#getCellAsString
+     *
+     * @param {string} columnNameOrAlias
+     * Column name or alias to fetch.
+     *
+     * @param {number} rowIndex
+     * Row index to fetch.
+     *
+     * @return {string}
+     * Returns the cell value of the row as a string.
+     */
+    DataTable.prototype.getCellAsString = function (columnNameOrAlias, rowIndex) {
+        var table = this;
+        columnNameOrAlias = (table.aliasMap[columnNameOrAlias] ||
+            columnNameOrAlias);
+        var column = table.columns[columnNameOrAlias];
+        return "" + (column && column[rowIndex]);
+    };
+    /**
+     * Fetches the given column by the canonical column name or by an alias.
      * This function is a simplified wrap of {@link getColumns}.
      *
      * @function Highcharts.DataTable#getColumn
      *
-     * @param {string} columnId
-     * Name of the column to get.
+     * @param {string} columnNameOrAlias
+     * Name or alias of the column to get, alias takes precedence.
      *
      * @param {boolean} [asReference]
      * Whether to return the column as a readonly reference.
@@ -307,103 +457,119 @@ class DataTable extends DataTableCore {
      * @return {Highcharts.DataTableColumn|undefined}
      * A copy of the column, or `undefined` if not found.
      */
-    getColumn(columnId, asReference) {
-        return this.getColumns([columnId], asReference)[columnId];
-    }
+    DataTable.prototype.getColumn = function (columnNameOrAlias, asReference) {
+        return this.getColumns([columnNameOrAlias], asReference)[columnNameOrAlias];
+    };
     /**
-     * Fetches all column IDs.
+     * Fetches all column aliases.
      *
-     * @function Highcharts.DataTable#getColumnIds
+     * @function Highcharts.DataTable#getColumnAliases
      *
      * @return {Array<string>}
-     * Returns all column IDs.
+     * Returns all column aliases.
      */
-    getColumnIds() {
-        return Object.keys(this.columns);
-    }
+    DataTable.prototype.getColumnAliases = function () {
+        var table = this, columnAliases = Object.keys(table.aliasMap);
+        return columnAliases;
+    };
+    /**
+     * Fetches the given column by the canonical column name or by an alias, and
+     * validates the type of the first few cells. If the first defined cell is
+     * of type number, it assumes for performance reasons, that all cells are of
+     * type number or `null`. Otherwise it will convert all cells to number
+     * type, except `null`.
+     *
+     * @function Highcharts.DataTable#getColumnAsNumbers
+     *
+     * @param {string} columnNameOrAlias
+     * Name or alias of the column to get, alias takes precedence.
+     *
+     * @param {boolean} [useNaN]
+     * Whether to use NaN instead of `null` and `undefined`.
+     *
+     * @return {Array<(number|null)>}
+     * A copy of the column, or an empty array if not found.
+     */
+    DataTable.prototype.getColumnAsNumbers = function (columnNameOrAlias, useNaN) {
+        var table = this, columns = table.columns;
+        columnNameOrAlias = (table.aliasMap[columnNameOrAlias] ||
+            columnNameOrAlias);
+        var column = columns[columnNameOrAlias], columnAsNumber = [];
+        if (column) {
+            var columnLength = column.length;
+            if (useNaN) {
+                for (var i = 0; i < columnLength; ++i) {
+                    columnAsNumber.push(table.getCellAsNumber(columnNameOrAlias, i, true));
+                }
+            }
+            else {
+                for (var i = 0, cellValue = void 0; i < columnLength; ++i) {
+                    cellValue = column[i];
+                    if (typeof cellValue === 'number') {
+                        // assume unmixed data for performance reasons
+                        return column.slice();
+                    }
+                    if (cellValue !== null &&
+                        typeof cellValue !== 'undefined') {
+                        break;
+                    }
+                }
+                for (var i = 0; i < columnLength; ++i) {
+                    columnAsNumber.push(table.getCellAsNumber(columnNameOrAlias, i));
+                }
+            }
+        }
+        return columnAsNumber;
+    };
+    /**
+     * Fetches all column names.
+     *
+     * @function Highcharts.DataTable#getColumnNames
+     *
+     * @return {Array<string>}
+     * Returns all column names.
+     */
+    DataTable.prototype.getColumnNames = function () {
+        var table = this, columnNames = Object.keys(table.columns);
+        return columnNames;
+    };
     /**
      * Retrieves all or the given columns.
      *
      * @function Highcharts.DataTable#getColumns
      *
-     * @param {Array<string>} [columnIds]
-     * Column names to retrieve.
+     * @param {Array<string>} [columnNamesOrAliases]
+     * Column names or aliases to retrieve. Aliases taking precedence.
      *
      * @param {boolean} [asReference]
      * Whether to return columns as a readonly reference.
-     *
-     * @param {boolean} [asBasicColumns]
-     * Whether to transform all typed array columns to normal arrays.
      *
      * @return {Highcharts.DataTableColumnCollection}
      * Collection of columns. If a requested column was not found, it is
      * `undefined`.
      */
-    getColumns(columnIds, asReference, asBasicColumns) {
-        const table = this, tableColumns = table.columns, columns = {};
-        columnIds = (columnIds || Object.keys(tableColumns));
-        for (let i = 0, iEnd = columnIds.length, column, columnId; i < iEnd; ++i) {
-            columnId = columnIds[i];
-            column = tableColumns[columnId];
+    DataTable.prototype.getColumns = function (columnNamesOrAliases, asReference) {
+        var table = this, tableAliasMap = table.aliasMap, tableColumns = table.columns, columns = {};
+        columnNamesOrAliases = (columnNamesOrAliases || Object.keys(tableColumns));
+        for (var i = 0, iEnd = columnNamesOrAliases.length, column = void 0, columnName = void 0; i < iEnd; ++i) {
+            columnName = columnNamesOrAliases[i];
+            column = tableColumns[(tableAliasMap[columnName] || columnName)];
             if (column) {
-                if (asReference) {
-                    columns[columnId] = column;
-                }
-                else if (asBasicColumns && !Array.isArray(column)) {
-                    columns[columnId] = Array.from(column);
-                }
-                else {
-                    columns[columnId] = column.slice();
-                }
+                columns[columnName] = (asReference ? column : column.slice());
             }
         }
         return columns;
-    }
+    };
     /**
-     * Takes the original row index and returns the local row index in the
-     * modified table for which this function is called.
-     *
-     * @param {number} originalRowIndex
-     * Original row index to get the local row index for.
-     *
-     * @return {number|undefined}
-     * Returns the local row index or `undefined` if not found.
-     */
-    getLocalRowIndex(originalRowIndex) {
-        const { localRowIndexes } = this;
-        if (localRowIndexes) {
-            return localRowIndexes[originalRowIndex];
-        }
-        return originalRowIndex;
-    }
-    /**
-     * Returns the modifier associated with this table, if any.
+     * Retrieves the modifier for the table.
+     * @private
      *
      * @return {Highcharts.DataModifier|undefined}
      * Returns the modifier or `undefined`.
-     *
-     * @private
      */
-    getModifier() {
+    DataTable.prototype.getModifier = function () {
         return this.modifier;
-    }
-    /**
-     * Takes the local row index and returns the index of the corresponding row
-     * in the original table.
-     *
-     * @param {number} rowIndex
-     * Local row index to get the original row index for.
-     *
-     * @return {number|undefined}
-     * Returns the original row index or `undefined` if not found.
-     */
-    getOriginalRowIndex(rowIndex) {
-        const { originalRowIndexes } = this;
-        if (originalRowIndexes) {
-            return originalRowIndexes[rowIndex];
-        }
-        return rowIndex;
-    }
+    };
     /**
      * Retrieves the row at a given index. This function is a simplified wrap of
      * {@link getRows}.
@@ -411,17 +577,17 @@ class DataTable extends DataTableCore {
      * @function Highcharts.DataTable#getRow
      *
      * @param {number} rowIndex
-     * Row index to retrieve. First row has index 0.
+     * Row index.
      *
-     * @param {Array<string>} [columnIds]
-     * Column names in order to retrieve.
+     * @param {Array<string>} [columnNamesOrAliases]
+     * Column names or aliases in order to retrieve.
      *
      * @return {Highcharts.DataTableRow}
      * Returns the row values, or `undefined` if not found.
      */
-    getRow(rowIndex, columnIds) {
-        return this.getRows(rowIndex, 1, columnIds)[0];
-    }
+    DataTable.prototype.getRow = function (rowIndex, columnNamesOrAliases) {
+        return this.getRows(rowIndex, 1, columnNamesOrAliases)[0];
+    };
     /**
      * Returns the number of rows in this table.
      *
@@ -430,16 +596,16 @@ class DataTable extends DataTableCore {
      * @return {number}
      * Number of rows in this table.
      */
-    getRowCount() {
+    DataTable.prototype.getRowCount = function () {
         // @todo Implement via property getter `.length` browsers supported
         return this.rowCount;
-    }
+    };
     /**
      * Retrieves the index of the first row matching a specific cell value.
      *
      * @function Highcharts.DataTable#getRowIndexBy
      *
-     * @param {string} columnId
+     * @param {string} columnNameOrAlias
      * Column to search in.
      *
      * @param {Highcharts.DataTableCellType} cellValue
@@ -451,24 +617,18 @@ class DataTable extends DataTableCore {
      * @return {number|undefined}
      * Index of the first row matching the cell value.
      */
-    getRowIndexBy(columnId, cellValue, rowIndexOffset) {
-        const table = this;
-        const column = table.columns[columnId];
+    DataTable.prototype.getRowIndexBy = function (columnNameOrAlias, cellValue, rowIndexOffset) {
+        var table = this;
+        columnNameOrAlias = (table.aliasMap[columnNameOrAlias] ||
+            columnNameOrAlias);
+        var column = table.columns[columnNameOrAlias];
         if (column) {
-            let rowIndex = -1;
-            if (Array.isArray(column)) {
-                // Normal array
-                rowIndex = column.indexOf(cellValue, rowIndexOffset);
-            }
-            else if (isNumber(cellValue)) {
-                // Typed array
-                rowIndex = column.indexOf(cellValue, rowIndexOffset);
-            }
+            var rowIndex = column.indexOf(cellValue, rowIndexOffset);
             if (rowIndex !== -1) {
                 return rowIndex;
             }
         }
-    }
+    };
     /**
      * Retrieves the row at a given index. This function is a simplified wrap of
      * {@link getRowObjects}.
@@ -478,17 +638,17 @@ class DataTable extends DataTableCore {
      * @param {number} rowIndex
      * Row index.
      *
-     * @param {Array<string>} [columnIds]
-     * Column names and their order to retrieve.
+     * @param {Array<string>} [columnNamesOrAliases]
+     * Column names or aliases and their order to retrieve.
      *
      * @return {Highcharts.DataTableRowObject}
      * Returns the row values, or `undefined` if not found.
      */
-    getRowObject(rowIndex, columnIds) {
-        return this.getRowObjects(rowIndex, 1, columnIds)[0];
-    }
+    DataTable.prototype.getRowObject = function (rowIndex, columnNamesOrAliases) {
+        return this.getRowObjects(rowIndex, 1, columnNamesOrAliases)[0];
+    };
     /**
-     * Fetches all or a number of rows as an object.
+     * Fetches all or a number of rows.
      *
      * @function Highcharts.DataTable#getRowObjects
      *
@@ -498,26 +658,29 @@ class DataTable extends DataTableCore {
      * @param {number} [rowCount]
      * Number of rows to fetch. Defaults to maximal number of rows.
      *
-     * @param {Array<string>} [columnIds]
-     * Column names and their order to retrieve.
+     * @param {Array<string>} [columnNamesOrAliases]
+     * Column names or aliases and their order to retrieve.
      *
      * @return {Highcharts.DataTableRowObject}
      * Returns retrieved rows.
      */
-    getRowObjects(rowIndex = 0, rowCount = (this.rowCount - rowIndex), columnIds) {
-        const table = this, columns = table.columns, rows = new Array(rowCount);
-        columnIds = (columnIds || Object.keys(columns));
-        for (let i = rowIndex, i2 = 0, iEnd = Math.min(table.rowCount, (rowIndex + rowCount)), column, row; i < iEnd; ++i, ++i2) {
+    DataTable.prototype.getRowObjects = function (rowIndex, rowCount, columnNamesOrAliases) {
+        if (rowIndex === void 0) { rowIndex = 0; }
+        if (rowCount === void 0) { rowCount = (this.rowCount - rowIndex); }
+        var table = this, aliasMap = table.aliasMap, columns = table.columns, rows = new Array(rowCount);
+        columnNamesOrAliases = (columnNamesOrAliases || Object.keys(columns));
+        var columnNamesLength = columnNamesOrAliases.length;
+        for (var i = rowIndex, i2 = 0, iEnd = Math.min(table.rowCount, (rowIndex + rowCount)), row = void 0; i < iEnd; ++i, ++i2) {
             row = rows[i2] = {};
-            for (const columnId of columnIds) {
-                column = columns[columnId];
-                row[columnId] = (column ? column[i] : void 0);
+            for (var j = 0, jEnd = columnNamesLength, columnName = void 0; j < jEnd; ++j) {
+                columnName = columnNamesOrAliases[j];
+                row[columnName] = columns[(aliasMap[columnName] || columnName)][i];
             }
         }
         return rows;
-    }
+    };
     /**
-     * Fetches all or a number of rows as an array.
+     * Fetches all or a number of rows.
      *
      * @function Highcharts.DataTable#getRows
      *
@@ -527,24 +690,27 @@ class DataTable extends DataTableCore {
      * @param {number} [rowCount]
      * Number of rows to fetch. Defaults to maximal number of rows.
      *
-     * @param {Array<string>} [columnIds]
-     * Column names and their order to retrieve.
+     * @param {Array<string>} [columnNamesOrAliases]
+     * Column names or aliases and their order to retrieve.
      *
      * @return {Highcharts.DataTableRow}
      * Returns retrieved rows.
      */
-    getRows(rowIndex = 0, rowCount = (this.rowCount - rowIndex), columnIds) {
-        const table = this, columns = table.columns, rows = new Array(rowCount);
-        columnIds = (columnIds || Object.keys(columns));
-        for (let i = rowIndex, i2 = 0, iEnd = Math.min(table.rowCount, (rowIndex + rowCount)), column, row; i < iEnd; ++i, ++i2) {
-            row = rows[i2] = [];
-            for (const columnId of columnIds) {
-                column = columns[columnId];
-                row.push(column ? column[i] : void 0);
+    DataTable.prototype.getRows = function (rowIndex, rowCount, columnNamesOrAliases) {
+        if (rowIndex === void 0) { rowIndex = 0; }
+        if (rowCount === void 0) { rowCount = (this.rowCount - rowIndex); }
+        var table = this, aliasMap = table.aliasMap, columns = table.columns, rows = new Array(rowCount);
+        columnNamesOrAliases = (columnNamesOrAliases || Object.keys(columns));
+        var columnNamesLength = columnNamesOrAliases.length;
+        for (var i = rowIndex, i2 = 0, iEnd = Math.min(table.rowCount, (rowIndex + rowCount)), columnName = void 0, row = void 0; i < iEnd; ++i, ++i2) {
+            row = rows[i2] = new Array(columnNamesLength);
+            for (var j = 0; j < columnNamesLength; ++j) {
+                columnName = columnNamesOrAliases[j];
+                row[j] = columns[(aliasMap[columnName] || columnName)][i];
             }
         }
         return rows;
-    }
+    };
     /**
      * Returns the unique version tag of the current state of the table.
      *
@@ -553,61 +719,56 @@ class DataTable extends DataTableCore {
      * @return {string}
      * Unique version tag.
      */
-    getVersionTag() {
+    DataTable.prototype.getVersionTag = function () {
         return this.versionTag;
-    }
+    };
     /**
-     * Determines whether all specified column names exist in the table.
+     * Checks for given column names or aliases.
      *
      * @function Highcharts.DataTable#hasColumns
      *
-     * @param {Array<string>} columnIds
-     * Column names to check.
+     * @param {Array<string>} columnNamesOrAliases
+     * Column names of aliases to check.
      *
      * @return {boolean}
      * Returns `true` if all columns have been found, otherwise `false`.
      */
-    hasColumns(columnIds) {
-        const table = this, columns = table.columns;
-        for (let i = 0, iEnd = columnIds.length, columnId; i < iEnd; ++i) {
-            columnId = columnIds[i];
-            if (!columns[columnId]) {
+    DataTable.prototype.hasColumns = function (columnNamesOrAliases) {
+        var table = this, aliasMap = table.aliasMap, columns = table.columns;
+        for (var i = 0, iEnd = columnNamesOrAliases.length, columnName = void 0; i < iEnd; ++i) {
+            columnName = columnNamesOrAliases[i];
+            if (!columns[columnName] && !aliasMap[columnName]) {
                 return false;
             }
         }
         return true;
-    }
+    };
     /**
-     * Checks if any row in the specified column contains the given cell value.
+     * Searches for a specific cell value.
      *
      * @function Highcharts.DataTable#hasRowWith
      *
-     * @param {string} columnId
+     * @param {string} columnNameOrAlias
      * Column to search in.
      *
-     * @param {Highcharts.DataTableCellType} cellValue
+     * @param {boolean|number|string|Highcharts.DataTable} cellValue
      * Cell value to search for. `NaN` and `undefined` are not supported.
      *
      * @return {boolean}
      * True, if a row has been found, otherwise false.
      */
-    hasRowWith(columnId, cellValue) {
-        const table = this;
-        const column = table.columns[columnId];
-        // Normal array
-        if (Array.isArray(column)) {
+    DataTable.prototype.hasRowWith = function (columnNameOrAlias, cellValue) {
+        var table = this;
+        columnNameOrAlias = (table.aliasMap[columnNameOrAlias] ||
+            columnNameOrAlias);
+        var column = table.columns[columnNameOrAlias];
+        if (column) {
             return (column.indexOf(cellValue) !== -1);
         }
-        // Typed array
-        if (defined(cellValue) && Number.isFinite(cellValue)) {
-            return (column.indexOf(+cellValue) !== -1);
-        }
         return false;
-    }
+    };
     /**
-     * Registers a callback function to be executed when a specific event is
-     * emitted. To stop listening to the event, call the function returned by
-     * this method.
+     * Registers a callback for a specific event.
      *
      * @function Highcharts.DataTable#on
      *
@@ -620,45 +781,47 @@ class DataTable extends DataTableCore {
      * @return {Function}
      * Function to unregister callback from the event.
      */
-    on(type, callback) {
+    DataTable.prototype.on = function (type, callback) {
         return addEvent(this, type, callback);
-    }
+    };
     /**
-     * Changes the ID of an existing column to a new ID, effectively renaming
-     * the column.
+     * Renames a column of cell values.
      *
-     * @function Highcharts.DataTable#changeColumnId
+     * @function Highcharts.DataTable#renameColumn
      *
-     * @param {string} columnId
-     * Id of the column to be changed.
+     * @param {string} columnName
+     * Name of the column to be renamed.
      *
-     * @param {string} newColumnId
-     * New id of the column.
+     * @param {string} newColumnName
+     * New name of the column. An existing column with the same name will be
+     * replaced.
      *
      * @return {boolean}
      * Returns `true` if successful, `false` if the column was not found.
      */
-    changeColumnId(columnId, newColumnId) {
-        const table = this, columns = table.columns;
-        if (columns[columnId]) {
-            if (columnId !== newColumnId) {
-                columns[newColumnId] = columns[columnId];
-                delete columns[columnId];
+    DataTable.prototype.renameColumn = function (columnName, newColumnName) {
+        var table = this, columns = table.columns;
+        if (columns[columnName]) {
+            if (columnName !== newColumnName) {
+                var aliasMap = table.aliasMap;
+                if (aliasMap[newColumnName]) {
+                    delete aliasMap[newColumnName];
+                }
+                columns[newColumnName] = columns[columnName];
+                delete columns[columnName];
             }
             return true;
         }
         return false;
-    }
+    };
     /**
-     * Sets the value of a specific cell identified by column ID and row index.
-     * If the column does not exist, it will be created. If the row index is
-     * beyond the current row count, the table will be expanded to accommodate
-     * the new cell.
+     * Sets a cell value based on the row index and column name or alias.  Will
+     * insert a new column, if not found.
      *
      * @function Highcharts.DataTable#setCell
      *
-     * @param {string} columnId
-     * Column name to set.
+     * @param {string} columnNameOrAlias
+     * Column name or alias to set.
      *
      * @param {number|undefined} rowIndex
      * Row index to set.
@@ -672,45 +835,95 @@ class DataTable extends DataTableCore {
      * @emits #setCell
      * @emits #afterSetCell
      */
-    setCell(columnId, rowIndex, cellValue, eventDetail) {
-        const table = this, columns = table.columns, modifier = table.modifier;
-        let column = columns[columnId];
+    DataTable.prototype.setCell = function (columnNameOrAlias, rowIndex, cellValue, eventDetail) {
+        var table = this, columns = table.columns, modifier = table.modifier;
+        columnNameOrAlias = (table.aliasMap[columnNameOrAlias] ||
+            columnNameOrAlias);
+        var column = columns[columnNameOrAlias];
         if (column && column[rowIndex] === cellValue) {
             return;
         }
         table.emit({
             type: 'setCell',
-            cellValue,
-            columnId: columnId,
+            cellValue: cellValue,
+            columnName: columnNameOrAlias,
             detail: eventDetail,
-            rowIndex
+            rowIndex: rowIndex
         });
         if (!column) {
-            column = columns[columnId] = new Array(table.rowCount);
+            column = columns[columnNameOrAlias] = new Array(table.rowCount);
         }
         if (rowIndex >= table.rowCount) {
             table.rowCount = (rowIndex + 1);
         }
         column[rowIndex] = cellValue;
         if (modifier) {
-            modifier.modifyTable(table);
+            modifier.modifyCell(table, columnNameOrAlias, rowIndex, cellValue);
         }
         table.emit({
             type: 'afterSetCell',
-            cellValue,
-            columnId: columnId,
+            cellValue: cellValue,
+            columnName: columnNameOrAlias,
             detail: eventDetail,
-            rowIndex
+            rowIndex: rowIndex
         });
-    }
+    };
     /**
-     * Replaces or updates multiple columns in the table with new data. If a
-     * column does not exist, it will be created and added to the table.
+     * Sets cell values for a column. Will insert a new column, if not found.
+     *
+     * @function Highcharts.DataTable#setColumn
+     *
+     * @param {string} columnNameOrAlias
+     * Column name or alias to set.
+     *
+     * @param {Highcharts.DataTableColumn} [column]
+     * Values to set in the column.
+     *
+     * @param {number} [rowIndex=0]
+     * Index of the first row to change. (Default: 0)
+     *
+     * @param {Highcharts.DataTableEventDetail} [eventDetail]
+     * Custom information for pending events.
+     *
+     * @emits #setColumns
+     * @emits #afterSetColumns
+     */
+    DataTable.prototype.setColumn = function (columnNameOrAlias, column, rowIndex, eventDetail) {
+        var _a;
+        if (column === void 0) { column = []; }
+        if (rowIndex === void 0) { rowIndex = 0; }
+        this.setColumns((_a = {}, _a[columnNameOrAlias] = column, _a), rowIndex, eventDetail);
+    };
+    /**
+     * Defines an alias for a column.
+     *
+     * @function Highcharts.DataTable#setColumnAlias
+     *
+     * @param {string} columnAlias
+     * Column alias to create.
+     *
+     * @param {string} columnName
+     * Column name to create an alias for.
+     *
+     * @return {boolean}
+     * True if successfully changed, false if reserved.
+     */
+    DataTable.prototype.setColumnAlias = function (columnAlias, columnName) {
+        var aliasMap = this.aliasMap;
+        if (!aliasMap[columnAlias]) {
+            aliasMap[columnAlias] = columnName;
+            return true;
+        }
+        return false;
+    };
+    /**
+     * Sets cell values for multiple columns. Will insert new columns, if not
+     * found.
      *
      * @function Highcharts.DataTable#setColumns
      *
      * @param {Highcharts.DataTableColumnCollection} columns
-     * Columns as a collection, where the keys are the column names.
+     * Columns as a collection, where the keys are the column names or aliases.
      *
      * @param {number} [rowIndex]
      * Index of the first row to change. Keep undefined to reset.
@@ -718,72 +931,61 @@ class DataTable extends DataTableCore {
      * @param {Highcharts.DataTableEventDetail} [eventDetail]
      * Custom information for pending events.
      *
-     * @param {boolean} [typeAsOriginal=false]
-     * Determines whether the original column retains its type when data
-     * replaced. If `true`, the original column keeps its type. If not
-     * (default), the original column will adopt the type of the replacement
-     * column.
-     *
      * @emits #setColumns
      * @emits #afterSetColumns
      */
-    setColumns(columns, rowIndex, eventDetail, typeAsOriginal) {
-        const table = this, tableColumns = table.columns, tableModifier = table.modifier, columnIds = Object.keys(columns);
-        let rowCount = table.rowCount;
+    DataTable.prototype.setColumns = function (columns, rowIndex, eventDetail) {
+        var table = this, tableColumns = table.columns, tableModifier = table.modifier, tableRowCount = table.rowCount, reset = (typeof rowIndex === 'undefined'), columnNames = Object.keys(columns);
         table.emit({
             type: 'setColumns',
-            columns,
-            columnIds,
+            columns: columns,
+            columnNames: columnNames,
             detail: eventDetail,
-            rowIndex
+            rowIndex: rowIndex
         });
-        if (!defined(rowIndex) && !typeAsOriginal) {
-            super.setColumns(columns, rowIndex, extend(eventDetail, { silent: true }));
-        }
-        else {
-            for (let i = 0, iEnd = columnIds.length, column, tableColumn, columnId, ArrayConstructor; i < iEnd; ++i) {
-                columnId = columnIds[i];
-                column = columns[columnId];
-                tableColumn = tableColumns[columnId];
-                ArrayConstructor = Object.getPrototypeOf((tableColumn && typeAsOriginal) ? tableColumn : column).constructor;
-                if (!tableColumn) {
-                    tableColumn = new ArrayConstructor(rowCount);
-                }
-                else if (ArrayConstructor === Array) {
-                    if (!Array.isArray(tableColumn)) {
-                        tableColumn = Array.from(tableColumn);
-                    }
-                }
-                else if (tableColumn.length < rowCount) {
-                    tableColumn =
-                        new ArrayConstructor(rowCount);
-                    tableColumn.set(tableColumns[columnId]);
-                }
-                tableColumns[columnId] = tableColumn;
-                for (let i = (rowIndex || 0), iEnd = column.length; i < iEnd; ++i) {
-                    tableColumn[i] = column[i];
-                }
-                rowCount = Math.max(rowCount, column.length);
+        for (var i = 0, iEnd = columnNames.length, column = void 0, columnName = void 0; i < iEnd; ++i) {
+            columnName = columnNames[i];
+            column = columns[columnName];
+            columnName = (table.aliasMap[columnName] ||
+                columnName);
+            if (reset) {
+                tableColumns[columnName] = column.slice();
+                table.rowCount = column.length;
             }
-            this.applyRowCount(rowCount);
+            else {
+                var tableColumn = (tableColumns[columnName] ?
+                    tableColumns[columnName] :
+                    tableColumns[columnName] = new Array(table.rowCount));
+                rowIndex = (rowIndex || 0);
+                if (rowIndex > tableRowCount) {
+                    tableColumn.length = rowIndex;
+                    tableColumn.push.apply(tableColumn, column);
+                }
+                else {
+                    tableColumn.splice.apply(tableColumn, __spreadArrays([rowIndex,
+                        (column.length - rowIndex)], column));
+                }
+                table.rowCount = Math.max(table.rowCount, tableColumn.length);
+            }
+        }
+        var tableColumnNames = Object.keys(tableColumns);
+        for (var i = 0, iEnd = tableColumnNames.length; i < iEnd; ++i) {
+            tableColumns[tableColumnNames[i]].length = table.rowCount;
         }
         if (tableModifier) {
-            tableModifier.modifyTable(table);
+            tableModifier.modifyColumns(table, columns, (rowIndex || 0));
         }
         table.emit({
             type: 'afterSetColumns',
-            columns,
-            columnIds,
+            columns: columns,
+            columnNames: columnNames,
             detail: eventDetail,
-            rowIndex
+            rowIndex: rowIndex
         });
-    }
+    };
     /**
-     * Assigns a new data modifier to the table.
-     *
-     * This method does not modify the table directly. Instead, it sets the
-     * `.modified` property of the table with a modified copy of this table,
-     * as produced by the modifier.
+     * Sets or unsets the modifier for the table.
+     * @private
      *
      * @param {Highcharts.DataModifier} [modifier]
      * Modifier to set, or `undefined` to unset.
@@ -792,69 +994,51 @@ class DataTable extends DataTableCore {
      * Custom information for pending events.
      *
      * @return {Promise<Highcharts.DataTable>}
-     * Resolves to this table if successful, or rejects on failure.
+     * Resolves to this table if successfull, or rejects on failure.
      *
      * @emits #setModifier
      * @emits #afterSetModifier
      */
-    setModifier(modifier, eventDetail) {
-        const table = this;
-        let promise;
+    DataTable.prototype.setModifier = function (modifier, eventDetail) {
+        var table = this;
+        var promise;
         table.emit({
             type: 'setModifier',
             detail: eventDetail,
-            modifier,
-            modified: table.getModified()
+            modifier: modifier,
+            modified: table.modified
         });
         table.modifier = modifier;
         if (modifier) {
             promise = modifier.modify(table);
         }
         else {
-            promise = Promise.resolve(table);
+            promise = DataPromise
+                .resolve(table)
+                .then(function (table) {
+                table.modified = table;
+                return table;
+            });
         }
         return promise
-            .then((table) => {
+            .then(function (table) {
             table.emit({
                 type: 'afterSetModifier',
                 detail: eventDetail,
-                modifier,
-                modified: table.getModified()
+                modifier: modifier,
+                modified: table.modified
             });
             return table;
-        })['catch']((error) => {
+        })['catch'](function (error) {
             table.emit({
                 type: 'setModifierError',
-                error,
-                modifier,
-                modified: table.getModified()
+                error: error,
+                modifier: modifier,
+                modified: table.modified
             });
             throw error;
         });
-    }
-    /**
-     * Sets the original row indexes for the table. It is used to keep the
-     * reference to the original rows when modifying the table.
-     *
-     * @param {Array<number|undefined>} originalRowIndexes
-     * Original row indexes array.
-     *
-     * @param {boolean} omitLocalRowIndexes
-     * Whether to omit the local row indexes calculation. Defaults to `false`.
-     */
-    setOriginalRowIndexes(originalRowIndexes, omitLocalRowIndexes = false) {
-        this.originalRowIndexes = originalRowIndexes;
-        if (omitLocalRowIndexes) {
-            return;
-        }
-        const modifiedIndexes = this.localRowIndexes = [];
-        for (let i = 0, iEnd = originalRowIndexes.length, originalIndex; i < iEnd; ++i) {
-            originalIndex = originalRowIndexes[i];
-            if (defined(originalIndex)) {
-                modifiedIndexes[originalIndex] = i;
-            }
-        }
-    }
+    };
     /**
      * Sets cell values of a row. Will insert a new row, if no index was
      * provided, or if the index is higher than the total number of table rows.
@@ -868,10 +1052,7 @@ class DataTable extends DataTableCore {
      * Cell values to set.
      *
      * @param {number} [rowIndex]
-     * Index of the row to set. Leave `undefined` to add as a new row.
-     *
-     * @param {boolean} [insert]
-     * Whether to insert the row at the given index, or to overwrite the row.
+     * Index of the row to set. Leave `undefind` to add as a new row.
      *
      * @param {Highcharts.DataTableEventDetail} [eventDetail]
      * Custom information for pending events.
@@ -879,9 +1060,9 @@ class DataTable extends DataTableCore {
      * @emits #setRows
      * @emits #afterSetRows
      */
-    setRow(row, rowIndex, insert, eventDetail) {
-        this.setRows([row], rowIndex, insert, eventDetail);
-    }
+    DataTable.prototype.setRow = function (row, rowIndex, eventDetail) {
+        this.setRows([row], rowIndex, eventDetail);
+    };
     /**
      * Sets cell values for multiple rows. Will insert new rows, if no index was
      * was provided, or if the index is higher than the total number of table
@@ -893,10 +1074,7 @@ class DataTable extends DataTableCore {
      * Row values to set.
      *
      * @param {number} [rowIndex]
-     * Index of the first row to set. Leave `undefined` to add as new rows.
-     *
-     * @param {boolean} [insert]
-     * Whether to insert the row at the given index, or to overwrite the row.
+     * Index of the first row to set. Leave `undefind` to add as new rows.
      *
      * @param {Highcharts.DataTableEventDetail} [eventDetail]
      * Custom information for pending events.
@@ -904,62 +1082,124 @@ class DataTable extends DataTableCore {
      * @emits #setRows
      * @emits #afterSetRows
      */
-    setRows(rows, rowIndex = this.rowCount, insert, eventDetail) {
-        const table = this, columns = table.columns, columnIds = Object.keys(columns), modifier = table.modifier, rowCount = rows.length;
+    DataTable.prototype.setRows = function (rows, rowIndex, eventDetail) {
+        if (rowIndex === void 0) { rowIndex = this.rowCount; }
+        var table = this, aliasMap = table.aliasMap, columns = table.columns, columnNames = Object.keys(columns), modifier = table.modifier, rowCount = rows.length;
         table.emit({
             type: 'setRows',
             detail: eventDetail,
-            rowCount,
-            rowIndex,
-            rows
+            rowCount: rowCount,
+            rowIndex: rowIndex,
+            rows: rows
         });
-        for (let i = 0, i2 = rowIndex, row; i < rowCount; ++i, ++i2) {
+        for (var i = 0, i2 = rowIndex, row = void 0; i < rowCount; ++i, ++i2) {
             row = rows[i];
-            if (Object.keys(row).length === 0) { // Is empty Object
-                for (let j = 0, jEnd = columnIds.length; j < jEnd; ++j) {
-                    const column = columns[columnIds[j]];
-                    if (insert) {
-                        columns[columnIds[j]] = splice(column, i2, 0, true, [null]).array;
-                    }
-                    else {
-                        column[i2] = null;
-                    }
+            if (row === DataTable.NULL) {
+                for (var j = 0, jEnd = columnNames.length; j < jEnd; ++j) {
+                    columns[columnNames[j]][i2] = null;
                 }
             }
-            else if (Array.isArray(row)) {
-                for (let j = 0, jEnd = columnIds.length; j < jEnd; ++j) {
-                    columns[columnIds[j]][i2] = row[j];
+            else if (row instanceof Array) {
+                for (var j = 0, jEnd = columnNames.length; j < jEnd; ++j) {
+                    columns[columnNames[j]][i2] = row[j];
                 }
             }
             else {
-                super.setRow(row, i2, insert, { silent: true });
+                var rowColumnNames = Object.keys(row);
+                for (var j = 0, jEnd = rowColumnNames.length, rowColumnName = void 0; j < jEnd; ++j) {
+                    rowColumnName = rowColumnNames[j];
+                    rowColumnName = (aliasMap[rowColumnName] || rowColumnName);
+                    if (!columns[rowColumnName]) {
+                        columns[rowColumnName] = new Array(i2 + 1);
+                    }
+                    columns[rowColumnName][i2] = row[rowColumnName];
+                }
             }
         }
-        const indexRowCount = insert ?
-            rowCount + rows.length :
-            rowIndex + rowCount;
+        var indexRowCount = (rowIndex + rowCount);
         if (indexRowCount > table.rowCount) {
             table.rowCount = indexRowCount;
-            for (let i = 0, iEnd = columnIds.length; i < iEnd; ++i) {
-                const columnId = columnIds[i];
-                columns[columnId] = setLength(columns[columnId], indexRowCount);
+            for (var i = 0, iEnd = columnNames.length; i < iEnd; ++i) {
+                columns[columnNames[i]].length = indexRowCount;
             }
         }
         if (modifier) {
-            modifier.modifyTable(table);
+            modifier.modifyRows(table, rows, rowIndex);
         }
         table.emit({
             type: 'afterSetRows',
             detail: eventDetail,
-            rowCount,
-            rowIndex,
-            rows
+            rowCount: rowCount,
+            rowIndex: rowIndex,
+            rows: rows
         });
-    }
-}
+    };
+    /* *
+     *
+     *  Static Functions
+     *
+     * */
+    /**
+     * Null state for a row record.
+     *
+     * @name Highcharts.DataTable.NULL
+     * @type {Highcharts.DataTableRowObject}
+     *
+     * @see {@link Highcharts.DataTable.isNull} for a null test.
+     *
+     * @example
+     * table.setRows([DataTable.NULL, DataTable.NULL], 10);
+     */
+    DataTable.NULL = {};
+    return DataTable;
+}());
 /* *
  *
  *  Default Export
  *
  * */
 export default DataTable;
+/* *
+ *
+ *  API Declarations
+ *
+ * */
+/**
+ * Possible value types for a table cell.
+ * @private
+ * @typedef {boolean|null|number|string|Highcharts.DataTable|undefined} Highcharts.DataTableCellType
+ */
+/**
+ * Array of table cells in vertical expansion.
+ * @private
+ * @typedef {Array<Highcharts.DataTableCellType>} Highcharts.DataTableColumn
+ */
+/**
+ * Collection of columns, where the key is the column name (or alias) and
+ * the value is an array of column values.
+ * @private
+ * @interface Highcharts.DataTableColumnCollection
+ * @readonly
+ */ /**
+* @name Highcharts.DataTableColumnCollection#[key:string]
+* @type {Highcharts.DataTableColumn}
+*/
+/**
+ * Custom information for an event.
+ * @private
+ * @typedef Highcharts.DataTableEventDetail
+ * @type {Record<string,(boolean|number|string|null|undefined)>}
+ */
+/**
+ * Array of table cells in horizontal expansion. Index of the array is the index
+ * of the column names.
+ * @private
+ * @typedef {Array<Highcharts.DataTableCellType>} Highcharts.DataTableRow
+ */
+/**
+ * Record of table cells in horizontal expansion. Keys of the record are the
+ * column names (or aliases).
+ * @private
+ * @typedef {Record<string,Highcharts.DataTableCellType>} Highcharts.DataTableRowObject
+ */
+(''); // keeps doclets above in transpiled file

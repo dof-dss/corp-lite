@@ -1,17 +1,16 @@
-// SPDX-License-Identifier: LicenseRef-Highcharts
 /**
- * @license Highmaps JS v12.5.0 (2026-01-12)
+ * @license Highmaps JS v10.0.0 (2022-03-07)
  * @module highcharts/modules/heatmap
  * @requires highcharts
  *
- * (c) 2009-2026 Highsoft AS
- * Author: Torstein Honsi
+ * (c) 2009-2021 Torstein Honsi
  *
- * A commercial license may be required depending on use.
- * See www.highcharts.com/license
+ * License: www.highcharts.com/license
  */
 'use strict';
 import Highcharts from '../../Core/Globals.js';
-import './coloraxis.src.js';
+import ColorAxis from '../../Core/Axis/Color/ColorAxis.js';
 import '../../Series/Heatmap/HeatmapSeries.js';
-export default Highcharts;
+var G = Highcharts;
+G.ColorAxis = ColorAxis;
+ColorAxis.compose(G.Chart, G.Fx, G.Legend, G.Series);

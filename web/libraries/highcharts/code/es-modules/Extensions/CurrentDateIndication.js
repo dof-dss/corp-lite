@@ -1,24 +1,19 @@
 /* *
  *
- *  (c) 2016-2026 Highsoft AS
+ *  (c) 2016-2021 Highsoft AS
  *
  *  Author: Lars A. V. Cabrera
  *
- *  A commercial license may be required depending on use.
- *  See www.highcharts.com/license
+ *  License: www.highcharts.com/license
  *
+ *  !!!!!!! SOURCE GETS TRANSPILED BY TYPESCRIPT. EDIT TS FILE ONLY. !!!!!!!
  *
  * */
 'use strict';
-import H from '../Core/Globals.js';
-const { composed } = H;
+import Axis from '../Core/Axis/Axis.js';
+import PlotLineOrBand from '../Core/Axis/PlotLineOrBand/PlotLineOrBand.js';
 import U from '../Core/Utilities.js';
-const { addEvent, merge, pushUnique, wrap } = U;
-/* *
- *
- *  Constants
- *
- * */
+var addEvent = U.addEvent, merge = U.merge, wrap = U.wrap;
 /**
  * Show an indicator on the axis for the current date and time. Can be a
  * boolean or a configuration object similar to
@@ -37,24 +32,25 @@ const { addEvent, merge, pushUnique, wrap } = U;
  * @product   gantt
  * @apioption xAxis.currentDateIndicator
  */
-const defaultOptions = {
-    color: "#ccd3ff" /* Palette.highlightColor20 */,
+var defaultOptions = {
+    color: "#ccd6eb" /* highlightColor20 */,
     width: 2,
     /**
      * @declare Highcharts.AxisCurrentDateIndicatorLabelOptions
      */
     label: {
         /**
-         * Format of the label. This options is passed as the first argument to
+         * Format of the label. This options is passed as the fist argument to
          * [dateFormat](/class-reference/Highcharts.Time#dateFormat) function.
          *
-         * @type      {string|Intl.DateTimeFormatOptions}
+         * @type      {string}
+         * @default   %a, %b %d %Y, %H:%M
          * @product   gantt
          * @apioption xAxis.currentDateIndicator.label.format
          */
-        format: '%[abdYHM]',
+        format: '%a, %b %d %Y, %H:%M',
         formatter: function (value, format) {
-            return this.axis.chart.time.dateFormat(format || '', value, true);
+            return this.axis.chart.time.dateFormat(format || '', value);
         },
         rotation: 0,
         /**
@@ -62,28 +58,15 @@ const defaultOptions = {
          */
         style: {
             /** @internal */
-            fontSize: '0.7em'
+            fontSize: '10px'
         }
     }
 };
-/* *
- *
- *  Functions
- *
- * */
-/** @internal */
-function compose(AxisClass, PlotLineOrBandClass) {
-    if (pushUnique(composed, 'CurrentDateIndication')) {
-        addEvent(AxisClass, 'afterSetOptions', onAxisAfterSetOptions);
-        addEvent(PlotLineOrBandClass, 'render', onPlotLineOrBandRender);
-        wrap(PlotLineOrBandClass.prototype, 'getLabelText', wrapPlotLineOrBandGetLabelText);
-    }
-}
-/** @internal */
-function onAxisAfterSetOptions() {
-    const options = this.options, cdiOptions = options.currentDateIndicator;
+/* eslint-disable no-invalid-this */
+addEvent(Axis, 'afterSetOptions', function () {
+    var options = this.options, cdiOptions = options.currentDateIndicator;
     if (cdiOptions) {
-        const plotLineOptions = typeof cdiOptions === 'object' ?
+        var plotLineOptions = typeof cdiOptions === 'object' ?
             merge(defaultOptions, cdiOptions) :
             merge(defaultOptions);
         plotLineOptions.value = Date.now();
@@ -93,19 +76,17 @@ function onAxisAfterSetOptions() {
         }
         options.plotLines.push(plotLineOptions);
     }
-}
-/** @internal */
-function onPlotLineOrBandRender() {
+});
+addEvent(PlotLineOrBand, 'render', function () {
     // If the label already exists, update its text
     if (this.label) {
         this.label.attr({
             text: this.getLabelText(this.options.label)
         });
     }
-}
-/** @internal */
-function wrapPlotLineOrBandGetLabelText(defaultMethod, defaultLabelOptions) {
-    const options = this.options;
+});
+wrap(PlotLineOrBand.prototype, 'getLabelText', function (defaultMethod, defaultLabelOptions) {
+    var options = this.options;
     if (options &&
         options.className &&
         options.className.indexOf('highcharts-current-date-indicator') !== -1 &&
@@ -116,13 +97,4 @@ function wrapPlotLineOrBandGetLabelText(defaultMethod, defaultLabelOptions) {
             .call(this, options.value, options.label.format);
     }
     return defaultMethod.call(this, defaultLabelOptions);
-}
-/* *
- *
- *  Default Export
- *
- * */
-const CurrentDateIndication = {
-    compose
-};
-export default CurrentDateIndication;
+});

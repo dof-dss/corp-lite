@@ -6,22 +6,6 @@
 		<title>Highcharts Example</title>
 
 		<style type="text/css">
-body {
-    font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Roboto,
-        Helvetica,
-        Arial,
-        "Apple Color Emoji",
-        "Segoe UI Emoji",
-        "Segoe UI Symbol",
-        sans-serif;
-    background: var(--highcharts-background-color);
-    color: var(--highcharts-neutral-color-100);
-}
-
 .highcharts-figure,
 .highcharts-data-table table {
     min-width: 310px;
@@ -32,7 +16,7 @@ body {
 .highcharts-data-table table {
     font-family: Verdana, sans-serif;
     border-collapse: collapse;
-    border: 1px solid var(--highcharts-neutral-color-10, #e6e6e6);
+    border: 1px solid #ebebeb;
     margin: 10px auto;
     text-align: center;
     width: 100%;
@@ -42,7 +26,7 @@ body {
 .highcharts-data-table caption {
     padding: 1em 0;
     font-size: 1.2em;
-    color: var(--highcharts-neutral-color-60, #666);
+    color: #555;
 }
 
 .highcharts-data-table th {
@@ -57,23 +41,14 @@ body {
 }
 
 .highcharts-data-table thead tr,
-.highcharts-data-table tbody tr:nth-child(even) {
-    background: var(--highcharts-neutral-color-3, #f7f7f7);
+.highcharts-data-table tr:nth-child(even) {
+    background: #f8f8f8;
 }
 
-.highcharts-description {
-    margin: 0.3rem 10px;
+.highcharts-data-table tr:hover {
+    background: #f1f7ff;
 }
 
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: #141414;
-        color: #ddd;
-    }
-    a {
-        color: #2caffe;
-    }
-}
 		</style>
 	</head>
 	<body>
@@ -83,7 +58,6 @@ body {
 <script src="../../code/modules/exporting.js"></script>
 <script src="../../code/modules/export-data.js"></script>
 <script src="../../code/modules/accessibility.js"></script>
-<script src="../../code/themes/adaptive.js"></script>
 
 <figure class="highcharts-figure">
     <div id="container"></div>
@@ -98,62 +72,118 @@ body {
 
 
 		<script type="text/javascript">
-const data = [{
+var data = [{
     name: 'Austria',
-    low: 70.1,
-    high: 81.3
+    low: 69,
+    high: 82
 }, {
     name: 'Belgium',
-    low: 71.0,
-    high: 81.9
-},  {
-    name: 'Czechia',
-    low: 69.6,
-    high: 77.4
+    low: 70,
+    high: 81
+}, {
+    name: 'Bulgaria',
+    low: 69,
+    high: 75
+}, {
+    name: 'Croatia',
+    low: 65,
+    high: 78
+}, {
+    name: 'Cyprus',
+    low: 70,
+    high: 81
+}, {
+    name: 'Czech Republic',
+    low: 70,
+    high: 79
+}, {
+    name: 'Denmark',
+    low: 72,
+    high: 81
 }, {
     name: 'Estonia',
-    low: 70.4,
-    high: 76.9
+    low: 68,
+    high: 78
+}, {
+    name: 'Finland',
+    low: 69,
+    high: 81
+}, {
+    name: 'France',
+    low: 70,
+    high: 83
 }, {
     name: 'Greece',
-    low: 73.8,
-    high: 80.3
+    low: 68,
+    high: 81
 }, {
-    name: 'Hungary',
-    low: 69.2,
-    high: 74.5
+    name: 'Spain',
+    low: 69,
+    high: 83
 }, {
-    name: 'Iceland',
-    low: 73.8,
-    high: 83.2
+    name: 'Netherlands',
+    low: 73,
+    high: 82
+}, {
+    name: 'Ireland',
+    low: 70,
+    high: 82
 }, {
     name: 'Lithuania',
-    low: 71.1,
-    high: 74.5
+    low: 70,
+    high: 75
 }, {
-    name: 'Norway',
-    low: 74.3,
-    high: 83.2
-},  {
+    name: 'Luxembourg',
+    low: 68,
+    high: 83
+}, {
+    name: 'Latvia',
+    low: 70,
+    high: 75
+}, {
+    name: 'Malta',
+    low: 69,
+    high: 82
+}, {
+    name: 'Germany',
+    low: 69,
+    high: 81
+}, {
+    name: 'Poland',
+    low: 68,
+    high: 78
+}, {
     name: 'Portugal',
-    low: 66.7,
-    high: 81.2
+    low: 63,
+    high: 81
 }, {
     name: 'Romania',
-    low: 68.2,
-    high: 72.9
-},  {
+    low: 66,
+    high: 75
+}, {
     name: 'Slovakia',
-    low: 69.8,
-    high: 74.8
+    low: 70,
+    high: 77
+}, {
+    name: 'Slovenia',
+    low: 69,
+    high: 81
 }, {
     name: 'Sweden',
-    low: 74.7,
-    high: 83.2
+    low: 73,
+    high: 82
 }, {
-    name: 'Switzerland',
-    low: 73.2,
-    high: 84.0
+    name: 'Hungary',
+    low: 68,
+    high: 76
+}, {
+    name: 'Italy',
+    low: 69,
+    high: 83
+}, {
+    name: 'UK',
+    low: 71,
+    high: 81
 }];
 
 Highcharts.chart('container', {
@@ -168,9 +198,7 @@ Highcharts.chart('container', {
     },
 
     subtitle: {
-        text: '1970 vs 2021 Source: ' +
-            '<a href="https://ec.europa.eu/eurostat/en/web/main/data/database"' +
-            'target="_blank">Eurostat</a>'
+        text: '1960 vs 2018'
     },
 
     title: {
@@ -188,15 +216,6 @@ Highcharts.chart('container', {
     yAxis: {
         title: {
             text: 'Life Expectancy (years)'
-        }
-    },
-
-    plotOptions: {
-        series: {
-            dataSorting: {
-                enabled: true,
-                sortKey: 'low'
-            }
         }
     },
 

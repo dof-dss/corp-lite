@@ -1,14 +1,16 @@
 /* *
  *
- *  (c) 2017-2026 Highsoft AS
+ *  (c) 2017 Highsoft AS
  *  Authors: Lars A. V. Cabrera
  *
- *  A commercial license may be required depending on use.
- *  See www.highcharts.com/license
+ *  License: www.highcharts.com/license
  *
+ *  !!!!!!! SOURCE GETS TRANSPILED BY TYPESCRIPT. EDIT TS FILE ONLY. !!!!!!!
  *
  * */
 'use strict';
+import SVGRenderer from '../Core/Renderer/SVG/SVGRenderer.js';
+var symbols = SVGRenderer.prototype.symbols;
 /* *
  *
  *  Functions
@@ -26,7 +28,7 @@
  *                   o
  * ```
  *
- * @internal
+ * @private
  * @function
  *
  * @param {number} x
@@ -62,7 +64,7 @@ function arrow(x, y, w, h) {
  *       o
  * ```
  *
- * @internal
+ * @private
  * @function
  *
  * @param {number} x
@@ -84,23 +86,6 @@ function arrowHalf(x, y, w, h) {
     return arrow(x, y, w / 2, h);
 }
 /**
- * Adds the arrow symbols to the SVGRenderer.
- *
- * @internal
- *
- * @param SVGRendererClass
- * The SVGRenderer class to extend.
- */
-function compose(SVGRendererClass) {
-    const symbols = SVGRendererClass.prototype.symbols;
-    symbols.arrow = arrow;
-    symbols['arrow-filled'] = triangleLeft;
-    symbols['arrow-filled-half'] = triangleLeftHalf;
-    symbols['arrow-half'] = arrowHalf;
-    symbols['triangle-left'] = triangleLeft;
-    symbols['triangle-left-half'] = triangleLeftHalf;
-}
-/**
  * Creates a left-oriented triangle.
  * ```
  *             o
@@ -110,7 +95,7 @@ function compose(SVGRendererClass) {
  *             o
  * ```
  *
- * @internal
+ * @private
  * @function
  *
  * @param {number} x
@@ -146,7 +131,7 @@ function triangleLeft(x, y, w, h) {
  *       o
  * ```
  *
- * @internal
+ * @private
  * @function
  *
  * @param {number} x
@@ -167,12 +152,15 @@ function triangleLeft(x, y, w, h) {
 function triangleLeftHalf(x, y, w, h) {
     return triangleLeft(x, y, w / 2, h);
 }
+symbols.arrow = arrow;
+symbols['arrow-filled'] = triangleLeft;
+symbols['arrow-filled-half'] = triangleLeftHalf;
+symbols['arrow-half'] = arrowHalf;
+symbols['triangle-left'] = triangleLeft;
+symbols['triangle-left-half'] = triangleLeftHalf;
 /* *
  *
  *  Default Export
  *
  * */
-const ArrowSymbols = {
-    compose
-};
-export default ArrowSymbols;
+export default symbols;

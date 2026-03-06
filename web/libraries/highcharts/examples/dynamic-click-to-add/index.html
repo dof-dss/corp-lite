@@ -6,22 +6,6 @@
 		<title>Highcharts Example</title>
 
 		<style type="text/css">
-body {
-    font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Roboto,
-        Helvetica,
-        Arial,
-        "Apple Color Emoji",
-        "Segoe UI Emoji",
-        "Segoe UI Symbol",
-        sans-serif;
-    background: var(--highcharts-background-color);
-    color: var(--highcharts-neutral-color-100);
-}
-
 #container {
     height: 400px;
 }
@@ -36,7 +20,7 @@ body {
 .highcharts-data-table table {
     font-family: Verdana, sans-serif;
     border-collapse: collapse;
-    border: 1px solid var(--highcharts-neutral-color-10, #e6e6e6);
+    border: 1px solid #ebebeb;
     margin: 10px auto;
     text-align: center;
     width: 100%;
@@ -46,7 +30,7 @@ body {
 .highcharts-data-table caption {
     padding: 1em 0;
     font-size: 1.2em;
-    color: var(--highcharts-neutral-color-60, #666);
+    color: #555;
 }
 
 .highcharts-data-table th {
@@ -61,23 +45,14 @@ body {
 }
 
 .highcharts-data-table thead tr,
-.highcharts-data-table tbody tr:nth-child(even) {
-    background: var(--highcharts-neutral-color-3, #f7f7f7);
+.highcharts-data-table tr:nth-child(even) {
+    background: #f8f8f8;
 }
 
-.highcharts-description {
-    margin: 0.3rem 10px;
+.highcharts-data-table tr:hover {
+    background: #f1f7ff;
 }
 
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: #141414;
-        color: #ddd;
-    }
-    a {
-        color: #2caffe;
-    }
-}
 		</style>
 	</head>
 	<body>
@@ -85,7 +60,6 @@ body {
 <script src="../../code/modules/exporting.js"></script>
 <script src="../../code/modules/export-data.js"></script>
 <script src="../../code/modules/accessibility.js"></script>
-<script src="../../code/themes/adaptive.js"></script>
 
 <figure class="highcharts-figure">
     <div id="container"></div>
@@ -97,33 +71,6 @@ body {
 
 
 		<script type="text/javascript">
-// Plugin to add a pulsating marker on add point
-Highcharts.addEvent(Highcharts.Series, 'addPoint', e => {
-    const point = e.point,
-        series = e.target;
-
-    if (!series.pulse) {
-        series.pulse = series.chart.renderer.circle()
-            .add(series.markerGroup);
-    }
-    setTimeout(() => {
-        series.pulse
-            .attr({
-                x: series.xAxis.toPixels(point.x, true),
-                y: series.yAxis.toPixels(point.y, true),
-                r: series.options.marker.radius,
-                opacity: 1,
-                fill: series.color
-            })
-            .animate({
-                r: 20,
-                opacity: 0
-            }, {
-                duration: 1000
-            });
-    }, 1);
-});
-
 Highcharts.chart('container', {
     chart: {
         type: 'scatter',
@@ -131,7 +78,7 @@ Highcharts.chart('container', {
         events: {
             click: function (e) {
                 // find the clicked values and the series
-                const x = Math.round(e.xAxis[0].value),
+                var x = Math.round(e.xAxis[0].value),
                     y = Math.round(e.yAxis[0].value),
                     series = this.series[0];
 
@@ -142,12 +89,10 @@ Highcharts.chart('container', {
         }
     },
     title: {
-        text: 'User supplied data',
-        align: 'left'
+        text: 'User supplied data'
     },
     subtitle: {
-        text: 'Click the plot area to add a point. Click a point to remove it.',
-        align: 'left'
+        text: 'Click the plot area to add a point. Click a point to remove it.'
     },
     accessibility: {
         announceNewData: {
@@ -181,8 +126,7 @@ Highcharts.chart('container', {
     },
     plotOptions: {
         series: {
-            stickyTracking: false,
-            lineWidth: 3,
+            lineWidth: 1,
             point: {
                 events: {
                     click: function () {
@@ -195,15 +139,9 @@ Highcharts.chart('container', {
         }
     },
     series: [{
-        data: [[20, 20], [80, 80]],
-        color: Highcharts.getOptions().colors[3],
-        marker: {
-            lineWidth: 2,
-            radius: 6
-        }
+        data: [[20, 20], [80, 80]]
     }]
 });
-
 		</script>
 	</body>
 </html>

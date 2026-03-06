@@ -1,25 +1,57 @@
 /* *
  *
- *  (c) 2010-2026 Highsoft AS
- *  Author: Torstein Honsi
+ *  (c) 2010-2021 Torstein Honsi
  *
- *  A commercial license may be required depending on use.
- *  See www.highcharts.com/license
+ *  License: www.highcharts.com/license
  *
+ *  !!!!!!! SOURCE GETS TRANSPILED BY TYPESCRIPT. EDIT TS FILE ONLY. !!!!!!!
  *
  * */
 'use strict';
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+/* *
+ *
+ *  Imports
+ *
+ * */
 import SeriesRegistry from '../../Core/Series/SeriesRegistry.js';
-const { candlestick: { prototype: { pointClass: CandlestickPoint } }, hlc: { prototype: { 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-pointClass: HLCPoint } } } = SeriesRegistry.seriesTypes;
+var CandlestickSeries = SeriesRegistry.seriesTypes.candlestick;
 /* *
  *
  *  Class
  *
  * */
-class HeikinAshiPoint extends CandlestickPoint {
-}
+var HeikinAshiPoint = /** @class */ (function (_super) {
+    __extends(HeikinAshiPoint, _super);
+    function HeikinAshiPoint() {
+        /* *
+         *
+         *  Properties
+         *
+         * */
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.series = void 0;
+        return _this;
+        /* *
+         *
+         *  Functions
+         *
+         * */
+    }
+    return HeikinAshiPoint;
+}(CandlestickSeries.prototype.pointClass));
 /* *
  *
  *  Default Export

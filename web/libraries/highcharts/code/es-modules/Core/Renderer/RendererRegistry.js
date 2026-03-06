@@ -1,11 +1,10 @@
 /* *
  *
- *  (c) 2010-2026 Highsoft AS
- *  Author: Torstein Honsi
+ *  (c) 2010-2021 Torstein Honsi
  *
- *  A commercial license may be required depending on use.
- *  See www.highcharts.com/license
+ *  License: www.highcharts.com/license
  *
+ *  !!!!!!! SOURCE GETS TRANSPILED BY TYPESCRIPT. EDIT TS FILE ONLY. !!!!!!!
  *
  * */
 'use strict';
@@ -15,7 +14,6 @@ import H from '../Globals.js';
  *  Namespace
  *
  * */
-/** @internal */
 var RendererRegistry;
 (function (RendererRegistry) {
     /* *
@@ -29,7 +27,7 @@ var RendererRegistry;
      *  Variables
      *
      * */
-    let defaultRenderer;
+    var defaultRenderer;
     /* *
      *
      *  Functions
@@ -45,7 +43,8 @@ var RendererRegistry;
      * @return {Highcharts.Class<Highcharts.SVGRenderer>}
      * Returns the requested renderer class or the default renderer class.
      */
-    function getRendererType(rendererType = defaultRenderer) {
+    function getRendererType(rendererType) {
+        if (rendererType === void 0) { rendererType = defaultRenderer; }
         return (RendererRegistry.rendererTypes[rendererType] || RendererRegistry.rendererTypes[defaultRenderer]);
     }
     RendererRegistry.getRendererType = getRendererType;
@@ -65,7 +64,7 @@ var RendererRegistry;
         RendererRegistry.rendererTypes[rendererType] = rendererClass;
         if (!defaultRenderer || setAsDefault) {
             defaultRenderer = rendererType;
-            H.Renderer = rendererClass; // Compatibility
+            H.Renderer = rendererClass; // compatibility
         }
     }
     RendererRegistry.registerRendererType = registerRendererType;
@@ -75,5 +74,4 @@ var RendererRegistry;
  *  Default Export
  *
  * */
-/** @internal */
 export default RendererRegistry;

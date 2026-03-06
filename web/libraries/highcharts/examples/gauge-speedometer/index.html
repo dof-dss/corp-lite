@@ -6,20 +6,8 @@
 		<title>Highcharts Example</title>
 
 		<style type="text/css">
-body {
-    font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Roboto,
-        Helvetica,
-        Arial,
-        "Apple Color Emoji",
-        "Segoe UI Emoji",
-        "Segoe UI Symbol",
-        sans-serif;
-    background: var(--highcharts-background-color);
-    color: var(--highcharts-neutral-color-100);
+#container {
+    height: 400px;
 }
 
 .highcharts-figure,
@@ -32,7 +20,7 @@ body {
 .highcharts-data-table table {
     font-family: Verdana, sans-serif;
     border-collapse: collapse;
-    border: 1px solid var(--highcharts-neutral-color-10, #e6e6e6);
+    border: 1px solid #ebebeb;
     margin: 10px auto;
     text-align: center;
     width: 100%;
@@ -42,7 +30,7 @@ body {
 .highcharts-data-table caption {
     padding: 1em 0;
     font-size: 1.2em;
-    color: var(--highcharts-neutral-color-60, #666);
+    color: #555;
 }
 
 .highcharts-data-table th {
@@ -57,23 +45,14 @@ body {
 }
 
 .highcharts-data-table thead tr,
-.highcharts-data-table tbody tr:nth-child(even) {
-    background: var(--highcharts-neutral-color-3, #f7f7f7);
+.highcharts-data-table tr:nth-child(even) {
+    background: #f8f8f8;
 }
 
-.highcharts-description {
-    margin: 0.3rem 10px;
+.highcharts-data-table tr:hover {
+    background: #f1f7ff;
 }
 
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: #141414;
-        color: #ddd;
-    }
-    a {
-        color: #2caffe;
-    }
-}
 		</style>
 	</head>
 	<body>
@@ -82,13 +61,12 @@ body {
 <script src="../../code/modules/exporting.js"></script>
 <script src="../../code/modules/export-data.js"></script>
 <script src="../../code/modules/accessibility.js"></script>
-<script src="../../code/themes/adaptive.js"></script>
 
 <figure class="highcharts-figure">
     <div id="container"></div>
     <p class="highcharts-description">
-        Chart showing use of plot bands with a gauge series. The chart is
-        updated dynamically every few seconds.
+        Chart showing use of multiple panes and axis plot bands with a gauge
+        series. The chart is updated dynamically every few seconds.
     </p>
 </figure>
 
@@ -101,8 +79,7 @@ Highcharts.chart('container', {
         plotBackgroundColor: null,
         plotBackgroundImage: null,
         plotBorderWidth: 0,
-        plotShadow: false,
-        height: '80%'
+        plotShadow: false
     },
 
     title: {
@@ -110,48 +87,73 @@ Highcharts.chart('container', {
     },
 
     pane: {
-        startAngle: -90,
-        endAngle: 89.9,
-        background: null,
-        center: ['50%', '75%'],
-        size: '110%'
+        startAngle: -150,
+        endAngle: 150,
+        background: [{
+            backgroundColor: {
+                linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+                stops: [
+                    [0, '#FFF'],
+                    [1, '#333']
+                ]
+            },
+            borderWidth: 0,
+            outerRadius: '109%'
+        }, {
+            backgroundColor: {
+                linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+                stops: [
+                    [0, '#333'],
+                    [1, '#FFF']
+                ]
+            },
+            borderWidth: 1,
+            outerRadius: '107%'
+        }, {
+            // default background
+        }, {
+            backgroundColor: '#DDD',
+            borderWidth: 0,
+            outerRadius: '105%',
+            innerRadius: '103%'
+        }]
     },
 
     // the value axis
     yAxis: {
         min: 0,
         max: 200,
-        tickPixelInterval: 72,
-        tickPosition: 'inside',
-        tickColor: 'var(--highcharts-background-color, #FFFFFF)',
-        tickLength: 20,
+
+        minorTickInterval: 'auto',
+        minorTickWidth: 1,
+        minorTickLength: 10,
+        minorTickPosition: 'inside',
+        minorTickColor: '#666',
+
+        tickPixelInterval: 30,
         tickWidth: 2,
-        minorTickInterval: null,
+        tickPosition: 'inside',
+        tickLength: 10,
+        tickColor: '#666',
         labels: {
-            distance: 20,
-            style: {
-                fontSize: '14px'
-            }
+            step: 2,
+            rotation: 'auto'
         },
-        lineWidth: 0,
+        title: {
+            text: 'km/h'
+        },
         plotBands: [{
             from: 0,
             to: 120,
-            color: '#55BF3B', // green
-            thickness: 20,
-            borderRadius: '50%'
+            color: '#55BF3B' // green
         }, {
             from: 120,
             to: 160,
-            color: '#DDDF0D', // yellow
-            thickness: 20,
-            borderRadius: '50%'
+            color: '#DDDF0D' // yellow
         }, {
             from: 160,
             to: 200,
-            color: '#DF5353', // red
-            thickness: 20,
-            borderRadius: '50%'
+            color: '#DF5353' // red
         }]
     },
 
@@ -160,51 +162,28 @@ Highcharts.chart('container', {
         data: [80],
         tooltip: {
             valueSuffix: ' km/h'
-        },
-        dataLabels: {
-            format: '{y} km/h',
-            borderWidth: 0,
-            color: (
-                Highcharts.defaultOptions.title &&
-                Highcharts.defaultOptions.title.style &&
-                Highcharts.defaultOptions.title.style.color
-            ) || '#333333',
-            style: {
-                fontSize: '16px'
-            }
-        },
-        dial: {
-            radius: '80%',
-            backgroundColor: 'gray',
-            baseWidth: 12,
-            baseLength: '0%',
-            rearLength: '0%'
-        },
-        pivot: {
-            backgroundColor: 'gray',
-            radius: 6
         }
-
     }]
 
-});
-
+},
 // Add some life
-setInterval(() => {
-    const chart = Highcharts.charts[0];
-    if (chart && !chart.renderer.forExport) {
-        const point = chart.series[0].points[0],
-            inc = Math.round((Math.random() - 0.5) * 20);
+function (chart) {
+    if (!chart.renderer.forExport) {
+        setInterval(function () {
+            var point = chart.series[0].points[0],
+                newVal,
+                inc = Math.round((Math.random() - 0.5) * 20);
 
-        let newVal = point.y + inc;
-        if (newVal < 0 || newVal > 200) {
-            newVal = point.y - inc;
-        }
+            newVal = point.y + inc;
+            if (newVal < 0 || newVal > 200) {
+                newVal = point.y - inc;
+            }
 
-        point.update(newVal);
+            point.update(newVal);
+
+        }, 3000);
     }
-
-}, 3000);
+});
 		</script>
 	</body>
 </html>

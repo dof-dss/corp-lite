@@ -1,26 +1,35 @@
 /* *
  *
- *  A commercial license may be required depending on use.
- *  See www.highcharts.com/license
+ *  License: www.highcharts.com/license
  *
+ *  !!!!!!! SOURCE GETS TRANSPILED BY TYPESCRIPT. EDIT TS FILE ONLY. !!!!!!!
  *
  * */
 'use strict';
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 import SeriesRegistry from '../../../Core/Series/SeriesRegistry.js';
-const { sma: SMAIndicator } = SeriesRegistry.seriesTypes;
+var SMAIndicator = SeriesRegistry.seriesTypes.sma;
 import U from '../../../Core/Utilities.js';
-const { extend, merge, correctFloat, pick } = U;
-/* *
- *
- *  Functions
- *
- * */
+var extend = U.extend, merge = U.merge, correctFloat = U.correctFloat, pick = U.pick;
+/* eslint-disable valid-jsdoc */
 // Utils:
 /**
  * @private
  */
 function accumulatePoints(sum, yVal, i, index, subtract) {
-    const price = pick(yVal[i][index], yVal[i]);
+    var price = pick(yVal[i][index], yVal[i]);
     if (subtract) {
         return correctFloat(sum - price);
     }
@@ -40,17 +49,32 @@ function accumulatePoints(sum, yVal, i, index, subtract) {
  *
  * @augments Highcharts.Series
  */
-class DPOIndicator extends SMAIndicator {
+var DPOIndicator = /** @class */ (function (_super) {
+    __extends(DPOIndicator, _super);
+    function DPOIndicator() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        /* *
+        *
+        *   Properties
+        *
+        * */
+        _this.options = void 0;
+        _this.data = void 0;
+        _this.points = void 0;
+        return _this;
+    }
     /* *
      *
      *  Functions
      *
      * */
-    getValues(series, params) {
-        const period = params.period, index = params.index, offset = Math.floor(period / 2 + 1), range = period + offset, xVal = series.xData || [], yVal = series.yData || [], yValLen = yVal.length, 
+    /**
+     * @lends Highcharts.Series#
+     */
+    DPOIndicator.prototype.getValues = function (series, params) {
+        var period = params.period, index = params.index, offset = Math.floor(period / 2 + 1), range = period + offset, xVal = series.xData || [], yVal = series.yData || [], yValLen = yVal.length, 
         // 0- date, 1- Detrended Price Oscillator
-        DPO = [], xData = [], yData = [];
-        let oscillator, periodIndex, rangeIndex, price, i, j, sum = 0;
+        DPO = [], xData = [], yData = [], sum = 0, oscillator, periodIndex, rangeIndex, price, i, j;
         if (xVal.length <= range) {
             return;
         }
@@ -63,11 +87,11 @@ class DPOIndicator extends SMAIndicator {
         for (j = 0; j <= yValLen - range; j++) {
             periodIndex = j + period - 1;
             rangeIndex = j + range - 1;
-            // Adding the last period point
+            // adding the last period point
             sum = accumulatePoints(sum, yVal, periodIndex, index);
             price = pick(yVal[rangeIndex][index], yVal[rangeIndex]);
             oscillator = price - sum / period;
-            // Subtracting the first period point
+            // substracting the first period point
             sum = accumulatePoints(sum, yVal, j, index, true);
             DPO.push([xVal[rangeIndex], oscillator]);
             xData.push(xVal[rangeIndex]);
@@ -78,44 +102,40 @@ class DPOIndicator extends SMAIndicator {
             xData: xData,
             yData: yData
         };
-    }
-}
-/* *
- *
- *  Static Properties
- *
- * */
-/**
- * Detrended Price Oscillator. This series requires the `linkedTo` option to
- * be set and should be loaded after the `stock/indicators/indicators.js`.
- *
- * @sample {highstock} stock/indicators/dpo
- *         Detrended Price Oscillator
- *
- * @extends      plotOptions.sma
- * @since        7.0.0
- * @product      highstock
- * @excluding    allAreas, colorAxis, compare, compareBase, joinBy, keys,
- *               navigatorOptions, pointInterval, pointIntervalUnit,
- *               pointPlacement, pointRange, pointStart, showInNavigator,
- *               stacking
- * @requires     stock/indicators/indicators
- * @requires     stock/indicators/dpo
- * @optionparent plotOptions.dpo
- */
-DPOIndicator.defaultOptions = merge(SMAIndicator.defaultOptions, {
+    };
     /**
-     * Parameters used in calculation of Detrended Price Oscillator series
-     * points.
+     * Detrended Price Oscillator. This series requires the `linkedTo` option to
+     * be set and should be loaded after the `stock/indicators/indicators.js`.
+     *
+     * @sample {highstock} stock/indicators/dpo
+     *         Detrended Price Oscillator
+     *
+     * @extends      plotOptions.sma
+     * @since        7.0.0
+     * @product      highstock
+     * @excluding    allAreas, colorAxis, compare, compareBase, joinBy, keys,
+     *               navigatorOptions, pointInterval, pointIntervalUnit,
+     *               pointPlacement, pointRange, pointStart, showInNavigator,
+     *               stacking
+     * @requires     stock/indicators/indicators
+     * @requires     stock/indicators/dpo
+     * @optionparent plotOptions.dpo
      */
-    params: {
-        index: 0,
+    DPOIndicator.defaultOptions = merge(SMAIndicator.defaultOptions, {
         /**
-         * Period for Detrended Price Oscillator
+         * Parameters used in calculation of Detrended Price Oscillator series
+         * points.
          */
-        period: 21
-    }
-});
+        params: {
+            index: 0,
+            /**
+             * Period for Detrended Price Oscillator
+             */
+            period: 21
+        }
+    });
+    return DPOIndicator;
+}(SMAIndicator));
 extend(DPOIndicator.prototype, {
     nameBase: 'DPO'
 });
@@ -126,11 +146,6 @@ SeriesRegistry.registerSeriesType('dpo', DPOIndicator);
  *
  * */
 export default DPOIndicator;
-/* *
- *
- *  API Options
- *
- * */
 /**
  * A Detrended Price Oscillator. If the [type](#series.dpo.type) option is not
  * specified, it is inherited from [chart.type](#chart.type).
@@ -145,4 +160,4 @@ export default DPOIndicator;
  * @requires  stock/indicators/dpo
  * @apioption series.dpo
  */
-''; // To include the above in the js output'
+''; // to include the above in the js output'

@@ -1,12 +1,10 @@
-// SPDX-License-Identifier: LicenseRef-Highcharts
 /**
  *
- *  (c) 2010-2026 Highsoft AS
- *  Author: Pawel Fus & Daniel Studencki
+ *  (c) 2010-2021 Pawel Fus & Daniel Studencki
  *
- *  A commercial license may be required depending on use.
- *  See www.highcharts.com/license
+ *  License: www.highcharts.com/license
  *
+ *  !!!!!!! SOURCE GETS TRANSPILED BY TYPESCRIPT. EDIT TS FILE ONLY. !!!!!!!
  *
  * */
 'use strict';
@@ -33,17 +31,17 @@
  * Returns array with min and max value.
  */
 function getArrayExtremes(arr, minIndex, maxIndex) {
-    return arr.reduce((prev, target) => [
+    return arr.reduce(function (prev, target) { return [
         Math.min(prev[0], target[minIndex]),
         Math.max(prev[1], target[maxIndex])
-    ], [Number.MAX_VALUE, -Number.MAX_VALUE]);
+    ]; }, [Number.MAX_VALUE, -Number.MAX_VALUE]);
 }
 /* *
  *
  *  Default Export
  *
  * */
-const ArrayUtilities = {
-    getArrayExtremes
+var ArrayUtilities = {
+    getArrayExtremes: getArrayExtremes
 };
 export default ArrayUtilities;

@@ -1,20 +1,29 @@
 /* *
  *
- *  A commercial license may be required depending on use.
- *  See www.highcharts.com/license
+ *  License: www.highcharts.com/license
  *
+ *  !!!!!!! SOURCE GETS TRANSPILED BY TYPESCRIPT. EDIT TS FILE ONLY. !!!!!!!
  *
  * */
 'use strict';
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 import SeriesRegistry from '../../../Core/Series/SeriesRegistry.js';
-const { sma: SMAIndicator } = SeriesRegistry.seriesTypes;
+var SMAIndicator = SeriesRegistry.seriesTypes.sma;
 import U from '../../../Core/Utilities.js';
-const { isNumber, merge } = U;
-/* *
- *
- *  Class
- *
- * */
+var isNumber = U.isNumber, merge = U.merge;
+/* eslint-enable require-jsdoc */
 /**
  * The CMO series type.
  *
@@ -24,15 +33,28 @@ const { isNumber, merge } = U;
  *
  * @augments Highcharts.Series
  */
-class CMOIndicator extends SMAIndicator {
+var CMOIndicator = /** @class */ (function (_super) {
+    __extends(CMOIndicator, _super);
+    function CMOIndicator() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        /* *
+         *
+         *  Properties
+         *
+         * */
+        _this.data = void 0;
+        _this.options = void 0;
+        _this.points = void 0;
+        return _this;
+    }
     /* *
      *
      *  Functions
      *
      * */
-    getValues(series, params) {
-        const period = params.period, xVal = series.xData, yVal = series.yData, yValLen = yVal ? yVal.length : 0, CMO = [], xData = [], yData = [];
-        let i, index = params.index, values;
+    CMOIndicator.prototype.getValues = function (series, params) {
+        var period = params.period, xVal = series.xData, yVal = series.yData, yValLen = yVal ? yVal.length : 0, CMO = [], xData = [], yData = [];
+        var i, index = params.index, values;
         if (xVal.length < period) {
             return;
         }
@@ -44,12 +66,12 @@ class CMOIndicator extends SMAIndicator {
             // shorter then 4 (HLC, range), this ensures that we are not trying
             // to reach the index out of bounds
             index = Math.min(index, yVal[0].length - 1);
-            values = yVal.map((value) => value[index]);
+            values = yVal.map(function (value) { return value[index]; });
         }
-        let firstAddedSum = 0, sumOfHigherValues = 0, sumOfLowerValues = 0, y;
+        var firstAddedSum = 0, sumOfHigherValues = 0, sumOfLowerValues = 0, y;
         // Calculate first point, check if the first value
         // was added to sum of higher/lower values, and what was the value.
-        for (let j = period; j > 0; j--) {
+        for (var j = period; j > 0; j--) {
             if (values[j] > values[j - 1]) {
                 sumOfHigherValues += values[j] - values[j - 1];
             }
@@ -57,7 +79,7 @@ class CMOIndicator extends SMAIndicator {
                 sumOfLowerValues += values[j - 1] - values[j];
             }
         }
-        // You might divide by 0 if all values are equal,
+        // You might devide by 0 if all values are equal,
         // so return 0 in this case.
         y =
             sumOfHigherValues + sumOfLowerValues > 0 ?
@@ -76,7 +98,7 @@ class CMOIndicator extends SMAIndicator {
                 sumOfLowerValues += values[i - 1] - values[i];
             }
             // Check, to which sum was the first value added to,
-            // and subtract this value from given sum.
+            // and substract this value from given sum.
             if (values[i - period] > values[i - period - 1]) {
                 sumOfHigherValues -= firstAddedSum;
             }
@@ -98,34 +120,30 @@ class CMOIndicator extends SMAIndicator {
             xData: xData,
             yData: yData
         };
-    }
-}
-/* *
- *
- *  Static Properties
- *
- * */
-/**
- * Chande Momentum Oscilator (CMO) technical indicator. This series
- * requires the `linkedTo` option to be set and should be loaded after
- * the `stock/indicators/indicators.js` file.
- *
- * @sample stock/indicators/cmo
- *         CMO indicator
- *
- * @extends      plotOptions.sma
- * @since 9.1.0
- * @product      highstock
- * @requires     stock/indicators/indicators
- * @requires     stock/indicators/cmo
- * @optionparent plotOptions.cmo
- */
-CMOIndicator.defaultOptions = merge(SMAIndicator.defaultOptions, {
-    params: {
-        period: 20,
-        index: 3
-    }
-});
+    };
+    /**
+     * Chande Momentum Oscilator (CMO) technical indicator. This series
+     * requires the `linkedTo` option to be set and should be loaded after
+     * the `stock/indicators/indicators.js` file.
+     *
+     * @sample stock/indicators/cmo
+     *         CMO indicator
+     *
+     * @extends      plotOptions.sma
+     * @since 9.1.0
+     * @product      highstock
+     * @requires     stock/indicators/indicators
+     * @requires     stock/indicators/cmo
+     * @optionparent plotOptions.cmo
+     */
+    CMOIndicator.defaultOptions = merge(SMAIndicator.defaultOptions, {
+        params: {
+            period: 20,
+            index: 3
+        }
+    });
+    return CMOIndicator;
+}(SMAIndicator));
 SeriesRegistry.registerSeriesType('cmo', CMOIndicator);
 /* *
  *
@@ -133,11 +151,6 @@ SeriesRegistry.registerSeriesType('cmo', CMOIndicator);
  *
  * */
 export default CMOIndicator;
-/* *
- *
- *  API Options
- *
- * */
 /**
  * A `CMO` series. If the [type](#series.cmo.type) option is not
  * specified, it is inherited from [chart.type](#chart.type).
@@ -150,4 +163,4 @@ export default CMOIndicator;
  * @requires  stock/indicators/cmo
  * @apioption series.cmo
  */
-(''); // To include the above in the js output
+(''); // to include the above in the js output

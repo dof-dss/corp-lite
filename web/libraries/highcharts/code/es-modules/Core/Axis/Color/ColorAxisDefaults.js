@@ -1,11 +1,10 @@
 /* *
  *
- *  (c) 2010-2026 Highsoft AS
- *  Author: Torstein Honsi
+ *  (c) 2010-2021 Torstein Honsi
  *
- *  A commercial license may be required depending on use.
- *  See www.highcharts.com/license
+ *  License: www.highcharts.com/license
  *
+ *  !!!!!!! SOURCE GETS TRANSPILED BY TYPESCRIPT. EDIT TS FILE ONLY. !!!!!!!
  *
  * */
 'use strict';
@@ -59,16 +58,16 @@
  *
  * @extends      xAxis
  * @excluding    alignTicks, allowDecimals, alternateGridColor, breaks,
- *               categories, crosshair, dateTimeLabelFormats, left,
+ *               categories, crosshair, dateTimeLabelFormats, height, left,
  *               lineWidth, linkedTo, maxZoom, minRange, minTickInterval,
  *               offset, opposite, pane, plotBands, plotLines,
- *               reversedStacks, scrollbar, showEmpty, title, top,
+ *               reversedStacks, scrollbar, showEmpty, title, top, width,
  *               zoomEnabled
  * @product      highcharts highstock highmaps
  * @type         {*|Array<*>}
  * @optionparent colorAxis
  */
-const colorAxisDefaults = {
+var colorAxisDefaults = {
     /**
      * Whether to allow decimals on the color axis.
      * @type      {boolean}
@@ -106,6 +105,18 @@ const colorAxisDefaults = {
      * @type      {Array<*>}
      * @product   highcharts highstock highmaps
      * @apioption colorAxis.dataClasses
+     */
+    /**
+     * The layout of the color axis. Can be `'horizontal'` or `'vertical'`.
+     * If none given, the color axis has the same layout as the legend.
+     *
+     * @sample highcharts/coloraxis/horizontal-layout/
+     *         Horizontal color axis layout with vertical legend
+     *
+     * @type      {string|undefined}
+     * @since     7.2.0
+     * @product   highcharts highstock highmaps
+     * @apioption colorAxis.layout
      */
     /**
      * The color of each data class. If not set, the color is pulled
@@ -159,18 +170,6 @@ const colorAxisDefaults = {
      * @product   highcharts highstock highmaps
      * @apioption colorAxis.dataClasses.to
      */
-    /**
-     * The layout of the color axis. Can be `'horizontal'` or `'vertical'`.
-     * If none given, the color axis has the same layout as the legend.
-     *
-     * @sample highcharts/coloraxis/horizontal-layout/
-     *         Horizontal color axis layout with vertical legend
-     *
-     * @type      {string|undefined}
-     * @since     7.2.0
-     * @product   highcharts highstock highmaps
-     * @apioption colorAxis.layout
-     */
     /** @ignore-option */
     lineWidth: 0,
     /**
@@ -220,9 +219,10 @@ const colorAxisDefaults = {
      *         Grid lines demonstrated
      *
      * @type      {Highcharts.ColorString|Highcharts.GradientColorObject|Highcharts.PatternObject}
+     * @default   #e6e6e6
      * @product   highcharts highstock highmaps
+     * @apioption colorAxis.gridLineColor
      */
-    gridLineColor: "#ffffff" /* Palette.backgroundColor */,
     /**
      * The width of the grid lines extending from the axis across the
      * gradient of a scalar color axis.
@@ -297,7 +297,7 @@ const colorAxisDefaults = {
          * @type    {Highcharts.ColorString|Highcharts.GradientColorObject|Highcharts.PatternObject}
          * @product highcharts highstock highmaps
          */
-        color: "#999999" /* Palette.neutralColor40 */
+        color: "#999999" /* neutralColor40 */
     },
     /**
      * The axis labels show the number for each tick.
@@ -309,7 +309,6 @@ const colorAxisDefaults = {
      * @product highcharts highstock highmaps
      */
     labels: {
-        distance: 8,
         /**
          * How to handle overflowing labels on horizontal color axis. If set
          * to `"allow"`, it will not be aligned at all. By default it
@@ -340,7 +339,7 @@ const colorAxisDefaults = {
      * @type    {Highcharts.ColorString|Highcharts.GradientColorObject|Highcharts.PatternObject}
      * @product highcharts highstock highmaps
      */
-    minColor: "#e6e9ff" /* Palette.highlightColor10 */,
+    minColor: "#e6ebf5" /* highlightColor10 */,
     /**
      * The color to represent the maximum of the color axis. Unless
      * [dataClasses](#colorAxis.dataClasses) or
@@ -359,7 +358,7 @@ const colorAxisDefaults = {
      * @type    {Highcharts.ColorString|Highcharts.GradientColorObject|Highcharts.PatternObject}
      * @product highcharts highstock highmaps
      */
-    maxColor: "#0022ff" /* Palette.highlightColor100 */,
+    maxColor: "#003399" /* highlightColor100 */,
     /**
      * Color stops for the gradient of a scalar color axis. Use this in
      * cases where a linear gradient between a `minColor` and `maxColor`
@@ -367,10 +366,6 @@ const colorAxisDefaults = {
      * first item is a float between 0 and 1 assigning the relative
      * position in the gradient, and the second item is the color.
      *
-     * @sample highcharts/coloraxis/coloraxis-stops/
-     *         Color axis stops
-     * @sample highcharts/coloraxis/color-key-with-stops/
-     *         Color axis stops with custom colorKey
      * @sample {highmaps} maps/demo/heatmap/
      *         Heatmap with three color stops
      *
@@ -397,10 +392,11 @@ const colorAxisDefaults = {
      */
     /**
      * Whether to reverse the axis so that the highest number is closest
-     * to the origin. Defaults to `false`.
+     * to the origin. Defaults to `false` in a horizontal legend and
+     * `true` in a vertical legend, where the smallest value starts on
+     * top.
      *
      * @type      {boolean}
-     * @default   false
      * @product   highcharts highstock highmaps
      * @apioption colorAxis.reversed
      */
@@ -413,43 +409,9 @@ const colorAxisDefaults = {
      * Fires when the legend item belonging to the colorAxis is clicked.
      * One parameter, `event`, is passed to the function.
      *
-     * **Note:** This option is deprecated in favor of
-     * [legend.events.itemClick](#legend.events.itemClick).
-     *
-     * @deprecated 11.4.4
-     * @type       {Function}
-     * @product    highcharts highstock highmaps
-     * @apioption  colorAxis.events.legendItemClick
-     */
-    /**
-     * The width of the color axis. If it's a number, it is interpreted as
-     * pixels.
-     *
-     * If it's a percentage string, it is interpreted as percentages of the
-     * total plot width.
-     *
-     * @sample    highcharts/coloraxis/width-and-height
-     *            Percentage width and pixel height for color axis
-     *
-     * @type      {number|string}
-     * @since     11.3.0
+     * @type      {Function}
      * @product   highcharts highstock highmaps
-     * @apioption colorAxis.width
-     */
-    /**
-     * The height of the color axis. If it's a number, it is interpreted as
-     * pixels.
-     *
-     * If it's a percentage string, it is interpreted as percentages of the
-     * total plot height.
-     *
-     * @sample    highcharts/coloraxis/width-and-height
-     *            Percentage width and pixel height for color axis
-     *
-     * @type      {number|string}
-     * @since     11.3.0
-     * @product   highcharts highstock highmaps
-     * @apioption colorAxis.height
+     * @apioption colorAxis.events.legendItemClick
      */
     /**
      * Whether to display the colorAxis in the legend.

@@ -1,25 +1,16 @@
 /* *
  *
- *  (c) 2010-2026 Highsoft AS
- *  Author: Torstein Honsi
+ *  (c) 2010-2021 Torstein Honsi
  *
- *  A commercial license may be required depending on use.
- *  See www.highcharts.com/license
+ *  License: www.highcharts.com/license
  *
+ *  !!!!!!! SOURCE GETS TRANSPILED BY TYPESCRIPT. EDIT TS FILE ONLY. !!!!!!!
  *
  * */
 'use strict';
 import H from '../Globals.js';
-const { win } = H;
 import U from '../Utilities.js';
-const { isNumber, isString, merge, pInt, defined } = U;
-/* *
- *
- *  Helpers
- *
- * */
-const colorMix = (color1, color2, weight) => `color-mix(in srgb,${color1},${color2} ${weight * 100}%)`;
-const isStringColor = (color) => isString(color) && !!color && color !== 'none';
+var isNumber = U.isNumber, merge = U.merge, pInt = U.pInt;
 /* *
  *
  *  Class
@@ -33,9 +24,28 @@ const isStringColor = (color) => isString(color) && !!color && color !== 'none';
  * @name Highcharts.Color
  *
  * @param {Highcharts.ColorType} input
- * The input color.
+ * The input color in either rbga or hex format
  */
-class Color {
+var Color = /** @class */ (function () {
+    /* *
+     *
+     *  Constructor
+     *
+     * */
+    function Color(input) {
+        this.rgba = [NaN, NaN, NaN, NaN];
+        this.input = input;
+        var GlobalColor = H.Color;
+        // Backwards compatibility, allow class overwrite
+        if (GlobalColor && GlobalColor !== Color) {
+            return new GlobalColor(input);
+        }
+        // Backwards compatibility, allow instanciation without new (#13053)
+        if (!(this instanceof Color)) {
+            return new Color(input);
+        }
+        this.init(input);
+    }
     /* *
      *
      *  Static Functions
@@ -47,59 +57,80 @@ class Color {
      * @function Highcharts.Color.parse
      *
      * @param {Highcharts.ColorType} [input]
-     * The input color.
+     * The input color in either rbga or hex format.
      *
      * @return {Highcharts.Color}
      * Color instance.
      */
-    static parse(input) {
+    Color.parse = function (input) {
         return input ? new Color(input) : Color.None;
-    }
+    };
     /* *
      *
-     *  Constructor
+     *  Functions
      *
      * */
-    constructor(input) {
-        /**
-         * The RGBA color components, if the color is a solid color.
-         * @name Highcharts.Color#rgba
-         * @type {Highcharts.RGBA}
-         */
-        this.rgba = [NaN, NaN, NaN, NaN];
-        this.input = input;
-        const GlobalColor = H.Color;
-        // Backwards compatibility, allow class overwrite
-        if (GlobalColor && GlobalColor !== Color) {
-            return new GlobalColor(input);
-        }
-        let result, rgba, i, parser;
+    /**
+     * Parse the input color to rgba array
+     *
+     * @private
+     * @function Highcharts.Color#init
+     *
+     * @param {Highcharts.ColorType} input
+     * The input color in either rbga or hex format
+     */
+    Color.prototype.init = function (input) {
+        var result, rgba, i, parser;
         // Gradients
         if (typeof input === 'object' &&
             typeof input.stops !== 'undefined') {
-            this.stops = input.stops.map((stop) => new Color(stop[1]));
+            this.stops = input.stops.map(function (stop) { return new Color(stop[1]); });
             // Solid colors
         }
         else if (typeof input === 'string') {
             this.input = input = (Color.names[input.toLowerCase()] || input);
-            i = Color.parsers.length;
-            while (i-- && !rgba) {
-                parser = Color.parsers[i];
-                result = parser.regex.exec(input);
-                if (result) {
-                    rgba = parser.parse(result);
+            // Bitmasking as input[0] is not working for legacy IE.
+            if (input.charAt(0) === '#') {
+                var len = input.length, col = parseInt(input.substr(1), 16);
+                // Handle long-form, e.g. #AABBCC
+                if (len === 7) {
+                    rgba = [
+                        (col & 0xFF0000) >> 16,
+                        (col & 0xFF00) >> 8,
+                        (col & 0xFF),
+                        1
+                    ];
+                    // Handle short-form, e.g. #ABC
+                    // In short form, the value is assumed to be the same
+                    // for both nibbles for each component. e.g. #ABC = #AABBCC
+                }
+                else if (len === 4) {
+                    rgba = [
+                        (((col & 0xF00) >> 4) |
+                            (col & 0xF00) >> 8),
+                        (((col & 0xF0) >> 4) |
+                            (col & 0xF0)),
+                        ((col & 0xF) << 4) | (col & 0xF),
+                        1
+                    ];
+                }
+            }
+            // Otherwise, check regex parsers
+            if (!rgba) {
+                i = Color.parsers.length;
+                while (i-- && !rgba) {
+                    parser = Color.parsers[i];
+                    result = parser.regex.exec(input);
+                    if (result) {
+                        rgba = parser.parse(result);
+                    }
                 }
             }
         }
         if (rgba) {
             this.rgba = rgba;
         }
-    }
-    /* *
-     *
-     *  Functions
-     *
-     * */
+    };
     /**
      * Return the color or gradient stops in the specified format
      *
@@ -111,35 +142,32 @@ class Color {
      * @return {Highcharts.ColorType}
      * This color as a string or gradient stops.
      */
-    get(format) {
-        const input = this.input, rgba = this.rgba;
-        if (this.output) {
-            return this.output;
-        }
+    Color.prototype.get = function (format) {
+        var input = this.input, rgba = this.rgba;
         if (typeof input === 'object' &&
             typeof this.stops !== 'undefined') {
-            const ret = merge(input);
-            ret.stops = [].slice.call(ret.stops);
-            this.stops.forEach((stop, i) => {
-                ret.stops[i] = [
-                    ret.stops[i][0],
+            var ret_1 = merge(input);
+            ret_1.stops = [].slice.call(ret_1.stops);
+            this.stops.forEach(function (stop, i) {
+                ret_1.stops[i] = [
+                    ret_1.stops[i][0],
                     stop.get(format)
                 ];
             });
-            return ret;
+            return ret_1;
         }
-        // It's NaN if gradient colors on a column chart
+        // it's NaN if gradient colors on a column chart
         if (rgba && isNumber(rgba[0])) {
             if (format === 'rgb' || (!format && rgba[3] === 1)) {
                 return 'rgb(' + rgba[0] + ',' + rgba[1] + ',' + rgba[2] + ')';
             }
             if (format === 'a') {
-                return `${rgba[3]}`;
+                return "" + rgba[3];
             }
             return 'rgba(' + rgba.join(',') + ')';
         }
         return input;
-    }
+    };
     /**
      * Brighten the color instance.
      *
@@ -151,31 +179,26 @@ class Color {
      * @return {Highcharts.Color}
      * This color with modifications.
      */
-    brighten(alpha) {
-        const rgba = this.rgba;
+    Color.prototype.brighten = function (alpha) {
+        var rgba = this.rgba;
         if (this.stops) {
             this.stops.forEach(function (stop) {
                 stop.brighten(alpha);
             });
         }
         else if (isNumber(alpha) && alpha !== 0) {
-            if (isNumber(rgba[0])) {
-                for (let i = 0; i < 3; i++) {
-                    rgba[i] += pInt(alpha * 255);
-                    if (rgba[i] < 0) {
-                        rgba[i] = 0;
-                    }
-                    if (rgba[i] > 255) {
-                        rgba[i] = 255;
-                    }
+            for (var i = 0; i < 3; i++) {
+                rgba[i] += pInt(alpha * 255);
+                if (rgba[i] < 0) {
+                    rgba[i] = 0;
                 }
-            }
-            else if (Color.useColorMix && isStringColor(this.input)) {
-                this.output = colorMix(this.input, alpha > 0 ? 'white' : 'black', Math.abs(alpha));
+                if (rgba[i] > 255) {
+                    rgba[i] = 255;
+                }
             }
         }
         return this;
-    }
+    };
     /**
      * Set the color's opacity to a given alpha value.
      *
@@ -187,10 +210,10 @@ class Color {
      * @return {Highcharts.Color}
      *         Color with modifications.
      */
-    setOpacity(alpha) {
+    Color.prototype.setOpacity = function (alpha) {
         this.rgba[3] = alpha;
         return this;
-    }
+    };
     /**
      * Return an intermediate color between two colors.
      *
@@ -206,105 +229,68 @@ class Color {
      * @return {Highcharts.ColorType}
      * The intermediate color in rgba notation, or unsupported type.
      */
-    tweenTo(to, pos) {
-        const fromRgba = this.rgba, toRgba = to.rgba;
+    Color.prototype.tweenTo = function (to, pos) {
+        var fromRgba = this.rgba, toRgba = to.rgba;
         // Unsupported color, return to-color (#3920, #7034)
         if (!isNumber(fromRgba[0]) || !isNumber(toRgba[0])) {
-            if (Color.useColorMix &&
-                isStringColor(this.input) &&
-                isStringColor(to.input) &&
-                pos < 0.99) {
-                return colorMix(this.input, to.input, pos);
-            }
             return to.input || 'none';
         }
         // Check for has alpha, because rgba colors perform worse due to
         // lack of support in WebKit.
-        const hasAlpha = (toRgba[3] !== 1 || fromRgba[3] !== 1), channel = (to, i) => to + (fromRgba[i] - to) * (1 - pos), rgba = toRgba.slice(0, 3).map(channel).map(Math.round);
-        if (hasAlpha) {
-            rgba.push(channel(toRgba[3], 3));
-        }
-        return (hasAlpha ? 'rgba(' : 'rgb(') + rgba.join(',') + ')';
-    }
-}
-/* *
- *
- *  Static Properties
- *
- * */
-/**
- * Collection of named colors. Can be extended from the outside by adding
- * colors to Highcharts.Color.names.
- * @internal
- */
-Color.names = {
-    white: '#ffffff',
-    black: '#000000'
-};
-/**
- * Collection of parsers. This can be extended from the outside by pushing
- * parsers to `Color.parsers`.
- * @internal
- */
-Color.parsers = [{
-        // RGBA color
-        // eslint-disable-next-line max-len
-        regex: /rgba\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d?(?:\.\d+)?)\s*\)/,
-        parse: function (result) {
-            return [
-                pInt(result[1]),
-                pInt(result[2]),
-                pInt(result[3]),
-                parseFloat(result[4], 10)
-            ];
-        }
-    }, {
-        // RGB color
-        regex: /rgb\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*\)/,
-        parse: function (result) {
-            return [pInt(result[1]), pInt(result[2]), pInt(result[3]), 1];
-        }
-    }, {
-        // RGBA 3 & 4 digit hex color, e.g. #F0F, #F0FA
-        regex: /^#([a-f0-9])([a-f0-9])([a-f0-9])([a-f0-9])?$/i,
-        parse: function (result) {
-            // #abcd => #aabbccdd, hence result + result.
-            return [
-                (pInt(result[1] + result[1], 16)),
-                (pInt(result[2] + result[2], 16)),
-                (pInt(result[3] + result[3], 16)),
-                !defined(result[4]) ?
-                    1 :
-                    (pInt(result[4] + result[4], 16) / 255)
-            ];
-        }
-    }, {
-        // RGBA 6 & 8 digit hex color, e.g. #FFCC00, #FFCC00FF
-        regex: /^#([a-f0-9]{2})([a-f0-9]{2})([a-f0-9]{2})([a-f0-9]{2})?$/i,
-        parse: function (result) {
-            return [
-                pInt(result[1], 16),
-                pInt(result[2], 16),
-                pInt(result[3], 16),
-                !defined(result[4]) ?
-                    1 :
-                    (pInt(result[4], 16) / 255)
-            ];
-        }
-    }];
-/**
- * Whether to use CSS `color-mix` for color handling (brightening,
- * tweening). This can be disabled from the outside.
- * @internal
- */
-Color.useColorMix = win.CSS?.supports('color', 'color-mix(in srgb,red,blue 9%)');
-/**
- * A static Color instance representing no color.
- * @name Highcharts.Color.None
- * @type {Highcharts.Color}
- * @internal
- */
-Color.None = new Color(''); // Must be last static for init
+        var hasAlpha = (toRgba[3] !== 1 || fromRgba[3] !== 1);
+        return (hasAlpha ? 'rgba(' : 'rgb(') +
+            Math.round(toRgba[0] + (fromRgba[0] - toRgba[0]) * (1 - pos)) +
+            ',' +
+            Math.round(toRgba[1] + (fromRgba[1] - toRgba[1]) * (1 - pos)) +
+            ',' +
+            Math.round(toRgba[2] + (fromRgba[2] - toRgba[2]) * (1 - pos)) +
+            (hasAlpha ?
+                (',' +
+                    (toRgba[3] + (fromRgba[3] - toRgba[3]) * (1 - pos))) :
+                '') +
+            ')';
+    };
+    /* *
+     *
+     *  Static Properties
+     *
+     * */
+    /**
+     * Collection of named colors. Can be extended from the outside by adding
+     * colors to Highcharts.Color.names.
+     * @private
+     */
+    Color.names = {
+        white: '#ffffff',
+        black: '#000000'
+    };
+    /**
+     * Collection of parsers. This can be extended from the outside by pushing
+     * parsers to `Color.parsers`.
+     */
+    Color.parsers = [{
+            // RGBA color
+            // eslint-disable-next-line max-len
+            regex: /rgba\(\s*([0-9]{1,3})\s*,\s*([0-9]{1,3})\s*,\s*([0-9]{1,3})\s*,\s*([0-9]?(?:\.[0-9]+)?)\s*\)/,
+            parse: function (result) {
+                return [
+                    pInt(result[1]),
+                    pInt(result[2]),
+                    pInt(result[3]),
+                    parseFloat(result[4], 10)
+                ];
+            }
+        }, {
+            // RGB color
+            regex: /rgb\(\s*([0-9]{1,3})\s*,\s*([0-9]{1,3})\s*,\s*([0-9]{1,3})\s*\)/,
+            parse: function (result) {
+                return [pInt(result[1]), pInt(result[2]), pInt(result[3]), 1];
+            }
+        }];
+    // Must be last static member for init cycle
+    Color.None = new Color('');
+    return Color;
+}());
 /* *
  *
  *  Default Export
@@ -317,7 +303,11 @@ export default Color;
  *
  * */
 /**
- * A valid color to be parsed and handled by Highcharts.
+ * A valid color to be parsed and handled by Highcharts. Highcharts internally
+ * supports hex colors like `#ffffff`, rgb colors like `rgb(255,255,255)` and
+ * rgba colors like `rgba(255,255,255,1)`. Other colors may be supported by the
+ * browsers and displayed correctly, but Highcharts is not able to process them
+ * and apply concepts like opacity and brightening.
  *
  * @typedef {string} Highcharts.ColorString
  */
@@ -416,21 +406,14 @@ export default Color;
 * @type {number}
 */
 /**
- * @interface Highcharts.RGBA
- * @extends Array<number>
- */ /**
-* @name Highcharts.RGBA#length
-* @type {4}
-*/
-/**
  * Creates a color instance out of a color string.
  *
  * @function Highcharts.color
  *
  * @param {Highcharts.ColorType} input
- *        The input color.
+ *        The input color in either rbga or hex format
  *
  * @return {Highcharts.Color}
  *         Color instance
  */
-(''); // Detach doclets above
+(''); // detach doclets above

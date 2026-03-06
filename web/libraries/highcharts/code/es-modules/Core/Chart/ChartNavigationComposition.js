@@ -1,10 +1,10 @@
-/* *
+/**
  *
- *  (c) 2010-2026 Highsoft AS
- *  Author: Paweł Fus
+ *  (c) 2010-2021 Paweł Fus
  *
- *  A commercial license may be required depending on use.
- *  See www.highcharts.com/license
+ *  License: www.highcharts.com/license
+ *
+ *  !!!!!!! SOURCE GETS TRANSPILED BY TYPESCRIPT. EDIT TS FILE ONLY. !!!!!!!
  *
  * */
 'use strict';
@@ -13,7 +13,6 @@
  *  Composition
  *
  * */
-/** @internal */
 var ChartNavigationComposition;
 (function (ChartNavigationComposition) {
     /* *
@@ -27,7 +26,9 @@ var ChartNavigationComposition;
      *
      * */
     /* eslint-disable valid-jsdoc */
-    /** @internal */
+    /**
+     * @private
+     */
     function compose(chart) {
         if (!chart.navigation) {
             chart.navigation = new Additions(chart);
@@ -43,17 +44,15 @@ var ChartNavigationComposition;
     /**
      * Initializes `chart.navigation` object which delegates `update()` methods
      * to all other common classes (used in exporting and navigationBindings).
-     * @internal
+     * @private
      */
-    class Additions {
+    var Additions = /** @class */ (function () {
         /* *
          *
          *  Constructor
          *
          * */
-        /** @internal */
-        constructor(chart) {
-            /** @internal */
+        function Additions(chart) {
             this.updates = [];
             this.chart = chart;
         }
@@ -65,20 +64,24 @@ var ChartNavigationComposition;
         /**
          * Registers an `update()` method in the `chart.navigation` object.
          *
-         * @internal
+         * @private
          * @param {UpdateFunction} updateFn
          * The `update()` method that will be called in `chart.update()`.
          */
-        addUpdate(updateFn) {
+        Additions.prototype.addUpdate = function (updateFn) {
             this.chart.navigation.updates.push(updateFn);
-        }
-        /** @internal */
-        update(options, redraw) {
-            this.updates.forEach((updateFn) => {
-                updateFn.call(this.chart, options, redraw);
+        };
+        /**
+         * @private
+         */
+        Additions.prototype.update = function (options, redraw) {
+            var _this = this;
+            this.updates.forEach(function (updateFn) {
+                updateFn.call(_this.chart, options, redraw);
             });
-        }
-    }
+        };
+        return Additions;
+    }());
     ChartNavigationComposition.Additions = Additions;
 })(ChartNavigationComposition || (ChartNavigationComposition = {}));
 /* *
@@ -86,5 +89,4 @@ var ChartNavigationComposition;
  *  Default Export
  *
  * */
-/** @internal */
 export default ChartNavigationComposition;
