@@ -1,17 +1,16 @@
 /* *
  *
- *  (c) 2010-2026 Highsoft AS
- *  Author: Torstein Honsi
+ *  (c) 2010-2021 Torstein Honsi
  *
- *  A commercial license may be required depending on use.
- *  See www.highcharts.com/license
+ *  License: www.highcharts.com/license
  *
+ *  !!!!!!! SOURCE GETS TRANSPILED BY TYPESCRIPT. EDIT TS FILE ONLY. !!!!!!!
  *
  * */
 'use strict';
 import Fx from './Fx.js';
 import U from '../Utilities.js';
-const { defined, getStyle, isArray, isNumber, isObject, merge, objectEach, pick } = U;
+var defined = U.defined, getStyle = U.getStyle, isArray = U.isArray, isNumber = U.isNumber, isObject = U.isObject, merge = U.merge, objectEach = U.objectEach, pick = U.pick;
 /* *
  *
  *  Functions
@@ -73,11 +72,11 @@ function animObject(animation) {
  *        The numeric value.
  */
 function getDeferredAnimation(chart, animation, series) {
-    const labelAnimation = animObject(animation), s = series ? [series] : chart.series;
-    let defer = 0, duration = 0;
-    s.forEach((series) => {
-        const seriesAnim = animObject(series.options.animation);
-        defer = isObject(animation) && defined(animation.defer) ?
+    var labelAnimation = animObject(animation), s = series ? [series] : chart.series;
+    var defer = 0, duration = 0;
+    s.forEach(function (series) {
+        var seriesAnim = animObject(series.options.animation);
+        defer = animation && defined(animation.defer) ?
             labelAnimation.defer :
             Math.max(defer, seriesAnim.duration + seriesAnim.defer);
         duration = Math.min(labelAnimation.duration, seriesAnim.duration);
@@ -86,7 +85,7 @@ function getDeferredAnimation(chart, animation, series) {
     if (chart.renderer.forExport) {
         defer = 0;
     }
-    const anim = {
+    var anim = {
         defer: Math.max(0, defer - duration),
         duration: Math.min(defer, duration)
     };
@@ -111,7 +110,7 @@ function getDeferredAnimation(chart, animation, series) {
  * @return {void}
  */
 function animate(el, params, opt) {
-    let start, unit = '', end, fx, args;
+    var start, unit = '', end, fx, args;
     if (!isObject(opt)) { // Number or undefined/null
         args = arguments;
         opt = {
@@ -178,7 +177,7 @@ function animate(el, params, opt) {
  * stopping everything, we can just stop the actual attributes we're setting.
  */
 function stop(el, prop) {
-    let i = Fx.timers.length;
+    var i = Fx.timers.length;
     // Remove timers related to this element (#4519)
     while (i--) {
         if (Fx.timers[i].elem === el && (!prop || prop === Fx.timers[i].prop)) {
@@ -186,12 +185,12 @@ function stop(el, prop) {
         }
     }
 }
-const animationExports = {
-    animate,
-    animObject,
-    getDeferredAnimation,
-    setAnimation,
-    stop
+var animationExports = {
+    animate: animate,
+    animObject: animObject,
+    getDeferredAnimation: getDeferredAnimation,
+    setAnimation: setAnimation,
+    stop: stop
 };
 /* *
  *
@@ -199,38 +198,3 @@ const animationExports = {
  *
  * */
 export default animationExports;
-/* *
- *
- *  API Options
- *
- * */
-/**
- * An animation configuration. Animation configurations can also be defined as
- * booleans, where `false` turns off animation and `true` defaults to a duration
- * of 500ms and defer of 0ms.
- *
- * @interface Highcharts.AnimationOptionsObject
- */ /**
-* A callback function to execute when the animation finishes.
-* @name Highcharts.AnimationOptionsObject#complete
-* @type {Function|undefined}
-*/ /**
-* The animation defer in milliseconds.
-* @name Highcharts.AnimationOptionsObject#defer
-* @type {number|undefined}
-*/ /**
-* The animation duration in milliseconds.
-* @name Highcharts.AnimationOptionsObject#duration
-* @type {number|undefined}
-*/ /**
-* The name of an easing function as defined on the `Math` object.
-* @name Highcharts.AnimationOptionsObject#easing
-* @type {string|Function|undefined}
-*/ /**
-* A callback function to execute on each step of each attribute or CSS property
-* that's being animated. The first argument contains information about the
-* animation and progress.
-* @name Highcharts.AnimationOptionsObject#step
-* @type {Function|undefined}
-*/
-''; // Keeps doclets in JS file

@@ -1,18 +1,17 @@
 /* *
  *
- *  (c) 2010-2026 Highsoft AS
- *  Author: Torstein Honsi
+ *  (c) 2010-2021 Torstein Honsi
  *
- *  A commercial license may be required depending on use.
- *  See www.highcharts.com/license
+ *  License: www.highcharts.com/license
  *
  *  Grid theme for Highcharts JS
  *
+ *  !!!!!!! SOURCE GETS TRANSPILED BY TYPESCRIPT. EDIT TS FILE ONLY. !!!!!!!
  *
  * */
 'use strict';
-import D from '../../Core/Defaults.js';
-const { setOptions } = D;
+import D from '../../Core/DefaultOptions.js';
+var setOptions = D.setOptions;
 /* *
  *
  *  Theme
@@ -105,6 +104,11 @@ var GridTheme;
             },
             itemHiddenStyle: {
                 color: 'gray'
+            }
+        },
+        labels: {
+            style: {
+                color: '#99b'
             }
         },
         navigation: {

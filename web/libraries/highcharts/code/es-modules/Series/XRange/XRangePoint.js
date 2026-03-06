@@ -2,28 +2,53 @@
  *
  *  X-range series module
  *
- *  (c) 2010-2026 Highsoft AS
- *  Author: Torstein Honsi, Lars A. V. Cabrera
+ *  (c) 2010-2021 Torstein Honsi, Lars A. V. Cabrera
  *
- *  A commercial license may be required depending on use.
- *  See www.highcharts.com/license
+ *  License: www.highcharts.com/license
  *
+ *  !!!!!!! SOURCE GETS TRANSPILED BY TYPESCRIPT. EDIT TS FILE ONLY. !!!!!!!
  *
  * */
-'use strict';
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+import Point from '../../Core/Series/Point.js';
 import SeriesRegistry from '../../Core/Series/SeriesRegistry.js';
-const { column: { prototype: { pointClass: ColumnPoint } } } = SeriesRegistry.seriesTypes;
+var ColumnSeries = SeriesRegistry.seriesTypes.column;
 import U from '../../Core/Utilities.js';
-const { extend } = U;
+var extend = U.extend;
 /* *
  *
  *  Class
  *
  * */
-class XRangePoint extends ColumnPoint {
+var XRangePoint = /** @class */ (function (_super) {
+    __extends(XRangePoint, _super);
+    function XRangePoint() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        /* *
+         *
+         * Properties
+         *
+         * */
+        _this.options = void 0;
+        _this.series = void 0;
+        return _this;
+        /* eslint-enable valid-jsdoc */
+    }
     /* *
      *
-     *  Static Functions
+     * Static properties
      *
      * */
     /**
@@ -32,118 +57,112 @@ class XRangePoint extends ColumnPoint {
      * @private
      * @function getColorByCategory
      *
-     * @param {object} series
-     *        The series which the point belongs to.
+     * @param {Object} series
+     * The series which the point belongs to.
      *
-     * @param {object} point
-     *        The point to calculate its color for.
+     * @param {Object} point
+     * The point to calculate its color for.
      *
-     * @return {object}
-     *         Returns an object containing the properties color and colorIndex.
+     * @return {Object}
+     * Returns an object containing the properties color and colorIndex.
      */
-    static getColorByCategory(series, point) {
-        const colors = series.options.colors || series.chart.options.colors, colorCount = colors ?
+    XRangePoint.getColorByCategory = function (series, point) {
+        var colors = series.options.colors || series.chart.options.colors, colorCount = colors ?
             colors.length :
-            series.chart.options.chart.colorCount, colorIndex = point.y % colorCount, color = colors?.[colorIndex];
+            series.chart.options.chart.colorCount, colorIndex = point.y % colorCount, color = colors && colors[colorIndex];
         return {
             colorIndex: colorIndex,
             color: color
         };
-    }
+    };
     /* *
      *
-     *  Functions
+     * Functions
      *
      * */
     /**
+     * The ending X value of the range point.
+     * @name Highcharts.Point#x2
+     * @type {number|undefined}
+     * @requires modules/xrange
+     */
+    /**
+     * Extend applyOptions so that `colorByPoint` for x-range means that one
+     * color is applied per Y axis category.
+     *
+     * @private
+     * @function Highcharts.Point#applyOptions
+     *
+     * @return {Highcharts.Series}
+     */
+    /* eslint-disable valid-jsdoc */
+    /**
      * @private
      */
-    resolveColor() {
-        const series = this.series;
+    XRangePoint.prototype.resolveColor = function () {
+        var series = this.series, colorByPoint;
         if (series.options.colorByPoint && !this.options.color) {
-            const colorByPoint = XRangePoint.getColorByCategory(series, this);
+            colorByPoint = XRangePoint.getColorByCategory(series, this);
             if (!series.chart.styledMode) {
                 this.color = colorByPoint.color;
             }
-            if (typeof this.options.colorIndex === 'undefined' ||
-                this.options.colorIndex === null) {
+            if (!this.options.colorIndex) {
                 this.colorIndex = colorByPoint.colorIndex;
             }
         }
-        else {
-            this.color = this.options.color || series.color;
+        else if (!this.color) {
+            this.color = series.color;
         }
-    }
+    };
     /**
      * Extend init to have y default to 0.
      *
      * @private
+     * @function Highcharts.Point#init
      */
-    constructor(series, options) {
-        super(series, options);
+    XRangePoint.prototype.init = function () {
+        Point.prototype.init.apply(this, arguments);
         if (!this.y) {
             this.y = 0;
         }
-    }
-    /**
-     * Extend applyOptions to handle time strings for x2
-     *
-     * @private
-     */
-    applyOptions(options, x) {
-        super.applyOptions(options, x);
-        this.x2 = this.series.chart.time.parse(this.x2);
-        this.isNull = !this.isValid?.();
-        this.formatPrefix = this.isNull ? 'null' : 'point'; // #23605
         return this;
-    }
+    };
     /**
      * @private
+     * @function Highcharts.Point#setState
      */
-    setState() {
-        super.setState.apply(this, arguments);
+    XRangePoint.prototype.setState = function () {
+        Point.prototype.setState.apply(this, arguments);
         this.series.drawPoint(this, this.series.getAnimationVerb());
-    }
+    };
     /**
      * @private
+     * @function Highcharts.Point#getLabelConfig
      */
-    isValid() {
+    // Add x2 and yCategory to the available properties for tooltip formats
+    XRangePoint.prototype.getLabelConfig = function () {
+        var point = this, cfg = Point.prototype.getLabelConfig.call(point), yCats = point.series.yAxis.categories;
+        cfg.x2 = point.x2;
+        cfg.yCategory = point.yCategory = yCats && yCats[point.y];
+        return cfg;
+    };
+    /**
+     * @private
+     * @function Highcharts.Point#isValid
+     */
+    XRangePoint.prototype.isValid = function () {
         return typeof this.x === 'number' &&
             typeof this.x2 === 'number';
-    }
-}
+    };
+    return XRangePoint;
+}(ColumnSeries.prototype.pointClass));
 extend(XRangePoint.prototype, {
     ttBelow: false,
     tooltipDateKeys: ['x', 'x2']
 });
 /* *
  *
- *  Class Namespace
- *
- * */
-/* *
- *
  *  Default Export
  *
  * */
 export default XRangePoint;
-/* *
- *
- *  API Declarations
- *
- * */
-/**
- * The ending X value of the range point.
- * @name Highcharts.Point#x2
- * @type {number|undefined}
- * @requires modules/xrange
- */
-/**
- * @interface Highcharts.PointOptionsObject in parts/Point.ts
- */ /**
-* The ending X value of the range point.
-* @name Highcharts.PointOptionsObject#x2
-* @type {number|undefined}
-* @requires modules/xrange
-*/
-(''); // Keeps doclets above in JS file

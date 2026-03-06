@@ -2,60 +2,96 @@
  *
  *  Sankey diagram module
  *
- *  (c) 2010-2026 Highsoft AS
- *  Author: Torstein Honsi
+ *  (c) 2010-2021 Torstein Honsi
  *
- *  A commercial license may be required depending on use.
- *  See www.highcharts.com/license
+ *  License: www.highcharts.com/license
  *
+ *  !!!!!!! SOURCE GETS TRANSPILED BY TYPESCRIPT. EDIT TS FILE ONLY. !!!!!!!
  *
  * */
 'use strict';
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 import Point from '../../Core/Series/Point.js';
 import SeriesRegistry from '../../Core/Series/SeriesRegistry.js';
-const { column: ColumnSeries } = SeriesRegistry.seriesTypes;
+var ColumnSeries = SeriesRegistry.seriesTypes.column;
 import U from '../../Core/Utilities.js';
-const { defined } = U;
+var defined = U.defined;
 /* *
  *
  *  Class
  *
  * */
-class SankeyPoint extends ColumnSeries.prototype.pointClass {
+var SankeyPoint = /** @class */ (function (_super) {
+    __extends(SankeyPoint, _super);
+    function SankeyPoint() {
+        /* *
+         *
+         *  Properties
+         *
+         * */
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.className = void 0;
+        _this.fromNode = void 0;
+        _this.level = void 0;
+        _this.linkBase = void 0;
+        _this.linksFrom = void 0;
+        _this.linksTo = void 0;
+        _this.mass = void 0;
+        _this.nodeX = void 0;
+        _this.nodeY = void 0;
+        _this.options = void 0;
+        _this.series = void 0;
+        _this.toNode = void 0;
+        return _this;
+        /* eslint-enable valid-jsdoc */
+    }
     /* *
      *
      *  Functions
      *
      * */
+    /* eslint-disable valid-jsdoc */
     /**
      * @private
      */
-    applyOptions(options, x) {
+    SankeyPoint.prototype.applyOptions = function (options, x) {
         Point.prototype.applyOptions.call(this, options, x);
         // Treat point.level as a synonym of point.column
         if (defined(this.options.level)) {
             this.options.column = this.column = this.options.level;
         }
         return this;
-    }
+    };
     /**
      * @private
      */
-    getClassName() {
+    SankeyPoint.prototype.getClassName = function () {
         return (this.isNode ? 'highcharts-node ' : 'highcharts-link ') +
             Point.prototype.getClassName.call(this);
-    }
+    };
     /**
      * If there are incoming links, place it to the right of the
      * highest order column that links to this one.
      *
      * @private
      */
-    getFromNode() {
-        const node = this;
-        let fromColumn = -1, fromNode;
-        for (let i = 0; i < node.linksTo.length; i++) {
-            const point = node.linksTo[i];
+    SankeyPoint.prototype.getFromNode = function () {
+        var node = this;
+        var fromColumn = -1, fromNode;
+        for (var i = 0; i < node.linksTo.length; i++) {
+            var point = node.linksTo[i];
             if (point.fromNode.column > fromColumn &&
                 point.fromNode !== node // #16080
             ) {
@@ -63,14 +99,14 @@ class SankeyPoint extends ColumnSeries.prototype.pointClass {
                 fromColumn = fromNode.column;
             }
         }
-        return { fromNode, fromColumn };
-    }
+        return { fromNode: fromNode, fromColumn: fromColumn };
+    };
     /**
      * Calculate node.column if it's not set by user
      * @private
      */
-    setNodeColumn() {
-        const node = this;
+    SankeyPoint.prototype.setNodeColumn = function () {
+        var node = this;
         if (!defined(node.options.column)) {
             // No links to this node, place it left
             if (node.linksTo.length === 0) {
@@ -80,14 +116,15 @@ class SankeyPoint extends ColumnSeries.prototype.pointClass {
                 node.column = node.getFromNode().fromColumn + 1;
             }
         }
-    }
+    };
     /**
      * @private
      */
-    isValid() {
+    SankeyPoint.prototype.isValid = function () {
         return this.isNode || typeof this.weight === 'number';
-    }
-}
+    };
+    return SankeyPoint;
+}(ColumnSeries.prototype.pointClass));
 /* *
  *
  *  Default Export

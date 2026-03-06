@@ -1,18 +1,17 @@
 /* *
  *
- *  (c) 2009-2026 Highsoft AS
- *  Author: Øystein Moseng
+ *  (c) 2009-2021 Øystein Moseng
  *
  *  Keyboard navigation handler base class definition
  *
- *  A commercial license may be required depending on use.
- *  See www.highcharts.com/license
+ *  License: www.highcharts.com/license
  *
+ *  !!!!!!! SOURCE GETS TRANSPILED BY TYPESCRIPT. EDIT TS FILE ONLY. !!!!!!!
  *
  * */
 'use strict';
 import U from '../Core/Utilities.js';
-const { find } = U;
+var find = U.find;
 /* *
  *
  *  Class
@@ -24,7 +23,7 @@ const { find } = U;
  * layer for keyboard navigation, and defines a map of keyCodes to handler
  * functions.
  *
- * @requires modules/accessibility
+ * @requires module:modules/accessibility
  *
  * @sample highcharts/accessibility/custom-component
  *         Custom accessibility component
@@ -38,13 +37,13 @@ const { find } = U;
  * @param {Highcharts.KeyboardNavigationHandlerOptionsObject} options
  * Options for the keyboard navigation handler.
  */
-class KeyboardNavigationHandler {
+var KeyboardNavigationHandler = /** @class */ (function () {
     /* *
      *
      *  Constructor
      *
      * */
-    constructor(chart, options) {
+    function KeyboardNavigationHandler(chart, options) {
         this.chart = chart;
         this.keyCodeMap = options.keyCodeMap || [];
         this.validate = options.validate;
@@ -52,10 +51,10 @@ class KeyboardNavigationHandler {
         this.terminate = options.terminate;
         // Response enum
         this.response = {
-            success: 1, // Keycode was handled
-            prev: 2, // Move to prev module
-            next: 3, // Move to next module
-            noHandler: 4, // There is no handler for this keycode
+            success: 1,
+            prev: 2,
+            next: 3,
+            noHandler: 4,
             fail: 5 // Handler failed
         };
     }
@@ -64,6 +63,7 @@ class KeyboardNavigationHandler {
      *  Functions
      *
      * */
+    /* eslint-disable valid-jsdoc */
     /**
      * Find handler function(s) for key code in the keyCodeMap and run it.
      *
@@ -72,10 +72,10 @@ class KeyboardNavigationHandler {
      * @return {number} Returns a response code indicating whether the run was
      *      a success/fail/unhandled, or if we should move to next/prev module.
      */
-    run(e) {
-        const keyCode = e.which || e.keyCode;
-        let response = this.response.noHandler;
-        const handlerCodeSet = find(this.keyCodeMap, function (codeSet) {
+    KeyboardNavigationHandler.prototype.run = function (e) {
+        var keyCode = e.which || e.keyCode;
+        var response = this.response.noHandler;
+        var handlerCodeSet = find(this.keyCodeMap, function (codeSet) {
             return codeSet[0].indexOf(keyCode) > -1;
         });
         if (handlerCodeSet) {
@@ -86,8 +86,9 @@ class KeyboardNavigationHandler {
             response = this.response[e.shiftKey ? 'prev' : 'next'];
         }
         return response;
-    }
-}
+    };
+    return KeyboardNavigationHandler;
+}());
 /* *
  *
  *  Default Export
@@ -124,4 +125,4 @@ export default KeyboardNavigationHandler;
 * @name Highcharts.KeyboardNavigationHandlerOptionsObject#validate
 * @type {Function|undefined}
 */
-(''); // Keeps doclets above in JS file
+(''); // keeps doclets above in JS file

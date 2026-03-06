@@ -1,18 +1,17 @@
 /* *
  *
- *  (c) 2010-2026 Highsoft AS
- *  Author: Torstein Honsi
+ *  (c) 2010-2021 Torstein Honsi
  *
- *  A commercial license may be required depending on use.
- *  See www.highcharts.com/license
+ *  License: www.highcharts.com/license
  *
  *  Dark blue theme for Highcharts JS
  *
+ *  !!!!!!! SOURCE GETS TRANSPILED BY TYPESCRIPT. EDIT TS FILE ONLY. !!!!!!!
  *
  * */
 'use strict';
-import D from '../../Core/Defaults.js';
-const { setOptions } = D;
+import D from '../../Core/DefaultOptions.js';
+var setOptions = D.setOptions;
 /* *
  *
  *  Theme
@@ -26,10 +25,8 @@ var DarkBlueTheme;
      *
      * */
     DarkBlueTheme.options = {
-        colors: [
-            '#DDDF0D', '#55BF3B', '#DF5353', '#7798BF', '#aaeeee',
-            '#ff0066', '#eeaaee', '#55BF3B', '#DF5353', '#7798BF', '#aaeeee'
-        ],
+        colors: ['#DDDF0D', '#55BF3B', '#DF5353', '#7798BF', '#aaeeee',
+            '#ff0066', '#eeaaee', '#55BF3B', '#DF5353', '#7798BF', '#aaeeee'],
         chart: {
             backgroundColor: {
                 linearGradient: { x1: 0, y1: 0, x2: 1, y2: 1 },
@@ -84,6 +81,7 @@ var DarkBlueTheme;
                 }
             },
             lineColor: '#A0A0A0',
+            minorTickInterval: null,
             tickColor: '#A0A0A0',
             tickWidth: 1,
             title: {
@@ -147,6 +145,11 @@ var DarkBlueTheme;
                 color: '#666'
             }
         },
+        labels: {
+            style: {
+                color: '#CCC'
+            }
+        },
         navigation: {
             buttonOptions: {
                 symbolStroke: '#DDDDDD',
@@ -162,7 +165,7 @@ var DarkBlueTheme;
                 }
             }
         },
-        // Scroll charts
+        // scroll charts
         rangeSelector: {
             buttonTheme: {
                 fill: {

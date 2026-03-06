@@ -6,22 +6,6 @@
 		<title>Highcharts Example</title>
 
 		<style type="text/css">
-body {
-    font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Roboto,
-        Helvetica,
-        Arial,
-        "Apple Color Emoji",
-        "Segoe UI Emoji",
-        "Segoe UI Symbol",
-        sans-serif;
-    background: var(--highcharts-background-color);
-    color: var(--highcharts-neutral-color-100);
-}
-
 .highcharts-figure,
 .highcharts-data-table table {
     min-width: 310px;
@@ -32,7 +16,7 @@ body {
 .highcharts-data-table table {
     font-family: Verdana, sans-serif;
     border-collapse: collapse;
-    border: 1px solid var(--highcharts-neutral-color-10, #e6e6e6);
+    border: 1px solid #ebebeb;
     margin: 10px auto;
     text-align: center;
     width: 100%;
@@ -42,7 +26,7 @@ body {
 .highcharts-data-table caption {
     padding: 1em 0;
     font-size: 1.2em;
-    color: var(--highcharts-neutral-color-60, #666);
+    color: #555;
 }
 
 .highcharts-data-table th {
@@ -57,23 +41,14 @@ body {
 }
 
 .highcharts-data-table thead tr,
-.highcharts-data-table tbody tr:nth-child(even) {
-    background: var(--highcharts-neutral-color-3, #f7f7f7);
+.highcharts-data-table tr:nth-child(even) {
+    background: #f8f8f8;
 }
 
-.highcharts-description {
-    margin: 0.3rem 10px;
+.highcharts-data-table tr:hover {
+    background: #f1f7ff;
 }
 
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: #141414;
-        color: #ddd;
-    }
-    a {
-        color: #2caffe;
-    }
-}
 		</style>
 	</head>
 	<body>
@@ -82,7 +57,6 @@ body {
 <script src="../../code/modules/exporting.js"></script>
 <script src="../../code/modules/export-data.js"></script>
 <script src="../../code/modules/accessibility.js"></script>
-<script src="../../code/themes/adaptive.js"></script>
 
 <figure class="highcharts-figure">
     <div id="container"></div>
@@ -145,10 +119,7 @@ Highcharts.chart('container', {
         tickPosition: 'outside',
         labels: {
             rotation: 'auto',
-            distance: 20,
-            style: {
-                color: '#333'
-            }
+            distance: 20
         },
         plotBands: [{
             from: 0,
@@ -169,10 +140,7 @@ Highcharts.chart('container', {
         tickPosition: 'outside',
         labels: {
             rotation: 'auto',
-            distance: 20,
-            style: {
-                color: '#333'
-            }
+            distance: 20
         },
         plotBands: [{
             from: 0,
@@ -194,7 +162,6 @@ Highcharts.chart('container', {
                 enabled: false
             },
             dial: {
-                backgroundColor: '#333',
                 radius: '100%'
             }
         }
@@ -216,13 +183,11 @@ Highcharts.chart('container', {
 function (chart) {
     setInterval(function () {
         if (chart.series) { // the chart may be destroyed
-
-            const left = chart.series[0].points[0],
+            var left = chart.series[0].points[0],
                 right = chart.series[1].points[0],
+                leftVal,
+                rightVal,
                 inc = (Math.random() - 0.5) * 3;
-
-            let leftVal,
-                rightVal;
 
             leftVal = left.y + inc;
             rightVal = leftVal + inc / 3;

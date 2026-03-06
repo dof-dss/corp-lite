@@ -1,26 +1,33 @@
 /* *
  *
- *  (c) 2010-2026 Highsoft AS
- *  Author: Torstein Honsi
+ *  (c) 2010-2021 Torstein Honsi
  *
- *  A commercial license may be required depending on use.
- *  See www.highcharts.com/license
+ *  License: www.highcharts.com/license
  *
+ *  !!!!!!! SOURCE GETS TRANSPILED BY TYPESCRIPT. EDIT TS FILE ONLY. !!!!!!!
  *
  * */
 'use strict';
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 import Chart from './Chart.js';
-import D from '../Defaults.js';
-const { getOptions } = D;
+import D from '../DefaultOptions.js';
+var getOptions = D.getOptions;
 import SVGRenderer from '../Renderer/SVG/SVGRenderer.js';
 import U from '../Utilities.js';
-const { isNumber, merge, pick } = U;
+var merge = U.merge, pick = U.pick;
 import '../../Maps/MapSymbols.js';
-/* *
- *
- *  Class
- *
- * */
 /**
  * Map-optimized chart. Use {@link Highcharts.Chart|Chart} for common charts.
  *
@@ -30,12 +37,11 @@ import '../../Maps/MapSymbols.js';
  * @name Highcharts.MapChart
  * @extends Highcharts.Chart
  */
-class MapChart extends Chart {
-    /* *
-     *
-     *  Functions
-     *
-     * */
+var MapChart = /** @class */ (function (_super) {
+    __extends(MapChart, _super);
+    function MapChart() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
     /**
      * Initializes the chart. The constructor's arguments are passed on
      * directly.
@@ -46,16 +52,16 @@ class MapChart extends Chart {
      *        Custom options.
      *
      * @param {Function} [callback]
-     *        Function to run when the chart has loaded and all external
+     *        Function to run when the chart has loaded and and all external
      *        images are loaded.
      *
      *
      * @emits Highcharts.MapChart#event:init
      * @emits Highcharts.MapChart#event:afterInit
      */
-    init(userOptions, callback) {
-        const defaultCreditsOptions = getOptions().credits;
-        const options = merge({
+    MapChart.prototype.init = function (userOptions, callback) {
+        var defaultCreditsOptions = getOptions().credits;
+        var options = merge({
             chart: {
                 panning: {
                     enabled: true,
@@ -68,89 +74,18 @@ class MapChart extends Chart {
                     '{geojson.copyrightShort}</a>'),
                 mapTextFull: pick(defaultCreditsOptions.mapTextFull, '{geojson.copyright}')
             },
-            mapView: {}, // Required to enable Chart.mapView
+            mapView: {},
             tooltip: {
                 followTouchMove: false
             }
-        }, userOptions // User's options
+        }, userOptions // user's options
         );
-        super.init(options, callback);
-    }
-    /**
-     * Highcharts Maps only. Zoom in or out of the map. See also
-     * {@link Point#zoomTo}. See {@link Chart#fromLatLonToPoint} for how to get
-     * the `centerX` and `centerY` parameters for a geographic location.
-     *
-     * Deprecated as of v9.3 in favor of [MapView.zoomBy](https://api.highcharts.com/class-reference/Highcharts.MapView#zoomBy).
-     *
-     * @deprecated
-     * @function Highcharts.Chart#mapZoom
-     *
-     * @param {number} [howMuch]
-     *        How much to zoom the map. Values less than 1 zooms in. 0.5 zooms
-     *        in to half the current view. 2 zooms to twice the current view. If
-     *        omitted, the zoom is reset.
-     *
-     * @param {number} [xProjected]
-     *        The projected x position to keep stationary when zooming, if
-     *        available space.
-     *
-     * @param {number} [yProjected]
-     *        The projected y position to keep stationary when zooming, if
-     *        available space.
-     *
-     * @param {number} [chartX]
-     *        Keep this chart position stationary if possible. This is used for
-     *        example in `mousewheel` events, where the area under the mouse
-     *        should be fixed as we zoom in.
-     *
-     * @param {number} [chartY]
-     *        Keep this chart position stationary if possible.
-     */
-    mapZoom(howMuch, xProjected, yProjected, chartX, chartY) {
-        if (this.mapView) {
-            if (isNumber(howMuch)) {
-                // Compliance, mapView.zoomBy uses different values
-                howMuch = Math.log(howMuch) / Math.log(0.5);
-            }
-            this.mapView.zoomBy(howMuch, isNumber(xProjected) && isNumber(yProjected) ?
-                this.mapView.projection.inverse([xProjected, yProjected]) :
-                void 0, isNumber(chartX) && isNumber(chartY) ?
-                [chartX, chartY] :
-                void 0);
-        }
-    }
-    /**
-     * A wrapper for the chart's update function that will additionally run
-     * recommendMapView on chart.map change.
-     *
-     * @function Highcharts.MapChart#update
-     *
-     * @param {Highcharts.Options} options
-     *        The chart options.
-     */
-    update(options) {
-        // Calculate and set the recommended map view if map option is set
-        if (options.chart && 'map' in options.chart) {
-            this.mapView?.recommendMapView(this, [
-                options.chart.map,
-                ...(this.options.series || []).map((s) => s.mapData)
-            ], true);
-        }
-        super.update.apply(this, arguments);
-    }
-}
-/* *
- *
- *  Class Namespace
- *
- * */
+        _super.prototype.init.call(this, options, callback);
+    };
+    return MapChart;
+}(Chart));
+/* eslint-disable valid-jsdoc */
 (function (MapChart) {
-    /* *
-     *
-     *  Constants
-     *
-     * */
     /**
      * Contains all loaded map data for Highmaps.
      *
@@ -160,11 +95,6 @@ class MapChart extends Chart {
      * @type {Record<string,*>}
      */
     MapChart.maps = {};
-    /* *
-     *
-     *  Functions
-     *
-     * */
     /**
      * The factory function for creating new map charts. Creates a new {@link
      * Highcharts.MapChart|MapChart} object with different default options than
@@ -175,18 +105,21 @@ class MapChart extends Chart {
      * @function Highcharts.mapChart
      *
      * @param {string|Highcharts.HTMLDOMElement} [renderTo]
-     *        The DOM element to render to, or its id.
+     * The DOM element to render to, or its id.
      *
      * @param {Highcharts.Options} options
-     *        The chart options structure as described in the
-     *        [options reference](https://api.highcharts.com/highstock).
+     * The chart options structure as described in the
+     * [options reference](https://api.highcharts.com/highstock).
      *
      * @param {Highcharts.ChartCallbackFunction} [callback]
-     *        A function to execute when the chart object is finished
-     *        rendering and all external image files (`chart.backgroundImage`,
-     *        `chart.plotBackgroundImage` etc) are loaded.  Defining a
-     *        [chart.events.load](https://api.highcharts.com/highstock/chart.events.load)
-     *        handler is equivalent.
+     * A function to execute when the chart object is finished loading and
+     * rendering. In most cases the chart is built in one thread, but in
+     * Internet Explorer version 8 or less the chart is sometimes initialized
+     * before the document is ready, and in these cases the chart object will
+     * not be finished synchronously. As a consequence, code that relies on the
+     * newly built Chart object should always run in the callback. Defining a
+     * [chart.events.load](https://api.highcharts.com/highstock/chart.events.load)
+     * handler is equivalent.
      *
      * @return {Highcharts.MapChart}
      * The chart object.
@@ -202,26 +135,25 @@ class MapChart extends Chart {
      *
      * @function Highcharts.splitPath
      *
-     * @param {string|Array<(string|number)>} path
-     *        Path to split.
+     * @param {string|Array<string|number>} path
      *
      * @return {Highcharts.SVGPathArray}
      * Splitted SVG path
      */
     function splitPath(path) {
-        let arr;
+        var arr;
         if (typeof path === 'string') {
             path = path
                 // Move letters apart
-                .replace(/([A-Z])/gi, ' $1 ')
+                .replace(/([A-Za-z])/g, ' $1 ')
                 // Trim
                 .replace(/^\s*/, '').replace(/\s*$/, '');
             // Split on spaces and commas. The semicolon is bogus, designed to
             // circumvent string replacement in the pre-v7 assembler that built
             // specific styled mode files.
-            const split = path.split(/[ ,;]+/);
-            arr = split.map((item) => {
-                if (!/[A-Z]/i.test(item)) {
+            var split = path.split(/[ ,;]+/);
+            arr = split.map(function (item) {
+                if (!/[A-za-z]/.test(item)) {
                     return parseFloat(item);
                 }
                 return item;

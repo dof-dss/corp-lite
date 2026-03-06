@@ -6,22 +6,6 @@
 		<title>Highcharts Example</title>
 
 		<style type="text/css">
-body {
-    font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Roboto,
-        Helvetica,
-        Arial,
-        "Apple Color Emoji",
-        "Segoe UI Emoji",
-        "Segoe UI Symbol",
-        sans-serif;
-    background: var(--highcharts-background-color);
-    color: var(--highcharts-neutral-color-100);
-}
-
 #container {
     height: 400px;
 }
@@ -36,7 +20,7 @@ body {
 .highcharts-data-table table {
     font-family: Verdana, sans-serif;
     border-collapse: collapse;
-    border: 1px solid var(--highcharts-neutral-color-10, #e6e6e6);
+    border: 1px solid #ebebeb;
     margin: 10px auto;
     text-align: center;
     width: 100%;
@@ -46,7 +30,7 @@ body {
 .highcharts-data-table caption {
     padding: 1em 0;
     font-size: 1.2em;
-    color: var(--highcharts-neutral-color-60, #666);
+    color: #555;
 }
 
 .highcharts-data-table th {
@@ -61,23 +45,14 @@ body {
 }
 
 .highcharts-data-table thead tr,
-.highcharts-data-table tbody tr:nth-child(even) {
-    background: var(--highcharts-neutral-color-3, #f7f7f7);
+.highcharts-data-table tr:nth-child(even) {
+    background: #f8f8f8;
 }
 
-.highcharts-description {
-    margin: 0.3rem 10px;
+.highcharts-data-table tr:hover {
+    background: #f1f7ff;
 }
 
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: #141414;
-        color: #ddd;
-    }
-    a {
-        color: #2caffe;
-    }
-}
 		</style>
 	</head>
 	<body>
@@ -87,7 +62,6 @@ body {
 <script src="../../code/modules/exporting.js"></script>
 <script src="../../code/modules/export-data.js"></script>
 <script src="../../code/modules/accessibility.js"></script>
-<script src="../../code/themes/adaptive.js"></script>
 
 <figure class="highcharts-figure">
     <div id="container"></div>
@@ -99,7 +73,6 @@ body {
 
 
 		<script type="text/javascript">
-// Data retrieved from https://yearbook.enerdata.net/electricity/world-electricity-production-statistics.html
 Highcharts.chart('container', {
     chart: {
         type: 'column',
@@ -113,10 +86,11 @@ Highcharts.chart('container', {
     },
 
     title: {
-        text: ' Electricity production in countries, grouped by continent'
+        text: 'Total fruit consumption, grouped by gender'
     },
 
     xAxis: {
+        categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas'],
         labels: {
             skew3d: true,
             style: {
@@ -129,24 +103,17 @@ Highcharts.chart('container', {
         allowDecimals: false,
         min: 0,
         title: {
-            text: 'TWh',
-            skew3d: true,
-            style: {
-                fontSize: '16px'
-            }
+            text: 'Number of fruits',
+            skew3d: true
         }
     },
 
     tooltip: {
         headerFormat: '<b>{point.key}</b><br>',
-        pointFormat: '<span style="color:{series.color}">\u25CF</span> ' +
-            '{series.name}: {point.y} / {point.stackTotal}'
+        pointFormat: '<span style="color:{series.color}">\u25CF</span> {series.name}: {point.y} / {point.stackTotal}'
     },
 
     plotOptions: {
-        series: {
-            pointStart: 2018
-        },
         column: {
             stacking: 'normal',
             depth: 40
@@ -154,21 +121,21 @@ Highcharts.chart('container', {
     },
 
     series: [{
-        name: 'South Korea',
-        data: [590, 582, 571, 606, 625],
-        stack: 'Asia'
+        name: 'John',
+        data: [5, 3, 4, 7, 2],
+        stack: 'male'
     }, {
-        name: 'Germany',
-        data: [643, 612, 572, 588, 578],
-        stack: 'Europe'
+        name: 'Joe',
+        data: [3, 4, 4, 2, 5],
+        stack: 'male'
     }, {
-        name: 'Saudi Arabia',
-        data: [378, 367, 363, 408, 433],
-        stack: 'Asia'
+        name: 'Jane',
+        data: [2, 5, 6, 2, 1],
+        stack: 'female'
     }, {
-        name: 'France',
-        data: [582, 571, 533, 555, 473],
-        stack: 'Europe'
+        name: 'Janet',
+        data: [3, 0, 4, 4, 3],
+        stack: 'female'
     }]
 });
 

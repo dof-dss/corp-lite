@@ -2,19 +2,19 @@
  *
  *  Accessibility module - internationalization support
  *
- *  (c) 2010-2026 Highsoft AS
+ *  (c) 2010-2021 Highsoft AS
  *  Author: Øystein Moseng
  *
- *  A commercial license may be required depending on use.
- *  See www.highcharts.com/license
+ *  License: www.highcharts.com/license
  *
+ *  !!!!!!! SOURCE GETS TRANSPILED BY TYPESCRIPT. EDIT TS FILE ONLY. !!!!!!!
  *
  * */
 'use strict';
-import F from '../Core/Templating.js';
-const { format } = F;
+import F from '../Core/FormatUtilities.js';
+var format = F.format;
 import U from '../Core/Utilities.js';
-const { getNestedProperty, pick } = U;
+var pick = U.pick;
 /* *
  *
  *  Composition
@@ -29,21 +29,30 @@ var A11yI18nComposition;
      * */
     /* *
      *
+     *  Constants
+     *
+     * */
+    var composedClasses = [];
+    /* *
+     *
      *  Functions
      *
      * */
+    /* eslint-disable valid-jsdoc */
     /**
      * @private
      */
     function compose(ChartClass) {
-        const chartProto = ChartClass.prototype;
-        if (!chartProto.langFormat) {
+        if (composedClasses.indexOf(ChartClass) === -1) {
+            composedClasses.push(ChartClass);
+            var chartProto = ChartClass.prototype;
             chartProto.langFormat = langFormat;
         }
+        return ChartClass;
     }
     A11yI18nComposition.compose = compose;
     /**
-     * I18n utility function.  Format a single array or plural statement in a
+     * i18n utility function.  Format a single array or plural statement in a
      * format string.  If the statement is not an array or plural statement,
      * returns the statement within brackets.  Invalid array statements return
      * an empty string.
@@ -55,21 +64,21 @@ var A11yI18nComposition;
      * Context to apply to the format string.
      */
     function formatExtendedStatement(statement, ctx) {
-        const eachStart = statement.indexOf('#each('), pluralStart = statement.indexOf('#plural('), indexStart = statement.indexOf('['), indexEnd = statement.indexOf(']');
-        let arr, result;
+        var eachStart = statement.indexOf('#each('), pluralStart = statement.indexOf('#plural('), indexStart = statement.indexOf('['), indexEnd = statement.indexOf(']');
+        var arr, result;
         // Dealing with an each-function?
         if (eachStart > -1) {
-            const eachEnd = statement.slice(eachStart).indexOf(')') + eachStart, preEach = statement.substring(0, eachStart), postEach = statement.substring(eachEnd + 1), eachStatement = statement.substring(eachStart + 6, eachEnd), eachArguments = eachStatement.split(',');
-            let lenArg = Number(eachArguments[1]), len;
+            var eachEnd = statement.slice(eachStart).indexOf(')') + eachStart, preEach = statement.substring(0, eachStart), postEach = statement.substring(eachEnd + 1), eachStatement = statement.substring(eachStart + 6, eachEnd), eachArguments = eachStatement.split(',');
+            var lenArg = Number(eachArguments[1]), len = void 0;
             result = '';
-            arr = getNestedProperty(eachArguments[0], ctx);
+            arr = ctx[eachArguments[0]];
             if (arr) {
                 lenArg = isNaN(lenArg) ? arr.length : lenArg;
                 len = lenArg < 0 ?
                     arr.length + lenArg :
                     Math.min(lenArg, arr.length); // Overshoot
                 // Run through the array for the specified length
-                for (let i = 0; i < len; ++i) {
+                for (var i = 0; i < len; ++i) {
                     result += preEach + arr[i] + postEach;
                 }
             }
@@ -77,7 +86,7 @@ var A11yI18nComposition;
         }
         // Dealing with a plural-function?
         if (pluralStart > -1) {
-            const pluralEnd = (statement.slice(pluralStart).indexOf(')') + pluralStart), pluralStatement = statement.substring(pluralStart + 8, pluralEnd), pluralArguments = pluralStatement.split(','), num = Number(getNestedProperty(pluralArguments[0], ctx));
+            var pluralEnd = (statement.slice(pluralStart).indexOf(')') + pluralStart), pluralStatement = statement.substring(pluralStart + 8, pluralEnd), pluralArguments = pluralStatement.split(','), num = Number(ctx[pluralArguments[0]]);
             switch (num) {
                 case 0:
                     result = pick(pluralArguments[4], pluralArguments[1]);
@@ -95,9 +104,9 @@ var A11yI18nComposition;
         }
         // Array index
         if (indexStart > -1) {
-            const arrayName = statement.substring(0, indexStart), ix = Number(statement.substring(indexStart + 1, indexEnd));
-            let val;
-            arr = getNestedProperty(arrayName, ctx);
+            var arrayName = statement.substring(0, indexStart), ix = Number(statement.substring(indexStart + 1, indexEnd));
+            var val = void 0;
+            arr = ctx[arrayName];
             if (!isNaN(ix) && arr) {
                 if (ix < 0) {
                     val = arr[arr.length + ix];
@@ -147,7 +156,7 @@ var A11yI18nComposition;
      * If negative, the function will subtract the number from the length of the
      * array.  Use this to stop iterating before the array ends.  Example:
      *
-     * - Format: 'List contains: {#each(myArray, -1), }and {myArray[-1]}.'
+     * - Format: 'List contains: {#each(myArray, -1) }and {myArray[-1]}.'
      *
      * - Context: { myArray: [0, 1, 2, 3] }
      *
@@ -192,14 +201,12 @@ var A11yI18nComposition;
      * A `Chart` instance with a time object and numberFormatter, passed on to
      * format().
      *
-     * @deprecated
-     *
      * @return {string}
      * The formatted string.
      */
     function i18nFormat(formatString, context, chart) {
-        const getFirstBracketStatement = (sourceStr, offset) => {
-            const str = sourceStr.slice(offset || 0), startBracket = str.indexOf('{'), endBracket = str.indexOf('}');
+        var getFirstBracketStatement = function (sourceStr, offset) {
+            var str = sourceStr.slice(offset || 0), startBracket = str.indexOf('{'), endBracket = str.indexOf('}');
             if (startBracket > -1 && endBracket > startBracket) {
                 return {
                     statement: str.substring(startBracket + 1, endBracket),
@@ -208,7 +215,7 @@ var A11yI18nComposition;
                 };
             }
         }, tokens = [];
-        let bracketRes, constRes, cursor = 0;
+        var bracketRes, constRes, cursor = 0;
         // Tokenize format string into bracket statements and constants
         do {
             bracketRes = getFirstBracketStatement(formatString, cursor);
@@ -232,14 +239,14 @@ var A11yI18nComposition;
         // Perform the formatting.  The formatArrayStatement function returns
         // the statement in brackets if it is not an array statement, which
         // means it gets picked up by format below.
-        tokens.forEach((token) => {
+        tokens.forEach(function (token) {
             if (token.type === 'statement') {
                 token.value = formatExtendedStatement(token.value, context);
             }
         });
         // Join string back together and pass to format to pick up non-array
         // statements.
-        return format(tokens.reduce((acc, cur) => acc + cur.value, ''), context, chart);
+        return format(tokens.reduce(function (acc, cur) { return acc + cur.value; }, ''), context, chart);
     }
     A11yI18nComposition.i18nFormat = i18nFormat;
     /* eslint-enable max-len */
@@ -260,8 +267,8 @@ var A11yI18nComposition;
      * The formatted string.
      */
     function langFormat(langKey, context) {
-        const keys = langKey.split('.');
-        let formatString = this.options.lang, i = 0;
+        var keys = langKey.split('.');
+        var formatString = this.options.lang, i = 0;
         for (; i < keys.length; ++i) {
             formatString = formatString && formatString[keys[i]];
         }
@@ -269,6 +276,8 @@ var A11yI18nComposition;
             i18nFormat(formatString, context, this) : '';
     }
     /**
+     * String trim that works for IE6-8 as well.
+     *
      * @private
      * @function stringTrim
      *

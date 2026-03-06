@@ -6,22 +6,6 @@
 		<title>Highcharts Example</title>
 
 		<style type="text/css">
-body {
-    font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Roboto,
-        Helvetica,
-        Arial,
-        "Apple Color Emoji",
-        "Segoe UI Emoji",
-        "Segoe UI Symbol",
-        sans-serif;
-    background: var(--highcharts-background-color);
-    color: var(--highcharts-neutral-color-100);
-}
-
 #container {
     height: 400px;
 }
@@ -36,7 +20,7 @@ body {
 .highcharts-data-table table {
     font-family: Verdana, sans-serif;
     border-collapse: collapse;
-    border: 1px solid var(--highcharts-neutral-color-10, #e6e6e6);
+    border: 1px solid #ebebeb;
     margin: 10px auto;
     text-align: center;
     width: 100%;
@@ -46,7 +30,7 @@ body {
 .highcharts-data-table caption {
     padding: 1em 0;
     font-size: 1.2em;
-    color: var(--highcharts-neutral-color-60, #666);
+    color: #555;
 }
 
 .highcharts-data-table th {
@@ -61,23 +45,14 @@ body {
 }
 
 .highcharts-data-table thead tr,
-.highcharts-data-table tbody tr:nth-child(even) {
-    background: var(--highcharts-neutral-color-3, #f7f7f7);
+.highcharts-data-table tr:nth-child(even) {
+    background: #f8f8f8;
 }
 
-.highcharts-description {
-    margin: 0.3rem 10px;
+.highcharts-data-table tr:hover {
+    background: #f1f7ff;
 }
 
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: #141414;
-        color: #ddd;
-    }
-    a {
-        color: #2caffe;
-    }
-}
 		</style>
 	</head>
 	<body>
@@ -85,7 +60,6 @@ body {
 <script src="../../code/modules/exporting.js"></script>
 <script src="../../code/modules/export-data.js"></script>
 <script src="../../code/modules/accessibility.js"></script>
-<script src="../../code/themes/adaptive.js"></script>
 
 <figure class="highcharts-figure">
     <div id="container"></div>
@@ -99,16 +73,15 @@ body {
 
 
 		<script type="text/javascript">
-// Data retrieved from https://www.ssb.no/statbank/table/10467/
 Highcharts.chart('container', {
     chart: {
         type: 'area'
     },
     title: {
-        text: 'Born persons, by boys\' name'
+        text: 'Fruit consumption *'
     },
     subtitle: {
-        text: '* Missing data for Yasin in 2019',
+        text: '* Jane\'s banana consumption is unknown',
         align: 'right',
         verticalAlign: 'bottom'
     },
@@ -116,21 +89,22 @@ Highcharts.chart('container', {
         layout: 'vertical',
         align: 'left',
         verticalAlign: 'top',
-        x: 150,
-        y: 60,
+        x: 100,
+        y: 70,
         floating: true,
         borderWidth: 1,
-        backgroundColor: 'var(--highcharts-background-color, #ffffff)'
+        backgroundColor:
+            Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF'
+    },
+    xAxis: {
+        categories: ['Apples', 'Pears', 'Oranges', 'Bananas', 'Grapes', 'Plums', 'Strawberries', 'Raspberries']
     },
     yAxis: {
         title: {
-            text: 'Amount'
+            text: 'Y-Axis'
         }
     },
     plotOptions: {
-        series: {
-            pointStart: 2016
-        },
         area: {
             fillOpacity: 0.5
         }
@@ -139,14 +113,13 @@ Highcharts.chart('container', {
         enabled: false
     },
     series: [{
-        name: 'Arvid',
-        data: [11, 11, 8, 13, 12, 14, 4, 12]
+        name: 'John',
+        data: [0, 1, 4, 4, 5, 2, 3, 7]
     }, {
-        name: 'Yasin',
-        data: [10, 10, 8, null, 8, 6, 4, 8]
+        name: 'Jane',
+        data: [1, 0, 3, null, 3, 1, 2, 1]
     }]
 });
-
 		</script>
 	</body>
 </html>

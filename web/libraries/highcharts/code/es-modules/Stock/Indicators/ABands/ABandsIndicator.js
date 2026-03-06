@@ -1,21 +1,30 @@
 /* *
  *
- *  A commercial license may be required depending on use.
- *  See www.highcharts.com/license
+ *  License: www.highcharts.com/license
  *
+ *  !!!!!!! SOURCE GETS TRANSPILED BY TYPESCRIPT. EDIT TS FILE ONLY. !!!!!!!
  *
  * */
 'use strict';
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 import MultipleLinesComposition from '../MultipleLinesComposition.js';
 import SeriesRegistry from '../../../Core/Series/SeriesRegistry.js';
-const { sma: SMAIndicator } = SeriesRegistry.seriesTypes;
+var SMAIndicator = SeriesRegistry.seriesTypes.sma;
 import U from '../../../Core/Utilities.js';
-const { correctFloat, extend, merge } = U;
-/* *
- *
- *  Functions
- *
- * */
+var correctFloat = U.correctFloat, extend = U.extend, merge = U.merge;
+/* eslint-disable valid-jsdoc */
 /**
  * @private
  */
@@ -35,11 +44,7 @@ function getPointUB(high, base) {
 function getPointLB(low, base) {
     return low * (correctFloat(1 - 2 * base));
 }
-/* *
- *
- *  Class
- *
- * */
+/* eslint-enable valid-jsdoc */
 /**
  * The ABands series type
  *
@@ -49,23 +54,41 @@ function getPointLB(low, base) {
  *
  * @augments Highcharts.Series
  */
-class ABandsIndicator extends SMAIndicator {
+var ABandsIndicator = /** @class */ (function (_super) {
+    __extends(ABandsIndicator, _super);
+    function ABandsIndicator() {
+        /* *
+         *
+         *  Static Properties
+         *
+         * */
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        /* *
+         *
+         *  Properties
+         *
+         * */
+        _this.data = void 0;
+        _this.options = void 0;
+        _this.points = void 0;
+        return _this;
+    }
     /* *
      *
      *  Functions
      *
      * */
-    getValues(series, params) {
-        const period = params.period, factor = params.factor, index = params.index, xVal = series.xData, yVal = series.yData, yValLen = yVal ? yVal.length : 0, 
+    ABandsIndicator.prototype.getValues = function (series, params) {
+        var period = params.period, factor = params.factor, index = params.index, xVal = series.xData, yVal = series.yData, yValLen = yVal ? yVal.length : 0, 
         // Upperbands
         UB = [], 
         // Lowerbands
         LB = [], 
         // ABANDS array structure:
         // 0-date, 1-top line, 2-middle line, 3-bottom line
-        ABANDS = [], low = 2, high = 1, xData = [], yData = [];
-        // Middle line, top line and bottom line
-        let ML, TL, BL, date, bandBase, pointSMA, ubSMA, lbSMA, slicedX, slicedY, i;
+        ABANDS = [], 
+        // middle line, top line and bottom line
+        ML, TL, BL, date, bandBase, pointSMA, ubSMA, lbSMA, low = 2, high = 1, xData = [], yData = [], slicedX, slicedY, i;
         if (yValLen < period) {
             return;
         }
@@ -82,19 +105,19 @@ class ABandsIndicator extends SMAIndicator {
             if (i >= period) {
                 slicedX = xVal.slice(i - period, i);
                 slicedY = yVal.slice(i - period, i);
-                ubSMA = super.getValues.call(this, {
+                ubSMA = _super.prototype.getValues.call(this, {
                     xData: slicedX,
                     yData: UB.slice(i - period, i)
                 }, {
                     period: period
                 });
-                lbSMA = super.getValues.call(this, {
+                lbSMA = _super.prototype.getValues.call(this, {
                     xData: slicedX,
                     yData: LB.slice(i - period, i)
                 }, {
                     period: period
                 });
-                pointSMA = super.getValues.call(this, {
+                pointSMA = _super.prototype.getValues.call(this, {
                     xData: slicedX,
                     yData: slicedY
                 }, {
@@ -115,76 +138,72 @@ class ABandsIndicator extends SMAIndicator {
             xData: xData,
             yData: yData
         };
-    }
-}
-/* *
- *
- *  Static Properties
- *
- * */
-/**
- * Acceleration bands (ABANDS). This series requires the `linkedTo` option
- * to be set and should be loaded after the
- * `stock/indicators/indicators.js`.
- *
- * @sample {highstock} stock/indicators/acceleration-bands
- *         Acceleration Bands
- *
- * @extends      plotOptions.sma
- * @mixes        Highcharts.MultipleLinesMixin
- * @since        7.0.0
- * @product      highstock
- * @excluding    allAreas, colorAxis, compare, compareBase, joinBy, keys,
- *               navigatorOptions, pointInterval, pointIntervalUnit,
- *               pointPlacement, pointRange, pointStart, showInNavigator,
- *               stacking,
- * @requires     stock/indicators/indicators
- * @requires     stock/indicators/acceleration-bands
- * @optionparent plotOptions.abands
- */
-ABandsIndicator.defaultOptions = merge(SMAIndicator.defaultOptions, {
+    };
     /**
-     * Option for fill color between lines in Accelleration bands Indicator.
+     * Acceleration bands (ABANDS). This series requires the `linkedTo` option
+     * to be set and should be loaded after the
+     * `stock/indicators/indicators.js`.
      *
-     * @sample {highstock} stock/indicators/indicator-area-fill
-     *      Background fill between lines.
+     * @sample {highstock} stock/indicators/acceleration-bands
+     *         Acceleration Bands
      *
-     * @type {Highcharts.Color}
-     * @since 9.3.2
-     * @apioption plotOptions.abands.fillColor
-     *
+     * @extends      plotOptions.sma
+     * @mixes        Highcharts.MultipleLinesMixin
+     * @since        7.0.0
+     * @product      highstock
+     * @excluding    allAreas, colorAxis, compare, compareBase, joinBy, keys,
+     *               navigatorOptions, pointInterval, pointIntervalUnit,
+     *               pointPlacement, pointRange, pointStart, showInNavigator,
+     *               stacking,
+     * @requires     stock/indicators/indicators
+     * @requires     stock/indicators/acceleration-bands
+     * @optionparent plotOptions.abands
      */
-    params: {
-        period: 20,
+    ABandsIndicator.defaultOptions = merge(SMAIndicator.defaultOptions, {
         /**
-         * The algorithms factor value used to calculate bands.
+         * Option for fill color between lines in Accelleration bands Indicator.
          *
-         * @product highstock
+         * @sample {highstock} stock/indicators/indicator-area-fill
+         *      Background fill between lines.
+         *
+         * @type {Highcharts.Color}
+         * @since 9.3.2
+         * @apioption plotOptions.abands.fillColor
+         *
          */
-        factor: 0.001,
-        index: 3
-    },
-    lineWidth: 1,
-    topLine: {
-        styles: {
+        params: {
+            period: 20,
             /**
-             * Pixel width of the line.
+             * The algorithms factor value used to calculate bands.
+             *
+             * @product highstock
              */
-            lineWidth: 1
+            factor: 0.001,
+            index: 3
+        },
+        lineWidth: 1,
+        topLine: {
+            styles: {
+                /**
+                 * Pixel width of the line.
+                 */
+                lineWidth: 1
+            }
+        },
+        bottomLine: {
+            styles: {
+                /**
+                 * Pixel width of the line.
+                 */
+                lineWidth: 1
+            }
+        },
+        dataGrouping: {
+            approximation: 'averages'
         }
-    },
-    bottomLine: {
-        styles: {
-            /**
-             * Pixel width of the line.
-             */
-            lineWidth: 1
-        }
-    },
-    dataGrouping: {
-        approximation: 'averages'
-    }
-});
+    });
+    return ABandsIndicator;
+}(SMAIndicator));
 extend(ABandsIndicator.prototype, {
     areaLinesNames: ['top', 'bottom'],
     linesApiNames: ['topLine', 'bottomLine'],
@@ -221,4 +240,4 @@ export default ABandsIndicator;
  * @requires  stock/indicators/acceleration-bands
  * @apioption series.abands
  */
-''; // To include the above in jsdoc
+''; // to include the above in jsdoc

@@ -1,11 +1,10 @@
 /* *
  *
- *  (c) 2010-2026 Highsoft AS
- *  Author: Torstein Honsi
+ *  (c) 2010-2021 Torstein Honsi
  *
- *  A commercial license may be required depending on use.
- *  See www.highcharts.com/license
+ *  License: www.highcharts.com/license
  *
+ *  !!!!!!! SOURCE GETS TRANSPILED BY TYPESCRIPT. EDIT TS FILE ONLY. !!!!!!!
  *
  * */
 'use strict';
@@ -15,13 +14,12 @@
  *
  * */
 import U from '../Utilities.js';
-const { clamp, pick, pushUnique, stableSort } = U;
+var clamp = U.clamp, pick = U.pick, stableSort = U.stableSort;
 /* *
  *
  *  Namespace
  *
  * */
-/** @internal */
 var RendererUtilities;
 (function (RendererUtilities) {
     /* *
@@ -41,56 +39,43 @@ var RendererUtilities;
      * of objects containing a size, a target and a rank. It will place the
      * labels as close as possible to their targets, skipping the lowest ranked
      * labels if necessary.
-     * @internal
+     * @private
      */
     function distribute(boxes, len, maxDistance) {
         // Original array will be altered with added .pos
-        const origBoxes = boxes, reducedLen = origBoxes.reducedLen || len, sortByRank = (a, b) => (b.rank || 0) - (a.rank || 0), sortByTarget = (a, b) => a.target - b.target, restBoxes = [], // The outranked overshoot
-        boxesLength = boxes.length, forDeletion = [], push = restBoxes.push;
-        let i, cursor, step, overlapping = true, box, target, total = 0, equalRank;
+        var origBoxes = boxes, reducedLen = origBoxes.reducedLen || len, sortByRank = function (a, b) {
+            return (b.rank || 0) - (a.rank || 0);
+        }, sortByTarget = function (a, b) {
+            return a.target - b.target;
+        };
+        var i, overlapping = true, restBoxes = [], // The outranked overshoot
+        box, target, total = 0;
         // If the total size exceeds the len, remove those boxes with the lowest
         // rank
-        i = boxesLength;
+        i = boxes.length;
         while (i--) {
             total += boxes[i].size;
         }
         // Sort by rank, then slice away overshoot
         if (total > reducedLen) {
             stableSort(boxes, sortByRank);
-            equalRank = boxes[0].rank === boxes[boxes.length - 1].rank;
-            step = equalRank ? boxesLength / 2 : -1;
-            cursor = equalRank ? step : boxesLength - 1;
-            // When the boxes have equal rank (pie data labels, flags - #10073),
-            // decimate the boxes by starting in the middle and gradually remove
-            // more items inside the array. When they are sorted by rank, just
-            // remove the ones with the lowest rank from the end.
-            while (step && total > reducedLen) {
-                i = Math.floor(cursor);
-                box = boxes[i];
-                if (pushUnique(forDeletion, i)) {
-                    total -= box.size;
-                }
-                cursor += step;
-                // Start over the decimation with smaller steps
-                if (equalRank && cursor >= boxes.length) {
-                    step /= 2;
-                    cursor = step;
-                }
+            i = 0;
+            total = 0;
+            while (total <= reducedLen) {
+                total += boxes[i].size;
+                i++;
             }
-            // Clean out the boxes marked for deletion
-            forDeletion
-                .sort((a, b) => b - a)
-                .forEach((i) => push.apply(restBoxes, boxes.splice(i, 1)));
+            restBoxes = boxes.splice(i - 1, boxes.length);
         }
         // Order by target
         stableSort(boxes, sortByTarget);
         // So far we have been mutating the original array. Now
         // create a copy with target arrays
-        boxes = boxes.map((box) => ({
+        boxes = boxes.map(function (box) { return ({
             size: box.size,
             targets: [box.target],
             align: pick(box.align, 0.5)
-        }));
+        }); });
         while (overlapping) {
             // Initial positions: target centered in box
             i = boxes.length;
@@ -125,18 +110,18 @@ var RendererUtilities;
             }
         }
         // Add the rest (hidden boxes)
-        push.apply(origBoxes, restBoxes);
+        origBoxes.push.apply(origBoxes, restBoxes);
         // Now the composite boxes are placed, we need to put the original boxes
         // within them
         i = 0;
-        boxes.some((box) => {
-            let posInCompositeBox = 0;
+        boxes.some(function (box) {
+            var posInCompositeBox = 0;
             // Exceeded maxDistance => abort
-            return (box.targets || []).some(() => {
+            return (box.targets || []).some(function () {
                 origBoxes[i].pos = box.pos + posInCompositeBox;
                 // If the distance between the position and the target exceeds
                 // maxDistance, abort the loop and decrease the length in
-                // increments of 10% to recursively reduce the number of
+                // increments of 10% to recursively reduce the  number of
                 // visible boxes by rank. Once all boxes are within the
                 // maxDistance, we're good.
                 if (typeof maxDistance !== 'undefined' &&
@@ -144,7 +129,7 @@ var RendererUtilities;
                     // Reset the positions that are already set
                     origBoxes
                         .slice(0, i + 1)
-                        .forEach((box) => delete box.pos);
+                        .forEach(function (box) { return delete box.pos; });
                     // Try with a smaller length
                     origBoxes.reducedLen =
                         (origBoxes.reducedLen || len) - (len * 0.1);
@@ -171,5 +156,4 @@ var RendererUtilities;
  *  Default Export
  *
  * */
-/** @internal */
 export default RendererUtilities;

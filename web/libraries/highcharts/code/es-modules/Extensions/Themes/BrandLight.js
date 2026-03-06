@@ -1,21 +1,21 @@
 /* *
  *
- *   (c) 2010-2026 Highsoft AS
+ *   (c) 2010-2021 Highsoft AS
  *
  *  Author: Nancy Dillon
  *
- *  A commercial license may be required depending on use.
- *  See www.highcharts.com/license
+ *  License: www.highcharts.com/license
  *
  *  Light theme based on Highcharts brand system
  *
+ *  !!!!!!! SOURCE GETS TRANSPILED BY TYPESCRIPT. EDIT TS FILE ONLY. !!!!!!!
  *
  * */
 'use strict';
-import D from '../../Core/Defaults.js';
-const { setOptions } = D;
+import D from '../../Core/DefaultOptions.js';
+var setOptions = D.setOptions;
 import U from '../../Core/Utilities.js';
-const { createElement } = U;
+var createElement = U.createElement;
 /* *
  *
  *  Theme
@@ -29,10 +29,8 @@ var BrandLightTheme;
      *
      * */
     BrandLightTheme.options = {
-        colors: [
-            '#8087E8', '#A3EDBA', '#F19E53', '#6699A1',
-            '#E1D369', '#87B4E7', '#DA6D85', '#BBBAC5'
-        ],
+        colors: ['#8087E8', '#A3EDBA', '#F19E53', '#6699A1',
+            '#E1D369', '#87B4E7', '#DA6D85', '#BBBAC5'],
         chart: {
             backgroundColor: '#f0f0f0',
             style: {
@@ -94,6 +92,11 @@ var BrandLightTheme;
                 }
             }
         },
+        labels: {
+            style: {
+                color: '#46465C'
+            }
+        },
         credits: {
             style: {
                 color: '#46465C'
@@ -151,7 +154,7 @@ var BrandLightTheme;
                 }
             }
         },
-        // Scroll charts
+        // scroll charts
         rangeSelector: {
             buttonTheme: {
                 fill: '#fff',
@@ -239,7 +242,7 @@ var BrandLightTheme;
     function apply() {
         // Load the fonts
         createElement('link', {
-            href: 'https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;300;400;600;700',
+            href: 'https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:200,300,400,600,700',
             rel: 'stylesheet',
             type: 'text/css'
         }, null, document.getElementsByTagName('head')[0]);

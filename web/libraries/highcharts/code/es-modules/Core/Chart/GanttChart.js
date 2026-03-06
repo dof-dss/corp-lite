@@ -1,20 +1,34 @@
 /* *
  *
- *  (c) 2016-2026 Highsoft AS
+ *  (c) 2016-2021 Highsoft AS
  *
  *  Author: Lars A. V. Cabrera
  *
- *  A commercial license may be required depending on use.
- *  See www.highcharts.com/license
+ *  License: www.highcharts.com/license
  *
+ *  !!!!!!! SOURCE GETS TRANSPILED BY TYPESCRIPT. EDIT TS FILE ONLY. !!!!!!!
  *
  * */
 'use strict';
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 import Chart from './Chart.js';
-import D from '../Defaults.js';
-const { defaultOptions } = D;
+import D from '../DefaultOptions.js';
+var getOptions = D.getOptions;
 import U from '../Utilities.js';
-const { isArray, merge, splat } = U;
+var isArray = U.isArray, merge = U.merge, splat = U.splat;
+import '../../Series/Gantt/GanttSeries.js';
 /* *
  *
  *  Class
@@ -29,12 +43,11 @@ const { isArray, merge, splat } = U;
  * @name Highcharts.GanttChart
  * @extends Highcharts.Chart
  */
-class GanttChart extends Chart {
-    /* *
-     *
-     *  Functions
-     *
-     * */
+var GanttChart = /** @class */ (function (_super) {
+    __extends(GanttChart, _super);
+    function GanttChart() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
     /**
      * Initializes the chart. The constructor's arguments are passed on
      * directly.
@@ -45,24 +58,24 @@ class GanttChart extends Chart {
      *        Custom options.
      *
      * @param {Function} [callback]
-     *        Function to run when the chart has loaded and all external
+     *        Function to run when the chart has loaded and and all external
      *        images are loaded.
      *
      *
      * @emits Highcharts.GanttChart#event:init
      * @emits Highcharts.GanttChart#event:afterInit
      */
-    init(userOptions, callback) {
-        const xAxisOptions = userOptions.xAxis, yAxisOptions = userOptions.yAxis;
-        let defaultLinkedTo;
+    GanttChart.prototype.init = function (userOptions, callback) {
+        var defaultOptions = getOptions(), xAxisOptions = userOptions.xAxis, yAxisOptions = userOptions.yAxis;
+        var defaultLinkedTo;
         // Avoid doing these twice
         userOptions.xAxis = userOptions.yAxis = void 0;
-        const options = merge(true, {
+        var options = merge(true, {
             chart: {
                 type: 'gantt'
             },
             title: {
-                text: ''
+                text: null
             },
             legend: {
                 enabled: false
@@ -74,75 +87,55 @@ class GanttChart extends Chart {
                     type: 'category'
                 }
             }
-        }, userOptions, // User's options
+        }, userOptions, // user's options
         // forced options
         {
             isGantt: true
         });
         userOptions.xAxis = xAxisOptions;
         userOptions.yAxis = yAxisOptions;
-        // Apply X axis options to both single and multi x axes If user hasn't
-        // defined axes as array, make it into an array and add a second axis by
-        // default.
+        // apply X axis options to both single and multi x axes
+        // If user hasn't defined axes as array, make it into an array and add a
+        // second axis by default.
         options.xAxis = (!isArray(userOptions.xAxis) ?
             [userOptions.xAxis || {}, {}] :
-            userOptions.xAxis).map((xAxisOptions, i) => {
+            userOptions.xAxis).map(function (xAxisOptions, i) {
             if (i === 1) { // Second xAxis
                 defaultLinkedTo = 0;
             }
-            return merge(
-            // Defaults
-            {
+            return merge(defaultOptions.xAxis, {
                 grid: {
-                    borderColor: defaultOptions.xAxis?.grid?.borderColor ||
-                        "#cccccc" /* Palette.neutralColor20 */,
                     enabled: true
                 },
-                opposite: defaultOptions.xAxis?.opposite ??
-                    xAxisOptions.opposite ??
-                    true,
+                opposite: true,
                 linkedTo: defaultLinkedTo
-            }, 
-            // User options
-            xAxisOptions, 
-            // Forced options
+            }, xAxisOptions, // user options
             {
                 type: 'datetime'
             });
         });
-        // Apply Y axis options to both single and multi y axes
-        options.yAxis = (splat(userOptions.yAxis || {})).map((yAxisOptions) => merge(
-        // Defaults
-        {
-            grid: {
-                borderColor: defaultOptions.yAxis?.grid?.borderColor ||
-                    "#cccccc" /* Palette.neutralColor20 */,
-                enabled: true
-            },
-            staticScale: 50,
-            reversed: true,
-            // Set default type treegrid, but only if 'categories' is
-            // undefined
-            type: yAxisOptions.categories ? yAxisOptions.type : 'treegrid'
-        }, 
-        // User options
-        yAxisOptions));
-        super.init(options, callback);
-    }
-}
-/* *
- *
- *  Class Namespace
- *
- * */
-/** @internal */
+        // apply Y axis options to both single and multi y axes
+        options.yAxis = (splat(userOptions.yAxis || {})).map(function (yAxisOptions) {
+            return merge(defaultOptions.yAxis, // #3802
+            {
+                grid: {
+                    enabled: true
+                },
+                staticScale: 50,
+                reversed: true,
+                // Set default type treegrid, but only if 'categories' is
+                // undefined
+                type: yAxisOptions.categories ?
+                    yAxisOptions.type : 'treegrid'
+            }, yAxisOptions // user options
+            );
+        });
+        _super.prototype.init.call(this, options, callback);
+    };
+    return GanttChart;
+}(Chart));
+/* eslint-disable valid-jsdoc */
 (function (GanttChart) {
-    /* *
-     *
-     *  Functions
-     *
-     * */
-    /* eslint-disable jsdoc/check-param-names */
     /**
      * The factory function for creating new gantt charts. Creates a new {@link
      * Highcharts.GanttChart|GanttChart} object with different default options
@@ -168,7 +161,7 @@ class GanttChart extends Chart {
      *        The chart options structure.
      *
      * @param {Highcharts.ChartCallbackFunction} [callback]
-     *        Function to run when the chart has loaded and all external
+     *        Function to run when the chart has loaded and and all external
      *        images are loaded. Defining a
      *        [chart.events.load](https://api.highcharts.com/highcharts/chart.events.load)
      *        handler is equivalent.
@@ -180,11 +173,5 @@ class GanttChart extends Chart {
         return new GanttChart(a, b, c);
     }
     GanttChart.ganttChart = ganttChart;
-    /* eslint-enable jsdoc/check-param-names */
 })(GanttChart || (GanttChart = {}));
-/* *
- *
- *  Default Export
- *
- * */
 export default GanttChart;

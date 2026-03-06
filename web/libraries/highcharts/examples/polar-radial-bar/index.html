@@ -6,22 +6,6 @@
 		<title>Highcharts Example</title>
 
 		<style type="text/css">
-body {
-    font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Roboto,
-        Helvetica,
-        Arial,
-        "Apple Color Emoji",
-        "Segoe UI Emoji",
-        "Segoe UI Symbol",
-        sans-serif;
-    background: var(--highcharts-background-color);
-    color: var(--highcharts-neutral-color-100);
-}
-
 #container {
     height: 600px;
 }
@@ -36,7 +20,7 @@ body {
 .highcharts-data-table table {
     font-family: Verdana, sans-serif;
     border-collapse: collapse;
-    border: 1px solid var(--highcharts-neutral-color-10, #e6e6e6);
+    border: 1px solid #ebebeb;
     margin: 10px auto;
     text-align: center;
     width: 100%;
@@ -46,7 +30,7 @@ body {
 .highcharts-data-table caption {
     padding: 1em 0;
     font-size: 1.2em;
-    color: var(--highcharts-neutral-color-60, #666);
+    color: #555;
 }
 
 .highcharts-data-table th {
@@ -61,8 +45,12 @@ body {
 }
 
 .highcharts-data-table thead tr,
-.highcharts-data-table tbody tr:nth-child(even) {
-    background: var(--highcharts-neutral-color-3, #f7f7f7);
+.highcharts-data-table tr:nth-child(even) {
+    background: #f8f8f8;
+}
+
+.highcharts-data-table tr:hover {
+    background: #f1f7ff;
 }
 
 .ld-label {
@@ -78,19 +66,6 @@ body {
     width: 40px;
 }
 
-.highcharts-description {
-    margin: 0.3rem 10px;
-}
-
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: #141414;
-        color: #ddd;
-    }
-    a {
-        color: #2caffe;
-    }
-}
 		</style>
 	</head>
 	<body>
@@ -99,7 +74,6 @@ body {
 <script src="../../code/modules/exporting.js"></script>
 <script src="../../code/modules/export-data.js"></script>
 <script src="../../code/modules/accessibility.js"></script>
-<script src="../../code/themes/adaptive.js"></script>
 
 <!-- Flag sprites service provided by Martijn Lafeber,
     https://github.com/lafeber/world-flags-sprite/blob/master/LICENSE -->
@@ -109,7 +83,7 @@ body {
     <div id="container"></div>
     <p class="highcharts-description">
         A polar bar chart is similar to a bar chart, but the y-axis is circular.
-        In this demo we see the total Winter Olympics medals earned for the top 5
+        In this demo we see the total Winter Olympics medals earned for the top 10
         countries.
     </p>
 </figure>
@@ -126,11 +100,6 @@ Highcharts.chart('container', {
     title: {
         text: 'Winter Olympic medals per existing country (TOP 5)'
     },
-    subtitle: {
-        text: 'Source: ' +
-            '<a href="https://en.wikipedia.org/wiki/All-time_Olympic_Games_medal_table"' +
-            'target="_blank">Wikipedia</a>'
-    },
     tooltip: {
         outside: true
     },
@@ -143,6 +112,7 @@ Highcharts.chart('container', {
         tickInterval: 1,
         labels: {
             align: 'right',
+            useHTML: true,
             allowOverlap: true,
             step: 1,
             y: 3,
@@ -151,7 +121,6 @@ Highcharts.chart('container', {
             }
         },
         lineWidth: 0,
-        gridLineWidth: 0,
         categories: [
             'Norway <span class="f16"><span id="flag" class="flag no">' +
             '</span></span>',
@@ -159,44 +128,42 @@ Highcharts.chart('container', {
             '</span></span>',
             'Germany <span class="f16"><span id="flag" class="flag de">' +
             '</span></span>',
-            'Austria <span class="f16"><span id="flag" class="flag at">' +
-            '</span></span>',
             'Canada <span class="f16"><span id="flag" class="flag ca">' +
+            '</span></span>',
+            'Austria <span class="f16"><span id="flag" class="flag at">' +
             '</span></span>'
         ]
     },
     yAxis: {
+        crosshair: {
+            enabled: true,
+            color: '#333'
+        },
         lineWidth: 0,
         tickInterval: 25,
         reversedStacks: false,
         endOnTick: true,
-        showLastLabel: true,
-        gridLineWidth: 0
+        showLastLabel: true
     },
     plotOptions: {
         column: {
             stacking: 'normal',
             borderWidth: 0,
             pointPadding: 0,
-            groupPadding: 0.15,
-            borderRadius: {
-                radius: '50%',
-                where: 'all'
-            }
+            groupPadding: 0.15
         }
     },
     series: [{
         name: 'Gold medals',
-        data: [148, 113, 104, 71, 77]
+        data: [132, 105, 92, 73, 64]
     }, {
         name: 'Silver medals',
-        data: [113, 122, 98, 88, 72]
+        data: [125, 110, 86, 64, 81]
     }, {
         name: 'Bronze medals',
-        data: [124, 95, 65, 91, 76]
+        data: [111, 90, 60, 62, 87]
     }]
 });
-
 		</script>
 	</body>
 </html>

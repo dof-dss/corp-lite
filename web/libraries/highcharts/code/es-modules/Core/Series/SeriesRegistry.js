@@ -1,20 +1,19 @@
 /* *
  *
- *  (c) 2010-2026 Highsoft AS
- *  Author: Torstein Honsi
+ *  (c) 2010-2021 Torstein Honsi
  *
- *  A commercial license may be required depending on use.
- *  See www.highcharts.com/license
+ *  License: www.highcharts.com/license
  *
+ *  !!!!!!! SOURCE GETS TRANSPILED BY TYPESCRIPT. EDIT TS FILE ONLY. !!!!!!!
  *
  * */
 'use strict';
 import H from '../Globals.js';
-import D from '../Defaults.js';
-const { defaultOptions } = D;
+import D from '../DefaultOptions.js';
+var defaultOptions = D.defaultOptions;
 import Point from './Point.js';
 import U from '../Utilities.js';
-const { extend, extendClass, merge } = U;
+var error = U.error, extendClass = U.extendClass, merge = U.merge;
 /* *
  *
  *  Namespace
@@ -37,25 +36,43 @@ var SeriesRegistry;
      *  Functions
      *
      * */
+    /* eslint-disable valid-jsdoc */
+    /**
+     * Internal function to initialize an individual series.
+     * @private
+     */
+    function getSeries(chart, options) {
+        if (options === void 0) { options = {}; }
+        var optionsChart = chart.options.chart, type = (options.type ||
+            optionsChart.type ||
+            optionsChart.defaultSeriesType ||
+            ''), SeriesClass = SeriesRegistry.seriesTypes[type];
+        // No such series type
+        if (!SeriesRegistry) {
+            error(17, true, chart, { missingModuleFor: type });
+        }
+        var series = new SeriesClass();
+        if (typeof series.init === 'function') {
+            series.init(chart, options);
+        }
+        return series;
+    }
+    SeriesRegistry.getSeries = getSeries;
     /**
      * Registers class pattern of a series.
      *
-     * @internal
+     * @private
      */
-    function registerSeriesType(seriesType, SeriesClass) {
-        const defaultPlotOptions = defaultOptions.plotOptions || {}, seriesOptions = SeriesClass.defaultOptions, seriesProto = SeriesClass.prototype;
-        seriesProto.type = seriesType;
-        if (!seriesProto.pointClass) {
-            seriesProto.pointClass = Point;
+    function registerSeriesType(seriesType, seriesClass) {
+        var defaultPlotOptions = defaultOptions.plotOptions || {}, seriesOptions = seriesClass.defaultOptions;
+        if (!seriesClass.prototype.pointClass) {
+            seriesClass.prototype.pointClass = Point;
         }
-        if (SeriesRegistry.seriesTypes[seriesType]) {
-            return false;
-        }
+        seriesClass.prototype.type = seriesType;
         if (seriesOptions) {
             defaultPlotOptions[seriesType] = seriesOptions;
         }
-        SeriesRegistry.seriesTypes[seriesType] = SeriesClass;
-        return true;
+        SeriesRegistry.seriesTypes[seriesType] = seriesClass;
     }
     SeriesRegistry.registerSeriesType = registerSeriesType;
     /**
@@ -86,26 +103,21 @@ var SeriesRegistry;
      * derivatives.
      */
     function seriesType(type, parent, options, seriesProto, pointProto) {
-        const defaultPlotOptions = defaultOptions.plotOptions || {};
+        var defaultPlotOptions = defaultOptions.plotOptions || {};
         parent = parent || '';
         // Merge the options
         defaultPlotOptions[type] = merge(defaultPlotOptions[parent], options);
         // Create the class
-        delete SeriesRegistry.seriesTypes[type];
-        const parentClass = (SeriesRegistry.seriesTypes[parent] ||
-            H.Series), childClass = extendClass(parentClass, seriesProto);
-        registerSeriesType(type, childClass);
+        registerSeriesType(type, extendClass(SeriesRegistry.seriesTypes[parent] || function () { }, seriesProto));
         SeriesRegistry.seriesTypes[type].prototype.type = type;
         // Create the point class if needed
         if (pointProto) {
-            class PointClass extends Point {
-            }
-            extend(PointClass.prototype, pointProto);
-            SeriesRegistry.seriesTypes[type].prototype.pointClass = PointClass;
+            SeriesRegistry.seriesTypes[type].prototype.pointClass = extendClass(Point, pointProto);
         }
         return SeriesRegistry.seriesTypes[type];
     }
     SeriesRegistry.seriesType = seriesType;
+    /* eslint-enable valid-jsdoc */
 })(SeriesRegistry || (SeriesRegistry = {}));
 /* *
  *

@@ -1,17 +1,21 @@
 /* *
  *
- *  (c) 2009-2026 Highsoft AS
- *  Author: Øystein Moseng
+ *  (c) 2009-2021 Øystein Moseng
  *
  *  Default theme for Windows High Contrast Mode.
  *
- *  A commercial license may be required depending on use.
- *  See www.highcharts.com/license
+ *  License: www.highcharts.com/license
  *
+ *  !!!!!!! SOURCE GETS TRANSPILED BY TYPESCRIPT. EDIT TS FILE ONLY. !!!!!!!
  *
  * */
 'use strict';
-const theme = {
+/* *
+ *
+ *  Theme
+ *
+ * */
+var theme = {
     chart: {
         backgroundColor: 'window'
     },
@@ -28,8 +32,7 @@ const theme = {
     colorAxis: {
         minColor: 'windowText',
         maxColor: 'windowText',
-        stops: [],
-        dataClasses: []
+        stops: []
     },
     colors: ['windowText'],
     xAxis: {
@@ -126,6 +129,11 @@ const theme = {
         }
     },
     credits: {
+        style: {
+            color: 'windowText'
+        }
+    },
+    labels: {
         style: {
             color: 'windowText'
         }

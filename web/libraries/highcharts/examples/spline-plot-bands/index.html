@@ -6,22 +6,6 @@
 		<title>Highcharts Example</title>
 
 		<style type="text/css">
-body {
-    font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Roboto,
-        Helvetica,
-        Arial,
-        "Apple Color Emoji",
-        "Segoe UI Emoji",
-        "Segoe UI Symbol",
-        sans-serif;
-    background: var(--highcharts-background-color);
-    color: var(--highcharts-neutral-color-100);
-}
-
 .highcharts-figure,
 .highcharts-data-table table {
     min-width: 310px;
@@ -32,7 +16,7 @@ body {
 .highcharts-data-table table {
     font-family: Verdana, sans-serif;
     border-collapse: collapse;
-    border: 1px solid var(--highcharts-neutral-color-10, #e6e6e6);
+    border: 1px solid #ebebeb;
     margin: 10px auto;
     text-align: center;
     width: 100%;
@@ -42,7 +26,7 @@ body {
 .highcharts-data-table caption {
     padding: 1em 0;
     font-size: 1.2em;
-    color: var(--highcharts-neutral-color-60, #666);
+    color: #555;
 }
 
 .highcharts-data-table th {
@@ -57,23 +41,14 @@ body {
 }
 
 .highcharts-data-table thead tr,
-.highcharts-data-table tbody tr:nth-child(even) {
-    background: var(--highcharts-neutral-color-3, #f7f7f7);
+.highcharts-data-table tr:nth-child(even) {
+    background: #f8f8f8;
 }
 
-.highcharts-description {
-    margin: 0.3rem 10px;
+.highcharts-data-table tr:hover {
+    background: #f1f7ff;
 }
 
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: #141414;
-        color: #ddd;
-    }
-    a {
-        color: #2caffe;
-    }
-}
 		</style>
 	</head>
 	<body>
@@ -82,7 +57,6 @@ body {
 <script src="../../code/modules/exporting.js"></script>
 <script src="../../code/modules/export-data.js"></script>
 <script src="../../code/modules/accessibility.js"></script>
-<script src="../../code/themes/adaptive.js"></script>
 
 <figure class="highcharts-figure">
     <div id="container"></div>
@@ -97,7 +71,7 @@ body {
 
 
 		<script type="text/javascript">
-// Data retrieved from https://www.vikjavev.no/ver/#2020-04-15,2020-04-16
+// Data retrieved from http://vikjavev.no/ver/index.php?spenn=2d&sluttid=16.06.2015.
 
 Highcharts.chart('container', {
     chart: {
@@ -108,11 +82,11 @@ Highcharts.chart('container', {
         }
     },
     title: {
-        text: 'Wind speed during a day',
+        text: 'Wind speed during two days',
         align: 'left'
     },
     subtitle: {
-        text: '29th of February, 2024 at two locations in Vik i Sogn, Norway',
+        text: '13th & 14th of February, 2018 at two locations in Vik i Sogn, Norway',
         align: 'left'
     },
     xAxis: {
@@ -135,7 +109,7 @@ Highcharts.chart('container', {
             label: {
                 text: 'Light air',
                 style: {
-                    opacity: 0.7
+                    color: '#606060'
                 }
             }
         }, { // Light breeze
@@ -145,7 +119,7 @@ Highcharts.chart('container', {
             label: {
                 text: 'Light breeze',
                 style: {
-                    opacity: 0.7
+                    color: '#606060'
                 }
             }
         }, { // Gentle breeze
@@ -155,7 +129,7 @@ Highcharts.chart('container', {
             label: {
                 text: 'Gentle breeze',
                 style: {
-                    opacity: 0.7
+                    color: '#606060'
                 }
             }
         }, { // Moderate breeze
@@ -165,7 +139,7 @@ Highcharts.chart('container', {
             label: {
                 text: 'Moderate breeze',
                 style: {
-                    opacity: 0.7
+                    color: '#606060'
                 }
             }
         }, { // Fresh breeze
@@ -175,7 +149,7 @@ Highcharts.chart('container', {
             label: {
                 text: 'Fresh breeze',
                 style: {
-                    opacity: 0.7
+                    color: '#606060'
                 }
             }
         }, { // Strong breeze
@@ -185,37 +159,17 @@ Highcharts.chart('container', {
             label: {
                 text: 'Strong breeze',
                 style: {
-                    opacity: 0.7
+                    color: '#606060'
                 }
             }
-        }, { // Near Gale
+        }, { // High wind
             from: 14,
-            to: 17,
+            to: 15,
             color: 'rgba(68, 170, 213, 0.1)',
             label: {
-                text: 'Near gale',
+                text: 'High wind',
                 style: {
-                    opacity: 0.7
-                }
-            }
-        }, { // Fresh Gale
-            from: 17,
-            to: 20.5,
-            color: 'rgba(0, 0, 0, 0)',
-            label: {
-                text: 'Fresh gale',
-                style: {
-                    opacity: 0.7
-                }
-            }
-        }, { // Strong Gale
-            from: 20.5,
-            to: 24,
-            color: 'rgba(68, 170, 213, 0.1)',
-            label: {
-                text: 'Strong gale',
-                style: {
-                    opacity: 0.7
+                    color: '#606060'
                 }
             }
         }]
@@ -235,25 +189,27 @@ Highcharts.chart('container', {
                 enabled: false
             },
             pointInterval: 3600000, // one hour
-            pointStart: '2014-02-29'
+            pointStart: Date.UTC(2018, 1, 13, 0, 0, 0)
         }
     },
     series: [{
         name: 'Hestavollane',
         data: [
-            12.9, 13.8, 10.2, 8.4, 10.0, 9.2, 10.0,
-            12.2, 13.2, 12.7, 12.5, 11.4, 10.4,
-            7.9, 8.0, 11.4, 11.5, 12.0, 12.0,
-            10.4, 11.2, 11.5, 12.2, 11.5, 8.3
+            3.7, 3.3, 3.9, 5.1, 3.5, 3.8, 4.0, 5.0, 6.1, 3.7, 3.3, 6.4,
+            6.9, 6.0, 6.8, 4.4, 4.0, 3.8, 5.0, 4.9, 9.2, 9.6, 9.5, 6.3,
+            9.5, 10.8, 14.0, 11.5, 10.0, 10.2, 10.3, 9.4, 8.9, 10.6, 10.5, 11.1,
+            10.4, 10.7, 11.3, 10.2, 9.6, 10.2, 11.1, 10.8, 13.0, 12.5, 12.5, 11.3,
+            10.1
         ]
 
     }, {
         name: 'Vik',
         data: [
-            null, 1.3, 1.1, 0.8, 1.8, 1.7, 0.8,
-            0.8, 1.0, 1.0, 1.0, 0.8, 1.4,
-            1.3, 2.9, 6.1, 6.4, 6.6, 6.4,
-            6.3, 5.4, 3.9, 3.0, 1.7, 1.4
+            0.2, 0.1, 0.1, 0.1, 0.3, 0.2, 0.3, 0.1, 0.7, 0.3, 0.2, 0.2,
+            0.3, 0.1, 0.3, 0.4, 0.3, 0.2, 0.3, 0.2, 0.4, 0.0, 0.9, 0.3,
+            0.7, 1.1, 1.8, 1.2, 1.4, 1.2, 0.9, 0.8, 0.9, 0.2, 0.4, 1.2,
+            0.3, 2.3, 1.0, 0.7, 1.0, 0.8, 2.0, 1.2, 1.4, 3.7, 2.1, 2.0,
+            1.5
         ]
     }],
     navigation: {
@@ -262,7 +218,6 @@ Highcharts.chart('container', {
         }
     }
 });
-
 		</script>
 	</body>
 </html>

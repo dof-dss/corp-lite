@@ -1,33 +1,22 @@
 /* *
  *
- *  (c) 2016-2026 Highsoft AS
+ *  (c) 2016 Highsoft AS
  *  Author: Øystein Moseng
  *
- *  A commercial license may be required depending on use.
- *  See www.highcharts.com/license
+ *  License: www.highcharts.com/license
  *
+ *  !!!!!!! SOURCE GETS TRANSPILED BY TYPESCRIPT. EDIT TS FILE ONLY. !!!!!!!
  *
  * */
 'use strict';
-import PathUtilities from '../Series/PathUtilities.js';
 import U from '../Core/Utilities.js';
-const { pick } = U;
-/* *
- *
- *  Constants
- *
- * */
-const { min, max, abs } = Math;
-/* *
- *
- *  Functions
- *
- * */
+var extend = U.extend, pick = U.pick;
+var min = Math.min, max = Math.max, abs = Math.abs;
 /**
  * Get index of last obstacle before xMin. Employs a type of binary search, and
  * thus requires that obstacles are sorted by xMin value.
  *
- * @internal
+ * @private
  * @function findLastObstacleBefore
  *
  * @param {Array<object>} obstacles
@@ -43,9 +32,9 @@ const { min, max, abs } = Math;
  *         The index of the last obstacle element before xMin.
  */
 function findLastObstacleBefore(obstacles, xMin, startIx) {
-    const min = xMin - 0.0000001; // Make sure we include all obstacles at xMin
-    let left = startIx || 0, // Left limit
-    right = obstacles.length - 1, // Right limit
+    var left = startIx || 0, // left limit
+    right = obstacles.length - 1, // right limit
+    min = xMin - 0.0000001, // Make sure we include all obstacles at xMin
     cursor, cmp;
     while (left <= right) {
         cursor = (right + left) >> 1;
@@ -65,7 +54,7 @@ function findLastObstacleBefore(obstacles, xMin, startIx) {
 /**
  * Test if a point lays within an obstacle.
  *
- * @internal
+ * @private
  * @function pointWithinObstacle
  *
  * @param {Object} obstacle
@@ -87,7 +76,7 @@ function pointWithinObstacle(obstacle, point) {
  * Find the index of an obstacle that wraps around a point.
  * Returns -1 if not found.
  *
- * @internal
+ * @private
  * @function findObstacleFromPoint
  *
  * @param {Array<object>} obstacles
@@ -100,10 +89,10 @@ function pointWithinObstacle(obstacle, point) {
  *         Ix of the obstacle in the array, or -1 if not found.
  */
 function findObstacleFromPoint(obstacles, point) {
-    let i = findLastObstacleBefore(obstacles, point.x + 1) + 1;
+    var i = findLastObstacleBefore(obstacles, point.x + 1) + 1;
     while (i--) {
         if (obstacles[i].xMax >= point.x &&
-            // Optimization using lazy evaluation
+            // optimization using lazy evaluation
             pointWithinObstacle(obstacles[i], point)) {
             return i;
         }
@@ -113,7 +102,7 @@ function findObstacleFromPoint(obstacles, point) {
 /**
  * Get SVG path array from array of line segments.
  *
- * @internal
+ * @private
  * @function pathFromSegments
  *
  * @param {Array<object>} segments
@@ -123,10 +112,10 @@ function findObstacleFromPoint(obstacles, point) {
  *         SVG path array as accepted by the SVG Renderer.
  */
 function pathFromSegments(segments) {
-    const path = [];
+    var path = [];
     if (segments.length) {
         path.push(['M', segments[0].start.x, segments[0].start.y]);
-        for (let i = 0; i < segments.length; ++i) {
+        for (var i = 0; i < segments.length; ++i) {
             path.push(['L', segments[i].end.x, segments[i].end.y]);
         }
     }
@@ -136,7 +125,7 @@ function pathFromSegments(segments) {
  * Limits obstacle max/mins in all directions to bounds. Modifies input
  * obstacle.
  *
- * @internal
+ * @private
  * @function limitObstacleToBounds
  *
  * @param {Object} obstacle
@@ -157,7 +146,6 @@ function limitObstacleToBounds(obstacle, bounds) {
  * Get an SVG path from a starting coordinate to an ending coordinate.
  * Draws a straight line.
  *
- * @internal
  * @function Highcharts.Pathfinder.algorithms.straight
  *
  * @param {Highcharts.PositionObject} start
@@ -185,7 +173,6 @@ function straight(start, end) {
  * right angles only, and taking only starting/ending obstacle into
  * consideration.
  *
- * @internal
  * @function Highcharts.Pathfinder.algorithms.simpleConnect
  *
  * @param {Highcharts.PositionObject} start
@@ -206,17 +193,16 @@ function straight(start, end) {
  *         renderer, as well as an array of new obstacles making up this
  *         path.
  */
-const simpleConnect = function (start, end, options) {
-    const segments = [], chartObstacles = options.chartObstacles, startObstacleIx = findObstacleFromPoint(chartObstacles, start), endObstacleIx = findObstacleFromPoint(chartObstacles, end);
-    let endSegment, dir = pick(options.startDirectionX, abs(end.x - start.x) > abs(end.y - start.y)) ? 'x' : 'y', startObstacle, endObstacle, waypoint, useMax, endPoint;
+var simpleConnect = function (start, end, options) {
+    var segments = [], endSegment, dir = pick(options.startDirectionX, abs(end.x - start.x) > abs(end.y - start.y)) ? 'x' : 'y', chartObstacles = options.chartObstacles, startObstacleIx = findObstacleFromPoint(chartObstacles, start), endObstacleIx = findObstacleFromPoint(chartObstacles, end), startObstacle, endObstacle, prevWaypoint, waypoint, waypoint2, useMax, endPoint;
     // eslint-disable-next-line valid-jsdoc
     /**
      * Return a clone of a point with a property set from a target object,
      * optionally with an offset
-     * @internal
+     * @private
      */
     function copyFromPoint(from, fromKey, to, toKey, offset) {
-        const point = {
+        var point = {
             x: from.x,
             y: from.y
         };
@@ -226,10 +212,10 @@ const simpleConnect = function (start, end, options) {
     // eslint-disable-next-line valid-jsdoc
     /**
      * Return waypoint outside obstacle.
-     * @internal
+     * @private
      */
     function getMeOut(obstacle, point, direction) {
-        const useMax = abs(point[direction] - obstacle[direction + 'Min']) >
+        var useMax = abs(point[direction] - obstacle[direction + 'Min']) >
             abs(point[direction] - obstacle[direction + 'Max']);
         return copyFromPoint(point, direction, obstacle, direction + (useMax ? 'Max' : 'Min'), useMax ? 1 : -1);
     }
@@ -274,7 +260,7 @@ const simpleConnect = function (start, end, options) {
     }
     // We are around the start obstacle. Go towards the end in one
     // direction.
-    const prevWaypoint = segments.length ?
+    prevWaypoint = segments.length ?
         segments[segments.length - 1].end :
         start;
     waypoint = copyFromPoint(prevWaypoint, dir, endPoint);
@@ -284,16 +270,15 @@ const simpleConnect = function (start, end, options) {
     });
     // Final run to end point in the other direction
     dir = dir === 'y' ? 'x' : 'y';
-    const waypoint2 = copyFromPoint(waypoint, dir, endPoint);
+    waypoint2 = copyFromPoint(waypoint, dir, endPoint);
     segments.push({
         start: waypoint,
         end: waypoint2
     });
     // Finally add the endSegment
     segments.push(endSegment);
-    const path = PathUtilities.applyRadius(pathFromSegments(segments), options.radius);
     return {
-        path,
+        path: pathFromSegments(segments),
         obstacles: segments
     };
 };
@@ -303,7 +288,6 @@ simpleConnect.requiresObstacles = true;
  * obstacles into consideration. Might not always find the optimal path,
  * but is fast, and usually good enough.
  *
- * @internal
  * @function Highcharts.Pathfinder.algorithms.fastAvoid
  *
  * @param {Highcharts.PositionObject} start
@@ -329,7 +313,7 @@ simpleConnect.requiresObstacles = true;
  *         renderer, as well as an array of new obstacles making up this
  *         path.
  */
-function fastAvoid(start, end, options) {
+var fastAvoid = function (start, end, options) {
     /*
         Algorithm rules/description
         - Find initial direction
@@ -350,24 +334,21 @@ function fastAvoid(start, end, options) {
             - When going around the end obstacle we should not always go the
                 shortest route, rather pick the one closer to the end point
     */
-    const dirIsX = pick(options.startDirectionX, abs(end.x - start.x) > abs(end.y - start.y)), dir = dirIsX ? 'x' : 'y', endSegments = [], 
+    var dirIsX = pick(options.startDirectionX, abs(end.x - start.x) > abs(end.y - start.y)), dir = dirIsX ? 'x' : 'y', segments, useMax, extractedEndPoint, endSegments = [], forceObstacleBreak = false, // Used in clearPathTo to keep track of
+    // when to force break through an obstacle.
     // Boundaries to stay within. If beyond soft boundary, prefer to
     // change direction ASAP. If at hard max, always change immediately.
-    metrics = options.obstacleMetrics, softMinX = min(start.x, end.x) - metrics.maxWidth - 10, softMaxX = max(start.x, end.x) + metrics.maxWidth + 10, softMinY = min(start.y, end.y) - metrics.maxHeight - 10, softMaxY = max(start.y, end.y) + metrics.maxHeight + 10;
-    let segments, useMax, extractedEndPoint, forceObstacleBreak = false, // Used in clearPathTo to keep track of
-    // when to force break through an obstacle.
+    metrics = options.obstacleMetrics, softMinX = min(start.x, end.x) - metrics.maxWidth - 10, softMaxX = max(start.x, end.x) + metrics.maxWidth + 10, softMinY = min(start.y, end.y) - metrics.maxHeight - 10, softMaxY = max(start.y, end.y) + metrics.maxHeight + 10, 
     // Obstacles
-    chartObstacles = options.chartObstacles, endObstacleIx = findLastObstacleBefore(chartObstacles, softMaxX);
-    const startObstacleIx = findLastObstacleBefore(chartObstacles, softMinX);
+    chartObstacles = options.chartObstacles, startObstacleIx = findLastObstacleBefore(chartObstacles, softMinX), endObstacleIx = findLastObstacleBefore(chartObstacles, softMaxX);
     // eslint-disable-next-line valid-jsdoc
     /**
      * How far can you go between two points before hitting an obstacle?
      * Does not work for diagonal lines (because it doesn't have to).
-     * @internal
+     * @private
      */
     function pivotPoint(fromPoint, toPoint, directionIsX) {
-        const searchDirection = fromPoint.x < toPoint.x ? 1 : -1;
-        let firstPoint, lastPoint, highestPoint, lowestPoint;
+        var firstPoint, lastPoint, highestPoint, lowestPoint, i, searchDirection = fromPoint.x < toPoint.x ? 1 : -1;
         if (fromPoint.x < toPoint.x) {
             firstPoint = fromPoint;
             lastPoint = toPoint;
@@ -386,7 +367,7 @@ function fastAvoid(start, end, options) {
         }
         // Go through obstacle range in reverse if toPoint is before
         // fromPoint in the X-dimension.
-        let i = searchDirection < 0 ?
+        i = searchDirection < 0 ?
             // Searching backwards, start at last obstacle before last point
             min(findLastObstacleBefore(chartObstacles, lastPoint.x), chartObstacles.length - 1) :
             // Forwards. Since we're not sorted by xMax, we have to look
@@ -410,7 +391,7 @@ function fastAvoid(start, end, options) {
                         obstacle: chartObstacles[i]
                     };
                 }
-                // Else ...
+                // else ...
                 return {
                     x: fromPoint.x,
                     y: fromPoint.y < toPoint.y ?
@@ -430,7 +411,7 @@ function fastAvoid(start, end, options) {
      *
      * (? Returns a string, either xMin, xMax, yMin or yMax.)
      *
-     * @internal
+     * @private
      * @function
      *
      * @param {Object} obstacle
@@ -452,15 +433,15 @@ function fastAvoid(start, end, options) {
      *         Use max or not.
      */
     function getDodgeDirection(obstacle, fromPoint, toPoint, dirIsX, bounds) {
-        const softBounds = bounds.soft, hardBounds = bounds.hard, dir = dirIsX ? 'x' : 'y', toPointMax = { x: fromPoint.x, y: fromPoint.y }, toPointMin = { x: fromPoint.x, y: fromPoint.y }, maxOutOfSoftBounds = obstacle[dir + 'Max'] >=
+        var softBounds = bounds.soft, hardBounds = bounds.hard, dir = dirIsX ? 'x' : 'y', toPointMax = { x: fromPoint.x, y: fromPoint.y }, toPointMin = { x: fromPoint.x, y: fromPoint.y }, minPivot, maxPivot, maxOutOfSoftBounds = obstacle[dir + 'Max'] >=
             softBounds[dir + 'Max'], minOutOfSoftBounds = obstacle[dir + 'Min'] <=
             softBounds[dir + 'Min'], maxOutOfHardBounds = obstacle[dir + 'Max'] >=
             hardBounds[dir + 'Max'], minOutOfHardBounds = obstacle[dir + 'Min'] <=
             hardBounds[dir + 'Min'], 
         // Find out if we should prefer one direction over the other if
         // we can choose freely
-        minDistance = abs(obstacle[dir + 'Min'] - fromPoint[dir]), maxDistance = abs(obstacle[dir + 'Max'] - fromPoint[dir]);
-        let // If it's a small difference, pick the one leading towards dest
+        minDistance = abs(obstacle[dir + 'Min'] - fromPoint[dir]), maxDistance = abs(obstacle[dir + 'Max'] - fromPoint[dir]), 
+        // If it's a small difference, pick the one leading towards dest
         // point. Otherwise pick the shortest distance
         useMax = abs(minDistance - maxDistance) < 10 ?
             fromPoint[dir] < toPoint[dir] :
@@ -469,13 +450,14 @@ function fastAvoid(start, end, options) {
         // direction.
         toPointMin[dir] = obstacle[dir + 'Min'];
         toPointMax[dir] = obstacle[dir + 'Max'];
-        const minPivot = pivotPoint(fromPoint, toPointMin, dirIsX)[dir] !==
-            toPointMin[dir], maxPivot = pivotPoint(fromPoint, toPointMax, dirIsX)[dir] !==
+        minPivot = pivotPoint(fromPoint, toPointMin, dirIsX)[dir] !==
+            toPointMin[dir];
+        maxPivot = pivotPoint(fromPoint, toPointMax, dirIsX)[dir] !==
             toPointMax[dir];
         useMax = minPivot ?
             (maxPivot ? useMax : true) :
             (maxPivot ? false : useMax);
-        // `useMax` now contains our preferred choice, bounds not taken into
+        // useMax now contains our preferred choice, bounds not taken into
         // account. If both or neither direction is out of bounds we want to
         // use this.
         // Deal with soft bounds
@@ -491,14 +473,14 @@ function fastAvoid(start, end, options) {
     // eslint-disable-next-line valid-jsdoc
     /**
      * Find a clear path between point.
-     * @internal
+     * @private
      */
     function clearPathTo(fromPoint, toPoint, dirIsX) {
         // Don't waste time if we've hit goal
         if (fromPoint.x === toPoint.x && fromPoint.y === toPoint.y) {
             return [];
         }
-        const dir = dirIsX ? 'x' : 'y', obstacleMargin = options.obstacleOptions.margin, bounds = {
+        var dir = dirIsX ? 'x' : 'y', pivot, segments, waypoint, waypointUseMax, envelopingObstacle, secondEnvelopingObstacle, envelopWaypoint, obstacleMargin = options.obstacleOptions.margin, bounds = {
             soft: {
                 xMin: softMinX,
                 xMax: softMaxX,
@@ -507,7 +489,6 @@ function fastAvoid(start, end, options) {
             },
             hard: options.hardBounds
         };
-        let pivot, segments, waypoint, waypointUseMax, envelopingObstacle, secondEnvelopingObstacle, envelopWaypoint;
         // If fromPoint is inside an obstacle we have a problem. Break out
         // by just going to the outside of this obstacle. We prefer to go to
         // the nearest edge in the chosen direction.
@@ -610,10 +591,10 @@ function fastAvoid(start, end, options) {
     /**
      * Extract point to outside of obstacle in whichever direction is
      * closest. Returns new point outside obstacle.
-     * @internal
+     * @private
      */
     function extractFromObstacle(obstacle, point, goalPoint) {
-        const dirIsX = min(obstacle.xMax - point.x, point.x - obstacle.xMin) <
+        var dirIsX = min(obstacle.xMax - point.x, point.x - obstacle.xMin) <
             min(obstacle.yMax - point.y, point.y - obstacle.yMin), bounds = {
             soft: options.hardBounds,
             hard: options.hardBounds
@@ -663,23 +644,14 @@ function fastAvoid(start, end, options) {
         path: pathFromSegments(segments),
         obstacles: segments
     };
-}
-fastAvoid.requiresObstacles = true;
-/* *
- *
- *  Default Export
- *
- * */
-/**
- * Defines the available pathfinding algorithms. Algorithms take up to 3
- * arguments: starting point, ending point, and an options object.
- *
- * @internal
- */
-const algorithms = {
-    fastAvoid,
-    straight,
-    simpleConnect
 };
-/** @internal */
+fastAvoid.requiresObstacles = true;
+// Define the available pathfinding algorithms.
+// Algorithms take up to 3 arguments: starting point, ending point, and an
+// options object.
+var algorithms = {
+    fastAvoid: fastAvoid,
+    straight: straight,
+    simpleConnect: simpleConnect
+};
 export default algorithms;

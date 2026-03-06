@@ -1,20 +1,28 @@
 /* *
  *
- *  A commercial license may be required depending on use.
- *  See www.highcharts.com/license
+ *  License: www.highcharts.com/license
  *
+ *  !!!!!!! SOURCE GETS TRANSPILED BY TYPESCRIPT. EDIT TS FILE ONLY. !!!!!!!
  *
  * */
 'use strict';
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 import SeriesRegistry from '../../../Core/Series/SeriesRegistry.js';
-const { tema: TEMAIndicator } = SeriesRegistry.seriesTypes;
+var TEMAIndicator = SeriesRegistry.seriesTypes.tema;
 import U from '../../../Core/Utilities.js';
-const { correctFloat, merge } = U;
-/* *
- *
- *  Class
- *
- * */
+var correctFloat = U.correctFloat, merge = U.merge;
 /**
  * The TRIX series type.
  *
@@ -24,14 +32,17 @@ const { correctFloat, merge } = U;
  *
  * @augments Highcharts.Series
  */
-class TRIXIndicator extends TEMAIndicator {
-    /* *
-     *
-     *  Functions
-     *
-     * */
+var TRIXIndicator = /** @class */ (function (_super) {
+    __extends(TRIXIndicator, _super);
+    function TRIXIndicator() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.data = void 0;
+        _this.options = void 0;
+        _this.points = void 0;
+        return _this;
+    }
     // TRIX is calculated using TEMA so we just extend getTemaPoint method.
-    getTemaPoint(xVal, tripledPeriod, EMAlevels, i) {
+    TRIXIndicator.prototype.getTemaPoint = function (xVal, tripledPeriod, EMAlevels, i) {
         if (i > tripledPeriod) {
             return [
                 xVal[i - 3],
@@ -40,33 +51,29 @@ class TRIXIndicator extends TEMAIndicator {
                         EMAlevels.prevLevel3 * 100 : null
             ];
         }
-    }
-}
-/* *
- *
- *  Static Properties
- *
- * */
-/**
- * Triple exponential average (TRIX) oscillator. This series requires
- * `linkedTo` option to be set.
- *
- * @sample {highstock} stock/indicators/trix
- * TRIX indicator
- *
- * @extends      plotOptions.tema
- * @since        7.0.0
- * @product      highstock
- * @excluding    allAreas, colorAxis, compare, compareBase, joinBy, keys,
- *               navigatorOptions, pointInterval, pointIntervalUnit,
- *               pointPlacement, pointRange, pointStart, showInNavigator,
- *               stacking
- * @requires     stock/indicators/indicators
- * @requires     stock/indicators/tema
- * @requires     stock/indicators/trix
- * @optionparent plotOptions.trix
- */
-TRIXIndicator.defaultOptions = merge(TEMAIndicator.defaultOptions);
+    };
+    /**
+     * Triple exponential average (TRIX) oscillator. This series requires
+     * `linkedTo` option to be set.
+     *
+     * @sample {highstock} stock/indicators/trix
+     * TRIX indicator
+     *
+     * @extends      plotOptions.tema
+     * @since        7.0.0
+     * @product      highstock
+     * @excluding    allAreas, colorAxis, compare, compareBase, joinBy, keys,
+     *               navigatorOptions, pointInterval, pointIntervalUnit,
+     *               pointPlacement, pointRange, pointStart, showInNavigator,
+     *               stacking
+     * @requires     stock/indicators/indicators
+     * @requires     stock/indicators/tema
+     * @requires     stock/indicators/trix
+     * @optionparent plotOptions.trix
+     */
+    TRIXIndicator.defaultOptions = merge(TEMAIndicator.defaultOptions);
+    return TRIXIndicator;
+}(TEMAIndicator));
 SeriesRegistry.registerSeriesType('trix', TRIXIndicator);
 /* *
  *
@@ -74,11 +81,6 @@ SeriesRegistry.registerSeriesType('trix', TRIXIndicator);
  *
  * */
 export default TRIXIndicator;
-/* *
- *
- *  API Options
- *
- * */
 /**
  * A `TRIX` series. If the [type](#series.trix.type) option is not specified, it
  * is inherited from [chart.type](#chart.type).
@@ -93,4 +95,4 @@ export default TRIXIndicator;
  * @requires  stock/indicators/tema
  * @apioption series.trix
  */
-''; // To include the above in the js output
+''; // to include the above in the js output

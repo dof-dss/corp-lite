@@ -6,22 +6,6 @@
 		<title>Highcharts Example</title>
 
 		<style type="text/css">
-body {
-    font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Roboto,
-        Helvetica,
-        Arial,
-        "Apple Color Emoji",
-        "Segoe UI Emoji",
-        "Segoe UI Symbol",
-        sans-serif;
-    background: var(--highcharts-background-color);
-    color: var(--highcharts-neutral-color-100);
-}
-
 .highcharts-figure,
 .highcharts-data-table table {
     min-width: 310px;
@@ -36,7 +20,7 @@ body {
 .highcharts-data-table table {
     font-family: Verdana, sans-serif;
     border-collapse: collapse;
-    border: 1px solid var(--highcharts-neutral-color-10, #e6e6e6);
+    border: 1px solid #ebebeb;
     margin: 10px auto;
     text-align: center;
     width: 100%;
@@ -46,7 +30,7 @@ body {
 .highcharts-data-table caption {
     padding: 1em 0;
     font-size: 1.2em;
-    color: var(--highcharts-neutral-color-60, #666);
+    color: #555;
 }
 
 .highcharts-data-table th {
@@ -61,23 +45,14 @@ body {
 }
 
 .highcharts-data-table thead tr,
-.highcharts-data-table tbody tr:nth-child(even) {
-    background: var(--highcharts-neutral-color-3, #f7f7f7);
+.highcharts-data-table tr:nth-child(even) {
+    background: #f8f8f8;
 }
 
-.highcharts-description {
-    margin: 0.3rem 10px;
+.highcharts-data-table tr:hover {
+    background: #f1f7ff;
 }
 
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: #141414;
-        color: #ddd;
-    }
-    a {
-        color: #2caffe;
-    }
-}
 		</style>
 	</head>
 	<body>
@@ -86,7 +61,6 @@ body {
 <script src="../../code/modules/exporting.js"></script>
 <script src="../../code/modules/export-data.js"></script>
 <script src="../../code/modules/accessibility.js"></script>
-<script src="../../code/themes/adaptive.js"></script>
 
 <figure class="highcharts-figure">
     <div id="container"></div>
@@ -101,79 +75,65 @@ body {
 
 
 		<script type="text/javascript">
-// Data retrieved from https://www.ssb.no/energi-og-industri/olje-og-gass/statistikk/sal-av-petroleumsprodukt/artikler/auka-sal-av-petroleumsprodukt-til-vegtrafikk
 Highcharts.chart('container', {
     title: {
-        text: 'Sales of petroleum products March, Norway'
+        text: 'Combination chart'
     },
     xAxis: {
-        categories: [
-            'Jet fuel', 'Duty-free diesel', 'Petrol', 'Diesel', 'Gas oil'
-        ]
+        categories: ['Apples', 'Oranges', 'Pears', 'Bananas', 'Plums']
     },
-    yAxis: {
-        title: {
-            text: 'Million liters'
-        }
-    },
-    tooltip: {
-        valueSuffix: ' million liters'
-    },
-    plotOptions: {
-        series: {
-            borderRadius: '25%'
-        }
+    labels: {
+        items: [{
+            html: 'Total fruit consumption',
+            style: {
+                left: '50px',
+                top: '18px',
+                color: ( // theme
+                    Highcharts.defaultOptions.title.style &&
+                    Highcharts.defaultOptions.title.style.color
+                ) || 'black'
+            }
+        }]
     },
     series: [{
         type: 'column',
-        name: '2020',
-        data: [59, 83, 65, 228, 184]
+        name: 'Jane',
+        data: [3, 2, 1, 3, 4]
     }, {
         type: 'column',
-        name: '2021',
-        data: [24, 79, 72, 240, 167]
+        name: 'John',
+        data: [2, 3, 5, 7, 6]
     }, {
         type: 'column',
-        name: '2022',
-        data: [58, 88, 75, 250, 176]
+        name: 'Joe',
+        data: [4, 3, 3, 9, 0]
     }, {
-        type: 'line',
-        step: 'center',
+        type: 'spline',
         name: 'Average',
-        data: [47, 83.33, 70.66, 239.33, 175.66],
+        data: [3, 2.67, 3, 6.33, 3.33],
         marker: {
             lineWidth: 2,
             lineColor: Highcharts.getOptions().colors[3],
-            fillColor: 'var(--highcharts-background-color, white)'
+            fillColor: 'white'
         }
     }, {
         type: 'pie',
-        name: 'Total',
+        name: 'Total consumption',
         data: [{
-            name: '2020',
-            y: 619,
-            color: Highcharts.getOptions().colors[0], // 2020 color
-            dataLabels: {
-                enabled: true,
-                distance: -50,
-                format: '{point.total} M',
-                style: {
-                    fontSize: '15px',
-                    color: 'var(--highcharts-neutral-color-100, black)'
-                }
-            }
+            name: 'Jane',
+            y: 13,
+            color: Highcharts.getOptions().colors[0] // Jane's color
         }, {
-            name: '2021',
-            y: 586,
-            color: Highcharts.getOptions().colors[1] // 2021 color
+            name: 'John',
+            y: 23,
+            color: Highcharts.getOptions().colors[1] // John's color
         }, {
-            name: '2022',
-            y: 647,
-            color: Highcharts.getOptions().colors[2] // 2022 color
+            name: 'Joe',
+            y: 19,
+            color: Highcharts.getOptions().colors[2] // Joe's color
         }],
-        center: [75, 65],
+        center: [100, 80],
         size: 100,
-        innerSize: '70%',
         showInLegend: false,
         dataLabels: {
             enabled: false

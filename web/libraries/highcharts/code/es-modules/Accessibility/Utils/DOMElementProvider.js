@@ -1,21 +1,20 @@
 /* *
  *
- *  (c) 2009-2026 Highsoft AS
- *  Author: Øystein Moseng
+ *  (c) 2009-2021 Øystein Moseng
  *
  *  Class that can keep track of elements added to DOM and clean them up on
  *  destroy.
  *
- *  A commercial license may be required depending on use.
- *  See www.highcharts.com/license
+ *  License: www.highcharts.com/license
  *
+ *  !!!!!!! SOURCE GETS TRANSPILED BY TYPESCRIPT. EDIT TS FILE ONLY. !!!!!!!
  *
  * */
 'use strict';
 import H from '../../Core/Globals.js';
-const { doc } = H;
+var doc = H.doc;
 import HU from './HTMLUtilities.js';
-const { removeElement } = HU;
+var removeElement = HU.removeElement;
 /* *
  *
  *  Class
@@ -24,13 +23,13 @@ const { removeElement } = HU;
 /**
  * @private
  */
-class DOMElementProvider {
+var DOMElementProvider = /** @class */ (function () {
     /* *
      *
      *  Constructor
      *
      * */
-    constructor() {
+    function DOMElementProvider() {
         this.elements = [];
     }
     /**
@@ -38,30 +37,23 @@ class DOMElementProvider {
      * Same args as document.createElement
      * @private
      */
-    createElement() {
-        const el = doc.createElement.apply(doc, arguments);
+    DOMElementProvider.prototype.createElement = function () {
+        var el = doc.createElement.apply(doc, arguments);
         this.elements.push(el);
         return el;
-    }
-    /**
-     * Destroy created element, removing it from the DOM.
-     * @private
-     */
-    removeElement(element) {
-        removeElement(element);
-        this.elements.splice(this.elements.indexOf(element), 1);
-    }
+    };
     /**
      * Destroy all created elements, removing them from the DOM.
      * @private
      */
-    destroyCreatedElements() {
+    DOMElementProvider.prototype.destroyCreatedElements = function () {
         this.elements.forEach(function (element) {
             removeElement(element);
         });
         this.elements = [];
-    }
-}
+    };
+    return DOMElementProvider;
+}());
 /* *
  *
  *  Default Export
