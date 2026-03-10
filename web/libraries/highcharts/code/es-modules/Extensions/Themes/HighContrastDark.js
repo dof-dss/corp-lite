@@ -1,21 +1,21 @@
 /* *
  *
- *  (c) 2010-2026 Highsoft AS
+ *  (c) 2010-2021 Highsoft AS
  *
  *  Author: Øystein Moseng
  *
- *  A commercial license may be required depending on use.
- *  See www.highcharts.com/license
+ *  License: www.highcharts.com/license
  *
  *  Accessible high-contrast dark theme for Highcharts. Specifically tailored
  *  towards 3:1 contrast against black/off-black backgrounds. Neighboring
  *  colors are tested for color blindness.
  *
+ *  !!!!!!! SOURCE GETS TRANSPILED BY TYPESCRIPT. EDIT TS FILE ONLY. !!!!!!!
  *
  * */
 'use strict';
-import D from '../../Core/Defaults.js';
-const { setOptions } = D;
+import D from '../../Core/DefaultOptions.js';
+var setOptions = D.setOptions;
 /* *
  *
  *  Theme
@@ -28,19 +28,19 @@ var HighContrastDarkTheme;
      *  Constants
      *
      * */
-    const textBright = '#F0F0F3';
+    var textBright = '#F0F0F3';
     HighContrastDarkTheme.options = {
         colors: [
-            '#67B9EE',
-            '#CEEDA5',
-            '#9F6AE1',
-            '#FEA26E',
-            '#6BA48F',
-            '#EA3535',
-            '#8D96B7',
-            '#ECCA15',
-            '#20AA09',
-            '#E0C3E4'
+            '#6783E7',
+            '#8AC668',
+            '#9630EF',
+            '#F0A079',
+            '#51ACD1',
+            '#CB3F44',
+            '#CD9FE5',
+            '#4DA9A5',
+            '#BBDEE0',
+            '#E3AF3D'
         ],
         chart: {
             backgroundColor: '#1f1f20',
@@ -136,6 +136,11 @@ var HighContrastDarkTheme;
         credits: {
             style: {
                 color: textBright
+            }
+        },
+        labels: {
+            style: {
+                color: '#707073'
             }
         },
         drilldown: {

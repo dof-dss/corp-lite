@@ -1,22 +1,20 @@
 /* *
  *
- *  (c) 2010-2026 Highsoft AS
- *  Author: Torstein Honsi
+ *  (c) 2010-2021 Torstein Honsi
  *
- *  A commercial license may be required depending on use.
- *  See www.highcharts.com/license
+ *  License: www.highcharts.com/license
  *
+ *  !!!!!!! SOURCE GETS TRANSPILED BY TYPESCRIPT. EDIT TS FILE ONLY. !!!!!!!
  *
  * */
 'use strict';
 import U from './Utilities.js';
-const { addEvent, isFunction, objectEach, removeEvent } = U;
+var addEvent = U.addEvent, isFunction = U.isFunction, objectEach = U.objectEach, removeEvent = U.removeEvent;
 /* *
  *
  *  Class Namespace
  *
  * */
-/** @internal */
 var Foundation;
 (function (Foundation) {
     /* *
@@ -30,7 +28,7 @@ var Foundation;
      * should be subject to Chart.update, Axis.update and Series.update. This is
      * contrary to general handlers that are set directly using addEvent either
      * on the class or on the instance. #6538, #6943, #10861.
-     * @internal
+     * @private
      */
     function registerEventOptions(component, options) {
         // A lookup over those events that are added by _options_ (not
@@ -48,9 +46,7 @@ var Foundation;
                 }
                 if (isFunction(event)) {
                     component.eventOptions[eventType] = event;
-                    addEvent(component, eventType, event, {
-                        order: 0 // #14080 fire those events as firsts
-                    });
+                    addEvent(component, eventType, event);
                 }
             }
         });
@@ -62,5 +58,4 @@ var Foundation;
  *  Default Export
  *
  * */
-/** @internal */
 export default Foundation;

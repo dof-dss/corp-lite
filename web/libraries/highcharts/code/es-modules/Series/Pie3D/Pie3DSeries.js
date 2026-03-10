@@ -1,159 +1,166 @@
 /* *
  *
- *  (c) 2010-2026 Highsoft AS
- *  Author: Torstein Honsi
+ *  (c) 2010-2021 Torstein Honsi
  *
  *  3D pie series
  *
- *  A commercial license may be required depending on use.
- *  See www.highcharts.com/license
+ *  License: www.highcharts.com/license
  *
+ *  !!!!!!! SOURCE GETS TRANSPILED BY TYPESCRIPT. EDIT TS FILE ONLY. !!!!!!!
  *
  * */
 'use strict';
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 import H from '../../Core/Globals.js';
-const { composed, deg2rad } = H;
+var deg2rad = H.deg2rad, svg = H.svg;
 import Pie3DPoint from './Pie3DPoint.js';
 import SeriesRegistry from '../../Core/Series/SeriesRegistry.js';
-const { pie: PieSeries } = SeriesRegistry.seriesTypes;
+var PieSeries = SeriesRegistry.seriesTypes.pie;
 import U from '../../Core/Utilities.js';
-const { extend, pick, pushUnique } = U;
+var extend = U.extend, pick = U.pick;
 /* *
  *
  *  Class
  *
  * */
-class Pie3DSeries extends PieSeries {
-    /* *
-     *
-     *  Static Functions
-     *
-     * */
-    static compose(SeriesClass) {
-        if (pushUnique(composed, 'Pie3D')) {
-            SeriesClass.types.pie = Pie3DSeries;
-        }
+var Pie3DSeries = /** @class */ (function (_super) {
+    __extends(Pie3DSeries, _super);
+    function Pie3DSeries() {
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     /* *
      *
      *  Functions
      *
      * */
+    /* eslint-disable valid-jsdoc */
     /**
      * @private
      */
-    addPoint() {
-        super.addPoint.apply(this, arguments);
+    Pie3DSeries.prototype.addPoint = function () {
+        _super.prototype.addPoint.apply(this, arguments);
         if (this.chart.is3d()) {
-            // Destroy (and rebuild) everything!!!
+            // destroy (and rebuild) everything!!!
             this.update(this.userOptions, true); // #3845 pass the old options
         }
-    }
+    };
     /**
      * @private
      */
-    animate(init) {
+    Pie3DSeries.prototype.animate = function (init) {
         if (!this.chart.is3d()) {
-            super.animate.apply(this, arguments);
+            _super.prototype.animate.apply(this, arguments);
         }
         else {
-            const center = this.center, group = this.group, markerGroup = this.markerGroup;
-            let animation = this.options.animation, attribs;
-            if (animation === true) {
-                animation = {};
-            }
-            // Initialize the animation
-            if (init) {
-                // Scale down the group and place it in the center
-                group.oldtranslateX = pick(group.oldtranslateX, group.translateX);
-                group.oldtranslateY = pick(group.oldtranslateY, group.translateY);
-                attribs = {
-                    translateX: center[0],
-                    translateY: center[1],
-                    scaleX: 0.001, // #1499
-                    scaleY: 0.001
-                };
-                group.attr(attribs);
-                if (markerGroup) {
-                    markerGroup.attrSetters = group.attrSetters;
-                    markerGroup.attr(attribs);
+            var animation = this.options.animation, attribs = void 0, center = this.center, group = this.group, markerGroup = this.markerGroup;
+            if (svg) { // VML is too slow anyway
+                if (animation === true) {
+                    animation = {};
                 }
-                // Run the animation
-            }
-            else {
-                attribs = {
-                    translateX: group.oldtranslateX,
-                    translateY: group.oldtranslateY,
-                    scaleX: 1,
-                    scaleY: 1
-                };
-                group.animate(attribs, animation);
-                if (markerGroup) {
-                    markerGroup.animate(attribs, animation);
+                // Initialize the animation
+                if (init) {
+                    // Scale down the group and place it in the center
+                    group.oldtranslateX = pick(group.oldtranslateX, group.translateX);
+                    group.oldtranslateY = pick(group.oldtranslateY, group.translateY);
+                    attribs = {
+                        translateX: center[0],
+                        translateY: center[1],
+                        scaleX: 0.001,
+                        scaleY: 0.001
+                    };
+                    group.attr(attribs);
+                    if (markerGroup) {
+                        markerGroup.attrSetters = group.attrSetters;
+                        markerGroup.attr(attribs);
+                    }
+                    // Run the animation
+                }
+                else {
+                    attribs = {
+                        translateX: group.oldtranslateX,
+                        translateY: group.oldtranslateY,
+                        scaleX: 1,
+                        scaleY: 1
+                    };
+                    group.animate(attribs, animation);
+                    if (markerGroup) {
+                        markerGroup.animate(attribs, animation);
+                    }
                 }
             }
         }
-    }
+    };
     /**
      * @private
      */
-    getDataLabelPosition(point, distance) {
-        const labelPosition = super.getDataLabelPosition(point, distance);
+    Pie3DSeries.prototype.drawDataLabels = function () {
         if (this.chart.is3d()) {
-            const options3d = this.chart.options.chart.options3d, shapeArgs = point.shapeArgs, r = shapeArgs.r, 
-            // #3240 issue with datalabels for 0 and null values
-            a1 = ((shapeArgs.alpha || options3d?.alpha) *
-                deg2rad), b1 = ((shapeArgs.beta || options3d?.beta) *
-                deg2rad), a2 = (shapeArgs.start + shapeArgs.end) / 2, connectorPosition = labelPosition.connectorPosition, yOffset = (-r * (1 - Math.cos(a1)) * Math.sin(a2)), xOffset = r * (Math.cos(b1) - 1) * Math.cos(a2);
-            // Apply perspective on label positions
-            for (const coordinates of [
-                labelPosition?.natural,
-                connectorPosition.breakAt,
-                connectorPosition.touchingSliceAt
-            ]) {
-                coordinates.x += xOffset;
-                coordinates.y += yOffset;
-            }
+            var series = this, chart = series.chart, options3d_1 = chart.options.chart.options3d;
+            series.data.forEach(function (point) {
+                var shapeArgs = point.shapeArgs, r = shapeArgs.r, 
+                // #3240 issue with datalabels for 0 and null values
+                a1 = ((shapeArgs.alpha || options3d_1.alpha) * deg2rad), b1 = ((shapeArgs.beta || options3d_1.beta) * deg2rad), a2 = ((shapeArgs.start + shapeArgs.end) / 2), labelPosition = point.labelPosition, connectorPosition = (labelPosition.connectorPosition), yOffset = (-r * (1 - Math.cos(a1)) * Math.sin(a2)), xOffset = r * (Math.cos(b1) - 1) * Math.cos(a2);
+                // Apply perspective on label positions
+                [
+                    labelPosition.natural,
+                    connectorPosition.breakAt,
+                    connectorPosition.touchingSliceAt
+                ].forEach(function (coordinates) {
+                    coordinates.x += xOffset;
+                    coordinates.y += yOffset;
+                });
+            });
         }
-        return labelPosition;
-    }
+        _super.prototype.drawDataLabels.apply(this, arguments);
+    };
     /**
      * @private
      */
-    pointAttribs(point) {
-        const attr = super.pointAttribs.apply(this, arguments), options = this.options;
+    Pie3DSeries.prototype.pointAttribs = function (point) {
+        var attr = _super.prototype.pointAttribs.apply(this, arguments), options = this.options;
         if (this.chart.is3d() && !this.chart.styledMode) {
             attr.stroke = options.edgeColor || point.color || this.color;
             attr['stroke-width'] = pick(options.edgeWidth, 1);
         }
         return attr;
-    }
+    };
     /**
      * @private
      */
-    translate() {
-        super.translate.apply(this, arguments);
+    Pie3DSeries.prototype.translate = function () {
+        _super.prototype.translate.apply(this, arguments);
         // Do not do this if the chart is not 3D
         if (!this.chart.is3d()) {
             return;
         }
-        const series = this, seriesOptions = series.options, depth = seriesOptions.depth || 0, options3d = series.chart.options.chart.options3d, alpha = options3d.alpha, beta = options3d.beta;
-        let z = seriesOptions.stacking ?
+        var series = this, seriesOptions = series.options, depth = seriesOptions.depth || 0, options3d = series.chart.options.chart.options3d, alpha = options3d.alpha, beta = options3d.beta, z = seriesOptions.stacking ?
             (seriesOptions.stack || 0) * depth :
             series._i * depth;
         z += depth / 2;
         if (seriesOptions.grouping !== false) {
             z = 0;
         }
-        for (const point of series.points) {
-            const shapeArgs = point.shapeArgs;
+        series.data.forEach(function (point) {
+            var shapeArgs = point.shapeArgs, angle;
             point.shapeType = 'arc3d';
             shapeArgs.z = z;
             shapeArgs.depth = depth * 0.75;
             shapeArgs.alpha = alpha;
             shapeArgs.beta = beta;
             shapeArgs.center = series.center;
-            const angle = (shapeArgs.end + shapeArgs.start) / 2;
+            angle = (shapeArgs.end + shapeArgs.start) / 2;
             point.slicedTranslation = {
                 translateX: Math.round(Math.cos(angle) *
                     seriesOptions.slicedOffset *
@@ -162,28 +169,29 @@ class Pie3DSeries extends PieSeries {
                     seriesOptions.slicedOffset *
                     Math.cos(alpha * deg2rad))
             };
-        }
-    }
+        });
+    };
     /**
      * @private
      */
-    drawTracker() {
-        super.drawTracker.apply(this, arguments);
+    Pie3DSeries.prototype.drawTracker = function () {
+        _super.prototype.drawTracker.apply(this, arguments);
         // Do not do this if the chart is not 3D
         if (!this.chart.is3d()) {
             return;
         }
-        for (const point of this.points) {
+        this.points.forEach(function (point) {
             if (point.graphic) {
-                for (const face of ['out', 'inn', 'side1', 'side2']) {
+                ['out', 'inn', 'side1', 'side2'].forEach(function (face) {
                     if (point.graphic) {
                         point.graphic[face].element.point = point;
                     }
-                }
+                });
             }
-        }
-    }
-}
+        });
+    };
+    return Pie3DSeries;
+}(PieSeries));
 extend(Pie3DSeries.prototype, {
     pointClass: Pie3DPoint
 });
@@ -208,4 +216,4 @@ export default Pie3DSeries;
  * @requires  highcharts-3d
  * @apioption plotOptions.pie.depth
  */
-''; // Keeps doclets above after transpiledion
+''; // keeps doclets above after transpilation

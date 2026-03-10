@@ -1,20 +1,19 @@
 /* *
  *
- *  (c) 2010-2026 Highsoft AS
- *  Author: Torstein Honsi
+ *  (c) 2010-2021 Torstein Honsi
  *
- *  A commercial license may be required depending on use.
- *  See www.highcharts.com/license
+ *  License: www.highcharts.com/license
  *
  *  Dark theme for Highcharts JS
  *
+ *  !!!!!!! SOURCE GETS TRANSPILED BY TYPESCRIPT. EDIT TS FILE ONLY. !!!!!!!
  *
  * */
 'use strict';
-import D from '../../Core/Defaults.js';
-const { setOptions } = D;
+import D from '../../Core/DefaultOptions.js';
+var setOptions = D.setOptions;
 import U from '../../Core/Utilities.js';
-const { createElement } = U;
+var createElement = U.createElement;
 /* *
  *
  *  Theme
@@ -141,6 +140,11 @@ var DarkUnicaTheme;
                 color: '#666'
             }
         },
+        labels: {
+            style: {
+                color: '#707073'
+            }
+        },
         drilldown: {
             activeAxisLabelStyle: {
                 color: '#F0F0F3'
@@ -157,7 +161,7 @@ var DarkUnicaTheme;
                 }
             }
         },
-        // Scroll charts
+        // scroll charts
         rangeSelector: {
             buttonTheme: {
                 fill: '#505053',

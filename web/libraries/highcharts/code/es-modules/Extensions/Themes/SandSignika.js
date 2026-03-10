@@ -1,21 +1,20 @@
 /* *
  *
- *  (c) 2010-2026 Highsoft AS
- *  Author: Torstein Honsi
+ *  (c) 2010-2021 Torstein Honsi
  *
- *  A commercial license may be required depending on use.
- *  See www.highcharts.com/license
+ *  License: www.highcharts.com/license
  *
  *  Sand-Signika theme for Highcharts JS
  *
+ *  !!!!!!! SOURCE GETS TRANSPILED BY TYPESCRIPT. EDIT TS FILE ONLY. !!!!!!!
  *
  * */
 'use strict';
-import D from '../../Core/Defaults.js';
-const { setOptions } = D;
+import D from '../../Core/DefaultOptions.js';
+var setOptions = D.setOptions;
 import H from '../../Core/Globals.js';
 import U from '../../Core/Utilities.js';
-const { addEvent, createElement } = U;
+var addEvent = U.addEvent, createElement = U.createElement;
 /* *
  *
  *  Theme
@@ -29,10 +28,8 @@ var SandSignikaTheme;
      *
      * */
     SandSignikaTheme.options = {
-        colors: [
-            '#f45b5b', '#8085e9', '#8d4654', '#7798BF', '#aaeeee',
-            '#ff0066', '#eeaaee', '#55BF3B', '#DF5353', '#7798BF', '#aaeeee'
-        ],
+        colors: ['#f45b5b', '#8085e9', '#8d4654', '#7798BF', '#aaeeee',
+            '#ff0066', '#eeaaee', '#55BF3B', '#DF5353', '#7798BF', '#aaeeee'],
         chart: {
             backgroundColor: null,
             style: {
@@ -53,6 +50,11 @@ var SandSignikaTheme;
         },
         tooltip: {
             borderWidth: 0
+        },
+        labels: {
+            style: {
+                color: '#6e6e70'
+            }
         },
         legend: {
             backgroundColor: '#E0E0E8',

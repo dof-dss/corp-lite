@@ -1,29 +1,33 @@
 /* *
  *
- *  (c) 2009-2026 Highsoft AS
- *  Author: Øystein Moseng
+ *  (c) 2009-2021 Øystein Moseng
  *
  *  Class that can keep track of events added, and clean them up on destroy.
  *
- *  A commercial license may be required depending on use.
- *  See www.highcharts.com/license
+ *  License: www.highcharts.com/license
  *
+ *  !!!!!!! SOURCE GETS TRANSPILED BY TYPESCRIPT. EDIT TS FILE ONLY. !!!!!!!
  *
  * */
 'use strict';
 import H from '../../Core/Globals.js';
 import U from '../../Core/Utilities.js';
-const { addEvent } = U;
+var addEvent = U.addEvent;
+/* *
+ *
+ *  Class
+ *
+ * */
 /**
  * @private
  */
-class EventProvider {
+var EventProvider = /** @class */ (function () {
     /* *
      *
      *  Constructor
      *
      * */
-    constructor() {
+    function EventProvider() {
         this.eventRemovers = [];
     }
     /**
@@ -31,33 +35,21 @@ class EventProvider {
      * Same args as Highcharts.addEvent.
      * @private
      */
-    addEvent() {
-        const remover = addEvent.apply(H, arguments);
-        this.eventRemovers.push({
-            element: arguments[0], // HTML element
-            remover
-        });
+    EventProvider.prototype.addEvent = function () {
+        var remover = addEvent.apply(H, arguments);
+        this.eventRemovers.push(remover);
         return remover;
-    }
-    /**
-     * Remove added event.
-     * @private
-     */
-    removeEvent(event) {
-        const pos = this.eventRemovers.map((e) => e.remover).indexOf(event);
-        this.eventRemovers[pos].remover();
-        this.eventRemovers.splice(pos, 1);
-    }
+    };
     /**
      * Remove all added events.
      * @private
      */
-    removeAddedEvents() {
-        this.eventRemovers.map((e) => e.remover)
-            .forEach((remover) => remover());
+    EventProvider.prototype.removeAddedEvents = function () {
+        this.eventRemovers.forEach(function (remover) { return remover(); });
         this.eventRemovers = [];
-    }
-}
+    };
+    return EventProvider;
+}());
 /* *
  *
  *  Default Export

@@ -1,16 +1,15 @@
 /* *
  *
- *  (c) 2010-2026 Highsoft AS
- *  Author: Torstein Honsi
+ *  (c) 2010-2021 Torstein Honsi
  *
- *  A commercial license may be required depending on use.
- *  See www.highcharts.com/license
+ *  License: www.highcharts.com/license
  *
+ *  !!!!!!! SOURCE GETS TRANSPILED BY TYPESCRIPT. EDIT TS FILE ONLY. !!!!!!!
  *
  * */
 'use strict';
 import H from '../../Core/Globals.js';
-const { isTouchDevice } = H;
+var isTouchDevice = H.isTouchDevice;
 /* *
  *
  *  API Options
@@ -19,13 +18,12 @@ const { isTouchDevice } = H;
 // Add the export related options
 /**
  * Options for the exporting module. For an overview on the matter, see
- * [the docs](https://www.highcharts.com/docs/export-module/export-module-overview) and
- * read our [Fair Usage Policy](https://www.highcharts.com/docs/export-module/privacy-disclaimer-export).
+ * [the docs](https://www.highcharts.com/docs/export-module/export-module-overview).
  *
  * @requires     modules/exporting
  * @optionparent exporting
  */
-const exporting = {
+var exporting = {
     /**
      * Experimental setting to allow HTML inside the chart (added through
      * the `useHTML` options), directly in the exported image. This allows
@@ -42,28 +40,6 @@ const exporting = {
      * @default   false
      * @since     4.1.8
      * @apioption exporting.allowHTML
-     */
-    /**
-     * Allows the end user to sort the data table by clicking on column headers.
-     *
-     * @since     10.3.3
-     * @apioption exporting.allowTableSorting
-     */
-    allowTableSorting: true,
-    /**
-     * Allow exporting a chart retaining any user-applied CSS.
-     *
-     * Note that this is is default behavior in [styledMode](#chart.styledMode).
-     *
-     * @see [styledMode](#chart.styledMode)
-     *
-     * @sample    {highcharts} highcharts/exporting/apply-stylesheets/
-     *            Export with custom stylesheet
-     *
-     * @type      {boolean}
-     * @default   false
-     * @since     12.0.0
-     * @apioption exporting.applyStyleSheets
      */
     /**
      * Additional chart options to be merged into the chart before exporting to
@@ -143,31 +119,14 @@ const exporting = {
      * @apioption exporting.filename
      */
     /**
-     * Highcharts v11.2.0 and older. An object containing additional key value
-     * data for the POST form that sends the SVG to the export server. For
-     * example, a `target` can be set to make sure the generated image is
-     * received in another frame, or a custom `enctype` or `encoding` can be
-     * set.
+     * An object containing additional key value data for the POST form that
+     * sends the SVG to the export server. For example, a `target` can be set to
+     * make sure the generated image is received in another frame, or a custom
+     * `enctype` or `encoding` can be set.
      *
-     * With Highcharts v11.3.0, the `fetch` API replaced the old HTML form. To
-     * modify the request, now use [fetchOptions](#exporting.fetchOptions)
-     * instead.
-     *
-     * @deprecated
      * @type      {Highcharts.HTMLAttributes}
      * @since     3.0.8
      * @apioption exporting.formAttributes
-     */
-    /**
-     * Options for the fetch request used when sending the SVG to the export
-     * server.
-     *
-     * See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/fetch)
-     * for more information
-     *
-     * @type      {Object}
-     * @since     11.3.0
-     * @apioption exporting.fetchOptions
      */
     /**
      * Path where Highcharts will look for export module dependencies to
@@ -177,37 +136,11 @@ const exporting = {
      * [svg2pdf.js](https://github.com/yWorks/svg2pdf.js), required for client
      * side export in certain browsers.
      *
-     * Note: Highcharts cannot take responsibility for the security of any
-     * external libraries (including [optional dependencies](https://www.highcharts.com/docs/getting-started/optional-dependencies))
-     * loaded through `exporting.libURL`. These libraries are not licensed or
-     * warrantied under the Highcharts license.
-     *
      * @type      {string}
      * @default   https://code.highcharts.com/{version}/lib
      * @since     5.0.0
      * @apioption exporting.libURL
      */
-    libURL: 'https://code.highcharts.com/12.5.0/lib/',
-    /**
-     * Whether the chart should be exported using the browser's built-in
-     * capabilities, allowing offline exports without requiring access to the
-     * Highcharts export server, or sent directly to the export server for
-     * processing and downloading.
-     *
-     * This option is different from `exporting.fallbackToExportServer`, which
-     * controls whether the export server should be used as a fallback only if
-     * the local export fails. In contrast, `exporting.local` explicitly defines
-     * which export method to use.
-     *
-     * @see [fallbackToExportServer](#exporting.fallbackToExportServer)
-     *
-     * @type      {boolean}
-     * @default   true
-     * @since 12.3.0
-     * @requires  modules/exporting
-     * @apioption exporting.local
-     */
-    local: true,
     /**
      * Analogous to [sourceWidth](#exporting.sourceWidth).
      *
@@ -258,11 +191,11 @@ const exporting = {
     type: 'image/png',
     /**
      * The URL for the server module converting the SVG string to an image
-     * format. By default this points to Highcharts free web service.
+     * format. By default this points to Highchart's free web service.
      *
      * @since 2.0
      */
-    url: `https://export-svg.highcharts.com?v=${H.version}`,
+    url: 'https://export.highcharts.com/',
     /**
      * Settings for a custom font for the exported PDF, when using the
      * `offline-exporting` module. This is used for languages containing
@@ -280,7 +213,7 @@ const exporting = {
      * @sample {highcharts} highcharts/exporting/offline-download-pdffont/
      *         Download PDF in a language containing non-Latin characters.
      *
-     * @since    10.0.0
+     * @since 10.0.0
      * @requires modules/offline-exporting
      */
     pdfFont: {
@@ -289,25 +222,25 @@ const exporting = {
          * `bold` or `italic` are not defined, the `normal` font will be used
          * for those too.
          *
-         * @type string | undefined
+         * @type string|undefined
          */
         normal: void 0,
         /**
          * The TTF font file for bold text.
          *
-         * @type string | undefined
+         * @type string|undefined
          */
         bold: void 0,
         /**
          * The TTF font file for bold and italic text.
          *
-         * @type string | undefined
+         * @type string|undefined
          */
         bolditalic: void 0,
         /**
          * The TTF font file for italic text.
          *
-         * @type string | undefined
+         * @type string|undefined
          */
         italic: void 0
     },
@@ -373,6 +306,15 @@ const exporting = {
              * @apioption exporting.buttons.contextButton.onclick
              */
             /**
+             * See [navigation.buttonOptions.symbolFill](
+             * #navigation.buttonOptions.symbolFill).
+             *
+             * @type      {Highcharts.ColorString}
+             * @default   #666666
+             * @since     2.0
+             * @apioption exporting.buttons.contextButton.symbolFill
+             */
+            /**
              * The horizontal position of the button relative to the `align`
              * option.
              *
@@ -401,7 +343,7 @@ const exporting = {
              * @sample highcharts/exporting/buttons-contextbutton-symbol-custom/
              *         Custom shape as symbol
              *
-             * @type  {Highcharts.SymbolKeyValue | "menu" | "menuball" | string}
+             * @type  {Highcharts.SymbolKeyValue|"menu"|"menuball"|string}
              * @since 2.0
              */
             symbol: 'menu',
@@ -415,6 +357,14 @@ const exporting = {
              */
             titleKey: 'contextButtonTitle',
             /**
+             * This option is deprecated, use
+             * [titleKey](#exporting.buttons.contextButton.titleKey) instead.
+             *
+             * @deprecated
+             * @type      {string}
+             * @apioption exporting.buttons.contextButton._titleKey
+             */
+            /**
              * A collection of strings pointing to config options for the menu
              * items. The config options are defined in the
              * `menuItemDefinitions` option.
@@ -422,13 +372,15 @@ const exporting = {
              * By default, there is the "View in full screen" and "Print" menu
              * items, plus one menu item for each of the available export types.
              *
-             * @sample highcharts/exporting/menuitemdefinitions/
+             * @sample {highcharts} highcharts/exporting/menuitemdefinitions/
              *         Menu item definitions
-             * @sample highcharts/exporting/menuitemdefinitions-webp/
-             *         Adding a custom menu item for WebP export
+             * @sample {highstock} highcharts/exporting/menuitemdefinitions/
+             *         Menu item definitions
+             * @sample {highmaps} highcharts/exporting/menuitemdefinitions/
+             *         Menu item definitions
              *
              * @type    {Array<string>}
-             * @default ["viewFullscreen", "printChart", "separator", "downloadPNG", "downloadJPEG", "downloadSVG"]
+             * @default ["viewFullscreen", "printChart", "separator", "downloadPNG", "downloadJPEG", "downloadPDF", "downloadSVG"]
              * @since   2.0
              */
             menuItems: [
@@ -437,6 +389,7 @@ const exporting = {
                 'separator',
                 'downloadPNG',
                 'downloadJPEG',
+                'downloadPDF',
                 'downloadSVG'
             ]
         }
@@ -457,80 +410,81 @@ const exporting = {
      * Custom text for the "exitFullScreen" can be set only in lang options
      * (it is not a separate button).
      *
-     * @sample highcharts/exporting/menuitemdefinitions/
+     * @sample {highcharts} highcharts/exporting/menuitemdefinitions/
      *         Menu item definitions
-     * @sample highcharts/exporting/menuitemdefinitions-webp/
-     *         Adding a custom menu item for WebP export
+     * @sample {highstock} highcharts/exporting/menuitemdefinitions/
+     *         Menu item definitions
+     * @sample {highmaps} highcharts/exporting/menuitemdefinitions/
+     *         Menu item definitions
      *
-     * @type     {Highcharts.Dictionary<Highcharts.ExportingMenuObject>}
-     * @since    5.0.13
+     *
+     * @type    {Highcharts.Dictionary<Highcharts.ExportingMenuObject>}
+     * @default {"viewFullscreen": {}, "printChart": {}, "separator": {}, "downloadPNG": {}, "downloadJPEG": {}, "downloadPDF": {}, "downloadSVG": {}}
+     * @since   5.0.13
      */
     menuItemDefinitions: {
+        /**
+         * @ignore
+         */
         viewFullscreen: {
-            /**
-             * @see [lang.viewFullscreen](#lang.viewFullscreen)
-             * @default viewFullscreen
-             */
             textKey: 'viewFullscreen',
             onclick: function () {
-                this.fullscreen?.toggle();
+                this.fullscreen.toggle();
             }
         },
+        /**
+         * @ignore
+         */
         printChart: {
-            /**
-             * @see [lang.printChart](#lang.printChart)
-             * @default printChart
-             */
             textKey: 'printChart',
             onclick: function () {
-                this.exporting?.print();
+                this.print();
             }
         },
+        /**
+         * @ignore
+         */
         separator: {
             separator: true
         },
+        /**
+         * @ignore
+         */
         downloadPNG: {
-            /**
-             * @see [lang.downloadPNG](#lang.downloadPNG)
-             * @default downloadPNG
-             */
             textKey: 'downloadPNG',
-            onclick: async function () {
-                await this.exporting?.exportChart();
+            onclick: function () {
+                this.exportChart();
             }
         },
+        /**
+         * @ignore
+         */
         downloadJPEG: {
-            /**
-             * @see [lang.downloadJPEG](#lang.downloadJPEG)
-             * @default downloadJPEG
-             */
             textKey: 'downloadJPEG',
-            onclick: async function () {
-                await this.exporting?.exportChart({
+            onclick: function () {
+                this.exportChart({
                     type: 'image/jpeg'
                 });
             }
         },
+        /**
+         * @ignore
+         */
         downloadPDF: {
-            /**
-             * @see [lang.downloadPDF](#lang.downloadPDF)
-             * @default downloadPDF
-             */
             textKey: 'downloadPDF',
-            onclick: async function () {
-                await this.exporting?.exportChart({
+            onclick: function () {
+                this.exportChart({
                     type: 'application/pdf'
                 });
             }
         },
+        /**
+         * @ignore
+         */
         downloadSVG: {
-            /**
-             * @see [lang.downloadSVG](#lang.downloadSVG)
-             * @default downloadSVG
-             */
             textKey: 'downloadSVG',
-            onclick: async function () {
-                await this.exporting?.exportChart({
+            onclick: function () {
+                this.exportChart({
                     type: 'image/svg+xml'
                 });
             }
@@ -541,13 +495,14 @@ const exporting = {
 /**
  * @optionparent lang
  */
-const lang = {
+var lang = {
     /**
      * Exporting module only. The text for the menu item to view the chart
      * in full screen.
      *
      * @since 8.0.1
-     * @requires modules/exporting
+     *
+     * @private
      */
     viewFullscreen: 'View in full screen',
     /**
@@ -555,7 +510,8 @@ const lang = {
      * from full screen.
      *
      * @since 8.0.1
-     * @requires modules/exporting
+     *
+     * @private
      */
     exitFullscreen: 'Exit from full screen',
     /**
@@ -563,6 +519,8 @@ const lang = {
      *
      * @since    3.0.1
      * @requires modules/exporting
+     *
+     * @private
      */
     printChart: 'Print chart',
     /**
@@ -570,6 +528,8 @@ const lang = {
      *
      * @since    2.0
      * @requires modules/exporting
+     *
+     * @private
      */
     downloadPNG: 'Download PNG image',
     /**
@@ -577,6 +537,8 @@ const lang = {
      *
      * @since    2.0
      * @requires modules/exporting
+     *
+     * @private
      */
     downloadJPEG: 'Download JPEG image',
     /**
@@ -584,6 +546,8 @@ const lang = {
      *
      * @since    2.0
      * @requires modules/exporting
+     *
+     * @private
      */
     downloadPDF: 'Download PDF document',
     /**
@@ -591,6 +555,8 @@ const lang = {
      *
      * @since    2.0
      * @requires modules/exporting
+     *
+     * @private
      */
     downloadSVG: 'Download SVG vector image',
     /**
@@ -599,17 +565,12 @@ const lang = {
      *
      * @since    3.0
      * @requires modules/exporting
+     *
+     * @private
      */
     contextButtonTitle: 'Chart context menu'
 };
-/**
- * A collection of options for buttons and menus appearing in the exporting
- * module or in Stock Tools.
- *
- * @requires     modules/exporting
- * @optionparent navigation
- */
-const navigation = {
+var navigation = {
     /**
      * A collection of options for buttons appearing in the exporting
      * module.
@@ -618,6 +579,8 @@ const navigation = {
      * `.highcharts-contextbutton` and `.highcharts-button-symbol` classes.
      *
      * @requires modules/exporting
+     *
+     * @private
      */
     buttonOptions: {
         /**
@@ -648,7 +611,7 @@ const navigation = {
          *
          * @since 2.0
          */
-        symbolX: 14.5,
+        symbolX: 12.5,
         /**
          * The y position of the center of the symbol inside the button.
          *
@@ -657,7 +620,7 @@ const navigation = {
          *
          * @since 2.0
          */
-        symbolY: 13.5,
+        symbolY: 10.5,
         /**
          * Alignment for the buttons.
          *
@@ -669,15 +632,11 @@ const navigation = {
          */
         align: 'right',
         /**
-         * The pixel spacing between buttons, and between the context button and
-         * the title.
-         *
-         * @sample highcharts/title/widthadjust
-         *         Adjust the spacing when using text button
+         * The pixel spacing between buttons.
          *
          * @since 2.0
          */
-        buttonSpacing: 5,
+        buttonSpacing: 3,
         /**
          * Pixel height of the buttons.
          *
@@ -686,14 +645,12 @@ const navigation = {
          *
          * @since 2.0
          */
-        height: 28,
+        height: 22,
         /**
          * A text string to add to the individual button.
          *
          * @sample highcharts/exporting/buttons-text/
          *         Full text button
-         * @sample highcharts/exporting/buttons-text-usehtml/
-         *         Icon using CSS font in text
          * @sample highcharts/exporting/buttons-text-symbol/
          *         Combined symbol and text
          *
@@ -703,28 +660,17 @@ const navigation = {
          * @apioption navigation.buttonOptions.text
          */
         /**
-         * Whether to use HTML for rendering the button. HTML allows for things
-         * like inline CSS or image-based icons.
-         *
-         * @sample highcharts/exporting/buttons-text-usehtml/
-         *         Icon using CSS font in text
-         *
-         * @type      boolean
-         * @default   false
-         * @since     10.3.0
-         * @apioption navigation.buttonOptions.useHTML
-         */
-        /**
          * The vertical offset of the button's position relative to its
-         * `verticalAlign`. By default adjusted for the chart title alignment.
+         * `verticalAlign`.
          *
          * @sample highcharts/navigation/buttonoptions-verticalalign/
          *         Buttons at lower right
          *
+         * @type      {number}
+         * @default   0
          * @since     2.0
          * @apioption navigation.buttonOptions.y
          */
-        y: -5,
         /**
          * The vertical alignment of the buttons. Can be one of `"top"`,
          * `"middle"` or `"bottom"`.
@@ -744,17 +690,17 @@ const navigation = {
          *
          * @since 2.0
          */
-        width: 28,
+        width: 24,
         /**
          * Fill color for the symbol within the button.
          *
          * @sample highcharts/navigation/buttonoptions-symbolfill/
          *         Blue symbol stroke for one of the buttons
          *
-         * @type  {Highcharts.ColorString | Highcharts.GradientColorObject | Highcharts.PatternObject}
+         * @type  {Highcharts.ColorString|Highcharts.GradientColorObject|Highcharts.PatternObject}
          * @since 2.0
          */
-        symbolFill: "#666666" /* Palette.neutralColor60 */,
+        symbolFill: "#666666" /* neutralColor60 */,
         /**
          * The color of the symbol's stroke or line.
          *
@@ -764,7 +710,7 @@ const navigation = {
          * @type  {Highcharts.ColorString}
          * @since 2.0
          */
-        symbolStroke: "#666666" /* Palette.neutralColor60 */,
+        symbolStroke: "#666666" /* neutralColor60 */,
         /**
          * The pixel stroke width of the symbol on the button.
          *
@@ -791,23 +737,20 @@ const navigation = {
             /**
              * The default fill exists only to capture hover events.
              *
-             * @type {Highcharts.ColorString|Highcharts.GradientColorObject|Highcharts.PatternObject}
+             * @type      {Highcharts.ColorString|Highcharts.GradientColorObject|Highcharts.PatternObject}
+             * @default   #ffffff
+             * @apioption navigation.buttonOptions.theme.fill
              */
-            fill: "#ffffff" /* Palette.backgroundColor */,
+            /**
+             * Default stroke for the buttons.
+             * @type      {Highcharts.ColorString}
+             * @default   none
+             * @apioption navigation.buttonOptions.theme.stroke
+             */
             /**
              * Padding for the button.
              */
-            padding: 5,
-            /**
-             * Default stroke for the buttons.
-             *
-             * @type {Highcharts.ColorString}
-             */
-            stroke: 'none',
-            /**
-             * Default stroke linecap for the buttons.
-             */
-            'stroke-linecap': 'round'
+            padding: 5
         }
     },
     /**
@@ -821,18 +764,18 @@ const navigation = {
      *         Light gray menu background
      *
      * @type    {Highcharts.CSSObject}
-     * @default {"background": "#ffffff", "borderRadius": "3px", "padding": "0.5em"}
+     * @default {"border": "1px solid #999999", "background": "#ffffff", "padding": "5px 0"}
      * @since   2.0
+     *
+     * @private
      */
     menuStyle: {
         /** @ignore-option */
-        border: 'none',
+        border: "1px solid " + "#999999" /* neutralColor40 */,
         /** @ignore-option */
-        borderRadius: '3px',
+        background: "#ffffff" /* backgroundColor */,
         /** @ignore-option */
-        background: "#ffffff" /* Palette.backgroundColor */,
-        /** @ignore-option */
-        padding: '0.5em'
+        padding: '5px 0'
     },
     /**
      * CSS styles for the individual items within the popup menu appearing
@@ -847,20 +790,20 @@ const navigation = {
      *         Add a grey stripe to the left
      *
      * @type    {Highcharts.CSSObject}
-     * @default {"padding": "0.5em", "color": "#333333", "background": "none", "borderRadius": "3px", "fontSize": "0.8em", "transition": "background 250ms, color 250ms"}
+     * @default {"padding": "0.5em 1em", "color": "#333333", "background": "none", "fontSize": "11px/14px", "transition": "background 250ms, color 250ms"}
      * @since   2.0
+     *
+     * @private
      */
     menuItemStyle: {
         /** @ignore-option */
+        padding: '0.5em 1em',
+        /** @ignore-option */
+        color: "#333333" /* neutralColor80 */,
+        /** @ignore-option */
         background: 'none',
         /** @ignore-option */
-        borderRadius: '3px',
-        /** @ignore-option */
-        color: "#333333" /* Palette.neutralColor80 */,
-        /** @ignore-option */
-        padding: '0.5em',
-        /** @ignore-option */
-        fontSize: isTouchDevice ? '0.9em' : '0.8em',
+        fontSize: isTouchDevice ? '14px' : '11px',
         /** @ignore-option */
         transition: 'background 250ms, color 250ms'
     },
@@ -876,12 +819,16 @@ const navigation = {
      *         Bold text on hover
      *
      * @type    {Highcharts.CSSObject}
-     * @default {"background": "#f2f2f2" }
+     * @default {"background": "#335cad", "color": "#ffffff"}
      * @since   2.0
+     *
+     * @private
      */
     menuItemHoverStyle: {
         /** @ignore-option */
-        background: "#f2f2f2" /* Palette.neutralColor5 */
+        background: "#335cad" /* highlightColor80 */,
+        /** @ignore-option */
+        color: "#ffffff" /* backgroundColor */
     }
 };
 /* *
@@ -889,11 +836,9 @@ const navigation = {
  *  Default Export
  *
  * */
-/** @internal */
-const ExportingDefaults = {
-    exporting,
-    lang,
-    navigation
+var ExportingDefaults = {
+    exporting: exporting,
+    lang: lang,
+    navigation: navigation
 };
-/** @internal */
 export default ExportingDefaults;

@@ -1,18 +1,31 @@
 /* *
  *
- *  A commercial license may be required depending on use.
- *  See www.highcharts.com/license
+ *  License: www.highcharts.com/license
  *
+ *  !!!!!!! SOURCE GETS TRANSPILED BY TYPESCRIPT. EDIT TS FILE ONLY. !!!!!!!
  *
  * */
 'use strict';
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 import AU from '../ArrayUtilities.js';
 import MultipleLinesComposition from '../MultipleLinesComposition.js';
 import Palettes from '../../../Core/Color/Palettes.js';
 import SeriesRegistry from '../../../Core/Series/SeriesRegistry.js';
-const { sma: SMAIndicator } = SeriesRegistry.seriesTypes;
+var SMAIndicator = SeriesRegistry.seriesTypes.sma;
 import U from '../../../Core/Utilities.js';
-const { merge, extend } = U;
+var merge = U.merge, extend = U.extend;
 /* *
  *
  *  Class
@@ -27,19 +40,36 @@ const { merge, extend } = U;
  *
  * @augments Highcharts.Series
  */
-class PCIndicator extends SMAIndicator {
+var PCIndicator = /** @class */ (function (_super) {
+    __extends(PCIndicator, _super);
+    function PCIndicator() {
+        /* *
+         *
+         *  Static Properties
+         *
+         * */
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        /* *
+        *
+        *  Properties
+        *
+        * */
+        _this.data = void 0;
+        _this.options = void 0;
+        _this.points = void 0;
+        return _this;
+    }
     /* *
-     *
-     *  Functions
-     *
-     * */
-    getValues(series, params) {
-        const period = params.period, xVal = series.xData, yVal = series.yData, yValLen = yVal ? yVal.length : 0, 
+    *
+    *  Functions
+    *
+    * */
+    PCIndicator.prototype.getValues = function (series, params) {
+        var period = params.period, xVal = series.xData, yVal = series.yData, yValLen = yVal ? yVal.length : 0, 
         // 0- date, 1-top line, 2-middle line, 3-bottom line
         PC = [], 
-        // Middle line, top line and bottom line
-        low = 2, high = 1, xData = [], yData = [];
-        let ML, TL, BL, date, slicedY, extremes, i;
+        // middle line, top line and bottom line
+        ML, TL, BL, date, low = 2, high = 1, xData = [], yData = [], slicedY, extremes, i;
         if (yValLen < period) {
             return;
         }
@@ -59,84 +89,80 @@ class PCIndicator extends SMAIndicator {
             xData: xData,
             yData: yData
         };
-    }
-}
-/* *
- *
- *  Static Properties
- *
- * */
-/**
- * Price channel (PC). This series requires the `linkedTo` option to be
- * set and should be loaded after the `stock/indicators/indicators.js`.
- *
- * @sample {highstock} stock/indicators/price-channel
- *         Price Channel
- *
- * @extends      plotOptions.sma
- * @since        7.0.0
- * @product      highstock
- * @excluding    allAreas, colorAxis, compare, compareBase, joinBy, keys,
- *               navigatorOptions, pointInterval, pointIntervalUnit,
- *               pointPlacement, pointRange, pointStart, showInNavigator,
- *               stacking
- * @requires     stock/indicators/indicators
- * @requires     stock/indicators/price-channel
- * @optionparent plotOptions.pc
- */
-PCIndicator.defaultOptions = merge(SMAIndicator.defaultOptions, {
+    };
     /**
-     * Option for fill color between lines in Price channel Indicator.
+     * Price channel (PC). This series requires the `linkedTo` option to be
+     * set and should be loaded after the `stock/indicators/indicators.js`.
      *
-     * @sample {highstock} stock/indicators/indicator-area-fill
-     *      background fill between lines
+     * @sample {highstock} stock/indicators/price-channel
+     *         Price Channel
      *
-     * @type {Highcharts.Color}
-     * @apioption plotOptions.pc.fillColor
-     *
+     * @extends      plotOptions.sma
+     * @since        7.0.0
+     * @product      highstock
+     * @excluding    allAreas, colorAxis, compare, compareBase, joinBy, keys,
+     *               navigatorOptions, pointInterval, pointIntervalUnit,
+     *               pointPlacement, pointRange, pointStart, showInNavigator,
+     *               stacking
+     * @requires     stock/indicators/indicators
+     * @requires     stock/indicators/price-channel
+     * @optionparent plotOptions.pc
      */
-    /**
-     * @excluding index
-     */
-    params: {
-        index: void 0, // Unchangeable index, do not inherit (#15362)
-        period: 20
-    },
-    lineWidth: 1,
-    topLine: {
-        styles: {
-            /**
-             * Color of the top line. If not set, it's inherited from
-             * [plotOptions.pc.color](#plotOptions.pc.color).
-             *
-             * @type {Highcharts.ColorString}
-             */
-            lineColor: Palettes.colors[2],
-            /**
-             * Pixel width of the line.
-             */
-            lineWidth: 1
+    PCIndicator.defaultOptions = merge(SMAIndicator.defaultOptions, {
+        /**
+         * Option for fill color between lines in Price channel Indicator.
+         *
+         * @sample {highstock} stock/indicators/indicator-area-fill
+         *      background fill between lines
+         *
+         * @type {Highcharts.Color}
+         * @apioption plotOptions.pc.fillColor
+         *
+         */
+        /**
+         * @excluding index
+         */
+        params: {
+            index: void 0,
+            period: 20
+        },
+        lineWidth: 1,
+        topLine: {
+            styles: {
+                /**
+                 * Color of the top line. If not set, it's inherited from
+                 * [plotOptions.pc.color](#plotOptions.pc.color).
+                 *
+                 * @type {Highcharts.ColorString}
+                 */
+                lineColor: Palettes.colors[2],
+                /**
+                 * Pixel width of the line.
+                 */
+                lineWidth: 1
+            }
+        },
+        bottomLine: {
+            styles: {
+                /**
+                 * Color of the bottom line. If not set, it's inherited from
+                 * [plotOptions.pc.color](#plotOptions.pc.color).
+                 *
+                 * @type {Highcharts.ColorString}
+                 */
+                lineColor: Palettes.colors[8],
+                /**
+                 * Pixel width of the line.
+                 */
+                lineWidth: 1
+            }
+        },
+        dataGrouping: {
+            approximation: 'averages'
         }
-    },
-    bottomLine: {
-        styles: {
-            /**
-             * Color of the bottom line. If not set, it's inherited from
-             * [plotOptions.pc.color](#plotOptions.pc.color).
-             *
-             * @type {Highcharts.ColorString}
-             */
-            lineColor: Palettes.colors[8],
-            /**
-             * Pixel width of the line.
-             */
-            lineWidth: 1
-        }
-    },
-    dataGrouping: {
-        approximation: 'averages'
-    }
-});
+    });
+    return PCIndicator;
+}(SMAIndicator));
 extend(PCIndicator.prototype, {
     areaLinesNames: ['top', 'bottom'],
     nameBase: 'Price Channel',
@@ -153,11 +179,6 @@ SeriesRegistry.registerSeriesType('pc', PCIndicator);
  *
  * */
 export default PCIndicator;
-/* *
- *
- *  API Options
- *
- * */
 /**
  * A Price channel indicator. If the [type](#series.pc.type) option is not
  * specified, it is inherited from [chart.type](#chart.type).
@@ -173,4 +194,4 @@ export default PCIndicator;
  * @requires     stock/indicators/price-channel
  * @apioption    series.pc
  */
-''; // To include the above in the js output
+''; // to include the above in the js output

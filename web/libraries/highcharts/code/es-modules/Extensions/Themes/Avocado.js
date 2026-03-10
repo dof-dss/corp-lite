@@ -1,20 +1,20 @@
 /* *
  *
- *  (c) 2010-2026 Highsoft AS
+ *  (c) 2010-2021 Highsoft AS
  *
  *  Author: Øystein Moseng
  *
- *  A commercial license may be required depending on use.
- *  See www.highcharts.com/license
+ *  License: www.highcharts.com/license
  *
  *  Accessible high-contrast theme for Highcharts. Considers colorblindness and
  *  monochrome rendering.
  *
+ *  !!!!!!! SOURCE GETS TRANSPILED BY TYPESCRIPT. EDIT TS FILE ONLY. !!!!!!!
  *
  * */
 'use strict';
-import D from '../../Core/Defaults.js';
-const { setOptions } = D;
+import D from '../../Core/DefaultOptions.js';
+var setOptions = D.setOptions;
 /* *
  *
  *  Theme

@@ -1,10 +1,10 @@
-!/**
- * Highcharts JS v12.5.0 (2026-01-12)
- * @module highcharts/themes/high-contrast-light
- * @requires highcharts
- *
- * (c) 2009-2026 Highsoft AS
- *
- * A commercial license may be required depending on use.
- * See www.highcharts.com/license
- */function(t,e){"object"==typeof exports&&"object"==typeof module?module.exports=e(t._Highcharts):"function"==typeof define&&define.amd?define("highcharts/themes/high-contrast-light",["highcharts/highcharts"],function(t){return e(t)}):"object"==typeof exports?exports["highcharts/themes/high-contrast-light"]=e(t._Highcharts):t.Highcharts=e(t.Highcharts)}("u"<typeof window?this:window,t=>(()=>{"use strict";var e,o,r={944:e=>{e.exports=t}},i={};function s(t){var e=i[t];if(void 0!==e)return e.exports;var o=i[t]={exports:{}};return r[t](o,o.exports,s),o.exports}s.n=t=>{var e=t&&t.__esModule?()=>t.default:()=>t;return s.d(e,{a:e}),e},s.d=(t,e)=>{for(var o in e)s.o(e,o)&&!s.o(t,o)&&Object.defineProperty(t,o,{enumerable:!0,get:e[o]})},s.o=(t,e)=>Object.prototype.hasOwnProperty.call(t,e);var n={};s.d(n,{default:()=>f});var h=s(944),a=s.n(h);let{setOptions:c}=a();(e=o||(o={})).options={colors:["#265FB5","#222","#698F01","#F4693E","#4C0684","#0FA388","#B7104A","#AF9023","#1A704C","#B02FDD"],credits:{style:{color:"#767676"}},navigator:{series:{color:"#5f98cf",lineColor:"#5f98cf"}}},e.apply=function(){c(e.options)};let p=o;a().theme=p.options,p.apply();let f=a();return n.default})());
+/*
+ Highcharts JS v10.0.0 (2022-03-07)
+
+ (c) 2009-2021 Highsoft AS
+
+ License: www.highcharts.com/license
+*/
+(function(a){"object"===typeof module&&module.exports?(a["default"]=a,module.exports=a):"function"===typeof define&&define.amd?define("highcharts/themes/high-contrast-light",["highcharts"],function(b){a(b);a.Highcharts=b;return a}):a("undefined"!==typeof Highcharts?Highcharts:void 0)})(function(a){function b(a,c,b,d){a.hasOwnProperty(c)||(a[c]=d.apply(null,b),"function"===typeof CustomEvent&&window.dispatchEvent(new CustomEvent("HighchartsModuleLoaded",{detail:{path:c,module:a[c]}})))}a=a?a._modules:
+{};b(a,"Extensions/Themes/HighContrastLight.js",[a["Core/DefaultOptions.js"]],function(a){var c=a.setOptions,b;(function(a){a.options={colors:"#4372da #222 #0b7383 #6B26F0 #D42D1A #3D239E #7e7932 #b06320 #244a76 #76767A".split(" "),navigator:{series:{color:"#5f98cf",lineColor:"#5f98cf"}}};a.apply=function(){c(a.options)}})(b||(b={}));return b});b(a,"masters/themes/high-contrast-light.src.js",[a["Core/Globals.js"],a["Extensions/Themes/HighContrastLight.js"]],function(a,b){a.theme=b.options;b.apply()})});
+//# sourceMappingURL=high-contrast-light.js.map

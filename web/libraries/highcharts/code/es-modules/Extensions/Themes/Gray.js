@@ -1,18 +1,17 @@
 /* *
  *
- *  (c) 2010-2026 Highsoft AS
- *  Author: Torstein Honsi
+ *  (c) 2010-2021 Torstein Honsi
  *
- *  A commercial license may be required depending on use.
- *  See www.highcharts.com/license
+ *  License: www.highcharts.com/license
  *
  *  Gray theme for Highcharts JS
  *
+ *  !!!!!!! SOURCE GETS TRANSPILED BY TYPESCRIPT. EDIT TS FILE ONLY. !!!!!!!
  *
  * */
 'use strict';
-import D from '../../Core/Defaults.js';
-const { setOptions } = D;
+import D from '../../Core/DefaultOptions.js';
+var setOptions = D.setOptions;
 /* *
  *
  *  Theme
@@ -26,10 +25,8 @@ var GrayTheme;
      *
      * */
     GrayTheme.options = {
-        colors: [
-            '#DDDF0D', '#7798BF', '#55BF3B', '#DF5353', '#aaeeee',
-            '#ff0066', '#eeaaee', '#55BF3B', '#DF5353', '#7798BF', '#aaeeee'
-        ],
+        colors: ['#DDDF0D', '#7798BF', '#55BF3B', '#DF5353', '#aaeeee',
+            '#ff0066', '#eeaaee', '#55BF3B', '#DF5353', '#7798BF', '#aaeeee'],
         chart: {
             backgroundColor: {
                 linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
@@ -114,6 +111,11 @@ var GrayTheme;
                 }
             }
         },
+        labels: {
+            style: {
+                color: '#CCC'
+            }
+        },
         tooltip: {
             backgroundColor: {
                 linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
@@ -171,7 +173,7 @@ var GrayTheme;
                 }
             }
         },
-        // Scroll charts
+        // scroll charts
         rangeSelector: {
             buttonTheme: {
                 fill: {

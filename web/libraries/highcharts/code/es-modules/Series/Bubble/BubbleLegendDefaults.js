@@ -1,12 +1,12 @@
 /* *
  *
- *  (c) 2010-2026 Highsoft AS
+ *  (c) 2010-2021 Highsoft AS
  *
  *  Author: Paweł Potaczek
  *
- *  A commercial license may be required depending on use.
- *  See www.highcharts.com/license
+ *  License: www.highcharts.com/license
  *
+ *  !!!!!!! SOURCE GETS TRANSPILED BY TYPESCRIPT. EDIT TS FILE ONLY. !!!!!!!
  *
  * */
 'use strict';
@@ -27,7 +27,7 @@
  * @requires     highcharts-more
  * @optionparent legend.bubbleLegend
  */
-const BubbleLegendDefaults = {
+var BubbleLegendDefaults = {
     /**
      * The color of the ranges borders, can be also defined for an
      * individual range.
@@ -163,9 +163,9 @@ const BubbleLegendDefaults = {
          */
         style: {
             /** @ignore-option */
-            fontSize: '0.9em',
+            fontSize: '10px',
             /** @ignore-option */
-            color: "#000000" /* Palette.neutralColor100 */
+            color: "#000000" /* neutralColor100 */
         },
         /**
          * The x position offset of the label relative to the
@@ -179,23 +179,23 @@ const BubbleLegendDefaults = {
         y: 0
     },
     /**
-     * Maximum bubble legend range size. If values for ranges are
+     * Miximum bubble legend range size. If values for ranges are
      * not specified, the `minSize` and the `maxSize` are calculated
      * from bubble series.
      */
-    maxSize: 60, // Number
+    maxSize: 60,
     /**
      * Minimum bubble legend range size. If values for ranges are
      * not specified, the `minSize` and the `maxSize` are calculated
      * from bubble series.
      */
-    minSize: 10, // Number
+    minSize: 10,
     /**
      * The position of the bubble legend in the legend.
      * @sample highcharts/bubble-legend/connectorandlabels/
      *         Bubble legend as last item in legend
      */
-    legendIndex: 0, // Number
+    legendIndex: 0,
     /**
      * Options for specific range. One range consists of bubble,
      * label and connector.
@@ -254,7 +254,7 @@ const BubbleLegendDefaults = {
      */
     zIndex: 1,
     /**
-     * Ranges with lower value than zThreshold are skipped.
+     * Ranges with with lower value than zThreshold, are skipped.
      */
     zThreshold: 0
 };

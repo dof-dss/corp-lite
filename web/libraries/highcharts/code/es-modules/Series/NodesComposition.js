@@ -1,12 +1,13 @@
 /* *
  *
+ *  !!!!!!! SOURCE GETS TRANSPILED BY TYPESCRIPT. EDIT TS FILE ONLY. !!!!!!!
  *
  * */
 'use strict';
-import SeriesRegistry from '../Core/Series/SeriesRegistry.js';
-const { series: { prototype: seriesProto, prototype: { pointClass: { prototype: pointProto } } } } = SeriesRegistry;
+import Point from '../Core/Series/Point.js';
+import Series from '../Core/Series/Series.js';
 import U from '../Core/Utilities.js';
-const { defined, extend, find, merge, pick } = U;
+var defined = U.defined, extend = U.extend, find = U.find, merge = U.merge, pick = U.pick;
 /* *
  *
  *  Composition
@@ -21,19 +22,33 @@ var NodesComposition;
      * */
     /* *
      *
+     *  Constants
+     *
+     * */
+    var composedClasses = [];
+    /* *
+     *
      *  Functions
      *
      * */
+    /* eslint-disable valid-jsdoc */
     /**
      * @private
      */
     function compose(PointClass, SeriesClass) {
-        const pointProto = PointClass.prototype, seriesProto = SeriesClass.prototype;
-        pointProto.setNodeState = setNodeState;
-        pointProto.setState = setNodeState;
-        pointProto.update = updateNode;
-        seriesProto.destroy = destroy;
-        seriesProto.setData = setData;
+        if (composedClasses.indexOf(PointClass) === -1) {
+            composedClasses.push(PointClass);
+            var pointProto = PointClass.prototype;
+            pointProto.setNodeState = setNodeState;
+            pointProto.setState = setNodeState;
+            pointProto.update = updateNode;
+        }
+        if (composedClasses.indexOf(SeriesClass) === -1) {
+            composedClasses.push(SeriesClass);
+            var seriesProto = SeriesClass.prototype;
+            seriesProto.destroy = destroy;
+            seriesProto.setData = setData;
+        }
         return SeriesClass;
     }
     NodesComposition.compose = compose;
@@ -43,29 +58,29 @@ var NodesComposition;
      * @private
      */
     function createNode(id) {
-        const PointClass = this.pointClass, findById = (nodes, id) => find(nodes, (node) => node.id === id);
-        let node = findById(this.nodes, id), options;
+        var PointClass = this.pointClass, findById = function (nodes, id) { return find(nodes, function (node) { return node.id === id; }); };
+        var node = findById(this.nodes, id), options;
         if (!node) {
             options = this.options.nodes && findById(this.options.nodes, id);
-            const newNode = new PointClass(this, extend({
+            node = (new PointClass()).init(this, extend({
                 className: 'highcharts-node',
                 isNode: true,
                 id: id,
                 y: 1 // Pass isNull test
             }, options));
-            newNode.linksTo = [];
-            newNode.linksFrom = [];
+            node.linksTo = [];
+            node.linksFrom = [];
             /**
              * Return the largest sum of either the incoming or outgoing links.
              * @private
              */
-            newNode.getSum = function () {
-                let sumTo = 0, sumFrom = 0;
-                newNode.linksTo.forEach((link) => {
-                    sumTo += link.weight || 0;
+            node.getSum = function () {
+                var sumTo = 0, sumFrom = 0;
+                node.linksTo.forEach(function (link) {
+                    sumTo += link.weight;
                 });
-                newNode.linksFrom.forEach((link) => {
-                    sumFrom += link.weight || 0;
+                node.linksFrom.forEach(function (link) {
+                    sumFrom += link.weight;
                 });
                 return Math.max(sumTo, sumFrom);
             };
@@ -73,32 +88,31 @@ var NodesComposition;
              * Get the offset in weight values of a point/link.
              * @private
              */
-            newNode.offset = function (point, coll) {
-                let offset = 0;
-                for (let i = 0; i < newNode[coll].length; i++) {
-                    if (newNode[coll][i] === point) {
+            node.offset = function (point, coll) {
+                var offset = 0;
+                for (var i = 0; i < node[coll].length; i++) {
+                    if (node[coll][i] === point) {
                         return offset;
                     }
-                    offset += newNode[coll][i].weight;
+                    offset += node[coll][i].weight;
                 }
             };
             // Return true if the node has a shape, otherwise all links are
             // outgoing.
-            newNode.hasShape = function () {
-                let outgoing = 0;
-                newNode.linksTo.forEach((link) => {
+            node.hasShape = function () {
+                var outgoing = 0;
+                node.linksTo.forEach(function (link) {
                     if (link.outgoing) {
                         outgoing++;
                     }
                 });
-                return (!newNode.linksTo.length ||
-                    outgoing !== newNode.linksTo.length);
+                return (!node.linksTo.length ||
+                    outgoing !== node.linksTo.length);
             };
-            newNode.index = this.nodes.push(newNode) - 1;
-            node = newNode;
+            node.index = this.nodes.push(node) - 1;
         }
         node.formatPrefix = 'node';
-        // For use in formats
+        // for use in formats
         node.name = node.name || node.options.id || '';
         // Mass is used in networkgraph:
         node.mass = pick(
@@ -112,36 +126,35 @@ var NodesComposition;
     }
     NodesComposition.createNode = createNode;
     /**
-     * Destroy all nodes and links.
+     * Destroy alll nodes and links.
      * @private
      */
     function destroy() {
         // Nodes must also be destroyed (#8682, #9300)
         this.data = []
             .concat(this.points || [], this.nodes);
-        return seriesProto.destroy.apply(this, arguments);
+        return Series.prototype.destroy.apply(this, arguments);
     }
     NodesComposition.destroy = destroy;
     /**
-     * Extend generatePoints by adding the nodes, which are Point objects but
-     * pushed to the this.nodes array.
-     * @private
+     * Extend generatePoints by adding the nodes, which are Point objects
+     * but pushed to the this.nodes array.
      */
     function generatePoints() {
-        const chart = this.chart, nodeLookup = {};
-        seriesProto.generatePoints.call(this);
+        var chart = this.chart, nodeLookup = {};
+        Series.prototype.generatePoints.call(this);
         if (!this.nodes) {
             this.nodes = []; // List of Point-like node items
         }
         this.colorCounter = 0;
         // Reset links from previous run
-        this.nodes.forEach((node) => {
+        this.nodes.forEach(function (node) {
             node.linksFrom.length = 0;
             node.linksTo.length = 0;
             node.level = node.options.level;
         });
         // Create the node list and set up links
-        this.points.forEach((point) => {
+        this.points.forEach(function (point) {
             if (defined(point.from)) {
                 if (!nodeLookup[point.from]) {
                     nodeLookup[point.from] = this.createNode(point.from);
@@ -164,7 +177,7 @@ var NodesComposition;
                 nodeLookup[point.to].linksTo.push(point);
                 point.toNode = nodeLookup[point.to];
             }
-            point.name = point.name || point.id; // For use in formats
+            point.name = point.name || point.id; // for use in formats
         }, this);
         // Store lookup table for later use
         this.nodeLookup = nodeLookup;
@@ -176,56 +189,56 @@ var NodesComposition;
      */
     function setData() {
         if (this.nodes) {
-            this.nodes.forEach((node) => {
+            this.nodes.forEach(function (node) {
                 node.destroy();
             });
             this.nodes.length = 0;
         }
-        seriesProto.setData.apply(this, arguments);
+        Series.prototype.setData.apply(this, arguments);
     }
     /**
      * When hovering node, highlight all connected links. When hovering a link,
      * highlight all connected nodes.
-     * @private
      */
     function setNodeState(state) {
-        const args = arguments, others = this.isNode ? this.linksTo.concat(this.linksFrom) :
+        var args = arguments, others = this.isNode ? this.linksTo.concat(this.linksFrom) :
             [this.fromNode, this.toNode];
         if (state !== 'select') {
-            others.forEach((linkOrNode) => {
+            others.forEach(function (linkOrNode) {
                 if (linkOrNode && linkOrNode.series) {
-                    pointProto.setState.apply(linkOrNode, args);
+                    Point.prototype.setState.apply(linkOrNode, args);
                     if (!linkOrNode.isNode) {
                         if (linkOrNode.fromNode.graphic) {
-                            pointProto.setState.apply(linkOrNode.fromNode, args);
+                            Point.prototype.setState.apply(linkOrNode.fromNode, args);
                         }
                         if (linkOrNode.toNode && linkOrNode.toNode.graphic) {
-                            pointProto.setState.apply(linkOrNode.toNode, args);
+                            Point.prototype.setState.apply(linkOrNode.toNode, args);
                         }
                     }
                 }
             });
         }
-        pointProto.setState.apply(this, args);
+        Point.prototype.setState.apply(this, args);
     }
     NodesComposition.setNodeState = setNodeState;
     /**
-     * When updating a node, don't update `series.options.data`, but
-     * `series.options.nodes`
-     * @private
+     * When updating a node, don't update `series.options.data`, but `series.options.nodes`
      */
     function updateNode(options, redraw, animation, runEvent) {
-        const nodes = this.series.options.nodes, data = this.series.options.data, dataLength = data?.length || 0, linkConfig = data?.[this.index];
-        pointProto.update.call(this, options, this.isNode ? false : redraw, // Hold the redraw for nodes
+        var _this = this;
+        var nodes = this.series.options.nodes, data = this.series.options.data, dataLength = data && data.length || 0, linkConfig = data && data[this.index];
+        Point.prototype.update.call(this, options, this.isNode ? false : redraw, // Hold the redraw for nodes
         animation, runEvent);
         if (this.isNode) {
-            // `this.index` refers to `series.nodes`, not `options.nodes` array
-            const nodeIndex = (nodes || [])
+            // this.index refers to `series.nodes`, not `options.nodes` array
+            var nodeIndex = (nodes || [])
                 .reduce(// Array.findIndex needs a polyfill
-            (prevIndex, n, index) => (this.id === n.id ? index : prevIndex), -1), 
+            function (prevIndex, n, index) {
+                return (_this.id === n.id ? index : prevIndex);
+            }, -1), 
             // Merge old config with new config. New config is stored in
             // options.data, because of default logic in point.update()
-            nodeConfig = merge(nodes && nodes[nodeIndex] || {}, data?.[this.index] || {});
+            nodeConfig = merge(nodes && nodes[nodeIndex] || {}, data && data[this.index] || {});
             // Restore link config
             if (data) {
                 if (linkConfig) {

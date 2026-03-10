@@ -1,21 +1,33 @@
 /* *
  *
- *  (c) 2010-2026 Highsoft AS
- *  Author: Kacper Madej
+ *  (c) 2010-2021 Kacper Madej
  *
- *  A commercial license may be required depending on use.
- *  See www.highcharts.com/license
+ *  License: www.highcharts.com/license
  *
+ *  !!!!!!! SOURCE GETS TRANSPILED BY TYPESCRIPT. EDIT TS FILE ONLY. !!!!!!!
  *
  * */
 'use strict';
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 import SeriesRegistry from '../../../Core/Series/SeriesRegistry.js';
-const { sma: SMAIndicator } = SeriesRegistry.seriesTypes;
+var SMAIndicator = SeriesRegistry.seriesTypes.sma;
 import U from '../../../Core/Utilities.js';
-const { merge, extend } = U;
+var merge = U.merge, extend = U.extend;
 /* *
  *
- *  Class
+ * Class
  *
  * */
 /**
@@ -27,19 +39,31 @@ const { merge, extend } = U;
  *
  * @augments Highcharts.Series
  */
-class ZigzagIndicator extends SMAIndicator {
+var ZigzagIndicator = /** @class */ (function (_super) {
+    __extends(ZigzagIndicator, _super);
+    function ZigzagIndicator() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        /* *
+         *
+         *  Properties
+         *
+         * */
+        _this.data = void 0;
+        _this.points = void 0;
+        _this.options = void 0;
+        return _this;
+    }
     /* *
      *
      *  Functions
      *
      * */
-    getValues(series, params) {
-        const lowIndex = params.lowIndex, highIndex = params.highIndex, deviation = params.deviation / 100, deviations = {
+    ZigzagIndicator.prototype.getValues = function (series, params) {
+        var lowIndex = params.lowIndex, highIndex = params.highIndex, deviation = params.deviation / 100, deviations = {
             'low': 1 + deviation,
             'high': 1 - deviation
-        }, xVal = series.xData, yVal = series.yData, yValLen = yVal ? yVal.length : 0, zigzag = [], xData = [], yData = [];
-        let i, j, zigzagPoint, directionUp, exitLoop = false, yIndex = false;
-        // Exit if not enough points or no low or high values
+        }, xVal = series.xData, yVal = series.yData, yValLen = yVal ? yVal.length : 0, zigzag = [], xData = [], yData = [], i, j, zigzagPoint, firstZigzagLow, firstZigzagHigh, directionUp, zigzagLen, exitLoop = false, yIndex = false;
+        // Exit if not enught points or no low or high values
         if (!xVal || xVal.length <= 1 ||
             (yValLen &&
                 (typeof yVal[0][lowIndex] === 'undefined' ||
@@ -47,25 +71,26 @@ class ZigzagIndicator extends SMAIndicator {
             return;
         }
         // Set first zigzag point candidate
-        const firstZigzagLow = yVal[0][lowIndex], firstZigzagHigh = yVal[0][highIndex];
+        firstZigzagLow = yVal[0][lowIndex];
+        firstZigzagHigh = yVal[0][highIndex];
         // Search for a second zigzag point candidate,
         // this will also set first zigzag point
         for (i = 1; i < yValLen; i++) {
-            // Required change to go down
+            // requried change to go down
             if (yVal[i][lowIndex] <= firstZigzagHigh * deviations.high) {
                 zigzag.push([xVal[0], firstZigzagHigh]);
-                // Second zigzag point candidate
+                // second zigzag point candidate
                 zigzagPoint = [xVal[i], yVal[i][lowIndex]];
-                // Next line will be going up
+                // next line will be going up
                 directionUp = true;
                 exitLoop = true;
-                // Required change to go up
+                // requried change to go up
             }
             else if (yVal[i][highIndex] >= firstZigzagLow * deviations.low) {
                 zigzag.push([xVal[0], firstZigzagLow]);
-                // Second zigzag point candidate
+                // second zigzag point candidate
                 zigzagPoint = [xVal[i], yVal[i][highIndex]];
-                // Next line will be going down
+                // next line will be going down
                 directionUp = false;
                 exitLoop = true;
             }
@@ -78,31 +103,31 @@ class ZigzagIndicator extends SMAIndicator {
         }
         // Search for next zigzags
         for (i = j; i < yValLen; i++) {
-            if (directionUp) { // Next line up
+            if (directionUp) { // next line up
                 // lower when going down -> change zigzag candidate
                 if (yVal[i][lowIndex] <= zigzagPoint[1]) {
                     zigzagPoint = [xVal[i], yVal[i][lowIndex]];
                 }
-                // Required change to go down -> new zigzagpoint and
+                // requried change to go down -> new zigzagpoint and
                 // direction change
                 if (yVal[i][highIndex] >=
                     zigzagPoint[1] * deviations.low) {
                     yIndex = highIndex;
                 }
             }
-            else { // Next line down
+            else { // next line down
                 // higher when going up -> change zigzag candidate
                 if (yVal[i][highIndex] >= zigzagPoint[1]) {
                     zigzagPoint = [xVal[i], yVal[i][highIndex]];
                 }
-                // Required change to go down -> new zigzagpoint and
+                // requried change to go down -> new zigzagpoint and
                 // direction change
                 if (yVal[i][lowIndex] <=
                     zigzagPoint[1] * deviations.high) {
                     yIndex = lowIndex;
                 }
             }
-            if (yIndex !== false) { // New zigzag point and direction change
+            if (yIndex !== false) { // new zigzag point and direction change
                 zigzag.push(zigzagPoint);
                 xData.push(zigzagPoint[0]);
                 yData.push(zigzagPoint[1]);
@@ -111,11 +136,11 @@ class ZigzagIndicator extends SMAIndicator {
                 yIndex = false;
             }
         }
-        const zigzagLen = zigzag.length;
-        // No zigzag for last point
+        zigzagLen = zigzag.length;
+        // no zigzag for last point
         if (zigzagLen !== 0 &&
             zigzag[zigzagLen - 1][0] < xVal[yValLen - 1]) {
-            // Set last point from zigzag candidate
+            // set last point from zigzag candidate
             zigzag.push(zigzagPoint);
             xData.push(zigzagPoint[0]);
             yData.push(zigzagPoint[1]);
@@ -125,61 +150,57 @@ class ZigzagIndicator extends SMAIndicator {
             xData: xData,
             yData: yData
         };
-    }
-}
-/* *
- *
- *  Static Properties
- *
- * */
-/**
- * Zig Zag indicator.
- *
- * This series requires `linkedTo` option to be set.
- *
- * @sample stock/indicators/zigzag
- *         Zig Zag indicator
- *
- * @extends      plotOptions.sma
- * @since        6.0.0
- * @product      highstock
- * @requires     stock/indicators/indicators
- * @requires     stock/indicators/zigzag
- * @optionparent plotOptions.zigzag
- */
-ZigzagIndicator.defaultOptions = merge(SMAIndicator.defaultOptions, {
+    };
     /**
-     * @excluding index, period
+     * Zig Zag indicator.
+     *
+     * This series requires `linkedTo` option to be set.
+     *
+     * @sample stock/indicators/zigzag
+     *         Zig Zag indicator
+     *
+     * @extends      plotOptions.sma
+     * @since        6.0.0
+     * @product      highstock
+     * @requires     stock/indicators/indicators
+     * @requires     stock/indicators/zigzag
+     * @optionparent plotOptions.zigzag
      */
-    params: {
-        // Index and period are unchangeable, do not inherit (#15362)
-        index: void 0,
-        period: void 0,
+    ZigzagIndicator.defaultOptions = merge(SMAIndicator.defaultOptions, {
         /**
-         * The point index which indicator calculations will base - low
-         * value.
-         *
-         * For example using OHLC data, index=2 means the indicator will be
-         * calculated using Low values.
+         * @excluding index, period
          */
-        lowIndex: 2,
-        /**
-         * The point index which indicator calculations will base - high
-         * value.
-         *
-         * For example using OHLC data, index=1 means the indicator will be
-         * calculated using High values.
-         */
-        highIndex: 1,
-        /**
-         * The threshold for the value change.
-         *
-         * For example deviation=1 means the indicator will ignore all price
-         * movements less than 1%.
-         */
-        deviation: 1
-    }
-});
+        params: {
+            // Index and period are unchangeable, do not inherit (#15362)
+            index: void 0,
+            period: void 0,
+            /**
+             * The point index which indicator calculations will base - low
+             * value.
+             *
+             * For example using OHLC data, index=2 means the indicator will be
+             * calculated using Low values.
+             */
+            lowIndex: 2,
+            /**
+             * The point index which indicator calculations will base - high
+             * value.
+             *
+             * For example using OHLC data, index=1 means the indicator will be
+             * calculated using High values.
+             */
+            highIndex: 1,
+            /**
+             * The threshold for the value change.
+             *
+             * For example deviation=1 means the indicator will ignore all price
+             * movements less than 1%.
+             */
+            deviation: 1
+        }
+    });
+    return ZigzagIndicator;
+}(SMAIndicator));
 extend(ZigzagIndicator.prototype, {
     nameComponents: ['deviation'],
     nameSuffixes: ['%'],
@@ -192,11 +213,6 @@ SeriesRegistry.registerSeriesType('zigzag', ZigzagIndicator);
  *
  * */
 export default ZigzagIndicator;
-/* *
- *
- *  API Options
- *
- * */
 /**
  * A `Zig Zag` series. If the [type](#series.zigzag.type) option is not
  * specified, it is inherited from [chart.type](#chart.type).
@@ -209,4 +225,4 @@ export default ZigzagIndicator;
  * @requires  stock/indicators/zigzag
  * @apioption series.zigzag
  */
-''; // Adds doclets above to transpiled file
+''; // adds doclets above to transpiled file

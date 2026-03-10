@@ -1,20 +1,14 @@
-// SPDX-License-Identifier: LicenseRef-Highcharts
 /**
- * @license Highmaps JS v12.5.0 (2026-01-12)
+ * @license Highmaps JS v10.0.0 (2022-03-07)
  * @module highcharts/modules/tilemap
  * @requires highcharts
  * @requires highcharts/modules/map
  *
  * Tilemap module
  *
- * (c) 2010-2026 Highsoft AS
+ * (c) 2010-2021 Highsoft AS
  *
- * A commercial license may be required depending on use.
- * See www.highcharts.com/license
+ * License: www.highcharts.com/license
  */
 'use strict';
-import Highcharts from '../../Core/Globals.js';
-import TilemapSeries from '../../Series/Tilemap/TilemapSeries.js';
-const G = Highcharts;
-TilemapSeries.compose(G.Axis);
-export default Highcharts;
+import '../../Series/Tilemap/TilemapSeries.js';

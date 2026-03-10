@@ -1,18 +1,17 @@
 /* *
  *
- *  (c) 2010-2026 Highsoft AS
- *  Author: Torstein Honsi
+ *  (c) 2010-2021 Torstein Honsi
  *
- *  A commercial license may be required depending on use.
- *  See www.highcharts.com/license
+ *  License: www.highcharts.com/license
  *
  *  Skies theme for Highcharts JS
  *
+ *  !!!!!!! SOURCE GETS TRANSPILED BY TYPESCRIPT. EDIT TS FILE ONLY. !!!!!!!
  *
  * */
 'use strict';
-import D from '../../Core/Defaults.js';
-const { setOptions } = D;
+import D from '../../Core/DefaultOptions.js';
+var setOptions = D.setOptions;
 /* *
  *
  *  Theme
@@ -26,10 +25,8 @@ var SkiesTheme;
      *
      * */
     SkiesTheme.options = {
-        colors: [
-            '#514F78', '#42A07B', '#9B5E4A', '#72727F', '#1F949A',
-            '#82914E', '#86777F', '#42A07B'
-        ],
+        colors: ['#514F78', '#42A07B', '#9B5E4A', '#72727F', '#1F949A',
+            '#82914E', '#86777F', '#42A07B'],
         chart: {
             className: 'skies',
             borderWidth: 0,
@@ -105,6 +102,11 @@ var SkiesTheme;
             },
             itemHiddenStyle: {
                 color: 'silver'
+            }
+        },
+        labels: {
+            style: {
+                color: '#3E576F'
             }
         }
     };

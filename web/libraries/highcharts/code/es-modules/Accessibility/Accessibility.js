@@ -1,32 +1,28 @@
 /* *
  *
- *  (c) 2009-2026 Highsoft AS
- *  Author: Øystein Moseng
+ *  (c) 2009-2021 Øystein Moseng
  *
  *  Accessibility module for Highcharts
  *
- *  A commercial license may be required depending on use.
- *  See www.highcharts.com/license
+ *  License: www.highcharts.com/license
  *
+ *  !!!!!!! SOURCE GETS TRANSPILED BY TYPESCRIPT. EDIT TS FILE ONLY. !!!!!!!
  *
  * */
 'use strict';
-import D from '../Core/Defaults.js';
-const { defaultOptions } = D;
+import D from '../Core/DefaultOptions.js';
+var defaultOptions = D.defaultOptions;
 import H from '../Core/Globals.js';
-const { doc } = H;
+var doc = H.doc;
 import U from '../Core/Utilities.js';
-const { addEvent, extend, fireEvent, merge } = U;
-import HU from './Utils/HTMLUtilities.js';
-const { removeElement } = HU;
+var addEvent = U.addEvent, extend = U.extend, fireEvent = U.fireEvent, merge = U.merge;
 import A11yI18n from './A11yI18n.js';
 import ContainerComponent from './Components/ContainerComponent.js';
-import FocusBorderComposition from './FocusBorder.js';
+import FocusBorder from './FocusBorder.js';
 import InfoRegionsComponent from './Components/InfoRegionsComponent.js';
 import KeyboardNavigation from './KeyboardNavigation.js';
 import LegendComponent from './Components/LegendComponent.js';
 import MenuComponent from './Components/MenuComponent.js';
-import NavigatorComponent from './Components/NavigatorComponent.js';
 import NewDataAnnouncer from './Components/SeriesComponent/NewDataAnnouncer.js';
 import ProxyProvider from './ProxyProvider.js';
 import RangeSelectorComponent from './Components/RangeSelectorComponent.js';
@@ -34,8 +30,8 @@ import SeriesComponent from './Components/SeriesComponent/SeriesComponent.js';
 import ZoomComponent from './Components/ZoomComponent.js';
 import whcm from './HighContrastMode.js';
 import highContrastTheme from './HighContrastTheme.js';
-import defaultOptionsA11Y from './Options/A11yDefaults.js';
-import defaultLangOptions from './Options/LangDefaults.js';
+import defaultOptionsA11Y from './Options/Options.js';
+import defaultLangOptions from './Options/LangOptions.js';
 import copyDeprecatedOptions from './Options/DeprecatedOptions.js';
 /* *
  *
@@ -46,7 +42,7 @@ import copyDeprecatedOptions from './Options/DeprecatedOptions.js';
  * The Accessibility class
  *
  * @private
- * @requires modules/accessibility
+ * @requires module:modules/accessibility
  *
  * @class
  * @name Highcharts.Accessibility
@@ -54,13 +50,22 @@ import copyDeprecatedOptions from './Options/DeprecatedOptions.js';
  * @param {Highcharts.Chart} chart
  * Chart object
  */
-class Accessibility {
+var Accessibility = /** @class */ (function () {
     /* *
      *
      *  Constructor
      *
      * */
-    constructor(chart) {
+    function Accessibility(chart) {
+        /* *
+         *
+         *  Properties
+         *
+         * */
+        this.chart = void 0;
+        this.components = void 0;
+        this.keyboardNavigation = void 0;
+        this.proxyProvider = void 0;
         this.init(chart);
     }
     /* *
@@ -68,16 +73,17 @@ class Accessibility {
      *  Functions
      *
      * */
+    /* eslint-disable valid-jsdoc */
     /**
      * Initialize the accessibility class
      * @private
      * @param {Highcharts.Chart} chart
      *        Chart object
      */
-    init(chart) {
+    Accessibility.prototype.init = function (chart) {
         this.chart = chart;
         // Abort on old browsers
-        if (!doc?.addEventListener) {
+        if (!doc.addEventListener || !chart.renderer.isSVG) {
             this.zombie = true;
             this.components = {};
             chart.renderTo.setAttribute('aria-hidden', true);
@@ -89,14 +95,14 @@ class Accessibility {
         this.proxyProvider = new ProxyProvider(this.chart);
         this.initComponents();
         this.keyboardNavigation = new KeyboardNavigation(chart, this.components);
-    }
+    };
     /**
      * @private
      */
-    initComponents() {
-        const chart = this.chart;
-        const proxyProvider = this.proxyProvider;
-        const a11yOptions = chart.options.accessibility;
+    Accessibility.prototype.initComponents = function () {
+        var chart = this.chart;
+        var proxyProvider = this.proxyProvider;
+        var a11yOptions = chart.options.accessibility;
         this.components = {
             container: new ContainerComponent(),
             infoRegions: new InfoRegionsComponent(),
@@ -104,46 +110,45 @@ class Accessibility {
             chartMenu: new MenuComponent(),
             rangeSelector: new RangeSelectorComponent(),
             series: new SeriesComponent(),
-            zoom: new ZoomComponent(),
-            navigator: new NavigatorComponent()
+            zoom: new ZoomComponent()
         };
         if (a11yOptions.customComponents) {
             extend(this.components, a11yOptions.customComponents);
         }
-        const components = this.components;
+        var components = this.components;
         this.getComponentOrder().forEach(function (componentName) {
             components[componentName].initBase(chart, proxyProvider);
             components[componentName].init();
         });
-    }
+    };
     /**
      * Get order to update components in.
      * @private
      */
-    getComponentOrder() {
+    Accessibility.prototype.getComponentOrder = function () {
         if (!this.components) {
             return []; // For zombie accessibility object on old browsers
         }
         if (!this.components.series) {
             return Object.keys(this.components);
         }
-        const componentsExceptSeries = Object.keys(this.components)
-            .filter((c) => c !== 'series');
+        var componentsExceptSeries = Object.keys(this.components)
+            .filter(function (c) { return c !== 'series'; });
         // Update series first, so that other components can read accessibility
         // info on points.
         return ['series'].concat(componentsExceptSeries);
-    }
+    };
     /**
      * Update all components.
      */
-    update() {
-        const components = this.components, chart = this.chart, a11yOptions = chart.options.accessibility;
+    Accessibility.prototype.update = function () {
+        var components = this.components, chart = this.chart, a11yOptions = chart.options.accessibility;
         fireEvent(chart, 'beforeA11yUpdate');
         // Update the chart type list as this is used by multiple modules
         chart.types = this.getChartTypes();
         // Update proxies. We don't update proxy positions since most likely we
         // need to recreate the proxies on update.
-        const kbdNavOrder = a11yOptions.keyboardNavigation.order;
+        var kbdNavOrder = a11yOptions.keyboardNavigation.order;
         this.proxyProvider.updateGroupOrder(kbdNavOrder);
         // Update markup
         this.getComponentOrder().forEach(function (componentName) {
@@ -156,23 +161,21 @@ class Accessibility {
         // Update keyboard navigation
         this.keyboardNavigation.update(kbdNavOrder);
         // Handle high contrast mode
-        // Should only be applied once, and not if explicitly disabled
-        if (!chart.highContrastModeActive &&
-            a11yOptions.highContrastMode !== false && (whcm.isHighContrastModeActive() ||
-            a11yOptions.highContrastMode === true)) {
+        if (!chart.highContrastModeActive && // Only do this once
+            whcm.isHighContrastModeActive()) {
             whcm.setHighContrastTheme(chart);
         }
         fireEvent(chart, 'afterA11yUpdate', {
             accessibility: this
         });
-    }
+    };
     /**
      * Destroy all elements.
      */
-    destroy() {
-        const chart = this.chart || {};
+    Accessibility.prototype.destroy = function () {
+        var chart = this.chart || {};
         // Destroy components
-        const components = this.components;
+        var components = this.components;
         Object.keys(components).forEach(function (componentName) {
             components[componentName].destroy();
             components[componentName].destroyBase();
@@ -180,10 +183,6 @@ class Accessibility {
         // Destroy proxy provider
         if (this.proxyProvider) {
             this.proxyProvider.destroy();
-        }
-        // Remove announcer container
-        if (chart.announcerContainer) {
-            removeElement(chart.announcerContainer);
         }
         // Kill keyboard nav
         if (this.keyboardNavigation) {
@@ -197,19 +196,20 @@ class Accessibility {
         if (chart.focusElement) {
             chart.focusElement.removeFocusBorder();
         }
-    }
+    };
     /**
      * Return a list of the types of series we have in the chart.
      * @private
      */
-    getChartTypes() {
-        const types = {};
+    Accessibility.prototype.getChartTypes = function () {
+        var types = {};
         this.chart.series.forEach(function (series) {
             types[series.type] = 1;
         });
         return Object.keys(types);
-    }
-}
+    };
+    return Accessibility;
+}());
 /* *
  *
  *  Class Namespace
@@ -226,12 +226,14 @@ class Accessibility {
      *  Constants
      *
      * */
+    var composedClasses = [];
     Accessibility.i18nFormat = A11yI18n.i18nFormat;
     /* *
      *
      *  Functions
      *
      * */
+    /* eslint-disable valid-jsdoc */
     /**
      * Destroy with chart.
      * @private
@@ -251,7 +253,7 @@ class Accessibility {
             delete this.a11yDirty;
             this.updateA11yEnabled();
         }
-        const a11y = this.accessibility;
+        var a11y = this.accessibility;
         if (a11y && !a11y.zombie) {
             a11y.proxyProvider.updateProxyElementPositions();
             a11y.getComponentOrder().forEach(function (componentName) {
@@ -265,7 +267,7 @@ class Accessibility {
      */
     function chartOnUpdate(e) {
         // Merge new options
-        const newOptions = e.options.accessibility;
+        var newOptions = e.options.accessibility;
         if (newOptions) {
             // Handle custom component updating specifically
             if (newOptions.customComponents) {
@@ -287,8 +289,8 @@ class Accessibility {
      * @private
      */
     function chartUpdateA11yEnabled() {
-        let a11y = this.accessibility;
-        const accessibilityOptions = this.options.accessibility, svg = this.renderer.boxWrapper.element, title = this.title;
+        var a11y = this.accessibility;
+        var accessibilityOptions = this.options.accessibility;
         if (accessibilityOptions && accessibilityOptions.enabled) {
             if (a11y && !a11y.zombie) {
                 a11y.update();
@@ -297,10 +299,6 @@ class Accessibility {
                 this.accessibility = a11y = new Accessibility(this);
                 if (a11y && !a11y.zombie) {
                     a11y.update();
-                }
-                // If a11y has been disabled, and is now enabled
-                if (svg.getAttribute('role') === 'img') {
-                    svg.removeAttribute('role');
                 }
             }
         }
@@ -312,58 +310,58 @@ class Accessibility {
             delete this.accessibility;
         }
         else {
-            // If a11y has been disabled dynamically or is disabled
-            this.renderTo.setAttribute('role', 'img');
-            this.renderTo.setAttribute('aria-hidden', false);
-            this.renderTo.setAttribute('aria-label', ((title && title.element.textContent) || '').replace(/</g, '&lt;'));
-            svg.setAttribute('aria-hidden', true);
-            const description = document.getElementsByClassName('highcharts-description')[0];
-            if (description) {
-                description.setAttribute('aria-hidden', false);
-                description.classList.remove('highcharts-linked-description');
-            }
+            // Just hide container
+            this.renderTo.setAttribute('aria-hidden', true);
         }
     }
     /**
      * @private
      */
-    function compose(ChartClass, LegendClass, PointClass, SeriesClass, SVGElementClass, RangeSelectorClass) {
-        // Ordered:
+    function compose(AxisClass, ChartClass, LegendClass, PointClass, SeriesClass, SVGElementClass, RangeSelectorClass) {
+        // ordered:
         KeyboardNavigation.compose(ChartClass);
         NewDataAnnouncer.compose(SeriesClass);
         LegendComponent.compose(ChartClass, LegendClass);
         MenuComponent.compose(ChartClass);
         SeriesComponent.compose(ChartClass, PointClass, SeriesClass);
-        A11yI18n.compose(ChartClass);
-        FocusBorderComposition.compose(ChartClass, SVGElementClass);
+        ZoomComponent.compose(AxisClass);
         // RangeSelector
+        A11yI18n.compose(ChartClass);
+        FocusBorder.compose(ChartClass, SVGElementClass);
         if (RangeSelectorClass) {
             RangeSelectorComponent.compose(ChartClass, RangeSelectorClass);
         }
-        const chartProto = ChartClass.prototype;
-        if (!chartProto.updateA11yEnabled) {
+        if (composedClasses.indexOf(ChartClass) === -1) {
+            composedClasses.push(ChartClass);
+            var chartProto = ChartClass.prototype;
             chartProto.updateA11yEnabled = chartUpdateA11yEnabled;
             addEvent(ChartClass, 'destroy', chartOnDestroy);
             addEvent(ChartClass, 'render', chartOnRender);
             addEvent(ChartClass, 'update', chartOnUpdate);
             // Mark dirty for update
-            ['addSeries', 'init'].forEach((event) => {
+            ['addSeries', 'init'].forEach(function (event) {
                 addEvent(ChartClass, event, function () {
                     this.a11yDirty = true;
                 });
             });
             // Direct updates (events happen after render)
-            ['afterApplyDrilldown', 'drillupall'].forEach((event) => {
+            ['afterApplyDrilldown', 'drillupall'].forEach(function (event) {
                 addEvent(ChartClass, event, function chartOnAfterDrilldown() {
-                    const a11y = this.accessibility;
+                    var a11y = this.accessibility;
                     if (a11y && !a11y.zombie) {
                         a11y.update();
                     }
                 });
             });
+        }
+        if (composedClasses.indexOf(PointClass) === -1) {
+            composedClasses.push(PointClass);
             addEvent(PointClass, 'update', pointOnUpdate);
+        }
+        if (composedClasses.indexOf(SeriesClass) === -1) {
+            composedClasses.push(SeriesClass);
             // Mark dirty for update
-            ['update', 'updatedData', 'remove'].forEach((event) => {
+            ['update', 'updatedData', 'remove'].forEach(function (event) {
                 addEvent(SeriesClass, event, function () {
                     if (this.chart.accessibility) {
                         this.chart.a11yDirty = true;

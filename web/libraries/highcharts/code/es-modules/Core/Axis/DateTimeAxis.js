@@ -1,16 +1,15 @@
 /* *
  *
- *  (c) 2010-2026 Highsoft AS
- *  Author: Torstein Honsi
+ *  (c) 2010-2021 Torstein Honsi
  *
- *  A commercial license may be required depending on use.
- *  See www.highcharts.com/license
+ *  License: www.highcharts.com/license
  *
+ *  !!!!!!! SOURCE GETS TRANSPILED BY TYPESCRIPT. EDIT TS FILE ONLY. !!!!!!!
  *
  * */
 'use strict';
 import U from '../Utilities.js';
-const { addEvent, getMagnitude, normalizeTickInterval, timeUnits } = U;
+var addEvent = U.addEvent, getMagnitude = U.getMagnitude, normalizeTickInterval = U.normalizeTickInterval, timeUnits = U.timeUnits;
 /* *
  *
  *  Composition
@@ -26,19 +25,26 @@ var DateTimeAxis;
      * */
     /* *
      *
+     *  Constants
+     *
+     * */
+    var composedClasses = [];
+    /* *
+     *
      *  Functions
      *
      * */
     /**
      * Extends axis class with date and time support.
-     * @internal
+     * @private
      */
     function compose(AxisClass) {
-        if (!AxisClass.keepProps.includes('dateTime')) {
+        if (composedClasses.indexOf(AxisClass) === -1) {
+            composedClasses.push(AxisClass);
             AxisClass.keepProps.push('dateTime');
-            const axisProto = AxisClass.prototype;
+            var axisProto = AxisClass.prototype;
             axisProto.getTimeTicks = getTimeTicks;
-            addEvent(AxisClass, 'afterSetType', onAfterSetType);
+            addEvent(AxisClass, 'init', onInit);
         }
         return AxisClass;
     }
@@ -49,10 +55,10 @@ var DateTimeAxis;
      * the time positions. Used in datetime axes as well as for grouping
      * data on a datetime axis.
      *
-     * @internal
+     * @private
      * @function Highcharts.Axis#getTimeTicks
      * @param {Highcharts.TimeNormalizeObject} normalizedInterval
-     * The interval in axis values (ms) and the count.
+     * The interval in axis values (ms) and thecount.
      * @param {number} min
      * The minimum in axis values.
      * @param {number} max
@@ -61,14 +67,18 @@ var DateTimeAxis;
     function getTimeTicks() {
         return this.chart.time.getTimeTicks.apply(this.chart.time, arguments);
     }
-    /** @internal */
-    function onAfterSetType() {
-        if (this.type !== 'datetime') {
-            this.dateTime = void 0;
+    /**
+     * @private
+     */
+    function onInit(e) {
+        var axis = this;
+        var options = e.userOptions;
+        if (options.type !== 'datetime') {
+            axis.dateTime = void 0;
             return;
         }
-        if (!this.dateTime) {
-            this.dateTime = new Additions(this);
+        if (!axis.dateTime) {
+            axis.dateTime = new Additions(axis);
         }
     }
     /* *
@@ -76,14 +86,13 @@ var DateTimeAxis;
      *  Classes
      *
      * */
-    /** @internal */
-    class Additions {
+    var Additions = /** @class */ (function () {
         /* *
          *
          *  Constructors
          *
          * */
-        constructor(axis) {
+        function Additions(axis) {
             this.axis = axis;
         }
         /* *
@@ -99,13 +108,13 @@ var DateTimeAxis;
          * charts, the normalizing logic was extracted in order to prevent it
          * for running over again for each segment having the same interval.
          * #662, #697.
-         * @internal
+         * @private
          */
-        normalizeTimeTickInterval(tickInterval, unitsOption) {
-            const units = (unitsOption || [[
-                    // Unit name
+        Additions.prototype.normalizeTimeTickInterval = function (tickInterval, unitsOption) {
+            var units = (unitsOption || [[
+                    // unit name
                     'millisecond',
-                    // Allowed multiples
+                    // allowed multiples
                     [1, 2, 5, 10, 20, 25, 50, 100, 200, 500]
                 ], [
                     'second',
@@ -129,32 +138,32 @@ var DateTimeAxis;
                     'year',
                     null
                 ]]);
-            let unit = units[units.length - 1], // Default unit is years
+            var unit = units[units.length - 1], // default unit is years
             interval = timeUnits[unit[0]], multiples = unit[1], i;
-            // Loop through the units to find the one that best fits the
+            // loop through the units to find the one that best fits the
             // tickInterval
             for (i = 0; i < units.length; i++) {
                 unit = units[i];
                 interval = timeUnits[unit[0]];
                 multiples = unit[1];
                 if (units[i + 1]) {
-                    // `lessThan` is in the middle between the highest multiple
+                    // lessThan is in the middle between the highest multiple
                     // and the next unit.
-                    const lessThan = (interval *
+                    var lessThan = (interval *
                         multiples[multiples.length - 1] +
                         timeUnits[units[i + 1][0]]) / 2;
-                    // Break and keep the current unit
+                    // break and keep the current unit
                     if (tickInterval <= lessThan) {
                         break;
                     }
                 }
             }
-            // Prevent 2.5 years intervals, though 25, 250 etc. are allowed
+            // prevent 2.5 years intervals, though 25, 250 etc. are allowed
             if (interval === timeUnits.year && tickInterval < 5 * interval) {
                 multiples = [1, 2, 5];
             }
-            // Get the count
-            const count = normalizeTickInterval(tickInterval / interval, multiples, unit[0] === 'year' ? // #1913, #2360
+            // get the count
+            var count = normalizeTickInterval(tickInterval / interval, multiples, unit[0] === 'year' ? // #1913, #2360
                 Math.max(getMagnitude(tickInterval / interval), 1) :
                 1);
             return {
@@ -162,22 +171,21 @@ var DateTimeAxis;
                 count: count,
                 unitName: unit[0]
             };
-        }
+        };
         /**
          * Get the best date format for a specific X value based on the closest
          * point range on the axis.
          *
-         * @internal
+         * @private
          */
-        getXDateFormat(x, dateTimeLabelFormats) {
-            const { axis } = this, time = axis.chart.time;
+        Additions.prototype.getXDateFormat = function (x, dateTimeLabelFormats) {
+            var axis = this.axis;
             return axis.closestPointRange ?
-                time.getDateFormat(axis.closestPointRange, x, axis.options.startOfWeek, dateTimeLabelFormats) ||
-                    // #2546, 2581
-                    time.resolveDTLFormat(dateTimeLabelFormats.year).main :
-                time.resolveDTLFormat(dateTimeLabelFormats.day).main;
-        }
-    }
+                axis.chart.time.getDateFormat(axis.closestPointRange, x, axis.options.startOfWeek, dateTimeLabelFormats) || dateTimeLabelFormats.year : // #2546, 2581
+                dateTimeLabelFormats.day;
+        };
+        return Additions;
+    }());
     DateTimeAxis.Additions = Additions;
 })(DateTimeAxis || (DateTimeAxis = {}));
 /* *

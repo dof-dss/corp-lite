@@ -1,26 +1,34 @@
 /* *
  *
- *  (c) 2010-2026 Highsoft AS
+ *  (c) 2010-2021 Highsoft AS
  *
  *  Author: Sebastian Domas
  *
  *  Chaikin Money Flow indicator for Highcharts Stock
  *
- *  A commercial license may be required depending on use.
- *  See www.highcharts.com/license
+ *  License: www.highcharts.com/license
  *
+ *  !!!!!!! SOURCE GETS TRANSPILED BY TYPESCRIPT. EDIT TS FILE ONLY. !!!!!!!
  *
  * */
 'use strict';
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 import SeriesRegistry from '../../../Core/Series/SeriesRegistry.js';
-const { sma: SMAIndicator } = SeriesRegistry.seriesTypes;
+var SMAIndicator = SeriesRegistry.seriesTypes.sma;
 import U from '../../../Core/Utilities.js';
-const { merge } = U;
-/* *
- *
- *  Class
- *
- * */
+var merge = U.merge;
 /**
  * The CMF series type.
  *
@@ -30,21 +38,24 @@ const { merge } = U;
  *
  * @augments Highcharts.Series
  */
-class CMFIndicator extends SMAIndicator {
-    constructor() {
+var CMFIndicator = /** @class */ (function (_super) {
+    __extends(CMFIndicator, _super);
+    function CMFIndicator() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         /* *
          *
-         *  Static Properties
+         *  Properties
          *
          * */
-        super(...arguments);
-        this.nameBase = 'Chaikin Money Flow';
+        _this.data = void 0;
+        _this.options = void 0;
+        _this.points = void 0;
+        _this.volumeSeries = void 0;
+        _this.linkedParent = void 0;
+        _this.yData = void 0;
+        _this.nameBase = 'Chaikin Money Flow';
+        return _this;
     }
-    /* *
-     *
-     *  Functions
-     *
-     * */
     /**
      * Checks if the series and volumeSeries are accessible, number of
      * points.x is longer than period, is series has OHLC data
@@ -53,24 +64,26 @@ class CMFIndicator extends SMAIndicator {
      * @return {boolean} True if series is valid and can be computed,
      * otherwise false.
      */
-    isValid() {
-        const chart = this.chart, options = this.options, series = this.linkedParent, volumeSeries = (this.volumeSeries ||
+    CMFIndicator.prototype.isValid = function () {
+        var chart = this.chart, options = this.options, series = this.linkedParent, volumeSeries = (this.volumeSeries ||
             (this.volumeSeries =
-                chart.get(options.params.volumeSeriesID))), isSeriesOHLC = (series?.pointArrayMap?.length === 4);
+                chart.get(options.params.volumeSeriesID))), isSeriesOHLC = (series &&
+            series.yData &&
+            series.yData[0].length === 4);
         /**
          * @private
          * @param {Highcharts.Series} serie to check length validity on.
          * @return {boolean|undefined} true if length is valid.
          */
         function isLengthValid(serie) {
-            return serie.dataTable.rowCount >=
-                options.params.period;
+            return serie.xData &&
+                serie.xData.length >= options.params.period;
         }
         return !!(series &&
             volumeSeries &&
             isLengthValid(series) &&
             isLengthValid(volumeSeries) && isSeriesOHLC);
-    }
+    };
     /**
      * Returns indicator's data.
      * @private
@@ -80,12 +93,12 @@ class CMFIndicator extends SMAIndicator {
      * @return {boolean|Highcharts.IndicatorNullableValuesObject} Returns false if the
      * indicator is not valid, otherwise returns Values object.
      */
-    getValues(series, params) {
+    CMFIndicator.prototype.getValues = function (series, params) {
         if (!this.isValid()) {
             return;
         }
-        return this.getMoneyFlow(series.xData, series.yData, this.volumeSeries.getColumn('y'), params.period);
-    }
+        return this.getMoneyFlow(series.xData, series.yData, this.volumeSeries.yData, params.period);
+    };
     /**
      * @private
      *
@@ -104,9 +117,8 @@ class CMFIndicator extends SMAIndicator {
      * @return {Highcharts.IndicatorNullableValuesObject}
      * object containing computed money flow data
      */
-    getMoneyFlow(xData, seriesYData, volumeSeriesYData, period) {
-        const len = seriesYData.length, moneyFlowVolume = [], moneyFlowXData = [], moneyFlowYData = [], values = [];
-        let i, point, nullIndex = -1, sumVolume = 0, sumMoneyFlowVolume = 0;
+    CMFIndicator.prototype.getMoneyFlow = function (xData, seriesYData, volumeSeriesYData, period) {
+        var len = seriesYData.length, moneyFlowVolume = [], sumVolume = 0, sumMoneyFlowVolume = 0, moneyFlowXData = [], moneyFlowYData = [], values = [], i, point, nullIndex = -1;
         /**
          * Calculates money flow volume, changes i, nullIndex vars from
          * upper scope!
@@ -123,7 +135,7 @@ class CMFIndicator extends SMAIndicator {
          * Volume * moneyFlowMultiplier
          */
         function getMoneyFlowVolume(ohlc, volume) {
-            const high = ohlc[1], low = ohlc[2], close = ohlc[3], isValid = volume !== null &&
+            var high = ohlc[1], low = ohlc[2], close = ohlc[3], isValid = volume !== null &&
                 high !== null &&
                 low !== null &&
                 close !== null &&
@@ -179,35 +191,36 @@ class CMFIndicator extends SMAIndicator {
             xData: moneyFlowXData,
             yData: moneyFlowYData
         };
-    }
-}
-/**
- * Chaikin Money Flow indicator (cmf).
- *
- * @sample stock/indicators/cmf/
- *         Chaikin Money Flow indicator
- *
- * @extends      plotOptions.sma
- * @since        6.0.0
- * @excluding    animationLimit
- * @product      highstock
- * @requires     stock/indicators/indicators
- * @requires     stock/indicators/cmf
- * @optionparent plotOptions.cmf
- */
-CMFIndicator.defaultOptions = merge(SMAIndicator.defaultOptions, {
+    };
     /**
-     * @excluding index
+     * Chaikin Money Flow indicator (cmf).
+     *
+     * @sample stock/indicators/cmf/
+     *         Chaikin Money Flow indicator
+     *
+     * @extends      plotOptions.sma
+     * @since        6.0.0
+     * @excluding    animationLimit
+     * @product      highstock
+     * @requires     stock/indicators/indicators
+     * @requires     stock/indicators/cmf
+     * @optionparent plotOptions.cmf
      */
-    params: {
-        index: void 0, // Unused index, do not inherit (#15362)
+    CMFIndicator.defaultOptions = merge(SMAIndicator.defaultOptions, {
         /**
-         * The id of another series to use its data as volume data for the
-         * indicator calculation.
+         * @excluding index
          */
-        volumeSeriesID: 'volume'
-    }
-});
+        params: {
+            index: void 0,
+            /**
+             * The id of another series to use its data as volume data for the
+             * indiator calculation.
+             */
+            volumeSeriesID: 'volume'
+        }
+    });
+    return CMFIndicator;
+}(SMAIndicator));
 SeriesRegistry.registerSeriesType('cmf', CMFIndicator);
 /* *
  *
@@ -215,11 +228,6 @@ SeriesRegistry.registerSeriesType('cmf', CMFIndicator);
  *
  * */
 export default CMFIndicator;
-/* *
- *
- *  API Options
- *
- * */
 /**
  * A `CMF` series. If the [type](#series.cmf.type) option is not
  * specified, it is inherited from [chart.type](#chart.type).
@@ -232,4 +240,4 @@ export default CMFIndicator;
  * @requires  stock/indicators/cmf
  * @apioption series.cmf
  */
-''; // Adds doclet above to the transpiled file
+''; // adds doclet above to the transpiled file

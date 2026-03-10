@@ -1,67 +1,32 @@
 /* *
  *
- *  (c) 2010-2026 Highsoft AS
- *  Author: Torstein Honsi
+ *  (c) 2010-2021 Torstein Honsi
  *
- *  A commercial license may be required depending on use.
- *  See www.highcharts.com/license
+ *  License: www.highcharts.com/license
  *
+ *  !!!!!!! SOURCE GETS TRANSPILED BY TYPESCRIPT. EDIT TS FILE ONLY. !!!!!!!
  *
  * */
 'use strict';
-import H from '../../Core/Globals.js';
-const { composed } = H;
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 import HeikinAshiPoint from './HeikinAshiPoint.js';
-import HeikinAshiSeriesDefaults from './HeikinAshiSeriesDefaults.js';
 import SeriesRegistry from '../../Core/Series/SeriesRegistry.js';
-const { candlestick: CandlestickSeries } = SeriesRegistry.seriesTypes;
 import U from '../../Core/Utilities.js';
-const { addEvent, merge, pushUnique } = U;
-/* *
- *
- *  Functions
- *
- * */
-/**
- * After processing and grouping the data, calculate how the heikeinashi data
- * set should look like.
- * @private
- */
-function onAxisPostProcessData() {
-    const series = this.series;
-    series.forEach((series) => {
-        if (series.is('heikinashi')) {
-            const heikinashiSeries = series;
-            heikinashiSeries.heikiashiData.length = 0;
-            heikinashiSeries.getHeikinashiData();
-        }
-    });
-}
-/**
- * Assign heikinashi data into the points.
- * @private
- * @todo move to HeikinAshiPoint class
- */
-function onHeikinAshiSeriesAfterTranslate() {
-    const series = this, points = series.points, heikiashiData = series.heikiashiData, cropStart = series.cropStart || 0;
-    // Modify points.
-    for (let i = 0; i < points.length; i++) {
-        const point = points[i], heikiashiDataPoint = heikiashiData[i + cropStart];
-        point.open = heikiashiDataPoint[0];
-        point.high = heikiashiDataPoint[1];
-        point.low = heikiashiDataPoint[2];
-        point.close = heikiashiDataPoint[3];
-    }
-}
-/**
- * Force to recalculate the heikinashi data set after updating data.
- * @private
- */
-function onHeikinAshiSeriesUpdatedData() {
-    if (this.heikiashiData.length) {
-        this.heikiashiData.length = 0;
-    }
-}
+import Axis from '../../Core/Axis/Axis.js';
+var CandlestickSeries = SeriesRegistry.seriesTypes.candlestick;
+var addEvent = U.addEvent, merge = U.merge;
 /* *
  *
  *  Class
@@ -76,88 +41,160 @@ function onHeikinAshiSeriesUpdatedData() {
  *
  * @augments Highcharts.Series
  */
-class HeikinAshiSeries extends CandlestickSeries {
-    constructor() {
+var HeikinAshiSeries = /** @class */ (function (_super) {
+    __extends(HeikinAshiSeries, _super);
+    function HeikinAshiSeries() {
         /* *
          *
          *  Static Properties
          *
          * */
-        super(...arguments);
-        this.heikiashiData = [];
-    }
-    /* *
-     *
-     *  Static Functions
-     *
-     * */
-    static compose(SeriesClass, AxisClass) {
-        CandlestickSeries.compose(SeriesClass);
-        if (pushUnique(composed, 'HeikinAshi')) {
-            addEvent(AxisClass, 'postProcessData', onAxisPostProcessData);
-            addEvent(HeikinAshiSeries, 'afterTranslate', onHeikinAshiSeriesAfterTranslate);
-            addEvent(HeikinAshiSeries, 'updatedData', onHeikinAshiSeriesUpdatedData);
-        }
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        /* *
+         *
+         *  Properties
+         *
+         * */
+        _this.data = void 0;
+        _this.heikiashiData = [];
+        _this.options = void 0;
+        _this.points = void 0;
+        _this.yData = void 0;
+        _this.processedYData = void 0;
+        return _this;
+        /* eslint-enable valid-jsdoc */
     }
     /* *
      *
      *  Functions
      *
      * */
+    /* eslint-disable valid-jsdoc */
     /**
      * Calculate data set for the heikinashi series before creating the points.
      * @private
+     *
+     * @function Highcharts.seriesTypes.heikinashi#getHeikinashiData
+     *
+     *
      */
-    getHeikinashiData() {
-        const series = this, table = series.allGroupedTable || series.dataTable, dataLength = table.rowCount, heikiashiData = series.heikiashiData;
-        if (!heikiashiData.length && dataLength) {
+    HeikinAshiSeries.prototype.getHeikinashiData = function () {
+        var series = this, processedYData = series.allGroupedData || series.yData, heikiashiData = series.heikiashiData;
+        if (!heikiashiData.length && processedYData && processedYData.length) {
+            // Cast to `any` in order to avoid checks before calculation.
+            // Adding null doesn't change anything.
+            var firstPoint = processedYData[0];
             // Modify the first point.
-            this.modifyFirstPointValue(table.getRow(0, this.pointArrayMap));
+            this.modifyFirstPointValue(firstPoint);
             // Modify other points.
-            for (let i = 1; i < dataLength; i++) {
-                this.modifyDataPoint(table.getRow(i, this.pointArrayMap), heikiashiData[i - 1]);
+            for (var i = 1; i < processedYData.length; i++) {
+                var dataPoint = processedYData[i], previousDataPoint = heikiashiData[i - 1];
+                this.modifyDataPoint(dataPoint, previousDataPoint);
             }
         }
         series.heikiashiData = heikiashiData;
-    }
+    };
     /**
      * @private
+     * @function Highcarts.seriesTypes.heikinashi#init
      */
-    init() {
-        super.init.apply(this, arguments);
+    HeikinAshiSeries.prototype.init = function () {
+        _super.prototype.init.apply(this, arguments);
         this.heikiashiData = [];
-    }
+    };
     /**
      * Calculate and modify the first data point value.
      * @private
+     *
+     * @function Highcharts.seriesTypes.heikinashi#modifyFirstPointValue
+     *
      * @param {Array<(number)>} dataPoint
      *        Current data point.
+     *
+     *
      */
-    modifyFirstPointValue(dataPoint) {
-        const open = (dataPoint[0] +
+    HeikinAshiSeries.prototype.modifyFirstPointValue = function (dataPoint) {
+        var open = (dataPoint[0] +
             dataPoint[1] +
             dataPoint[2] +
             dataPoint[3]) / 4, close = (dataPoint[0] + dataPoint[3]) / 2;
         this.heikiashiData.push([open, dataPoint[1], dataPoint[2], close]);
-    }
+    };
     /**
      * Calculate and modify the data point's value.
      * @private
+     *
+     * @function Highcharts.seriesTypes.heikinashi#modifyDataPoint
+     *
      * @param {Array<(number)>} dataPoint
      *        Current data point.
+     *
      * @param {Array<(number)>} previousDataPoint
      *        Previous data point.
+     *
+     *
      */
-    modifyDataPoint(dataPoint, previousDataPoint) {
-        const newOpen = (previousDataPoint[0] + previousDataPoint[3]) / 2, newClose = (dataPoint[0] +
+    HeikinAshiSeries.prototype.modifyDataPoint = function (dataPoint, previousDataPoint) {
+        var newOpen = (previousDataPoint[0] + previousDataPoint[3]) / 2, newClose = (dataPoint[0] +
             dataPoint[1] +
             dataPoint[2] +
             dataPoint[3]) / 4, newHigh = Math.max(dataPoint[1], newClose, newOpen), newLow = Math.min(dataPoint[2], newClose, newOpen);
         // Add new points to the array in order to properly calculate extremes.
         this.heikiashiData.push([newOpen, newHigh, newLow, newClose]);
+    };
+    /**
+     * An HeikinAshi series is a style of financial chart used to describe price
+     * movements over time. It displays open, high, low and close values per
+     * data point.
+     *
+     * @sample stock/demo/heikinashi/
+     *         Heikin Ashi series
+     *
+     * @extends      plotOptions.candlestick
+     * @product      highstock
+     * @requires  modules/heikinashi
+     * @optionparent plotOptions.heikinashi
+     */
+    HeikinAshiSeries.defaultOptions = merge(CandlestickSeries.defaultOptions, {
+        dataGrouping: {
+            groupAll: true
+        }
+    });
+    return HeikinAshiSeries;
+}(CandlestickSeries));
+// Assign haikinashi data into the points.
+addEvent(HeikinAshiSeries, 'afterTranslate', function () {
+    var series = this, points = series.points, heikiashiData = series.heikiashiData, cropStart = series.cropStart || 0;
+    // Reset the proccesed data.
+    series.processedYData.length = 0;
+    // Modify points.
+    for (var i = 0; i < points.length; i++) {
+        var point = points[i], heikiashiDataPoint = heikiashiData[i + cropStart];
+        point.open = heikiashiDataPoint[0];
+        point.high = heikiashiDataPoint[1];
+        point.low = heikiashiDataPoint[2];
+        point.close = heikiashiDataPoint[3];
+        series.processedYData.push([point.open, point.high, point.low, point.close]);
     }
-}
-HeikinAshiSeries.defaultOptions = merge(CandlestickSeries.defaultOptions, HeikinAshiSeriesDefaults);
+});
+// Force to recalculate the heikinashi data set after updating data.
+addEvent(HeikinAshiSeries, 'updatedData', function () {
+    if (this.heikiashiData.length) {
+        this.heikiashiData.length = 0;
+    }
+});
+// After processing and grouping the data,
+// calculate how the heikeinashi data set should look like.
+addEvent(Axis, 'postProcessData', function () {
+    var series = this.series;
+    series.forEach(function (series) {
+        if (series.is('heikinashi')) {
+            var heikinashiSeries = series;
+            heikinashiSeries.heikiashiData.length = 0;
+            heikinashiSeries.getHeikinashiData();
+        }
+    });
+});
 /* *
  *
  *  Class Prototype
@@ -171,3 +208,71 @@ SeriesRegistry.registerSeriesType('heikinashi', HeikinAshiSeries);
  *
  * */
 export default HeikinAshiSeries;
+/* *
+ *
+ *  API Options
+ *
+ * */
+/**
+ * A `heikinashi` series. If the [type](#series.heikinashi.type)
+ * option is not specified, it is inherited from [chart.type](
+ * #chart.type).
+ *
+ * @type      {*}
+ * @extends   series,plotOptions.heikinashi
+ * @excluding dataParser, dataURL, marker
+ * @product   highstock
+ * @requires  modules/heikinashi
+ * @apioption series.heikinashi
+ */
+/**
+ * An array of data points for the series. For the `heikinashi` series
+ * type, points can be given in the following ways:
+ *
+ * 1. An array of arrays with 5 or 4 values. In this case, the values correspond
+ *    to `x,open,high,low,close`. If the first value is a string, it is applied
+ *    as the name of the point, and the `x` value is inferred. The `x` value can
+ *    also be omitted, in which case the inner arrays should be of length 4.
+ *    Then the `x` value is automatically calculated, either starting at 0 and
+ *    incremented by 1, or from `pointStart` and `pointInterval` given in the
+ *    series options.
+ *    ```js
+ *    data: [
+ *        [0, 7, 2, 0, 4],
+ *        [1, 1, 4, 2, 8],
+ *        [2, 3, 3, 9, 3]
+ *    ]
+ *    ```
+ *
+ * 2. An array of objects with named values. The following snippet shows only a
+ *    few settings, see the complete options set below. If the total number of
+ *    data points exceeds the series'
+ *    [turboThreshold](#series.heikinashi.turboThreshold), this option is not
+ *    available.
+ *    ```js
+ *    data: [{
+ *        x: 1,
+ *        open: 9,
+ *        high: 2,
+ *        low: 4,
+ *        close: 6,
+ *        name: "Point2",
+ *        color: "#00FF00"
+ *    }, {
+ *        x: 1,
+ *        open: 1,
+ *        high: 4,
+ *        low: 7,
+ *        close: 7,
+ *        name: "Point1",
+ *        color: "#FF00FF"
+ *    }]
+ *    ```
+ *
+ * @type      {Array<Array<(number|string),number,number,number>|Array<(number|string),number,number,number,number>|*>}
+ * @extends   series.candlestick.data
+ * @excluding y
+ * @product   highstock
+ * @apioption series.heikinashi.data
+ */
+''; // adds doclets above to transpilat

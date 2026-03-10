@@ -1,54 +1,23 @@
 /* *
  *
- *  (c) 2019-2026 Highsoft AS
+ *  Copyright (c) 2019-2021 Highsoft AS
  *
  *  Boost module: stripped-down renderer for higher performance
  *
  *  License: highcharts.com/license
  *
+ *  !!!!!!! SOURCE GETS TRANSPILED BY TYPESCRIPT. EDIT TS FILE ONLY. !!!!!!!
  *
  * */
 'use strict';
-import BoostChart from './BoostChart.js';
-const { getBoostClipRect } = BoostChart;
 import Color from '../../Core/Color/Color.js';
-const { parse: color } = Color;
+var color = Color.parse;
+import GLShader from './WGLShader.js';
+import GLVertexBuffer from './WGLVBuffer.js';
 import H from '../../Core/Globals.js';
-const { doc, win } = H;
+var doc = H.doc, win = H.win;
 import U from '../../Core/Utilities.js';
-const { isNumber, isObject, merge, objectEach, pick } = U;
-import WGLDrawMode from './WGLDrawMode.js';
-import WGLShader from './WGLShader.js';
-import WGLVertexBuffer from './WGLVertexBuffer.js';
-/* *
- *
- *  Constants
- *
- * */
-// Things to draw as "rectangles" (i.e lines)
-const asBar = {
-    'column': true,
-    'columnrange': true,
-    'bar': true,
-    'area': true,
-    'areaspline': true,
-    'arearange': true
-};
-const asCircle = {
-    'scatter': true,
-    'bubble': true
-};
-const contexts = [
-    'webgl',
-    'experimental-webgl',
-    'moz-webgl',
-    'webkit-3d'
-];
-/* *
- *
- *  Class
- *
- * */
+var isNumber = U.isNumber, isObject = U.isObject, merge = U.merge, objectEach = U.objectEach, pick = U.pick;
 /* eslint-disable valid-jsdoc */
 /**
  * Main renderer. Used to render series.
@@ -58,44 +27,90 @@ const contexts = [
  *   encoding values in the color data.
  * - Need to figure out a way to transform the data quicker
  *
- * @internal
- *
- * @param {Function} postRenderCallback
+ * @private
+ * @function GLRenderer
  */
-class WGLRenderer {
-    /* *
-     *
-     *  Static Functions
-     *
-     * */
+function GLRenderer(postRenderCallback) {
+    //  // Shader
+    var shader = false, 
+    // Vertex buffers - keyed on shader attribute name
+    vbuffer = false, vlen = 0, 
+    // Opengl context
+    gl = false, 
+    // Width of our viewport in pixels
+    width = 0, 
+    // Height of our viewport in pixels
+    height = 0, 
+    // The data to render - array of coordinates
+    data = false, 
+    // The marker data
+    markerData = false, 
+    // Exports
+    exports = {}, 
+    // Is it inited?
+    isInited = false, 
+    // The series stack
+    series = [], 
+    // Texture handles
+    textureHandles = {}, 
+    // Things to draw as "rectangles" (i.e lines)
+    asBar = {
+        'column': true,
+        'columnrange': true,
+        'bar': true,
+        'area': true,
+        'areaspline': true,
+        'arearange': true
+    }, asCircle = {
+        'scatter': true,
+        'bubble': true
+    }, 
+    // Render settings
+    settings = {
+        pointSize: 1,
+        lineWidth: 1,
+        fillColor: '#AA00AA',
+        useAlpha: true,
+        usePreallocated: false,
+        useGPUTranslations: false,
+        debug: {
+            timeRendering: false,
+            timeSeriesProcessing: false,
+            timeSetup: false,
+            timeBufferCopy: false,
+            timeKDTree: false,
+            showSkipSummary: false
+        }
+    };
+    // /////////////////////////////////////////////////////////////////////////
     /**
-     * Returns an orthographic perspective matrix.
-     *
-     * @internal
-     * @param {number} width
-     * the width of the viewport in pixels
-     * @param {number} height
-     * the height of the viewport in pixels
+     * @private
      */
-    static orthoMatrix(width, height) {
-        const near = 0, far = 1;
-        return [
-            2 / width, 0, 0, 0,
-            0, -(2 / height), 0, 0,
-            0, 0, -2 / (far - near), 0,
-            -1, 1, -(far + near) / (far - near), 1
-        ];
+    function getPixelRatio() {
+        return settings.pixelRatio || win.devicePixelRatio || 1;
     }
-    /** @internal */
-    static seriesPointCount(series) {
-        let isStacked, xData, s;
-        if (series.boosted) {
+    /**
+     * @private
+     */
+    function setOptions(options) {
+        // The pixelRatio defaults to 1. This is an antipattern, we should
+        // refactor the Boost options to include an object of default options as
+        // base for the merge, like other components.
+        if (!('pixelRatio' in options)) {
+            options.pixelRatio = 1;
+        }
+        merge(true, settings, options);
+    }
+    /**
+     * @private
+     */
+    function seriesPointCount(series) {
+        var isStacked, xData, s;
+        if (series.isSeriesBoosting) {
             isStacked = !!series.options.stacking;
-            xData = ((series.getColumn('x').length ?
-                series.getColumn('x') :
-                void 0) ||
+            xData = (series.xData ||
                 series.options.xData ||
-                series.getColumn('x', true));
+                series.processedXData);
             s = (isStacked ? series.data : (xData || series.options.data))
                 .length;
             if (series.type === 'treemap') {
@@ -111,132 +126,100 @@ class WGLRenderer {
         }
         return 0;
     }
-    /* *
-     *
-     *  Constructor
-     *
-     * */
-    constructor(postRenderCallback) {
-        /**
-         * The data to render - array of coordinates.
-         * Repeating sequence of [x, y, checkThreshold, pointSize].
-         */
-        this.data = [];
-        // Height of our viewport in pixels
-        this.height = 0;
-        // Is it inited?
-        this.isInited = false;
-        // The marker data
-        this.markerData = [];
-        // The series stack
-        this.series = [];
-        // Texture handles
-        this.textureHandles = {};
-        // Width of our viewport in pixels
-        this.width = 0;
-        this.postRenderCallback = postRenderCallback;
-        this.settings = {
-            pointSize: 1,
-            lineWidth: 1,
-            fillColor: '#AA00AA',
-            useAlpha: true,
-            usePreallocated: false,
-            useGPUTranslations: false,
-            debug: {
-                timeRendering: false,
-                timeSeriesProcessing: false,
-                timeSetup: false,
-                timeBufferCopy: false,
-                timeKDTree: false,
-                showSkipSummary: false
-            }
-        };
-    }
-    /* *
-     *
-     *  Functions
-     *
-     * */
-    /** @internal */
-    getPixelRatio() {
-        return this.settings.pixelRatio || win.devicePixelRatio || 1;
-    }
-    /** @internal */
-    setOptions(options) {
-        // The pixelRatio defaults to 1. This is an antipattern, we should
-        // refactor the Boost options to include an object of default options as
-        // base for the merge, like other components.
-        if (!('pixelRatio' in options)) {
-            options.pixelRatio = 1;
-        }
-        merge(true, this.settings, options);
-    }
     /**
      * Allocate a float buffer to fit all series
-     * @internal
+     * @private
      */
-    allocateBuffer(chart) {
-        const vbuffer = this.vbuffer;
-        let s = 0;
-        if (!this.settings.usePreallocated) {
+    function allocateBuffer(chart) {
+        var s = 0;
+        if (!settings.usePreallocated) {
             return;
         }
-        chart.series.forEach((series) => {
-            if (series.boosted) {
-                s += WGLRenderer.seriesPointCount(series);
+        chart.series.forEach(function (series) {
+            if (series.isSeriesBoosting) {
+                s += seriesPointCount(series);
             }
         });
-        vbuffer && vbuffer.allocate(s);
+        vbuffer.allocate(s);
     }
-    /** @internal */
-    allocateBufferForSingleSeries(series) {
-        const vbuffer = this.vbuffer;
-        let s = 0;
-        if (!this.settings.usePreallocated) {
+    /**
+     * @private
+     */
+    function allocateBufferForSingleSeries(series) {
+        var s = 0;
+        if (!settings.usePreallocated) {
             return;
         }
-        if (series.boosted) {
-            s = WGLRenderer.seriesPointCount(series);
+        if (series.isSeriesBoosting) {
+            s = seriesPointCount(series);
         }
-        vbuffer && vbuffer.allocate(s);
+        vbuffer.allocate(s);
+    }
+    /**
+     * Returns an orthographic perspective matrix
+     * @private
+     * @param {number} width
+     * the width of the viewport in pixels
+     * @param {number} height
+     * the height of the viewport in pixels
+     */
+    function orthoMatrix(width, height) {
+        var near = 0, far = 1;
+        return [
+            2 / width, 0, 0, 0,
+            0, -(2 / height), 0, 0,
+            0, 0, -2 / (far - near), 0,
+            -1, 1, -(far + near) / (far - near), 1
+        ];
     }
     /**
      * Clear the depth and color buffer
-     * @internal
+     * @private
      */
-    clear() {
-        const gl = this.gl;
-        gl && gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+    function clear() {
+        gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
     }
     /**
-     * Push data for a single series.
-     * This calculates additional vertices and transforms the data to be
-     * aligned correctly in memory.
-     * @internal
+     * Get the WebGL context
+     * @private
+     * @return {WebGLContext}
+     * the context
      */
-    pushSeriesData(series, inst) {
-        const data = this.data, settings = this.settings, vbuffer = this.vbuffer, isRange = (series.pointArrayMap &&
-            series.pointArrayMap.join(',') === 'low,high'), { chart, options, sorted, xAxis, yAxis } = series, isStacked = !!options.stacking, rawData = options.data, xExtremes = series.xAxis.getExtremes(), 
-        // Taking into account the offset of the min point #19497
-        xMin = xExtremes.min - (series.xAxis.minPointOffset || 0), xMax = xExtremes.max + (series.xAxis.minPointOffset || 0), yExtremes = series.yAxis.getExtremes(), yMin = yExtremes.min - (series.yAxis.minPointOffset || 0), yMax = yExtremes.max + (series.yAxis.minPointOffset || 0), xData = (series.getColumn('x').length ? series.getColumn('x') : void 0) || options.xData || series.getColumn('x', true), yData = (series.getColumn('y').length ? series.getColumn('y') : void 0) || options.yData || series.getColumn('y', true), zData = (series.getColumn('z').length ? series.getColumn('z') : void 0) || options.zData || series.getColumn('z', true), useRaw = !xData || xData.length === 0, 
-        /// threshold = options.threshold,
+    function getGL() {
+        return gl;
+    }
+    /**
+     * Push data for a single series
+     * This calculates additional vertices and transforms the data to be
+     * aligned correctly in memory
+     * @private
+     */
+    function pushSeriesData(series, inst) {
+        var isRange = (series.pointArrayMap &&
+            series.pointArrayMap.join(',') === 'low,high'), chart = series.chart, options = series.options, isStacked = !!options.stacking, rawData = options.data, xExtremes = series.xAxis.getExtremes(), xMin = xExtremes.min, xMax = xExtremes.max, yExtremes = series.yAxis.getExtremes(), yMin = yExtremes.min, yMax = yExtremes.max, xData = series.xData || options.xData || series.processedXData, yData = series.yData || options.yData || series.processedYData, zData = (series.zData || options.zData ||
+            series.processedZData), yAxis = series.yAxis, xAxis = series.xAxis, 
+        // plotHeight = series.chart.plotHeight,
+        plotWidth = series.chart.plotWidth, useRaw = !xData || xData.length === 0, 
+        // threshold = options.threshold,
         // yBottom = chart.yAxis[0].getThreshold(threshold),
         // hasThreshold = isNumber(threshold),
-        colorByPoint = series.options.colorByPoint, 
+        // colorByPoint = series.options.colorByPoint,
         // This is required for color by point, so make sure this is
         // uncommented if enabling that
+        // colorIndex = 0,
         // Required for color axis support
         // caxis,
         connectNulls = options.connectNulls, 
         // For some reason eslint/TypeScript don't pick up that this is
         // actually used: --- bre1470: it is never read, just set
         // maxVal: (number|undefined), // eslint-disable-line no-unused-vars
-        points = series.points || false, sdata = isStacked ? series.data : (xData || rawData), closestLeft = { x: Number.MAX_VALUE, y: 0 }, closestRight = { x: -Number.MAX_VALUE, y: 0 }, cullXThreshold = 1, cullYThreshold = 1, chartDestroyed = typeof chart.index === 'undefined', drawAsBar = asBar[series.type], zoneAxis = options.zoneAxis || 'y', zones = options.zones || false, threshold = options.threshold, pixelRatio = this.getPixelRatio();
-        let plotWidth = series.chart.plotWidth, lastX = false, lastY = false, minVal, scolor, 
+        points = series.points || false, lastX = false, lastY = false, minVal, scolor, sdata = isStacked ? series.data : (xData || rawData), closestLeft = { x: Number.MAX_VALUE, y: 0 }, closestRight = { x: -Number.MAX_VALUE, y: 0 }, 
         //
         skipped = 0, hadPoints = false, 
+        //
+        cullXThreshold = 1, cullYThreshold = 1, 
         // The following are used in the builder while loop
-        x, y, d, z, i = -1, px = false, nx = false, low, nextInside = false, prevInside = false, pcolor = void 0, isXInside = false, isYInside = true, firstPoint = true, zoneColors = [], zoneDefColor = false, gapSize = false, vlen = 0, colorIndex = 0;
+        x, y, d, z, i = -1, px = false, nx = false, low, chartDestroyed = typeof chart.index === 'undefined', nextInside = false, prevInside = false, pcolor = false, drawAsBar = asBar[series.type], isXInside = false, isYInside = true, firstPoint = true, zoneAxis = options.zoneAxis || 'y', zones = options.zones || false, zoneColors, zoneDefColor = false, threshold = options.threshold, gapSize = false, pixelRatio = getPixelRatio();
         if (options.boostData && options.boostData.length > 0) {
             return;
         }
@@ -245,11 +228,11 @@ class WGLRenderer {
                 options.gapSize * series.closestPointRange :
                 options.gapSize;
         }
-        if (zones && zones.length) { // #23571
+        if (zones) {
             zoneColors = [];
-            zones.forEach((zone, i) => {
+            zones.forEach(function (zone, i) {
                 if (zone.color) {
-                    const zoneColor = color(zone.color).rgba;
+                    var zoneColor = color(zone.color).rgba;
                     zoneColor[0] /= 255.0;
                     zoneColor[1] /= 255.0;
                     zoneColor[2] /= 255.0;
@@ -260,7 +243,7 @@ class WGLRenderer {
                 }
             });
             if (!zoneDefColor) {
-                const seriesColor = ((series.pointAttribs && series.pointAttribs().fill) ||
+                var seriesColor = ((series.pointAttribs && series.pointAttribs().fill) ||
                     series.color);
                 zoneDefColor = color(seriesColor).rgba;
                 zoneDefColor[0] /= 255.0;
@@ -269,26 +252,28 @@ class WGLRenderer {
             }
         }
         if (chart.inverted) {
+            // plotHeight = series.chart.plotWidth;
             plotWidth = series.chart.plotHeight;
         }
         series.closestPointRangePx = Number.MAX_VALUE;
         /**
          * Push color to color buffer - need to do this per vertex.
-         * @internal
+         * @private
          */
-        const pushColor = (color) => {
+        function pushColor(color) {
             if (color) {
                 inst.colorData.push(color[0]);
                 inst.colorData.push(color[1]);
                 inst.colorData.push(color[2]);
                 inst.colorData.push(color[3]);
             }
-        };
+        }
         /**
          * Push a vertice to the data buffer.
-         * @internal
+         * @private
          */
-        const vertice = (x, y, checkTreshold, pointSize = 1, color) => {
+        function vertice(x, y, checkTreshold, pointSize, color) {
+            if (pointSize === void 0) { pointSize = 1; }
             pushColor(color);
             // Correct for pixel ratio
             if (pixelRatio !== 1 && (!settings.useGPUTranslations ||
@@ -297,7 +282,7 @@ class WGLRenderer {
                 y *= pixelRatio;
                 pointSize *= pixelRatio;
             }
-            if (settings.usePreallocated && vbuffer) {
+            if (settings.usePreallocated) {
                 vbuffer.push(x, y, checkTreshold ? 1 : 0, pointSize);
                 vlen += 4;
             }
@@ -307,18 +292,20 @@ class WGLRenderer {
                 data.push(checkTreshold ? pixelRatio : 0);
                 data.push(pointSize);
             }
-        };
-        /** @internal */
-        const closeSegment = () => {
+        }
+        /**
+         * @private
+         */
+        function closeSegment() {
             if (inst.segments.length) {
                 inst.segments[inst.segments.length - 1].to = data.length || vlen;
             }
-        };
+        }
         /**
          * Create a new segment for the current set.
-         * @internal
+         * @private
          */
-        const beginSegment = () => {
+        function beginSegment() {
             // Insert a segment on the series.
             // A segment is just a start indice.
             // When adding a segment, if one exists from before, it should
@@ -331,12 +318,12 @@ class WGLRenderer {
             inst.segments.push({
                 from: data.length || vlen
             });
-        };
+        }
         /**
          * Push a rectangle to the data buffer.
-         * @internal
+         * @private
          */
-        const pushRect = (x, y, w, h, color) => {
+        function pushRect(x, y, w, h, color) {
             pushColor(color);
             vertice(x + w, y);
             pushColor(color);
@@ -349,7 +336,7 @@ class WGLRenderer {
             vertice(x + w, y + h);
             pushColor(color);
             vertice(x + w, y);
-        };
+        }
         // Create the first segment
         beginSegment();
         // Special case for point shapes
@@ -358,10 +345,10 @@ class WGLRenderer {
             // translated, so we skip the shader translation.
             inst.skipTranslation = true;
             // Force triangle draw mode
-            inst.drawMode = 'TRIANGLES';
+            inst.drawMode = 'triangles';
             // We don't have a z component in the shader, so we need to sort.
             if (points[0].node && points[0].node.levelDynamic) {
-                points.sort((a, b) => {
+                points.sort(function (a, b) {
                     if (a.node) {
                         if (a.node.levelDynamic >
                             b.node.levelDynamic) {
@@ -375,14 +362,13 @@ class WGLRenderer {
                     return 0;
                 });
             }
-            points.forEach((point) => {
-                const plotY = point.plotY;
-                let swidth, pointAttr;
+            points.forEach(function (point) {
+                var plotY = point.plotY, swidth, pointAttr;
                 if (typeof plotY !== 'undefined' &&
                     !isNaN(plotY) &&
                     point.y !== null &&
                     point.shapeArgs) {
-                    let { x = 0, y = 0, width = 0, height = 0 } = point.shapeArgs;
+                    var _a = point.shapeArgs, _b = _a.x, x_1 = _b === void 0 ? 0 : _b, _c = _a.y, y_1 = _c === void 0 ? 0 : _c, _d = _a.width, width_1 = _d === void 0 ? 0 : _d, _e = _a.height, height_1 = _e === void 0 ? 0 : _e;
                     pointAttr = chart.styledMode ?
                         point.series
                             .colorAttribs(point) :
@@ -406,7 +392,7 @@ class WGLRenderer {
                         scolor[0] /= 255.0;
                         scolor[1] /= 255.0;
                         scolor[2] /= 255.0;
-                        pushRect(x, y, width, height, scolor);
+                        pushRect(x_1, y_1, width_1, height_1, scolor);
                         swidth /= 2;
                     }
                     // } else {
@@ -418,61 +404,50 @@ class WGLRenderer {
                     // bottom-right. This causes a vertical and horizontal flip
                     // in the resulting image, making it rotated 180 degrees.
                     if (series.is('heatmap') && chart.inverted) {
-                        x = xAxis.len - x;
-                        y = yAxis.len - y;
-                        width = -width;
-                        height = -height;
+                        x_1 = xAxis.len - x_1;
+                        y_1 = yAxis.len - y_1;
+                        width_1 = -width_1;
+                        height_1 = -height_1;
                     }
-                    pushRect(x + swidth, y + swidth, width - (swidth * 2), height - (swidth * 2), pcolor);
+                    pushRect(x_1 + swidth, y_1 + swidth, width_1 - (swidth * 2), height_1 - (swidth * 2), pcolor);
                 }
             });
             closeSegment();
             return;
         }
-        // Extract color axis
-        // (chart.axes || []).forEach((a): void => {
-        //     if (H.ColorAxis && a instanceof H.ColorAxis) {
-        //         caxis = a;
-        //     }
-        // });
-        while (i < sdata.length - 1) {
+        var _loop_1 = function () {
             d = sdata[++i];
             if (typeof d === 'undefined') {
-                continue;
+                return "continue";
             }
-            /// px = x = y = z = nx = low = false;
+            // px = x = y = z = nx = low = false;
             // chartDestroyed = typeof chart.index === 'undefined';
             // nextInside = prevInside = pcolor = isXInside = isYInside = false;
             // drawAsBar = asBar[series.type];
             if (chartDestroyed) {
-                break;
+                return "break";
             }
+            // Uncomment this to enable color by point.
+            // This currently left disabled as the charts look really ugly
+            // when enabled and there's a lot of points.
+            // Leaving in for the future (tm).
+            // if (colorByPoint) {
+            //     colorIndex = ++colorIndex %
+            //         series.chart.options.colors.length;
+            //     pcolor = toRGBAFast(series.chart.options.colors[colorIndex]);
+            //     pcolor[0] /= 255.0;
+            //     pcolor[1] /= 255.0;
+            //     pcolor[2] /= 255.0;
+            // }
             // Handle the point.color option (#5999)
-            const pointOptions = rawData && rawData[i];
-            if (!useRaw) {
-                let rgba;
-                if (isObject(pointOptions, true) && pointOptions.color) {
-                    rgba = color(pointOptions.color).rgba;
+            var pointOptions = rawData && rawData[i];
+            if (!useRaw && isObject(pointOptions, true)) {
+                if (pointOptions.color) {
+                    pcolor = color(pointOptions.color).rgba;
+                    pcolor[0] /= 255.0;
+                    pcolor[1] /= 255.0;
+                    pcolor[2] /= 255.0;
                 }
-                const colorKeyIndex = series.options.keys?.indexOf('color');
-                if (Array.isArray(pointOptions) &&
-                    colorKeyIndex &&
-                    typeof pointOptions[colorKeyIndex] === 'string') {
-                    rgba = color(pointOptions[colorKeyIndex]).rgba;
-                }
-                else if (colorByPoint && chart.options.colors) {
-                    colorIndex = colorIndex %
-                        chart.options.colors.length;
-                    rgba = color(chart.options.colors[colorIndex]).rgba;
-                }
-                if (rgba) {
-                    pcolor = rgba;
-                    pcolor[0] = rgba[0] / 255.0;
-                    pcolor[1] = rgba[1] / 255.0;
-                    pcolor[2] = rgba[2] / 255.0;
-                    pcolor[3] = rgba[3];
-                }
-                colorIndex++;
             }
             if (useRaw) {
                 x = d[0];
@@ -495,7 +470,7 @@ class WGLRenderer {
             }
             else {
                 x = d;
-                y = yData?.[i];
+                y = yData[i];
                 if (sdata[i + 1]) {
                     nx = sdata[i + 1];
                 }
@@ -514,7 +489,7 @@ class WGLRenderer {
             }
             if (!connectNulls && (x === null || y === null)) {
                 beginSegment();
-                continue;
+                return "continue";
             }
             if (nx && nx >= xMin && nx <= xMax) {
                 nextInside = true;
@@ -526,8 +501,8 @@ class WGLRenderer {
                 if (useRaw) {
                     y = d.slice(1, 3);
                 }
-                low = series.getColumn('low', true)?.[i];
-                y = series.getColumn('high', true)?.[i] || 0;
+                low = y[0];
+                y = y[1];
             }
             else if (isStacked) {
                 x = d.x;
@@ -540,10 +515,6 @@ class WGLRenderer {
                 typeof yMax !== 'undefined') {
                 isYInside = y >= yMin && y <= yMax;
             }
-            // Do not render points outside the zoomed range (#19701)
-            if (!sorted && !isYInside) {
-                continue;
-            }
             if (x > xMax && closestRight.x < xMax) {
                 closestRight.x = x;
                 closestRight.y = y;
@@ -553,50 +524,52 @@ class WGLRenderer {
                 closestLeft.y = y;
             }
             if (y === null && connectNulls) {
-                continue;
+                return "continue";
             }
             // Cull points outside the extremes
-            // Continue if `sdata` has only one point as `nextInside` asserts
-            // whether the next point exists and will thus be false. (#22194)
-            if (y === null || (!isYInside && sdata.length > 1 &&
-                !nextInside && !prevInside)) {
+            if (y === null || (!isYInside && !nextInside && !prevInside)) {
                 beginSegment();
-                continue;
+                return "continue";
             }
             // The first point before and first after extremes should be
-            // rendered (#9962, 19701)
-            // Make sure series with a single point are rendered (#21897)
-            if (sorted && ((nx >= xMin || x >= xMin) &&
-                (px <= xMax || x <= xMax)) ||
-                !sorted && ((x >= xMin) && (x <= xMax))) {
+            // rendered (#9962)
+            if ((nx >= xMin || x >= xMin) &&
+                (px <= xMax || x <= xMax)) {
                 isXInside = true;
             }
             if (!isXInside && !nextInside && !prevInside) {
-                continue;
+                return "continue";
             }
             if (gapSize && x - px > gapSize) {
                 beginSegment();
             }
             // Note: Boost requires that zones are sorted!
-            if (zones && zones.length) { // #23571
-                let zoneColor;
-                const pointValue = zoneAxis === 'x' ? x : y;
-                // Match getZone() logic: find zone where value > point value
-                let zoneIndex;
-                zones.some((// eslint-disable-line no-loop-func
-                zone, i) => {
-                    if (typeof zone.value !== 'undefined' &&
-                        pointValue < zone.value) {
-                        zoneIndex = i;
+            if (zones) {
+                var zoneColor_1;
+                zones.some(function (// eslint-disable-line no-loop-func
+                zone, i) {
+                    var last = zones[i - 1];
+                    if (zoneAxis === 'x') {
+                        if (typeof zone.value !== 'undefined' &&
+                            x <= zone.value) {
+                            if (zoneColors[i] &&
+                                (!last || x >= last.value)) {
+                                zoneColor_1 = zoneColors[i];
+                            }
+                            return true;
+                        }
+                        return false;
+                    }
+                    if (typeof zone.value !== 'undefined' && y <= zone.value) {
+                        if (zoneColors[i] &&
+                            (!last || y >= last.value)) {
+                            zoneColor_1 = zoneColors[i];
+                        }
                         return true;
                     }
                     return false;
                 });
-                if (typeof zoneIndex !== 'undefined' &&
-                    zoneColors[zoneIndex]) {
-                    zoneColor = zoneColors[zoneIndex];
-                }
-                pcolor = zoneColor || zoneDefColor || pcolor;
+                pcolor = zoneColor_1 || zoneDefColor || pcolor;
             }
             // Skip translations - temporary floating point fix
             if (!settings.useGPUTranslations) {
@@ -611,11 +584,11 @@ class WGLRenderer {
                 // y = plotHeight;
                 // }
                 if (x > plotWidth) {
-                    // If this is rendered as a point, just skip drawing it
-                    // entirely, as we're not dependant on lineTo'ing to it.
+                    // If this is  rendered as a point, just skip drawing it
+                    // entirely, as we're not dependandt on lineTo'ing to it.
                     // See #8197
-                    if (inst.drawMode === 'POINTS') {
-                        continue;
+                    if (inst.drawMode === 'points') {
+                        return "continue";
                     }
                     // Having this here will clamp markers and make the angle
                     // of the last line wrong. See 9166.
@@ -626,7 +599,7 @@ class WGLRenderer {
             // Out of bound things are shown if and only if the next
             // or previous point is inside the rect.
             if (inst.hasMarkers && isXInside) {
-                /// x = Highcharts.correctFloat(
+                // x = Highcharts.correctFloat(
                 //     Math.min(Math.max(-1e5, xAxis.translate(
                 //         x,
                 //         0,
@@ -650,10 +623,11 @@ class WGLRenderer {
                 if (settings.debug.showSkipSummary) {
                     ++skipped;
                 }
-                continue;
+                return "continue";
             }
             if (drawAsBar) {
-                minVal = low || 0;
+                // maxVal = y;
+                minVal = low;
                 if (low === false || typeof low === 'undefined') {
                     if (y < 0) {
                         minVal = y;
@@ -662,9 +636,7 @@ class WGLRenderer {
                         minVal = 0;
                     }
                 }
-                if ((!isRange && !isStacked) ||
-                    yAxis.logarithmic // #16850
-                ) {
+                if (!isRange && !isStacked) {
                     minVal = Math.max(threshold === null ? yMin : threshold, // #5268
                     yMin); // #8731
                 }
@@ -672,15 +644,15 @@ class WGLRenderer {
                     minVal = yAxis.toPixels(minVal, true);
                 }
                 // Need to add an extra point here
-                vertice(x, minVal, false, 0, pcolor);
+                vertice(x, minVal, 0, 0, pcolor);
             }
             // Do step line if enabled.
             // Draws an additional point at the old Y at the new X.
             // See #6976.
             if (options.step && !firstPoint) {
-                vertice(x, lastY, false, 2, pcolor);
+                vertice(x, lastY, 0, 2, pcolor);
             }
-            vertice(x, y, false, series.type === 'bubble' ? (z || 1) : 2, pcolor);
+            vertice(x, y, 0, series.type === 'bubble' ? (z || 1) : 2, pcolor);
             // Uncomment this to support color axis.
             // if (caxis) {
             //     pcolor = color(caxis.toColor(y)).rgba;
@@ -693,11 +665,25 @@ class WGLRenderer {
             lastY = y;
             hadPoints = true;
             firstPoint = false;
+        };
+        // Extract color axis
+        // (chart.axes || []).forEach(function (a) {
+        //     if (H.ColorAxis && a instanceof H.ColorAxis) {
+        //         caxis = a;
+        //     }
+        // });
+        while (i < sdata.length - 1) {
+            var state_1 = _loop_1();
+            if (state_1 === "break")
+                break;
         }
         if (settings.debug.showSkipSummary) {
             console.log('skipped points:', skipped); // eslint-disable-line no-console
         }
-        const pushSupplementPoint = (point, atStart) => {
+        /**
+         * @private
+         */
+        function pushSupplementPoint(point, atStart) {
             if (!settings.useGPUTranslations) {
                 inst.skipTranslation = true;
                 point.x = xAxis.toPixels(point.x, true);
@@ -706,11 +692,11 @@ class WGLRenderer {
             // We should only do this for lines, and we should ignore markers
             // since there's no point here that would have a marker.
             if (atStart) {
-                this.data = [point.x, point.y, 0, 2].concat(this.data);
+                data = [point.x, point.y, 0, 2].concat(data);
                 return;
             }
             vertice(point.x, point.y, 0, 2);
-        };
+        }
         if (!hadPoints &&
             connectNulls !== false &&
             series.drawMode === 'line_strip') {
@@ -725,16 +711,14 @@ class WGLRenderer {
         closeSegment();
     }
     /**
-     * Push a series to the renderer.
-     * If we render the series immediately, we don't have to loop later.
-     *
-     * @internal
-     * @param {Highchart.Series} s
-     * The series to push.
+     * Push a series to the renderer
+     * If we render the series immediatly, we don't have to loop later
+     * @private
+     * @param s {Highchart.Series} - the series to push
      */
-    pushSeries(s) {
-        const markerData = this.markerData, series = this.series, settings = this.settings;
+    function pushSeries(s) {
         if (series.length > 0) {
+            // series[series.length - 1].to = data.length;
             if (series[series.length - 1].hasMarkers) {
                 series[series.length - 1].markerTo = markerData.length;
             }
@@ -742,8 +726,9 @@ class WGLRenderer {
         if (settings.debug.timeSeriesProcessing) {
             console.time('building ' + s.type + ' series'); // eslint-disable-line no-console
         }
-        const obj = {
+        var obj = {
             segments: [],
+            // from: data.length,
             markerFrom: markerData.length,
             // Push RGBA values to this array to use per. point coloring.
             // It should be 0-padded, so each component should be pushed in
@@ -756,7 +741,19 @@ class WGLRenderer {
                 s.options.marker.enabled !== false :
                 false,
             showMarkers: true,
-            drawMode: WGLDrawMode[s.type] || 'LINE_STRIP'
+            drawMode: {
+                'area': 'lines',
+                'arearange': 'lines',
+                'areaspline': 'lines',
+                'column': 'lines',
+                'columnrange': 'lines',
+                'bar': 'lines',
+                'line': 'line_strip',
+                'scatter': 'points',
+                'heatmap': 'triangles',
+                'treemap': 'triangles',
+                'bubble': 'points'
+            }[s.type] || 'line_strip'
         };
         if (s.index >= series.length) {
             series.push(obj);
@@ -765,7 +762,7 @@ class WGLRenderer {
             series[s.index] = obj;
         }
         // Add the series data to our buffer(s)
-        this.pushSeriesData(s, obj);
+        pushSeriesData(s, obj);
         if (settings.debug.timeSeriesProcessing) {
             console.timeEnd('building ' + s.type + ' series'); // eslint-disable-line no-console
         }
@@ -773,34 +770,29 @@ class WGLRenderer {
     /**
      * Flush the renderer.
      * This removes pushed series and vertices.
-     * Should be called after clearing and before rendering.
-     * @internal
+     * Should be called after clearing and before rendering
+     * @private
      */
-    flush() {
-        const vbuffer = this.vbuffer;
-        this.data = [];
-        this.markerData = [];
-        this.series = [];
+    function flush() {
+        series = [];
+        exports.data = data = [];
+        markerData = [];
         if (vbuffer) {
             vbuffer.destroy();
         }
     }
     /**
-     * Pass x-axis to shader.
-     *
-     * @internal
-     * @param {Highcharts.Axis} axis
-     * The x-axis.
+     * Pass x-axis to shader
+     * @private
+     * @param axis {Highcharts.Axis} - the x-axis
      */
-    setXAxis(axis) {
-        const shader = this.shader;
+    function setXAxis(axis) {
         if (!shader) {
             return;
         }
-        const pixelRatio = this.getPixelRatio();
+        var pixelRatio = getPixelRatio();
         shader.setUniform('xAxisTrans', axis.transA * pixelRatio);
         shader.setUniform('xAxisMin', axis.min);
-        shader.setUniform('xAxisMax', axis.max);
         shader.setUniform('xAxisMinPad', axis.minPixelPadding * pixelRatio);
         shader.setUniform('xAxisPointRange', axis.pointRange);
         shader.setUniform('xAxisLen', axis.len * pixelRatio);
@@ -810,21 +802,17 @@ class WGLRenderer {
         shader.setUniform('xAxisReversed', (!!axis.reversed));
     }
     /**
-     * Pass y-axis to shader.
-     *
-     * @internal
-     * @param {Highcharts.Axis} axis
-     * The y-axis.
+     * Pass y-axis to shader
+     * @private
+     * @param axis {Highcharts.Axis} - the y-axis
      */
-    setYAxis(axis) {
-        const shader = this.shader;
+    function setYAxis(axis) {
         if (!shader) {
             return;
         }
-        const pixelRatio = this.getPixelRatio();
+        var pixelRatio = getPixelRatio();
         shader.setUniform('yAxisTrans', axis.transA * pixelRatio);
         shader.setUniform('yAxisMin', axis.min);
-        shader.setUniform('yAxisMax', axis.max);
         shader.setUniform('yAxisMinPad', axis.minPixelPadding * pixelRatio);
         shader.setUniform('yAxisPointRange', axis.pointRange);
         shader.setUniform('yAxisLen', axis.len * pixelRatio);
@@ -834,39 +822,30 @@ class WGLRenderer {
         shader.setUniform('yAxisReversed', (!!axis.reversed));
     }
     /**
-     * Set the translation threshold.
-     *
-     * @internal
-     * @param {boolean} has
-     * Has threshold flag.
-     * @param {numbe} translation
-     * The threshold.
+     * Set the translation threshold
+     * @private
+     * @param has {boolean} - has threshold flag
+     * @param translation {Float} - the threshold
      */
-    setThreshold(has, translation) {
-        const shader = this.shader;
-        if (!shader) {
-            return;
-        }
+    function setThreshold(has, translation) {
         shader.setUniform('hasThreshold', has);
         shader.setUniform('translatedThreshold', translation);
     }
     /**
-     * Render the data.
+     * Render the data
      * This renders all pushed series.
-     * @internal
+     * @private
      */
-    renderChart(chart) {
-        const gl = this.gl, settings = this.settings, shader = this.shader, vbuffer = this.vbuffer;
-        const pixelRatio = this.getPixelRatio();
+    function render(chart) {
+        var pixelRatio = getPixelRatio();
         if (chart) {
-            this.width = chart.chartWidth * pixelRatio;
-            this.height = chart.chartHeight * pixelRatio;
+            width = chart.chartWidth * pixelRatio;
+            height = chart.chartHeight * pixelRatio;
         }
         else {
             return false;
         }
-        const height = this.height, width = this.width;
-        if (!gl || !shader || !width || !height) {
+        if (!gl || !width || !height || !shader) {
             return false;
         }
         if (settings.debug.timeRendering) {
@@ -876,25 +855,22 @@ class WGLRenderer {
         gl.canvas.height = height;
         shader.bind();
         gl.viewport(0, 0, width, height);
-        shader.setPMatrix(WGLRenderer.orthoMatrix(width, height));
+        shader.setPMatrix(orthoMatrix(width, height));
         if (settings.lineWidth > 1 && !H.isMS) {
             gl.lineWidth(settings.lineWidth);
         }
-        if (vbuffer) {
-            vbuffer.build(this.data, 'aVertexPosition', 4);
-            vbuffer.bind();
-        }
+        vbuffer.build(exports.data, 'aVertexPosition', 4);
+        vbuffer.bind();
         shader.setInverted(chart.inverted);
         // Render the series
-        this.series.forEach((s, si) => {
-            const options = s.series.options, shapeOptions = options.marker, lineWidth = (typeof options.lineWidth !== 'undefined' ?
+        series.forEach(function (s, si) {
+            var options = s.series.options, shapeOptions = options.marker, sindex, lineWidth = (typeof options.lineWidth !== 'undefined' ?
                 options.lineWidth :
-                1), threshold = options.threshold, hasThreshold = isNumber(threshold), yBottom = s.series.yAxis.getThreshold(threshold), translatedThreshold = yBottom, showMarkers = pick(options.marker ? options.marker.enabled : null, s.series.xAxis.isRadial ? true : null, s.series.closestPointRangePx >
+                1), threshold = options.threshold, hasThreshold = isNumber(threshold), yBottom = s.series.yAxis.getThreshold(threshold), translatedThreshold = yBottom, cbuffer, showMarkers = pick(options.marker ? options.marker.enabled : null, s.series.xAxis.isRadial ? true : null, s.series.closestPointRangePx >
                 2 * ((options.marker ?
                     options.marker.radius :
-                    10) || 10)), shapeTexture = this.textureHandles[(shapeOptions && shapeOptions.symbol) ||
-                s.series.symbol] || this.textureHandles.circle;
-            let sindex, cbuffer, fillColor, scolor = [];
+                    10) || 10)), fillColor, shapeTexture = textureHandles[(shapeOptions && shapeOptions.symbol) ||
+                s.series.symbol] || textureHandles.circle, scolor = [];
             if (s.segments.length === 0 ||
                 s.segments[0].from === s.segments[0].to) {
                 return;
@@ -904,21 +880,12 @@ class WGLRenderer {
                 shader.setTexture(shapeTexture.handle);
             }
             if (chart.styledMode) {
-                if (s.series.markerGroup === s.series.chart.boost?.markerGroup) {
-                    // Create a temporary markerGroup to get the fill color
-                    delete s.series.markerGroup;
-                    s.series.markerGroup = s.series.plotGroup('markerGroup', 'markers', 'visible', 1, chart.seriesGroup).addClass('highcharts-tracker');
-                    fillColor = s.series.markerGroup.getStyle('fill');
-                    s.series.markerGroup.destroy();
-                    s.series.markerGroup = s.series.chart.boost?.markerGroup;
-                }
-                else {
-                    fillColor = s.series.markerGroup?.getStyle('fill');
-                }
+                fillColor = (s.series.markerGroup &&
+                    s.series.markerGroup.getStyle('fill'));
             }
             else {
                 fillColor =
-                    (s.drawMode === 'POINTS' && // #14260
+                    (s.drawMode === 'points' && // #14260
                         s.series.pointAttribs &&
                         s.series.pointAttribs().fill) ||
                         s.series.color;
@@ -932,6 +899,12 @@ class WGLRenderer {
             scolor = color(fillColor).rgba;
             if (!settings.useAlpha) {
                 scolor[3] = 1.0;
+            }
+            // This is very much temporary
+            if (s.drawMode === 'lines' &&
+                settings.useAlpha &&
+                scolor[3] < 1) {
+                scolor[3] /= 10;
             }
             // Blending
             if (options.boostBlending === 'add') {
@@ -947,36 +920,29 @@ class WGLRenderer {
                 gl.blendEquation(gl.FUNC_MIN);
             }
             else {
-                /// gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+                // gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
                 // gl.blendEquation(gl.FUNC_ADD);
                 gl.blendFuncSeparate(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA, gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
             }
             shader.reset();
             // If there are entries in the colorData buffer, build and bind it.
             if (s.colorData.length > 0) {
-                shader.setUniform('hasColor', 1);
-                cbuffer = new WGLVertexBuffer(gl, shader);
-                cbuffer.build(
-                // The color array attribute for vertex is assigned from 0,
-                // so it needs to be shifted to be applied to further
-                // segments. #18858
-                Array(s.segments[0].from).concat(s.colorData), 'aColor', 4);
+                shader.setUniform('hasColor', 1.0);
+                cbuffer = GLVertexBuffer(gl, shader); // eslint-disable-line new-cap
+                cbuffer.build(s.colorData, 'aColor', 4);
                 cbuffer.bind();
             }
             else {
-                // Set the hasColor uniform to false (0) when the series
-                // contains no colorData buffer points. #18858
-                shader.setUniform('hasColor', 0);
                 // #15869, a buffer with fewer points might already be bound by
                 // a different series/chart causing out of range errors
-                gl.disableVertexAttribArray(gl.getAttribLocation(shader.getProgram(), 'aColor'));
+                gl.disableVertexAttribArray(gl.getAttribLocation(shader.program(), 'aColor'));
             }
             // Set series specific uniforms
             shader.setColor(scolor);
-            this.setXAxis(s.series.xAxis);
-            this.setYAxis(s.series.yAxis);
-            this.setThreshold(hasThreshold, translatedThreshold);
-            if (s.drawMode === 'POINTS') {
+            setXAxis(s.series.xAxis);
+            setYAxis(s.series.yAxis);
+            setThreshold(hasThreshold, translatedThreshold);
+            if (s.drawMode === 'points') {
                 shader.setPointSize(pick(options.marker && options.marker.radius, 0.5) * 2 * pixelRatio);
             }
             // If set to true, the toPixels translations in the shader
@@ -986,19 +952,12 @@ class WGLRenderer {
                 shader.setBubbleUniforms(s.series, s.zMin, s.zMax, pixelRatio);
             }
             shader.setDrawAsCircle(asCircle[s.series.type] || false);
-            if (!vbuffer) {
-                return;
-            }
             // Do the actual rendering
             // If the line width is < 0, skip rendering of the lines. See #7833.
-            if (lineWidth > 0 || s.drawMode !== 'LINE_STRIP') {
-                const { x: cx, y: cy, width: cw, height: ch } = getBoostClipRect(chart, s.series);
-                gl.enable(gl.SCISSOR_TEST);
-                gl.scissor(cx, height - cy - ch, cw, ch);
+            if (lineWidth > 0 || s.drawMode !== 'line_strip') {
                 for (sindex = 0; sindex < s.segments.length; sindex++) {
                     vbuffer.render(s.segments[sindex].from, s.segments[sindex].to, s.drawMode);
                 }
-                gl.disable(gl.SCISSOR_TEST);
             }
             if (s.hasMarkers && showMarkers) {
                 shader.setPointSize(pick(options.marker && options.marker.radius, 5) * 2 * pixelRatio);
@@ -1011,94 +970,103 @@ class WGLRenderer {
         if (settings.debug.timeRendering) {
             console.timeEnd('gl rendering'); // eslint-disable-line no-console
         }
-        if (this.postRenderCallback) {
-            this.postRenderCallback(this);
+        if (postRenderCallback) {
+            postRenderCallback();
         }
-        this.flush();
+        flush();
     }
     /**
-     * Render the data when ready.
-     * @internal
+     * Render the data when ready
+     * @private
      */
-    render(chart) {
-        this.clear();
+    function renderWhenReady(chart) {
+        clear();
         if (chart.renderer.forExport) {
-            return this.renderChart(chart);
+            return render(chart);
         }
-        if (this.isInited) {
-            this.renderChart(chart);
+        if (isInited) {
+            render(chart);
         }
         else {
-            setTimeout(() => {
-                this.render(chart);
+            setTimeout(function () {
+                renderWhenReady(chart);
             }, 1);
         }
     }
     /**
-     * Set the viewport size in pixels.
+     * Set the viewport size in pixels
      * Creates an orthographic perspective matrix and applies it.
-     * @internal
+     * @private
+     * @param w {Integer} - the width of the viewport
+     * @param h {Integer} - the height of the viewport
      */
-    setSize(width, height) {
-        const shader = this.shader;
+    function setSize(w, h) {
         // Skip if there's no change, or if we have no valid shader
-        if (!shader || (this.width === width && this.height === height)) {
+        if ((width === w && height === h) || !shader) {
             return;
         }
-        this.width = width;
-        this.height = height;
+        width = w;
+        height = h;
         shader.bind();
-        shader.setPMatrix(WGLRenderer.orthoMatrix(width, height));
+        shader.setPMatrix(orthoMatrix(width, height));
     }
     /**
-     * Init OpenGL.
-     * @internal
+     * Init OpenGL
+     * @private
+     * @param canvas {HTMLCanvas} - the canvas to render to
      */
-    init(canvas, noFlush) {
-        const settings = this.settings;
-        this.isInited = false;
+    function init(canvas, noFlush) {
+        var i = 0, contexts = [
+            'webgl',
+            'experimental-webgl',
+            'moz-webgl',
+            'webkit-3d'
+        ];
+        isInited = false;
         if (!canvas) {
             return false;
         }
         if (settings.debug.timeSetup) {
             console.time('gl setup'); // eslint-disable-line no-console
         }
-        for (let i = 0; i < contexts.length; ++i) {
-            this.gl = canvas.getContext(contexts[i], {
-            //    /premultipliedAlpha: false
+        for (; i < contexts.length; i++) {
+            gl = canvas.getContext(contexts[i], {
+            //    premultipliedAlpha: false
             });
-            if (this.gl) {
+            if (gl) {
                 break;
             }
         }
-        const gl = this.gl;
         if (gl) {
             if (!noFlush) {
-                this.flush();
+                flush();
             }
         }
         else {
             return false;
         }
         gl.enable(gl.BLEND);
-        /// gl.blendFunc(gl.SRC_ALPHA, gl.ONE);
+        // gl.blendFunc(gl.SRC_ALPHA, gl.ONE);
         gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
         gl.disable(gl.DEPTH_TEST);
-        /// gl.depthMask(gl.FALSE);
+        // gl.depthMask(gl.FALSE);
         gl.depthFunc(gl.LESS);
-        const shader = this.shader = new WGLShader(gl);
+        shader = GLShader(gl); // eslint-disable-line new-cap
         if (!shader) {
             // We need to abort, there's no shader context
             return false;
         }
-        this.vbuffer = new WGLVertexBuffer(gl, shader);
-        const createTexture = (name, fn) => {
-            const props = {
+        vbuffer = GLVertexBuffer(gl, shader); // eslint-disable-line new-cap
+        /**
+         * @private
+         */
+        function createTexture(name, fn) {
+            var props = {
                 isReady: false,
                 texture: doc.createElement('canvas'),
                 handle: gl.createTexture()
             }, ctx = props.texture.getContext('2d');
-            this.textureHandles[name] = props;
+            textureHandles[name] = props;
             props.texture.width = 512;
             props.texture.height = 512;
             ctx.mozImageSmoothingEnabled = false;
@@ -1111,33 +1079,33 @@ class WGLRenderer {
             try {
                 gl.activeTexture(gl.TEXTURE0);
                 gl.bindTexture(gl.TEXTURE_2D, props.handle);
-                /// gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, true);
+                // gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, true);
                 gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, props.texture);
                 gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
                 gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
                 gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
                 gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
-                /// gl.generateMipmap(gl.TEXTURE_2D);
+                // gl.generateMipmap(gl.TEXTURE_2D);
                 gl.bindTexture(gl.TEXTURE_2D, null);
                 props.isReady = true;
             }
-            catch {
-                // Silent error
+            catch (e) {
+                // silent error
             }
-        };
+        }
         // Circle shape
-        createTexture('circle', (ctx) => {
+        createTexture('circle', function (ctx) {
             ctx.beginPath();
             ctx.arc(256, 256, 256, 0, 2 * Math.PI);
             ctx.stroke();
             ctx.fill();
         });
         // Square shape
-        createTexture('square', (ctx) => {
+        createTexture('square', function (ctx) {
             ctx.fillRect(0, 0, 512, 512);
         });
         // Diamond shape
-        createTexture('diamond', (ctx) => {
+        createTexture('diamond', function (ctx) {
             ctx.beginPath();
             ctx.moveTo(256, 0);
             ctx.lineTo(512, 256);
@@ -1147,7 +1115,7 @@ class WGLRenderer {
             ctx.fill();
         });
         // Triangle shape
-        createTexture('triangle', (ctx) => {
+        createTexture('triangle', function (ctx) {
             ctx.beginPath();
             ctx.moveTo(0, 512);
             ctx.lineTo(256, 0);
@@ -1156,7 +1124,7 @@ class WGLRenderer {
             ctx.fill();
         });
         // Triangle shape (rotated)
-        createTexture('triangle-down', (ctx) => {
+        createTexture('triangle-down', function (ctx) {
             ctx.beginPath();
             ctx.moveTo(0, 0);
             ctx.lineTo(256, 512);
@@ -1164,27 +1132,39 @@ class WGLRenderer {
             ctx.lineTo(0, 0);
             ctx.fill();
         });
-        this.isInited = true;
+        isInited = true;
         if (settings.debug.timeSetup) {
             console.timeEnd('gl setup'); // eslint-disable-line no-console
         }
         return true;
     }
     /**
-     * @internal
-     * @todo use it
+     * Check if we have a valid OGL context
+     * @private
+     * @return {boolean}
+     * true if the context is valid
      */
-    destroy() {
-        const gl = this.gl, shader = this.shader, vbuffer = this.vbuffer;
-        this.flush();
-        if (vbuffer) {
-            vbuffer.destroy();
-        }
-        if (shader) {
-            shader.destroy();
-        }
+    function valid() {
+        return gl !== false;
+    }
+    /**
+     * Check if the renderer has been initialized
+     * @private
+     * @return {boolean}
+     * true if it has, false if not
+     */
+    function inited() {
+        return isInited;
+    }
+    /**
+     * @private
+     */
+    function destroy() {
+        flush();
+        vbuffer.destroy();
+        shader.destroy();
         if (gl) {
-            objectEach(this.textureHandles, (texture) => {
+            objectEach(textureHandles, function (texture) {
                 if (texture.handle) {
                     gl.deleteTexture(texture.handle);
                 }
@@ -1193,11 +1173,27 @@ class WGLRenderer {
             gl.canvas.height = 1;
         }
     }
+    // /////////////////////////////////////////////////////////////////////////
+    exports = {
+        allocateBufferForSingleSeries: allocateBufferForSingleSeries,
+        pushSeries: pushSeries,
+        setSize: setSize,
+        inited: inited,
+        setThreshold: setThreshold,
+        init: init,
+        render: renderWhenReady,
+        settings: settings,
+        valid: valid,
+        clear: clear,
+        flush: flush,
+        setXAxis: setXAxis,
+        setYAxis: setYAxis,
+        data: data,
+        gl: getGL,
+        allocateBuffer: allocateBuffer,
+        destroy: destroy,
+        setOptions: setOptions
+    };
+    return exports;
 }
-/* *
- *
- *  Default Export
- *
- * */
-/** @internal */
-export default WGLRenderer;
+export default GLRenderer;

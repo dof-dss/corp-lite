@@ -1,26 +1,14 @@
-// SPDX-License-Identifier: LicenseRef-Highcharts
 /**
- * @license Highcharts JS v12.5.0 (2026-01-12)
+ * @license Highcharts JS v10.0.0 (2022-03-07)
  * @module highcharts/modules/export-data
  * @requires highcharts
  * @requires highcharts/modules/exporting
  *
- * Export data module
+ * Exporting module
  *
- * (c) 2010-2026 Highsoft AS
- * Author: Torstein Honsi
+ * (c) 2010-2021 Torstein Honsi
  *
- * A commercial license may be required depending on use.
- * See www.highcharts.com/license
+ * License: www.highcharts.com/license
  */
 'use strict';
-import Highcharts from '../../Core/Globals.js';
-import DownloadURL from '../../Shared/DownloadURL.js';
-import ExportData from '../../Extensions/ExportData/ExportData.js';
-const G = Highcharts;
-// Compatibility
-G.dataURLtoBlob = G.dataURLtoBlob || DownloadURL.dataURLtoBlob;
-G.downloadURL = G.downloadURL || DownloadURL.downloadURL;
-// Compose
-ExportData.compose(G.Chart, G.Exporting, G.Series);
-export default Highcharts;
+import '../../Extensions/ExportData.js';

@@ -1,21 +1,16 @@
-// SPDX-License-Identifier: LicenseRef-Highcharts
 /**
- * @license Highcharts JS v12.5.0 (2026-01-12)
+ * @license Highcharts JS v10.0.0 (2022-03-07)
  * @module highcharts/modules/treemap
  * @requires highcharts
  *
- * (c) 2014-2026 Highsoft AS
+ * (c) 2014-2021 Highsoft AS
  * Authors: Jon Arild Nygard / Oystein Moseng
  *
- * A commercial license may be required depending on use.
- * See www.highcharts.com/license
+ * License: www.highcharts.com/license
  */
 'use strict';
 import Highcharts from '../../Core/Globals.js';
-import Breadcrumbs from '../../Extensions/Breadcrumbs/Breadcrumbs.js';
-import TreemapSeries from '../../Series/Treemap/TreemapSeries.js';
-const G = Highcharts;
-G.Breadcrumbs = G.Breadcrumbs || Breadcrumbs;
-G.Breadcrumbs.compose(G.Chart, G.defaultOptions);
-TreemapSeries.compose(G.Series);
-export default Highcharts;
+import '../../Series/Treemap/TreemapSeries.js';
+import Breadcrumbs from '../../Extensions/Breadcrumbs.js';
+var G = Highcharts;
+G.Breadcrumbs = Breadcrumbs;
