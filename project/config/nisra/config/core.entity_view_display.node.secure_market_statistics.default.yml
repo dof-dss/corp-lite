@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.secure_market_statistics.body
     - field.field.node.secure_market_statistics.field_external_publication
     - field.field.node.secure_market_statistics.field_meta_tags
+    - field.field.node.secure_market_statistics.field_publication_rating
     - field.field.node.secure_market_statistics.field_publication_series
     - field.field.node.secure_market_statistics.field_publication_type
     - field.field.node.secure_market_statistics.field_published_date
@@ -29,7 +30,7 @@ third_party_settings:
       label: Documents
       parent_name: ''
       region: content
-      weight: 5
+      weight: 7
       format_type: html_element
       format_settings:
         classes: list--no-bullet
@@ -52,7 +53,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 4
+    weight: 6
     region: content
   field_external_publication:
     type: link
@@ -66,13 +67,22 @@ content:
     third_party_settings: {  }
     weight: 7
     region: content
+  field_publication_rating:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: teaser
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
   field_publication_series:
     type: entity_reference_label
     label: inline
     settings:
       link: true
     third_party_settings: {  }
-    weight: 1
+    weight: 4
     region: content
   field_published_date:
     type: datetime_default
@@ -81,7 +91,7 @@ content:
       timezone_override: ''
       format_type: corplite_format
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
   field_research_support:
     type: entity_reference_label
@@ -89,7 +99,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   field_secure_attachment:
     type: entity_reference_entity_view
@@ -106,14 +116,14 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   field_summary:
     type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 5
     region: content
 hidden:
   content_moderation_control: true

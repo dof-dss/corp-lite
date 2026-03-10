@@ -56,3 +56,9 @@
   font-size: 1.8rem;
   line-height: 1.5;
 }
+
+.page-node-type-publication .published-date,
+.page-node-type-secure-statistics .published-date,
+.page-node-type-secure-market-statistics .published-date, {
+  margin-top: 0 !important;
+}

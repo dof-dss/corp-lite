@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.secure_market_statistics.body
     - field.field.node.secure_market_statistics.field_external_publication
     - field.field.node.secure_market_statistics.field_meta_tags
+    - field.field.node.secure_market_statistics.field_publication_rating
     - field.field.node.secure_market_statistics.field_publication_series
     - field.field.node.secure_market_statistics.field_publication_type
     - field.field.node.secure_market_statistics.field_published_date
@@ -154,6 +155,7 @@ content:
     region: content
 hidden:
   content_moderation_control: true
+  field_publication_rating: true
   langcode: true
   links: true
   search_api_excerpt: true
