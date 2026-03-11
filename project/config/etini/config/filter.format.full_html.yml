@@ -8,7 +8,6 @@ dependencies:
     - editor
     - entity_embed
     - media
-    - origins_common
 _core:
   default_config_hash: Lf-rnpcpkD_L92mHIwewlAo7LZ5WYMoyemrnwBPTghk
 name: 'Full HTML'
