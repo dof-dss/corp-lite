@@ -7,7 +7,6 @@ dependencies:
     - editor
     - entity_embed
     - media
-    - origins_common
     - token_filter
 _core:
   default_config_hash: Lf-rnpcpkD_L92mHIwewlAo7LZ5WYMoyemrnwBPTghk

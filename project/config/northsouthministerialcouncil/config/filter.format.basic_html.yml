@@ -15,7 +15,6 @@ dependencies:
     - linkit
     - media
     - noreferrer
-    - origins_common
 _core:
   default_config_hash: kuHSSL1ZhVz9zerG_2PWzdHWJisspWMRRY7hPQ0w_yI
 name: 'Basic HTML'
