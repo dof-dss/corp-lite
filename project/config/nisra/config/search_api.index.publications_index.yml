@@ -50,6 +50,7 @@ third_party_settings:
     term_modifiers:
       slop: 3
       fuzzy: 1
+      fuzzy_analyzer: true
     advanced:
       index_prefix: ''
       collection: ''
@@ -242,4 +243,4 @@ options:
   delete_on_fail: true
   index_directly: true
   track_changes_in_references: true
-server: null
+server: solr_default
