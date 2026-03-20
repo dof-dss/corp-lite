@@ -1,0 +1,19 @@
+uuid: 022eff7f-6bcb-4d1a-9b1c-69619b8141a3
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - taxonomy
+id: taxonomy_term.field_related_statistics
+field_name: field_related_statistics
+entity_type: taxonomy_term
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

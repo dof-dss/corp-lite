@@ -1,0 +1,26 @@
+uuid: de1f0836-14b5-428f-bf7b-c0710a30942c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_latest_statistics
+    - taxonomy.vocabulary.publication_series
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats: {  }
+id: taxonomy_term.publication_series.field_latest_statistics
+field_name: field_latest_statistics
+entity_type: taxonomy_term
+bundle: publication_series
+label: 'Latest Statistics'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

@@ -41,3 +41,9 @@ facets:
     separator: ', '
     show_count: false
     weight: 0
+  reference:
+    checked: true
+    label: Reference
+    separator: ', '
+    show_count: false
+    weight: 0

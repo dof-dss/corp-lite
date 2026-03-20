@@ -16,18 +16,6 @@
         {
             "type": "package",
             "package": {
-                "name": "highcharts/highcharts",
-                "version": "10.0.0",
-                "type": "drupal-library",
-                "dist": {
-                    "url": "https://code.highcharts.com/zips/Highcharts-10.0.0.zip",
-                    "type": "zip"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
                 "name": "deaemth/easychart",
                 "version": "3.1.3",
                 "type": "drupal-library",
@@ -81,12 +69,13 @@
         "deaemth/easychart": "^3.1",
         "dimsemenov/photoswipe": "^5.4",
         "dimsemenov/photoswipe-dynamic-caption-plugin": "^1.2",
-        "dof-dss/nicsdru_origins_modules": "^10.5",
+        "dof-dss/nicsdru_origins_modules": "^10.6",
         "drupal/a11y_form_helpers": "^2.1",
         "drupal/address": "^1.12",
         "drupal/admin_toolbar": "^3.6",
-        "drupal/allowed_formats": "^2.0",
-        "drupal/blazy": "^2.22",
+        "drupal/allowed_formats": "^3.0",
+        "drupal/antibot": "^2.0",
+        "drupal/blazy": "^3.0",
         "drupal/block_content_permissions": "^1.11",
         "drupal/block_field": "^1.0@RC",
         "drupal/block_list_override": "^1.0",
@@ -94,7 +83,7 @@
         "drupal/chosen": "^4.0",
         "drupal/chosen_lib": "^4.0",
         "drupal/ckeditor5_allowed_html": "^1.5@dev",
-        "drupal/ckeditor5_premium_features": "^1.6",
+        "drupal/ckeditor5_premium_features": "^1.7",
         "drupal/clientside_validation": "^4.0",
         "drupal/clone_nodes": "^1.2@dev",
         "drupal/config_filter": "^2.2",
@@ -112,9 +101,9 @@
         "drupal/diff": "^1.1",
         "drupal/draggableviews": "^2.1",
         "drupal/easychart": "^4.0",
-        "drupal/entity_browser": "^2.9",
+        "drupal/entity_browser": "^2.15",
         "drupal/entity_embed": "^1.7",
-        "drupal/entity_reference_revisions": "^1.10",
+        "drupal/entity_reference_revisions": "^1.14",
         "drupal/entityqueue": "^1.6",
         "drupal/eu_cookie_compliance": "^1.28",
         "drupal/facets": "2.0.10",
@@ -131,19 +120,19 @@
         "drupal/google_tag": "^2.0",
         "drupal/handy_cache_tags": "^1.4",
         "drupal/honeypot": "2.1.2",
-        "drupal/http_cache_control": "^2.1",
+        "drupal/http_cache_control": "^2.9",
         "drupal/inline_entity_form": "^3.0@RC",
         "drupal/jquery_ui_accordion": "^2.0",
         "drupal/libraries": "^4.0",
         "drupal/link_fix_absolute_urls": "^1.0",
-        "drupal/linkit": "7.0.x",
+        "drupal/linkit": "^7.0",
         "drupal/maxlength": "^3.1",
         "drupal/media_entity_browser": "^2.0@alpha",
         "drupal/media_file_delete": "^1.3",
         "drupal/media_library_edit": "^3.0",
-        "drupal/menu_admin_per_menu": "^1.5",
-        "drupal/menu_breadcrumb": "^2.0@alpha",
-        "drupal/metatag": "^2.0",
+        "drupal/menu_admin_per_menu": "^1.7",
+        "drupal/menu_breadcrumb": "^2.0",
+        "drupal/metatag": "^2.2",
         "drupal/migrate_absolute_links": "^6.0@dev",
         "drupal/migrate_conditions": "^2.2",
         "drupal/migrate_source_csv": "^3.7",
@@ -158,29 +147,30 @@
         "drupal/pathauto": "^1.11",
         "drupal/photoswipe": "^5.0",
         "drupal/rdf": "^2.1",
-        "drupal/readonlymode": "^1.2",
-        "drupal/redirect": "^1.8",
+        "drupal/readonlymode": "^1.4",
+        "drupal/redirect": "^1.12",
         "drupal/redis": "^1.7",
-        "drupal/scheduled_transitions": "^2.5",
-        "drupal/search_api": "^1.38",
+        "drupal/scheduled_transitions": "^2.7",
+        "drupal/search_api": "^1.40",
         "drupal/search_api_autocomplete": "^1.4",
         "drupal/search_api_location": "^1.0@alpha",
         "drupal/search_api_solr": "^4.3",
         "drupal/search_api_spellcheck": "^4.0",
         "drupal/shs": "^2.0",
         "drupal/simple_gmap": "^3.1",
+        "drupal/simple_sitemap": "^4.2",
         "drupal/simplei": "^2.1",
         "drupal/smart_trim": "^2.2",
         "drupal/structure_sync": "^2.0",
         "drupal/taxonomy_access_fix": "^4.0",
         "drupal/telephone_plus": "^9.1",
-        "drupal/token": "^1.12",
+        "drupal/token": "^1.17",
         "drupal/token_filter": "^2.0",
         "drupal/twig_field_value": "^2.0",
-        "drupal/twig_tweak": "^3.2",
+        "drupal/twig_tweak": "^3.4",
         "drupal/ultimate_cron": "^2.0@alpha",
         "drupal/views_contextual_filters_or": "^1.4",
-        "drupal/views_custom_cache_tag": "^1.3",
+        "drupal/views_custom_cache_tag": "^1.5",
         "drupal/views_field_view": "^1.0@beta",
         "drupal/views_rss": "^2.4",
         "drupal/views_tree": "^2.0@RC",
@@ -188,7 +178,6 @@
         "drupal/whatlinkshere": "^2.1",
         "drush/drush": "^12.5",
         "harvesthq/chosen": "^1.8",
-        "highcharts/highcharts": "^10",
         "platformsh/config-reader": "^2.4",
         "symfony/http-client": "^5.4"
     },
@@ -267,7 +256,8 @@
                 "Allow view title overrides to show in page title": "https://www.drupal.org/files/issues/2023-02-08/2787051-74.patch",
                 "Increase claro xs font size": "patches/claro-font-size.patch",
                 "Force expiration of node cache tag when book outline changes": "https://gist.githubusercontent.com/johangant/8b97bf93525475ee89d8be246a418777/raw/145c727d1df7403ce38819437bc46989e1a85a2b/expire-book-node-cache-key-on-change.patch",
-                "The link on the Image tag is redirecting to an undefined page from the node preview screen #3308432": "https://www.drupal.org/files/issues/2025-06-09/3308432-42.patch"
+                "The link on the Image tag is redirecting to an undefined page from the node preview screen #3308432": "https://www.drupal.org/files/issues/2025-06-09/3308432-42.patch",
+                "Taxonomy term error when parent of itself": "https://www.drupal.org/files/issues/2025-12-16/term_parent_3563444-1.patch"
             },
             "drupal/ckeditor5_dev": {
                 "Report that lists enabled plugins": "https://git.drupalcode.org/project/ckeditor5_dev/-/merge_requests/6.diff"
@@ -275,9 +265,6 @@
             "drupal/easy_install": {
                 "Handle missing core version": "https://www.drupal.org/files/issues/2019-12-19/easy_install_core_version-3101883-0.patch",
                 "non-existent service entity.manager": "https://www.drupal.org/files/issues/2020-12-08/3162621-4.patch"
-            },
-            "drupal/entity_browser": {
-                "TypeError: key(): Argument #1 ($array) must be of type array": "https://www.drupal.org/files/issues/2024-06-12/2914385-35.patch"
             },
             "drupal/entity_embed": {
                 "Drupal 10.5/11.2 compatability, cannot edit embedded entities": "https://www.drupal.org/files/issues/2025-08-08/entity_embed--fix-ckeditor-icon-reference--3531672-22.patch"
@@ -302,17 +289,14 @@
                 "Fix Clicking \"Tasks | Published\" to close the sidebar tray redirects to AJAX page": "https://git.drupalcode.org/project/moderation_sidebar/-/merge_requests/25.patch"
             },
             "drupal/redirect": {
-                "Add URL Redirects tab to taxonomy term edit form": "https://www.drupal.org/files/issues/2021-03-26/redirect_provide_redirect_tab_on_taxonomy_terms_3205896.patch"
+                "Add URL Redirects tab to taxonomy term edit form": "https://www.drupal.org/files/issues/2025-09-17/3205896-5.patch"
             },
             "drupal/ultimate_cron": {
                 "Fix $last_ran deprecation error": "https://www.drupal.org/files/issues/2023-04-03/3351276-4.patch"
             },
-            "drupal/readonlymode": {
-                "Fatal typerror fix": "https://www.drupal.org/files/issues/2020-12-23/readonlymode-string_not_array-3115119-9.patch"
-            },
             "drupal/shs": {
                 "Don't allow duplicates": "https://www.drupal.org/files/issues/2022-08-04/3301687-2-shs-remove-duplicate.patch",
-                "Select list values incorrectly truncated" : "https://www.drupal.org/files/issues/2023-04-07/3277510-shs-truncated-selected-value-9_0.patch"
+                "Select list values incorrectly truncated" : "https://www.drupal.org/files/issues/2026-01-15/incorrectly-truncated-values-3277510.patch"
             },
             "drupal/structure_sync": {
                 "Avoid typeerror when no blocks to import" : "https://www.drupal.org/files/issues/2025-01-06/typerror_no_blocks_3497649.patch"

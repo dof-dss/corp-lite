@@ -6,13 +6,11 @@ dependencies:
     - blazy
     - ckeditor5_allowed_html
     - ckeditor5_premium_features
-    - cookie_content_blocker
     - editor
     - entity_embed
     - linkit
     - media
     - noreferrer
-    - origins_common
     - token_filter
 _core:
   default_config_hash: QdphXFkjNBaiRQoulL-EDt6_5v6D20lNcDiv3l8QomY
@@ -40,12 +38,6 @@ filters:
     provider: ckeditor5_premium_features
     status: false
     weight: -42
-    settings: {  }
-  cookie_content_blocker_filter:
-    id: cookie_content_blocker_filter
-    provider: cookie_content_blocker
-    status: false
-    weight: -38
     settings: {  }
   editor_file_reference:
     id: editor_file_reference
@@ -133,6 +125,7 @@ filters:
     weight: -36
     settings:
       title: true
+      media_substitution: metadata
   media_embed:
     id: media_embed
     provider: media
@@ -151,13 +144,6 @@ filters:
     status: false
     weight: -32
     settings: {  }
-  origins_media_cookie_content_blocker_embed_filter:
-    id: origins_media_cookie_content_blocker_embed_filter
-    provider: origins_common
-    status: false
-    weight: -35
-    settings:
-      replacement_text: 'Click here to view the video content'
   token_filter:
     id: token_filter
     provider: token_filter

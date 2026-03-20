@@ -705,7 +705,7 @@ display:
           exposed: false
           draggable_views_reference: this
           draggable_views_null_order: after
-          draggable_views_pass_arguments: false
+          draggable_views_pass_arguments: 0
         title:
           id: title
           table: node_field_data
@@ -1129,7 +1129,7 @@ display:
           exposed: false
           draggable_views_reference: this
           draggable_views_null_order: after
-          draggable_views_pass_arguments: false
+          draggable_views_pass_arguments: 0
         title:
           id: title
           table: node_field_data
@@ -1516,7 +1516,7 @@ display:
           exposed: false
           draggable_views_reference: this
           draggable_views_null_order: after
-          draggable_views_pass_arguments: false
+          draggable_views_pass_arguments: 0
         title:
           id: title
           table: node_field_data
@@ -1903,7 +1903,7 @@ display:
           exposed: false
           draggable_views_reference: this
           draggable_views_null_order: after
-          draggable_views_pass_arguments: false
+          draggable_views_pass_arguments: 0
         title:
           id: title
           table: node_field_data
@@ -2180,7 +2180,7 @@ display:
           exposed: false
           draggable_views_reference: 'links:draggable_quicklink'
           draggable_views_null_order: after
-          draggable_views_pass_arguments: false
+          draggable_views_pass_arguments: 0
         title:
           id: title
           table: node_field_data

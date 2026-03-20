@@ -1,0 +1,64 @@
+/*
+ * @file
+ * Defines the components for the theme.
+ */
+
+@use '../../../../../../../../../web/themes/custom/nicsdru_corplite_theme/src/scss/init' as *;
+
+.publication-series__type {
+  margin: 0;
+  padding: 0;
+  color: #4d4d4d;
+  font-size: 1.5rem;
+
+  @include breakpoint($lap) {
+    font-size: 1.6rem;
+  }
+
+  @include breakpoint($desk-plus) {
+    font-size: 1.7rem;
+  }
+}
+
+.historical-reports {
+  margin: 0;
+
+  h3.card__title {
+    margin: 0;
+  }
+
+  .columnItem {
+    margin-bottom: 0;
+  }
+
+  .card__meta {
+    margin-bottom: 0.6rem;
+  }
+}
+
+.publication-related {
+  h3.card__title {
+    margin: 0;
+    font-size: 1.8rem;
+  }
+
+  .card__meta {
+    margin-bottom: 2rem;
+  }
+
+  p.published-date {
+    margin: 0.5rem 0 2rem !important;
+  }
+}
+
+.card__title {
+  margin: 0;
+  font-size: 1.8rem;
+  line-height: 1.5;
+}
+
+.page-node-type-publication .published-date,
+.page-node-type-secure-statistics .published-date,
+.page-node-type-secure-market-statistics .published-date, {
+  margin-top: 0 !important;
+}

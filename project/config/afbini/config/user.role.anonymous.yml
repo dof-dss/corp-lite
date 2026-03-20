@@ -5,6 +5,7 @@ dependencies:
   module:
     - eu_cookie_compliance
     - media
+    - readonlymode
     - system
     - taxonomy_access_fix
 _core:
@@ -16,6 +17,7 @@ is_admin: false
 permissions:
   - 'access content'
   - 'display eu cookie compliance popup'
+  - 'readonlymode access messages'
   - 'view any term'
   - 'view any term name'
   - 'view media'

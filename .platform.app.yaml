@@ -15,7 +15,7 @@ runtime:
         - apcu
         - redis
         - blackfire
-disk: 34816
+disk: 40960
 mounts:
     /web/files:
         source: local
@@ -148,7 +148,7 @@ relationships:
 crons:
     nisra:
         spec: '10 * * * *'
-        cmd: 'drush core-cron -l nisra'
+        cmd: 'cd web/sites/nisra ; drush core-cron'
     logging:
         spec: '*/5 * * * *'
         commands:
@@ -156,13 +156,13 @@ crons:
         shutdown_timeout: 290
     afbini:
         spec: '10 * * * *'
-        cmd: 'drush core-cron -l afbini'
+        cmd: 'cd web/sites/afbini ; drush core-cron'
     hseni:
         spec: '10 * * * *'
-        cmd: 'drush core-cron -l hseni'
+        cmd: 'cd web/sites/hseni ; drush core-cron'
     etini:
         spec: '10 * * * *'
-        cmd: 'drush core-cron -l etini'
+        cmd: 'cd web/sites/etini ; drush core-cron'
     northsouthministerialcouncil:
         spec: '10 * * * *'
-        cmd: 'drush core-cron -l northsouthministerialcouncil'
+        cmd: 'cd web/sites/northsouthministerialcouncil ; drush core-cron'

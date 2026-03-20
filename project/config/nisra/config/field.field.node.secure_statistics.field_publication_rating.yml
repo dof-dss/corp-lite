@@ -1,0 +1,29 @@
+uuid: 7ac8d4a7-8619-44d6-9d12-a20e6ba0c6b3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_publication_rating
+    - node.type.secure_statistics
+    - taxonomy.vocabulary.document_types
+id: node.secure_statistics.field_publication_rating
+field_name: field_publication_rating
+entity_type: node
+bundle: secure_statistics
+label: 'Publication rating'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      document_types: document_types
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
