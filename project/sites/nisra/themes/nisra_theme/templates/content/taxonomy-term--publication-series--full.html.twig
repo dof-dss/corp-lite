@@ -1,0 +1,67 @@
+{#
+/**
+ * @file
+ * Theme override for full taxonomy term page for publication series.
+ */
+#}
+<header>
+  <h1 class="page-title">{{ name }}</h1>
+  {% if content.field_document_type['#items'] is not empty %}
+    {% set document_type_map = {
+      'AOS': 'Accredited Official Statistics',
+      'OS': 'Official Statistics',
+      'R': 'Research'
+    } %}
+
+    <p class="publication-series__type">
+      {% for item in content.field_document_type['#items'] %}
+        {% set code = item.entity.label %}
+          {{ document_type_map[code] ?? code }}
+      {% endfor %}
+    </p>
+  {% endif %}
+</header>
+
+
+  <div class="article-content max-body-text-width" role="presentation">
+    {% if content.description %}
+        <div> {{ content.description }}</div>
+    {% endif %}
+
+    {% if content.field_latest_statistics %}
+        <h2>Latest statistics</h2>
+        <div> {{ content.field_latest_statistics }} </div>
+    {% endif %}
+
+    {% if content.field_future_updates %}
+        <h2>Future updates</h2>
+        <div> {{ content.field_future_updates }} </div>
+    {% endif %}
+
+    {% set related_results = drupal_view_result(
+      'content_by_site_topic',
+      'publication_series_related',
+      taxonomy_term.id()
+    ) %}
+
+    {% if related_results|length > 0 %}
+      <h2>Historical reports</h2>
+      <div>
+        {{ drupal_view(
+          'content_by_site_topic',
+          'publication_series_related',
+          taxonomy_term.id()
+        ) }}
+      </div>
+    {% endif %}
+
+    {% if content.field_further_information %}
+        <h2>Further information</h2>
+        <div> {{ content.field_further_information }} </div>
+    {% endif %}
+
+    {% if content.field_related_statistics %}
+        <h2>Related statistics</h2>
+        <div> {{ content.field_related_statistics }} </div>
+    {% endif %}
+  </div>

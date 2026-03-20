@@ -7,6 +7,8 @@ dependencies:
     - field.field.node.publication.field_attachment
     - field.field.node.publication.field_external_publication
     - field.field.node.publication.field_meta_tags
+    - field.field.node.publication.field_publication_rating
+    - field.field.node.publication.field_publication_series
     - field.field.node.publication.field_publication_type
     - field.field.node.publication.field_published_date
     - field.field.node.publication.field_research_support
@@ -28,7 +30,7 @@ third_party_settings:
       label: Documents
       parent_name: ''
       region: content
-      weight: 5
+      weight: 7
       format_type: html_element
       format_settings:
         classes: list--no-bullet
@@ -53,7 +55,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 4
+    weight: 6
     region: content
   field_attachment:
     type: entity_reference_entity_view
@@ -76,6 +78,23 @@ content:
     third_party_settings: {  }
     weight: 7
     region: content
+  field_publication_rating:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: teaser
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_publication_series:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
   field_published_date:
     type: datetime_default
     label: inline
@@ -83,7 +102,7 @@ content:
       timezone_override: ''
       format_type: corplite_format
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
   field_research_support:
     type: entity_reference_label
@@ -91,7 +110,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   field_site_topics:
     type: entity_reference_label
@@ -99,14 +118,14 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   field_summary:
     type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 5
     region: content
 hidden:
   content_moderation_control: true

@@ -1,0 +1,22 @@
+uuid: c1711d5f-ffa1-4630-ad99-6546fc89ec7c
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: publication_series_pattern
+label: 'Publication series pattern'
+type: 'canonical_entities:taxonomy_term'
+pattern: 'publications/publication-series/[term:name]'
+selection_criteria:
+  2ba604bc-d476-4840-940b-90165aad0ed4:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: 2ba604bc-d476-4840-940b-90165aad0ed4
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      publication_series: publication_series
+selection_logic: and
+weight: -5
+relationships: {  }

@@ -17,6 +17,7 @@ dependencies:
     - node.type.secure_statistics
     - node.type.webform
     - taxonomy.vocabulary.nisra_corporate
+    - taxonomy.vocabulary.publication_series
     - taxonomy.vocabulary.research_support
     - taxonomy.vocabulary.site_topics
   module:
@@ -120,6 +121,7 @@ type_settings:
       - webform
     taxonomy_term:
       - nisra_corporate
+      - publication_series
       - research_support
       - site_topics
   default_moderation_state: draft

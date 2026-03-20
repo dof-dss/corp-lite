@@ -199,3 +199,99 @@ function nisra_common_system_breadcrumb_alter(Breadcrumb &$breadcrumb, RouteMatc
     $breadcrumb->addCacheContexts(['url.path']);
   }
 }
+
+/**
+ * Implements hook_entity_presave().
+ *
+ * Automatically sets 'Publication Rating' on relevant content types
+ * based on the linked Publication Series tag.
+ */
+function nisra_common_entity_presave(\Drupal\Core\Entity\EntityInterface $entity) {
+
+  $content_types = [
+    'publication',
+    'secure_market_statistics',
+    'secure_statistics',
+  ];
+
+  if ($entity instanceof \Drupal\node\Entity\Node && in_array($entity->bundle(), $content_types)) {
+
+    if ($entity->hasField('field_publication_series') && $entity->hasField('field_publication_rating')) {
+
+      // Only set if the field is empty
+      if ($entity->get('field_publication_rating')->isEmpty()) {
+
+        $series_term = $entity->get('field_publication_series')->entity;
+
+        if ($series_term && $series_term->hasField('field_document_type') && !$series_term->get('field_document_type')->isEmpty()) {
+
+          $doc_type_tid = $series_term->get('field_document_type')->target_id;
+
+          $entity->set('field_publication_rating', [
+            'target_id' => $doc_type_tid,
+          ]);
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_entity_view().
+ *
+ * Adds a message on publication nodes indicating whether this is the latest
+ * release in the series or not.
+ */
+function nisra_common_entity_view(array &$build, \Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display, $view_mode) {
+
+  // Only for the content types that have publication series field
+  $types = ['publication', 'secure_market_statistics', 'secure_statistics'];
+
+  if ($entity instanceof Node && in_array($entity->bundle(), $types) && $view_mode === 'full') {
+
+    // Make sure the publication is tagged to a series
+    if (!$entity->get('field_publication_series')->isEmpty()) {
+      $series = $entity->get('field_publication_series')->entity;
+
+      if ($series) {
+
+        // Get all published nodes in the same series
+        $query = \Drupal::entityTypeManager()->getStorage('node')->getQuery();
+        $nids = $query
+          ->accessCheck(TRUE)
+          ->condition('status', 1) // published only
+          ->condition('field_publication_series.target_id', $series->id())
+          ->condition('type', $types, 'IN')
+          ->sort('field_published_date', 'DESC') // Sorting by published date in descending order
+          ->execute();
+
+        if (!empty($nids)) {
+          $latest_nid = reset($nids); // first node is the newest
+
+          if ($latest_nid == $entity->id()) {
+            // This node is the latest in the series
+            $link = Url::fromUri('internal:/publications/series/' . $series->id())->toString();
+            $message_markup = 'This is the latest release in this series. <a href="' . $link . '">View previous releases.</a>';
+          }
+          else {
+            // This node is not the latest in the series
+            $link = Url::fromRoute('entity.node.canonical', ['node' => $latest_nid])->toString();
+            $message_markup = 'This is not the latest release in this series. <a href="' . $link . '">View the latest release.</a>';
+          }
+
+          // Add the message below meta fields
+          $build['latest_in_series_message'] = [
+            '#type' => 'container',
+            '#attributes' => ['class' => ['latest-message']],
+            'markup' => [
+              '#type' => 'markup',
+              '#markup' => $message_markup,
+              '#allowed_tags' => ['a'],
+            ],
+            '#weight' => 4,
+          ];
+        }
+      }
+    }
+  }
+}

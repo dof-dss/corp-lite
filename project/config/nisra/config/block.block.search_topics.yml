@@ -1,0 +1,34 @@
+uuid: 1560db5d-5775-47c6-a575-62e228525d8f
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.topics
+  module:
+    - block_visibility_groups
+    - facets
+    - system
+  theme:
+    - nisra_theme
+id: search_topics
+theme: nisra_theme
+region: sidebar_first
+weight: -15
+provider: null
+plugin: 'facet_block:topics'
+settings:
+  id: 'facet_block:topics'
+  label: 'Statistics and research'
+  label_display: visible
+  provider: facets
+  context_mapping: {  }
+  block_id: search_topics
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/search\r\n/search/topics/*\r\n/search/date/*"

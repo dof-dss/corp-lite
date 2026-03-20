@@ -4,8 +4,10 @@ status: true
 dependencies:
   config:
     - filter.format.basic_html
+    - taxonomy.vocabulary.document_types
     - taxonomy.vocabulary.link
     - taxonomy.vocabulary.news_types
+    - taxonomy.vocabulary.publication_series
     - taxonomy.vocabulary.publication_types
     - taxonomy.vocabulary.research_support
     - taxonomy.vocabulary.site_topics
@@ -27,9 +29,10 @@ is_admin: false
 permissions:
   - 'access content'
   - 'create url aliases'
-  - 'readonlymode access messages'
+  - 'select terms in document_types'
   - 'select terms in link'
   - 'select terms in news_types'
+  - 'select terms in publication_series'
   - 'select terms in publication_types'
   - 'select terms in research_support'
   - 'select terms in site_topics'
@@ -39,3 +42,4 @@ permissions:
   - 'view content references'
   - 'view media'
   - 'view own unpublished content'
+  - 'view own unpublished media'

@@ -1,0 +1,19 @@
+uuid: 4802ff36-662c-4637-9130-feb81871f5eb
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - taxonomy
+id: taxonomy_term.field_further_information
+field_name: field_further_information
+entity_type: taxonomy_term
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
