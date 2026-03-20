@@ -6,6 +6,7 @@ dependencies:
     - etini_district_inspectors
     - eu_cookie_compliance
     - media
+    - readonlymode
     - system
 _core:
   default_config_hash: P5H-ZbvA8txEPNYisWPYiorfSqVXrHsa9-CttKUf6GQ
@@ -16,6 +17,7 @@ is_admin: false
 permissions:
   - 'access content'
   - 'display eu cookie compliance popup'
+  - 'readonlymode access messages'
   - 'view inspector'
   - 'view media'
   - 'view school'

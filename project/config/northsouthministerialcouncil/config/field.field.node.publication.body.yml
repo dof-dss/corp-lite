@@ -7,12 +7,7 @@ dependencies:
     - filter.format.basic_html
     - node.type.publication
   module:
-    - allowed_formats
     - text
-third_party_settings:
-  allowed_formats:
-    allowed_formats:
-      - basic_html
 _core:
   default_config_hash: Ewj-XjMZlKzpEthT5yHlVq49nUh0pp5dG_q736zu678
 id: node.publication.body

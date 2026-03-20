@@ -13,7 +13,8 @@
 .page-node-type-consultation,
 .page-node-type-article {
   .published-date,
-  .field--type-entity-reference {
+  .field--type-entity-reference,
+  .reference {
     --fs-small-text: 1.5rem;
     --lh-small-text: 2.2rem;
 
@@ -39,7 +40,8 @@
     };
   }
 
-  .field--type-entity-reference {
+  .field--type-entity-reference,
+  .reference {
     margin-top: 0;
     padding-bottom: 0;
   }

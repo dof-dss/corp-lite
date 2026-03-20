@@ -16,6 +16,7 @@ dependencies:
     - media
     - node
     - path
+    - readonlymode
     - system
     - taxonomy_access_fix
     - whatlinkshere
