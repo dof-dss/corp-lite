@@ -317,4 +317,4 @@ options:
   delete_on_fail: true
   index_directly: true
   track_changes_in_references: true
-server: solr_default
+server: null
