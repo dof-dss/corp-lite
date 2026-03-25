@@ -8,9 +8,6 @@ dependencies:
   module:
     - allowed_formats
     - text
-third_party_settings:
-  allowed_formats:
-    allowed_formats: {  }
 id: taxonomy_term.publication_series.field_latest_statistics
 field_name: field_latest_statistics
 entity_type: taxonomy_term
