@@ -6,7 +6,10 @@
 /web/modules/contrib/
 /web/profiles/contrib/
 /web/themes/contrib/
-/web/libraries/
+/web/libraries/chosen
+/web/libraries/easychart
+/web/libraries/photoswipe
+/web/libraries/photoswipe-dynamic-caption-plugin
 console/
 project/imports
 node_modules/

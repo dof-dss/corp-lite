@@ -8,6 +8,7 @@ dependencies:
     - eu_cookie_compliance
     - filter
     - media
+    - readonlymode
     - system
     - taxonomy_access_fix
 _core:
@@ -19,6 +20,7 @@ is_admin: false
 permissions:
   - 'access content'
   - 'display eu cookie compliance popup'
+  - 'readonlymode access messages'
   - 'use text format restricted_html'
   - 'view any term'
   - 'view any term name'

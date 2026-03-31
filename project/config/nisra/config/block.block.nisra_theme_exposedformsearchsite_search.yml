@@ -1,0 +1,33 @@
+uuid: 6a2096a3-a91e-497f-84d2-c6f09f7a2c45
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.search
+  module:
+    - block_visibility_groups
+    - system
+    - views
+  theme:
+    - nisra_theme
+id: nisra_theme_exposedformsearchsite_search
+theme: nisra_theme
+region: sidebar_first
+weight: -20
+provider: null
+plugin: 'views_exposed_filter_block:search-site_search'
+settings:
+  id: 'views_exposed_filter_block:search-site_search'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/search\r\n/search/topics/*\r\n/search/date/*"

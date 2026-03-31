@@ -12,7 +12,6 @@ dependencies:
     - workflows.workflow.nics_editorial_workflow
   module:
     - content_moderation
-    - google_map_field
     - metatag
     - path
     - shs
@@ -26,7 +25,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 13
+    weight: 12
     region: content
     settings:
       rows: 9
@@ -40,15 +39,9 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_map:
-    type: google_map_field_default
-    weight: 26
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_meta_tags:
     type: metatag_firehose
-    weight: 15
+    weight: 13
     region: content
     settings:
       sidebar: true
@@ -56,7 +49,7 @@ content:
     third_party_settings: {  }
   field_research_support:
     type: options_shs
-    weight: 12
+    weight: 11
     region: content
     settings:
       display_node_count: false
@@ -66,7 +59,7 @@ content:
     third_party_settings: {  }
   field_site_topics:
     type: options_shs
-    weight: 11
+    weight: 10
     region: content
     settings:
       display_node_count: false
@@ -88,33 +81,33 @@ content:
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 9
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
   path:
     type: path
-    weight: 7
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 5
+    weight: 4
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 10
+    weight: 9
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 6
+    weight: 5
     region: content
     settings:
       display_label: true
@@ -138,8 +131,9 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 8
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_map: true

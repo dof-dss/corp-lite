@@ -11,4 +11,5 @@ site-styling:
       css/3_components/content/card.css: { minified: true, weight: 5 }
       css/3_components/content/last-updated.css: { minified: true, weight: 6 }
       css/3_components/content/published-releases.css: { minified: true, weight: 7 }
-      css/3_components/navigation/main-menu.css: { minified: true, weight: 8 }
+      css/3_components/content/components.css: { minified: true, weight: 8 }
+      css/3_components/navigation/main-menu.css: { minified: true, weight: 9 }

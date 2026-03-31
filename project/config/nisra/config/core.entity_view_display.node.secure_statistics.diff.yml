@@ -7,6 +7,8 @@ dependencies:
     - field.field.node.secure_statistics.body
     - field.field.node.secure_statistics.field_external_publication
     - field.field.node.secure_statistics.field_meta_tags
+    - field.field.node.secure_statistics.field_publication_rating
+    - field.field.node.secure_statistics.field_publication_series
     - field.field.node.secure_statistics.field_publication_type
     - field.field.node.secure_statistics.field_published_date
     - field.field.node.secure_statistics.field_research_support
@@ -30,7 +32,7 @@ third_party_settings:
       label: 'Additional content details'
       parent_name: ''
       region: content
-      weight: 8
+      weight: 7
       format_type: html_element
       format_settings:
         classes: field-collection
@@ -50,7 +52,7 @@ third_party_settings:
       label: Documents
       parent_name: ''
       region: content
-      weight: 5
+      weight: 6
       format_type: html_element
       format_settings:
         classes: list--no-bullet
@@ -73,7 +75,7 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 4
+    weight: 5
     region: content
   field_external_publication:
     type: link
@@ -93,6 +95,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 14
+    region: content
+  field_publication_series:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 1
     region: content
   field_publication_type:
     type: entity_reference_label
@@ -117,7 +127,7 @@ content:
     settings:
       link: false
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   field_secure_attachment:
     type: entity_reference_entity_view
@@ -134,17 +144,18 @@ content:
     settings:
       link: false
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   field_summary:
     type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
 hidden:
   content_moderation_control: true
+  field_publication_rating: true
   langcode: true
   links: true
   search_api_excerpt: true

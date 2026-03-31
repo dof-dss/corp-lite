@@ -157,40 +157,7 @@ field_settings:
     type: solr_text_spellcheck
     configuration:
       type: union
-      separator: |+
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      separator: |
 
       fields: {  }
   status:
@@ -219,40 +186,7 @@ field_settings:
     boost: 21.0
     configuration:
       type: concat
-      separator: |+
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      separator: |
 
       fields:
         - 'entity:node/title'
@@ -287,10 +221,10 @@ datasource_settings:
     bundles:
       default: true
       selected:
-        - webform
         - feature
         - featured_content_list
         - link
+        - webform
     languages:
       default: true
       selected: {  }

@@ -8,7 +8,6 @@ dependencies:
     - editor
     - entity_embed
     - media
-    - origins_common
 _core:
   default_config_hash: Lf-rnpcpkD_L92mHIwewlAo7LZ5WYMoyemrnwBPTghk
 name: 'Full HTML'
@@ -103,10 +102,3 @@ filters:
         audio: audio
         image: image
         remote_video: remote_video
-  origins_media_cookie_content_blocker_embed_filter:
-    id: origins_media_cookie_content_blocker_embed_filter
-    provider: origins_common
-    status: false
-    weight: 0
-    settings:
-      replacement_text: 'Click here to view the video content'

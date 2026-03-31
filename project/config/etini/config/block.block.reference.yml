@@ -1,0 +1,34 @@
+uuid: b2780998-2a73-43cb-8db2-d08ee3dd60c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.reference
+  module:
+    - block_visibility_groups
+    - facets
+    - system
+  theme:
+    - etini_theme
+id: reference
+theme: etini_theme
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'facet_block:reference'
+settings:
+  id: 'facet_block:reference'
+  label: Reference
+  label_display: visible
+  provider: facets
+  context_mapping: {  }
+  block_id: reference
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+  request_path:
+    id: request_path
+    negate: false
+    pages: '/publications/reference/*'
