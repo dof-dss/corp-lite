@@ -1,0 +1,14 @@
+uuid: a8216a63-9f95-4d48-ae7e-3fa8cbe5bd5f
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.research_support_supervisor
+  module:
+    - user
+id: user_remove_role_action.research_support_supervisor
+label: 'Remove the Research support supervisor role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: research_support_supervisor

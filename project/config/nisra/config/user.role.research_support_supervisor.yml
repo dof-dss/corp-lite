@@ -1,0 +1,14 @@
+uuid: e1929dca-32db-4c8c-a96a-c493ae8594ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.research_support
+  module:
+    - taxonomy
+id: research_support_supervisor
+label: 'Research support supervisor'
+weight: 7
+is_admin: null
+permissions:
+  - 'create terms in research_support'
