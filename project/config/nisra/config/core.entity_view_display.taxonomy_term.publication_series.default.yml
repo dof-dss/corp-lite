@@ -8,6 +8,7 @@ dependencies:
     - field.field.taxonomy_term.publication_series.field_future_updates
     - field.field.taxonomy_term.publication_series.field_latest_statistics
     - field.field.taxonomy_term.publication_series.field_related_statistics
+    - field.field.taxonomy_term.publication_series.field_site_topics
     - taxonomy.vocabulary.publication_series
   module:
     - link
@@ -69,6 +70,14 @@ content:
       target: ''
     third_party_settings: {  }
     weight: 6
+    region: content
+  field_site_topics:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
     region: content
 hidden:
   content_moderation_control: true

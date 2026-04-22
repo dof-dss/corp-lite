@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.taxonomy_term.teaser_with_summary
+    - taxonomy.vocabulary.publication_series
     - taxonomy.vocabulary.research_support
     - taxonomy.vocabulary.site_topics
   module:
@@ -165,6 +166,7 @@ display:
           plugin_id: bundle
           operator: in
           value:
+            publication_series: publication_series
             research_support: research_support
             site_topics: site_topics
           group: 1
@@ -274,6 +276,10 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
       style:
         type: default
       row:
@@ -289,6 +295,7 @@ display:
           distinct: false
           replica: false
           query_tags: {  }
+          contextual_filters_or: true
       relationships: {  }
       header: {  }
       footer: {  }
