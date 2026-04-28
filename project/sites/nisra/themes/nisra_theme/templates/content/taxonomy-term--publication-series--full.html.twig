@@ -20,6 +20,18 @@
       {% endfor %}
     </p>
   {% endif %}
+
+  {% if term.field_site_topics is not empty %}
+    <p class="publication-series__meta">
+      <span class="publication-series__meta-label">Site topics:</span>
+
+      {% for term_item in term.field_site_topics %}
+      <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': term_item.entity.id()}) }}">
+        {{ term_item.entity.label }}
+        </a>{% if not loop.last %}, {% endif %}
+      {% endfor %}
+    </p>
+  {% endif %}
 </header>
 
 

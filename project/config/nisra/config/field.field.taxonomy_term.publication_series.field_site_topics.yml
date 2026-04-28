@@ -1,0 +1,29 @@
+uuid: 87ba4d7c-7fc3-42c1-958e-4000cd251436
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_site_topics
+    - taxonomy.vocabulary.publication_series
+    - taxonomy.vocabulary.site_topics
+id: taxonomy_term.publication_series.field_site_topics
+field_name: field_site_topics
+entity_type: taxonomy_term
+bundle: publication_series
+label: 'Site topics'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      site_topics: site_topics
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

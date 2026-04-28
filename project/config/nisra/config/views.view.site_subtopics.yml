@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.taxonomy_term.teaser_with_summary
+    - taxonomy.vocabulary.publication_series
     - taxonomy.vocabulary.research_support
     - taxonomy.vocabulary.site_topics
   module:
@@ -152,6 +153,44 @@ display:
           validate_options: {  }
           break_phrase: false
           not: false
+        field_site_topics_target_id:
+          id: field_site_topics_target_id
+          table: taxonomy_term__field_site_topics
+          field: field_site_topics_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: entity_target_id
+          default_action: default
+          exception:
+            value: all
+            title_enable: false
+            title: All
+          title_enable: false
+          title: ''
+          default_argument_type: taxonomy_tid
+          default_argument_options:
+            term_page: '1'
+            node: false
+            limit: false
+            vids: {  }
+            anyall: ','
+          summary_options:
+            base_path: ''
+            count: true
+            override: false
+            items_per_page: 25
+          summary:
+            sort_order: asc
+            number_of_records: 0
+            format: default_summary
+          specify_validation: false
+          validate:
+            type: none
+            fail: 'not found'
+          validate_options: {  }
+          break_phrase: false
+          not: false
       filters:
         vid:
           id: vid
@@ -165,6 +204,7 @@ display:
           plugin_id: bundle
           operator: in
           value:
+            publication_series: publication_series
             research_support: research_support
             site_topics: site_topics
           group: 1
@@ -274,6 +314,10 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
       style:
         type: default
       row:
@@ -289,6 +333,7 @@ display:
           distinct: false
           replica: false
           query_tags: {  }
+          contextual_filters_or: true
       relationships: {  }
       header: {  }
       footer: {  }
