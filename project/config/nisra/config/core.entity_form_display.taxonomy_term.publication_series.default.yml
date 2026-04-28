@@ -6,6 +6,7 @@ dependencies:
     - field.field.taxonomy_term.publication_series.field_document_type
     - field.field.taxonomy_term.publication_series.field_further_information
     - field.field.taxonomy_term.publication_series.field_future_updates
+    - field.field.taxonomy_term.publication_series.field_hide_topic
     - field.field.taxonomy_term.publication_series.field_latest_statistics
     - field.field.taxonomy_term.publication_series.field_related_statistics
     - field.field.taxonomy_term.publication_series.field_site_topics
@@ -111,4 +112,5 @@ content:
     settings:
       display_label: true
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_hide_topic: true
