@@ -1,0 +1,14 @@
+uuid: 3f977587-a41f-4143-8af2-f98230d04d76
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.research_support_supervisor
+  module:
+    - user
+id: user_add_role_action.research_support_supervisor
+label: 'Add the Research support supervisor role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: research_support_supervisor
