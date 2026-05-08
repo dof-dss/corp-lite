@@ -136,15 +136,15 @@ web:
 relationships:
     redis: 'redis:redis'
     nisra: 'db:nisra'
-    nisra_solr: 'solr_8_11:nisra'
+    nisra_solr: 'solr_9:nisra'
     afbini: 'db:afbini'
-    afbini_solr: 'solr_8_11:afbini'
+    afbini_solr: 'solr_9:afbini'
     hseni: 'db:hseni'
-    hseni_solr: 'solr_8_11:hseni'
+    hseni_solr: 'solr_9:hseni'
     etini: 'db:etini'
-    etini_solr: 'solr_8_11:etini'
+    etini_solr: 'solr_9:etini'
     northsouthministerialcouncil: 'db:northsouthministerialcouncil'
-    northsouthministerialcouncil_solr: 'solr_8_11:northsouthministerialcouncil'
+    northsouthministerialcouncil_solr: 'solr_9:northsouthministerialcouncil'
 crons:
     nisra:
         spec: '10 * * * *'

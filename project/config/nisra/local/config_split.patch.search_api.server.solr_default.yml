@@ -1,5 +1,6 @@
 adding:
   backend_config:
+    connector: solr_cloud_basic_auth
     connector_config:
       host: solr
       port: 8983
@@ -14,6 +15,7 @@ adding:
       password: SolrRocks
 removing:
   backend_config:
+    connector: standard
     connector_config:
       host: nisra_solr.internal
       port: 8080
