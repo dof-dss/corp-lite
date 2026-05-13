@@ -1,0 +1,39 @@
+uuid: da7121ee-ca2e-4211-b17a-cac627c41820
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.teaser_with_summary
+    - field.field.taxonomy_term.publication_series.field_document_type
+    - field.field.taxonomy_term.publication_series.field_further_information
+    - field.field.taxonomy_term.publication_series.field_future_updates
+    - field.field.taxonomy_term.publication_series.field_hide_topic
+    - field.field.taxonomy_term.publication_series.field_latest_statistics
+    - field.field.taxonomy_term.publication_series.field_related_statistics
+    - field.field.taxonomy_term.publication_series.field_site_topics
+    - taxonomy.vocabulary.publication_series
+  module:
+    - text
+id: taxonomy_term.publication_series.teaser_with_summary
+targetEntityType: taxonomy_term
+bundle: publication_series
+mode: teaser_with_summary
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  content_moderation_control: true
+  field_document_type: true
+  field_further_information: true
+  field_future_updates: true
+  field_hide_topic: true
+  field_latest_statistics: true
+  field_related_statistics: true
+  field_site_topics: true
+  langcode: true
+  search_api_excerpt: true
