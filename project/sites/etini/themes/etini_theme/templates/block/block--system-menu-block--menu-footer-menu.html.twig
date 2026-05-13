@@ -43,9 +43,7 @@
       {% for platform, link in social_links %}
         {% set platform_name = platform|capitalize %}
         <li class="social-item">
-          <a href="{{ link['#url'] }}"
-             class="{{ link['#attributes']['class']|join(' ') }}"
-             rel="noreferrer">
+          <a href="{{ link['#url'] }}" class="{{ link['#attributes']['class']|join(' ') }}" rel="noreferrer">
             {% if link['#title'] is not empty %}
               {{ link['#title'] }}
             {% endif %}
@@ -62,8 +60,7 @@
   </div>
 {% endif %}
 
-<nav
-  aria-labelledby="{{ heading_id }}" {{ attributes.setAttribute('id', 'block-footer').addClass(footer_classes)|without('role') }}>
+<nav aria-labelledby="{{ heading_id }}" {{ attributes.setAttribute('id', 'block-footer').addClass(footer_classes)|without('role') }}>
   {%- if not configuration.label_display -%}
     {%- set title_attributes = title_attributes.addClass('visually-hidden') -%}
   {%- endif -%}
