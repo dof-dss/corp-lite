@@ -36,32 +36,6 @@ db:
                 default_schema: northsouthministerialcouncildb
                 privileges:
                     northsouthministerialcouncildb: admin
-solr_9_9:
-    type: 'solr:9.9'
-    disk: 1024
-    configuration:
-        cores:
-            nisra_index:
-                conf_dir: !archive solr_config/
-            afbini_index:
-                conf_dir: !archive solr_config/
-            hseni_index:
-                conf_dir: !archive solr_config/
-            etini_index:
-                conf_dir: !archive solr_config/
-            northsouthministerialcouncil_index:
-                conf_dir: !archive solr_config/
-        endpoints:
-            nisra:
-                core: nisra_index
-            afbini:
-                core: afbini_index
-            hseni:
-                core: hseni_index
-            etini:
-                core: etini_index
-            northsouthministerialcouncil:
-                core: northsouthministerialcouncil_index
 solr_9:
     type: 'solr:9.9'
     disk: 1024
