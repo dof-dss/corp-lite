@@ -44,7 +44,7 @@ backend_config:
     host: etini_solr.internal
     port: 8080
     path: /
-    core: etini
+    core: etini_index
     timeout: 5
     index_timeout: 5
     optimize_timeout: 10

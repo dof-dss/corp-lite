@@ -76,7 +76,12 @@
                 {% if link['#title'] is not empty %}
                   {{ link['#title'] }}
                 {% endif %}
-                <span class="visually-hidden">Follow us on {{ platform_name }}</span>
+                {% if platform_name == 'Twitter' %}
+                  <span class="visually-hidden">Follow us on X</span>
+                {% else %}
+                  <span
+                    class="visually-hidden">Follow us on {{ platform_name }}</span>
+                {% endif %}
               </a>
             </li>
           {% endfor %}
