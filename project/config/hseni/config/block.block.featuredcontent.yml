@@ -19,7 +19,7 @@ settings:
   label: 'Featured content'
   label_display: '0'
   provider: hseni_homepage
-  featured_items: '2158'
+  featured_items: '2377'
 visibility:
   request_path:
     id: request_path
