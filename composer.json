@@ -69,7 +69,7 @@
         "deaemth/easychart": "^3.1",
         "dimsemenov/photoswipe": "^5.4",
         "dimsemenov/photoswipe-dynamic-caption-plugin": "^1.2",
-        "dof-dss/nicsdru_origins_modules": "^10.6",
+        "dof-dss/nicsdru_origins_modules": "10.6.3",
         "drupal/a11y_form_helpers": "^2.1",
         "drupal/address": "^1.12",
         "drupal/admin_toolbar": "^3.6",
