@@ -60,8 +60,12 @@ body {
     }
 
     &--featured {
-      .card-deck {
+      .card-deck .card {
         margin-bottom: 0;
+        @media screen and (max-width: 479px) {
+          width: auto !important;
+          height: auto !important;
+        }
       }
 
       article {
