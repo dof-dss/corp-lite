@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.page.body
     - field.field.node.page.field_enable_toc
+    - field.field.node.page.field_next_audit_due
     - node.type.page
     - workflows.workflow.nics_editorial_workflow
   module:
@@ -102,3 +103,4 @@ content:
     third_party_settings: {  }
 hidden:
   field_enable_toc: true
+  field_next_audit_due: true
