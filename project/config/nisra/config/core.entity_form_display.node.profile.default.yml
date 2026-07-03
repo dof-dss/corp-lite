@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.profile.body
     - field.field.node.profile.field_department
     - field.field.node.profile.field_meta_tags
+    - field.field.node.profile.field_next_audit_due
     - field.field.node.profile.field_photo
     - field.field.node.profile.field_summary
     - node.type.profile
@@ -64,7 +65,7 @@ content:
       media_types: {  }
     third_party_settings:
       media_library_edit:
-        show_edit: '1'
+        show_edit: true
   field_summary:
     type: string_textarea
     weight: 11
@@ -141,4 +142,5 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_next_audit_due: true

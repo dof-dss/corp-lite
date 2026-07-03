@@ -17,6 +17,7 @@ dependencies:
     - field.field.node.researcher_profiles.field_linkedin
     - field.field.node.researcher_profiles.field_location
     - field.field.node.researcher_profiles.field_mobile
+    - field.field.node.researcher_profiles.field_next_audit_due
     - field.field.node.researcher_profiles.field_orcid
     - field.field.node.researcher_profiles.field_phd_supervisions_current
     - field.field.node.researcher_profiles.field_phd_supervisions_total
@@ -295,4 +296,5 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_next_audit_due: true
