@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.profile.field_department
     - field.field.node.profile.field_links
     - field.field.node.profile.field_meta_tags
+    - field.field.node.profile.field_next_audit_due
     - field.field.node.profile.field_photo
     - field.field.node.profile.field_summary
     - node.type.profile
@@ -148,4 +149,5 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_next_audit_due: true

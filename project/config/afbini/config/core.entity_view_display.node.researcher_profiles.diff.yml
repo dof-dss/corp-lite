@@ -18,6 +18,7 @@ dependencies:
     - field.field.node.researcher_profiles.field_linkedin
     - field.field.node.researcher_profiles.field_location
     - field.field.node.researcher_profiles.field_mobile
+    - field.field.node.researcher_profiles.field_next_audit_due
     - field.field.node.researcher_profiles.field_orcid
     - field.field.node.researcher_profiles.field_phd_supervisions_current
     - field.field.node.researcher_profiles.field_phd_supervisions_total
@@ -178,6 +179,7 @@ hidden:
   field_additional_keywords: true
   field_affiliations_and_awards: true
   field_expertise_experience: true
+  field_next_audit_due: true
   field_phd_supervisions_current: true
   field_phd_supervisions_total: true
   field_research_interests: true

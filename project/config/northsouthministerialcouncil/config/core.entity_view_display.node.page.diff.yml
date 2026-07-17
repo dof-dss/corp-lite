@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.diff
     - field.field.node.page.body
+    - field.field.node.page.field_next_audit_due
     - node.type.page
   module:
     - field_group
@@ -48,6 +49,7 @@ content:
     region: content
 hidden:
   content_moderation_control: true
+  field_next_audit_due: true
   langcode: true
   links: true
   search_api_excerpt: true

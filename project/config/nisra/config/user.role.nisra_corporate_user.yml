@@ -19,6 +19,7 @@ permissions:
   - 'reorder terms in nisra_corporate'
   - 'reset nisra_corporate'
   - 'revert term revisions in nisra_corporate'
+  - 'select terms in nisra_corporate'
   - 'view term names in nisra_corporate'
   - 'view term revisions in nisra_corporate'
   - 'view terms in nisra_corporate'

@@ -6,5 +6,10 @@ audit_button_hover_text: ''
 audit_confirmation_text: 'Review the content and select "Audit complete" if the content is still accurate and relevant.'
 audit_content_types:
   article: article
+  contact: contact
+  page: page
+  researcher_profiles: researcher_profiles
+  gallery: 0
+  link: 0
   news: 0
   publication: 0

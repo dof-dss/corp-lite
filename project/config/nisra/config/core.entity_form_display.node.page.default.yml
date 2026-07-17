@@ -10,7 +10,6 @@ dependencies:
     - workflows.workflow.nics_editorial_workflow
   module:
     - content_moderation
-    - datetime
     - metatag
     - path
     - text
@@ -42,12 +41,6 @@ content:
     settings:
       sidebar: true
       use_details: true
-    third_party_settings: {  }
-  field_next_audit_due:
-    type: datetime_default
-    weight: 122
-    region: content
-    settings: {  }
     third_party_settings: {  }
   flag:
     weight: 10
@@ -117,4 +110,5 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_next_audit_due: true

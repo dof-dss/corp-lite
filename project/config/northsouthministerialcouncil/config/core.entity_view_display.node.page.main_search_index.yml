@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.main_search_index
     - field.field.node.page.body
+    - field.field.node.page.field_next_audit_due
     - node.type.page
   module:
     - layout_builder
@@ -21,6 +22,7 @@ content: {  }
 hidden:
   body: true
   content_moderation_control: true
+  field_next_audit_due: true
   langcode: true
   links: true
   search_api_excerpt: true
