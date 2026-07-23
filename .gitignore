@@ -45,6 +45,10 @@ node_modules/
 .lando.local.yml
 .lando/config/
 
+# Ignore stale DDEV-generated Traefik configs from Maestro source projects.
+/.ddev/traefik/config/unity.1.yaml
+/.ddev/traefik/config/unity.svr.3.yaml
+
 # Misc tooling files to ingore.
 .swp
 .vscode
