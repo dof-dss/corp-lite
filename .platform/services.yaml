@@ -42,15 +42,15 @@ solr_9:
     configuration:
         cores:
             nisra_index:
-                conf_dir: !archive solr_config/
+                conf_dir: !archive solr_configsets/nisra/conf/
             afbini_index:
-                conf_dir: !archive solr_config/
+                conf_dir: !archive solr_configsets/afbini/conf/
             hseni_index:
-                conf_dir: !archive solr_config/
+                conf_dir: !archive solr_configsets/hseni/conf/
             etini_index:
-                conf_dir: !archive solr_config/
+                conf_dir: !archive solr_configsets/etini/conf/
             northsouthministerialcouncil_index:
-                conf_dir: !archive solr_config/
+                conf_dir: !archive solr_configsets/northsouthministerialcouncil/conf/
         endpoints:
             nisra:
                 core: nisra_index

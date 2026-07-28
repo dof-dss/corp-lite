@@ -1,10 +1,9 @@
 adding:
   backend_config:
-    connector: solr_cloud_basic_auth
     connector_config:
-      host: solr
+      host: ddev-corp.lite-solr
       port: 8983
-      core: northsouthministerialcouncil
+      core: northsouthministerialcouncil_index
       skip_schema_check: true
       solr_install_dir: /opt/solr
       checkpoints_collection: ''
@@ -15,7 +14,6 @@ adding:
       password: solr
 removing:
   backend_config:
-    connector: standard
     connector_config:
       host: northsouthministerialcouncil_solr.internal
       port: 8080

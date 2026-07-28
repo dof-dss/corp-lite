@@ -17,6 +17,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Verify Solr configsets
+          command: scripts/solr/verify-configsets
+      - run:
           name: Download shared config
           command: |
             wget \
