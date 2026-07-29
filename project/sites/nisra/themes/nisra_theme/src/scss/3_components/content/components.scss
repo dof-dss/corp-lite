@@ -67,3 +67,10 @@
 .page-node-type-secure-market-statistics .published-date, {
   margin-top: 0 !important;
 }
+
+@media (max-width: 766px) {
+  .layout-header--logo {
+    padding: 1%;
+    max-width: 100%;
+  }
+}
