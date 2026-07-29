@@ -36,10 +36,15 @@ db:
                 default_schema: northsouthministerialcouncildb
                 privileges:
                     northsouthministerialcouncildb: admin
-solr_9:
+solr_9_9:
     type: 'solr:9.9'
     disk: 1024
     configuration:
+        modules:
+            - extraction
+            - analysis-extras
+            - langid
+            - ltr
         cores:
             nisra_index:
                 conf_dir: !archive solr_configsets/nisra/conf/
