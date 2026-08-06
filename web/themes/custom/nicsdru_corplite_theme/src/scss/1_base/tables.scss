@@ -44,6 +44,10 @@ table {
     }
   }
 
+  a {
+    word-break: break-word;
+  }
+
   td,
   th {
     font-size: var(--fs-base-size);
