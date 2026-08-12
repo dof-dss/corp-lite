@@ -1,27 +1,19 @@
-uuid: 8e03f1fc-a96c-4f65-8385-3556c8f2be9d
+uuid: 5372e493-b9f9-4802-8a6e-ea55a93ece81
 langcode: en
 status: true
 dependencies:
   config:
     - taxonomy.vocabulary.publication_series
-    - taxonomy.vocabulary.publication_types
   module:
     - taxonomy
     - taxonomy_access_fix
-id: administer_publication_series
-label: 'Publication Series Admin'
-weight: 6
+id: publication_series_supervisor
+label: 'Publication Series Supervisor'
+weight: 7
 is_admin: null
 permissions:
-  - 'create terms in publication_series'
-  - 'delete term revisions in publication_series'
-  - 'delete terms in publication_series'
   - 'edit terms in publication_series'
-  - 'reorder terms in publication_series'
-  - 'reset publication_series'
   - 'revert term revisions in publication_series'
-  - 'select unpublished terms in publication_series'
-  - 'select unpublished terms in publication_types'
   - 'view term names in publication_series'
   - 'view term revisions in publication_series'
   - 'view terms in publication_series'
