@@ -1,0 +1,14 @@
+uuid: fa960094-d170-41a0-a8ed-2c5570db5420
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.publication_series_supervisor
+  module:
+    - user
+id: user_remove_role_action.publication_series_supervisor
+label: 'Remove the Publication Series Supervisor role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: publication_series_supervisor
