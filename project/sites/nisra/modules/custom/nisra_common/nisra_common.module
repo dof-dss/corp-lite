@@ -327,7 +327,7 @@ function nisra_common_taxonomy_term_update(TermInterface $term) {
   // remove the theme redirect if (not published and) it is a default revision.
     if ($term->isPublished()) {
       // Update is publishing the page - remove and re-create theme redirect.
-      nisra_common_delete_theme_to_landing_page_redirect($term->original);
+      nisra_common_delete_publication_series_to_site_topic_redirect($term->original);
       nisra_common_create_publication_series_to_site_topic_redirect($term);
     }
     elseif ($term->isDefaultRevision()) {
@@ -422,7 +422,7 @@ function nisra_common_get_redirect_url(string $source_path) {
  * @param \Drupal\taxonomy\Entity\Term $term
  *   The landing page node.
  */
-function nisra_common_delete_theme_to_landing_page_redirect(EntityInterface $term) {
+function nisra_common_publication_series_to_site_topic_redirect(EntityInterface $term) {
   /** @var \Drupal\taxonomy\Entity\Term $term */
 
   $redirect_repository = \Drupal::service('redirect.repository');
