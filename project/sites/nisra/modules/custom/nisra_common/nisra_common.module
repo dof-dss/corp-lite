@@ -422,7 +422,7 @@ function nisra_common_get_redirect_url(string $source_path) {
  * @param \Drupal\taxonomy\Entity\Term $term
  *   The landing page node.
  */
-function nisra_common_publication_series_to_site_topic_redirect(EntityInterface $term) {
+function nisra_common_delete_publication_series_to_site_topic_redirect(EntityInterface $term) {
   /** @var \Drupal\taxonomy\Entity\Term $term */
 
   $redirect_repository = \Drupal::service('redirect.repository');
