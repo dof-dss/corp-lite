@@ -309,12 +309,17 @@ function nisra_common_taxonomy_term_insert(TermInterface $term) {
   if ($term->bundle() !== 'publication_series') {
     return;
   }
-  // Create a redirect from the taxonomy term when a landing page is created
-  // if a subtheme has been selected and the node is published.
+  // Create a redirect from the taxonomy term when a publication series is created
+  // if a site topic has been selected and the node is published.
   if ($term->isPublished()) {
     nisra_common_create_publication_series_to_site_topic_redirect($term);
   }
 }
+
+/**
+ * Create a redirect form the selected Site topic to the new Publication series term.
+ * Code takien from nidirect_landing_pages.module.
+ */
 
 /**
  * Implements hook_taxonomy_term_update().
@@ -323,10 +328,10 @@ function nisra_common_taxonomy_term_update(TermInterface $term) {
   if ($term->bundle() !== 'publication_series') {
     return;
   }
-  // Update theme redirect when default revision is published or
-  // remove the theme redirect if (not published and) it is a default revision.
+  // Update site topic redirect when default revision is published or
+  // remove the site topic redirect if (not published and) it is a default revision.
     if ($term->isPublished()) {
-      // Update is publishing the page - remove and re-create theme redirect.
+      // Update is publishing the page - remove and re-create site topic redirect.
       nisra_common_delete_publication_series_to_site_topic_redirect($term->original);
       nisra_common_create_publication_series_to_site_topic_redirect($term);
     }
@@ -337,13 +342,13 @@ function nisra_common_taxonomy_term_update(TermInterface $term) {
 }
 
 /**
- * Landing page checks.
+ * Publication series checks.
  *
- * - Whether there is already a landing page associated with the theme selected.
+ * - Whether there is already a publication series associated with the site topic selected.
  * - Create a redirect or warn user if there is a landing page for this theme.
  *
  * @param \Drupal\taxonomy\Entity\Term $term
- *   The landing page node entity.
+ *   The Publication series term entity.
  */
 function nisra_common_create_publication_series_to_site_topic_redirect(EntityInterface $term) {
   /** @var \Drupal\taxonomy\Entity\Term $term */
@@ -368,7 +373,7 @@ function nisra_common_create_publication_series_to_site_topic_redirect(EntityInt
     ])->save();
   }
   else {
-    // Just check that the existing redirect is not for the current node.
+    // Just check that the existing redirect is not for the current term.
     $current_node = \Drupal::routeMatch()->getParameter('node');
     if (!empty($current_node)) {
       $this_alias = \Drupal::service('path_alias.manager')->getAliasByPath('/taxonomy/term/' . $current_node->id());
@@ -380,7 +385,7 @@ function nisra_common_create_publication_series_to_site_topic_redirect(EntityInt
 
     // Notify the user that a redirect could not be created.
     \Drupal::messenger()->addWarning(t('A redirect from the theme taxonomy page to this content was not created,
-        because there are already one or more redirects used for the theme taxonomy page.'));
+        because there are already one or more redirects used for the site topics taxonomy page.'));
 
     // Add a convenience link for users who can administer redirects.
     if (\Drupal::currentUser()->hasPermission('administer redirects')) {
@@ -417,10 +422,10 @@ function nisra_common_get_redirect_url(string $source_path) {
 }
 
 /**
- * Deletes a theme to landing page redirect.
+ * Deletes a publication series to site topics redirect.
  *
  * @param \Drupal\taxonomy\Entity\Term $term
- *   The landing page node.
+ *   The publication series term.
  */
 function nisra_common_delete_publication_series_to_site_topic_redirect(EntityInterface $term) {
   /** @var \Drupal\taxonomy\Entity\Term $term */
