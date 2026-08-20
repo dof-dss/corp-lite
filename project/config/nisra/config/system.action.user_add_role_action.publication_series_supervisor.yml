@@ -1,0 +1,14 @@
+uuid: 9ea818e4-e6aa-4617-a04d-5260ecf0531f
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.publication_series_supervisor
+  module:
+    - user
+id: user_add_role_action.publication_series_supervisor
+label: 'Add the Publication Series Supervisor role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: publication_series_supervisor

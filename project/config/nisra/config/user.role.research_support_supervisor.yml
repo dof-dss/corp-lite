@@ -8,7 +8,7 @@ dependencies:
     - taxonomy
 id: research_support_supervisor
 label: 'Research support supervisor'
-weight: 7
+weight: 8
 is_admin: null
 permissions:
   - 'create terms in research_support'

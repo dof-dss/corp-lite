@@ -101,7 +101,7 @@
         "drupal/diff": "^1.1",
         "drupal/draggableviews": "^2.1",
         "drupal/easychart": "^4.0",
-        "drupal/entity_browser": "^2.15",
+        "drupal/entity_browser": "^2.16",
         "drupal/entity_embed": "^1.7",
         "drupal/entity_reference_revisions": "^1.14",
         "drupal/entityqueue": "^1.6",
