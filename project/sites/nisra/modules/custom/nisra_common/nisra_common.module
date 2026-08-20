@@ -6,13 +6,18 @@
  */
 
 use Drupal\Core\Breadcrumb\Breadcrumb;
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Language\Language;
 use Drupal\Core\Link;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\StreamWrapper\StreamWrapperManager;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\Core\Url;
 use Drupal\node\Entity\Node;
+use Drupal\redirect\Entity\Redirect;
+use Drupal\taxonomy\TermInterface;
 use Drupal\views\Plugin\views\cache\CachePluginBase;
 use Drupal\views\ViewExecutable;
 
@@ -292,6 +297,154 @@ function nisra_common_entity_view(array &$build, \Drupal\Core\Entity\EntityInter
           ];
         }
       }
+    }
+  }
+}
+
+/**
+ * Implements hook_taxonomy_term_insert().
+ */
+function nisra_common_taxonomy_term_insert(TermInterface $term) {
+  // Only apply to a specific vocabulary.
+  if ($term->bundle() !== 'publication_series') {
+    return;
+  }
+  // Create a redirect from the taxonomy term when a publication series is created
+  // if a site topic has been selected and the node is published.
+  if ($term->isPublished()) {
+    nisra_common_create_publication_series_to_site_topic_redirect($term);
+  }
+}
+
+/**
+ * Create a redirect form the selected Site topic to the new Publication series term.
+ * Code takien from nidirect_landing_pages.module.
+ */
+
+/**
+ * Implements hook_taxonomy_term_update().
+ */
+function nisra_common_taxonomy_term_update(TermInterface $term) {
+  if ($term->bundle() !== 'publication_series') {
+    return;
+  }
+  // Update site topic redirect when default revision is published or
+  // remove the site topic redirect if (not published and) it is a default revision.
+    if ($term->isPublished()) {
+      // Update is publishing the page - remove and re-create site topic redirect.
+      nisra_common_delete_publication_series_to_site_topic_redirect($term->original);
+      nisra_common_create_publication_series_to_site_topic_redirect($term);
+    }
+    elseif ($term->isDefaultRevision()) {
+      // Un-published default revision - remove theme redirect.
+      nisra_common_create_publication_series_to_site_topic_redirect($term->original);
+    }
+}
+
+/**
+ * Publication series checks.
+ *
+ * - Whether there is already a publication series associated with the site topic selected.
+ * - Create a redirect or warn user if there is a landing page for this theme.
+ *
+ * @param \Drupal\taxonomy\Entity\Term $term
+ *   The Publication series term entity.
+ */
+function nisra_common_create_publication_series_to_site_topic_redirect(EntityInterface $term) {
+  /** @var \Drupal\taxonomy\Entity\Term $term */
+  // Determine the theme path that will be the redirect source.
+  $site_topic_tid = $term->get('field_site_topics')->getString();
+  $taxonomy_term_path = 'taxonomy/term/' . $site_topic_tid;
+
+  // Create a theme redirect if there is no existing redirect
+  // where the theme path is the redirect source.
+  $redirect_url = nisra_common_get_redirect_url($taxonomy_term_path);
+  if (empty($redirect_url)) {
+    Redirect::create([
+      'redirect_source' => [
+        'path' => $taxonomy_term_path,
+        'query' => [],
+      ],
+      'redirect_redirect' => [
+        'uri' => 'internal:/taxonomy/term/' . $term->id(),
+      ],
+      'language' => Language::LANGCODE_NOT_SPECIFIED,
+      'status_code' => '301',
+    ])->save();
+  }
+  else {
+    // Just check that the existing redirect is not for the current term.
+    $current_node = \Drupal::routeMatch()->getParameter('node');
+    if (!empty($current_node)) {
+      $this_alias = \Drupal::service('path_alias.manager')->getAliasByPath('/taxonomy/term/' . $current_node->id());
+      if ($this_alias == $redirect_url) {
+        // Redirect is for the current node, do not error.
+        return;
+      }
+    }
+
+    // Notify the user that a redirect could not be created.
+    \Drupal::messenger()->addWarning(t('A redirect from the theme taxonomy page to this content was not created,
+        because there are already one or more redirects used for the site topics taxonomy page.'));
+
+    // Add a convenience link for users who can administer redirects.
+    if (\Drupal::currentUser()->hasPermission('administer redirects')) {
+      $link = Link::createFromRoute('review existing redirects', 'redirect.list', [], [
+        'query' => ['text' => $taxonomy_term_path],
+      ])->toString();
+
+      \Drupal::messenger()->addWarning(new TranslatableMarkup(
+          "You can @link to remove any unwanted redirects.", ["@link" => $link])
+      );
+    }
+  }
+}
+
+/**
+ * Detect whether a redirect already exists.
+ *
+ * @param string $source_path
+ *   The source path.
+ *
+ * @return string
+ *   Redirect URL if found, empty string if not.
+ */
+function nisra_common_get_redirect_url(string $source_path) {
+  $redirect = \Drupal::service('redirect.repository')->findBySourcePath($source_path);
+  $redirect_url = '';
+
+  if (!empty(($redirect))) {
+    $redirect = array_pop($redirect);
+    $redirect_url = $redirect->getRedirectUrl()->toString();
+  }
+
+  return $redirect_url;
+}
+
+/**
+ * Deletes a publication series to site topics redirect.
+ *
+ * @param \Drupal\taxonomy\Entity\Term $term
+ *   The publication series term.
+ */
+function nisra_common_delete_publication_series_to_site_topic_redirect(EntityInterface $term) {
+  /** @var \Drupal\taxonomy\Entity\Term $term */
+
+  $redirect_repository = \Drupal::service('redirect.repository');
+
+  // The redirect to delete must have a source path that matches
+  // the path of the theme taxonomy term for the landing page and
+  // a destination path that matches the landing page node path.
+  $site_topic_tid = $term->get('field_site_topics')->getString();
+  $source_path = '/taxonomy/term/' . $site_topic_tid;
+  $destination_path[] = 'internal:/taxonomy/term/' . $term->id();
+
+  // Get all redirects whose destination is the landing page.
+  $redirects = $redirect_repository->findByDestinationUri($destination_path);
+  foreach ($redirects as $redirect) {
+    // Delete the redirect if its source is landing page theme path.
+    if ($redirect->getSourceUrl() == $source_path) {
+      $redirect->delete();
     }
   }
 }
