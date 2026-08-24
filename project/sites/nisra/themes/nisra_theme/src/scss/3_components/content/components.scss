@@ -67,3 +67,21 @@
 .page-node-type-secure-market-statistics .published-date, {
   margin-top: 0 !important;
 }
+
+@media (max-width: 766px) {
+  .layout-header--logo {
+    padding: 1%;
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 766px) {
+  .header {
+    grid-template-columns:50% 42.56%;
+    grid-gap: 7.44%;
+  }
+}
+
+.section--popular {
+  border-top: 5px solid var(--clr-nisra-green)
+}
