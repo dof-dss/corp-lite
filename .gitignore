@@ -41,10 +41,6 @@ node_modules/
 *.sql
 *.sql.gz
 
-# Ignore local Lando files
-.lando.local.yml
-.lando/config/
-
 # Ignore stale DDEV-generated Traefik configs from Maestro source projects.
 /.ddev/traefik/config/unity.1.yaml
 /.ddev/traefik/config/unity.svr.3.yaml
@@ -56,7 +52,7 @@ node_modules/
 imports
 .htpasswd
 
-# Any local tooling/Lando things we want to ignore.
+# Any local tooling files we want to ignore.
 web/sites/default/redis.services.yml
 
 # Ignore local logs

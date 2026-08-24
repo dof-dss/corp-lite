@@ -1,0 +1,16 @@
+#############################################################################
+###                           --== IMPORTANT ==--                         ###
+#############################################################################
+# If you require changes to this file you must edit the file within the     #
+# original repository.Any changes here will be overwritten when the project #
+# is built.                                                                 #
+#############################################################################
+services:
+    solr:
+        environment:
+            SOLR_SITES: 'nisra afbini hseni etini northsouthministerialcouncil'
+        volumes:
+            - '${DDEV_APPROOT}/.platform/solr_configsets:/solr-configsets:ro'
+        entrypoint:
+            - bash
+            - /mnt/ddev_config/solr/create-or-refresh-cores.sh

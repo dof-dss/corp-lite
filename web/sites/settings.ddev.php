@@ -46,7 +46,7 @@ if (empty($settings['config_sync_directory'])) {
   $settings['config_sync_directory'] = 'sites/default/files/sync';
 }
 
-// Assume all Lando sites should use 'local' config for devlopment.
+// Assume all DDEV sites should use 'local' config for development.
 $config['config_split.config_split.local']['status'] = TRUE;
 $config['config_split.config_split.hosted']['status'] = FALSE;
 
