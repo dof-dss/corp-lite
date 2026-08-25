@@ -10,9 +10,9 @@ dependencies:
     - field.storage.node.field_reference
     - field.storage.node.field_site_topics
     - field.storage.node.field_summary
+    - search_api.server.solr_default
   module:
     - node
-    - search_api
     - search_api_solr
     - taxonomy
 third_party_settings:
@@ -134,6 +134,15 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_summary
+  reference_fulltext:
+    label: Reference
+    datasource_id: 'entity:node'
+    property_path: field_reference
+    type: text
+    boost: 13.0
+    dependencies:
+      config:
+        - field.storage.node.field_reference
   status:
     label: Published
     datasource_id: 'entity:node'
@@ -216,6 +225,7 @@ processor_settings:
       - field_reference
       - field_site_topics
       - field_summary
+      - reference_fulltext
       - title
       - topics_name
       - type
@@ -223,13 +233,13 @@ processor_settings:
     title: false
     alt: true
     tags:
-      b: 2
-      em: 1
-      h1: 5
-      h2: 3
-      h3: 2
-      strong: 2
-      u: 1
+      b: 2.0
+      em: 1.0
+      h1: 5.0
+      h2: 3.0
+      h3: 2.0
+      strong: 2.0
+      u: 1.0
   language_with_fallback: {  }
   rendered_item: {  }
   solr_date_range:

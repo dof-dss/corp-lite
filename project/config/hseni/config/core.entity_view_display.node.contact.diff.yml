@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.contact.body
     - field.field.node.contact.field_map
     - field.field.node.contact.field_meta_tags
+    - field.field.node.contact.field_next_audit_due
     - field.field.node.contact.field_site_topics
     - node.type.contact
   module:
@@ -68,6 +69,7 @@ content:
 hidden:
   content_moderation_control: true
   field_map: true
+  field_next_audit_due: true
   langcode: true
   links: true
   search_api_excerpt: true

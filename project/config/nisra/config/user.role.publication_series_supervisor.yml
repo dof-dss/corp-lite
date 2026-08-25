@@ -1,0 +1,22 @@
+uuid: 5372e493-b9f9-4802-8a6e-ea55a93ece81
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.publication_series
+  module:
+    - taxonomy
+    - taxonomy_access_fix
+id: publication_series_supervisor
+label: 'Publication Series Supervisor'
+weight: 7
+is_admin: null
+permissions:
+  - 'edit terms in publication_series'
+  - 'revert term revisions in publication_series'
+  - 'view term names in publication_series'
+  - 'view term revisions in publication_series'
+  - 'view terms in publication_series'
+  - 'view unpublished term names in publication_series'
+  - 'view unpublished terms in publication_series'
+  - 'view vocabulary name of publication_series'

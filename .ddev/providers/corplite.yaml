@@ -31,6 +31,7 @@ db_import_command:
         gzip -dc .ddev/.downloads/db_hseni.sql.gz | ddev import-db --database=hseni --skip-hooks 
         gzip -dc .ddev/.downloads/db_etini.sql.gz | ddev import-db --database=etini --skip-hooks 
         gzip -dc .ddev/.downloads/db_northsouthministerialcouncil.sql.gz | ddev import-db --database=northsouthministerialcouncil --skip-hooks 
+        scripts/solr/configure-local-connectors --all
     service: host
 files_pull_command:
     command: |

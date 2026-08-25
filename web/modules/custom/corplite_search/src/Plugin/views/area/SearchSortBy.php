@@ -127,7 +127,7 @@ class SearchSortBy extends AreaPluginBase {
       $route === 'view.published_releases_search.published_releases' ||
       $route === 'view.published_releases_search.releases_upcoming'
     ) {
-      $sort_options['sort_label']['#value'] = t('sorted by date released');
+      $sort_options['sort_label']['#value'] = t('sorted by release date');
     }
 
     // Determine which criteria is currently active.

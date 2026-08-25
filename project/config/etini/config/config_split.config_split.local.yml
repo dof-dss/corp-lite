@@ -23,6 +23,7 @@ module:
   migrate_source_csv: 0
   migrate_tools: 0
   migrate_upgrade: 0
+  search_api_solr_admin: 0
   stage_file_proxy: 0
   update: 0
   views_ui: 0

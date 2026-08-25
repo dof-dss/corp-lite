@@ -25,6 +25,7 @@ module:
   migrate_tools: 0
   migrate_upgrade: 0
   nisra_migrations: 0
+  search_api_solr_admin: 0
   stage_file_proxy: 0
   syslog: 0
   update: 0

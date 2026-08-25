@@ -9,7 +9,7 @@ dependencies:
     - taxonomy
     - taxonomy_access_fix
 id: administer_publication_series
-label: 'Administer publication series'
+label: 'Publication Series Admin'
 weight: 6
 is_admin: null
 permissions:

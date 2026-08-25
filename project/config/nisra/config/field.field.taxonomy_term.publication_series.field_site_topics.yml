@@ -10,7 +10,7 @@ id: taxonomy_term.publication_series.field_site_topics
 field_name: field_site_topics
 entity_type: taxonomy_term
 bundle: publication_series
-label: 'Site topics'
+label: Statistics
 description: ''
 required: true
 translatable: false

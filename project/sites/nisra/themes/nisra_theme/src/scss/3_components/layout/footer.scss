@@ -23,6 +23,7 @@ $link-footer: (
   background-color: var(--clr-nisra-navy);
   box-shadow: var(--clr-nisra-blue);
   color: var(--clr-white);
+  border-top: 5px solid var(--clr-nisra-green);
 
   * {
     color: var(--clr-white);
@@ -65,7 +66,7 @@ $link-footer: (
 
 .footer-nav-menu {
   margin-top: 4rem;
-  
+
   a {
     font-size: 1.7rem;
   }
