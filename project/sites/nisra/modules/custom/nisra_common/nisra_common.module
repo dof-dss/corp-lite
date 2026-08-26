@@ -337,7 +337,7 @@ function nisra_common_taxonomy_term_update(TermInterface $term) {
     }
     elseif ($term->isDefaultRevision()) {
       // Un-published default revision - remove theme redirect.
-      nisra_common_create_publication_series_to_site_topic_redirect($term->original);
+      nisra_common_delete_publication_series_to_site_topic_redirect($term->original);
     }
 }
 
