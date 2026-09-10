@@ -1,10 +1,10 @@
-uuid: a71384a4-38cf-4737-b693-331a71bd7330
+uuid: 4e1e3726-e007-4cf1-9701-680a401af090
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_map
-    - node.type.department_management
+    - field.storage.node.field_location
+    - node.type.contact
   module:
     - geocoder_field
     - geolocation
@@ -12,7 +12,7 @@ third_party_settings:
   geocoder_field:
     method: geocode
     weight: 0
-    field: field_contact_information
+    field: body
     skip_not_empty_value: false
     disabled: false
     hidden: false
@@ -24,10 +24,10 @@ third_party_settings:
       handling: preserve
       status_message: true
       log: true
-id: node.department_management.field_map
-field_name: field_map
+id: node.contact.field_location
+field_name: field_location
 entity_type: node
-bundle: department_management
+bundle: contact
 label: Map
 description: ''
 required: false

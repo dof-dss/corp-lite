@@ -15,7 +15,7 @@ dependencies:
     - field.field.node.department_management.field_youtube_url
     - node.type.department_management
   module:
-    - google_map_field
+    - geolocation
     - text
     - user
 id: node.department_management.default
@@ -31,7 +31,7 @@ content:
     weight: 0
     region: content
   field_map:
-    type: google_map_field_default
+    type: geolocation_latlng
     label: above
     settings: {  }
     third_party_settings: {  }
