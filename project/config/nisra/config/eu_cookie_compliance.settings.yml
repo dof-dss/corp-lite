@@ -39,7 +39,7 @@ popup_delay: 300
 show_more_info: false
 popup_bg_hex: ''
 popup_text_hex: ''
-domain: .nisra.gov.uk.
+domain: ''
 domains_option: 1
 domains_list: .translate.goog
 exclude_paths: "/admin\r\n/admin/*\r\n/batch\r\n/node/add*\r\n/node/*/*\r\n/user/*/*"

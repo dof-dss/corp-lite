@@ -34,4 +34,3 @@ theme: {  }
 complete_list: {  }
 partial_list:
   - search_api.server.solr_default
-  - eu_cookie_compliance.settings

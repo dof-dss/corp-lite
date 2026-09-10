@@ -3,7 +3,6 @@ adding:
     connector_config:
       host: ddev-corp.lite-solr
       port: 8983
-      core: nisra_index
       skip_schema_check: true
       solr_install_dir: /opt/solr
       checkpoints_collection: ''
@@ -15,6 +14,5 @@ removing:
     connector_config:
       host: nisra_solr.internal
       port: 8080
-      core: nisra_index
       skip_schema_check: false
       solr_install_dir: ''
