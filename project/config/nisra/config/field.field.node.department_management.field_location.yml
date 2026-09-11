@@ -6,24 +6,7 @@ dependencies:
     - field.storage.node.field_location
     - node.type.department_management
   module:
-    - geocoder_field
     - geolocation
-third_party_settings:
-  geocoder_field:
-    method: geocode
-    weight: 0
-    field: field_contact_information
-    skip_not_empty_value: false
-    disabled: false
-    hidden: false
-    providers:
-      - googlemaps
-    dumper: geolocation_geocoder_v3
-    delta_handling: default
-    failure:
-      handling: preserve
-      status_message: true
-      log: true
 id: node.department_management.field_location
 field_name: field_location
 entity_type: node
