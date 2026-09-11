@@ -1,9 +1,9 @@
-uuid: a71384a4-38cf-4737-b693-331a71bd7330
+uuid: 75f406e2-ae64-4dc0-81dd-92d1de5535b8
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_map
+    - field.storage.node.field_location
     - node.type.department_management
   module:
     - geocoder_field
@@ -24,8 +24,8 @@ third_party_settings:
       handling: preserve
       status_message: true
       log: true
-id: node.department_management.field_map
-field_name: field_map
+id: node.department_management.field_location
+field_name: field_location
 entity_type: node
 bundle: department_management
 label: Map

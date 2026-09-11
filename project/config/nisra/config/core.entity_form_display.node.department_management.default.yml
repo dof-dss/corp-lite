@@ -9,7 +9,7 @@ dependencies:
     - field.field.node.department_management.field_facebook_url
     - field.field.node.department_management.field_flickr_url
     - field.field.node.department_management.field_linkedin_url
-    - field.field.node.department_management.field_map
+    - field.field.node.department_management.field_location
     - field.field.node.department_management.field_meta_tags
     - field.field.node.department_management.field_twitter_url
     - field.field.node.department_management.field_youtube_url
@@ -18,6 +18,7 @@ dependencies:
   module:
     - content_moderation
     - field_group
+    - geolocation_address
     - geolocation_google_maps
     - link
     - metatag
@@ -120,9 +121,9 @@ content:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
-  field_map:
+  field_location:
     type: geolocation_googlegeocoder
-    weight: 26
+    weight: 15
     region: content
     settings:
       auto_client_location: ''
@@ -173,8 +174,8 @@ content:
               position: TOP_LEFT
               geocoder: google_geocoding_api
               settings:
-                label: 'Enter address'
-                description: ''
+                label: Address
+                description: 'Enter an address to be localized.'
                 autocomplete_min_length: 1
                 component_restrictions:
                   route: ''
@@ -425,7 +426,37 @@ content:
         height: 400px
         width: 100%
         gestureHandling: auto
-    third_party_settings: {  }
+    third_party_settings:
+      geolocation_address:
+        enable: false
+        address_field: field_address
+        geocoder: google_geocoding_api
+        settings:
+          label: Address
+          description: 'Enter an address to be localized.'
+          autocomplete_min_length: 1
+          component_restrictions:
+            route: ''
+            country: ''
+            administrative_area: ''
+            locality: ''
+            postal_code: ''
+          boundary_restriction:
+            south: ''
+            west: ''
+            north: ''
+            east: ''
+          region: ''
+        sync_mode: auto
+        button_position: LEFT_TOP
+        direction: duplex
+        ignore:
+          organization: false
+          address-line1: false
+          address-line2: false
+          locality: false
+          administrative-area: false
+          postal-code: false
   field_meta_tags:
     type: metatag_firehose
     weight: 17

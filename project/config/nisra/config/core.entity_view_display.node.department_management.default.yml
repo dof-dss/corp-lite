@@ -9,7 +9,7 @@ dependencies:
     - field.field.node.department_management.field_facebook_url
     - field.field.node.department_management.field_flickr_url
     - field.field.node.department_management.field_linkedin_url
-    - field.field.node.department_management.field_map
+    - field.field.node.department_management.field_location
     - field.field.node.department_management.field_meta_tags
     - field.field.node.department_management.field_twitter_url
     - field.field.node.department_management.field_youtube_url
@@ -30,7 +30,7 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  field_map:
+  field_location:
     type: geolocation_latlng
     label: above
     settings: {  }
