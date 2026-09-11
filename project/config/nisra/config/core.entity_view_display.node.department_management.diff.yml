@@ -10,7 +10,7 @@ dependencies:
     - field.field.node.department_management.field_facebook_url
     - field.field.node.department_management.field_flickr_url
     - field.field.node.department_management.field_linkedin_url
-    - field.field.node.department_management.field_map
+    - field.field.node.department_management.field_location
     - field.field.node.department_management.field_meta_tags
     - field.field.node.department_management.field_twitter_url
     - field.field.node.department_management.field_youtube_url
@@ -145,7 +145,7 @@ content:
     region: content
 hidden:
   content_moderation_control: true
-  field_map: true
+  field_location: true
   langcode: true
   links: true
   search_api_excerpt: true

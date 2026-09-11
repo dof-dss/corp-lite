@@ -62,3 +62,12 @@ function corplite_common_page_attachments(array &$attachments) {
 function corplite_common_preprocess_book_navigation(&$variables) {
   $variables['#cache']['max-age'] = 0;
 }
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function corplite_common_preprocess_geolocation_latlng_formatter(array &$variables): void {
+
+  $config = \Drupal::config('geolocation_google_maps.settings');
+  $variables['google_map_api_key'] = $config->get('google_map_api_key');
+}

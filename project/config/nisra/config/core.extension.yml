@@ -71,6 +71,8 @@ module:
   geocoder_field: 0
   geolocation: 0
   geolocation_address: 0
+  geolocation_google_maps: 0
+  geolocation_google_static_maps: 0
   geolocation_search_api: 0
   google_map_field: 0
   google_tag: 0
@@ -142,7 +144,6 @@ module:
   search_api_spellcheck: 0
   shortcut: 0
   shs: 0
-  simple_gmap: 0
   simplei: 0
   structure_sync: 0
   system: 0

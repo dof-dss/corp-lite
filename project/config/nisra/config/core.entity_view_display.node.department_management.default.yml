@@ -9,13 +9,13 @@ dependencies:
     - field.field.node.department_management.field_facebook_url
     - field.field.node.department_management.field_flickr_url
     - field.field.node.department_management.field_linkedin_url
-    - field.field.node.department_management.field_map
+    - field.field.node.department_management.field_location
     - field.field.node.department_management.field_meta_tags
     - field.field.node.department_management.field_twitter_url
     - field.field.node.department_management.field_youtube_url
     - node.type.department_management
   module:
-    - google_map_field
+    - geolocation
     - text
     - user
 id: node.department_management.default
@@ -30,8 +30,8 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  field_map:
-    type: google_map_field_default
+  field_location:
+    type: geolocation_latlng
     label: above
     settings: {  }
     third_party_settings: {  }
