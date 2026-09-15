@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\Entity\Node;
 
 /**
  * Implements hook_form_BASE_FORM_ID_alter() for node_form.
@@ -70,4 +71,18 @@ function corplite_common_preprocess_geolocation_latlng_formatter(array &$variabl
 
   $config = \Drupal::config('geolocation_google_maps.settings');
   $variables['google_map_api_key'] = $config->get('google_map_api_key');
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter() for node_form.
+ *
+ * Completely hide the Feature on homepage, Main feature and hide topic fields
+ * from people without permission.
+ *
+ */
+function corplite_common_preprocess_page(&$variables) {
+  $x = Node::load(2455);
+  $x->get('field_map')->getValue()[0]['lat'];
+  $x->get('field_location')->getValue()[0]['lng'];
+  $y = 1;
 }
