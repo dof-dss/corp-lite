@@ -1,0 +1,60 @@
+<?php
+
+use Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException;
+use Drupal\Component\Plugin\Exception\PluginNotFoundException;
+use Drupal\Core\Entity\EntityStorageException;
+use Drupal\node\NodeInterface;
+
+/**
+ * Migrate Events field_map > field_location.
+ * Copied and modified from https://atendesigngroup.com/articles/programmatically-copy-field-data-drupal-8.
+ */
+
+/**
+ * Implementations of hook_update_N().
+ */
+function corplite_common_update_9003() {
+  corplite_common_copy_field_values('department_management', 'field_map', 'field_location');
+}
+
+/**
+ * Implementations of hook_update_N().
+ */
+function corplite_common_update_9004() {
+  corplite_common_copy_field_values('contact', 'field_map', 'field_location');
+}
+
+
+/**
+ * Copies the value from one field to another empty field.
+ *
+ * @param string $bundle
+ * The node bundle.
+ * @param string $source_field
+ * The source field name.
+ * @param string $dest_field
+ * The destination field.
+ */
+function corplite_common_copy_field_values(string $bundle, string $source_field, string $dest_field): void {
+  $storage = \Drupal::entityTypeManager()->getStorage('node');
+  $nids = \Drupal::entityQuery('node')
+    ->condition('type',$bundle)
+    ->accessCheck(FALSE)
+    ->execute();
+  $nodes = $storage->loadMultiple($nids);
+
+  /* @var $node NodeInterface $node */
+  foreach ($nodes as $node) {
+    if (!empty($node->get($source_field)->getValue()[0])) {
+      // Get the values for the map lat/lng.
+      $old_lat = $node->get($source_field)->getValue()[0]['lat'];
+      $old_lang = $node->get($source_field)->getValue()[0]['lon'];
+      // Set the new values.
+      if (!empty($old_lat)) {
+        $node->$dest_field->lat = $old_lat;
+        $node->$dest_field->lng = $old_lang;
+        $node->save();
+      }
+    }
+  }
+}

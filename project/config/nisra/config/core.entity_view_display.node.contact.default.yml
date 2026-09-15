@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.contact.body
+    - field.field.node.contact.field_location
     - field.field.node.contact.field_map
     - field.field.node.contact.field_meta_tags
     - field.field.node.contact.field_next_audit_due
@@ -11,6 +12,7 @@ dependencies:
     - field.field.node.contact.field_site_topics
     - node.type.contact
   module:
+    - geolocation
     - google_map_field
     - text
     - user
@@ -27,6 +29,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_location:
+    type: geolocation_latlng
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
     region: content
   field_map:
     type: google_map_field_default
