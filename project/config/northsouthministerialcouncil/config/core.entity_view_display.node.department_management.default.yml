@@ -10,10 +10,12 @@ dependencies:
     - field.field.node.department_management.field_facebook_url
     - field.field.node.department_management.field_flickr_url
     - field.field.node.department_management.field_linkedin_url
+    - field.field.node.department_management.field_location_map
     - field.field.node.department_management.field_twitter_url
     - field.field.node.department_management.field_youtube_url
     - node.type.department_management
   module:
+    - geolocation
     - google_map_field
     - text
     - user
@@ -35,6 +37,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 1
+    region: content
+  field_location_map:
+    type: geolocation_latlng
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
     region: content
 hidden:
   content_moderation_control: true

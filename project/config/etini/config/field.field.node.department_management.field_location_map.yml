@@ -1,0 +1,21 @@
+uuid: 96f3d367-d949-43eb-b01f-7b0ce5b14d4f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location_map
+    - node.type.department_management
+  module:
+    - geolocation
+id: node.department_management.field_location_map
+field_name: field_location_map
+entity_type: node
+bundle: department_management
+label: Map
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geolocation
