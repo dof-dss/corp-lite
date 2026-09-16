@@ -15,6 +15,7 @@ dependencies:
   module:
     - content_moderation
     - geolocation_google_maps
+    - google_map_field
     - metatag
     - path
     - shs
@@ -44,7 +45,7 @@ content:
     third_party_settings: {  }
   field_location:
     type: geolocation_googlegeocoder
-    weight: 26
+    weight: 14
     region: content
     settings:
       auto_client_location: ''
@@ -348,6 +349,12 @@ content:
         width: 100%
         gestureHandling: auto
     third_party_settings: {  }
+  field_map:
+    type: google_map_field_default
+    weight: 15
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_meta_tags:
     type: metatag_firehose
     weight: 13
@@ -445,5 +452,4 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
-  field_map: true
   field_next_audit_due: true
