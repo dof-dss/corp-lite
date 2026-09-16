@@ -178,6 +178,7 @@
         "drupal/webform": "^6.2",
         "drupal/whatlinkshere": "^2.1",
         "drush/drush": "^12.5",
+        "geocoder-php/google-maps-provider": "^4.8",
         "harvesthq/chosen": "^1.8",
         "platformsh/config-reader": "^2.4",
         "symfony/http-client": "^5.4"
