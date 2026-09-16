@@ -5,8 +5,8 @@ dependencies:
   module:
     - geolocation
     - node
-id: node.field_location
-field_name: field_location
+id: node.field_location_map
+field_name: field_location_map
 entity_type: node
 type: geolocation
 settings: {  }

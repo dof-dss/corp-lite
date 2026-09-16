@@ -8,7 +8,7 @@
 //use Drupal\node\NodeInterface;
 //
 ///**
-// * Migrate Events field_map > field_location.
+// * Migrate Events field_map > field_location_map.
 // * Copied and modified from https://atendesigngroup.com/articles/programmatically-copy-field-data-drupal-8.
 // */
 //
@@ -16,14 +16,14 @@
 // * Implementations of hook_update_N().
 // */
 //function corplite_common_update_9001(&$sandbox) {
-//  corplite_common_copy_field_values($sandbox, 'department_management', 'field_map', 'field_location');
+//  corplite_common_copy_field_values($sandbox, 'department_management', 'field_map', 'field_location_map');
 //}
 //
 ///**
 // * Implementations of hook_update_N().
 // */
 //function corplite_common_update_9002(&$sandbox) {
-//  corplite_common_copy_field_values($sandbox, 'contact', 'field_map', 'field_location');
+//  corplite_common_copy_field_values($sandbox, 'contact', 'field_map', 'field_location_map');
 //}
 //
 ///**
