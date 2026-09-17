@@ -3,7 +3,7 @@ adding:
     connector_config:
       host: ddev-corp.lite-solr
       port: 8983
-      core: afbini_index
+      core: afbini
       skip_schema_check: true
       solr_install_dir: /opt/solr
       checkpoints_collection: ''
