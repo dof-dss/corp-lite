@@ -75,7 +75,7 @@
         "drupal/admin_toolbar": "^3.6",
         "drupal/allowed_formats": "^3.0",
         "drupal/antibot": "^2.0",
-        "drupal/blazy": "^3.0",
+        "drupal/blazy": "^3.0.19",
         "drupal/block_content_permissions": "^1.11",
         "drupal/block_field": "^1.0@RC",
         "drupal/block_list_override": "^1.0",
