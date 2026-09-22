@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.diff
     - field.field.node.contact.body
+    - field.field.node.contact.field_location
     - field.field.node.contact.field_map
     - field.field.node.contact.field_meta_tags
     - field.field.node.contact.field_next_audit_due
@@ -68,6 +69,7 @@ content:
     region: content
 hidden:
   content_moderation_control: true
+  field_location: true
   field_map: true
   field_next_audit_due: true
   langcode: true
