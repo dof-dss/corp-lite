@@ -175,7 +175,7 @@
         "drupal/views_field_view": "^1.0@beta",
         "drupal/views_rss": "^2.4",
         "drupal/views_tree": "^2.0@RC",
-        "drupal/webform": "^6.2",
+        "drupal/webform": "6.2.12",
         "drupal/whatlinkshere": "^2.1",
         "drush/drush": "^12.5",
         "geocoder-php/google-maps-provider": "^4.8",
