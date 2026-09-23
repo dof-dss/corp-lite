@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "964ed41618a241a68f0e98c8a169dd1d",
+    "content-hash": "42da7bc255083d68d24afaffeaea804f",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1828,17 +1828,17 @@
         },
         {
             "name": "drupal/blazy",
-            "version": "3.0.17",
+            "version": "3.0.19",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/blazy.git",
-                "reference": "3.0.17"
+                "reference": "3.0.19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/blazy-3.0.17.zip",
-                "reference": "3.0.17",
-                "shasum": "3bbafe86ed2114a4d99431919a9ea13b3faa15f3"
+                "url": "https://ftp.drupal.org/files/projects/blazy-3.0.19.zip",
+                "reference": "3.0.19",
+                "shasum": "2306986b2d8227a8fe45adcd59f4d6b332abc0b7"
             },
             "require": {
                 "drupal/core": ">=9.4"
@@ -1849,8 +1849,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "3.0.17",
-                    "datestamp": "1768032942",
+                    "version": "3.0.19",
+                    "datestamp": "1787772242",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -9050,17 +9050,17 @@
         },
         {
             "name": "drupal/webform",
-            "version": "6.2.9",
+            "version": "6.2.12",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/webform.git",
-                "reference": "6.2.9"
+                "reference": "6.2.12"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/webform-6.2.9.zip",
-                "reference": "6.2.9",
-                "shasum": "650752c3cc6d0144c6f378b8d25d45c083e23600"
+                "url": "https://ftp.drupal.org/files/projects/webform-6.2.12.zip",
+                "reference": "6.2.12",
+                "shasum": "ec49eefc3d3c1fe34e6290f46fb810595a8edf95"
             },
             "require": {
                 "drupal/core": "^10.2",
@@ -9068,7 +9068,7 @@
             },
             "require-dev": {
                 "drupal/address": "1.x-dev",
-                "drupal/bootstrap": "3.x-dev",
+                "drupal/bootstrap": "^3.0",
                 "drupal/captcha": "^1 || ^2",
                 "drupal/chosen": "3.0.x-dev",
                 "drupal/ckeditor": "1.0.x-dev",
@@ -9079,6 +9079,7 @@
                 "drupal/entity_print": "2.x-dev",
                 "drupal/group": "1.x-dev",
                 "drupal/hal": "1 - 2",
+                "drupal/honeypot": "^2.0",
                 "drupal/jquery_ui": "1.x-dev",
                 "drupal/jquery_ui_button": "2.x-dev",
                 "drupal/jquery_ui_checkboxradio": "2.x-dev",
@@ -9110,8 +9111,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "6.2.9",
-                    "datestamp": "1733851063",
+                    "version": "6.2.12",
+                    "datestamp": "1790179457",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
