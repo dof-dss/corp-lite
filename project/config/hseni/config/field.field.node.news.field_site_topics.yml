@@ -12,8 +12,8 @@ id: node.news.field_site_topics
 field_name: field_site_topics
 entity_type: node
 bundle: news
-label: Topics
-description: 'Choose optional site topic(s) for this news item.'
+label: 'Site topics'
+description: 'Choose optional site topic(s) for this news item. Hold down Ctrl to choose multiple site topics.'
 required: false
 translatable: false
 default_value: {  }

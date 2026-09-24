@@ -12,8 +12,8 @@ id: node.consultation.field_site_topics
 field_name: field_site_topics
 entity_type: node
 bundle: consultation
-label: Topics
-description: 'Choose relevant site topic(s) for this consultation.'
+label: 'Site topics'
+description: 'Choose relevant site topic(s) for this consultation. Hold down Ctrl to choose multiple site topics.'
 required: false
 translatable: false
 default_value: {  }

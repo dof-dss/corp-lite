@@ -13,7 +13,7 @@ field_name: field_site_topics
 entity_type: node
 bundle: application
 label: 'Site topics'
-description: 'Choose relevant site topic(s) for this application.'
+description: 'Choose relevant site topic(s) for this application. Hold down Ctrl to choose multiple site topics.'
 required: true
 translatable: false
 default_value: {  }

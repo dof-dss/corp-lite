@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_contact_information
-    - filter.format.basic_html
     - node.type.department_management
   module:
     - text
@@ -18,10 +17,9 @@ required: true
 translatable: false
 default_value:
   -
-    value: '<address><p>[Address line 1],<br>[Address ine 2],<br>[Address line 3],</p></address><address><p>[Postal Area]</p></address><address><p>[Postcode]<br><br>Telephone: [xxx xxxx xxxx]</p></address><address><p>Email: <a href="mailto:something@somethingni.gov.uk">something@somethingni.gov.uk</a></p></address>'
-    format: basic_html
+    value: '<address>[Address line 1],<br />[Address ine 2],<br />[Address line 3],</address><address>[Postal Area]</address><address>[Postcode]<br /><br />Telephone: [xxx xxxx xxxx]</address><address>Email: <a href="mailto:something@somethingni.gov.uk">something@somethingni.gov.uk</a></address>'
+    format: filtered_html_with_no_images
 default_value_callback: ''
 settings:
-  allowed_formats:
-    - basic_html
+  allowed_formats: {  }
 field_type: text_long

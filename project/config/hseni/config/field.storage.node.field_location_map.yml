@@ -1,12 +1,12 @@
-uuid: 86e11690-a158-475d-98ed-62c3b7bd3d6e
+uuid: edb9bb8d-ac4c-4934-82a9-8f7d900d482b
 langcode: en
 status: true
 dependencies:
   module:
     - geolocation
     - node
-id: node.field_location
-field_name: field_location
+id: node.field_location_map
+field_name: field_location_map
 entity_type: node
 type: geolocation
 settings: {  }
