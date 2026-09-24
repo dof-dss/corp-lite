@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_contact_information
-    - field.storage.node.field_location
+    - field.storage.node.field_location_map
     - node.type.contact
     - node.type.department_management
   module:
@@ -276,10 +276,10 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_location:
-          id: field_location
-          table: node__field_location
-          field: field_location
+        field_location_map:
+          id: field_location_map
+          table: node__field_location_map
+          field: field_location_map
           relationship: none
           group_type: group
           admin_label: ''
@@ -357,7 +357,7 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.field_contact_information'
-        - 'config:field.storage.node.field_location'
+        - 'config:field.storage.node.field_location_map'
   contacts_list:
     id: contacts_list
     display_title: 'Contacts list'
