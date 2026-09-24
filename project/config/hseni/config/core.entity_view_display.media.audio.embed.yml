@@ -21,13 +21,10 @@ bundle: audio
 mode: embed
 content:
   field_media_audio_file:
-    type: file_audio
+    type: file_default
     label: visually_hidden
     settings:
-      controls: true
-      autoplay: false
-      loop: false
-      multiple_file_display_type: tags
+      use_description_as_link_text: true
     third_party_settings: {  }
     weight: 0
     region: content

@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.department_management.field_flickr_url
     - field.field.node.department_management.field_instagram_url
     - field.field.node.department_management.field_linkedin_url
+    - field.field.node.department_management.field_location_map
     - field.field.node.department_management.field_map
     - field.field.node.department_management.field_meta_tags
     - field.field.node.department_management.field_twitter_url
@@ -163,6 +164,7 @@ content:
     weight: 7
     region: content
 hidden:
+  field_location_map: true
   field_map: true
   langcode: true
   links: true

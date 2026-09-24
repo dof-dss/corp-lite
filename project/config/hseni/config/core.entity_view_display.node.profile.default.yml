@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.profile.field_department
     - field.field.node.profile.field_links
     - field.field.node.profile.field_meta_tags
+    - field.field.node.profile.field_next_audit_due
     - field.field.node.profile.field_photo
     - field.field.node.profile.field_summary
     - node.type.profile
@@ -67,6 +68,7 @@ content:
 hidden:
   content_moderation_control: true
   field_meta_tags: true
+  field_next_audit_due: true
   langcode: true
   links: true
   search_api_excerpt: true
