@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_contact_information
-    - field.storage.node.field_departmental_map
+    - field.storage.node.field_map
     - node.type.contact
     - node.type.department_management
   module:
@@ -91,15 +91,14 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_departmental_map:
-          id: field_departmental_map
-          table: node__field_departmental_map
-          field: field_departmental_map
+        field_map:
+          id: field_map
+          table: node__field_map
+          field: field_map
           relationship: none
           group_type: group
           admin_label: ''
-          entity_type: node
-          plugin_id: geolocation_field
+          plugin_id: field
           label: Map
           exclude: false
           alter:
@@ -131,10 +130,10 @@ display:
             html: false
           element_type: ''
           element_class: ''
-          element_label_type: h2
+          element_label_type: ''
           element_label_class: ''
           element_label_colon: false
-          element_wrapper_type: ''
+          element_wrapper_type: h2
           element_wrapper_class: ''
           element_default_classes: false
           empty: ''
@@ -234,7 +233,7 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.field_contact_information'
-        - 'config:field.storage.node.field_departmental_map'
+        - 'config:field.storage.node.field_map'
   contact_us:
     id: contact_us
     display_title: 'Contact us Page'
@@ -256,7 +255,7 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.field_contact_information'
-        - 'config:field.storage.node.field_departmental_map'
+        - 'config:field.storage.node.field_map'
   contacts_list:
     id: contacts_list
     display_title: 'Contacts list'
@@ -670,4 +669,4 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.field_contact_information'
-        - 'config:field.storage.node.field_departmental_map'
+        - 'config:field.storage.node.field_map'
