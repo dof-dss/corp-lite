@@ -35,6 +35,20 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_location_map:
+    type: geolocation_latlng
+    label: above
+    settings: { }
+    third_party_settings: { }
+    weight: 3
+    region: content
+  field_map:
+    type: google_map_field_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
 hidden:
   body: true
   content_moderation_control: true
@@ -42,8 +56,6 @@ hidden:
   field_facebook_url: true
   field_flickr_url: true
   field_linkedin_url: true
-  field_location_map: true
-  field_map: true
   field_twitter_url: true
   field_youtube_url: true
   langcode: true
