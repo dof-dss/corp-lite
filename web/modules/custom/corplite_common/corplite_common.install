@@ -1,104 +1,107 @@
 <?php
-// Commenting this out as we don't want it to run until the field config is in place.
-//
-//use Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException;
-//use Drupal\Component\Plugin\Exception\PluginNotFoundException;
-//use Drupal\Core\Entity\EntityStorageException;
-//use Drupal\field\Entity\FieldConfig;
-//use Drupal\node\NodeInterface;
-//
-///**
-// * Migrate Events field_map > field_location_map.
-// * Copied and modified from https://atendesigngroup.com/articles/programmatically-copy-field-data-drupal-8.
-// */
-//
-///**
-// * Implementations of hook_update_N().
-// */
-//function corplite_common_update_9001(&$sandbox) {
-//  corplite_common_copy_field_values($sandbox, 'department_management', 'field_map', 'field_location_map');
-//}
-//
-///**
-// * Implementations of hook_update_N().
-// */
-//function corplite_common_update_9002(&$sandbox) {
-//  corplite_common_copy_field_values($sandbox, 'contact', 'field_map', 'field_location_map');
-//}
-//
-///**
-// * Implementations of hook_update_N().
-// */
-//function corplite_common_update_9003(&$sandbox) {
-//  // Delete the old Map field.
-//  FieldConfig::loadByName('node', 'contact', 'field_map')->delete();
-//  FieldConfig::loadByName('node', 'department_management', 'field_map')->delete();
-//}
-//
-//
-///**
-// * Copies the value from one field to another empty field.
-// *
-// * @param array $sandbox
-// * The batch operation sandbox.
-// * @param string $bundle
-// * The node bundle.
-// * @param string $source_field
-// * The source field name.
-// * @param string $dest_field
-// * The destination field.
-// * @param int $nodes_per_batch
-// * The amount of nodes to update at a given time.
-// * @throws InvalidPluginDefinitionException
-// * @throws PluginNotFoundException
-// * @throws EntityStorageException
-// */
-//function corplite_common_copy_field_values(array &$sandbox, string $bundle, string $source_field, string $dest_field, int $nodes_per_batch = 20): void
-//{
-//  $storage = \Drupal::entityTypeManager()->getStorage('node');
-//  // Initialize some variables during the first pass through.
-//  if (!isset($sandbox['total'])) {
-//    $query = $storage->getQuery()
-//      ->condition('type', $bundle)
-//      ->accessCheck(FALSE);
-//
-//    $nids = $query->execute();
-//
-//    $sandbox['total'] = count($nids);
-//    $sandbox['ids'] = array_chunk($nids, $nodes_per_batch);
-//    $sandbox['current'] = 0;
-//  }
-//
-//  if ($sandbox['total'] == 0) {
-//    $sandbox['#finished'] = 1;
-//    return;
-//  }
-//
-//  $nids = array_shift($sandbox['ids']);
-//  $nodes = $storage->loadMultiple($nids);
-//
-//  /* @var $node NodeInterface $node */
-//  foreach ($nodes as $node) {
-//    // Count every node as processed, including nodes we skip.
-//    $sandbox['current']++;
-//    // Check field map has any values.
-//    if (!empty($node->get($source_field)->getValue())) {
-//      $values = $node->get($source_field)->getValue();
-//
-//      // Skip nodes where the Google Map field is empty.
-//      if (!empty($values[0]['lat'])) {
-//        // Set the Latitude and longitude.
-//        $node->set($dest_field, [
-//          'lat' => $values[0]['lat'],
-//          'lng' => $values[0]['lon'],
-//        ]);
-//
-//        $node->save();
-//
-//        $sandbox['current']++;
-//      }
-//    }
-//  }
-//
-//  $sandbox['#finished'] = min(($sandbox['current'] / $sandbox['total']), 1);
-//}
+
+use Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException;
+use Drupal\Component\Plugin\Exception\PluginNotFoundException;
+use Drupal\Core\Entity\EntityStorageException;
+use Drupal\field\Entity\FieldConfig;
+use Drupal\node\NodeInterface;
+
+/**
+ * Migrate Events field_map > field_location_map.
+ * Copied and modified from https://atendesigngroup.com/articles/programmatically-copy-field-data-drupal-8.
+ */
+
+/**
+ * Implementations of hook_update_N().
+ */
+function corplite_common_update_9001(&$sandbox) {
+  corplite_common_copy_field_values($sandbox, 'department_management', 'field_map', 'field_location_map');
+}
+
+/**
+ * Implementations of hook_update_N().
+ */
+function corplite_common_update_9002(&$sandbox) {
+  corplite_common_copy_field_values($sandbox, 'contact', 'field_map', 'field_location_map');
+}
+
+/**
+ * Implementations of hook_update_N().
+ */
+function corplite_common_update_9003(&$sandbox) {
+  // Delete the old Map field.
+  if (!empty(FieldConfig::loadByName('node', 'contact', 'field_map'))) {
+    FieldConfig::loadByName('node', 'contact', 'field_map')->delete();
+  }
+  if (!empty(FieldConfig::loadByName('node', 'department_management', 'field_map'))) {
+    FieldConfig::loadByName('node', 'department_management', 'field_map')->delete();
+  }
+}
+
+
+/**
+ * Copies the value from one field to another empty field.
+ *
+ * @param array $sandbox
+ * The batch operation sandbox.
+ * @param string $bundle
+ * The node bundle.
+ * @param string $source_field
+ * The source field name.
+ * @param string $dest_field
+ * The destination field.
+ * @param int $nodes_per_batch
+ * The amount of nodes to update at a given time.
+ * @throws InvalidPluginDefinitionException
+ * @throws PluginNotFoundException
+ * @throws EntityStorageException
+ */
+function corplite_common_copy_field_values(array &$sandbox, string $bundle, string $source_field, string $dest_field, int $nodes_per_batch = 20): void
+{
+  $storage = \Drupal::entityTypeManager()->getStorage('node');
+  // Initialize some variables during the first pass through.
+  if (!isset($sandbox['total'])) {
+    $query = $storage->getQuery()
+      ->condition('type', $bundle)
+      ->accessCheck(FALSE);
+
+    $nids = $query->execute();
+
+    $sandbox['total'] = count($nids);
+    $sandbox['ids'] = array_chunk($nids, $nodes_per_batch);
+    $sandbox['current'] = 0;
+  }
+
+  if ($sandbox['total'] == 0) {
+    $sandbox['#finished'] = 1;
+    return;
+  }
+
+  $nids = array_shift($sandbox['ids']);
+  $nodes = $storage->loadMultiple($nids);
+
+  /* @var $node NodeInterface $node */
+  foreach ($nodes as $node) {
+    // Count every node as processed, including nodes we skip.
+    $sandbox['current']++;
+    // Check field map has any values.
+    if (!empty($node->get($source_field)->getValue())) {
+      $values = $node->get($source_field)->getValue();
+
+      // Skip nodes where the Google Map field is empty.
+      if (!empty($values[0]['lat'])) {
+        // Set the Latitude and longitude.
+        $node->set($dest_field, [
+          'lat' => $values[0]['lat'],
+          'lng' => $values[0]['lon'],
+        ]);
+
+        $node->save();
+
+        $sandbox['current']++;
+      }
+    }
+  }
+
+  $sandbox['#finished'] = min(($sandbox['current'] / $sandbox['total']), 1);
+}
