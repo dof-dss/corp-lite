@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "42da7bc255083d68d24afaffeaea804f",
+    "content-hash": "5421ad7feb4eccddc6abaf7763f76d06",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1475,16 +1475,16 @@
         },
         {
             "name": "dof-dss/nicsdru_origins_modules",
-            "version": "10.7.0",
+            "version": "10.7.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dof-dss/nicsdru_origins_modules.git",
-                "reference": "c94c9f5871c4cd090db5fed839abbad413041280"
+                "reference": "8eb6146f308631c4c319ad975a1dcc48bea41b5f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dof-dss/nicsdru_origins_modules/zipball/c94c9f5871c4cd090db5fed839abbad413041280",
-                "reference": "c94c9f5871c4cd090db5fed839abbad413041280",
+                "url": "https://api.github.com/repos/dof-dss/nicsdru_origins_modules/zipball/8eb6146f308631c4c319ad975a1dcc48bea41b5f",
+                "reference": "8eb6146f308631c4c319ad975a1dcc48bea41b5f",
                 "shasum": ""
             },
             "require": {
@@ -1503,9 +1503,9 @@
             "description": "Generic modules for DOF-DSS Drupal sites",
             "support": {
                 "issues": "https://github.com/dof-dss/nicsdru_origins_modules/issues",
-                "source": "https://github.com/dof-dss/nicsdru_origins_modules/tree/10.7.0"
+                "source": "https://github.com/dof-dss/nicsdru_origins_modules/tree/10.7.5"
             },
-            "time": "2026-06-02T15:38:26+00:00"
+            "time": "2026-08-28T13:06:57+00:00"
         },
         {
             "name": "drupal/a11y_form_helpers",
