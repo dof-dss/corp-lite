@@ -119,6 +119,13 @@ if (getenv('IS_DDEV_PROJECT') && file_exists($app_root . '/sites/settings.ddev.p
   include $app_root . '/sites/settings.ddev.php';
 }
 
+// Include the addon-managed Redis settings, with a separate prefix per site.
+$redis_settings = $app_root . '/sites/default/settings.ddev.redis.php';
+if (getenv('IS_DDEV_PROJECT') == 'true' && file_exists($redis_settings)) {
+  $settings['cache_prefix'] = $subsite_id . '_';
+  include $redis_settings;
+}
+
 // Configure file paths.
 if (!isset($settings['file_public_path'])) {
   $settings['file_public_path'] = 'files/' . $subsite_id;
