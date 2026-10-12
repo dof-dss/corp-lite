@@ -7,16 +7,16 @@ dependencies:
 id: taxonomy_term_publication_types
 label: 'Taxonomy term - Publication types'
 type: 'canonical_entities:taxonomy_term'
-pattern: '[term:name]'
+pattern: '/[term:name]'
 selection_criteria:
   f8e86405-b654-4b23-b818-55fa00caa3e7:
     id: 'entity_bundle:taxonomy_term'
     negate: false
-    uuid: f8e86405-b654-4b23-b818-55fa00caa3e7
     context_mapping:
       taxonomy_term: taxonomy_term
     bundles:
       publication_types: publication_types
+    uuid: f8e86405-b654-4b23-b818-55fa00caa3e7
 selection_logic: and
 weight: 0
 relationships: {  }

@@ -7,16 +7,16 @@ dependencies:
 id: content_gallery1
 label: 'Content - Gallery'
 type: 'canonical_entities:node'
-pattern: 'galleries/[node:title]'
+pattern: '/galleries/[node:title]'
 selection_criteria:
   37869871-6d7b-4394-b99b-9b9758db4af6:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 37869871-6d7b-4394-b99b-9b9758db4af6
     context_mapping:
       node: node
     bundles:
       gallery: gallery
+    uuid: 37869871-6d7b-4394-b99b-9b9758db4af6
 selection_logic: and
 weight: -5
 relationships: {  }

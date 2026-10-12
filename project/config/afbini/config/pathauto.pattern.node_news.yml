@@ -7,16 +7,16 @@ dependencies:
 id: node_news
 label: 'Content - News'
 type: 'canonical_entities:node'
-pattern: 'news/[node:title]'
+pattern: '/news/[node:title]'
 selection_criteria:
   216bdaae-123a-4347-b051-c29af7154c81:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 216bdaae-123a-4347-b051-c29af7154c81
     context_mapping:
       node: node
     bundles:
       news: news
+    uuid: 216bdaae-123a-4347-b051-c29af7154c81
 selection_logic: and
 weight: -6
 relationships: {  }

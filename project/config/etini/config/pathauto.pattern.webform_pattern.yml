@@ -7,16 +7,16 @@ dependencies:
 id: webform_pattern
 label: 'Webform pattern'
 type: 'canonical_entities:node'
-pattern: 'forms/[node:title]'
+pattern: '/forms/[node:title]'
 selection_criteria:
   ffc88669-fdd9-4af9-8903-026202460a4a:
     id: 'entity_bundle:node'
     negate: false
-    uuid: ffc88669-fdd9-4af9-8903-026202460a4a
     context_mapping:
       node: node
     bundles:
       webform: webform
+    uuid: ffc88669-fdd9-4af9-8903-026202460a4a
 selection_logic: and
 weight: -5
 relationships: {  }

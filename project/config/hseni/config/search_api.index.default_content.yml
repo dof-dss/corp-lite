@@ -157,8 +157,7 @@ field_settings:
     type: solr_text_spellcheck
     configuration:
       type: union
-      separator: |
-
+      separator: ''
       fields: {  }
   status:
     label: Published
@@ -186,8 +185,7 @@ field_settings:
     boost: 21.0
     configuration:
       type: concat
-      separator: |
-
+      separator: ''
       fields:
         - 'entity:node/title'
   type:
