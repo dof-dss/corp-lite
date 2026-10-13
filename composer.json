@@ -63,13 +63,14 @@
         }
     ],
     "require": {
+        "php": "^8.3",
         "composer-runtime-api": "*",
         "composer/installers": "^2.0",
         "cweagans/composer-patches": "^1.7",
         "deaemth/easychart": "^3.1",
         "dimsemenov/photoswipe": "^5.4",
         "dimsemenov/photoswipe-dynamic-caption-plugin": "^1.2",
-        "dof-dss/nicsdru_origins_modules": "^11.0",
+        "dof-dss/nicsdru_origins_modules": "^11",
         "drupal/a11y_form_helpers": "^2.1",
         "drupal/address": "^2.0",
         "drupal/admin_toolbar": "^3.6",
@@ -79,6 +80,7 @@
         "drupal/block_field": "^1.0@RC",
         "drupal/block_list_override": "^1.0",
         "drupal/block_visibility_groups": "^2.0",
+        "drupal/book": "^2.0",
         "drupal/chosen": "^4.0",
         "drupal/chosen_lib": "^4.0",
         "drupal/ckeditor5_allowed_html": "^1.5@dev",
@@ -162,6 +164,7 @@
         "drupal/telephone_plus": "^2.0",
         "drupal/token": "^1.17",
         "drupal/token_filter": "^2.0",
+        "drupal/tour": "^2.0",
         "drupal/twig_field_value": "^2.0",
         "drupal/twig_tweak": "^3.4",
         "drupal/ultimate_cron": "^2.0@alpha",
@@ -176,10 +179,7 @@
         "geocoder-php/google-maps-provider": "^4.8",
         "harvesthq/chosen": "^1.8",
         "platformsh/config-reader": "^2.4",
-        "symfony/http-client": "^7.4",
-        "php": "^8.3",
-        "drupal/book": "^2.0",
-        "drupal/tour": "^2.0"
+        "symfony/http-client": "^7.4"
     },
     "require-dev": {
         "dof-dss/maestro-hosting": "^1.0",
