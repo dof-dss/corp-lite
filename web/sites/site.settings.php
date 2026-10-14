@@ -119,11 +119,21 @@ if (getenv('IS_DDEV_PROJECT') && file_exists($app_root . '/sites/settings.ddev.p
   include $app_root . '/sites/settings.ddev.php';
 }
 
-// Include the addon-managed Redis settings, with a separate prefix per site.
-$redis_settings = $app_root . '/sites/default/settings.ddev.redis.php';
-if (getenv('IS_DDEV_PROJECT') == 'true' && file_exists($redis_settings)) {
+// Include settings required for Redis cache, as in the DEPT application.
+if (file_exists(__DIR__ . '/settings.ddev.redis.php') && getenv('IS_DDEV_PROJECT') == 'true') {
+  // Separate each site's cache items, cache tags, locks and flood keys.
+  // Redis is shared; separate Drupal databases do not isolate these keys.
+  // Set this before the Redis bootstrap cache is configured.
   $settings['cache_prefix'] = $subsite_id . '_';
-  include $redis_settings;
+  // The helper checks this class before registering its namespace itself.
+  $class_loader->addPsr4('Drupal\\redis\\', $app_root . '/modules/contrib/redis/src');
+  include __DIR__ . '/settings.ddev.redis.php';
+
+  // Retain project-specific hosted service overrides, including flood policy.
+  $redis_example_services = array_search('modules/contrib/redis/example.services.yml', $settings['container_yamls'] ?? [], TRUE);
+  if ($redis_example_services !== FALSE && file_exists(__DIR__ . '/redis.services.yml')) {
+    $settings['container_yamls'][$redis_example_services] = 'sites/redis.services.yml';
+  }
 }
 
 // Configure file paths.
