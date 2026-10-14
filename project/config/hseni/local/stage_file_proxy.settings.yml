@@ -1,7 +1,6 @@
-langcode: en
 hotlink: false
-origin: 'https://www.hseni.gov.uk'
-origin_dir: 'files/hseni'
+origin: https://www.hseni.gov.uk
+origin_dir: files/hseni
 proxy_headers: ''
 use_imagecache_root: true
 verify: true

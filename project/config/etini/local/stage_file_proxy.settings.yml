@@ -1,7 +1,6 @@
-langcode: en
 hotlink: false
-origin: 'https://www.etini.gov.uk'
-origin_dir: 'files/etini'
+origin: https://www.etini.gov.uk
+origin_dir: files/etini
 proxy_headers: ''
 use_imagecache_root: true
 verify: true

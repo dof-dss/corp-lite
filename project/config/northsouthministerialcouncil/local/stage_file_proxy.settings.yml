@@ -1,7 +1,6 @@
-langcode: en
 hotlink: false
-origin: 'https://www.northsouthministerialcouncil.org'
-origin_dir: 'files/northsouthministerialcouncil'
+origin: https://www.northsouthministerialcouncil.org
+origin_dir: files/northsouthministerialcouncil
 proxy_headers: ''
 use_imagecache_root: true
 verify: true

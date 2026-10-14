@@ -1,7 +1,6 @@
-langcode: en
 hotlink: false
-origin: 'https://www.afbini.gov.uk'
-origin_dir: 'files/afbini'
+origin: https://www.afbini.gov.uk
+origin_dir: files/afbini
 proxy_headers: ''
 use_imagecache_root: true
 verify: true
