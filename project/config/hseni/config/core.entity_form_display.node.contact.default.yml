@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.contact.body
-    - field.field.node.contact.field_location
+    - field.field.node.contact.field_location_map
     - field.field.node.contact.field_map
     - field.field.node.contact.field_meta_tags
     - field.field.node.contact.field_next_audit_due
@@ -43,9 +43,9 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_location:
+  field_location_map:
     type: geolocation_googlegeocoder
-    weight: 26
+    weight: 27
     region: content
     settings:
       auto_client_location: ''
@@ -55,18 +55,18 @@ content:
       centre:
         client_location:
           enable: true
-          weight: -10
+          weight: 0
           map_center_id: client_location
         fit_bounds:
           enable: true
-          weight: -9
+          weight: 0
           settings:
             reset_zoom: false
             min_zoom: 12
           map_center_id: fit_bounds
         fixed_boundaries:
           enable: false
-          weight: -8
+          weight: 0
           settings:
             south: ''
             west: ''
@@ -75,7 +75,7 @@ content:
           map_center_id: fixed_boundaries
         fixed_value:
           enable: false
-          weight: -7
+          weight: 0
           settings:
             location_option_id: fixed_value
             latitude: null
@@ -83,7 +83,7 @@ content:
           map_center_id: location_plugins
         ipstack:
           enable: false
-          weight: -6
+          weight: 0
           settings:
             location_option_id: ipstack
             access_key: ''

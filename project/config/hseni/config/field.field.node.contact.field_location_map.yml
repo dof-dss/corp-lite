@@ -1,14 +1,14 @@
-uuid: 8a04d85a-37aa-4c71-b7a6-cab64ebef6e7
+uuid: 0f3e5000-08be-4758-8906-6f05da8eac21
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_location
+    - field.storage.node.field_location_map
     - node.type.contact
   module:
     - geolocation
-id: node.contact.field_location
-field_name: field_location
+id: node.contact.field_location_map
+field_name: field_location_map
 entity_type: node
 bundle: contact
 label: Map

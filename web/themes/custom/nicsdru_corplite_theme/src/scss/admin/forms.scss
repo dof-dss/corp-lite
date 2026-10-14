@@ -63,3 +63,21 @@ $base-font-size: 16px;
     }
   }
 }
+
+.media-library-add-form--oembed {
+  .media-library-add-form__input-wrapper {
+    display: flex;
+    align-items: flex-end !important;
+    gap: 1rem;
+
+    .form-item {
+      flex: 1;
+      margin: 0;
+    }
+
+    .button {
+      margin: 0;
+      flex-shrink: 0;
+    }
+  }
+}
