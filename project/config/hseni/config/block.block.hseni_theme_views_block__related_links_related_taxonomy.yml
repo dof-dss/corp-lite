@@ -24,7 +24,7 @@ settings:
   context_mapping:
     field_site_topics_target_id: '@taxonomy_term.taxonomy_term_route_context:taxonomy_term'
   views_label: ''
-  items_per_page: none
+  items_per_page: null
 visibility:
   condition_group:
     id: condition_group

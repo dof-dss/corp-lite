@@ -7,16 +7,16 @@ dependencies:
 id: content_publication
 label: 'Content - Publication'
 type: 'canonical_entities:node'
-pattern: 'publications/[node:title]'
+pattern: '/publications/[node:title]'
 selection_criteria:
   08d384d4-9b38-4b0d-a375-c9874efd5275:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 08d384d4-9b38-4b0d-a375-c9874efd5275
     context_mapping:
       node: node
     bundles:
       publication: publication
+    uuid: 08d384d4-9b38-4b0d-a375-c9874efd5275
 selection_logic: and
 weight: 0
 relationships: {  }

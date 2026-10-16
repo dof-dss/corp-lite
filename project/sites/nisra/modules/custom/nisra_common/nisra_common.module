@@ -228,7 +228,7 @@ function nisra_common_entity_presave(\Drupal\Core\Entity\EntityInterface $entity
 
         $series_term = $entity->get('field_publication_series')->entity;
 
-        if ($series_term && $series_term->hasField('field_document_type') && !$series_term->get('field_document_type')->isEmpty()) {
+        if ($series_term instanceof TermInterface && $series_term->hasField('field_document_type') && !$series_term->get('field_document_type')->isEmpty()) {
 
           $doc_type_tid = $series_term->get('field_document_type')->target_id;
 
@@ -332,12 +332,16 @@ function nisra_common_taxonomy_term_update(TermInterface $term) {
   // remove the site topic redirect if (not published and) it is a default revision.
     if ($term->isPublished()) {
       // Update is publishing the page - remove and re-create site topic redirect.
-      nisra_common_delete_publication_series_to_site_topic_redirect($term->original);
+      if ($original = $term->getOriginal()) {
+        nisra_common_delete_publication_series_to_site_topic_redirect($original);
+      }
       nisra_common_create_publication_series_to_site_topic_redirect($term);
     }
     elseif ($term->isDefaultRevision()) {
       // Un-published default revision - remove theme redirect.
-      nisra_common_delete_publication_series_to_site_topic_redirect($term->original);
+      if ($original = $term->getOriginal()) {
+        nisra_common_delete_publication_series_to_site_topic_redirect($original);
+      }
     }
 }
 

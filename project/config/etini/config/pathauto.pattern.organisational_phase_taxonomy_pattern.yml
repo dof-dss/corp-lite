@@ -7,16 +7,16 @@ dependencies:
 id: organisational_phase_taxonomy_pattern
 label: 'Organisational phase taxonomy pattern'
 type: 'canonical_entities:taxonomy_term'
-pattern: 'phase/[term:parent:name]/[term:name]'
+pattern: '/phase/[term:parent:name]/[term:name]'
 selection_criteria:
   eb09da97-96c1-4008-81d7-9ddf512aacea:
     id: 'entity_bundle:taxonomy_term'
     negate: false
-    uuid: eb09da97-96c1-4008-81d7-9ddf512aacea
     context_mapping:
       taxonomy_term: taxonomy_term
     bundles:
       site_topics: site_topics
+    uuid: eb09da97-96c1-4008-81d7-9ddf512aacea
 selection_logic: and
 weight: -5
 relationships: {  }

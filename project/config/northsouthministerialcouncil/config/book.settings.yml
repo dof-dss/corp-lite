@@ -8,8 +8,8 @@ allowed_types:
   - news
   - page
   - publication
+child_type: department_management
+book_sort: title
 block:
   navigation:
     mode: 'all pages'
-child_type: department_management
-book_sort: title
