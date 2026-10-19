@@ -112,7 +112,6 @@
         "drupal/facets_pretty_paths": "^2.0",
         "drupal/fastly": "^4.0",
         "drupal/field_group": "^3.4",
-        "drupal/file_delete_ui": "1.x-dev#56a1b3ac1676b2df5812f9d65911344b2dc7d75a",
         "drupal/flag": "^4.0@beta",
         "drupal/flood_control": "^3.0",
         "drupal/geocoder": "^4.9",
