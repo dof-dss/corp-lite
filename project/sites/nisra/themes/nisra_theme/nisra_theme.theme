@@ -5,6 +5,7 @@
  * Functions to support theming in the nisra_theme.
  */
 
+use Drupal\Core\Extension\ThemeSettingsProvider;
 use Drupal\block\Entity\Block;
 use Drupal\facets_summary\Entity\FacetsSummary;
 use Drupal\nicsdru_corplite_theme\LayoutClasses;
@@ -193,12 +194,12 @@ function nisra_theme_preprocess_node(array &$variables) {
  */
 function nisra_theme_preprocess_block(&$variables) {
   // Social media variables to be used in the theme-settings.php.
-  $variables['social_links_twitter'] = theme_get_setting('social_links_twitter');
-  $variables['social_links_facebook'] = theme_get_setting('social_links_facebook');
-  $variables['social_links_linkedin'] = theme_get_setting('social_links_linkedin');
-  $variables['social_links_pinterest'] = theme_get_setting('social_links_pinterest');
-  $variables['social_links_instagram'] = theme_get_setting('social_links_instagram');
-  $variables['social_links_youtube'] = theme_get_setting('social_links_youtube');
+  $variables['social_links_twitter'] = \Drupal::service(ThemeSettingsProvider::class)->getSetting('social_links_twitter');
+  $variables['social_links_facebook'] = \Drupal::service(ThemeSettingsProvider::class)->getSetting('social_links_facebook');
+  $variables['social_links_linkedin'] = \Drupal::service(ThemeSettingsProvider::class)->getSetting('social_links_linkedin');
+  $variables['social_links_pinterest'] = \Drupal::service(ThemeSettingsProvider::class)->getSetting('social_links_pinterest');
+  $variables['social_links_instagram'] = \Drupal::service(ThemeSettingsProvider::class)->getSetting('social_links_instagram');
+  $variables['social_links_youtube'] = \Drupal::service(ThemeSettingsProvider::class)->getSetting('social_links_youtube');
 }
 
 /**
