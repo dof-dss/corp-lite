@@ -7,16 +7,16 @@ dependencies:
 id: node_alert
 label: 'Content - Alert'
 type: 'canonical_entities:node'
-pattern: 'alert/[node:title]'
+pattern: '/alert/[node:title]'
 selection_criteria:
   7e3b6e5b-a6e5-40df-98c4-da48fd3fdb88:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 7e3b6e5b-a6e5-40df-98c4-da48fd3fdb88
     context_mapping:
       node: node
     bundles:
       alert: alert
+    uuid: 7e3b6e5b-a6e5-40df-98c4-da48fd3fdb88
 selection_logic: and
 weight: -10
 relationships: {  }

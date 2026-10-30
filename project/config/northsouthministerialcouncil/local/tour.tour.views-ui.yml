@@ -8,7 +8,6 @@ _core:
   default_config_hash: xfn7kebZS2unxFX_f0NM_2wE4hLEj-w1xyWm5qouk-k
 id: views-ui
 label: 'View edit page'
-module: views_ui
 routes:
   -
     route_name: entity.view.edit_form
