@@ -6,7 +6,7 @@
 # is built.                                                                 #
 #############################################################################
 db:
-    type: 'mariadb:10.4'
+    type: 'mariadb:10.11'
     disk: 6144
     configuration:
         schemas:
@@ -68,4 +68,6 @@ solr_9_9:
             northsouthministerialcouncil:
                 core: northsouthministerialcouncil_index
 redis:
-    type: 'redis:6.0'
+  type: redis:8.0
+  configuration:
+    maxmemory_policy: allkeys-lfu
