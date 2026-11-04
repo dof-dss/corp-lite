@@ -66,13 +66,15 @@ hooks:
       if [ "$result" = "Successful" ]; then
         echo "****** $site deployment ******"
         cd /app/web/sites/$site
+        # Repair prerequisites and update schema before route/cache operations.
+        drush -l "$site" upgrade-preflight || exit 1
+        drush -l "$site" -y updatedb
         # Readonlymode module should be installed on all sites,
         # but we'll just make sure.
         drush en readonlymode -l $site -y
         # Set site to readonly just in case editors are logged on.
         drush -l $site cset readonlymode.settings enabled 1 -y
         drush -l $site -y cache-rebuild
-        drush -l $site -y updatedb
         drush -l $site -y config-import
         # Import blocks and taxonomies
         drush -l $site import-blocks --choice=safe

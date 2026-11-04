@@ -2,7 +2,7 @@ name: NICS Corplite Theme
 type: theme
 description: 'Base theme for Drupal Corp-lite sites'
 package: NICS
-core_version_requirement: ^8.8 || ^9 || ^10
+core_version_requirement: ^8.8 || ^9 || ^10 || ^11
 base theme: stable9
 
 libraries:

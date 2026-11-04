@@ -54,6 +54,7 @@ content:
     weight: 0
     region: content
 hidden:
+  book_navigation: true
   content_moderation_control: true
   field_site_topics: true
   langcode: true

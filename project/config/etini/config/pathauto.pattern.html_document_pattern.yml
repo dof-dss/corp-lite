@@ -7,16 +7,16 @@ dependencies:
 id: html_document_pattern
 label: 'HTML Document Pattern'
 type: 'canonical_entities:node'
-pattern: 'publications/html-document/[node:title]'
+pattern: '/publications/html-document/[node:title]'
 selection_criteria:
   38ec949c-1fab-472e-bbc8-e86075126b42:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 38ec949c-1fab-472e-bbc8-e86075126b42
     context_mapping:
       node: node
     bundles:
       html_document: html_document
+    uuid: 38ec949c-1fab-472e-bbc8-e86075126b42
 selection_logic: and
 weight: -5
 relationships: {  }
