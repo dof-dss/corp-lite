@@ -35,6 +35,8 @@ permissions:
   - 'select terms in publication_types'
   - 'select terms in research_support'
   - 'select terms in site_topics'
+  - 'select unpublished terms in research_support'
+  - 'select unpublished terms in site_topics'
   - 'use text format basic_html'
   - 'view any term'
   - 'view any term name'
