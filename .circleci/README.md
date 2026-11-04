@@ -1,4 +1,4 @@
-# Shared application CI
+# Shared application CI.
 
 Project parameters live in `parameters.json`; setup selects the shared branch
 and action in `config.yml`.
