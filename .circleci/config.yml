@@ -1,17 +1,20 @@
+# Project settings live in .circleci/parameters.json.
+# Downloads shared configuration and scripts once from shared_ci_ref.
 version: 2.1
-
 setup: true
-
+parameters:
+  ci_action:
+    type: enum
+    enum: [none, auto, checks, edge-build, edge-refresh]
+    default: checks
+  shared_ci_ref:
+    type: string
+    default: CORP-855
 orbs:
   continuation: circleci/continuation@0.4.0
-
-workflows:
-  setup:
-    jobs:
-      - fetch-and-continue
-
+  circleci-cli: circleci/circleci-cli@0.1.9
 jobs:
-  fetch-and-continue:
+  assemble:
     docker:
       - image: cimg/base:stable
     steps:
@@ -19,34 +22,31 @@ jobs:
       - run:
           name: Verify Solr configsets
           command: scripts/solr/verify-configsets
+      - circleci-cli/install
       - run:
-          name: Download shared config
+          name: Download and pack shared configuration
+          environment:
+            CI_ACTION: << pipeline.parameters.ci_action >>
+            SHARED_CI_REF: << pipeline.parameters.shared_ci_ref >>
           command: |
-            wget \
-              --header="Cache-Control: no-cache" \
-              --header="Pragma: no-cache" \
-              "https://raw.githubusercontent.com/dof-dss/webdev-ci/main/shared-config.yml?nocache=$(date +%s)" \
-              -O shared-config.yml
-
-      - run:
-          name: Combine shared jobs and local workflows
-          command: |
-            # Remove the 'version: 2.1' from workflows config (since it's in shared config).
-            tail -n +2 .circleci/workflow-config.yml > workflows-only.yml
-            # Concatenate shared jobs+commands with repo workflows
-            cat shared-config.yml workflows-only.yml > full-config.yml
-
+            set -euo pipefail
+            echo "Shared CI branch: $SHARED_CI_REF"
+            shared_ref=$(printf '%s' "$SHARED_CI_REF" | jq -sRr @uri)
+            shared_dir=$(mktemp -d /tmp/shared-ci.XXXXXX)
+            # Download the entire repo archive as it contains various scripts, yml fragments and other
+            # config that we use to build up the final CI config in Circle CI.
+            # NB: --strip-components=1 removes githubs enclosing directory.
+            curl -fsSL "https://github.com/dof-dss/webdev-ci/archive/refs/heads/$shared_ref.tar.gz" \
+              | tar -xz --strip-components=1 -C "$shared_dir"
+            bash "$shared_dir/scripts/pack-application.sh" > /tmp/application-ci.yml
+            # Trigger parameters pass through automatically. Do not pass them twice.
+            jq 'if has("ci_action") or has("shared_ci_ref") then
+              error("Set ci_action and shared_ci_ref in setup or the trigger, not parameters.json")
+              else . end' .circleci/parameters.json > /tmp/application-parameters.json
       - continuation/continue:
-          configuration_path: full-config.yml
-          parameters: |
-            {
-              "php_version": "8.3",
-              "drupal_core_version": "10.4",
-              "coding_standards_dirs": "${PROJECT_ROOT}/web/modules/custom ${PROJECT_ROOT}/web/modules/origins ${PROJECT_ROOT}/web/themes/custom",
-              "custom_code_dirs": "${PROJECT_ROOT}/web/modules/custom ${PROJECT_ROOT}/web/modules/origins",
-              "deprecated_code_dirs": "${PROJECT_ROOT}/web/modules/custom ${PROJECT_ROOT}/web/modules/origins ${PROJECT_ROOT}/web/themes/custom",
-              "edge_branch": "edge",
-              "edge_build_dofdss_packages": "dof-dss/nicsdru_origins_modules:dev-10.x-dev",
-              "ignore_dirs": "/web/themes/origins/node_modules,/web/themes/custom/nicsdru_corplite_theme/node_modules",
-              "ssh_fingerprint": "SHA256:PsyQStHiQTiTA8xugsxPxyjaAUtSnL1HOicgMGANQt4"
-            }
+          configuration_path: /tmp/application-ci.yml
+          parameters: /tmp/application-parameters.json
+workflows:
+  setup:
+    jobs:
+      - assemble
