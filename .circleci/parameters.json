@@ -11,5 +11,10 @@
   "layout": "multisite",
   "sites": "nisra afbini hseni etini northsouthministerialcouncil",
   "build_themes": false,
-  "check_illegal_updates": false
+  "check_illegal_updates": false,
+  "preflight": "none",
+  "deploy": "standard",
+  "content": "structure-sync",
+  "fastly": "keep",
+  "qa_staff": false
 }
