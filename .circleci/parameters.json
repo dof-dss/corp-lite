@@ -7,7 +7,6 @@
   "edge_build_dofdss_packages": "dof-dss/nicsdru_origins_modules:10.x-dev",
   "ignore_dirs": "web/themes/origins/node_modules web/themes/custom/nicsdru_corplite_theme/node_modules",
   "ssh_fingerprint": "SHA256:PsyQStHiQTiTA8xugsxPxyjaAUtSnL1HOicgMGANQt4",
-  "source_branch": "development",
   "environment": "edge",
   "layout": "multisite",
   "sites": "nisra afbini hseni etini northsouthministerialcouncil",
