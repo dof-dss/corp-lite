@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+## Description: Run the shared CI PHPStan deprecation checks
+## Usage: phpstan <directory> [directory ...] [PHPStan options]
+## Example: "ddev phpstan web/modules/origins/origins_workflow"
+set -euo pipefail
+project_root=$(cd "${DDEV_APPROOT:-$(dirname "${BASH_SOURCE[0]}")/../../..}" && pwd -P)
+shared_root=${WEBDEV_CI_DIR:-$(dirname "$project_root")/webdev-ci}
+runner="$shared_root/scripts/phpstan/deprecations.sh"
+[[ -f "$runner" ]] || { echo "Cannot find $runner; set WEBDEV_CI_DIR to your shared checkout." >&2; exit 1; }
+cd "$project_root"
+# Stream the same runner CI unpacks; no shared checkout mount is needed.
+exec ddev exec bash -s -- "$@" < "$runner"
