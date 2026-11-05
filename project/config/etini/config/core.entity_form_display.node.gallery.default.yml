@@ -6,7 +6,6 @@ dependencies:
     - field.field.node.gallery.body
     - field.field.node.gallery.field_gallery_images
     - field.field.node.gallery.field_meta_tags
-    - field.field.node.gallery.field_site_topics
     - field.field.node.gallery.field_summary
     - node.type.gallery
     - workflows.workflow.nics_editorial_workflow
@@ -16,7 +15,6 @@ dependencies:
     - media_library_edit
     - metatag
     - path
-    - shs
     - text
 id: node.gallery.default
 targetEntityType: node
@@ -47,7 +45,7 @@ content:
       media_types: {  }
     third_party_settings:
       media_library_edit:
-        show_edit: '1'
+        show_edit: true
   field_meta_tags:
     type: metatag_firehose
     weight: 7
@@ -55,16 +53,6 @@ content:
     settings:
       sidebar: true
       use_details: true
-    third_party_settings: {  }
-  field_site_topics:
-    type: options_shs
-    weight: 4
-    region: content
-    settings:
-      display_node_count: false
-      create_new_items: false
-      create_new_levels: false
-      force_deepest: false
     third_party_settings: {  }
   field_summary:
     type: string_textarea
