@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "79babc901c315ffdf39259c87df394b9",
+    "content-hash": "09041ecfb60595b0e0811c6c45d63e23",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2255,7 +2255,8 @@
             "homepage": "https://www.drupal.org/project/chosen",
             "support": {
                 "source": "https://git.drupalcode.org/project/chosen"
-            }
+            },
+            "published-time": "2024-09-02T20:04:00+00:00"
         },
         {
             "name": "drupal/ckeditor5_allowed_html",
@@ -4046,7 +4047,8 @@
             "homepage": "https://www.drupal.org/project/entity_browser",
             "support": {
                 "source": "https://git.drupalcode.org/project/entity_browser"
-            }
+            },
+            "published-time": "2025-09-04T06:59:14+00:00"
         },
         {
             "name": "drupal/entity_embed",
@@ -7979,20 +7981,20 @@
         },
         {
             "name": "drupal/shs",
-            "version": "2.0.5",
+            "version": "2.0.7",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/shs.git",
-                "reference": "2.0.5"
+                "reference": "2.0.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/shs-2.0.5.zip",
-                "reference": "2.0.5",
-                "shasum": "c43de730816ca9fa153fb3040496470122222ae6"
+                "url": "https://ftp.drupal.org/files/projects/shs-2.0.7.zip",
+                "reference": "2.0.7",
+                "shasum": "fc7f8f3c5d76c190b58c7870b00822a7dd1ff712"
             },
             "require": {
-                "drupal/core": "^10.2 || ^11"
+                "drupal/core": "^10.5 || ^11.1"
             },
             "require-dev": {
                 "drupal/chosen": "*"
@@ -8000,8 +8002,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.5",
-                    "datestamp": "1763083749",
+                    "version": "2.0.7",
+                    "datestamp": "1787321461",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -8038,7 +8040,8 @@
             "homepage": "https://www.drupal.org/project/shs",
             "support": {
                 "source": "https://git.drupalcode.org/project/shs"
-            }
+            },
+            "published-time": "2026-08-21T14:09:12+00:00"
         },
         {
             "name": "drupal/simple_gmap",
@@ -19426,7 +19429,8 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-07-28T10:04:39+00:00"
+            "time": "2026-07-28T10:04:39+00:00",
+            "published-time": "2026-07-28T10:04:54+00:00"
         },
         {
             "name": "phpstan/phpstan-deprecation-rules",
@@ -22674,5 +22678,5 @@
         "composer-runtime-api": "*"
     },
     "platform-dev": {},
-    "plugin-api-version": "2.9.0"
+    "plugin-api-version": "2.11.0"
 }
