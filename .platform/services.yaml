@@ -6,66 +6,66 @@
 # is built.                                                                 #
 #############################################################################
 db:
-    type: 'mariadb:10.4'
-    disk: 6144
-    configuration:
-        schemas:
-            - nisradb
-            - afbinidb
-            - hsenidb
-            - etinidb
-            - northsouthministerialcouncildb
-        endpoints:
-            nisra:
-                default_schema: nisradb
-                privileges:
-                    nisradb: admin
-            afbini:
-                default_schema: afbinidb
-                privileges:
-                    afbinidb: admin
-            hseni:
-                default_schema: hsenidb
-                privileges:
-                    hsenidb: admin
-            etini:
-                default_schema: etinidb
-                privileges:
-                    etinidb: admin
-            northsouthministerialcouncil:
-                default_schema: northsouthministerialcouncildb
-                privileges:
-                    northsouthministerialcouncildb: admin
+  type: 'mariadb:10.11'
+  disk: 6144
+  configuration:
+    schemas:
+      - nisradb
+      - afbinidb
+      - hsenidb
+      - etinidb
+      - northsouthministerialcouncildb
+    endpoints:
+      nisra:
+        default_schema: nisradb
+        privileges:
+          nisradb: admin
+      afbini:
+        default_schema: afbinidb
+        privileges:
+          afbinidb: admin
+      hseni:
+        default_schema: hsenidb
+        privileges:
+          hsenidb: admin
+      etini:
+        default_schema: etinidb
+        privileges:
+          etinidb: admin
+      northsouthministerialcouncil:
+        default_schema: northsouthministerialcouncildb
+        privileges:
+          northsouthministerialcouncildb: admin
 solr_9_9:
-    type: 'solr:9.9'
-    disk: 1024
-    configuration:
-        modules:
-            - extraction
-            - analysis-extras
-            - langid
-            - ltr
-        cores:
-            nisra_index:
-                conf_dir: !archive solr_configsets/nisra/conf/
-            afbini_index:
-                conf_dir: !archive solr_configsets/afbini/conf/
-            hseni_index:
-                conf_dir: !archive solr_configsets/hseni/conf/
-            etini_index:
-                conf_dir: !archive solr_configsets/etini/conf/
-            northsouthministerialcouncil_index:
-                conf_dir: !archive solr_configsets/northsouthministerialcouncil/conf/
-        endpoints:
-            nisra:
-                core: nisra_index
-            afbini:
-                core: afbini_index
-            hseni:
-                core: hseni_index
-            etini:
-                core: etini_index
-            northsouthministerialcouncil:
-                core: northsouthministerialcouncil_index
+  type: 'solr:9.9'
+  disk: 1024
+  configuration:
+    modules:
+      - extraction
+      - analysis-extras
+      - langid
+      - ltr
+    cores:
+      nisra_index:
+        conf_dir: !archive solr_configsets/nisra/conf/
+      afbini_index:
+        conf_dir: !archive solr_configsets/afbini/conf/
+      hseni_index:
+        conf_dir: !archive solr_configsets/hseni/conf/
+      etini_index:
+        conf_dir: !archive solr_configsets/etini/conf/
+      northsouthministerialcouncil_index:
+        conf_dir: !archive solr_configsets/northsouthministerialcouncil/conf/
+    endpoints:
+      nisra:
+        core: nisra_index
+      afbini:
+        core: afbini_index
+      hseni:
+        core: hseni_index
+      etini:
+        core: etini_index
+      northsouthministerialcouncil:
+        core: northsouthministerialcouncil_index
 redis:
-    type: 'redis:6.0'
+  type: 'redis:6.0'
