@@ -71,7 +71,9 @@
  */
 #}
 <article{{ attributes.setAttribute('id', 'main-article').removeAttribute('role') }}>
-  {{ drupal_block('page_title_block', wrapper=false) }}
+  <h1 class="page-title">
+    {{ label }}
+  </h1>
   <div{{ content_attributes.addClass(['article-content', 'max-body-text-width']).setAttribute('id', 'toc-menu-skip-target') }}>
     {{- content -}}
   </div>
