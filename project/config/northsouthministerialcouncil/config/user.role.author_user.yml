@@ -10,6 +10,7 @@ dependencies:
     - media.type.image
     - media.type.remote_video
     - node.type.contact
+    - node.type.featured_content_list
     - node.type.link
     - node.type.news
     - node.type.page
@@ -53,6 +54,10 @@ permissions:
   - 'create publication content'
   - 'create remote_video media'
   - 'create url aliases'
+  - 'delete contact revisions'
+  - 'delete featured_content_list revisions'
+  - 'delete link revisions'
+  - 'delete news revisions'
   - 'delete own audio media'
   - 'delete own contact content'
   - 'delete own document media'
@@ -64,6 +69,8 @@ permissions:
   - 'delete own page content'
   - 'delete own publication content'
   - 'delete own remote_video media'
+  - 'delete page revisions'
+  - 'delete publication revisions'
   - 'edit any contact content'
   - 'edit any link content'
   - 'edit any news content'
