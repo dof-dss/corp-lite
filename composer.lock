@@ -7979,20 +7979,20 @@
         },
         {
             "name": "drupal/shs",
-            "version": "2.0.5",
+            "version": "2.0.7",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/shs.git",
-                "reference": "2.0.5"
+                "reference": "2.0.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/shs-2.0.5.zip",
-                "reference": "2.0.5",
-                "shasum": "c43de730816ca9fa153fb3040496470122222ae6"
+                "url": "https://ftp.drupal.org/files/projects/shs-2.0.7.zip",
+                "reference": "2.0.7",
+                "shasum": "fc7f8f3c5d76c190b58c7870b00822a7dd1ff712"
             },
             "require": {
-                "drupal/core": "^10.2 || ^11"
+                "drupal/core": "^10.5 || ^11.1"
             },
             "require-dev": {
                 "drupal/chosen": "*"
@@ -8000,8 +8000,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.5",
-                    "datestamp": "1763083749",
+                    "version": "2.0.7",
+                    "datestamp": "1787321461",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -8038,7 +8038,8 @@
             "homepage": "https://www.drupal.org/project/shs",
             "support": {
                 "source": "https://git.drupalcode.org/project/shs"
-            }
+            },
+            "published-time": "2026-08-21T14:09:12+00:00"
         },
         {
             "name": "drupal/simple_gmap",
@@ -22674,5 +22675,5 @@
         "composer-runtime-api": "*"
     },
     "platform-dev": {},
-    "plugin-api-version": "2.9.0"
+    "plugin-api-version": "2.11.0"
 }
