@@ -1215,7 +1215,7 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: "<p>\r\nEdit North South Implementation Bodies links shown on the home page.  Drag and drop to change the display order. <strong>Only the first 12 items are displayed.</strong>\r\n</p>"
+            value: "<p>\r\nEdit North South Implementation Bodies links shown on the home page.  Drag and drop to change the display order. <strong>Only the first 6 items are displayed.</strong>\r\n</p>"
             format: basic_html
           tokenize: false
       display_extenders:
@@ -1989,7 +1989,7 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: "<p>\r\nEdit North South Implementation Bodies links shown on the home page.  Drag and drop to change the display order. <strong>Only the first 12 items are displayed.</strong>\r\n</p>"
+            value: "<p>\r\nEdit North South Implementation Bodies links shown on the home page.  Drag and drop to change the display order. <strong>Only the first 6 items are displayed.</strong>\r\n</p>"
             format: basic_html
           tokenize: false
       display_extenders:

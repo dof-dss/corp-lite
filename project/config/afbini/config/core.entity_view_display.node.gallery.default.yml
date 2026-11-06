@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.field.node.gallery.body
     - field.field.node.gallery.field_gallery_images
-    - field.field.node.gallery.field_site_topics
     - field.field.node.gallery.field_summary
     - image.style.nigov_landscape_xxl_1920x1280_x2
     - node.type.gallery
@@ -36,11 +35,13 @@ content:
       photoswipe_image_style: nigov_landscape_xxl_1920x1280_x2
       photoswipe_reference_image_field: field_media_image
       photoswipe_view_mode: default
+      photoswipe_remove_gallery_wrapper_class: false
+      photoswipe_show_download_button: false
       image_loading:
         attribute: lazy
     third_party_settings:
       photoswipe_dynamic_caption:
-        photoswipe_caption: ''
+        photoswipe_caption: photoswipe_dynamic_caption_referenced_entity_field_caption
         photoswipe_caption_custom: '[media:field_caption]'
     weight: 2
     region: content
@@ -53,7 +54,6 @@ content:
     region: content
 hidden:
   content_moderation_control: true
-  field_site_topics: true
   langcode: true
   links: true
   search_api_excerpt: true

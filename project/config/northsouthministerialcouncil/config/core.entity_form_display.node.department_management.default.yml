@@ -6,11 +6,11 @@ dependencies:
     - field.field.node.department_management.body
     - field.field.node.department_management.field_access_to_information
     - field.field.node.department_management.field_contact_information
-    - field.field.node.department_management.field_departmental_map
     - field.field.node.department_management.field_facebook_url
     - field.field.node.department_management.field_flickr_url
     - field.field.node.department_management.field_linkedin_url
     - field.field.node.department_management.field_location_map
+    - field.field.node.department_management.field_map
     - field.field.node.department_management.field_twitter_url
     - field.field.node.department_management.field_youtube_url
     - node.type.department_management
@@ -95,12 +95,6 @@ content:
     settings:
       rows: 5
       placeholder: ''
-    third_party_settings: {  }
-  field_departmental_map:
-    type: google_map_field_default
-    weight: 26
-    region: content
-    settings: {  }
     third_party_settings: {  }
   field_facebook_url:
     type: link_default
@@ -431,6 +425,12 @@ content:
         height: 400px
         width: 100%
         gestureHandling: auto
+    third_party_settings: {  }
+  field_map:
+    type: google_map_field_default
+    weight: 13
+    region: content
+    settings: {  }
     third_party_settings: {  }
   field_twitter_url:
     type: link_default

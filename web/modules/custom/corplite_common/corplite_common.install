@@ -1,5 +1,4 @@
 <?php
-// Commenting this out as we don't want it to run until the field config is in place.
 //
 //use Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException;
 //use Drupal\Component\Plugin\Exception\PluginNotFoundException;
@@ -15,24 +14,15 @@
 ///**
 // * Implementations of hook_update_N().
 // */
-//function corplite_common_update_9001(&$sandbox) {
+//function corplite_common_update_9004(&$sandbox) {
 //  corplite_common_copy_field_values($sandbox, 'department_management', 'field_map', 'field_location_map');
 //}
 //
 ///**
 // * Implementations of hook_update_N().
 // */
-//function corplite_common_update_9002(&$sandbox) {
+//function corplite_common_update_9005(&$sandbox) {
 //  corplite_common_copy_field_values($sandbox, 'contact', 'field_map', 'field_location_map');
-//}
-//
-///**
-// * Implementations of hook_update_N().
-// */
-//function corplite_common_update_9003(&$sandbox) {
-//  // Delete the old Map field.
-//  FieldConfig::loadByName('node', 'contact', 'field_map')->delete();
-//  FieldConfig::loadByName('node', 'department_management', 'field_map')->delete();
 //}
 //
 //
