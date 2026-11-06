@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "79babc901c315ffdf39259c87df394b9",
+    "content-hash": "485edd908ab3a83d6ee6d1625830a83d",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1475,25 +1475,26 @@
         },
         {
             "name": "dof-dss/nicsdru_origins_modules",
-            "version": "10.7.7",
+            "version": "dev-10.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dof-dss/nicsdru_origins_modules.git",
-                "reference": "8a1973cb7607aa8d63e273c9cc48e9bcc916f575"
+                "reference": "ef74d7a0496a16732cb2f88438d12ac1048f6a70"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dof-dss/nicsdru_origins_modules/zipball/8a1973cb7607aa8d63e273c9cc48e9bcc916f575",
-                "reference": "8a1973cb7607aa8d63e273c9cc48e9bcc916f575",
+                "url": "https://api.github.com/repos/dof-dss/nicsdru_origins_modules/zipball/ef74d7a0496a16732cb2f88438d12ac1048f6a70",
+                "reference": "ef74d7a0496a16732cb2f88438d12ac1048f6a70",
                 "shasum": ""
             },
             "require": {
                 "composer/installers": "^2.0",
                 "drupal/core": "^10"
             },
+            "default-branch": true,
             "bin": [
                 "bin/dof-dss-filehash",
-                "bin/dof-dss-mediahasher"
+                "bin/dof-dss-mediachecksum"
             ],
             "type": "drupal-module",
             "notification-url": "https://packagist.org/downloads/",
@@ -1503,9 +1504,9 @@
             "description": "Generic modules for DOF-DSS Drupal sites",
             "support": {
                 "issues": "https://github.com/dof-dss/nicsdru_origins_modules/issues",
-                "source": "https://github.com/dof-dss/nicsdru_origins_modules/tree/10.7.7"
+                "source": "https://github.com/dof-dss/nicsdru_origins_modules/tree/10.x-dev"
             },
-            "time": "2026-09-16T16:37:12+00:00"
+            "time": "2026-10-16T09:26:12+00:00"
         },
         {
             "name": "drupal/a11y_form_helpers",
@@ -22647,6 +22648,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "dof-dss/nicsdru_origins_modules": 20,
         "drupal/block_field": 5,
         "drupal/ckeditor5_allowed_html": 20,
         "drupal/clone_nodes": 20,
@@ -22674,5 +22676,5 @@
         "composer-runtime-api": "*"
     },
     "platform-dev": {},
-    "plugin-api-version": "2.9.0"
+    "plugin-api-version": "2.6.0"
 }
