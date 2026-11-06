@@ -6,6 +6,7 @@
  */
 
 use Drupal\block\Entity\Block;
+use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\nicsdru_corplite_theme\LayoutClasses;
 use Drupal\node\NodeInterface;
 use Drupal\Core\Link;
@@ -171,6 +172,37 @@ function hseni_theme_preprocess_node(array &$variables) {
       }
 
       break;
+  }
+
+  /** @var \Drupal\node\NodeInterface $node */
+  $node = &$variables['node'];
+  $node_type = $node->getType();
+
+  // Only use this code for consultations content type.
+  if ($node_type === 'consultation') {
+
+    // Get the current time to gauge consultation start and end dates off.
+    $current_time = \Drupal::time()->getCurrentTime();
+
+    // Convert consultation start date to a timestamp.
+    $consultation_start_date = new DrupalDateTime($variables['node']->get('field_consultation_dates')->start_date);
+    $variables['consultation_start_date'] = $consultation_start_date;
+
+    // Convert consultation end date to a timestamp.
+    $consultation_end_date = new DrupalDateTime($variables['node']->get('field_consultation_dates')->end_date);
+    $variables['consultation_end_date'] = $consultation_end_date;
+
+    // Set a variable to be used in the twig template for the ways to respond fieldgroup, initially set to 0.
+    $variables['consultation_in_progress'] = FALSE;
+    $variables['consultation_pending'] = FALSE;
+
+    // If the consultation started before and is ending after today's date then show the contact information.
+    if ($current_time > $consultation_start_date->getTimestamp() && $current_time <= $consultation_end_date->getTimestamp()) {
+      $variables['consultation_in_progress'] = TRUE;
+    }
+    elseif ($current_time < $consultation_start_date->getTimestamp()) {
+      $variables['consultation_pending'] = TRUE;
+    }
   }
 }
 
