@@ -5,14 +5,12 @@ dependencies:
   config:
     - field.field.node.contact.body
     - field.field.node.contact.field_location_map
-    - field.field.node.contact.field_map
     - field.field.node.contact.field_meta_tags
     - field.field.node.contact.field_next_audit_due
     - field.field.node.contact.field_site_topics
     - node.type.contact
   module:
     - geolocation
-    - google_map_field
     - text
     - user
 _core:
@@ -35,13 +33,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 3
-    region: content
-  field_map:
-    type: google_map_field_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 1
     region: content
   field_site_topics:
     type: entity_reference_label

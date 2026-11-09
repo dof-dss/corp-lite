@@ -1,7 +1,7 @@
 name: NICS Corplite
 type: profile
 description: To provide common functionality for various NICS Corp Lite websites
-core_version_requirement: ^8.8 || ^9 || ^10
+core_version_requirement: ^8.8 || ^9 || ^10 || ^11
 distribution:
   name: corplite
   langcode: en
@@ -22,7 +22,6 @@ install:
   - ckeditor5_premium_features_import_word
   - clientside_validation
   - clientside_validation_jquery
-  - clone_nodes
   - config
   - config_filter
   - content_lock
@@ -42,7 +41,6 @@ install:
   - devel
   - diff
   - dynamic_page_cache
-  - easy_install
   - editor
   - embed
   - entity_browser
@@ -57,7 +55,6 @@ install:
   - field_group
   - field_ui
   - file
-  - file_delete_ui
   - filelog
   - filter
   - flag

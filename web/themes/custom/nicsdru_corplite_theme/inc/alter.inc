@@ -5,6 +5,7 @@
  * Theme hook_alter functions.
  */
 
+use Drupal\Core\Extension\ThemeSettingsProvider;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
@@ -26,37 +27,37 @@ function nicsdru_corplite_theme_form_system_theme_settings_alter(&$form, FormSta
   $form['social_links']['social_links_twitter'] = [
     '#type' => 'textfield',
     '#title' => t('Twitter / X'),
-    '#default_value' => theme_get_setting('social_links_twitter'),
+    '#default_value' => \Drupal::service(ThemeSettingsProvider::class)->getSetting('social_links_twitter'),
     '#placeholder' => 'Enter a URL, such as https://twitter.com/yourorg',
   ];
   $form['social_links']['social_links_facebook'] = [
     '#type' => 'textfield',
     '#title' => t('Facebook'),
-    '#default_value' => theme_get_setting('social_links_facebook'),
+    '#default_value' => \Drupal::service(ThemeSettingsProvider::class)->getSetting('social_links_facebook'),
     '#placeholder' => 'Enter a URL, such as https://facebook.com/yourorg',
   ];
   $form['social_links']['social_links_youtube'] = [
     '#type' => 'textfield',
     '#title' => t('YouTube'),
-    '#default_value' => theme_get_setting('social_links_youtube'),
+    '#default_value' => \Drupal::service(ThemeSettingsProvider::class)->getSetting('social_links_youtube'),
     '#placeholder' => 'Enter a URL, such as https://youtube.com/yourorg',
   ];
   $form['social_links']['social_links_instagram'] = [
     '#type' => 'textfield',
     '#title' => t('Instagram'),
-    '#default_value' => theme_get_setting('social_links_instagram'),
+    '#default_value' => \Drupal::service(ThemeSettingsProvider::class)->getSetting('social_links_instagram'),
     '#placeholder' => 'Enter a URL, such as https://www.instagram.com/yourorg',
   ];
   $form['social_links']['social_links_linkedin'] = [
     '#type' => 'textfield',
     '#title' => t('Linkedin'),
-    '#default_value' => theme_get_setting('social_links_linkedin'),
+    '#default_value' => \Drupal::service(ThemeSettingsProvider::class)->getSetting('social_links_linkedin'),
     '#placeholder' => 'Enter a URL, such as https://uk.linkedin.com/company/yourorg',
   ];
   $form['social_links']['social_links_rss'] = [
     '#type' => 'textfield',
     '#title' => t('RSS'),
-    '#default_value' => theme_get_setting('social_links_rss'),
+    '#default_value' => \Drupal::service(ThemeSettingsProvider::class)->getSetting('social_links_rss'),
     '#placeholder' => 'Enter a URL, such as https://example.com/rss.xml',
   ];
 }

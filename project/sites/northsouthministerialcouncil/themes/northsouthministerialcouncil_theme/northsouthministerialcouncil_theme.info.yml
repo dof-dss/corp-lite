@@ -2,7 +2,7 @@ name: NSMC Theme
 type: theme
 description: 'Sub-theme for North South Ministerial Council site'
 package: NICS
-core_version_requirement: ^8.8 || ^9 || ^10
+core_version_requirement: ^8.8 || ^9 || ^10 || ^11
 base theme: nicsdru_corplite_theme
 
 libraries:

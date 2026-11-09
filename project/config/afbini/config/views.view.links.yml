@@ -419,13 +419,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              author_user: '0'
-              supervisor_user: '0'
-              editor_user: '0'
-              site_admin_user: '0'
-              qa: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -785,13 +778,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              author_user: '0'
-              supervisor_user: '0'
-              editor_user: '0'
-              site_admin_user: '0'
-              qa: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -1109,13 +1095,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              author_user: '0'
-              supervisor_user: '0'
-              editor_user: '0'
-              site_admin_user: '0'
-              qa: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -1433,13 +1412,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              author_user: '0'
-              supervisor_user: '0'
-              editor_user: '0'
-              site_admin_user: '0'
-              qa: '0'
             reduce: false
           is_grouped: false
           group_info:
