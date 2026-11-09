@@ -25,7 +25,6 @@ third_party_settings:
     group_additional_content_details:
       children:
         - field_teaser
-        - field_photo
         - field_news_type
         - field_meta_tags
       label: 'Additional content details'
@@ -56,7 +55,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
   field_meta_tags:
     type: metatag_empty_formatter
@@ -78,16 +77,16 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 4
+    weight: 5
     region: content
   field_photo:
     type: entity_reference_entity_view
-    label: inline
+    label: hidden
     settings:
       view_mode: article_float
       link: false
     third_party_settings: {  }
-    weight: 14
+    weight: 3
     region: content
   field_published_date:
     type: datetime_default

@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.field.node.gallery.body
     - field.field.node.gallery.field_gallery_images
-    - field.field.node.gallery.field_site_topics
     - field.field.node.gallery.field_summary
     - image.style.nigov_landscape_xxl_1920x1280_x2
     - node.type.gallery
@@ -56,7 +55,6 @@ content:
 hidden:
   book_navigation: true
   content_moderation_control: true
-  field_site_topics: true
   langcode: true
   links: true
   search_api_excerpt: true
