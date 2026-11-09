@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "09041ecfb60595b0e0811c6c45d63e23",
+    "content-hash": "3c5a73a111f912113df786acf24ab81f",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1475,25 +1475,26 @@
         },
         {
             "name": "dof-dss/nicsdru_origins_modules",
-            "version": "10.7.7",
+            "version": "dev-10.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dof-dss/nicsdru_origins_modules.git",
-                "reference": "8a1973cb7607aa8d63e273c9cc48e9bcc916f575"
+                "reference": "ef74d7a0496a16732cb2f88438d12ac1048f6a70"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dof-dss/nicsdru_origins_modules/zipball/8a1973cb7607aa8d63e273c9cc48e9bcc916f575",
-                "reference": "8a1973cb7607aa8d63e273c9cc48e9bcc916f575",
+                "url": "https://api.github.com/repos/dof-dss/nicsdru_origins_modules/zipball/ef74d7a0496a16732cb2f88438d12ac1048f6a70",
+                "reference": "ef74d7a0496a16732cb2f88438d12ac1048f6a70",
                 "shasum": ""
             },
             "require": {
                 "composer/installers": "^2.0",
                 "drupal/core": "^10"
             },
+            "default-branch": true,
             "bin": [
                 "bin/dof-dss-filehash",
-                "bin/dof-dss-mediahasher"
+                "bin/dof-dss-mediachecksum"
             ],
             "type": "drupal-module",
             "notification-url": "https://packagist.org/downloads/",
@@ -1503,9 +1504,9 @@
             "description": "Generic modules for DOF-DSS Drupal sites",
             "support": {
                 "issues": "https://github.com/dof-dss/nicsdru_origins_modules/issues",
-                "source": "https://github.com/dof-dss/nicsdru_origins_modules/tree/10.7.7"
+                "source": "https://github.com/dof-dss/nicsdru_origins_modules/tree/10.x-dev"
             },
-            "time": "2026-09-16T16:37:12+00:00"
+            "time": "2026-10-16T09:26:12+00:00"
         },
         {
             "name": "drupal/a11y_form_helpers",
@@ -2255,8 +2256,7 @@
             "homepage": "https://www.drupal.org/project/chosen",
             "support": {
                 "source": "https://git.drupalcode.org/project/chosen"
-            },
-            "published-time": "2024-09-02T20:04:00+00:00"
+            }
         },
         {
             "name": "drupal/ckeditor5_allowed_html",
@@ -4047,8 +4047,7 @@
             "homepage": "https://www.drupal.org/project/entity_browser",
             "support": {
                 "source": "https://git.drupalcode.org/project/entity_browser"
-            },
-            "published-time": "2025-09-04T06:59:14+00:00"
+            }
         },
         {
             "name": "drupal/entity_embed",
@@ -8040,8 +8039,7 @@
             "homepage": "https://www.drupal.org/project/shs",
             "support": {
                 "source": "https://git.drupalcode.org/project/shs"
-            },
-            "published-time": "2026-08-21T14:09:12+00:00"
+            }
         },
         {
             "name": "drupal/simple_gmap",
@@ -19429,8 +19427,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-07-28T10:04:39+00:00",
-            "published-time": "2026-07-28T10:04:54+00:00"
+            "time": "2026-07-28T10:04:39+00:00"
         },
         {
             "name": "phpstan/phpstan-deprecation-rules",
@@ -22651,6 +22648,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "dof-dss/nicsdru_origins_modules": 20,
         "drupal/block_field": 5,
         "drupal/ckeditor5_allowed_html": 20,
         "drupal/clone_nodes": 20,
@@ -22678,5 +22676,5 @@
         "composer-runtime-api": "*"
     },
     "platform-dev": {},
-    "plugin-api-version": "2.11.0"
+    "plugin-api-version": "2.6.0"
 }
