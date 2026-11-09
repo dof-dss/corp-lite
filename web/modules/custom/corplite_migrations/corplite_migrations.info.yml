@@ -1,7 +1,7 @@
 name: 'Corplite migrations'
 type: module
 description: 'Corplite Document, audio and image migrations and other tools'
-core_version_requirement: ^8.8 || ^9 || ^10
+core_version_requirement: ^8.8 || ^9 || ^10 || ^11
 package: 'Custom'
 migration_dependencies:
  required: { }

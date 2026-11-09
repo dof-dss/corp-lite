@@ -7,16 +7,16 @@ dependencies:
 id: node_link
 label: 'Content - Link'
 type: 'canonical_entities:node'
-pattern: 'link/[node:title]'
+pattern: '/link/[node:title]'
 selection_criteria:
   256a5118-e502-4e00-b757-d5114521a5df:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 256a5118-e502-4e00-b757-d5114521a5df
     context_mapping:
       node: node
     bundles:
       link: link
+    uuid: 256a5118-e502-4e00-b757-d5114521a5df
 selection_logic: and
 weight: -7
 relationships: {  }

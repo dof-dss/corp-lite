@@ -7,16 +7,16 @@ dependencies:
 id: feature_pattern
 label: 'Feature pattern'
 type: 'canonical_entities:node'
-pattern: 'feature/[node:title]'
+pattern: '/feature/[node:title]'
 selection_criteria:
   cc63c5ee-c36a-4d76-a9b2-86727cc7f4eb:
     id: 'entity_bundle:node'
     negate: false
-    uuid: cc63c5ee-c36a-4d76-a9b2-86727cc7f4eb
     context_mapping:
       node: node
     bundles:
       feature: feature
+    uuid: cc63c5ee-c36a-4d76-a9b2-86727cc7f4eb
 selection_logic: and
 weight: 0
 relationships: {  }

@@ -8,7 +8,6 @@ _core:
   default_config_hash: teLslI_zxyz-ob4aogH7X6K865H6XKxveZOe2_SwxeU
 id: language-add
 label: 'Adding languages'
-module: language
 routes:
   -
     route_name: language.add

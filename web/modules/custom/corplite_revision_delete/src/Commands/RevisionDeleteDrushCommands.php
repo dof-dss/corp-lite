@@ -51,7 +51,12 @@ class RevisionDeleteDrushCommands extends DrushCommands {
     // Loop through all the nodes and get their revisions.
     foreach ($nodes as $nid) {
       /** @var \Drupal\node\NodeInterface $nid */
-      $revisions = $node_storage->revisionIds($nid);
+      $revisions = array_keys($node_storage->getQuery()
+        ->allRevisions()
+        ->condition('nid', $nid->id())
+        ->sort('vid')
+        ->accessCheck(FALSE)
+        ->execute());
 
       // Get the published revision if there is one.
       $latest_revision = $nid->getLoadedRevisionId();

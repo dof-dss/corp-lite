@@ -21,8 +21,6 @@ settings:
   label: 'Promoting improvement in the interest of all learners'
   label_display: visible
   provider: block_content
-  status: true
-  info: ''
   view_mode: full
 visibility:
   condition_group:
