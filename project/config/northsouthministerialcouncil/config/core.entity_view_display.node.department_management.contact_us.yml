@@ -11,11 +11,11 @@ dependencies:
     - field.field.node.department_management.field_flickr_url
     - field.field.node.department_management.field_linkedin_url
     - field.field.node.department_management.field_location_map
-    - field.field.node.department_management.field_map
     - field.field.node.department_management.field_twitter_url
     - field.field.node.department_management.field_youtube_url
     - node.type.department_management
   module:
+    - geolocation
     - layout_builder
     - text
     - user
@@ -38,16 +38,9 @@ content:
   field_location_map:
     type: geolocation_latlng
     label: above
-    settings: { }
-    third_party_settings: { }
-    weight: 3
-    region: content
-  field_map:
-    type: google_map_field_default
-    label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 3
     region: content
 hidden:
   body: true
