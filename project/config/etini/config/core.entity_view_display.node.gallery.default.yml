@@ -26,6 +26,11 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
+  book_navigation:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
   field_gallery_images:
     type: photoswipe_responsive_field_formatter
     label: hidden
@@ -35,6 +40,8 @@ content:
       photoswipe_image_style: nigov_landscape_xxl_1920x1280_x2
       photoswipe_reference_image_field: field_media_image
       photoswipe_view_mode: default
+      photoswipe_remove_gallery_wrapper_class: false
+      photoswipe_show_download_button: false
       image_loading:
         attribute: lazy
     third_party_settings: {  }
