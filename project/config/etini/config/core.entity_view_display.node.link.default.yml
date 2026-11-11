@@ -16,6 +16,11 @@ targetEntityType: node
 bundle: link
 mode: default
 content:
+  book_navigation:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
   field_link_type:
     type: entity_reference_label
     label: above

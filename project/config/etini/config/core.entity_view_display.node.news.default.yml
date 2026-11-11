@@ -31,6 +31,11 @@ content:
     third_party_settings: {  }
     weight: 4
     region: content
+  book_navigation:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
   field_photo:
     type: entity_reference_entity_view
     label: hidden
