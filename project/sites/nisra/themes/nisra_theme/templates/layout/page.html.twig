@@ -72,12 +72,12 @@
   {% else %}
     {{- page.content -}}
   {% endif %}
-  {%- if page.sidebar_second|render|striptags('<img>')|trim|length -%}
+  {%- if page.sidebar_second -%}
     <aside{{ sidebar_second_attr }}>
       {{- page.sidebar_second -}}
     </aside>
   {%- endif -%}
-  {%- if page.related -%}
+  {%- if page.related | render -%}
     {{- page.related -}}
   {% endif %}
 </main>
