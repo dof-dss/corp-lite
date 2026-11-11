@@ -13,6 +13,7 @@ dependencies:
     - node.type.contact
   module:
     - field_group
+    - geolocation
     - metatag
     - text
     - user
@@ -53,6 +54,13 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_location_map:
+    type: geolocation_latlng
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
   field_meta_tags:
     type: metatag_empty_formatter
     label: above
@@ -78,7 +86,6 @@ content:
     region: content
 hidden:
   content_moderation_control: true
-  field_location_map: true
   field_next_audit_due: true
   langcode: true
   links: true
