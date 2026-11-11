@@ -27,6 +27,7 @@ weight: -9
 is_admin: false
 permissions:
   - 'access content'
+  - 'access media overview'
   - 'create url aliases'
   - 'select terms in document_types'
   - 'select terms in link'
