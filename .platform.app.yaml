@@ -58,8 +58,8 @@ hooks:
     export PATH="$N_PREFIX/bin:$PATH"
     # clears cached command locations so the shell finds the new copy.
     hash -r
-    echo "Update robots.txt with Unity customisations"
-    cp -f web/robots_unity.txt web/robots.txt
+    echo "Update robots.txt with Corp Lite customisations"
+    cp -f web/robots_custom.txt web/robots.txt
   post_deploy: |
     set -e
 
