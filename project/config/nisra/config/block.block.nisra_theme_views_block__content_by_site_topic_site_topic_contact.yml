@@ -5,6 +5,7 @@ dependencies:
   config:
     - views.view.content_by_site_topic
   module:
+    - taxonomy
     - views
   theme:
     - nisra_theme
@@ -21,4 +22,12 @@ settings:
   provider: views
   views_label: ''
   items_per_page: null
-visibility: {  }
+visibility:
+  'entity_bundle:taxonomy_term':
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    context_mapping:
+      taxonomy_term: '@taxonomy_term.taxonomy_term_route_context:taxonomy_term'
+    bundles:
+      research_support: research_support
+      site_topics: site_topics

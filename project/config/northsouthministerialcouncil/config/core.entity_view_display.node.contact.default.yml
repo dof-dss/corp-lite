@@ -27,12 +27,17 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  book_navigation:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
   field_location_map:
     type: geolocation_latlng
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 2
     region: content
   field_site_topics:
     type: entity_reference_label
@@ -40,7 +45,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
 hidden:
   content_moderation_control: true

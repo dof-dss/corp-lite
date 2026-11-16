@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c9c54bf9b2e561c64fcff77c3d54d534",
+    "content-hash": "0b090e10df40fafeba710979b99c990a",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2212,7 +2212,8 @@
             "homepage": "https://www.drupal.org/project/chosen",
             "support": {
                 "source": "https://git.drupalcode.org/project/chosen"
-            }
+            },
+            "published-time": "2024-09-02T20:04:00+00:00"
         },
         {
             "name": "drupal/ckeditor5_allowed_html",
@@ -3994,7 +3995,8 @@
             "homepage": "https://www.drupal.org/project/entity_browser",
             "support": {
                 "source": "https://git.drupalcode.org/project/entity_browser"
-            }
+            },
+            "published-time": "2026-08-11T21:39:54+00:00"
         },
         {
             "name": "drupal/entity_embed",
@@ -19665,7 +19667,8 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-07-28T10:04:39+00:00"
+            "time": "2026-07-28T10:04:39+00:00",
+            "published-time": "2026-07-28T10:04:54+00:00"
         },
         {
             "name": "phpstan/phpstan-deprecation-rules",
@@ -22869,5 +22872,5 @@
         "composer-runtime-api": "*"
     },
     "platform-dev": {},
-    "plugin-api-version": "2.9.0"
+    "plugin-api-version": "2.11.0"
 }
