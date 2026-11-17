@@ -21,6 +21,7 @@ dependencies:
     - book
     - content_moderation
     - corplite_common
+    - draggableviews
     - file
     - filter
     - media
@@ -46,6 +47,7 @@ is_admin: false
 permissions:
   - 'access administration pages'
   - 'access content overview'
+  - 'access draggableviews'
   - 'access files overview'
   - 'access media overview'
   - 'access taxonomy overview'
