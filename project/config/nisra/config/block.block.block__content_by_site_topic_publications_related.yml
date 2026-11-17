@@ -5,7 +5,7 @@ dependencies:
   config:
     - views.view.content_by_site_topic
   module:
-    - block_visibility_groups
+    - taxonomy
     - views
   theme:
     - nisra_theme
@@ -24,7 +24,11 @@ settings:
   views_label: 'Related Publications'
   items_per_page: null
 visibility:
-  condition_group:
-    id: condition_group
+  'entity_bundle:taxonomy_term':
+    id: 'entity_bundle:taxonomy_term'
     negate: false
-    block_visibility_group: ''
+    context_mapping:
+      taxonomy_term: '@taxonomy_term.taxonomy_term_route_context:taxonomy_term'
+    bundles:
+      research_support: research_support
+      site_topics: site_topics
