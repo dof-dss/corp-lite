@@ -7,16 +7,16 @@ dependencies:
 id: taxonomy_term_link_types
 label: 'Taxonomy term - Link types'
 type: 'canonical_entities:taxonomy_term'
-pattern: '[term:name]'
+pattern: '/[term:name]'
 selection_criteria:
   7322a175-3618-4f19-8658-fdc295a56787:
     id: 'entity_bundle:taxonomy_term'
     negate: false
-    uuid: 7322a175-3618-4f19-8658-fdc295a56787
     context_mapping:
       taxonomy_term: taxonomy_term
     bundles:
       link_types: link_types
+    uuid: 7322a175-3618-4f19-8658-fdc295a56787
 selection_logic: and
 weight: -3
 relationships: {  }

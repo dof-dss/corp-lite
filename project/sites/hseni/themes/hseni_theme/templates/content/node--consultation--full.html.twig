@@ -82,12 +82,8 @@
 
     {{ content }}
 
-    {# Get the timestamp for the end date and current time #}
-    {% set end_timestamp = node.field_consultation_dates.0.end_date|date("U") %}
-    {% set current_timestamp = "now"|date("U") %}
-
     {# Only display Ways to Respond section if the consultation is open and any field has a value #}
-    {% if end_timestamp >= current_timestamp %}
+    {% if consultation_in_progress %}
       {% if node.field_respond_online.0.url or node.field_email_address.0.value or node.field_postal.0.value %}
         <section class="ways-to-respond">
           <h2>{{ 'Ways to Respond'|t }}</h2>
@@ -118,7 +114,14 @@
           </div>
         </section>
       {% endif %}
+    {% elseif consultation_pending %}
+      <h2>Ways to respond</h2>
+      <p class="info-notice">{{ 'Consultation pending — details on ways to respond will be provided when the consultation has opened.'|t }}</p>
+    {% else %}
+      <h2>Ways to respond</h2>
+      <p class="info-notice">{{ 'Consultation closed — responses are no longer being accepted.'|t }}</p>
     {% endif %}
+  </div>
    {#  {{ include('@nicsdru_dept_theme/content/node-footer.html.twig') }}#}
   </div>
 </article>

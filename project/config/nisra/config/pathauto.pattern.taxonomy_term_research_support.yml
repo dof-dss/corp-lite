@@ -7,16 +7,16 @@ dependencies:
 id: taxonomy_term_research_support
 label: 'Taxonomy term - Research support'
 type: 'canonical_entities:taxonomy_term'
-pattern: 'support/[term:parent]/[term:name]'
+pattern: '/support/[term:parent]/[term:name]'
 selection_criteria:
   ffa67e9b-1e5e-4598-9013-c9ade36165f0:
     id: 'entity_bundle:taxonomy_term'
     negate: false
-    uuid: ffa67e9b-1e5e-4598-9013-c9ade36165f0
     context_mapping:
       taxonomy_term: taxonomy_term
     bundles:
       research_support: research_support
+    uuid: ffa67e9b-1e5e-4598-9013-c9ade36165f0
 selection_logic: and
 weight: 0
 relationships: {  }

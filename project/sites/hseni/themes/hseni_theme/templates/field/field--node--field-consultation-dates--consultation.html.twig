@@ -44,6 +44,9 @@
     {% set end_date = item.content.end_date['#text'] %}
 
     {# End date timestamp #}
+    {% set start_timestamp = start_date|date("U") %}
+
+    {# End date timestamp #}
     {% set end_timestamp = end_date|date("U") %}
 
     {# Get the current timestamp #}
@@ -53,9 +56,12 @@
     {% if end_timestamp < current_timestamp %}
       <p class="consultation-status closed"><strong>Consultation Closed</strong></p>
       <p>Consultation opened {{ start_date }} and closed {{ end_date }}.</p>
+    {% elseif start_timestamp > current_timestamp %}
+      <p class="consultation-status future"><strong>Consultation Opens</strong></p>
+      <p>Consultation opens {{ start_date }}.</p>
     {% else %}
-      <p class="consultation-status open"><strong>Consultation Open</strong></p>
-      <p>Consultation opened {{ start_date }} and closes {{ end_date }}.</p>
+      <p class="consultation-status open"><strong>Consultation closes</strong></p>
+      <p> {{ end_date }}.</p>
     {% endif %}
   {% endfor %}
 </div>

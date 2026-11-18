@@ -5,6 +5,7 @@
  * Functions to support theming in the etini_theme.
  */
 
+use Drupal\Core\Extension\ThemeSettingsProvider;
 use Drupal\block\Entity\Block;
 use Drupal\nicsdru_corplite_theme\LayoutClasses;
 use Drupal\node\NodeInterface;
@@ -176,7 +177,7 @@ function corplite_social_links() {
 
   // Fetch links from the theme settings and use as part of render elements.
   foreach ($platforms as $id => $label) {
-    $platform_url = theme_get_setting("social_links_$id", 'etini_theme');
+    $platform_url = \Drupal::service(ThemeSettingsProvider::class)->getSetting("social_links_$id", 'etini_theme');
 
     if (empty($platform_url)) {
       continue; // Skip any empty links.

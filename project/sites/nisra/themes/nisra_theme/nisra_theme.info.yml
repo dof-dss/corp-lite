@@ -2,7 +2,7 @@ name: Nisra Theme
 type: theme
 description: 'Sub-theme for NISRA'
 package: NICS
-core_version_requirement: ^8.8 || ^9 || ^10
+core_version_requirement: ^8.8 || ^9 || ^10 || ^11
 base theme: nicsdru_corplite_theme
 
 libraries:

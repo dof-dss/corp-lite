@@ -26,6 +26,11 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
+  book_navigation:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
   field_gallery_images:
     type: photoswipe_responsive_field_formatter
     label: hidden

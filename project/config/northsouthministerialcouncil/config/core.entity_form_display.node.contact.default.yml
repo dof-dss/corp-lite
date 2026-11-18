@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.field.node.contact.body
     - field.field.node.contact.field_location_map
-    - field.field.node.contact.field_map
     - field.field.node.contact.field_meta_tags
     - field.field.node.contact.field_next_audit_due
     - field.field.node.contact.field_site_topics
@@ -14,7 +13,6 @@ dependencies:
   module:
     - content_moderation
     - geolocation_google_maps
-    - google_map_field
     - metatag
     - path
     - shs
@@ -347,12 +345,6 @@ content:
         height: 400px
         width: 100%
         gestureHandling: auto
-    third_party_settings: {  }
-  field_map:
-    type: google_map_field_default
-    weight: 13
-    region: content
-    settings: {  }
     third_party_settings: {  }
   field_meta_tags:
     type: metatag_firehose

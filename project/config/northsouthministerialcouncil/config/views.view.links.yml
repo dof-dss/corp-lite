@@ -436,12 +436,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              author_user: '0'
-              supervisor_user: '0'
-              editor_user: '0'
-              qa: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -705,7 +699,7 @@ display:
           exposed: false
           draggable_views_reference: 'links:draggable_northsouthimplementationbodies'
           draggable_views_null_order: after
-          draggable_views_pass_arguments: 0
+          draggable_views_pass_arguments: false
       filters:
         type:
           id: type
@@ -784,12 +778,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              author_user: '0'
-              supervisor_user: '0'
-              editor_user: '0'
-              qa: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -1114,7 +1102,7 @@ display:
           exposed: false
           draggable_views_reference: this
           draggable_views_null_order: after
-          draggable_views_pass_arguments: 0
+          draggable_views_pass_arguments: false
         title:
           id: title
           table: node_field_data
@@ -1167,12 +1155,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              author_user: '0'
-              supervisor_user: '0'
-              editor_user: '0'
-              qa: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -1501,7 +1483,7 @@ display:
           exposed: false
           draggable_views_reference: this
           draggable_views_null_order: after
-          draggable_views_pass_arguments: 0
+          draggable_views_pass_arguments: false
         title:
           id: title
           table: node_field_data
@@ -1554,12 +1536,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              author_user: '0'
-              supervisor_user: '0'
-              editor_user: '0'
-              qa: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -1888,7 +1864,7 @@ display:
           exposed: false
           draggable_views_reference: this
           draggable_views_null_order: after
-          draggable_views_pass_arguments: 0
+          draggable_views_pass_arguments: false
         title:
           id: title
           table: node_field_data
@@ -1941,12 +1917,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              author_user: '0'
-              supervisor_user: '0'
-              editor_user: '0'
-              qa: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -2165,7 +2135,7 @@ display:
           exposed: false
           draggable_views_reference: 'links:draggable_quicklink'
           draggable_views_null_order: after
-          draggable_views_pass_arguments: 0
+          draggable_views_pass_arguments: false
         title:
           id: title
           table: node_field_data
@@ -2259,12 +2229,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              author_user: '0'
-              supervisor_user: '0'
-              editor_user: '0'
-              qa: '0'
             reduce: false
           is_grouped: false
           group_info:

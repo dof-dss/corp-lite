@@ -471,20 +471,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              author_user: '0'
-              supervisor_user: '0'
-              secure_statistics_author_user: '0'
-              secure_market_sensitive_author_user: '0'
-              secure_statistics_supervisor_user: '0'
-              secure_market_sensitive_supervisor_user: '0'
-              editor_user: '0'
-              site_admin_user: '0'
-              admin_user: '0'
-              qa: '0'
-              homepage_supervisor: '0'
-              published_releases_supervisor: '0'
             expose_fields: false
             placeholder: 'Search this site...'
             searched_fields_id: search_api_fulltext_searched_fields
@@ -592,22 +578,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              author_user: '0'
-              supervisor_user: '0'
-              secure_statistics_author_user: '0'
-              secure_market_sensitive_author_user: '0'
-              secure_statistics_supervisor_user: '0'
-              secure_market_sensitive_supervisor_user: '0'
-              editor_user: '0'
-              site_admin_user: '0'
-              admin_user: '0'
-              qa: '0'
-              homepage_supervisor: '0'
-              published_releases_supervisor: '0'
-              nisra_corporate_user: '0'
-              administer_publication_series: '0'
             expose_fields: false
             placeholder: 'Search this site...'
             searched_fields_id: search_api_fulltext_searched_fields
@@ -817,19 +787,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              author_user: '0'
-              supervisor_user: '0'
-              secure_statistics_author_user: '0'
-              secure_market_sensitive_author_user: '0'
-              secure_statistics_supervisor_user: '0'
-              secure_market_sensitive_supervisor_user: '0'
-              editor_user: '0'
-              site_admin_user: '0'
-              admin_user: '0'
-              qa: '0'
-              homepage_supervisor: '0'
             expose_fields: false
             placeholder: 'Search this site...'
             searched_fields_id: search_api_fulltext_searched_fields
