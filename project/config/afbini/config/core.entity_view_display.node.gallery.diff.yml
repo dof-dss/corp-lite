@@ -6,7 +6,6 @@ dependencies:
     - core.entity_view_mode.node.diff
     - field.field.node.gallery.body
     - field.field.node.gallery.field_gallery_images
-    - field.field.node.gallery.field_site_topics
     - field.field.node.gallery.field_summary
     - node.type.gallery
   module:
@@ -53,14 +52,6 @@ content:
       link: true
     third_party_settings: {  }
     weight: 2
-    region: content
-  field_site_topics:
-    type: entity_reference_label
-    label: inline
-    settings:
-      link: false
-    third_party_settings: {  }
-    weight: 6
     region: content
   field_summary:
     type: basic_string

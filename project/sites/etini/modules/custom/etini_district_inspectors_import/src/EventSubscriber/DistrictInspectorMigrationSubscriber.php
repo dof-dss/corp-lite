@@ -46,8 +46,8 @@ class DistrictInspectorMigrationSubscriber implements EventSubscriberInterface {
   /**
    * Deelete inspectors after rolling back migration.
    *
-   * @param \Drupal\migrate\Event\MigrateImportEvent $event
-   *   The import event object.
+   * @param \Drupal\migrate\Event\MigrateRollbackEvent $event
+   *   The rollback event object.
    */
   public function postRollback(MigrateRollbackEvent $event): void {
     // Delete inspectors that aren't referenced.

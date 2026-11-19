@@ -145,8 +145,7 @@ field_settings:
     type: solr_text_spellcheck
     configuration:
       type: union
-      separator: |
-
+      separator: ''
       fields:
         - 'entity:node/title'
   status:
@@ -175,8 +174,7 @@ field_settings:
     boost: 13.0
     configuration:
       type: union
-      separator: |
-
+      separator: ''
       fields:
         - 'entity:node/body'
         - 'entity:node/title'
@@ -246,11 +244,11 @@ processor_settings:
     title: true
     alt: true
     tags:
-      b: 2
-      h1: 5
-      h2: 3
-      h3: 2
-      strong: 2
+      b: 2.0
+      h1: 5.0
+      h2: 3.0
+      h3: 2.0
+      strong: 2.0
   language_with_fallback: {  }
   rendered_item: {  }
   solr_date_range:

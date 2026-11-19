@@ -7,16 +7,16 @@ dependencies:
 id: content_application1
 label: 'Content - Application'
 type: 'canonical_entities:node'
-pattern: 'services/[node:title]'
+pattern: '/services/[node:title]'
 selection_criteria:
   286db34e-c12d-457a-879f-1959cf378d84:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 286db34e-c12d-457a-879f-1959cf378d84
     context_mapping:
       node: node
     bundles:
       application: application
+    uuid: 286db34e-c12d-457a-879f-1959cf378d84
 selection_logic: and
 weight: -5
 relationships: {  }

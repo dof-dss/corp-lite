@@ -6,7 +6,6 @@ dependencies:
     - field.field.node.gallery.body
     - field.field.node.gallery.field_gallery_images
     - field.field.node.gallery.field_meta_tags
-    - field.field.node.gallery.field_site_topics
     - field.field.node.gallery.field_summary
     - image.style.nigov_landscape_xxl_1920x1280_x2
     - node.type.gallery
@@ -51,7 +50,6 @@ content:
 hidden:
   content_moderation_control: true
   field_meta_tags: true
-  field_site_topics: true
   langcode: true
   links: true
   search_api_excerpt: true

@@ -5,6 +5,7 @@
  * Functions to support theming in the nicsdru_corplite_theme theme.
  */
 
+use Drupal\Core\Extension\ThemeSettingsProvider;
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Link;
@@ -320,7 +321,7 @@ function _nicsdru_corplite_social_links() {
 
   // Fetch links from the theme settings and use as part of render elements.
   foreach ($platforms as $id => $label) {
-    $platform_url = theme_get_setting("social_links_$id", 'nicsdru_corplite_theme');
+    $platform_url = \Drupal::service(ThemeSettingsProvider::class)->getSetting("social_links_$id", 'nicsdru_corplite_theme');
 
     if (empty($platform_url)) {
       // Skip any blank values.

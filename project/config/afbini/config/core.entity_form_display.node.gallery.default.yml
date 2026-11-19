@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.field.node.gallery.body
     - field.field.node.gallery.field_gallery_images
-    - field.field.node.gallery.field_site_topics
     - field.field.node.gallery.field_summary
     - node.type.gallery
     - workflows.workflow.nics_editorial_workflow
@@ -14,7 +13,6 @@ dependencies:
     - media_library
     - media_library_edit
     - path
-    - shs
     - text
 id: node.gallery.default
 targetEntityType: node
@@ -45,17 +43,7 @@ content:
       media_types: {  }
     third_party_settings:
       media_library_edit:
-        show_edit: '1'
-  field_site_topics:
-    type: options_shs
-    weight: 2
-    region: content
-    settings:
-      display_node_count: false
-      create_new_items: false
-      create_new_levels: false
-      force_deepest: false
-    third_party_settings: {  }
+        show_edit: true
   field_summary:
     type: string_textarea
     weight: 4

@@ -10,8 +10,8 @@ allowed_types:
   - page
   - profile
   - publication
+child_type: article
+book_sort: title
 block:
   navigation:
     mode: 'all pages'
-child_type: article
-book_sort: title

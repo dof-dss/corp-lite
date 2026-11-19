@@ -22,6 +22,7 @@ is_admin: false
 permissions:
   - 'access administration pages'
   - 'access content'
+  - 'access media overview'
   - 'access content overview'
   - 'access toolbar'
   - 'create url aliases'

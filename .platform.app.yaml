@@ -7,7 +7,13 @@
 #############################################################################
 name: corp_lite
 type: 'php:8.3'
+
+variables:
+  env:
+    N_PREFIX: /app/.global
 dependencies:
+  nodejs:
+    n: '11.0.0'
   php:
     composer/composer: ^2
 runtime:
@@ -46,6 +52,12 @@ build:
 hooks:
   build: |
     set -e
+    echo ">>> Install the pinned, patched Node.js version"
+    # installs the pinned version from .nvmrc
+    n auto
+    export PATH="$N_PREFIX/bin:$PATH"
+    # clears cached command locations so the shell finds the new copy.
+    hash -r
     echo "Update robots.txt with Corp Lite customisations"
     cp -f web/robots_custom.txt web/robots.txt
   post_deploy: |
@@ -66,13 +78,15 @@ hooks:
       if [ "$result" = "Successful" ]; then
         echo "****** $site deployment ******"
         cd /app/web/sites/$site
+        # Repair prerequisites and update schema before route/cache operations.
+        drush -l "$site" upgrade-preflight || exit 1
+        drush -l "$site" -y updatedb
         # Readonlymode module should be installed on all sites,
         # but we'll just make sure.
         drush en readonlymode -l $site -y
         # Set site to readonly just in case editors are logged on.
         drush -l $site cset readonlymode.settings enabled 1 -y
         drush -l $site -y cache-rebuild
-        drush -l $site -y updatedb
         drush -l $site -y config-import
         # Import blocks and taxonomies
         drush -l $site import-blocks --choice=safe

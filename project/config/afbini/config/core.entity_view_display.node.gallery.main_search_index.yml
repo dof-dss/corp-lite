@@ -6,7 +6,6 @@ dependencies:
     - core.entity_view_mode.node.main_search_index
     - field.field.node.gallery.body
     - field.field.node.gallery.field_gallery_images
-    - field.field.node.gallery.field_site_topics
     - field.field.node.gallery.field_summary
     - node.type.gallery
   module:
@@ -32,7 +31,6 @@ hidden:
   body: true
   content_moderation_control: true
   field_gallery_images: true
-  field_site_topics: true
   langcode: true
   links: true
   search_api_excerpt: true
